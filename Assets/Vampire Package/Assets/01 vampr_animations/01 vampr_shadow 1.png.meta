@@ -1,0 +1,1560 @@
+fileFormatVersion: 2
+guid: ac45e693e860c8942818a7375e955570
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3412316819308993543
+    second: 01 vampr_shadow 1_0
+  - first:
+      213: -3256214645190915418
+    second: 01 vampr_shadow 1_1
+  - first:
+      213: -6528503671558793054
+    second: 01 vampr_shadow 1_2
+  - first:
+      213: 4539817904358011743
+    second: 01 vampr_shadow 1_3
+  - first:
+      213: 7456526608045792034
+    second: 01 vampr_shadow 1_4
+  - first:
+      213: -4398756338222184320
+    second: 01 vampr_shadow 1_5
+  - first:
+      213: -4143743762587122129
+    second: 01 vampr_shadow 1_6
+  - first:
+      213: -4967770220347458504
+    second: 01 vampr_shadow 1_7
+  - first:
+      213: 721580112508538792
+    second: 01 vampr_shadow 1_8
+  - first:
+      213: -2421660530585189825
+    second: 01 vampr_shadow 1_9
+  - first:
+      213: 3019465490165220409
+    second: 01 vampr_shadow 1_10
+  - first:
+      213: -7471764131649820438
+    second: 01 vampr_shadow 1_11
+  - first:
+      213: -5935901511703791460
+    second: 01 vampr_shadow 1_12
+  - first:
+      213: -4383668366002805862
+    second: 01 vampr_shadow 1_13
+  - first:
+      213: -999687505508135804
+    second: 01 vampr_shadow 1_14
+  - first:
+      213: -1875897081221213846
+    second: 01 vampr_shadow 1_15
+  - first:
+      213: -1583652192439326746
+    second: 01 vampr_shadow 1_16
+  - first:
+      213: -8389878348118821146
+    second: 01 vampr_shadow 1_17
+  - first:
+      213: -6833278659414574869
+    second: 01 vampr_shadow 1_18
+  - first:
+      213: -3887233080143690600
+    second: 01 vampr_shadow 1_19
+  - first:
+      213: -2063776056699291055
+    second: 01 vampr_shadow 1_20
+  - first:
+      213: -5054072465968915203
+    second: 01 vampr_shadow 1_21
+  - first:
+      213: -7807446558756600874
+    second: 01 vampr_shadow 1_22
+  - first:
+      213: -5936318648123621415
+    second: 01 vampr_shadow 1_23
+  - first:
+      213: 1217159561115129545
+    second: 01 vampr_shadow 1_24
+  - first:
+      213: -3624860528437914635
+    second: 01 vampr_shadow 1_25
+  - first:
+      213: 2119397283285924076
+    second: 01 vampr_shadow 1_26
+  - first:
+      213: -5318625444240545965
+    second: 01 vampr_shadow 1_27
+  - first:
+      213: -119421085683253586
+    second: 01 vampr_shadow 1_28
+  - first:
+      213: -3928207719137951328
+    second: 01 vampr_shadow 1_29
+  - first:
+      213: 6770917803950551629
+    second: 01 vampr_shadow 1_30
+  - first:
+      213: -2026766565465842821
+    second: 01 vampr_shadow 1_31
+  - first:
+      213: 8441407300631388237
+    second: 01 vampr_shadow 1_32
+  - first:
+      213: 1488471888621844294
+    second: 01 vampr_shadow 1_33
+  - first:
+      213: -8519195980884491305
+    second: 01 vampr_shadow 1_34
+  - first:
+      213: -5255244550660873976
+    second: 01 vampr_shadow 1_35
+  - first:
+      213: 8068513425714201247
+    second: 01 vampr_shadow 1_36
+  - first:
+      213: -4712226894705389904
+    second: 01 vampr_shadow 1_37
+  - first:
+      213: 4355340434801622970
+    second: 01 vampr_shadow 1_38
+  - first:
+      213: 7262323203660634091
+    second: 01 vampr_shadow 1_39
+  - first:
+      213: 1942936336849875123
+    second: 01 vampr_shadow 1_40
+  - first:
+      213: 3401911212676471260
+    second: 01 vampr_shadow 1_41
+  - first:
+      213: 2871990394746914876
+    second: 01 vampr_shadow 1_42
+  - first:
+      213: 1586177306813617563
+    second: 01 vampr_shadow 1_43
+  - first:
+      213: 4082060508792129015
+    second: 01 vampr_shadow 1_44
+  - first:
+      213: -8333846818160958746
+    second: 01 vampr_shadow 1_45
+  - first:
+      213: -3233239227874393517
+    second: 01 vampr_shadow 1_46
+  - first:
+      213: 6462586798277121613
+    second: 01 vampr_shadow 1_47
+  - first:
+      213: 3652390258616226885
+    second: 01 vampr_shadow 1_48
+  - first:
+      213: -2375174920874099904
+    second: 01 vampr_shadow 1_49
+  - first:
+      213: -394832304586292759
+    second: 01 vampr_shadow 1_50
+  - first:
+      213: -6578353567329222559
+    second: 01 vampr_shadow 1_51
+  - first:
+      213: 4330456365349800700
+    second: 01 vampr_shadow 1_52
+  - first:
+      213: 574638599779944405
+    second: 01 vampr_shadow 1_53
+  - first:
+      213: -2529836090568151175
+    second: 01 vampr_shadow 1_54
+  - first:
+      213: 5185319206139722575
+    second: 01 vampr_shadow 1_55
+  - first:
+      213: -554917475164093533
+    second: 01 vampr_shadow 1_56
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81576ba226005194eb6d62496bcb616a
+      internalID: -3412316819308993543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09406308e9600d946b15311c3b9ee111
+      internalID: -3256214645190915418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0e1612e33e911e46874ee155e7dd941
+      internalID: -6528503671558793054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_3
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74bd6553ab50db5468be1f1bbfdb58f3
+      internalID: 4539817904358011743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_4
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 621fd8679165cff458b2cce6485d035b
+      internalID: 7456526608045792034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_5
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0384b4c219935bb4c83f0b741ab4a47c
+      internalID: -4398756338222184320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_6
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a94c41bd3f7f5e4a9f394b859bf624c
+      internalID: -4143743762587122129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_7
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebf3cf6b40a01c24fb656b5963f0abaf
+      internalID: -4967770220347458504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_8
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67c33545b8b206841a0fee7545cbaff8
+      internalID: 721580112508538792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_9
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f68a1c1a3cafa0e4e9b167e95b31f1ba
+      internalID: -2421660530585189825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_10
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65b0ddd217e2a1543a80a6f31fd2ce15
+      internalID: 3019465490165220409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_11
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc1e6b2da581fab418cc77b2ada81582
+      internalID: -7471764131649820438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_12
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2123287639710142b85469459a9384f
+      internalID: -5935901511703791460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_13
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2730d08b01445ad44b1b0c4ba28d46c6
+      internalID: -4383668366002805862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_14
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdb75491b10a7a347be1fcc0a96b1dd3
+      internalID: -999687505508135804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_15
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39ead318256354d48b1dd3ae232a2f49
+      internalID: -1875897081221213846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_16
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f231e4e01bff7341b697ade17064c54
+      internalID: -1583652192439326746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_17
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a45c8ecd55244354591b0ce2ecb86304
+      internalID: -8389878348118821146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f703005943471094eb498a4d9d31002f
+      internalID: -6833278659414574869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_19
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d350565288635d418bea3a5d07c9868
+      internalID: -3887233080143690600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_20
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65f0bcf10f6ca104e98c1e02fea4d0ab
+      internalID: -2063776056699291055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_21
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6669cefc96328a4dab44830530aa6bd
+      internalID: -5054072465968915203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_22
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79b0ab7aec82d5746aa575c032dbb001
+      internalID: -7807446558756600874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_23
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d660b65302c913f4899656cde90fba17
+      internalID: -5936318648123621415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_24
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15935a11d5c836d42b65cd300b3c1071
+      internalID: 1217159561115129545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_25
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b96e2517b1ca9f940a01f0eb263e48c2
+      internalID: -3624860528437914635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_26
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a40aabd9913105348b63b18577a56b8d
+      internalID: 2119397283285924076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_27
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a50c20ab5ee17a648b512f1518f3c91b
+      internalID: -5318625444240545965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_28
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0af557b63fcf8845b3a3e439b5314ff
+      internalID: -119421085683253586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_29
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0f448fc88091e8409e594ef586b1c3a
+      internalID: -3928207719137951328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_30
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d2cf2c8fb873af4da7883eec3c09a7e
+      internalID: 6770917803950551629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_31
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 307e2c1d16462554888eb7cee8a96e34
+      internalID: -2026766565465842821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_32
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cd1ba92f5f3dc14db481d0901595b73
+      internalID: 8441407300631388237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_33
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f095408798cb9774890f1954acb51eed
+      internalID: 1488471888621844294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_34
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdd9bfa3237f264459551ad2a1628cdf
+      internalID: -8519195980884491305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_35
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49e7695d7e1e4194590e585d5cf47772
+      internalID: -5255244550660873976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2bd53eee126a5b4ebca1bd00e5eb0f1
+      internalID: 8068513425714201247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_37
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37a891c36dde6bd4f8262aef235deea5
+      internalID: -4712226894705389904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_38
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be91e3ff53239f54e9599fb4fc9689ff
+      internalID: 4355340434801622970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_39
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0dc4c7ed5a646f4a903f242d45c7964
+      internalID: 7262323203660634091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_40
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf488d63df87dd64f93b7dd1854afd04
+      internalID: 1942936336849875123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_41
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6117e729c814cda4bb638afff3770d6b
+      internalID: 3401911212676471260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_42
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f2eb8beecb760e40b275dbbd5ed7b04
+      internalID: 2871990394746914876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_43
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfe8ec7286a588d4f82db2b86b9fd50c
+      internalID: 1586177306813617563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_44
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 169fe30f34f0c1644b57998caa3ada48
+      internalID: 4082060508792129015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_45
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91e6d83c9ce61744b9c7642f0771b516
+      internalID: -8333846818160958746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_46
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6d4ea992975b354587c6166ed89c641
+      internalID: -3233239227874393517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_47
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebbea5625dd18cf4182682c2806bd4ca
+      internalID: 6462586798277121613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_48
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0503a8a8236ba1d4583e37560623f10b
+      internalID: 3652390258616226885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_49
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e5beff281bc4794e98211938745b94e
+      internalID: -2375174920874099904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_50
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1e957a204afa714ba392e3a781edef2
+      internalID: -394832304586292759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_51
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9ff96949807ed64889116b79021f528
+      internalID: -6578353567329222559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_52
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 876d6f770128c2642b67f044256ed3c0
+      internalID: 4330456365349800700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_53
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbfcdc125404d2841ae8dcd4bdced772
+      internalID: 574638599779944405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d99daead6d8bcf047826513f23c7b707
+      internalID: -2529836090568151175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_55
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 0
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 055d7dd94bd104146beb2d0329c3f486
+      internalID: 5185319206139722575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_shadow 1_56
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6428a75dbbe441a478c26130be5f67eb
+      internalID: -554917475164093533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 00d4c5275ed1e7247a4710cfe408ee34
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      01 vampr_shadow 1_43: 1586177306813617563
+      01 vampr_shadow 1_40: 1942936336849875123
+      01 vampr_shadow 1_20: -2063776056699291055
+      01 vampr_shadow 1_46: -3233239227874393517
+      01 vampr_shadow 1_3: 4539817904358011743
+      01 vampr_shadow 1_14: -999687505508135804
+      01 vampr_shadow 1_21: -5054072465968915203
+      01 vampr_shadow 1_50: -394832304586292759
+      01 vampr_shadow 1_55: 5185319206139722575
+      01 vampr_shadow 1_25: -3624860528437914635
+      01 vampr_shadow 1_49: -2375174920874099904
+      01 vampr_shadow 1_17: -8389878348118821146
+      01 vampr_shadow 1_51: -6578353567329222559
+      01 vampr_shadow 1_7: -4967770220347458504
+      01 vampr_shadow 1_11: -7471764131649820438
+      01 vampr_shadow 1_53: 574638599779944405
+      01 vampr_shadow 1_37: -4712226894705389904
+      01 vampr_shadow 1_32: 8441407300631388237
+      01 vampr_shadow 1_38: 4355340434801622970
+      01 vampr_shadow 1_39: 7262323203660634091
+      01 vampr_shadow 1_30: 6770917803950551629
+      01 vampr_shadow 1_9: -2421660530585189825
+      01 vampr_shadow 1_29: -3928207719137951328
+      01 vampr_shadow 1_0: -3412316819308993543
+      01 vampr_shadow 1_5: -4398756338222184320
+      01 vampr_shadow 1_56: -554917475164093533
+      01 vampr_shadow 1_12: -5935901511703791460
+      01 vampr_shadow 1_33: 1488471888621844294
+      01 vampr_shadow 1_18: -6833278659414574869
+      01 vampr_shadow 1_36: 8068513425714201247
+      01 vampr_shadow 1_28: -119421085683253586
+      01 vampr_shadow 1_42: 2871990394746914876
+      01 vampr_shadow 1_35: -5255244550660873976
+      01 vampr_shadow 1_52: 4330456365349800700
+      01 vampr_shadow 1_27: -5318625444240545965
+      01 vampr_shadow 1_26: 2119397283285924076
+      01 vampr_shadow 1_31: -2026766565465842821
+      01 vampr_shadow 1_41: 3401911212676471260
+      01 vampr_shadow 1_16: -1583652192439326746
+      01 vampr_shadow 1_8: 721580112508538792
+      01 vampr_shadow 1_1: -3256214645190915418
+      01 vampr_shadow 1_48: 3652390258616226885
+      01 vampr_shadow 1_6: -4143743762587122129
+      01 vampr_shadow 1_34: -8519195980884491305
+      01 vampr_shadow 1_44: 4082060508792129015
+      01 vampr_shadow 1_2: -6528503671558793054
+      01 vampr_shadow 1_54: -2529836090568151175
+      01 vampr_shadow 1_24: 1217159561115129545
+      01 vampr_shadow 1_45: -8333846818160958746
+      01 vampr_shadow 1_23: -5936318648123621415
+      01 vampr_shadow 1_10: 3019465490165220409
+      01 vampr_shadow 1_15: -1875897081221213846
+      01 vampr_shadow 1_4: 7456526608045792034
+      01 vampr_shadow 1_22: -7807446558756600874
+      01 vampr_shadow 1_13: -4383668366002805862
+      01 vampr_shadow 1_19: -3887233080143690600
+      01 vampr_shadow 1_47: 6462586798277121613
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

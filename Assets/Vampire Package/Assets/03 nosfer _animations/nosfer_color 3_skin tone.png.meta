@@ -1,0 +1,1535 @@
+fileFormatVersion: 2
+guid: db30223245d6697449680c60c08db83f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1608572189283831141
+    second: nosfer_color 3_skin tone_0
+  - first:
+      213: -7250007103101853417
+    second: nosfer_color 3_skin tone_1
+  - first:
+      213: 3094744954163054489
+    second: nosfer_color 3_skin tone_2
+  - first:
+      213: 240650262847103715
+    second: nosfer_color 3_skin tone_3
+  - first:
+      213: 1921192508687800280
+    second: nosfer_color 3_skin tone_4
+  - first:
+      213: -8545191753123595068
+    second: nosfer_color 3_skin tone_5
+  - first:
+      213: -6751869518502841300
+    second: nosfer_color 3_skin tone_6
+  - first:
+      213: -2003658858948543852
+    second: nosfer_color 3_skin tone_7
+  - first:
+      213: 1617169203185841592
+    second: nosfer_color 3_skin tone_8
+  - first:
+      213: 3192317084768998985
+    second: nosfer_color 3_skin tone_9
+  - first:
+      213: 3194476949154884074
+    second: nosfer_color 3_skin tone_10
+  - first:
+      213: 6974623701892056805
+    second: nosfer_color 3_skin tone_11
+  - first:
+      213: -2408317704049547851
+    second: nosfer_color 3_skin tone_12
+  - first:
+      213: -5755541763884265452
+    second: nosfer_color 3_skin tone_13
+  - first:
+      213: 7226514260637733916
+    second: nosfer_color 3_skin tone_14
+  - first:
+      213: 128172089957962158
+    second: nosfer_color 3_skin tone_15
+  - first:
+      213: 6559532497903492620
+    second: nosfer_color 3_skin tone_16
+  - first:
+      213: 1143199784054302565
+    second: nosfer_color 3_skin tone_17
+  - first:
+      213: -6654469533644807399
+    second: nosfer_color 3_skin tone_18
+  - first:
+      213: 1313863647212547679
+    second: nosfer_color 3_skin tone_19
+  - first:
+      213: -4602916148965202082
+    second: nosfer_color 3_skin tone_20
+  - first:
+      213: -4628560833599431483
+    second: nosfer_color 3_skin tone_21
+  - first:
+      213: -1732055609604196148
+    second: nosfer_color 3_skin tone_22
+  - first:
+      213: 7295480997713556018
+    second: nosfer_color 3_skin tone_23
+  - first:
+      213: 320487249048194462
+    second: nosfer_color 3_skin tone_24
+  - first:
+      213: -3867895019327318654
+    second: nosfer_color 3_skin tone_25
+  - first:
+      213: 2858789223535365735
+    second: nosfer_color 3_skin tone_26
+  - first:
+      213: 7533431380640987962
+    second: nosfer_color 3_skin tone_27
+  - first:
+      213: -8560991153840334028
+    second: nosfer_color 3_skin tone_28
+  - first:
+      213: 2517944810123899043
+    second: nosfer_color 3_skin tone_29
+  - first:
+      213: -8305594557415625146
+    second: nosfer_color 3_skin tone_30
+  - first:
+      213: -4186103854616910907
+    second: nosfer_color 3_skin tone_31
+  - first:
+      213: -6812125889057384497
+    second: nosfer_color 3_skin tone_32
+  - first:
+      213: -6567571056370029055
+    second: nosfer_color 3_skin tone_33
+  - first:
+      213: 1867949509518288155
+    second: nosfer_color 3_skin tone_34
+  - first:
+      213: -3614484070636665974
+    second: nosfer_color 3_skin tone_35
+  - first:
+      213: -2709617399400881701
+    second: nosfer_color 3_skin tone_36
+  - first:
+      213: 2459305348227409872
+    second: nosfer_color 3_skin tone_37
+  - first:
+      213: 8257223115702352207
+    second: nosfer_color 3_skin tone_38
+  - first:
+      213: 1668045352771119430
+    second: nosfer_color 3_skin tone_39
+  - first:
+      213: -1284566244264784821
+    second: nosfer_color 3_skin tone_40
+  - first:
+      213: -4336895151964138019
+    second: nosfer_color 3_skin tone_41
+  - first:
+      213: 1823937865125374862
+    second: nosfer_color 3_skin tone_42
+  - first:
+      213: -5571459769166873297
+    second: nosfer_color 3_skin tone_43
+  - first:
+      213: 5260539041318339677
+    second: nosfer_color 3_skin tone_44
+  - first:
+      213: -5684292028980432373
+    second: nosfer_color 3_skin tone_45
+  - first:
+      213: 6390042386084620445
+    second: nosfer_color 3_skin tone_46
+  - first:
+      213: 3321095444229320327
+    second: nosfer_color 3_skin tone_47
+  - first:
+      213: 7151430750977939171
+    second: nosfer_color 3_skin tone_48
+  - first:
+      213: -2328265907237941045
+    second: nosfer_color 3_skin tone_49
+  - first:
+      213: 456533857612501252
+    second: nosfer_color 3_skin tone_50
+  - first:
+      213: 6894672656403610493
+    second: nosfer_color 3_skin tone_51
+  - first:
+      213: -6000356139549030574
+    second: nosfer_color 3_skin tone_52
+  - first:
+      213: 6376003729635171461
+    second: nosfer_color 3_skin tone_53
+  - first:
+      213: 8431431060969404664
+    second: nosfer_color 3_skin tone_54
+  - first:
+      213: 5427544178035531978
+    second: nosfer_color 3_skin tone_55
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab921457cf086b24f919484f4d513297
+      internalID: -1608572189283831141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de21d17d3d70ec84cbc3e51c1aeedef9
+      internalID: -7250007103101853417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 561dabdf27f37504890e1b87895699f6
+      internalID: 3094744954163054489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_3
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d3049b6184b2f14b9a9e06d839d54ca
+      internalID: 240650262847103715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_4
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83059f394873a6842a319b69c3629763
+      internalID: 1921192508687800280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_5
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c16f90e8be9a8045a54173290280f21
+      internalID: -8545191753123595068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_6
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18ae148a2166a2d42b9bb6073c8bdbb3
+      internalID: -6751869518502841300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_7
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f327c705e640f034fb01d80a490f2c10
+      internalID: -2003658858948543852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_8
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a5107c9ae329994284b051a5570d1e9
+      internalID: 1617169203185841592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_9
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fc4d297356bf5143a8ee0f0cda113bd
+      internalID: 3192317084768998985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_10
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2ec658c7a3de0546b6708d1f7e9a2fe
+      internalID: 3194476949154884074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_11
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc439893435d5d84bb2c897534e96fb4
+      internalID: 6974623701892056805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_12
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00c9656ccb160ee49a0179b30d9e8cb6
+      internalID: -2408317704049547851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_13
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f1d62a4b0fd46d4baefb8bae8ab4224
+      internalID: -5755541763884265452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_14
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c91de4a5f773b340ac6a2efb2bbda72
+      internalID: 7226514260637733916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_15
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f2d8ac133e31194e9707d8b28bb0ea8
+      internalID: 128172089957962158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_16
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a93316a1185e5544a7b25340942fc13
+      internalID: 6559532497903492620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_17
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e7b96bf098dc1747a6a8b0001f27df6
+      internalID: 1143199784054302565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 131cf22d8d54c1d428eeee75b6581917
+      internalID: -6654469533644807399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_19
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1e47c3716c9a534a9ebdf221d39c352
+      internalID: 1313863647212547679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_20
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1243f461f7fb18a4198cc2aa494049f3
+      internalID: -4602916148965202082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_21
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21001740fdc941a4aa6dfa8e63cb5d8f
+      internalID: -4628560833599431483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_22
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4645e3cb56fe1ae45a9d7d12e64ea858
+      internalID: -1732055609604196148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_23
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6189beb0bb5458e41817bff15143806d
+      internalID: 7295480997713556018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_24
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e6bf39353b1c2f429877e51d6bc4202
+      internalID: 320487249048194462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_25
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05da9e48228b78f4cba369a4efa06b9b
+      internalID: -3867895019327318654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_26
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f50b2b2da029dcf4885a4c351441dc1b
+      internalID: 2858789223535365735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_27
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4457805d4c1d72d459c0c497a8aea7f6
+      internalID: 7533431380640987962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_28
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35005599ba8f5544996c0dcb3890da95
+      internalID: -8560991153840334028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_29
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a3d0a8363632f241ba9c717c8fcc38a
+      internalID: 2517944810123899043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_30
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db701f11817a40c46a8f4efefc8cbf3b
+      internalID: -8305594557415625146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_31
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f09206246f914a040be8772870e7ce17
+      internalID: -4186103854616910907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_32
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6def3507d4c49ac428a060e420740525
+      internalID: -6812125889057384497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_33
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a103474a7103b3408cd3f75294b4fda
+      internalID: -6567571056370029055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_34
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fbb424e9f744004bbfd162689a52938
+      internalID: 1867949509518288155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_35
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aba8187d30da4d4199aef2529414a46
+      internalID: -3614484070636665974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa452a68c46b3c742851beb9fe611a98
+      internalID: -2709617399400881701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_37
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b8ed53fca0a95a429fd0d9f6b3130af
+      internalID: 2459305348227409872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_38
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d3a0f103ec5d9941aceaabd23f84827
+      internalID: 8257223115702352207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_39
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e96fa5997b0a7843a6967eb9da03c31
+      internalID: 1668045352771119430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_40
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c1855549ebe3224aa3fb374b1bbedaf
+      internalID: -1284566244264784821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_41
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b28d0b5eaf645f4ba25846cdd376215
+      internalID: -4336895151964138019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_42
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7007b4daa84d704ab9f040af8ac3877
+      internalID: 1823937865125374862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_43
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce22f52387cf95c4990bae62a3f40513
+      internalID: -5571459769166873297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_44
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8004f447f409f634980d902e72a12a44
+      internalID: 5260539041318339677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_45
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd7384ceb7ee7af4bb4ced7b505f59c8
+      internalID: -5684292028980432373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_46
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e538f3382a67e1f469724e07daea36c8
+      internalID: 6390042386084620445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_47
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b95bb1ea87b13e84693be25303322ef6
+      internalID: 3321095444229320327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_48
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d7cccccbf4bd7c46b73200261ce6a4b
+      internalID: 7151430750977939171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_49
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 821b784aab88c0d45b4a4aca893c1938
+      internalID: -2328265907237941045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_50
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2076881ffb1ed36479f722c976fdf98e
+      internalID: 456533857612501252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_51
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf2ae0b1a08bc0f4a9d08263db4d8bd3
+      internalID: 6894672656403610493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_52
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae2f6832ab33dae449409b69600e2760
+      internalID: -6000356139549030574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_53
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c02e8c85f8d485042b750d658d70d0fa
+      internalID: 6376003729635171461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37d0e63ad18cbc543801770d048c6887
+      internalID: 8431431060969404664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 3_skin tone_55
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 192
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6592f2357dc5404183295c7fa06a231
+      internalID: 5427544178035531978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 260a4355626774c4aa2a6383700a7bb3
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      nosfer_color 3_skin tone_9: 3192317084768998985
+      nosfer_color 3_skin tone_3: 240650262847103715
+      nosfer_color 3_skin tone_8: 1617169203185841592
+      nosfer_color 3_skin tone_24: 320487249048194462
+      nosfer_color 3_skin tone_30: -8305594557415625146
+      nosfer_color 3_skin tone_33: -6567571056370029055
+      nosfer_color 3_skin tone_46: 6390042386084620445
+      nosfer_color 3_skin tone_19: 1313863647212547679
+      nosfer_color 3_skin tone_25: -3867895019327318654
+      nosfer_color 3_skin tone_37: 2459305348227409872
+      nosfer_color 3_skin tone_12: -2408317704049547851
+      nosfer_color 3_skin tone_53: 6376003729635171461
+      nosfer_color 3_skin tone_31: -4186103854616910907
+      nosfer_color 3_skin tone_10: 3194476949154884074
+      nosfer_color 3_skin tone_15: 128172089957962158
+      nosfer_color 3_skin tone_41: -4336895151964138019
+      nosfer_color 3_skin tone_7: -2003658858948543852
+      nosfer_color 3_skin tone_28: -8560991153840334028
+      nosfer_color 3_skin tone_45: -5684292028980432373
+      nosfer_color 3_skin tone_6: -6751869518502841300
+      nosfer_color 3_skin tone_42: 1823937865125374862
+      nosfer_color 3_skin tone_1: -7250007103101853417
+      nosfer_color 3_skin tone_29: 2517944810123899043
+      nosfer_color 3_skin tone_5: -8545191753123595068
+      nosfer_color 3_skin tone_35: -3614484070636665974
+      nosfer_color 3_skin tone_18: -6654469533644807399
+      nosfer_color 3_skin tone_16: 6559532497903492620
+      nosfer_color 3_skin tone_38: 8257223115702352207
+      nosfer_color 3_skin tone_14: 7226514260637733916
+      nosfer_color 3_skin tone_23: 7295480997713556018
+      nosfer_color 3_skin tone_47: 3321095444229320327
+      nosfer_color 3_skin tone_36: -2709617399400881701
+      nosfer_color 3_skin tone_13: -5755541763884265452
+      nosfer_color 3_skin tone_48: 7151430750977939171
+      nosfer_color 3_skin tone_39: 1668045352771119430
+      nosfer_color 3_skin tone_34: 1867949509518288155
+      nosfer_color 3_skin tone_44: 5260539041318339677
+      nosfer_color 3_skin tone_2: 3094744954163054489
+      nosfer_color 3_skin tone_21: -4628560833599431483
+      nosfer_color 3_skin tone_40: -1284566244264784821
+      nosfer_color 3_skin tone_50: 456533857612501252
+      nosfer_color 3_skin tone_55: 5427544178035531978
+      nosfer_color 3_skin tone_11: 6974623701892056805
+      nosfer_color 3_skin tone_27: 7533431380640987962
+      nosfer_color 3_skin tone_54: 8431431060969404664
+      nosfer_color 3_skin tone_20: -4602916148965202082
+      nosfer_color 3_skin tone_52: -6000356139549030574
+      nosfer_color 3_skin tone_22: -1732055609604196148
+      nosfer_color 3_skin tone_43: -5571459769166873297
+      nosfer_color 3_skin tone_4: 1921192508687800280
+      nosfer_color 3_skin tone_32: -6812125889057384497
+      nosfer_color 3_skin tone_51: 6894672656403610493
+      nosfer_color 3_skin tone_49: -2328265907237941045
+      nosfer_color 3_skin tone_26: 2858789223535365735
+      nosfer_color 3_skin tone_0: -1608572189283831141
+      nosfer_color 3_skin tone_17: 1143199784054302565
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

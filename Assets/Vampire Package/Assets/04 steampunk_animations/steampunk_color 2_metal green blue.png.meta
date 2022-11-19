@@ -1,0 +1,1560 @@
+fileFormatVersion: 2
+guid: d51793626bc353b458fe75fc69559809
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4233026394443929390
+    second: steampunk_color 2_metal green blue_0
+  - first:
+      213: -8974242915444170467
+    second: steampunk_color 2_metal green blue_1
+  - first:
+      213: 785637146223891958
+    second: steampunk_color 2_metal green blue_2
+  - first:
+      213: 4639633935999671950
+    second: steampunk_color 2_metal green blue_3
+  - first:
+      213: -3211536132730200156
+    second: steampunk_color 2_metal green blue_4
+  - first:
+      213: -5405773734857097589
+    second: steampunk_color 2_metal green blue_5
+  - first:
+      213: -437207711993769761
+    second: steampunk_color 2_metal green blue_6
+  - first:
+      213: 1647875099069316492
+    second: steampunk_color 2_metal green blue_7
+  - first:
+      213: 4664195083321426445
+    second: steampunk_color 2_metal green blue_8
+  - first:
+      213: -4018896345308156250
+    second: steampunk_color 2_metal green blue_9
+  - first:
+      213: -824847788073886522
+    second: steampunk_color 2_metal green blue_10
+  - first:
+      213: 6211562587113198247
+    second: steampunk_color 2_metal green blue_11
+  - first:
+      213: -180260043887670836
+    second: steampunk_color 2_metal green blue_12
+  - first:
+      213: 4210352726429036862
+    second: steampunk_color 2_metal green blue_13
+  - first:
+      213: 7058339018927530522
+    second: steampunk_color 2_metal green blue_14
+  - first:
+      213: -1076823459578145281
+    second: steampunk_color 2_metal green blue_15
+  - first:
+      213: 2709679081569839802
+    second: steampunk_color 2_metal green blue_16
+  - first:
+      213: 7031013686614648049
+    second: steampunk_color 2_metal green blue_17
+  - first:
+      213: 3183653358255557467
+    second: steampunk_color 2_metal green blue_18
+  - first:
+      213: -1261530590050192471
+    second: steampunk_color 2_metal green blue_19
+  - first:
+      213: 3799452704474869543
+    second: steampunk_color 2_metal green blue_20
+  - first:
+      213: -2015590865724913105
+    second: steampunk_color 2_metal green blue_21
+  - first:
+      213: 8177124003308552574
+    second: steampunk_color 2_metal green blue_22
+  - first:
+      213: 933961279923385399
+    second: steampunk_color 2_metal green blue_23
+  - first:
+      213: -6456976704950786575
+    second: steampunk_color 2_metal green blue_24
+  - first:
+      213: 6729823141537106332
+    second: steampunk_color 2_metal green blue_25
+  - first:
+      213: -1839296119779938129
+    second: steampunk_color 2_metal green blue_26
+  - first:
+      213: -4427467705395376073
+    second: steampunk_color 2_metal green blue_27
+  - first:
+      213: 6869232758174904468
+    second: steampunk_color 2_metal green blue_28
+  - first:
+      213: 5748608965683406324
+    second: steampunk_color 2_metal green blue_29
+  - first:
+      213: -2669784430054070883
+    second: steampunk_color 2_metal green blue_30
+  - first:
+      213: 7203782499714638629
+    second: steampunk_color 2_metal green blue_31
+  - first:
+      213: 6692395796638847299
+    second: steampunk_color 2_metal green blue_32
+  - first:
+      213: -524895420001980334
+    second: steampunk_color 2_metal green blue_33
+  - first:
+      213: 1072466697153758426
+    second: steampunk_color 2_metal green blue_34
+  - first:
+      213: -1701970255885562633
+    second: steampunk_color 2_metal green blue_35
+  - first:
+      213: -2633432267423479188
+    second: steampunk_color 2_metal green blue_36
+  - first:
+      213: -8828289386637825757
+    second: steampunk_color 2_metal green blue_37
+  - first:
+      213: -184466960946006774
+    second: steampunk_color 2_metal green blue_38
+  - first:
+      213: -1637522832680893343
+    second: steampunk_color 2_metal green blue_39
+  - first:
+      213: -447149049213283994
+    second: steampunk_color 2_metal green blue_40
+  - first:
+      213: -8988805365431866823
+    second: steampunk_color 2_metal green blue_41
+  - first:
+      213: 7351524750022344255
+    second: steampunk_color 2_metal green blue_42
+  - first:
+      213: 257264705249830555
+    second: steampunk_color 2_metal green blue_43
+  - first:
+      213: -6235973313489886677
+    second: steampunk_color 2_metal green blue_44
+  - first:
+      213: 934164747417235754
+    second: steampunk_color 2_metal green blue_45
+  - first:
+      213: -8346112322583309266
+    second: steampunk_color 2_metal green blue_46
+  - first:
+      213: 1238880445520259738
+    second: steampunk_color 2_metal green blue_47
+  - first:
+      213: -1292118295396115542
+    second: steampunk_color 2_metal green blue_48
+  - first:
+      213: 2276201572456885607
+    second: steampunk_color 2_metal green blue_49
+  - first:
+      213: 8920313810187694126
+    second: steampunk_color 2_metal green blue_50
+  - first:
+      213: -3957209955706143205
+    second: steampunk_color 2_metal green blue_51
+  - first:
+      213: 9094759223384755012
+    second: steampunk_color 2_metal green blue_52
+  - first:
+      213: -8525479114972707740
+    second: steampunk_color 2_metal green blue_53
+  - first:
+      213: -4511483699417340532
+    second: steampunk_color 2_metal green blue_54
+  - first:
+      213: -7744091650540631612
+    second: steampunk_color 2_metal green blue_55
+  - first:
+      213: -7614684649939302076
+    second: steampunk_color 2_metal green blue_56
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b4c84068cdfe664b82e59b68ab87651
+      internalID: -4233026394443929390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_1
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 160106601d0f77047a415143a821d6cb
+      internalID: -8974242915444170467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_2
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b18c721ad0984341b68d1659199a5ad
+      internalID: 785637146223891958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_3
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e376effb05cd1249bd383a7157b29ae
+      internalID: 4639633935999671950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_4
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a2327ed0d282e4419755e600bd5e5ee
+      internalID: -3211536132730200156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_5
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e82d70a2e0420864e91256cf6bcea83f
+      internalID: -5405773734857097589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_6
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96604d5a36c01f14a81ebfeea044874c
+      internalID: -437207711993769761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_7
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e0af61d7ec7d614cb4dbf89436eff94
+      internalID: 1647875099069316492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_8
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a4219a917cad2041bac77f71e7632af
+      internalID: 4664195083321426445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_9
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 825040ba338fa2b40aae056475c6d795
+      internalID: -4018896345308156250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_10
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b68811694fdc4bc40ae703c447480a23
+      internalID: -824847788073886522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_11
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2403dda3bfbfc042a66eaadfe51a7ff
+      internalID: 6211562587113198247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_12
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1efe67da3eb5baf4aa71a4c558640650
+      internalID: -180260043887670836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_13
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d0660e0d6639354296d57957e027396
+      internalID: 4210352726429036862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_14
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff5d264ff03b3a94eb37f93d0d4d7716
+      internalID: 7058339018927530522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_15
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d27da2430e0b6394f807311a4421670b
+      internalID: -1076823459578145281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_16
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85d115f734a4607489ebff28f57883de
+      internalID: 2709679081569839802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 037883826f32da64584c5975235376b6
+      internalID: 7031013686614648049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_18
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78a0177080b4d8b40b93254b63d09a1a
+      internalID: 3183653358255557467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_19
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 304490f22d6d7e247ac66d70f3bae11f
+      internalID: -1261530590050192471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_20
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5daa534415f1a9344ae22ce3896591bb
+      internalID: 3799452704474869543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_21
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2946fee1bffefb8419892193a6e3e20b
+      internalID: -2015590865724913105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_22
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 262942e48adaebc42ad2721b80fbd38b
+      internalID: 8177124003308552574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_23
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c60244ed10843c4419aafc3cd01cc346
+      internalID: 933961279923385399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_24
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 607db6c6b2df6dd49af32de17e8ea070
+      internalID: -6456976704950786575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_25
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68d862b3a1da07c419dcac1a7e0616b1
+      internalID: 6729823141537106332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_26
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a33fae716cfa71344aaf2f5344eaa6d4
+      internalID: -1839296119779938129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_27
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7bd2bf4032c76e4daeb9747d04756ba
+      internalID: -4427467705395376073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_28
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3447f7d15fbc0e941a18fca9c8e1536c
+      internalID: 6869232758174904468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_29
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecc877a9e6e40ef4891f433a7a1560f8
+      internalID: 5748608965683406324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_30
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bb7ea272dbdc714e928618fcd6e9978
+      internalID: -2669784430054070883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_31
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9aa07440675bf445b492358630d1a6f
+      internalID: 7203782499714638629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_32
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96d5d97be64ded649932342bce2a50dc
+      internalID: 6692395796638847299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_33
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d0923373e1d7564aa3d123367020371
+      internalID: -524895420001980334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f32cdf76e48019a49a706807ea4f0483
+      internalID: 1072466697153758426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_35
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f28ba2c43184be54e8a8d3592d3288f5
+      internalID: -1701970255885562633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_36
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ec705d663108574b8690713a2c69f44
+      internalID: -2633432267423479188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_37
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53c04334c3c1d6b419974db296d6d92c
+      internalID: -8828289386637825757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_38
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b346bd3a53d0dbd4182185fd68a01fa3
+      internalID: -184466960946006774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_39
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17d7851d8df10a546a91539f641beb40
+      internalID: -1637522832680893343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_40
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eea397ffd9c9684d874f7d6f02c92ba
+      internalID: -447149049213283994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_41
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 453b421f561aead479764f2d76c9c927
+      internalID: -8988805365431866823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_42
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75ebd6a0168fe9d4c9aac016df9dc246
+      internalID: 7351524750022344255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_43
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76eff1436228d5943a683f15b59b733b
+      internalID: 257264705249830555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_44
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07db80a0965d1274fa1798697197a45a
+      internalID: -6235973313489886677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_45
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7b83ef67bd36de4fb47e4a08b0aadb4
+      internalID: 934164747417235754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_46
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c132918a21a77e5488c01527495f1b7f
+      internalID: -8346112322583309266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_47
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a27d0f068b66013469688b324161d3d5
+      internalID: 1238880445520259738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_48
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0fccedf3e5c1a44e9fb42d2b8a3c16a
+      internalID: -1292118295396115542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_49
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0f5603660bc51543b1b3d97b3f781a2
+      internalID: 2276201572456885607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_50
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f8cafa9320dc1b4fa82b32a105eef71
+      internalID: 8920313810187694126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_51
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 643ad1ff9cfea3b4ca784994f9fb247e
+      internalID: -3957209955706143205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_52
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 192
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecd2763d21926f549821a2a9cc63edd8
+      internalID: 9094759223384755012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_53
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 192
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b4718b8f810be840a5586c93e0d992f
+      internalID: -8525479114972707740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_54
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 192
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 630413239519fc848a7e3d4cec176fcf
+      internalID: -4511483699417340532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_55
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 192
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c67dc7207d1cd734f96847739658e5bf
+      internalID: -7744091650540631612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_color 2_metal green blue_56
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 192
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ce98f0f12dda2d4798c2498715fb21b
+      internalID: -7614684649939302076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: a1ab5c607f223ea41adee13e87c2f553
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      steampunk_color 2_metal green blue_53: -8525479114972707740
+      steampunk_color 2_metal green blue_25: 6729823141537106332
+      steampunk_color 2_metal green blue_17: 7031013686614648049
+      steampunk_color 2_metal green blue_1: -8974242915444170467
+      steampunk_color 2_metal green blue_5: -5405773734857097589
+      steampunk_color 2_metal green blue_36: -2633432267423479188
+      steampunk_color 2_metal green blue_38: -184466960946006774
+      steampunk_color 2_metal green blue_16: 2709679081569839802
+      steampunk_color 2_metal green blue_0: -4233026394443929390
+      steampunk_color 2_metal green blue_54: -4511483699417340532
+      steampunk_color 2_metal green blue_6: -437207711993769761
+      steampunk_color 2_metal green blue_18: 3183653358255557467
+      steampunk_color 2_metal green blue_30: -2669784430054070883
+      steampunk_color 2_metal green blue_20: 3799452704474869543
+      steampunk_color 2_metal green blue_21: -2015590865724913105
+      steampunk_color 2_metal green blue_23: 933961279923385399
+      steampunk_color 2_metal green blue_32: 6692395796638847299
+      steampunk_color 2_metal green blue_12: -180260043887670836
+      steampunk_color 2_metal green blue_34: 1072466697153758426
+      steampunk_color 2_metal green blue_33: -524895420001980334
+      steampunk_color 2_metal green blue_39: -1637522832680893343
+      steampunk_color 2_metal green blue_49: 2276201572456885607
+      steampunk_color 2_metal green blue_44: -6235973313489886677
+      steampunk_color 2_metal green blue_13: 4210352726429036862
+      steampunk_color 2_metal green blue_41: -8988805365431866823
+      steampunk_color 2_metal green blue_10: -824847788073886522
+      steampunk_color 2_metal green blue_15: -1076823459578145281
+      steampunk_color 2_metal green blue_11: 6211562587113198247
+      steampunk_color 2_metal green blue_3: 4639633935999671950
+      steampunk_color 2_metal green blue_14: 7058339018927530522
+      steampunk_color 2_metal green blue_26: -1839296119779938129
+      steampunk_color 2_metal green blue_52: 9094759223384755012
+      steampunk_color 2_metal green blue_29: 5748608965683406324
+      steampunk_color 2_metal green blue_40: -447149049213283994
+      steampunk_color 2_metal green blue_7: 1647875099069316492
+      steampunk_color 2_metal green blue_42: 7351524750022344255
+      steampunk_color 2_metal green blue_37: -8828289386637825757
+      steampunk_color 2_metal green blue_55: -7744091650540631612
+      steampunk_color 2_metal green blue_31: 7203782499714638629
+      steampunk_color 2_metal green blue_24: -6456976704950786575
+      steampunk_color 2_metal green blue_22: 8177124003308552574
+      steampunk_color 2_metal green blue_8: 4664195083321426445
+      steampunk_color 2_metal green blue_47: 1238880445520259738
+      steampunk_color 2_metal green blue_4: -3211536132730200156
+      steampunk_color 2_metal green blue_51: -3957209955706143205
+      steampunk_color 2_metal green blue_50: 8920313810187694126
+      steampunk_color 2_metal green blue_19: -1261530590050192471
+      steampunk_color 2_metal green blue_28: 6869232758174904468
+      steampunk_color 2_metal green blue_9: -4018896345308156250
+      steampunk_color 2_metal green blue_35: -1701970255885562633
+      steampunk_color 2_metal green blue_27: -4427467705395376073
+      steampunk_color 2_metal green blue_48: -1292118295396115542
+      steampunk_color 2_metal green blue_56: -7614684649939302076
+      steampunk_color 2_metal green blue_45: 934164747417235754
+      steampunk_color 2_metal green blue_46: -8346112322583309266
+      steampunk_color 2_metal green blue_43: 257264705249830555
+      steampunk_color 2_metal green blue_2: 785637146223891958
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

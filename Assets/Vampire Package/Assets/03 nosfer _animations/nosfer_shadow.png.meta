@@ -1,0 +1,1535 @@
+fileFormatVersion: 2
+guid: 78393a8f5ec9d9c4486a1f3d43f6d710
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2120490544239434908
+    second: nosfer_shadow_0
+  - first:
+      213: -7024147351283762991
+    second: nosfer_shadow_1
+  - first:
+      213: -7039087205183396229
+    second: nosfer_shadow_2
+  - first:
+      213: -1106733703551480405
+    second: nosfer_shadow_3
+  - first:
+      213: 6232894647415354372
+    second: nosfer_shadow_4
+  - first:
+      213: 4600860462838658996
+    second: nosfer_shadow_5
+  - first:
+      213: -5799274639968185607
+    second: nosfer_shadow_6
+  - first:
+      213: -8936915524391103071
+    second: nosfer_shadow_7
+  - first:
+      213: 3943005758639163088
+    second: nosfer_shadow_8
+  - first:
+      213: 240716791504629871
+    second: nosfer_shadow_9
+  - first:
+      213: -8534345399803949123
+    second: nosfer_shadow_10
+  - first:
+      213: -1997072553610371221
+    second: nosfer_shadow_11
+  - first:
+      213: -5801151938177988409
+    second: nosfer_shadow_12
+  - first:
+      213: -4673418578931872479
+    second: nosfer_shadow_13
+  - first:
+      213: 6233572695385445444
+    second: nosfer_shadow_14
+  - first:
+      213: 8996874748624713992
+    second: nosfer_shadow_15
+  - first:
+      213: -203331590209417497
+    second: nosfer_shadow_16
+  - first:
+      213: 7494905075264847599
+    second: nosfer_shadow_17
+  - first:
+      213: -3123102411367958985
+    second: nosfer_shadow_18
+  - first:
+      213: 8067015334588677195
+    second: nosfer_shadow_19
+  - first:
+      213: 908456869141918574
+    second: nosfer_shadow_20
+  - first:
+      213: 5439614150797642317
+    second: nosfer_shadow_21
+  - first:
+      213: 848126905705660380
+    second: nosfer_shadow_22
+  - first:
+      213: 7046137127027590368
+    second: nosfer_shadow_23
+  - first:
+      213: -5216297241802803732
+    second: nosfer_shadow_24
+  - first:
+      213: -8466609088502244827
+    second: nosfer_shadow_25
+  - first:
+      213: 4777363737023296968
+    second: nosfer_shadow_26
+  - first:
+      213: 3395089885124737997
+    second: nosfer_shadow_27
+  - first:
+      213: -7471115184885544157
+    second: nosfer_shadow_28
+  - first:
+      213: 601830715117748337
+    second: nosfer_shadow_29
+  - first:
+      213: 8737931827495046908
+    second: nosfer_shadow_30
+  - first:
+      213: 5193738618804791249
+    second: nosfer_shadow_31
+  - first:
+      213: 5347289368561035544
+    second: nosfer_shadow_32
+  - first:
+      213: -2344703617850140401
+    second: nosfer_shadow_33
+  - first:
+      213: 2579563303397369755
+    second: nosfer_shadow_34
+  - first:
+      213: 844367316091813219
+    second: nosfer_shadow_35
+  - first:
+      213: 867536289791524399
+    second: nosfer_shadow_36
+  - first:
+      213: 2871889280274859876
+    second: nosfer_shadow_37
+  - first:
+      213: 5283421231664294912
+    second: nosfer_shadow_38
+  - first:
+      213: -4148799985803025765
+    second: nosfer_shadow_39
+  - first:
+      213: -2199310863086339804
+    second: nosfer_shadow_40
+  - first:
+      213: 6872068666383475209
+    second: nosfer_shadow_41
+  - first:
+      213: 591938265503664328
+    second: nosfer_shadow_42
+  - first:
+      213: -469075953637213384
+    second: nosfer_shadow_43
+  - first:
+      213: -6035206413506207723
+    second: nosfer_shadow_44
+  - first:
+      213: 8903311060553969980
+    second: nosfer_shadow_45
+  - first:
+      213: -521577587854319294
+    second: nosfer_shadow_46
+  - first:
+      213: 5761296242053593365
+    second: nosfer_shadow_47
+  - first:
+      213: 2022814457371832904
+    second: nosfer_shadow_48
+  - first:
+      213: 6728056347446585144
+    second: nosfer_shadow_49
+  - first:
+      213: 7640945818618207218
+    second: nosfer_shadow_50
+  - first:
+      213: -5329708578648980303
+    second: nosfer_shadow_51
+  - first:
+      213: 5793715430537114697
+    second: nosfer_shadow_52
+  - first:
+      213: -1622751764133160811
+    second: nosfer_shadow_53
+  - first:
+      213: -5560980902280801903
+    second: nosfer_shadow_54
+  - first:
+      213: -6735505748420650392
+    second: nosfer_shadow_55
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: nosfer_shadow_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0600692164c4e4449d6032a5c4b620f
+      internalID: 2120490544239434908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f28e803a4b6541419ab5ab1395c2eb5
+      internalID: -7024147351283762991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aff79a7cf5f6cb4a8ba783000c8f0ea
+      internalID: -7039087205183396229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_3
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da9af19e3d8cdf346b7361b59fbde583
+      internalID: -1106733703551480405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_4
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abb891f961ab7244897b3f777ba204bb
+      internalID: 6232894647415354372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_5
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3c1a43c6f926dd49881dbf198a52dbf
+      internalID: 4600860462838658996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_6
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e00e5b3a815a334ebba6e4889787cf0
+      internalID: -5799274639968185607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_7
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 696f607bbae0b7f4ea80354e8247e7e2
+      internalID: -8936915524391103071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_8
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77a2d4b793acb0c46b4fe43f608964f6
+      internalID: 3943005758639163088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_9
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d67af941cbc18ff46a5ce03dcde6da97
+      internalID: 240716791504629871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_10
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fcadbff4a9911a4ea362efea3fb7c3b
+      internalID: -8534345399803949123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_11
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84de914f4e79c2447a48b4427f121a01
+      internalID: -1997072553610371221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_12
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14fd74fe1eef21b41851214136526d69
+      internalID: -5801151938177988409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_13
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62ee630d269ea26468c48a64c1d59e79
+      internalID: -4673418578931872479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_14
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb649a6211a530644898150ccfa7c0e0
+      internalID: 6233572695385445444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_15
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faf625e9b678d3040bb820ecc730db73
+      internalID: 8996874748624713992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_16
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f458954af14470a459cb769fb4ebbdc3
+      internalID: -203331590209417497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_17
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a242675e1f5205949bb8a2ab1bca6a4a
+      internalID: 7494905075264847599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d17511e269dc81a49badfbe54c14cfd5
+      internalID: -3123102411367958985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_19
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce9f80db999b96946a2152a1e1f4f289
+      internalID: 8067015334588677195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_20
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd4b939243aa3f54497902418e439a6f
+      internalID: 908456869141918574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_21
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de28b47102c6ffb4db845aa48410856c
+      internalID: 5439614150797642317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_22
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b662ee5389666ab4dbb1df40d55fe860
+      internalID: 848126905705660380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_23
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f01e23d4e3d4d444b3e1580ba3db538
+      internalID: 7046137127027590368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_24
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff88ef067b5298149b1d06a3eb42ea70
+      internalID: -5216297241802803732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_25
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c8bf64904abe7a41aeb787426489fa7
+      internalID: -8466609088502244827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_26
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb17921c7ff21a64eb059b184912c063
+      internalID: 4777363737023296968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_27
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0016316b0d2433343b60dddd7727d294
+      internalID: 3395089885124737997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_28
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ac554b9d3db7cf4e802c6315238fa78
+      internalID: -7471115184885544157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_29
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 551b1916063777d46b98b574a0e04e27
+      internalID: 601830715117748337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_30
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f99d9ad437d44d3459e0fb8b09b367aa
+      internalID: 8737931827495046908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_31
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25fe42c5f23245e4ba6ba66ab6a75d55
+      internalID: 5193738618804791249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_32
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e701e8e7d14e144da3cacc470f368cc
+      internalID: 5347289368561035544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_33
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf488dec4edcf5140bbca18b7d44494d
+      internalID: -2344703617850140401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_34
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4f3b77953b695241b2b4ba347b1ce5a
+      internalID: 2579563303397369755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_35
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec171951bf8fec9468f520041e902e17
+      internalID: 844367316091813219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53f5a259c94623d479c07809307921fa
+      internalID: 867536289791524399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_37
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2e308eb715f82e419be5ab7f58801cf
+      internalID: 2871889280274859876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_38
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e5ebec0d29d7c1449d279ffeac947a8
+      internalID: 5283421231664294912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_39
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf561a48cc076cb4cadffea9d1f5ae3d
+      internalID: -4148799985803025765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_40
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 859036bbb2ca79345b235c288ac88ab5
+      internalID: -2199310863086339804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_41
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 075fa60ba5d0d554e87cd43b3b472c27
+      internalID: 6872068666383475209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_42
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4df42a1e4cb19064b822ba96b33bbab1
+      internalID: 591938265503664328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_43
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4539c258989a1d648b836e19b006bd1f
+      internalID: -469075953637213384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_44
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89e8f03d1d9d66f42b65ae319541cb0c
+      internalID: -6035206413506207723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_45
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f947e5069b0890e41ac41d37b31b82a2
+      internalID: 8903311060553969980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_46
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41fec78eafb7aed46a5ad13ed13ec6c5
+      internalID: -521577587854319294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_47
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91b98dd4bbdee024494c739e84b4e72b
+      internalID: 5761296242053593365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_48
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d91ef96b56cb8194db0aee43b08f0782
+      internalID: 2022814457371832904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_49
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb271344eb08b17408814bb2d443e8b4
+      internalID: 6728056347446585144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_50
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f751cc3d5c5f7b49b189636814f3d99
+      internalID: 7640945818618207218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_51
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e8ca8e21b17ef6409ca01740eceef1d
+      internalID: -5329708578648980303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_52
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 143d95bcd0185404aba88c73305ce2cb
+      internalID: 5793715430537114697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_53
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7250bd28dd0307d4dacd49f356551a3a
+      internalID: -1622751764133160811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d766337042e10bd4a96b17623a498e55
+      internalID: -5560980902280801903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_shadow_55
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 192
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb7a3143b26d6db4795bb0d0dce45731
+      internalID: -6735505748420650392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 8b18e0c0e8d9792428650bf8b2730be0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      nosfer_shadow_13: -4673418578931872479
+      nosfer_shadow_55: -6735505748420650392
+      nosfer_shadow_39: -4148799985803025765
+      nosfer_shadow_47: 5761296242053593365
+      nosfer_shadow_11: -1997072553610371221
+      nosfer_shadow_17: 7494905075264847599
+      nosfer_shadow_24: -5216297241802803732
+      nosfer_shadow_51: -5329708578648980303
+      nosfer_shadow_44: -6035206413506207723
+      nosfer_shadow_1: -7024147351283762991
+      nosfer_shadow_5: 4600860462838658996
+      nosfer_shadow_53: -1622751764133160811
+      nosfer_shadow_30: 8737931827495046908
+      nosfer_shadow_14: 6233572695385445444
+      nosfer_shadow_48: 2022814457371832904
+      nosfer_shadow_29: 601830715117748337
+      nosfer_shadow_54: -5560980902280801903
+      nosfer_shadow_40: -2199310863086339804
+      nosfer_shadow_28: -7471115184885544157
+      nosfer_shadow_18: -3123102411367958985
+      nosfer_shadow_46: -521577587854319294
+      nosfer_shadow_27: 3395089885124737997
+      nosfer_shadow_15: 8996874748624713992
+      nosfer_shadow_9: 240716791504629871
+      nosfer_shadow_23: 7046137127027590368
+      nosfer_shadow_41: 6872068666383475209
+      nosfer_shadow_20: 908456869141918574
+      nosfer_shadow_3: -1106733703551480405
+      nosfer_shadow_8: 3943005758639163088
+      nosfer_shadow_31: 5193738618804791249
+      nosfer_shadow_49: 6728056347446585144
+      nosfer_shadow_33: -2344703617850140401
+      nosfer_shadow_34: 2579563303397369755
+      nosfer_shadow_2: -7039087205183396229
+      nosfer_shadow_19: 8067015334588677195
+      nosfer_shadow_21: 5439614150797642317
+      nosfer_shadow_35: 844367316091813219
+      nosfer_shadow_0: 2120490544239434908
+      nosfer_shadow_12: -5801151938177988409
+      nosfer_shadow_4: 6232894647415354372
+      nosfer_shadow_6: -5799274639968185607
+      nosfer_shadow_32: 5347289368561035544
+      nosfer_shadow_37: 2871889280274859876
+      nosfer_shadow_7: -8936915524391103071
+      nosfer_shadow_26: 4777363737023296968
+      nosfer_shadow_43: -469075953637213384
+      nosfer_shadow_50: 7640945818618207218
+      nosfer_shadow_16: -203331590209417497
+      nosfer_shadow_25: -8466609088502244827
+      nosfer_shadow_42: 591938265503664328
+      nosfer_shadow_10: -8534345399803949123
+      nosfer_shadow_45: 8903311060553969980
+      nosfer_shadow_38: 5283421231664294912
+      nosfer_shadow_52: 5793715430537114697
+      nosfer_shadow_22: 848126905705660380
+      nosfer_shadow_36: 867536289791524399
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

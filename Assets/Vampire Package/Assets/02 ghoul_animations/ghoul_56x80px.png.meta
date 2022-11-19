@@ -1,0 +1,1485 @@
+fileFormatVersion: 2
+guid: 5af8829334e681b48be01e7feaa8ad86
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8784549144068667958
+    second: ghoul_56x80px_0
+  - first:
+      213: 2872033798211150885
+    second: ghoul_56x80px_1
+  - first:
+      213: 6736600574679039110
+    second: ghoul_56x80px_2
+  - first:
+      213: 1346706464102471029
+    second: ghoul_56x80px_3
+  - first:
+      213: 6663092420214236228
+    second: ghoul_56x80px_4
+  - first:
+      213: 1979573701749838936
+    second: ghoul_56x80px_5
+  - first:
+      213: -8639711408063818125
+    second: ghoul_56x80px_6
+  - first:
+      213: 6469334286868264709
+    second: ghoul_56x80px_7
+  - first:
+      213: 7196667487724111595
+    second: ghoul_56x80px_8
+  - first:
+      213: 7555103616868633730
+    second: ghoul_56x80px_9
+  - first:
+      213: -3107183295775827980
+    second: ghoul_56x80px_10
+  - first:
+      213: -7168039116403443093
+    second: ghoul_56x80px_11
+  - first:
+      213: 6855022785075522726
+    second: ghoul_56x80px_12
+  - first:
+      213: 4389186463378972887
+    second: ghoul_56x80px_13
+  - first:
+      213: 4734342141935808548
+    second: ghoul_56x80px_14
+  - first:
+      213: -4692654022411113334
+    second: ghoul_56x80px_15
+  - first:
+      213: 7336185395208765102
+    second: ghoul_56x80px_16
+  - first:
+      213: 2450024249037620328
+    second: ghoul_56x80px_17
+  - first:
+      213: 178629208833017583
+    second: ghoul_56x80px_18
+  - first:
+      213: -5552652383087842153
+    second: ghoul_56x80px_19
+  - first:
+      213: 1005347506407284838
+    second: ghoul_56x80px_20
+  - first:
+      213: 5026208713879859274
+    second: ghoul_56x80px_21
+  - first:
+      213: -550689834468342357
+    second: ghoul_56x80px_22
+  - first:
+      213: 278774516452634355
+    second: ghoul_56x80px_23
+  - first:
+      213: 2086644022218805631
+    second: ghoul_56x80px_24
+  - first:
+      213: 3621491110300525798
+    second: ghoul_56x80px_25
+  - first:
+      213: 6623016372237512457
+    second: ghoul_56x80px_26
+  - first:
+      213: 3132450460955413297
+    second: ghoul_56x80px_27
+  - first:
+      213: 3572851662841110905
+    second: ghoul_56x80px_28
+  - first:
+      213: -1531796524524430800
+    second: ghoul_56x80px_29
+  - first:
+      213: -5653090567394941455
+    second: ghoul_56x80px_30
+  - first:
+      213: 7081338763452499147
+    second: ghoul_56x80px_31
+  - first:
+      213: -8649916191754281363
+    second: ghoul_56x80px_32
+  - first:
+      213: -8984779667405140237
+    second: ghoul_56x80px_33
+  - first:
+      213: -670746345124406879
+    second: ghoul_56x80px_34
+  - first:
+      213: 7875021905223886536
+    second: ghoul_56x80px_35
+  - first:
+      213: 584015031810760755
+    second: ghoul_56x80px_36
+  - first:
+      213: -6052342160030935805
+    second: ghoul_56x80px_37
+  - first:
+      213: -7824094284984902202
+    second: ghoul_56x80px_38
+  - first:
+      213: -6852377915563785195
+    second: ghoul_56x80px_39
+  - first:
+      213: -2815142996843814056
+    second: ghoul_56x80px_40
+  - first:
+      213: -2429582557259141857
+    second: ghoul_56x80px_41
+  - first:
+      213: -5047067697479046207
+    second: ghoul_56x80px_42
+  - first:
+      213: 784925874843849502
+    second: ghoul_56x80px_43
+  - first:
+      213: -1767562760942933002
+    second: ghoul_56x80px_44
+  - first:
+      213: 3553489947052376597
+    second: ghoul_56x80px_45
+  - first:
+      213: 3591078745746191555
+    second: ghoul_56x80px_46
+  - first:
+      213: -3772295755571506447
+    second: ghoul_56x80px_47
+  - first:
+      213: 1736047628326933064
+    second: ghoul_56x80px_48
+  - first:
+      213: -6601557413189866272
+    second: ghoul_56x80px_49
+  - first:
+      213: -1400323584603761383
+    second: ghoul_56x80px_50
+  - first:
+      213: 4167276210389285447
+    second: ghoul_56x80px_51
+  - first:
+      213: 8038519825001222525
+    second: ghoul_56x80px_52
+  - first:
+      213: 6261126597174122192
+    second: ghoul_56x80px_53
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ghoul_56x80px_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f13d55a460590ee4ea70afea8f054970
+      internalID: -8784549144068667958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8157afc21f844ba49ac10b5053b45726
+      internalID: 2872033798211150885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14638d337d8bab2478c7ff363cf4155c
+      internalID: 6736600574679039110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_3
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45c698985b5c57748b149f6856e9d4c0
+      internalID: 1346706464102471029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_4
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea7835421901f7143b655d8e5a867509
+      internalID: 6663092420214236228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_5
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bf4d098ce68d06498367c2cb00c326c
+      internalID: 1979573701749838936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_6
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d454700a5390c7409eff4bacaaceae4
+      internalID: -8639711408063818125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_7
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8722462185c97f24893fca0f8702e8ad
+      internalID: 6469334286868264709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_8
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 566b3d836fba46c45893be274d090a1d
+      internalID: 7196667487724111595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b128eb11a79e936488ab718472d8692e
+      internalID: 7555103616868633730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_10
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2695d092313e6814abecbee2bc8786f1
+      internalID: -3107183295775827980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_11
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de6c0c2713117c7468c6d73d13fa41ff
+      internalID: -7168039116403443093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_12
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a74b497b00cbe0346ab0be3e4f06b4d6
+      internalID: 6855022785075522726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_13
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf444e80c31479b4dbd7c88c3055cf69
+      internalID: 4389186463378972887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_14
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbbf9ba00131ed141827de81ccfb1b63
+      internalID: 4734342141935808548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_15
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f60c650391a0594e97ad2018415df5c
+      internalID: -4692654022411113334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_16
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01dbdd08adacac04dbe0f20d2efb92d2
+      internalID: 7336185395208765102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_17
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfbcc15ce129be8409106a4081d5b3c0
+      internalID: 2450024249037620328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3934df17a94744f45b2eb1e115ba8079
+      internalID: 178629208833017583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_19
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b439c0bd349ba747b6855d42968c97c
+      internalID: -5552652383087842153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_20
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1da3f3289757c1a4b86fddb6a7681fe9
+      internalID: 1005347506407284838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_21
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99956016eedcfcf4c8f096cfa8da4e04
+      internalID: 5026208713879859274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_22
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2abca21e9a587614b89b3ca41b23fa40
+      internalID: -550689834468342357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_23
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffaaf143275d0b44986969f7ee7a05b8
+      internalID: 278774516452634355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_24
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb30028292c75c24ca4ef38661aa6a7c
+      internalID: 2086644022218805631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_25
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c190827383fae334a98085b6725ef889
+      internalID: 3621491110300525798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_26
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85f39c99e66022a4f9b83e80e090f81f
+      internalID: 6623016372237512457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f84834830a4d4944a8402fc3e3df15f5
+      internalID: 3132450460955413297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_28
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 192
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af7401a2692b7034088103a74d300f0e
+      internalID: 3572851662841110905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_29
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 192
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24afb11fde78e85489beaeaeeaa1ad51
+      internalID: -1531796524524430800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_30
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 192
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c4f3c6ed4946ff43887f4f8e31ea569
+      internalID: -5653090567394941455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_31
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 192
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4656d7c7febe99a408b5c955c9273b6f
+      internalID: 7081338763452499147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_32
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 192
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21072022d101cdf40bee5b1d9b83ad03
+      internalID: -8649916191754281363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_33
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 192
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f882e288ac97f7a4283f796b011da1dd
+      internalID: -8984779667405140237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_34
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 192
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52fa4a6df98405c44b31765cd84b9245
+      internalID: -670746345124406879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_35
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 192
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36a049d41b7138a4082d1da5e8f8e7c7
+      internalID: 7875021905223886536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c4c98d78e5e9274d8f566431466e865
+      internalID: 584015031810760755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_37
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 112
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ec0cd3101e6a69459edcf2f533cd2e3
+      internalID: -6052342160030935805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_38
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 112
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b77630e547639984fa8a3800bc34aad5
+      internalID: -7824094284984902202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_39
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 112
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50c0c31f75894d5498b6bc9a714dad68
+      internalID: -6852377915563785195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_40
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 112
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb0042694a0e2c443a7bfaf43ac6b455
+      internalID: -2815142996843814056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_41
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 112
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1ef16849bffe28498b13553ebbf1133
+      internalID: -2429582557259141857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_42
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 112
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0881aeacd4186ee4fa595979d86b08e8
+      internalID: -5047067697479046207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_43
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 112
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce0360ad9f4614b4692d144db716baa8
+      internalID: 784925874843849502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_44
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 112
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94ede64e8671bee42b0d642615eb6a54
+      internalID: -1767562760942933002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 447b91c1db5235b47a19faacede897a2
+      internalID: 3553489947052376597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_46
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 32
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b9850ee0310cf04d9f5133f6a18ce6a
+      internalID: 3591078745746191555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_47
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 32
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 003754e13bb2eff4182c2465a1c62974
+      internalID: -3772295755571506447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_48
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 32
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17d93f1de96960c43b469b8a2b4e7aeb
+      internalID: 1736047628326933064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_49
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 32
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 062c83f48b497e241b1cfd8a68591177
+      internalID: -6601557413189866272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_50
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 32
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2af6926db9c5e14091c77c401304fff
+      internalID: -1400323584603761383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_51
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 32
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 726d3c379236af742bd48777be2d2519
+      internalID: 4167276210389285447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_52
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 32
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d7318c6ccc7241439687965bb0141f9
+      internalID: 8038519825001222525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_53
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 32
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cfbb4b4aae49c34986baa1fcb066d58
+      internalID: 6261126597174122192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: b1505547639cebb4ea815eff238aa517
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ghoul_56x80px_20: 1005347506407284838
+      ghoul_56x80px_25: 3621491110300525798
+      ghoul_56x80px_32: -8649916191754281363
+      ghoul_56x80px_40: -2815142996843814056
+      ghoul_56x80px_39: -6852377915563785195
+      ghoul_56x80px_33: -8984779667405140237
+      ghoul_56x80px_46: 3591078745746191555
+      ghoul_56x80px_45: 3553489947052376597
+      ghoul_56x80px_3: 1346706464102471029
+      ghoul_56x80px_13: 4389186463378972887
+      ghoul_56x80px_35: 7875021905223886536
+      ghoul_56x80px_44: -1767562760942933002
+      ghoul_56x80px_52: 8038519825001222525
+      ghoul_56x80px_7: 6469334286868264709
+      ghoul_56x80px_18: 178629208833017583
+      ghoul_56x80px_29: -1531796524524430800
+      ghoul_56x80px_4: 6663092420214236228
+      ghoul_56x80px_26: 6623016372237512457
+      ghoul_56x80px_19: -5552652383087842153
+      ghoul_56x80px_5: 1979573701749838936
+      ghoul_56x80px_36: 584015031810760755
+      ghoul_56x80px_10: -3107183295775827980
+      ghoul_56x80px_21: 5026208713879859274
+      ghoul_56x80px_11: -7168039116403443093
+      ghoul_56x80px_38: -7824094284984902202
+      ghoul_56x80px_50: -1400323584603761383
+      ghoul_56x80px_41: -2429582557259141857
+      ghoul_56x80px_42: -5047067697479046207
+      ghoul_56x80px_53: 6261126597174122192
+      ghoul_56x80px_23: 278774516452634355
+      ghoul_56x80px_2: 6736600574679039110
+      ghoul_56x80px_15: -4692654022411113334
+      ghoul_56x80px_6: -8639711408063818125
+      ghoul_56x80px_24: 2086644022218805631
+      ghoul_56x80px_34: -670746345124406879
+      ghoul_56x80px_0: -8784549144068667958
+      ghoul_56x80px_9: 7555103616868633730
+      ghoul_56x80px_51: 4167276210389285447
+      ghoul_56x80px_22: -550689834468342357
+      ghoul_56x80px_14: 4734342141935808548
+      ghoul_56x80px_8: 7196667487724111595
+      ghoul_56x80px_12: 6855022785075522726
+      ghoul_56x80px_28: 3572851662841110905
+      ghoul_56x80px_30: -5653090567394941455
+      ghoul_56x80px_48: 1736047628326933064
+      ghoul_56x80px_1: 2872033798211150885
+      ghoul_56x80px_16: 7336185395208765102
+      ghoul_56x80px_49: -6601557413189866272
+      ghoul_56x80px_43: 784925874843849502
+      ghoul_56x80px_27: 3132450460955413297
+      ghoul_56x80px_37: -6052342160030935805
+      ghoul_56x80px_47: -3772295755571506447
+      ghoul_56x80px_31: 7081338763452499147
+      ghoul_56x80px_17: 2450024249037620328
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

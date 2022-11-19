@@ -1,0 +1,1535 @@
+fileFormatVersion: 2
+guid: ea7defacf948a8e4ba3fc5c89327c10a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 733867803890081672
+    second: nosfer_color 2_green_0
+  - first:
+      213: 2909708892603156806
+    second: nosfer_color 2_green_1
+  - first:
+      213: -6038830931948173712
+    second: nosfer_color 2_green_2
+  - first:
+      213: 6153190954432951077
+    second: nosfer_color 2_green_3
+  - first:
+      213: -5024380668528587265
+    second: nosfer_color 2_green_4
+  - first:
+      213: -1512182177045666479
+    second: nosfer_color 2_green_5
+  - first:
+      213: 8734058065360373237
+    second: nosfer_color 2_green_6
+  - first:
+      213: 8851601747091788148
+    second: nosfer_color 2_green_7
+  - first:
+      213: 5167059099163562631
+    second: nosfer_color 2_green_8
+  - first:
+      213: -7412437395511973485
+    second: nosfer_color 2_green_9
+  - first:
+      213: -4155848879639228334
+    second: nosfer_color 2_green_10
+  - first:
+      213: -3145310994735146732
+    second: nosfer_color 2_green_11
+  - first:
+      213: 6685027956831796923
+    second: nosfer_color 2_green_12
+  - first:
+      213: -6283504088337802264
+    second: nosfer_color 2_green_13
+  - first:
+      213: 6536360192415575846
+    second: nosfer_color 2_green_14
+  - first:
+      213: 9146221599795128746
+    second: nosfer_color 2_green_15
+  - first:
+      213: -1317443631649966371
+    second: nosfer_color 2_green_16
+  - first:
+      213: 7284798886774503208
+    second: nosfer_color 2_green_17
+  - first:
+      213: -4271257549234274994
+    second: nosfer_color 2_green_18
+  - first:
+      213: -3549406766131072254
+    second: nosfer_color 2_green_19
+  - first:
+      213: -2397367612103657305
+    second: nosfer_color 2_green_20
+  - first:
+      213: 6288737296688060410
+    second: nosfer_color 2_green_21
+  - first:
+      213: 969906368821788331
+    second: nosfer_color 2_green_22
+  - first:
+      213: 8708198494504731787
+    second: nosfer_color 2_green_23
+  - first:
+      213: 4832376456322263320
+    second: nosfer_color 2_green_24
+  - first:
+      213: 7919017586949704404
+    second: nosfer_color 2_green_25
+  - first:
+      213: -3627687220178571637
+    second: nosfer_color 2_green_26
+  - first:
+      213: 555257642354739858
+    second: nosfer_color 2_green_27
+  - first:
+      213: 1016555439535286738
+    second: nosfer_color 2_green_28
+  - first:
+      213: -7383813804657687797
+    second: nosfer_color 2_green_29
+  - first:
+      213: 9065282999979004488
+    second: nosfer_color 2_green_30
+  - first:
+      213: -667387259463155744
+    second: nosfer_color 2_green_31
+  - first:
+      213: -6312062750142101940
+    second: nosfer_color 2_green_32
+  - first:
+      213: 4567873642428182231
+    second: nosfer_color 2_green_33
+  - first:
+      213: -3398547786395490396
+    second: nosfer_color 2_green_34
+  - first:
+      213: 441581199475114577
+    second: nosfer_color 2_green_35
+  - first:
+      213: 8600960103281279639
+    second: nosfer_color 2_green_36
+  - first:
+      213: 3545866446742590510
+    second: nosfer_color 2_green_37
+  - first:
+      213: 6479111494686416428
+    second: nosfer_color 2_green_38
+  - first:
+      213: 3763141491555537609
+    second: nosfer_color 2_green_39
+  - first:
+      213: -3673746156462511271
+    second: nosfer_color 2_green_40
+  - first:
+      213: -4655773479698377995
+    second: nosfer_color 2_green_41
+  - first:
+      213: -1513560212774334510
+    second: nosfer_color 2_green_42
+  - first:
+      213: 8177725347253965950
+    second: nosfer_color 2_green_43
+  - first:
+      213: -7178053075142657153
+    second: nosfer_color 2_green_44
+  - first:
+      213: 681295740136499806
+    second: nosfer_color 2_green_45
+  - first:
+      213: 3680832078608064633
+    second: nosfer_color 2_green_46
+  - first:
+      213: 3476735650652866640
+    second: nosfer_color 2_green_47
+  - first:
+      213: -9005666884406069556
+    second: nosfer_color 2_green_48
+  - first:
+      213: -6106602889953490385
+    second: nosfer_color 2_green_49
+  - first:
+      213: -8516416175255461042
+    second: nosfer_color 2_green_50
+  - first:
+      213: 7337674541766071201
+    second: nosfer_color 2_green_51
+  - first:
+      213: 3617120927344194275
+    second: nosfer_color 2_green_52
+  - first:
+      213: 3914534209372442109
+    second: nosfer_color 2_green_53
+  - first:
+      213: -4018418977304618440
+    second: nosfer_color 2_green_54
+  - first:
+      213: -7942687962364426909
+    second: nosfer_color 2_green_55
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: nosfer_color 2_green_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a400b43614322b44e8f5975398dc7aac
+      internalID: 733867803890081672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65da4d936b5e5434dba58cdb11394530
+      internalID: 2909708892603156806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f204d2f36999134e9bb665844f2959c
+      internalID: -6038830931948173712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_3
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d1849c167d1ca5449669415d78ad006
+      internalID: 6153190954432951077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_4
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e43289653471db42a7c6a5542fa1cbd
+      internalID: -5024380668528587265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_5
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91347bed2c23fd34fa88a7e7a054123e
+      internalID: -1512182177045666479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_6
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7539502e9a18b6a4ba7a60f28ba39ab9
+      internalID: 8734058065360373237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_7
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e681f37da3d2c3748a08c6483335484a
+      internalID: 8851601747091788148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_8
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1cb53a948a2ee64d86e2e1022eabe90
+      internalID: 5167059099163562631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_9
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45e01cb63d5aae1459371b4e70a542d0
+      internalID: -7412437395511973485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_10
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ce0733f7e313a84ba2aa058dfdced47
+      internalID: -4155848879639228334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_11
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5a5c99edbef39a4baff3fd14021a47d
+      internalID: -3145310994735146732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_12
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 848f743bf80f8934c9ca8f3b2c262b53
+      internalID: 6685027956831796923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_13
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3f43737bc2bb6f4c9ff3b5b1d86457e
+      internalID: -6283504088337802264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_14
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8fdbb9eebd834e47a94d108acc667fb
+      internalID: 6536360192415575846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_15
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d90e88e9ccbbde24cb5d6d4d02ac758c
+      internalID: 9146221599795128746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_16
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeb3255e9f090d545a2f5fef65a11219
+      internalID: -1317443631649966371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_17
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d59a85abd905c6468709e1e9e44919d
+      internalID: 7284798886774503208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbc63faf08f7a8644ac073e410906ef1
+      internalID: -4271257549234274994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_19
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0e3eff662eedf94999384fb24ebb372
+      internalID: -3549406766131072254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_20
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 692fa1bec8a4aa94eae9cfa99070143c
+      internalID: -2397367612103657305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_21
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d63c819a315d98c499c60e484286fcd0
+      internalID: 6288737296688060410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_22
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cef83a00a40bed489a4cb25434bfd54
+      internalID: 969906368821788331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_23
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 781905aeeb897c344baab38d23b7b32f
+      internalID: 8708198494504731787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_24
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d40d12c53a0a8646a595b7feb9b0bd9
+      internalID: 4832376456322263320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_25
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d80b2700ec996949aa49b887dea2af4
+      internalID: 7919017586949704404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_26
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55e1bd92c58761e42941c05cec00f2ee
+      internalID: -3627687220178571637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_27
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8502ab90cbde59043a2befdf50e50510
+      internalID: 555257642354739858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_28
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b11be8442aa7fc4479b8a93e6523bad5
+      internalID: 1016555439535286738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_29
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ea653b0f6c027d408c206e4549fde0f
+      internalID: -7383813804657687797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_30
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eb9e44dbde858f4ebe78d4f31c2644c
+      internalID: 9065282999979004488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_31
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b7e909fdcfa0bb44b6ca7a17607eb57
+      internalID: -667387259463155744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_32
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47c176aa6291b2f4081e90001e358284
+      internalID: -6312062750142101940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_33
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef01b0ef1ba243041bd463a6f078fcff
+      internalID: 4567873642428182231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_34
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28fb63b0764d20646b84bd3063d4293e
+      internalID: -3398547786395490396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_35
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed7ea7581a8c72c42b835b1ea0341e53
+      internalID: 441581199475114577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efc022556fb7d9a4e9ebc43b944e2734
+      internalID: 8600960103281279639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_37
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a416023d9977a194e8ee3c576d8b58bb
+      internalID: 3545866446742590510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_38
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca1abdfb5b1653d41af1f194304b4099
+      internalID: 6479111494686416428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_39
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3813108ad30ef9542a16bb89c14438ca
+      internalID: 3763141491555537609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_40
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27057d9b35dd9404bad33cf8815e2c94
+      internalID: -3673746156462511271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_41
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5709effa7091134caae20ae99cd11f3
+      internalID: -4655773479698377995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_42
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6df4df2c631d6544bd669f36d79826d
+      internalID: -1513560212774334510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_43
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a202339c4fa27324c93e8918a7c20176
+      internalID: 8177725347253965950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_44
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20adfac842395f7469e7d9af152220e6
+      internalID: -7178053075142657153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_45
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33c5dd42cdc50ff4a9e9f851868e1b12
+      internalID: 681295740136499806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_46
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a77505e57f9879b4697b86ea771dd94d
+      internalID: 3680832078608064633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_47
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ba3d199c9c42f14a9d73a9ac5b3f032
+      internalID: 3476735650652866640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_48
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c4c912c2e4cf4a48989ce83e8b39785
+      internalID: -9005666884406069556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_49
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0188aed350a07c1478cf55793932bfa0
+      internalID: -6106602889953490385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_50
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85a6fbbbd4ed5674ba4c08258a6c7fc0
+      internalID: -8516416175255461042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_51
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c4687480f9d77e4da2aac90a40f3d57
+      internalID: 7337674541766071201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_52
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53b3f40ebdc8cf547aab47ba4ebbb2b3
+      internalID: 3617120927344194275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_53
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdf2d69d05a77ce488fd53d711b527e9
+      internalID: 3914534209372442109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45bf3b22fe551534b962c790f1dd7ebc
+      internalID: -4018418977304618440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nosfer_color 2_green_55
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 192
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82ed8adbebcee944ea682a1ed314cc16
+      internalID: -7942687962364426909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: cf11bccb7d9097542ab9f9eb7b5bd53a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      nosfer_color 2_green_50: -8516416175255461042
+      nosfer_color 2_green_12: 6685027956831796923
+      nosfer_color 2_green_10: -4155848879639228334
+      nosfer_color 2_green_39: 3763141491555537609
+      nosfer_color 2_green_40: -3673746156462511271
+      nosfer_color 2_green_1: 2909708892603156806
+      nosfer_color 2_green_7: 8851601747091788148
+      nosfer_color 2_green_4: -5024380668528587265
+      nosfer_color 2_green_51: 7337674541766071201
+      nosfer_color 2_green_9: -7412437395511973485
+      nosfer_color 2_green_13: -6283504088337802264
+      nosfer_color 2_green_53: 3914534209372442109
+      nosfer_color 2_green_44: -7178053075142657153
+      nosfer_color 2_green_49: -6106602889953490385
+      nosfer_color 2_green_34: -3398547786395490396
+      nosfer_color 2_green_18: -4271257549234274994
+      nosfer_color 2_green_19: -3549406766131072254
+      nosfer_color 2_green_5: -1512182177045666479
+      nosfer_color 2_green_33: 4567873642428182231
+      nosfer_color 2_green_54: -4018418977304618440
+      nosfer_color 2_green_32: -6312062750142101940
+      nosfer_color 2_green_43: 8177725347253965950
+      nosfer_color 2_green_47: 3476735650652866640
+      nosfer_color 2_green_2: -6038830931948173712
+      nosfer_color 2_green_11: -3145310994735146732
+      nosfer_color 2_green_22: 969906368821788331
+      nosfer_color 2_green_38: 6479111494686416428
+      nosfer_color 2_green_3: 6153190954432951077
+      nosfer_color 2_green_23: 8708198494504731787
+      nosfer_color 2_green_26: -3627687220178571637
+      nosfer_color 2_green_31: -667387259463155744
+      nosfer_color 2_green_48: -9005666884406069556
+      nosfer_color 2_green_16: -1317443631649966371
+      nosfer_color 2_green_27: 555257642354739858
+      nosfer_color 2_green_21: 6288737296688060410
+      nosfer_color 2_green_20: -2397367612103657305
+      nosfer_color 2_green_46: 3680832078608064633
+      nosfer_color 2_green_37: 3545866446742590510
+      nosfer_color 2_green_55: -7942687962364426909
+      nosfer_color 2_green_6: 8734058065360373237
+      nosfer_color 2_green_30: 9065282999979004488
+      nosfer_color 2_green_52: 3617120927344194275
+      nosfer_color 2_green_41: -4655773479698377995
+      nosfer_color 2_green_36: 8600960103281279639
+      nosfer_color 2_green_17: 7284798886774503208
+      nosfer_color 2_green_8: 5167059099163562631
+      nosfer_color 2_green_15: 9146221599795128746
+      nosfer_color 2_green_28: 1016555439535286738
+      nosfer_color 2_green_0: 733867803890081672
+      nosfer_color 2_green_14: 6536360192415575846
+      nosfer_color 2_green_25: 7919017586949704404
+      nosfer_color 2_green_24: 4832376456322263320
+      nosfer_color 2_green_29: -7383813804657687797
+      nosfer_color 2_green_42: -1513560212774334510
+      nosfer_color 2_green_45: 681295740136499806
+      nosfer_color 2_green_35: 441581199475114577
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

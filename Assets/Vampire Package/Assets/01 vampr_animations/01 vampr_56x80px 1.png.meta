@@ -1,0 +1,1560 @@
+fileFormatVersion: 2
+guid: da224ef8425aa3d419a172f197a8dc5a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4556447133756628702
+    second: 01 vampr_56x80px 1_0
+  - first:
+      213: 3106501073478228650
+    second: 01 vampr_56x80px 1_1
+  - first:
+      213: -1620378427397362257
+    second: 01 vampr_56x80px 1_2
+  - first:
+      213: 519116610443169097
+    second: 01 vampr_56x80px 1_3
+  - first:
+      213: 1082570539150713435
+    second: 01 vampr_56x80px 1_4
+  - first:
+      213: 7804749925640198191
+    second: 01 vampr_56x80px 1_5
+  - first:
+      213: 2176429668542478027
+    second: 01 vampr_56x80px 1_6
+  - first:
+      213: 3594175283115777688
+    second: 01 vampr_56x80px 1_7
+  - first:
+      213: 6429469635048551839
+    second: 01 vampr_56x80px 1_8
+  - first:
+      213: -4171876020978550553
+    second: 01 vampr_56x80px 1_9
+  - first:
+      213: -3302004527138572881
+    second: 01 vampr_56x80px 1_10
+  - first:
+      213: -6641881811745733042
+    second: 01 vampr_56x80px 1_11
+  - first:
+      213: -1233085760954430044
+    second: 01 vampr_56x80px 1_12
+  - first:
+      213: 2208561780590897268
+    second: 01 vampr_56x80px 1_13
+  - first:
+      213: -3694132469719176165
+    second: 01 vampr_56x80px 1_14
+  - first:
+      213: 691377283655243264
+    second: 01 vampr_56x80px 1_15
+  - first:
+      213: 5667786393347747083
+    second: 01 vampr_56x80px 1_16
+  - first:
+      213: 234872056477886463
+    second: 01 vampr_56x80px 1_17
+  - first:
+      213: -6367124459444301216
+    second: 01 vampr_56x80px 1_18
+  - first:
+      213: -915518052667351571
+    second: 01 vampr_56x80px 1_19
+  - first:
+      213: -1184952140443548037
+    second: 01 vampr_56x80px 1_20
+  - first:
+      213: 524710495117466793
+    second: 01 vampr_56x80px 1_21
+  - first:
+      213: -8744387568841911300
+    second: 01 vampr_56x80px 1_22
+  - first:
+      213: 7457454783380545405
+    second: 01 vampr_56x80px 1_23
+  - first:
+      213: 6673730413770092042
+    second: 01 vampr_56x80px 1_24
+  - first:
+      213: -3782884824287044340
+    second: 01 vampr_56x80px 1_25
+  - first:
+      213: 6295459203316502079
+    second: 01 vampr_56x80px 1_26
+  - first:
+      213: 3819515615212168156
+    second: 01 vampr_56x80px 1_27
+  - first:
+      213: -9125643410224415183
+    second: 01 vampr_56x80px 1_28
+  - first:
+      213: -3022085653381739410
+    second: 01 vampr_56x80px 1_29
+  - first:
+      213: 2253932403090617763
+    second: 01 vampr_56x80px 1_30
+  - first:
+      213: 303643208751441756
+    second: 01 vampr_56x80px 1_31
+  - first:
+      213: -4020957364126256541
+    second: 01 vampr_56x80px 1_32
+  - first:
+      213: -1505521078124306675
+    second: 01 vampr_56x80px 1_33
+  - first:
+      213: -8766189316141287126
+    second: 01 vampr_56x80px 1_34
+  - first:
+      213: -6263827364899157341
+    second: 01 vampr_56x80px 1_35
+  - first:
+      213: 5017674649082371384
+    second: 01 vampr_56x80px 1_36
+  - first:
+      213: 8179989854292628563
+    second: 01 vampr_56x80px 1_37
+  - first:
+      213: -4131821263518218110
+    second: 01 vampr_56x80px 1_38
+  - first:
+      213: 1278841942202461420
+    second: 01 vampr_56x80px 1_39
+  - first:
+      213: -2425302761002070856
+    second: 01 vampr_56x80px 1_40
+  - first:
+      213: 1533182307629322103
+    second: 01 vampr_56x80px 1_41
+  - first:
+      213: 7964812420184978102
+    second: 01 vampr_56x80px 1_42
+  - first:
+      213: -723887124672325613
+    second: 01 vampr_56x80px 1_43
+  - first:
+      213: -6309206090757175139
+    second: 01 vampr_56x80px 1_44
+  - first:
+      213: -173221074550768413
+    second: 01 vampr_56x80px 1_45
+  - first:
+      213: -7205316095197419253
+    second: 01 vampr_56x80px 1_46
+  - first:
+      213: 3179051157793172029
+    second: 01 vampr_56x80px 1_47
+  - first:
+      213: 4834735479523535208
+    second: 01 vampr_56x80px 1_48
+  - first:
+      213: -7772394663299075626
+    second: 01 vampr_56x80px 1_49
+  - first:
+      213: 6190632814716181955
+    second: 01 vampr_56x80px 1_50
+  - first:
+      213: 5273992981124917877
+    second: 01 vampr_56x80px 1_51
+  - first:
+      213: 7059763574163193929
+    second: 01 vampr_56x80px 1_52
+  - first:
+      213: -8771142004915224110
+    second: 01 vampr_56x80px 1_53
+  - first:
+      213: 6238923692098223495
+    second: 01 vampr_56x80px 1_54
+  - first:
+      213: -6237450985009311890
+    second: 01 vampr_56x80px 1_55
+  - first:
+      213: -8308904815974143386
+    second: 01 vampr_56x80px 1_56
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5abcc62d7be008b49919a48ab4755d46
+      internalID: 4556447133756628702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 156e187426114b94e9b9ec81241f6299
+      internalID: 3106501073478228650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59d1d8ad59f2981489bbb4f01c3e07c4
+      internalID: -1620378427397362257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_3
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22862b6bfc283cf41b097a0baf55bb9a
+      internalID: 519116610443169097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_4
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3ae840b8b240af4caaa0d1be796afd9
+      internalID: 1082570539150713435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_5
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fbf3dbfe337b054fa2db13f722a73ec
+      internalID: 7804749925640198191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_6
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64a475866d72fef488c8a15ad04f6afa
+      internalID: 2176429668542478027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_7
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6ea00e0382ec78418e35d4f1d98247a
+      internalID: 3594175283115777688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_8
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a3c9351b712de446833724878a258d3
+      internalID: 6429469635048551839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_9
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63628aa78d81212408d99aa35d725d45
+      internalID: -4171876020978550553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_10
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a24e0006dcc0749bc1ee649b2d1531
+      internalID: -3302004527138572881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_11
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 834cf7dc1a0cb1d46a4d57ccf22cfa9e
+      internalID: -6641881811745733042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_12
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b066a83283ac8894aa5520b65c0cb678
+      internalID: -1233085760954430044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_13
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8811119c81065c547999f2d2a7a359da
+      internalID: 2208561780590897268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_14
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c21d46de665f8c14c9abb96c4207d1f7
+      internalID: -3694132469719176165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_15
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 212577cdcf3fa9c44ad180340eb1280a
+      internalID: 691377283655243264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_16
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cf63317ec8a0114c9304b248a3b6a60
+      internalID: 5667786393347747083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_17
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c8745d83ebe0074d9981defe8400259
+      internalID: 234872056477886463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46293e57d50c1c7478c4528b16db47b2
+      internalID: -6367124459444301216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_19
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b9c4b4df65cebb41b60af5abd17356f
+      internalID: -915518052667351571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_20
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ea76a150ec63504cb792a320f70b0f4
+      internalID: -1184952140443548037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_21
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21336362eb78dba4297b1ace08d1cb55
+      internalID: 524710495117466793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_22
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b5336d8e76066c4f9ea3b3ee27d9c46
+      internalID: -8744387568841911300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_23
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b700dea7caf304445a6e560ae3f3153b
+      internalID: 7457454783380545405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_24
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af0cc73c3f5ab7c4cb241b7f2e906031
+      internalID: 6673730413770092042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_25
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5648d4b52835d4e448eb9b1ac745b83a
+      internalID: -3782884824287044340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_26
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d2eebd5ee4e2db45a49541c181172bd
+      internalID: 6295459203316502079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_27
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6092641ede8edf24fb6c237f5cb58aa4
+      internalID: 3819515615212168156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_28
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6ea828c99eebd740bd52396cc872975
+      internalID: -9125643410224415183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_29
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0abf5df167f9ea74f91ebf4bbb33f74d
+      internalID: -3022085653381739410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_30
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37cc51ffe7a2daa4ab2fbe175141a710
+      internalID: 2253932403090617763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_31
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd15e66b610757846b3f246f45cf3f5a
+      internalID: 303643208751441756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_32
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1798a656e3f3620409e35c39b93111c9
+      internalID: -4020957364126256541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_33
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44f9d3b59ead47645aa9dfc8653cd5ab
+      internalID: -1505521078124306675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_34
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d90632d0508836c4196a22b7f347d350
+      internalID: -8766189316141287126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_35
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80b533c93859117448a84b6631bd96fa
+      internalID: -6263827364899157341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c8dbbdc29bb1ac43bb55ee0fec7fc56
+      internalID: 5017674649082371384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_37
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebb1c9e3734814d4ea2fec77a7755c9c
+      internalID: 8179989854292628563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_38
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f13e8de6c8aac7c49be3e2732beda977
+      internalID: -4131821263518218110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_39
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f5b585417d9bfb4db71f1b745b02479
+      internalID: 1278841942202461420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_40
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecd5373ce24125d43a274008deed66c5
+      internalID: -2425302761002070856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_41
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a23f672a231c4df449920870cdf64d1a
+      internalID: 1533182307629322103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_42
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1d23aa89a9ec8a4e9beba823863f8b5
+      internalID: 7964812420184978102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_43
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08c64c59b2b56284281996859646d44e
+      internalID: -723887124672325613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_44
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aec93efd080ad0541a585c4def4d4118
+      internalID: -6309206090757175139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_45
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3b2dfdc34c3a084bb38460af3c27cc4
+      internalID: -173221074550768413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_46
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3874494c2df550541a100d83ddb0eaa8
+      internalID: -7205316095197419253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_47
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3782dd536d78914bb790e7dfcf41331
+      internalID: 3179051157793172029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_48
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ebfcdc9a621baf4fb3ee16c88ea539d
+      internalID: 4834735479523535208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_49
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37a1f809d85501844b4877965e067499
+      internalID: -7772394663299075626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_50
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 462aa9945d7d64f4ea2520abd34d55b0
+      internalID: 6190632814716181955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_51
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bdec7362b1aa184080c1ec1e62c24c9
+      internalID: 5273992981124917877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_52
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b5bc6c5bf05a09408e070c9919fd48a
+      internalID: 7059763574163193929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_53
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1333fdf509eb5594ebe9cf212754db7b
+      internalID: -8771142004915224110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b9b0ac742204e748b1012acec875b26
+      internalID: 6238923692098223495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_55
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 0
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8581c6509d0369a4086d64b650e9b239
+      internalID: -6237450985009311890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_56x80px 1_56
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2c771b3b0e77ad49b900091382b0925
+      internalID: -8308904815974143386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: aca25c42280f8ca4d9eb07b0c76a1d59
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      01 vampr_56x80px 1_30: 2253932403090617763
+      01 vampr_56x80px 1_16: 5667786393347747083
+      01 vampr_56x80px 1_17: 234872056477886463
+      01 vampr_56x80px 1_40: -2425302761002070856
+      01 vampr_56x80px 1_1: 3106501073478228650
+      01 vampr_56x80px 1_29: -3022085653381739410
+      01 vampr_56x80px 1_51: 5273992981124917877
+      01 vampr_56x80px 1_0: 4556447133756628702
+      01 vampr_56x80px 1_5: 7804749925640198191
+      01 vampr_56x80px 1_12: -1233085760954430044
+      01 vampr_56x80px 1_53: -8771142004915224110
+      01 vampr_56x80px 1_33: -1505521078124306675
+      01 vampr_56x80px 1_2: -1620378427397362257
+      01 vampr_56x80px 1_31: 303643208751441756
+      01 vampr_56x80px 1_39: 1278841942202461420
+      01 vampr_56x80px 1_23: 7457454783380545405
+      01 vampr_56x80px 1_28: -9125643410224415183
+      01 vampr_56x80px 1_48: 4834735479523535208
+      01 vampr_56x80px 1_36: 5017674649082371384
+      01 vampr_56x80px 1_41: 1533182307629322103
+      01 vampr_56x80px 1_52: 7059763574163193929
+      01 vampr_56x80px 1_21: 524710495117466793
+      01 vampr_56x80px 1_27: 3819515615212168156
+      01 vampr_56x80px 1_10: -3302004527138572881
+      01 vampr_56x80px 1_55: -6237450985009311890
+      01 vampr_56x80px 1_3: 519116610443169097
+      01 vampr_56x80px 1_9: -4171876020978550553
+      01 vampr_56x80px 1_49: -7772394663299075626
+      01 vampr_56x80px 1_35: -6263827364899157341
+      01 vampr_56x80px 1_24: 6673730413770092042
+      01 vampr_56x80px 1_46: -7205316095197419253
+      01 vampr_56x80px 1_44: -6309206090757175139
+      01 vampr_56x80px 1_47: 3179051157793172029
+      01 vampr_56x80px 1_54: 6238923692098223495
+      01 vampr_56x80px 1_4: 1082570539150713435
+      01 vampr_56x80px 1_19: -915518052667351571
+      01 vampr_56x80px 1_56: -8308904815974143386
+      01 vampr_56x80px 1_6: 2176429668542478027
+      01 vampr_56x80px 1_26: 6295459203316502079
+      01 vampr_56x80px 1_20: -1184952140443548037
+      01 vampr_56x80px 1_42: 7964812420184978102
+      01 vampr_56x80px 1_45: -173221074550768413
+      01 vampr_56x80px 1_25: -3782884824287044340
+      01 vampr_56x80px 1_14: -3694132469719176165
+      01 vampr_56x80px 1_22: -8744387568841911300
+      01 vampr_56x80px 1_15: 691377283655243264
+      01 vampr_56x80px 1_13: 2208561780590897268
+      01 vampr_56x80px 1_7: 3594175283115777688
+      01 vampr_56x80px 1_37: 8179989854292628563
+      01 vampr_56x80px 1_18: -6367124459444301216
+      01 vampr_56x80px 1_32: -4020957364126256541
+      01 vampr_56x80px 1_50: 6190632814716181955
+      01 vampr_56x80px 1_34: -8766189316141287126
+      01 vampr_56x80px 1_8: 6429469635048551839
+      01 vampr_56x80px 1_11: -6641881811745733042
+      01 vampr_56x80px 1_38: -4131821263518218110
+      01 vampr_56x80px 1_43: -723887124672325613
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

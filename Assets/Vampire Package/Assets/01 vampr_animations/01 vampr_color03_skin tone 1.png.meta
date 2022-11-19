@@ -1,0 +1,1560 @@
+fileFormatVersion: 2
+guid: 12b75f1874b245443bedc863259945b1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2376899267888926871
+    second: 01 vampr_color03_skin tone 1_0
+  - first:
+      213: 1771960555421574599
+    second: 01 vampr_color03_skin tone 1_1
+  - first:
+      213: -5580710950952637947
+    second: 01 vampr_color03_skin tone 1_2
+  - first:
+      213: 5463351505363891235
+    second: 01 vampr_color03_skin tone 1_3
+  - first:
+      213: -2723539092266368655
+    second: 01 vampr_color03_skin tone 1_4
+  - first:
+      213: 3755625047519530908
+    second: 01 vampr_color03_skin tone 1_5
+  - first:
+      213: 8218758882279986174
+    second: 01 vampr_color03_skin tone 1_6
+  - first:
+      213: -6393509344417805677
+    second: 01 vampr_color03_skin tone 1_7
+  - first:
+      213: 5122953440964413247
+    second: 01 vampr_color03_skin tone 1_8
+  - first:
+      213: 3819575707474350876
+    second: 01 vampr_color03_skin tone 1_9
+  - first:
+      213: 5243603802473323620
+    second: 01 vampr_color03_skin tone 1_10
+  - first:
+      213: 3538892084467332287
+    second: 01 vampr_color03_skin tone 1_11
+  - first:
+      213: 5092650475125746195
+    second: 01 vampr_color03_skin tone 1_12
+  - first:
+      213: 7289187506248053909
+    second: 01 vampr_color03_skin tone 1_13
+  - first:
+      213: -6022143240957645814
+    second: 01 vampr_color03_skin tone 1_14
+  - first:
+      213: 6517632964141783738
+    second: 01 vampr_color03_skin tone 1_15
+  - first:
+      213: -8252525930665254725
+    second: 01 vampr_color03_skin tone 1_16
+  - first:
+      213: -885263399118464146
+    second: 01 vampr_color03_skin tone 1_17
+  - first:
+      213: -8704205629167263190
+    second: 01 vampr_color03_skin tone 1_18
+  - first:
+      213: 9212076825281070646
+    second: 01 vampr_color03_skin tone 1_19
+  - first:
+      213: -2111973795343922869
+    second: 01 vampr_color03_skin tone 1_20
+  - first:
+      213: 3729383749485339147
+    second: 01 vampr_color03_skin tone 1_21
+  - first:
+      213: 5810821601847261426
+    second: 01 vampr_color03_skin tone 1_22
+  - first:
+      213: 2163384573045655310
+    second: 01 vampr_color03_skin tone 1_23
+  - first:
+      213: -7624050512713426336
+    second: 01 vampr_color03_skin tone 1_24
+  - first:
+      213: 9037361456420431903
+    second: 01 vampr_color03_skin tone 1_25
+  - first:
+      213: -1991495438251361181
+    second: 01 vampr_color03_skin tone 1_26
+  - first:
+      213: -3950039085410437527
+    second: 01 vampr_color03_skin tone 1_27
+  - first:
+      213: -2135962966085652105
+    second: 01 vampr_color03_skin tone 1_28
+  - first:
+      213: 7349941941276966112
+    second: 01 vampr_color03_skin tone 1_29
+  - first:
+      213: 1349642833686924065
+    second: 01 vampr_color03_skin tone 1_30
+  - first:
+      213: -3208311751475661416
+    second: 01 vampr_color03_skin tone 1_31
+  - first:
+      213: -6325112021115804015
+    second: 01 vampr_color03_skin tone 1_32
+  - first:
+      213: 46046642811266401
+    second: 01 vampr_color03_skin tone 1_33
+  - first:
+      213: 4235424878922971599
+    second: 01 vampr_color03_skin tone 1_34
+  - first:
+      213: -6767143311624150368
+    second: 01 vampr_color03_skin tone 1_35
+  - first:
+      213: -3168374301902165347
+    second: 01 vampr_color03_skin tone 1_36
+  - first:
+      213: -2200004113845535819
+    second: 01 vampr_color03_skin tone 1_37
+  - first:
+      213: -5668917930875162154
+    second: 01 vampr_color03_skin tone 1_38
+  - first:
+      213: 2653126709255929043
+    second: 01 vampr_color03_skin tone 1_39
+  - first:
+      213: 5048887612501198692
+    second: 01 vampr_color03_skin tone 1_40
+  - first:
+      213: -2033566539538356146
+    second: 01 vampr_color03_skin tone 1_41
+  - first:
+      213: 4167313372944019464
+    second: 01 vampr_color03_skin tone 1_42
+  - first:
+      213: -8961177431850740045
+    second: 01 vampr_color03_skin tone 1_43
+  - first:
+      213: -3137761881115539791
+    second: 01 vampr_color03_skin tone 1_44
+  - first:
+      213: -6840010079755903580
+    second: 01 vampr_color03_skin tone 1_45
+  - first:
+      213: 4342961491880915626
+    second: 01 vampr_color03_skin tone 1_46
+  - first:
+      213: -5717391818057143976
+    second: 01 vampr_color03_skin tone 1_47
+  - first:
+      213: 2686381181460254221
+    second: 01 vampr_color03_skin tone 1_48
+  - first:
+      213: -669902714027706460
+    second: 01 vampr_color03_skin tone 1_49
+  - first:
+      213: 2581624444786403640
+    second: 01 vampr_color03_skin tone 1_50
+  - first:
+      213: 5292779237773713320
+    second: 01 vampr_color03_skin tone 1_51
+  - first:
+      213: 8487730065647259
+    second: 01 vampr_color03_skin tone 1_52
+  - first:
+      213: 865219315438968484
+    second: 01 vampr_color03_skin tone 1_53
+  - first:
+      213: 9103250617698228413
+    second: 01 vampr_color03_skin tone 1_54
+  - first:
+      213: 5253730869469470760
+    second: 01 vampr_color03_skin tone 1_55
+  - first:
+      213: 7269632549292953686
+    second: 01 vampr_color03_skin tone 1_56
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfb37566d97d41f45ae537d6918b3f2d
+      internalID: -2376899267888926871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c51e5098c4879af4d8a265fa91c6b27d
+      internalID: 1771960555421574599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e53bafe531155624f8b1d5c6ac7431aa
+      internalID: -5580710950952637947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_3
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e2e23be1c68a254d93fa9b6582e8943
+      internalID: 5463351505363891235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_4
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46a0b2e91b94471418cb4b8a8f2dda58
+      internalID: -2723539092266368655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_5
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52ffad7a034aca64bb269ac373dc4a59
+      internalID: 3755625047519530908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_6
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ef378e1e6fd671489a23c9e8cbeb255
+      internalID: 8218758882279986174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_7
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9667f8feb5a326f4b819277c4f647177
+      internalID: -6393509344417805677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_8
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6379243cdf3d85488ec1c710fb81337
+      internalID: 5122953440964413247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_9
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6e23b0bad42de04e973da54e59b85b8
+      internalID: 3819575707474350876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_10
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c5ca8b32678e2b43845764212b9b12e
+      internalID: 5243603802473323620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_11
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68a65adf4b22fff42904b4de5516bfea
+      internalID: 3538892084467332287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_12
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e77763969f9ed734d8fce005e92a4423
+      internalID: 5092650475125746195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_13
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aedc98a956df93a4893f2de420bfcaea
+      internalID: 7289187506248053909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_14
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a8211d9d1eb84d44be0eae001a2decb
+      internalID: -6022143240957645814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_15
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1303a6a1e03069458e16eab52d9f1e0
+      internalID: 6517632964141783738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_16
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 711c948859dfa59418daace2df274f4c
+      internalID: -8252525930665254725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_17
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49d57ea9c2b25f142a599214a19415b8
+      internalID: -885263399118464146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f7572c7dfe8d544cba0de226275fe28
+      internalID: -8704205629167263190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_19
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 700a1adaf7180f140a484d0dc448340d
+      internalID: 9212076825281070646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_20
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e936c1694942edc468bc8727bdcd4f9f
+      internalID: -2111973795343922869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_21
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e78e400c46330da4bbd2eaadf669cc75
+      internalID: 3729383749485339147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_22
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 747b5768f3bca2d4ba2d48f1084ccc9d
+      internalID: 5810821601847261426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_23
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b91013989e0925479165a93c5e76603
+      internalID: 2163384573045655310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_24
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13dfd88fe898e1d4d81dca8054f54582
+      internalID: -7624050512713426336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_25
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43239dbb725352e4e87fd66af7726291
+      internalID: 9037361456420431903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_26
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb00cdf631e096c4bb39a84408126c52
+      internalID: -1991495438251361181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_27
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1c0a30094b20a5408ef6c49401e8233
+      internalID: -3950039085410437527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_28
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3367fb72276b42428a9d1bc74d5c9b4
+      internalID: -2135962966085652105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_29
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20edf74af0db85942892aaa489c2b6e2
+      internalID: 7349941941276966112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_30
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ec10a7f76366f9438baa8f95274ffd3
+      internalID: 1349642833686924065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_31
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0a574ba2366e4e428b89787e8f300b4
+      internalID: -3208311751475661416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_32
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8539e8db983b2b943baf2a6358d21a5b
+      internalID: -6325112021115804015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_33
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75bbc108b0fcc2d4d9e25868e0a46031
+      internalID: 46046642811266401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_34
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cec15ef0876f844eb7bf6ad54662b45
+      internalID: 4235424878922971599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_35
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d2d3a3698c01cf45bcb76ee606a2751
+      internalID: -6767143311624150368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48ffb56d720ea374bb561ecdbc1fbdc6
+      internalID: -3168374301902165347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_37
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e888693d3dc5323488f1332351a78b84
+      internalID: -2200004113845535819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_38
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70d6f216cc9ad2348b68b36a0076c227
+      internalID: -5668917930875162154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_39
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d98f8b3bbef225845ab341f8e1425e54
+      internalID: 2653126709255929043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_40
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb243474ad6c2ad44a1ca3c913f15b2a
+      internalID: 5048887612501198692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_41
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02729ea04b285f14b9196241d9dd81f1
+      internalID: -2033566539538356146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_42
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef980a753222ed34d8cbe400825987ee
+      internalID: 4167313372944019464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_43
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2b93271bbdb74a479f17f84b9c3b90a
+      internalID: -8961177431850740045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_44
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9099303af07526647af2e1fb897c8512
+      internalID: -3137761881115539791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_45
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65d11cf52538c9d44b59a5dcdb9f6cb1
+      internalID: -6840010079755903580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_46
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 828e2ca97ca99ca4e89cfb7138dd88aa
+      internalID: 4342961491880915626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_47
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c45a33d1a2afee4e92ca2cd4249b840
+      internalID: -5717391818057143976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_48
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b402441cfb12c2d40bdb18daac457081
+      internalID: 2686381181460254221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_49
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf0fc5d51e2504848a95fb5a508e3b1f
+      internalID: -669902714027706460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_50
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22986a6293132e34eac7ed038b9ccdf6
+      internalID: 2581624444786403640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_51
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbb830130690d764f8a8792c8b05f7b6
+      internalID: 5292779237773713320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_52
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bedd407c03c49b04494427b07f88be3c
+      internalID: 8487730065647259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_53
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e18a03bd3a550324dbda742735a262d3
+      internalID: 865219315438968484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8799552df3bb733488b96669057d0468
+      internalID: 9103250617698228413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_55
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 0
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0742f7d8b3e0cb54e8d1b16d16451203
+      internalID: 5253730869469470760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr_color03_skin tone 1_56
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ba5d00aa883e75459c646b9abc259af
+      internalID: 7269632549292953686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 1ede1be05f74f79458fc8aae33d0661b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      01 vampr_color03_skin tone 1_0: -2376899267888926871
+      01 vampr_color03_skin tone 1_46: 4342961491880915626
+      01 vampr_color03_skin tone 1_5: 3755625047519530908
+      01 vampr_color03_skin tone 1_48: 2686381181460254221
+      01 vampr_color03_skin tone 1_36: -3168374301902165347
+      01 vampr_color03_skin tone 1_6: 8218758882279986174
+      01 vampr_color03_skin tone 1_42: 4167313372944019464
+      01 vampr_color03_skin tone 1_33: 46046642811266401
+      01 vampr_color03_skin tone 1_24: -7624050512713426336
+      01 vampr_color03_skin tone 1_55: 5253730869469470760
+      01 vampr_color03_skin tone 1_37: -2200004113845535819
+      01 vampr_color03_skin tone 1_13: 7289187506248053909
+      01 vampr_color03_skin tone 1_56: 7269632549292953686
+      01 vampr_color03_skin tone 1_30: 1349642833686924065
+      01 vampr_color03_skin tone 1_19: 9212076825281070646
+      01 vampr_color03_skin tone 1_21: 3729383749485339147
+      01 vampr_color03_skin tone 1_15: 6517632964141783738
+      01 vampr_color03_skin tone 1_31: -3208311751475661416
+      01 vampr_color03_skin tone 1_40: 5048887612501198692
+      01 vampr_color03_skin tone 1_7: -6393509344417805677
+      01 vampr_color03_skin tone 1_18: -8704205629167263190
+      01 vampr_color03_skin tone 1_38: -5668917930875162154
+      01 vampr_color03_skin tone 1_44: -3137761881115539791
+      01 vampr_color03_skin tone 1_4: -2723539092266368655
+      01 vampr_color03_skin tone 1_8: 5122953440964413247
+      01 vampr_color03_skin tone 1_32: -6325112021115804015
+      01 vampr_color03_skin tone 1_2: -5580710950952637947
+      01 vampr_color03_skin tone 1_26: -1991495438251361181
+      01 vampr_color03_skin tone 1_54: 9103250617698228413
+      01 vampr_color03_skin tone 1_10: 5243603802473323620
+      01 vampr_color03_skin tone 1_16: -8252525930665254725
+      01 vampr_color03_skin tone 1_14: -6022143240957645814
+      01 vampr_color03_skin tone 1_9: 3819575707474350876
+      01 vampr_color03_skin tone 1_51: 5292779237773713320
+      01 vampr_color03_skin tone 1_35: -6767143311624150368
+      01 vampr_color03_skin tone 1_12: 5092650475125746195
+      01 vampr_color03_skin tone 1_3: 5463351505363891235
+      01 vampr_color03_skin tone 1_17: -885263399118464146
+      01 vampr_color03_skin tone 1_1: 1771960555421574599
+      01 vampr_color03_skin tone 1_50: 2581624444786403640
+      01 vampr_color03_skin tone 1_49: -669902714027706460
+      01 vampr_color03_skin tone 1_52: 8487730065647259
+      01 vampr_color03_skin tone 1_22: 5810821601847261426
+      01 vampr_color03_skin tone 1_11: 3538892084467332287
+      01 vampr_color03_skin tone 1_23: 2163384573045655310
+      01 vampr_color03_skin tone 1_25: 9037361456420431903
+      01 vampr_color03_skin tone 1_53: 865219315438968484
+      01 vampr_color03_skin tone 1_27: -3950039085410437527
+      01 vampr_color03_skin tone 1_47: -5717391818057143976
+      01 vampr_color03_skin tone 1_28: -2135962966085652105
+      01 vampr_color03_skin tone 1_41: -2033566539538356146
+      01 vampr_color03_skin tone 1_34: 4235424878922971599
+      01 vampr_color03_skin tone 1_29: 7349941941276966112
+      01 vampr_color03_skin tone 1_45: -6840010079755903580
+      01 vampr_color03_skin tone 1_43: -8961177431850740045
+      01 vampr_color03_skin tone 1_20: -2111973795343922869
+      01 vampr_color03_skin tone 1_39: 2653126709255929043
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

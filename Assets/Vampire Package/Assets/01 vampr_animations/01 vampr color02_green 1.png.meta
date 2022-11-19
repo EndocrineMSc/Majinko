@@ -1,0 +1,1560 @@
+fileFormatVersion: 2
+guid: 4f51cf6ba8e37b444a710cb0dcce2838
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1388221375131227894
+    second: 01 vampr color02_green 1_0
+  - first:
+      213: -1877047981803684653
+    second: 01 vampr color02_green 1_1
+  - first:
+      213: -1094515520236641753
+    second: 01 vampr color02_green 1_2
+  - first:
+      213: 7647817281987161152
+    second: 01 vampr color02_green 1_3
+  - first:
+      213: 6184703837850919543
+    second: 01 vampr color02_green 1_4
+  - first:
+      213: 6719793151690273096
+    second: 01 vampr color02_green 1_5
+  - first:
+      213: -334841968546899230
+    second: 01 vampr color02_green 1_6
+  - first:
+      213: -2456486706080098257
+    second: 01 vampr color02_green 1_7
+  - first:
+      213: -3700988577983807673
+    second: 01 vampr color02_green 1_8
+  - first:
+      213: 1967136517715875614
+    second: 01 vampr color02_green 1_9
+  - first:
+      213: -6904765574315846600
+    second: 01 vampr color02_green 1_10
+  - first:
+      213: -4959116922056734005
+    second: 01 vampr color02_green 1_11
+  - first:
+      213: 7667306723196562937
+    second: 01 vampr color02_green 1_12
+  - first:
+      213: -1897229144093529371
+    second: 01 vampr color02_green 1_13
+  - first:
+      213: -442278463553193115
+    second: 01 vampr color02_green 1_14
+  - first:
+      213: 3410620667616494846
+    second: 01 vampr color02_green 1_15
+  - first:
+      213: -9061322962672475626
+    second: 01 vampr color02_green 1_16
+  - first:
+      213: 460458809976273513
+    second: 01 vampr color02_green 1_17
+  - first:
+      213: -1996063886678261631
+    second: 01 vampr color02_green 1_18
+  - first:
+      213: -8622922209164317675
+    second: 01 vampr color02_green 1_19
+  - first:
+      213: 734629957709145418
+    second: 01 vampr color02_green 1_20
+  - first:
+      213: 7277001503408761436
+    second: 01 vampr color02_green 1_21
+  - first:
+      213: -5552015528431789348
+    second: 01 vampr color02_green 1_22
+  - first:
+      213: -169978105391747447
+    second: 01 vampr color02_green 1_23
+  - first:
+      213: -4436103359625724250
+    second: 01 vampr color02_green 1_24
+  - first:
+      213: 972609632926325999
+    second: 01 vampr color02_green 1_25
+  - first:
+      213: 8568854320324082663
+    second: 01 vampr color02_green 1_26
+  - first:
+      213: 7242840886447104584
+    second: 01 vampr color02_green 1_27
+  - first:
+      213: -2699716481405595968
+    second: 01 vampr color02_green 1_28
+  - first:
+      213: -92834935023196400
+    second: 01 vampr color02_green 1_29
+  - first:
+      213: -1767377876799258043
+    second: 01 vampr color02_green 1_30
+  - first:
+      213: -8102489562704429633
+    second: 01 vampr color02_green 1_31
+  - first:
+      213: -2794707947130928214
+    second: 01 vampr color02_green 1_32
+  - first:
+      213: 1701996261722593957
+    second: 01 vampr color02_green 1_33
+  - first:
+      213: -2481567740352384949
+    second: 01 vampr color02_green 1_34
+  - first:
+      213: -1128003086944203443
+    second: 01 vampr color02_green 1_35
+  - first:
+      213: 5867901384566966768
+    second: 01 vampr color02_green 1_36
+  - first:
+      213: -4317687688779412080
+    second: 01 vampr color02_green 1_37
+  - first:
+      213: -3265661791665877919
+    second: 01 vampr color02_green 1_38
+  - first:
+      213: 1357002021692015100
+    second: 01 vampr color02_green 1_39
+  - first:
+      213: -3060430233734670062
+    second: 01 vampr color02_green 1_40
+  - first:
+      213: 5744704714684744531
+    second: 01 vampr color02_green 1_41
+  - first:
+      213: -2931795508350789130
+    second: 01 vampr color02_green 1_42
+  - first:
+      213: -4655320676551611888
+    second: 01 vampr color02_green 1_43
+  - first:
+      213: -4808425169977357524
+    second: 01 vampr color02_green 1_44
+  - first:
+      213: -1158140449454322373
+    second: 01 vampr color02_green 1_45
+  - first:
+      213: -2554839627169627632
+    second: 01 vampr color02_green 1_46
+  - first:
+      213: -4721475434782969045
+    second: 01 vampr color02_green 1_47
+  - first:
+      213: -5536341513975677466
+    second: 01 vampr color02_green 1_48
+  - first:
+      213: -3081506790732643251
+    second: 01 vampr color02_green 1_49
+  - first:
+      213: -6549328724430279502
+    second: 01 vampr color02_green 1_50
+  - first:
+      213: 6653748361487813638
+    second: 01 vampr color02_green 1_51
+  - first:
+      213: -2996444350355014193
+    second: 01 vampr color02_green 1_52
+  - first:
+      213: 74841208130325779
+    second: 01 vampr color02_green 1_53
+  - first:
+      213: 6673773775423667542
+    second: 01 vampr color02_green 1_54
+  - first:
+      213: -4311716952529566279
+    second: 01 vampr color02_green 1_55
+  - first:
+      213: -3270810668276322184
+    second: 01 vampr color02_green 1_56
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6a81b00fc162494f85e735655c48662
+      internalID: -1388221375131227894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c77649dfedd2560458db3b82b920505b
+      internalID: -1877047981803684653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9c94fd9cf56913419d4aed4423eabbe
+      internalID: -1094515520236641753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_3
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89b8e9c46d4777c4981d63733059d31c
+      internalID: 7647817281987161152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_4
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3e19de66183d8d40854f3dbea2e96f6
+      internalID: 6184703837850919543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_5
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 336bdac079e7af340b121c7955e72fdd
+      internalID: 6719793151690273096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_6
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d225c6ba3bcd58043bb6e7cd05cc8cba
+      internalID: -334841968546899230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_7
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6c773f22f0d07d4db57bf58be256cb3
+      internalID: -2456486706080098257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_8
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30e71ff904ce22845b1a0095531970f1
+      internalID: -3700988577983807673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_9
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa87d113bcc4c4441b1032caec1b3444
+      internalID: 1967136517715875614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_10
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cf839dc33b1969418ca77d01f771b7c
+      internalID: -6904765574315846600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_11
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 833fe7de1ae441f41a1d7da645e0b547
+      internalID: -4959116922056734005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_12
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 229eea890b0b0c046bdb05c369f7ede0
+      internalID: 7667306723196562937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_13
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16cbb76322305354091411ccac7c0555
+      internalID: -1897229144093529371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_14
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f0e2597453571948b1313461da40de7
+      internalID: -442278463553193115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_15
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c05f6b0073fbbf41a7a0d650faf9768
+      internalID: 3410620667616494846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_16
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d79f83933f4c1e54d81dc299fa9495c7
+      internalID: -9061322962672475626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_17
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 240
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c472421df1522c49982f511a4a126f8
+      internalID: 460458809976273513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b74183f6444cb34ba166d4960404d43
+      internalID: -1996063886678261631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_19
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e16de0a42c8c6d45b4513da25f6e72e
+      internalID: -8622922209164317675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_20
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6128c3ed875a3445aa3d1a595a50e3a
+      internalID: 734629957709145418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_21
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a695e7c795d268043a0a9f9644efeb61
+      internalID: 7277001503408761436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_22
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f78e4e8cb6b1bd943b8067db3bcf880d
+      internalID: -5552015528431789348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_23
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bca678345798b9b4db7ad95f000da09c
+      internalID: -169978105391747447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_24
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9236053f85a4bb4cb962c57a74b580d
+      internalID: -4436103359625724250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_25
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebf0f117ded6b2c4e9fb559f99b02d50
+      internalID: 972609632926325999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_26
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fca3f60e2aa91d498b92675bd037ebe
+      internalID: 8568854320324082663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_27
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e94d1f2ac1d3e44cb0b465163430039
+      internalID: 7242840886447104584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_28
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28a4420078be5fe4c8f05a9b57f8c7cf
+      internalID: -2699716481405595968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_29
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dc55618951b3ad4882446760847bf36
+      internalID: -92834935023196400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_30
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8edfda7d43ae67f42a677e821a050c0a
+      internalID: -1767377876799258043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_31
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4176d88b439a46d4183e0833f919b0af
+      internalID: -8102489562704429633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_32
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d52fecfaf61d794d9d2789de96dd1a3
+      internalID: -2794707947130928214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_33
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5abc002db706af0449207beb42d769af
+      internalID: 1701996261722593957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_34
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 382cdb5ffb0414746bd485bec8d8c01c
+      internalID: -2481567740352384949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_35
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 160
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bee3758e5a2269488398a6a46dfa29c
+      internalID: -1128003086944203443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 150c7a5f0ec73c548b79fd3e89de9b3c
+      internalID: 5867901384566966768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_37
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22281a3f85a230243967c9ebb8e8a22b
+      internalID: -4317687688779412080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_38
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e621f954fe2153845b97c989803fd188
+      internalID: -3265661791665877919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_39
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dae0f5c756377d42b7dd197cf7dd848
+      internalID: 1357002021692015100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_40
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d21bc1b7e7a63e645bf0458b018009a8
+      internalID: -3060430233734670062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_41
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f90c035e2b281945a7fc2d64a379cf1
+      internalID: 5744704714684744531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_42
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01b82ea025d5a2c4ebfda14ef0f334d2
+      internalID: -2931795508350789130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_43
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36fb24f297331d34d8a81dbb3896c0f1
+      internalID: -4655320676551611888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_44
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1522acf0e8c7d2f4ea42d2c0d2d55672
+      internalID: -4808425169977357524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_45
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db738aac7c4bed34ea6a327e396a9746
+      internalID: -1158140449454322373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_46
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38201d103ba998d4899af2c287432a28
+      internalID: -2554839627169627632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_47
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a70271d24e578f48ad42454b0e89ce9
+      internalID: -4721475434782969045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_48
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a3777eea48f084499039dd375b78573
+      internalID: -5536341513975677466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_49
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0de3ba7e123d71b4781c76b20ab8d584
+      internalID: -3081506790732643251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_50
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed5f40fa5966d8841ba00de2fd678378
+      internalID: -6549328724430279502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_51
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eb7623f66235d141b427ed5c2022657
+      internalID: 6653748361487813638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_52
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e879c05f2b536242ab8192a0a435b1d
+      internalID: -2996444350355014193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_53
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 80
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a60dc74353decc54caba5749d2fb7808
+      internalID: 74841208130325779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ebc657e85b4aa44cad1783f4b4d8503
+      internalID: 6673773775423667542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_55
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 0
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f12fdd89ee55e874badd915b55c86feb
+      internalID: -4311716952529566279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 01 vampr color02_green 1_56
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65ac16f87538d9749a84e9fe9657637d
+      internalID: -3270810668276322184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 2f90f382e9b76cb40a19341d003687e6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      01 vampr color02_green 1_37: -4317687688779412080
+      01 vampr color02_green 1_9: 1967136517715875614
+      01 vampr color02_green 1_54: 6673773775423667542
+      01 vampr color02_green 1_34: -2481567740352384949
+      01 vampr color02_green 1_4: 6184703837850919543
+      01 vampr color02_green 1_5: 6719793151690273096
+      01 vampr color02_green 1_7: -2456486706080098257
+      01 vampr color02_green 1_6: -334841968546899230
+      01 vampr color02_green 1_12: 7667306723196562937
+      01 vampr color02_green 1_48: -5536341513975677466
+      01 vampr color02_green 1_42: -2931795508350789130
+      01 vampr color02_green 1_11: -4959116922056734005
+      01 vampr color02_green 1_19: -8622922209164317675
+      01 vampr color02_green 1_0: -1388221375131227894
+      01 vampr color02_green 1_15: 3410620667616494846
+      01 vampr color02_green 1_39: 1357002021692015100
+      01 vampr color02_green 1_50: -6549328724430279502
+      01 vampr color02_green 1_41: 5744704714684744531
+      01 vampr color02_green 1_30: -1767377876799258043
+      01 vampr color02_green 1_14: -442278463553193115
+      01 vampr color02_green 1_3: 7647817281987161152
+      01 vampr color02_green 1_1: -1877047981803684653
+      01 vampr color02_green 1_47: -4721475434782969045
+      01 vampr color02_green 1_55: -4311716952529566279
+      01 vampr color02_green 1_46: -2554839627169627632
+      01 vampr color02_green 1_27: 7242840886447104584
+      01 vampr color02_green 1_29: -92834935023196400
+      01 vampr color02_green 1_26: 8568854320324082663
+      01 vampr color02_green 1_16: -9061322962672475626
+      01 vampr color02_green 1_32: -2794707947130928214
+      01 vampr color02_green 1_44: -4808425169977357524
+      01 vampr color02_green 1_25: 972609632926325999
+      01 vampr color02_green 1_20: 734629957709145418
+      01 vampr color02_green 1_40: -3060430233734670062
+      01 vampr color02_green 1_56: -3270810668276322184
+      01 vampr color02_green 1_13: -1897229144093529371
+      01 vampr color02_green 1_52: -2996444350355014193
+      01 vampr color02_green 1_45: -1158140449454322373
+      01 vampr color02_green 1_8: -3700988577983807673
+      01 vampr color02_green 1_38: -3265661791665877919
+      01 vampr color02_green 1_17: 460458809976273513
+      01 vampr color02_green 1_23: -169978105391747447
+      01 vampr color02_green 1_10: -6904765574315846600
+      01 vampr color02_green 1_21: 7277001503408761436
+      01 vampr color02_green 1_2: -1094515520236641753
+      01 vampr color02_green 1_24: -4436103359625724250
+      01 vampr color02_green 1_31: -8102489562704429633
+      01 vampr color02_green 1_35: -1128003086944203443
+      01 vampr color02_green 1_51: 6653748361487813638
+      01 vampr color02_green 1_36: 5867901384566966768
+      01 vampr color02_green 1_22: -5552015528431789348
+      01 vampr color02_green 1_33: 1701996261722593957
+      01 vampr color02_green 1_43: -4655320676551611888
+      01 vampr color02_green 1_28: -2699716481405595968
+      01 vampr color02_green 1_49: -3081506790732643251
+      01 vampr color02_green 1_53: 74841208130325779
+      01 vampr color02_green 1_18: -1996063886678261631
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

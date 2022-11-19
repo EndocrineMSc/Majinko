@@ -1,0 +1,1560 @@
+fileFormatVersion: 2
+guid: c0b8052fd18b9d644be59104905f4e65
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2646885775796122411
+    second: steampunk_shadow_0
+  - first:
+      213: -681166898963640733
+    second: steampunk_shadow_1
+  - first:
+      213: -578863092102911508
+    second: steampunk_shadow_2
+  - first:
+      213: -5824290498513927142
+    second: steampunk_shadow_3
+  - first:
+      213: 6295792043268113659
+    second: steampunk_shadow_4
+  - first:
+      213: 2905850027146025020
+    second: steampunk_shadow_5
+  - first:
+      213: 2148797499273376501
+    second: steampunk_shadow_6
+  - first:
+      213: -5351438033634309030
+    second: steampunk_shadow_7
+  - first:
+      213: -2100102124534481275
+    second: steampunk_shadow_8
+  - first:
+      213: 8789491215733282484
+    second: steampunk_shadow_9
+  - first:
+      213: -4047715692009825203
+    second: steampunk_shadow_10
+  - first:
+      213: 8670460097665676336
+    second: steampunk_shadow_11
+  - first:
+      213: -3378022381864144907
+    second: steampunk_shadow_12
+  - first:
+      213: -526850578926806958
+    second: steampunk_shadow_13
+  - first:
+      213: -8570748060929461656
+    second: steampunk_shadow_14
+  - first:
+      213: 3032608868531959512
+    second: steampunk_shadow_15
+  - first:
+      213: 8143093999169619784
+    second: steampunk_shadow_16
+  - first:
+      213: -8131207080236094564
+    second: steampunk_shadow_17
+  - first:
+      213: -6444865134803994012
+    second: steampunk_shadow_18
+  - first:
+      213: 6522265567981370269
+    second: steampunk_shadow_19
+  - first:
+      213: -2197722997019547999
+    second: steampunk_shadow_20
+  - first:
+      213: 4013829969791995918
+    second: steampunk_shadow_21
+  - first:
+      213: -6316697335744738428
+    second: steampunk_shadow_22
+  - first:
+      213: 3374078607117519505
+    second: steampunk_shadow_23
+  - first:
+      213: 7933783493288505498
+    second: steampunk_shadow_24
+  - first:
+      213: 133853553649679204
+    second: steampunk_shadow_25
+  - first:
+      213: 4969487645557069943
+    second: steampunk_shadow_26
+  - first:
+      213: -2965604540259566658
+    second: steampunk_shadow_27
+  - first:
+      213: -7319801781953378711
+    second: steampunk_shadow_28
+  - first:
+      213: -6098503337189959390
+    second: steampunk_shadow_29
+  - first:
+      213: -6761227078626302174
+    second: steampunk_shadow_30
+  - first:
+      213: 9190520321263634794
+    second: steampunk_shadow_31
+  - first:
+      213: 3151760563738961554
+    second: steampunk_shadow_32
+  - first:
+      213: -3600760198229205558
+    second: steampunk_shadow_33
+  - first:
+      213: -6229682120915424927
+    second: steampunk_shadow_34
+  - first:
+      213: 5464073827223105691
+    second: steampunk_shadow_35
+  - first:
+      213: 268431978885697005
+    second: steampunk_shadow_36
+  - first:
+      213: -1708060357623571853
+    second: steampunk_shadow_37
+  - first:
+      213: -3930681832494090241
+    second: steampunk_shadow_38
+  - first:
+      213: 6616023028612555890
+    second: steampunk_shadow_39
+  - first:
+      213: 4298491915723974642
+    second: steampunk_shadow_40
+  - first:
+      213: 8923193554593662171
+    second: steampunk_shadow_41
+  - first:
+      213: 6575176339093206168
+    second: steampunk_shadow_42
+  - first:
+      213: -412871496231507796
+    second: steampunk_shadow_43
+  - first:
+      213: -2418104415164436330
+    second: steampunk_shadow_44
+  - first:
+      213: -6375261700841685510
+    second: steampunk_shadow_45
+  - first:
+      213: -3998244393571198140
+    second: steampunk_shadow_46
+  - first:
+      213: -1035883753277087422
+    second: steampunk_shadow_47
+  - first:
+      213: -1873162758975075707
+    second: steampunk_shadow_48
+  - first:
+      213: 7576534111055782875
+    second: steampunk_shadow_49
+  - first:
+      213: 5997648718969121302
+    second: steampunk_shadow_50
+  - first:
+      213: 2950779830222074391
+    second: steampunk_shadow_51
+  - first:
+      213: 696337633292057559
+    second: steampunk_shadow_52
+  - first:
+      213: -2021245221914626625
+    second: steampunk_shadow_53
+  - first:
+      213: 425886054428128244
+    second: steampunk_shadow_54
+  - first:
+      213: -2459509485603304789
+    second: steampunk_shadow_55
+  - first:
+      213: 1616408144507807812
+    second: steampunk_shadow_56
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: steampunk_shadow_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9a3612c9431afe4f9fbb9d8b6246056
+      internalID: 2646885775796122411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_1
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de1ee87bdaa515a42b411ae0f8f476f2
+      internalID: -681166898963640733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_2
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9c5b01b9d7d90d46950f61c48f198e0
+      internalID: -578863092102911508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_3
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ae676c7554901a418e548cd0e265c72
+      internalID: -5824290498513927142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_4
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d21eab2b459879344856c13f0e237392
+      internalID: 6295792043268113659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_5
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 083c85b304125aa44b7a0e2428eaa07b
+      internalID: 2905850027146025020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_6
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbea965020f268f4583a98ebf22bef52
+      internalID: 2148797499273376501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_7
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c01d379908954164d9b48ccdfec800ff
+      internalID: -5351438033634309030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_8
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca0af83dcf1da7c42bdfcfa283d35892
+      internalID: -2100102124534481275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_9
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d995fd3a9b397246a5b55c64c20d4ea
+      internalID: 8789491215733282484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_10
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0da8e3d9ff766024ab15bc82a5dc1a85
+      internalID: -4047715692009825203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_11
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f244bab89920a894fadebbf78e533806
+      internalID: 8670460097665676336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_12
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdae7c06fc3e67941b5de7b9d967d65c
+      internalID: -3378022381864144907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_13
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8864a172dcf32284c9fd4334a594aa8a
+      internalID: -526850578926806958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_14
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b750b58aed184244a7aa510986bcdf0
+      internalID: -8570748060929461656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_15
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c5f94ff0f23d2148b8cb548e07f21a6
+      internalID: 3032608868531959512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_16
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afd5d31632bacfb499c6a0651e0c0017
+      internalID: 8143093999169619784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a3e26778fc1b8640bd68a16bcce6b42
+      internalID: -8131207080236094564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_18
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0ff5635f5c55e24baa0eda9cbd4936c
+      internalID: -6444865134803994012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_19
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 038a6b62cd46e6240a630b040d9bb3b7
+      internalID: 6522265567981370269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_20
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4228307ed8269a64fbd75aaced179424
+      internalID: -2197722997019547999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_21
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 509276adb0f2dd743bc96a9faf6f1ca5
+      internalID: 4013829969791995918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_22
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8713a569aeced284596067745d0273f1
+      internalID: -6316697335744738428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_23
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d026d7e4d10371846b60c905e9993acb
+      internalID: 3374078607117519505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_24
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecea2eeb98cd5f54d8b06b015dbe3bdb
+      internalID: 7933783493288505498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_25
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42464ea77a83ee54386a14e31a9e693d
+      internalID: 133853553649679204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_26
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75bdc0ea6343b994a89bd87a301f0025
+      internalID: 4969487645557069943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_27
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b87e25686b0c43b40a5497711df49bbf
+      internalID: -2965604540259566658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_28
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2e768bb57dbd9442b4ad687dc340a0f
+      internalID: -7319801781953378711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_29
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a5c9beffe666fc43b93fde59eef3880
+      internalID: -6098503337189959390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_30
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db1f01b092f72c142bde0e1c03b1b327
+      internalID: -6761227078626302174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_31
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 615c98067c27dc748a052ca98349d922
+      internalID: 9190520321263634794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_32
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8de116cb13243014492e9ea334e633bd
+      internalID: 3151760563738961554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_33
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5773bd1c2b2eaf546857872971319b51
+      internalID: -3600760198229205558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e22ef5e1ca677b7479237093d554641d
+      internalID: -6229682120915424927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_35
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a389ed46b33e5c84ea384e752d672c82
+      internalID: 5464073827223105691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_36
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea2246a5ee7631648a21629d860f97f7
+      internalID: 268431978885697005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_37
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 396c73d0b685e6a44a328f4062622a34
+      internalID: -1708060357623571853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_38
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a097102e65c71949971298692f717f9
+      internalID: -3930681832494090241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_39
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1c35d6b114d9964da75cdca8ed9710a
+      internalID: 6616023028612555890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_40
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9571b28bf65e9eb43b0d2213fb3bd4f4
+      internalID: 4298491915723974642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_41
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca8b64f3d88ede34c986fe2e47d5e057
+      internalID: 8923193554593662171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_42
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2beed768bc1581f49be79b7e607403dc
+      internalID: 6575176339093206168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_43
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34cb52a72f9264143bb625c61cbb20f7
+      internalID: -412871496231507796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_44
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00edb3f7d3ebf4145b75080a0499b4a6
+      internalID: -2418104415164436330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_45
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e435cdb4bb814d4cbf7a2fda112d9ee
+      internalID: -6375261700841685510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_46
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dceabac5afb9ade43a9b520d2f12c933
+      internalID: -3998244393571198140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_47
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 095373d44c1f46c4d9786487a5352c48
+      internalID: -1035883753277087422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_48
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c404b2be90c3eb4cbfe00d543e1b883
+      internalID: -1873162758975075707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_49
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8f7126aebffcc44c9e32f1a2d1d97a6
+      internalID: 7576534111055782875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_50
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c717291ccdabea4d99a0aa84ca7b8a3
+      internalID: 5997648718969121302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_51
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94ee6ea36befb7345be83d1d19bc9f90
+      internalID: 2950779830222074391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_52
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 192
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 296df10d21a386744bf6046359f15143
+      internalID: 696337633292057559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_53
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 192
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eff98c0375ea0d14dafb9813753a5d7a
+      internalID: -2021245221914626625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_54
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 192
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac72967bfb8284e48926c8da8263b5d1
+      internalID: 425886054428128244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_55
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 192
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0a8e04a4e63c86438f823a7b4012491
+      internalID: -2459509485603304789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_shadow_56
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 192
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c21533a95a03abb4ab76309c91a52ac4
+      internalID: 1616408144507807812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: d35e2d11b1d7e674998536fa9bde467c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      steampunk_shadow_47: -1035883753277087422
+      steampunk_shadow_29: -6098503337189959390
+      steampunk_shadow_7: -5351438033634309030
+      steampunk_shadow_49: 7576534111055782875
+      steampunk_shadow_45: -6375261700841685510
+      steampunk_shadow_43: -412871496231507796
+      steampunk_shadow_25: 133853553649679204
+      steampunk_shadow_0: 2646885775796122411
+      steampunk_shadow_28: -7319801781953378711
+      steampunk_shadow_6: 2148797499273376501
+      steampunk_shadow_10: -4047715692009825203
+      steampunk_shadow_40: 4298491915723974642
+      steampunk_shadow_17: -8131207080236094564
+      steampunk_shadow_36: 268431978885697005
+      steampunk_shadow_1: -681166898963640733
+      steampunk_shadow_38: -3930681832494090241
+      steampunk_shadow_50: 5997648718969121302
+      steampunk_shadow_42: 6575176339093206168
+      steampunk_shadow_11: 8670460097665676336
+      steampunk_shadow_48: -1873162758975075707
+      steampunk_shadow_14: -8570748060929461656
+      steampunk_shadow_19: 6522265567981370269
+      steampunk_shadow_56: 1616408144507807812
+      steampunk_shadow_23: 3374078607117519505
+      steampunk_shadow_2: -578863092102911508
+      steampunk_shadow_27: -2965604540259566658
+      steampunk_shadow_39: 6616023028612555890
+      steampunk_shadow_21: 4013829969791995918
+      steampunk_shadow_20: -2197722997019547999
+      steampunk_shadow_53: -2021245221914626625
+      steampunk_shadow_44: -2418104415164436330
+      steampunk_shadow_22: -6316697335744738428
+      steampunk_shadow_37: -1708060357623571853
+      steampunk_shadow_24: 7933783493288505498
+      steampunk_shadow_26: 4969487645557069943
+      steampunk_shadow_54: 425886054428128244
+      steampunk_shadow_52: 696337633292057559
+      steampunk_shadow_13: -526850578926806958
+      steampunk_shadow_16: 8143093999169619784
+      steampunk_shadow_8: -2100102124534481275
+      steampunk_shadow_15: 3032608868531959512
+      steampunk_shadow_51: 2950779830222074391
+      steampunk_shadow_31: 9190520321263634794
+      steampunk_shadow_32: 3151760563738961554
+      steampunk_shadow_55: -2459509485603304789
+      steampunk_shadow_41: 8923193554593662171
+      steampunk_shadow_35: 5464073827223105691
+      steampunk_shadow_4: 6295792043268113659
+      steampunk_shadow_30: -6761227078626302174
+      steampunk_shadow_33: -3600760198229205558
+      steampunk_shadow_34: -6229682120915424927
+      steampunk_shadow_3: -5824290498513927142
+      steampunk_shadow_5: 2905850027146025020
+      steampunk_shadow_12: -3378022381864144907
+      steampunk_shadow_18: -6444865134803994012
+      steampunk_shadow_9: 8789491215733282484
+      steampunk_shadow_46: -3998244393571198140
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

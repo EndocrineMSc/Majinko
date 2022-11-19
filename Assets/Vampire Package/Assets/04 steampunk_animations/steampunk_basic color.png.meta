@@ -1,0 +1,1569 @@
+fileFormatVersion: 2
+guid: 06699ae03b1dc3540aced4bef562068e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6719932179994537083
+    second: steampunk_basic color_0
+  - first:
+      213: 516652409543159334
+    second: steampunk_basic color_1
+  - first:
+      213: 3890989256962329875
+    second: steampunk_basic color_2
+  - first:
+      213: -5231466221065246410
+    second: steampunk_basic color_3
+  - first:
+      213: 836069831964395097
+    second: steampunk_basic color_4
+  - first:
+      213: -8394777517995099027
+    second: steampunk_basic color_5
+  - first:
+      213: -5185169247268106347
+    second: steampunk_basic color_6
+  - first:
+      213: -7777909561480515456
+    second: steampunk_basic color_7
+  - first:
+      213: -6061883749219077515
+    second: steampunk_basic color_8
+  - first:
+      213: 7768604460712985022
+    second: steampunk_basic color_9
+  - first:
+      213: 7851614892948903664
+    second: steampunk_basic color_10
+  - first:
+      213: -6877271963442689056
+    second: steampunk_basic color_11
+  - first:
+      213: -7021481242130431679
+    second: steampunk_basic color_12
+  - first:
+      213: 1524743295679986442
+    second: steampunk_basic color_13
+  - first:
+      213: 450895489481253487
+    second: steampunk_basic color_14
+  - first:
+      213: 1497665140778188051
+    second: steampunk_basic color_15
+  - first:
+      213: 6767112894019549942
+    second: steampunk_basic color_16
+  - first:
+      213: -502131594067608906
+    second: steampunk_basic color_17
+  - first:
+      213: 6708232116380758895
+    second: steampunk_basic color_18
+  - first:
+      213: 6153328820732708768
+    second: steampunk_basic color_19
+  - first:
+      213: -6848396733643638844
+    second: steampunk_basic color_20
+  - first:
+      213: -997442078692293787
+    second: steampunk_basic color_21
+  - first:
+      213: -4849109115884677178
+    second: steampunk_basic color_22
+  - first:
+      213: -5769621229117437503
+    second: steampunk_basic color_23
+  - first:
+      213: -2674061316782428788
+    second: steampunk_basic color_24
+  - first:
+      213: 6922602710566150096
+    second: steampunk_basic color_25
+  - first:
+      213: -5266837676536697176
+    second: steampunk_basic color_26
+  - first:
+      213: 2700057994778523456
+    second: steampunk_basic color_27
+  - first:
+      213: 7636031997892106652
+    second: steampunk_basic color_28
+  - first:
+      213: 2756322206140888237
+    second: steampunk_basic color_29
+  - first:
+      213: -5226598375786352140
+    second: steampunk_basic color_30
+  - first:
+      213: -5532965498793812153
+    second: steampunk_basic color_31
+  - first:
+      213: 4814463654009259413
+    second: steampunk_basic color_32
+  - first:
+      213: 4056572670045372156
+    second: steampunk_basic color_33
+  - first:
+      213: -168942777559989230
+    second: steampunk_basic color_34
+  - first:
+      213: -1932892501827263318
+    second: steampunk_basic color_35
+  - first:
+      213: 5845482002284101327
+    second: steampunk_basic color_36
+  - first:
+      213: -5679341355246989758
+    second: steampunk_basic color_37
+  - first:
+      213: 4884731084927754631
+    second: steampunk_basic color_38
+  - first:
+      213: 9099671553790045067
+    second: steampunk_basic color_39
+  - first:
+      213: -4180798953633672492
+    second: steampunk_basic color_40
+  - first:
+      213: -2249640257769810284
+    second: steampunk_basic color_41
+  - first:
+      213: -8967175811689289392
+    second: steampunk_basic color_42
+  - first:
+      213: 7397116745243690436
+    second: steampunk_basic color_43
+  - first:
+      213: 7907909061306302278
+    second: steampunk_basic color_44
+  - first:
+      213: 7616612342458157533
+    second: steampunk_basic color_45
+  - first:
+      213: 5073990247472674113
+    second: steampunk_basic color_46
+  - first:
+      213: 9008513114380678387
+    second: steampunk_basic color_47
+  - first:
+      213: -2216548254653509441
+    second: steampunk_basic color_48
+  - first:
+      213: 467361141312250598
+    second: steampunk_basic color_49
+  - first:
+      213: -877538936911295933
+    second: steampunk_basic color_50
+  - first:
+      213: 3934351487159339640
+    second: steampunk_basic color_51
+  - first:
+      213: -206152646094236144
+    second: steampunk_basic color_52
+  - first:
+      213: -541867063952063377
+    second: steampunk_basic color_53
+  - first:
+      213: -7501024868504979230
+    second: steampunk_basic color_54
+  - first:
+      213: 272460891862307240
+    second: steampunk_basic color_55
+  - first:
+      213: 3635232528896127719
+    second: steampunk_basic color_56
+  - first:
+      213: 2359278838930311563
+    second: steampunk_basic color_57
+  - first:
+      213: 425112278357903937
+    second: steampunk_basic color_58
+  - first:
+      213: 1857199496033920778
+    second: steampunk_basic color_59
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: steampunk_basic color_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e91f84c36035b624a8560eb1ee5b6ae3
+      internalID: 6719932179994537083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_1
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23981ecae0501224ebb37a37359b0036
+      internalID: 516652409543159334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_2
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcd1f3213d85d7d409615d04978ce53c
+      internalID: 3890989256962329875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_3
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bf1cb9236886834b8c4a27fcc79a9b1
+      internalID: -5231466221065246410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_4
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55e623a78f5811a408ff28145ddd0714
+      internalID: 836069831964395097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_5
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3b9158abd7bf8d45a5922dd4df4457d
+      internalID: -8394777517995099027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_6
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b95a361aaf0dfe941b2934032b42b0b2
+      internalID: -5185169247268106347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_7
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa7e8e56e27248f43943c4c578a77943
+      internalID: -7777909561480515456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_8
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0928bdf3000b188468d7468dbcc3129e
+      internalID: -6061883749219077515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_9
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b841c996833c9324aa6919d1ab3df933
+      internalID: 7768604460712985022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_10
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dd074f40542e004eb122fff97141f62
+      internalID: 7851614892948903664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_11
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74683fe1b4260dd40bd1af43b38e0eb6
+      internalID: -6877271963442689056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_12
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deecb119963335244aec59cae48c04f6
+      internalID: -7021481242130431679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_13
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73db8fc5f62a4954b94d3eab6cb75b10
+      internalID: 1524743295679986442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_14
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44cf1c985d6e27b49981acd7f4edb387
+      internalID: 450895489481253487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_15
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f294e25a10af3242a23af44e191820c
+      internalID: 1497665140778188051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_16
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 432
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dab452061b0bb1343af8655bea567ed7
+      internalID: 6767112894019549942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a92a3545bfde82408130f7cf6fab99d
+      internalID: -502131594067608906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_18
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6498c44e5f3b35f42a83dd3c2821455f
+      internalID: 6708232116380758895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_19
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66fdc22289257254fa596e2e6eb56aea
+      internalID: 6153328820732708768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_20
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec2976f4408d65f4baea7f1ee85a6f70
+      internalID: -6848396733643638844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_21
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d91ff027ea616f4298f23c4566336dc
+      internalID: -997442078692293787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_22
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10ce516baebf1154bbc930b1ff9983ed
+      internalID: -4849109115884677178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_23
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fafd782da9613fd44bf99105be494aac
+      internalID: -5769621229117437503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_24
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df67ddb2740f1904c92aead31b8ea3f1
+      internalID: -2674061316782428788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_25
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c21a0f4bff49953458846a0f5e9e2596
+      internalID: 6922602710566150096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_26
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8593beae11a66149951c441838b471f
+      internalID: -5266837676536697176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_27
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f46d2b05865b374e8af8f1d77a782e9
+      internalID: 2700057994778523456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_28
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 414f746ab4a647b4781bdb48a0d273c1
+      internalID: 7636031997892106652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_29
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aec64cf804dff534195e143e2364498f
+      internalID: 2756322206140888237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_30
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77c0a90cbe1ba2843bf929393cacb609
+      internalID: -5226598375786352140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_31
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 288390424f78d4c4f8af15a2072e96c0
+      internalID: -5532965498793812153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_32
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6de2a4a4e9bfb4c4bbda24eb02b5705d
+      internalID: 4814463654009259413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_33
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 352
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24ec04cbb72204045b406139945418d1
+      internalID: 4056572670045372156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f618a76d9b908c4a981fd1bd2b88b73
+      internalID: -168942777559989230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_35
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cc5bed1f914304418fd0dbbd881f899
+      internalID: -1932892501827263318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_36
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 899d5334b872a8641bb3213996afd4d7
+      internalID: 5845482002284101327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_37
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bf01f0ebc7c0a2488bd9888be05a3c7
+      internalID: -5679341355246989758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_38
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0856f19eabfe7c941bb80c17008a5cb5
+      internalID: 4884731084927754631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_39
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c0d57b6e2325a94baf1280c776a736d
+      internalID: 9099671553790045067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_40
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfc192463e2e8da42a01dfa25d91d0fb
+      internalID: -4180798953633672492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_41
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b532fa01b57dbac47ba860d1fe2b09db
+      internalID: -2249640257769810284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_42
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61b00db83bd676241a1c90e40059c9c7
+      internalID: -8967175811689289392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_43
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e4ff382bbd0eea41ad674e6fc81c663
+      internalID: 7397116745243690436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_44
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92ffa1f93c846684b98e964d36a6d18b
+      internalID: 7907909061306302278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_45
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 638aecefad9d46b4cb7ab46672f226ae
+      internalID: 7616612342458157533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_46
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a055feba4df4a3444852fb5688874382
+      internalID: 5073990247472674113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_47
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 791f03f3b15947444bb4e57ae5f069f5
+      internalID: 9008513114380678387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_48
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc3f86c2e2f116b4494f60da4dec8ab2
+      internalID: -2216548254653509441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_49
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c03b6a7d9e3b0f4e9d2b69e91852752
+      internalID: 467361141312250598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_50
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 272
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e63f97d1ae4c8ba4fa8450225f35381e
+      internalID: -877538936911295933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_51
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e501bd6bf9d3a94c8215cf1d752950d
+      internalID: 3934351487159339640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_52
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 192
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65da8d3094fb0044a91e8d2a863e45ac
+      internalID: -206152646094236144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_53
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 192
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 142b39f9fe680fa4289a9c0de75d0eb6
+      internalID: -541867063952063377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_54
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 192
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e28424ddcd17430439cebc5bd416ef0b
+      internalID: -7501024868504979230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_55
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 192
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 110ff70a3444cf345bca6b721bd1bc55
+      internalID: 272460891862307240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steampunk_basic color_56
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 192
+        width: 58
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31e154d28ddc6ef4990f63bc85dc62de
+      internalID: 3635232528896127719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5d1c5b44ede3e974d94a9e010044ab63
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      steampunk_basic color_12: -7021481242130431679
+      steampunk_basic color_16: 6767112894019549942
+      steampunk_basic color_38: 4884731084927754631
+      steampunk_basic color_44: 7907909061306302278
+      steampunk_basic color_39: 9099671553790045067
+      steampunk_basic color_9: 7768604460712985022
+      steampunk_basic color_42: -8967175811689289392
+      steampunk_basic color_0: 6719932179994537083
+      steampunk_basic color_14: 450895489481253487
+      steampunk_basic color_51: 3934351487159339640
+      steampunk_basic color_11: -6877271963442689056
+      steampunk_basic color_55: 272460891862307240
+      steampunk_basic color_33: 4056572670045372156
+      steampunk_basic color_41: -2249640257769810284
+      steampunk_basic color_2: 3890989256962329875
+      steampunk_basic color_28: 7636031997892106652
+      steampunk_basic color_34: -168942777559989230
+      steampunk_basic color_29: 2756322206140888237
+      steampunk_basic color_50: -877538936911295933
+      steampunk_basic color_18: 6708232116380758895
+      steampunk_basic color_46: 5073990247472674113
+      steampunk_basic color_25: 6922602710566150096
+      steampunk_basic color_13: 1524743295679986442
+      steampunk_basic color_15: 1497665140778188051
+      steampunk_basic color_32: 4814463654009259413
+      steampunk_basic color_22: -4849109115884677178
+      steampunk_basic color_7: -7777909561480515456
+      steampunk_basic color_19: 6153328820732708768
+      steampunk_basic color_31: -5532965498793812153
+      steampunk_basic color_45: 7616612342458157533
+      steampunk_basic color_47: 9008513114380678387
+      steampunk_basic color_26: -5266837676536697176
+      steampunk_basic color_4: 836069831964395097
+      steampunk_basic color_10: 7851614892948903664
+      steampunk_basic color_36: 5845482002284101327
+      steampunk_basic color_17: -502131594067608906
+      steampunk_basic color_54: -7501024868504979230
+      steampunk_basic color_20: -6848396733643638844
+      steampunk_basic color_56: 3635232528896127719
+      steampunk_basic color_40: -4180798953633672492
+      steampunk_basic color_24: -2674061316782428788
+      steampunk_basic color_8: -6061883749219077515
+      steampunk_basic color_21: -997442078692293787
+      steampunk_basic color_1: 516652409543159334
+      steampunk_basic color_30: -5226598375786352140
+      steampunk_basic color_6: -5185169247268106347
+      steampunk_basic color_27: 2700057994778523456
+      steampunk_basic color_23: -5769621229117437503
+      steampunk_basic color_48: -2216548254653509441
+      steampunk_basic color_35: -1932892501827263318
+      steampunk_basic color_43: 7397116745243690436
+      steampunk_basic color_49: 467361141312250598
+      steampunk_basic color_53: -541867063952063377
+      steampunk_basic color_3: -5231466221065246410
+      steampunk_basic color_52: -206152646094236144
+      steampunk_basic color_37: -5679341355246989758
+      steampunk_basic color_5: -8394777517995099027
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

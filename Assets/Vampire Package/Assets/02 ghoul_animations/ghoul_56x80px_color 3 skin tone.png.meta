@@ -1,0 +1,1485 @@
+fileFormatVersion: 2
+guid: 2677eba20cd773b449c992a11d1af85a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7836872130345152035
+    second: ghoul_56x80px_color 3 skin tone_0
+  - first:
+      213: 1532531230184595782
+    second: ghoul_56x80px_color 3 skin tone_1
+  - first:
+      213: -1542334979230222181
+    second: ghoul_56x80px_color 3 skin tone_2
+  - first:
+      213: 6148176184734320456
+    second: ghoul_56x80px_color 3 skin tone_3
+  - first:
+      213: -4366137372061122995
+    second: ghoul_56x80px_color 3 skin tone_4
+  - first:
+      213: -7202589836970172955
+    second: ghoul_56x80px_color 3 skin tone_5
+  - first:
+      213: 579213182631537982
+    second: ghoul_56x80px_color 3 skin tone_6
+  - first:
+      213: 6450999702283442269
+    second: ghoul_56x80px_color 3 skin tone_7
+  - first:
+      213: -5022963564909358981
+    second: ghoul_56x80px_color 3 skin tone_8
+  - first:
+      213: 4674663524245089177
+    second: ghoul_56x80px_color 3 skin tone_9
+  - first:
+      213: 2103523127804169154
+    second: ghoul_56x80px_color 3 skin tone_10
+  - first:
+      213: 7942450092442598828
+    second: ghoul_56x80px_color 3 skin tone_11
+  - first:
+      213: 5887828184341771872
+    second: ghoul_56x80px_color 3 skin tone_12
+  - first:
+      213: 7348346822626548436
+    second: ghoul_56x80px_color 3 skin tone_13
+  - first:
+      213: -2945442805688708067
+    second: ghoul_56x80px_color 3 skin tone_14
+  - first:
+      213: -5777698855270229954
+    second: ghoul_56x80px_color 3 skin tone_15
+  - first:
+      213: 1496730151474067904
+    second: ghoul_56x80px_color 3 skin tone_16
+  - first:
+      213: -3057588813216878951
+    second: ghoul_56x80px_color 3 skin tone_17
+  - first:
+      213: -3022145138540600776
+    second: ghoul_56x80px_color 3 skin tone_18
+  - first:
+      213: -4441262764283868992
+    second: ghoul_56x80px_color 3 skin tone_19
+  - first:
+      213: -3932333134338296206
+    second: ghoul_56x80px_color 3 skin tone_20
+  - first:
+      213: -4428407975810509908
+    second: ghoul_56x80px_color 3 skin tone_21
+  - first:
+      213: 9103855401420819320
+    second: ghoul_56x80px_color 3 skin tone_22
+  - first:
+      213: 3626718298980961634
+    second: ghoul_56x80px_color 3 skin tone_23
+  - first:
+      213: 96169296172019589
+    second: ghoul_56x80px_color 3 skin tone_24
+  - first:
+      213: 1310984427089413653
+    second: ghoul_56x80px_color 3 skin tone_25
+  - first:
+      213: 4958691307490621004
+    second: ghoul_56x80px_color 3 skin tone_26
+  - first:
+      213: -1732606025859992599
+    second: ghoul_56x80px_color 3 skin tone_27
+  - first:
+      213: 36192174280595634
+    second: ghoul_56x80px_color 3 skin tone_28
+  - first:
+      213: -3281202229261979063
+    second: ghoul_56x80px_color 3 skin tone_29
+  - first:
+      213: 173096506817297849
+    second: ghoul_56x80px_color 3 skin tone_30
+  - first:
+      213: -5935999891847789219
+    second: ghoul_56x80px_color 3 skin tone_31
+  - first:
+      213: -2626750410725317754
+    second: ghoul_56x80px_color 3 skin tone_32
+  - first:
+      213: 7221101514616650274
+    second: ghoul_56x80px_color 3 skin tone_33
+  - first:
+      213: 7013289641404418722
+    second: ghoul_56x80px_color 3 skin tone_34
+  - first:
+      213: 8514535512912929574
+    second: ghoul_56x80px_color 3 skin tone_35
+  - first:
+      213: -4440635904684119821
+    second: ghoul_56x80px_color 3 skin tone_36
+  - first:
+      213: -2379840692979012822
+    second: ghoul_56x80px_color 3 skin tone_37
+  - first:
+      213: -3392101819179093727
+    second: ghoul_56x80px_color 3 skin tone_38
+  - first:
+      213: -474931838783018960
+    second: ghoul_56x80px_color 3 skin tone_39
+  - first:
+      213: 7383489854065743895
+    second: ghoul_56x80px_color 3 skin tone_40
+  - first:
+      213: 3995103579915220244
+    second: ghoul_56x80px_color 3 skin tone_41
+  - first:
+      213: 5704915031895599067
+    second: ghoul_56x80px_color 3 skin tone_42
+  - first:
+      213: 2758655415903135458
+    second: ghoul_56x80px_color 3 skin tone_43
+  - first:
+      213: 4829175153751083697
+    second: ghoul_56x80px_color 3 skin tone_44
+  - first:
+      213: 8315788234354628830
+    second: ghoul_56x80px_color 3 skin tone_45
+  - first:
+      213: 2905921102520011724
+    second: ghoul_56x80px_color 3 skin tone_46
+  - first:
+      213: -1167953836996904137
+    second: ghoul_56x80px_color 3 skin tone_47
+  - first:
+      213: -1993496145019619945
+    second: ghoul_56x80px_color 3 skin tone_48
+  - first:
+      213: -6381845485160387851
+    second: ghoul_56x80px_color 3 skin tone_49
+  - first:
+      213: -1748293867626251394
+    second: ghoul_56x80px_color 3 skin tone_50
+  - first:
+      213: -8100309585378655803
+    second: ghoul_56x80px_color 3 skin tone_51
+  - first:
+      213: 7914899089658741951
+    second: ghoul_56x80px_color 3 skin tone_52
+  - first:
+      213: 818052604372217
+    second: ghoul_56x80px_color 3 skin tone_53
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70793ba1ec8dbd543bb34ec8d407cc2e
+      internalID: -7836872130345152035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e6c5d5cfc711a74281d5ddc96c657ea
+      internalID: 1532531230184595782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aae3e18da3ae75d47923626f62d9ce29
+      internalID: -1542334979230222181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_3
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 145dddca5bef37346b748a2f0693a676
+      internalID: 6148176184734320456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_4
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cf03081a7ab3664aa7d706b56b913d2
+      internalID: -4366137372061122995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_5
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fc298699278e62409c4ce9b2ca84d8a
+      internalID: -7202589836970172955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_6
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7da11300fae3ea845972dda4ba035d21
+      internalID: 579213182631537982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_7
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d87591a85e66e5f4e88b8acf766d4611
+      internalID: 6450999702283442269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_8
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 432
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 129548b0c0e60dd4a9c59d18d3807602
+      internalID: -5022963564909358981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a6bbe2b8a8ff6543b7166bb764fad46
+      internalID: 4674663524245089177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_10
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 866c5f85528e2024f9a4a66dfd577963
+      internalID: 2103523127804169154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_11
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa24adc009772064ea8e9e4677a07399
+      internalID: 7942450092442598828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_12
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dd5220b5798fdd40850fbdde65e6d58
+      internalID: 5887828184341771872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_13
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aad3a6f807c2694c8f28669faa7da01
+      internalID: 7348346822626548436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_14
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 342990348755f3640a0f4c135246922d
+      internalID: -2945442805688708067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_15
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f1f66890170355458a715aa7839ddee
+      internalID: -5777698855270229954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_16
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e1fafb22ead6764aa500febcdf41238
+      internalID: 1496730151474067904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_17
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 352
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d15dbe1e496f844cbd44bd219de452a
+      internalID: -3057588813216878951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a363017784796643af278446a16bb88
+      internalID: -3022145138540600776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_19
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f1fa7d1f24a5e04ea1f3de19fd46578
+      internalID: -4441262764283868992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_20
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07227e7337b152c40bd189c7585a202f
+      internalID: -3932333134338296206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_21
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42f6c242f0b60cf49aff0b38b626fc1e
+      internalID: -4428407975810509908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_22
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1fd6fe9e920f7d4da5e42dbbdd9aee7
+      internalID: 9103855401420819320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_23
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5bc936588a146b4a95ee4e7f24eb23b
+      internalID: 3626718298980961634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_24
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a724d2114729d540a7e6813438a4709
+      internalID: 96169296172019589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_25
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 835c6cc23c9276e46b80151d4d4f5454
+      internalID: 1310984427089413653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_26
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 272
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dba1dc4067837e740b2368e569fc124b
+      internalID: 4958691307490621004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9742b15f3f2badd4ab31bc9a13f03e7f
+      internalID: -1732606025859992599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_28
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 192
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78261e68b0eb2ce4ca0b8c19abedb8f2
+      internalID: 36192174280595634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_29
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 192
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fc91e4bde3924b45a3ca19f5734c3f6
+      internalID: -3281202229261979063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_30
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 192
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51303a7aa17323a4fbab3cd890c9cb68
+      internalID: 173096506817297849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_31
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 192
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e264b652f5b1f5a4a801e057b2671e8f
+      internalID: -5935999891847789219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_32
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 192
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4f03a2f6d8d23d498bf47fdf417826b
+      internalID: -2626750410725317754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_33
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 192
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c67c04920d2246b48a20a2d8540ceddb
+      internalID: 7221101514616650274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_34
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 192
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11f46d919371cd4469b40d27944bd440
+      internalID: 7013289641404418722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_35
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 192
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 447698fdb4068e849aed4cfc4a2b8c27
+      internalID: 8514535512912929574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f29f0af6e794c64b82f5e8a1ec12164
+      internalID: -4440635904684119821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_37
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 112
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e3b6038a9aff8247988e6739eab7059
+      internalID: -2379840692979012822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_38
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 112
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b10934bba31d46a4daed0d1a37b32224
+      internalID: -3392101819179093727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_39
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 112
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e90d801d2729cc43b8e2428de26626e
+      internalID: -474931838783018960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_40
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 112
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44fa1597ee39ff146bf9fdf49f96f190
+      internalID: 7383489854065743895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_41
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 112
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9cb4585eed78874484544463d7b903c
+      internalID: 3995103579915220244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_42
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 112
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 814bdfa9cc7efe4489dd2827a7558ff2
+      internalID: 5704915031895599067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_43
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 112
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 341b2a632a9f65e4f907fc939a1ea5e7
+      internalID: 2758655415903135458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_44
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 112
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b481ef3bf8ed65042bd99c9e1d565e29
+      internalID: 4829175153751083697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f113ddcae23fce748987310cd47898b4
+      internalID: 8315788234354628830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_46
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 32
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee9f6effede65334a9b1ae8e726cba92
+      internalID: 2905921102520011724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_47
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 32
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a1e5713ef20d53419bd943ca314fa2b
+      internalID: -1167953836996904137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_48
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 32
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f54153e8d3b55d45ac89f612099a6ef
+      internalID: -1993496145019619945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_49
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 32
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48f782bb849ff1642b9080045ef74121
+      internalID: -6381845485160387851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_50
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 32
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea2cd188c01a61f49b96a82efcac4a6f
+      internalID: -1748293867626251394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_51
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 32
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18d31b1da266624419db88845120e13c
+      internalID: -8100309585378655803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_52
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 32
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e751e4c0e6065c42bac70f45bdcb2e9
+      internalID: 7914899089658741951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ghoul_56x80px_color 3 skin tone_53
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 32
+        width: 56
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d7a794268355be43804a16e0279ed92
+      internalID: 818052604372217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 787ca0c40c635774db7a6577d8bed71c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ghoul_56x80px_color 3 skin tone_32: -2626750410725317754
+      ghoul_56x80px_color 3 skin tone_36: -4440635904684119821
+      ghoul_56x80px_color 3 skin tone_2: -1542334979230222181
+      ghoul_56x80px_color 3 skin tone_10: 2103523127804169154
+      ghoul_56x80px_color 3 skin tone_27: -1732606025859992599
+      ghoul_56x80px_color 3 skin tone_5: -7202589836970172955
+      ghoul_56x80px_color 3 skin tone_41: 3995103579915220244
+      ghoul_56x80px_color 3 skin tone_3: 6148176184734320456
+      ghoul_56x80px_color 3 skin tone_28: 36192174280595634
+      ghoul_56x80px_color 3 skin tone_14: -2945442805688708067
+      ghoul_56x80px_color 3 skin tone_49: -6381845485160387851
+      ghoul_56x80px_color 3 skin tone_44: 4829175153751083697
+      ghoul_56x80px_color 3 skin tone_40: 7383489854065743895
+      ghoul_56x80px_color 3 skin tone_18: -3022145138540600776
+      ghoul_56x80px_color 3 skin tone_48: -1993496145019619945
+      ghoul_56x80px_color 3 skin tone_22: 9103855401420819320
+      ghoul_56x80px_color 3 skin tone_4: -4366137372061122995
+      ghoul_56x80px_color 3 skin tone_52: 7914899089658741951
+      ghoul_56x80px_color 3 skin tone_33: 7221101514616650274
+      ghoul_56x80px_color 3 skin tone_6: 579213182631537982
+      ghoul_56x80px_color 3 skin tone_30: 173096506817297849
+      ghoul_56x80px_color 3 skin tone_53: 818052604372217
+      ghoul_56x80px_color 3 skin tone_42: 5704915031895599067
+      ghoul_56x80px_color 3 skin tone_31: -5935999891847789219
+      ghoul_56x80px_color 3 skin tone_13: 7348346822626548436
+      ghoul_56x80px_color 3 skin tone_9: 4674663524245089177
+      ghoul_56x80px_color 3 skin tone_38: -3392101819179093727
+      ghoul_56x80px_color 3 skin tone_0: -7836872130345152035
+      ghoul_56x80px_color 3 skin tone_24: 96169296172019589
+      ghoul_56x80px_color 3 skin tone_15: -5777698855270229954
+      ghoul_56x80px_color 3 skin tone_19: -4441262764283868992
+      ghoul_56x80px_color 3 skin tone_46: 2905921102520011724
+      ghoul_56x80px_color 3 skin tone_35: 8514535512912929574
+      ghoul_56x80px_color 3 skin tone_45: 8315788234354628830
+      ghoul_56x80px_color 3 skin tone_20: -3932333134338296206
+      ghoul_56x80px_color 3 skin tone_23: 3626718298980961634
+      ghoul_56x80px_color 3 skin tone_1: 1532531230184595782
+      ghoul_56x80px_color 3 skin tone_34: 7013289641404418722
+      ghoul_56x80px_color 3 skin tone_8: -5022963564909358981
+      ghoul_56x80px_color 3 skin tone_17: -3057588813216878951
+      ghoul_56x80px_color 3 skin tone_47: -1167953836996904137
+      ghoul_56x80px_color 3 skin tone_25: 1310984427089413653
+      ghoul_56x80px_color 3 skin tone_43: 2758655415903135458
+      ghoul_56x80px_color 3 skin tone_51: -8100309585378655803
+      ghoul_56x80px_color 3 skin tone_11: 7942450092442598828
+      ghoul_56x80px_color 3 skin tone_39: -474931838783018960
+      ghoul_56x80px_color 3 skin tone_12: 5887828184341771872
+      ghoul_56x80px_color 3 skin tone_26: 4958691307490621004
+      ghoul_56x80px_color 3 skin tone_21: -4428407975810509908
+      ghoul_56x80px_color 3 skin tone_16: 1496730151474067904
+      ghoul_56x80px_color 3 skin tone_29: -3281202229261979063
+      ghoul_56x80px_color 3 skin tone_7: 6450999702283442269
+      ghoul_56x80px_color 3 skin tone_50: -1748293867626251394
+      ghoul_56x80px_color 3 skin tone_37: -2379840692979012822
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

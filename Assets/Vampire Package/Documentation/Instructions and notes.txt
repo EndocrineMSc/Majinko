@@ -1,0 +1,46 @@
+=========================================
+Licinio Souza (2D Game Artist freelancer)
+liciniosouz@gmail.com
+=========================================
+
+CREATURES OF THE NIGHT: PACK VAMPIRES v0.1
+
+Pack with 4 different 2D animated characters (above ~200frames):
+
+TECHNICAL INFOS
+Resolution (each frame): 56 x 80px
+Metric range: 16px
+Character: ~3 quads 16px (30 x 45px)
+
+===============================
+ANIMATIONS
+-Stand
+-Run
+-Jump
+-Falling
+-Attack 1
+-Attack 2
+-Attack 3
+-3 Projectiles
+-Defense
+-Death
+
+LAYERS
+- character
+- projectil
+- shadow
+- reference
+
+
+In the PSD:
+- extra colors (change color)
+- shadow (you can export together with the player)
+- layout /  reference, indication for loops
+
+
+===========================================
+Coming Soon:
+- Pack: The Vampire Hunters
+- Background tileset: Bizarre Castle
+
+
