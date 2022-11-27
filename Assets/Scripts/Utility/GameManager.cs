@@ -5,7 +5,7 @@ using EnumCollection;
 using Monsters;
 using Player;
 
-namespace Vampeggle
+namespace PeggleWars
 {
     public class GameManager : MonoBehaviour
     {

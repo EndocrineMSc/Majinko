@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Vampeggle;
+using PeggleWars;
 using EnumCollection;
 
 public class ShotManager : MonoBehaviour
@@ -22,11 +22,11 @@ public class ShotManager : MonoBehaviour
         {
             if (!_ballActive)
             {
-                _currentBall = Instantiate(_basicShot, new Vector3(0, 9), Quaternion.identity);
+                _currentBall = Instantiate(_basicShot, new Vector3(1,3), Quaternion.identity);
                 _ballActive = true;
             }
 
-            if (_currentBall.BallHasStopped)
+            if (_currentBall.DestroyBall)
             {
                 Destroy(_currentBall.gameObject);
                 _ballActive = false;

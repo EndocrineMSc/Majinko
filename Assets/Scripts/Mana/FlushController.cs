@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-using Vampeggle;
+using PeggleWars;
 
 public class FlushController : MonoBehaviour
 {

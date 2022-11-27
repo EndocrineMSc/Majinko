@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using Vampeggle;
+using PeggleWars;
 
 public class FlushCell : MonoBehaviour
 { 

@@ -2,7 +2,7 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Vampeggle;
+using PeggleWars;
 using EnumCollection;
 
 namespace Player

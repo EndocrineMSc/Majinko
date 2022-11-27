@@ -20,12 +20,12 @@ public class BasicShot : MonoBehaviour
 
     #region Properties
 
-    private bool _ballHasStopped;
+    private bool _destroyBall;
 
-    public bool BallHasStopped
+    public bool DestroyBall
     {
-        get { return _ballHasStopped; }
-        private set { _ballHasStopped = value; }
+        get { return _destroyBall; }
+        private set { _destroyBall = value; }
     }
 
 
@@ -48,7 +48,6 @@ public class BasicShot : MonoBehaviour
         _mousePosition = _mainCam.ScreenToWorldPoint(Input.mousePosition);
 
         Vector3 _direction = _mousePosition - transform.position;
-        Vector3 _rotationShot = transform.position - _mousePosition;
 
         float _rotationZ = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
 
@@ -69,27 +68,11 @@ public class BasicShot : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        StartCoroutine(nameof(CheckForStoppedBall));
-    }
-
-    //Makes the ball dissappear if it stops for 2 seconds
-    private IEnumerator CheckForStoppedBall()
-    {
-        if (_unshotBall)
+        if (collision.gameObject.name.Contains("Portal"))
         {
-            yield break;
-        }
-
-        if (Mathf.Abs(_rigidbody.velocity.x) <= 0.05 && Mathf.Abs(_rigidbody.velocity.y) <= 0.05)
-        {
-            yield return new WaitForSeconds(2f);
-
-            if (Mathf.Abs(_rigidbody.velocity.x) <= 0.05 && Mathf.Abs(_rigidbody.velocity.y) <= 0.05)
-            {
-                _ballHasStopped = true;
-            }
+            _destroyBall = true;
         }
     }
 }
