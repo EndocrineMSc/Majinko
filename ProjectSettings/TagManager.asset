@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Monster
+  - PassableTankBarrier
+  - ManaSpawn
   layers:
   - Default
   - TransparentFX
@@ -12,10 +14,10 @@ TagManager:
   - 
   - Water
   - UI
-  - LiquidBlood
-  - Cells
-  - Vampire
-  - Bat
+  - Mana
+  - Orb
+  - Player
+  - Attack
   - Monster
   - 
   - 

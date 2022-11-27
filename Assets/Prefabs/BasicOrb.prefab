@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -8886388737678957090}
   - component: {fileID: 2072991838985901113}
   m_Layer: 7
-  m_Name: BloodCell_base
+  m_Name: BasicOrb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,7 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14abd92b533722546bf07b01ad745bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _liquidBlood: {fileID: 1293174035629984245, guid: dd17e86c997b09b4bb96bc9f5e5292d8, type: 3}
+  BasicMana: {fileID: 7005893637801753577, guid: dd17e86c997b09b4bb96bc9f5e5292d8, type: 3}
+  ManaType: 0
+  BaseManaAmount: 10
+  _manaSpeed: 5
 --- !u!50 &-8886388737678957090
 Rigidbody2D:
   serializedVersion: 4

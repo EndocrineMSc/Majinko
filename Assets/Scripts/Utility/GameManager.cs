@@ -12,9 +12,8 @@ namespace Vampeggle
 
         #region Fields
 
-        public static GameManager Instance;
+        public static GameManager Instance { get; private set; }
         private MonsterManager MonsterManager;
-        GameObject[] _monsterList; 
 
         #endregion
 
@@ -43,25 +42,24 @@ namespace Vampeggle
 
         public IEnumerator SwitchState(State state)
         {
+            _gameState= state;
+
             switch (state)
             {
                 case (State.MainMenu):
-                    _gameState = State.MainMenu;
-                    break;
-
-                case (State.Shooting):
-                    _gameState = State.Shooting;
                     break;
 
                 case (State.PlayerTurn):
-                    _gameState = State.PlayerTurn;
                     Vampire.Nosferatu.ShootBat();
                     yield return new WaitForSeconds(2f);
                     StartCoroutine(WaitForStateChange(State.MonsterTurn));
                     break;
 
+                case (State.Shooting):
+                    break;
+
                 case (State.MonsterTurn):
-                    _gameState = State.MonsterTurn;
+                    GameObject[] _monsterList;
                     _monsterList = GameObject.FindGameObjectsWithTag("Monster");
                     if (_monsterList.Length < 4)
                     {
@@ -77,34 +75,51 @@ namespace Vampeggle
                     break;
 
                 case (State.GameOver):
-                    _gameState = State.GameOver;
                     break;
 
                 case (State.Quit):
-                    _gameState = State.Quit;
                     break;
 
             }
-            yield break;
         }
 
         #endregion
 
+        #region Private Functions
+
+        private void Awake()
+        {
+            if (Instance != null && Instance != this)
+            {
+                Destroy(this);
+            }
+            else
+            {
+                Instance = this;
+                DontDestroyOnLoad(this);
+            }
+
+            
+        }
         // Start is called before the first frame update
         void Start()
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
+            Instance = this;           
 
             StartCoroutine(Instance.SwitchState(State.Shooting));
             MonsterManager = GetComponent<MonsterManager>();
         }
 
+        #endregion
+
+        #region IEnumerators
 
         private IEnumerator WaitForStateChange(State state)
         {
             yield return new WaitForSeconds(0.1f);
             StartCoroutine(Instance.SwitchState(state));
-        }   
+        }
+
+        #endregion
     }
 }

@@ -1495,7 +1495,6 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      steampunk_color 2_silver_27: -1471908533265477530
       steampunk_color 2_silver_16: -5273303198510446575
       steampunk_color 2_silver_37: -2619242784987967197
       steampunk_color 2_silver_21: 627506183281026835
@@ -1518,9 +1517,9 @@ TextureImporter:
       steampunk_color 2_silver_42: -8621987853147855847
       steampunk_color 2_silver_0: -5558821750009315863
       steampunk_color 2_silver_51: 2662583205219487580
-      steampunk_color 2_silver_34: -8101555908650808305
       steampunk_color 2_silver_26: 2197444195462178348
       steampunk_color 2_silver_40: 5742416112195483696
+      steampunk_color 2_silver_34: -8101555908650808305
       steampunk_color 2_silver_44: -5372637828009302188
       steampunk_color 2_silver_18: 5324431891438417550
       steampunk_color 2_silver_8: -829127334308919249
@@ -1549,6 +1548,7 @@ TextureImporter:
       steampunk_color 2_silver_1: -2771717828285587515
       steampunk_color 2_silver_6: 8578162643074099196
       steampunk_color 2_silver_29: -5824981562586428541
+      steampunk_color 2_silver_27: -1471908533265477530
       steampunk_color 2_silver_32: -380296927627328849
       steampunk_color 2_silver_13: -1944679370693704457
       steampunk_color 2_silver_54: -5765368028136763809
