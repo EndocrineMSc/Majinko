@@ -24,6 +24,8 @@ namespace PeggleOrbs
         private GameObject[] SpawnArray;
         private Mana[] ManaTypes;
 
+        private ManaPoolManager _manaPoolManager;
+
         #endregion
 
         #region Properties
@@ -50,6 +52,7 @@ namespace PeggleOrbs
 
             SpawnArray = GameObject.FindGameObjectsWithTag("ManaSpawn");
             ManaTypes = new Mana[] {_basicMana, _fireMana, _iceMana, _lightningMana, _darkMana, _lightMana};
+            _manaPoolManager = ManaPoolManager.Instance;
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
@@ -81,7 +84,34 @@ namespace PeggleOrbs
 
                 Vector2 _spawnPosition = new(_spawnPointPosition.x + _spawnRandomiserX, _spawnPointPosition.y + _spawnRandomiserY);
 
-                Instantiate(OrbMana, _spawnPosition, Quaternion.identity);
+                Mana tempMana = Instantiate(OrbMana, _spawnPosition, Quaternion.identity);
+
+                switch (SpawnManaType)
+                {
+                    case ManaType.BaseMana:
+                        _manaPoolManager.BasicMana.Add(tempMana);
+                        break;
+
+                    case ManaType.FireMana:
+                        _manaPoolManager.FireMana.Add(tempMana);
+                        break;
+
+                    case ManaType.IceMana:
+                        _manaPoolManager.IceMana.Add(tempMana);
+                        break;
+
+                    case ManaType.LightningMana:
+                        _manaPoolManager.LightningMana.Add(tempMana);
+                        break;
+
+                    case ManaType.DarkMana:
+                        _manaPoolManager.DarkMana.Add(tempMana);
+                        break;
+
+                    case ManaType.LightMana:
+                        _manaPoolManager.LightMana.Add(tempMana);
+                        break;
+                }
             }
         }
 
