@@ -69,7 +69,7 @@ namespace PeggleMana
             for (int i = 0; i < amount; i++)
             { 
                 Destroy(list[0].gameObject);
-                list.Remove(list[0]);
+                list.RemoveAt(0);
             }
 
             
