@@ -60,28 +60,16 @@ namespace PeggleMana
 
         private void SpendManaByList(List<Mana> list, int amount)
         {
-            bool enoughManaPresent = true;
-            for (int i = 0; i < amount; i++)
+            if (list.Count < amount)
             {
-                if (list[i] == null)
-                {
-                    enoughManaPresent = false;
-                }
-
-                if (!enoughManaPresent) 
-                {
-                    //ToDo: Give negative Player FeedBack
-                    return;              
-                }
-
-                //ToDo Visual player feedback for vanishing mana, e.g. particle effects or sth               
+                Debug.Log("Not enough Mana");
+                return;
             }
 
             for (int i = 0; i < amount; i++)
-            {
-                Mana temp = list[0];
+            { 
+                Destroy(list[0].gameObject);
                 list.Remove(list[0]);
-                Destroy(temp);
             }
 
             

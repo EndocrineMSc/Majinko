@@ -74,8 +74,6 @@ namespace PeggleOrbs
         {
             Vector2 _spawnPointPosition = SpawnArray[(int)SpawnManaType].transform.position;
             Mana OrbMana = ManaTypes[(int)SpawnManaType];
-            Debug.Log(SpawnManaType.ToString());
-            Debug.Log("---------------");
       
             for (int i = 0; i < ManaAmount; i++)
             {

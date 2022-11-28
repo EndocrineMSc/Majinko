@@ -48,13 +48,10 @@ namespace Monsters
 
         public IEnumerator MoveRightMonsters(GameObject[] monsters)
         {
-            Debug.Log("Coroutine is started");
             for (int i = 0; i < monsters.Length; i++)
             {
                 GameObject monster = monsters[i];
-                Debug.Log("Name of current monster + its index: " + monster.name + " " + i); ;
                 float currentPosition = monster.transform.position.x;
-                Debug.Log("It's current Position is: " + currentPosition);
 
                 if (currentPosition <= finalDestination) //already at vampire position
                 {

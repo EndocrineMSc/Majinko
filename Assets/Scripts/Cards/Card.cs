@@ -1,7 +1,9 @@
+using PeggleMana;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
+using EnumCollection;
 
 namespace Cards
 {
@@ -11,15 +13,16 @@ namespace Cards
 
         protected string _cardName;
         protected string _cardText;
-        protected string _baseManaCost;
+        protected int _baseManaCost = 20;
 
         #endregion
 
         #region Private Virtual Functions
 
-        protected virtual void CauseEffect()
+        public virtual void CauseEffect()
         {
-            Debug.Log("Effect not implemented yet.");
+            Debug.Log("Test effect.");
+            ManaPoolManager.Instance.SpendMana(ManaType.BaseMana, _baseManaCost);
         }
 
         protected virtual void SubtractManaCost()
