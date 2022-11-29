@@ -14,16 +14,16 @@ TagManager:
   - 
   - Water
   - UI
-  - Mana
+  - BasicMana
   - Orb
   - Player
   - Attack
   - Monster
-  - 
-  - 
-  - 
-  - 
-  - 
+  - FireMana
+  - IceMana
+  - LightningMana
+  - DarkMana
+  - LightMana
   - 
   - 
   - 

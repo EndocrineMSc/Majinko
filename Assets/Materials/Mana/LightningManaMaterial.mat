@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BasicManaMaterial
-  m_Shader: {fileID: -6465566751694194690, guid: 520a240832cd3c84a848b98dfaf0038a, type: 3}
+  m_Name: LightningManaMaterial
+  m_Shader: {fileID: -6465566751694194690, guid: 35186f0c1e3d2f94db0debfb074cd607, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -41,7 +41,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 8400000, guid: e12efe0f9ce8bf54a993338e9ba1806d, type: 2}
+        m_Texture: {fileID: 8400000, guid: 8b185f33bdcfde845bb5caeea3335a80, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -78,7 +78,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 0.0070848465, g: 0, b: 1, a: 1}
+    - _Color: {r: 0.7924528, g: 0.69132835, b: 0.055322148, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &5831150159668427509

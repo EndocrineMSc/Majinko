@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3911397808331039311}
   - component: {fileID: 3911397808331039304}
   - component: {fileID: 7005893637801753577}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: FireMana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8fdf2766c293d9043919f5243fbdbd74, type: 3}
   m_Color: {r: 1, g: 0.15557772, b: 0.0039215684, a: 0.78431374}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,7 +102,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.15
 --- !u!50 &3911397808331039304
 Rigidbody2D:
   serializedVersion: 4
