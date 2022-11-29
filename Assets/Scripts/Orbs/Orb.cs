@@ -13,18 +13,18 @@ namespace PeggleOrbs
     {
         #region Fields
 
-        [SerializeField] private Mana _basicMana;
-        [SerializeField] private Mana _fireMana;
-        [SerializeField] private Mana _iceMana;
-        [SerializeField] private Mana _lightningMana;
-        [SerializeField] private Mana _darkMana;
-        [SerializeField] private Mana _lightMana;
-        [SerializeField] private ManaType SpawnManaType;
+        [SerializeField] protected Mana _basicMana;
+        [SerializeField] protected Mana _fireMana;
+        [SerializeField] protected Mana _iceMana;
+        [SerializeField] protected Mana _lightningMana;
+        [SerializeField] protected Mana _darkMana;
+        [SerializeField] protected Mana _lightMana;
+        [SerializeField] protected ManaType SpawnManaType;
         [SerializeField] protected int ManaAmount = 10;
-        private GameObject[] SpawnArray;
-        private Mana[] ManaTypes;
+        protected GameObject[] SpawnArray;
+        protected Mana[] ManaTypes;
 
-        private ManaPoolManager _manaPoolManager;
+        protected ManaPoolManager _manaPoolManager;
 
         #endregion
 
@@ -45,7 +45,7 @@ namespace PeggleOrbs
 
         #region Private Functions
 
-        private void Start()
+        protected void Start()
         {
             //Ignore the collisions between layer 0 (default) and layer 8 (custom layer you set in Inspector window)
             Physics.IgnoreLayerCollision(6, 7);
@@ -55,7 +55,7 @@ namespace PeggleOrbs
             _manaPoolManager = ManaPoolManager.Instance;
         }
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        protected void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.name.Contains("Shot"))
             {
