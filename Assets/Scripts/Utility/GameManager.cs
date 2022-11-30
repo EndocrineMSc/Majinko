@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using EnumCollection;
-using Monsters;
+using Enemies;
 using Player;
 
 namespace PeggleWars
@@ -13,7 +13,7 @@ namespace PeggleWars
         #region Fields
 
         public static GameManager Instance { get; private set; }
-        private MonsterManager MonsterManager;
+        private EnemyManager _enemyManager;
 
         #endregion
 
@@ -50,28 +50,25 @@ namespace PeggleWars
                     break;
 
                 case (State.PlayerTurn):
-                    Vampire.Nosferatu.ShootBat();
                     yield return new WaitForSeconds(2f);
-                    StartCoroutine(WaitForStateChange(State.MonsterTurn));
+                    StartCoroutine(WaitThenChangeState(State.MonsterTurn));
                     break;
 
-                case (State.Shooting):
+                case (State.PlayerShooting):
                     break;
 
                 case (State.MonsterTurn):
-                    GameObject[] _monsterList;
-                    _monsterList = GameObject.FindGameObjectsWithTag("Monster");
-                    if (_monsterList.Length < 4)
+                    
+                    if (_enemyManager.Enemies.Count < 4)
                     {
-                        MonsterManager.SpawnZombie();
+                        _enemyManager.SpawnGroundEnemy(EnemyType.CloakedZombie);
                     }
-                    _monsterList = GameObject.FindGameObjectsWithTag("Monster");
-                    Debug.Log("Start of Coroutine");
-                    yield return StartCoroutine(MonsterManager.MoveRightMonsters(_monsterList));
-                    MonsterManager.MeleeMonstersAttack(_monsterList);
-                    _turn++;
-                    Vampire.Nosferatu.Damage = 0;
-                    StartCoroutine(WaitForStateChange(State.Shooting));
+                    yield return StartCoroutine(_enemyManager.MoveRightEnemies());
+
+                    _enemyManager.MeleeEnemiesAttack();
+                    _enemyManager.RangedEnemiesAttack();
+
+                    StartCoroutine(WaitThenChangeState(State.PlayerShooting));
                     break;
 
                 case (State.GameOver):
@@ -97,24 +94,22 @@ namespace PeggleWars
             {
                 Instance = this;
                 DontDestroyOnLoad(this);
-            }
-
-            
+            }          
         }
+
         // Start is called before the first frame update
         void Start()
-        {
-            Instance = this;           
+        {         
 
-            StartCoroutine(Instance.SwitchState(State.Shooting));
-            MonsterManager = GetComponent<MonsterManager>();
+            StartCoroutine(Instance.SwitchState(State.PlayerShooting));
+            _enemyManager = EnemyManager.Instance;
         }
 
         #endregion
 
         #region IEnumerators
 
-        private IEnumerator WaitForStateChange(State state)
+        private IEnumerator WaitThenChangeState(State state)
         {
             yield return new WaitForSeconds(0.1f);
             StartCoroutine(Instance.SwitchState(state));

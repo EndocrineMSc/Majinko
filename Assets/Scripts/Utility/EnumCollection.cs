@@ -15,11 +15,17 @@ namespace EnumCollection
     public enum State
     {
         MainMenu,
-        Shooting,
+        PlayerShooting,
         PlayerTurn,
         MonsterTurn,
         GameOver,
         Quit,
+    }
+
+    public enum EnemyAttackType
+    {
+        Melee,
+        Distance,
     }
 
     public enum EnemyType
@@ -54,6 +60,15 @@ namespace EnumCollection
         LightningBombOrb,   //explodes, and causes random chain lightning propagation to surrounding obs
         DarkBombOrb,        //explodes, and makes a gravitational pull towards the hit peggle? -> shot can stay in air longer?
         LightBombOrb,       //explodes, and blinds all enemies
+    }
+
+    public enum PlayerAttackTarget
+    {
+        FirstEnemy,
+        HighestHealthEnemy,
+        LowestHeathEnemy,
+        LastEnemy,
+        RandomEnemy,
     }
 }
 

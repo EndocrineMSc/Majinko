@@ -13,16 +13,10 @@ namespace PeggleOrbs
     {
         #region Fields
 
-        [SerializeField] protected Mana _basicMana;
-        [SerializeField] protected Mana _fireMana;
-        [SerializeField] protected Mana _iceMana;
-        [SerializeField] protected Mana _lightningMana;
-        [SerializeField] protected Mana _darkMana;
-        [SerializeField] protected Mana _lightMana;
+        [SerializeField] protected Mana _orbMana;
         [SerializeField] protected ManaType SpawnManaType;
         [SerializeField] protected int ManaAmount = 10;
         protected GameObject[] SpawnArray;
-        protected Mana[] ManaTypes;
 
         protected ManaPoolManager _manaPoolManager;
 
@@ -51,18 +45,14 @@ namespace PeggleOrbs
             Physics.IgnoreLayerCollision(6, 7);
 
             SpawnArray = GameObject.FindGameObjectsWithTag("ManaSpawn");
-            ManaTypes = new Mana[] {_basicMana, _fireMana, _iceMana, _lightningMana, _darkMana, _lightMana};
             _manaPoolManager = ManaPoolManager.Instance;
         }
 
         protected void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (collision.gameObject.name.Contains("Shot"))
-            {
-                gameObject.GetComponent<SpriteRenderer>().size += new Vector2(0.03f, 0.03f);
-                StartCoroutine(nameof(SetInactive));
-                SpawnMana();                            
-            }
+        {         
+            gameObject.GetComponent<SpriteRenderer>().size += new Vector2(0.03f, 0.03f);
+            StartCoroutine(nameof(SetInactive));
+            SpawnMana();                            
         }
 
         #endregion
@@ -73,7 +63,6 @@ namespace PeggleOrbs
         protected virtual void SpawnMana()
         {
             Vector2 _spawnPointPosition = SpawnArray[(int)SpawnManaType].transform.position;
-            Mana OrbMana = ManaTypes[(int)SpawnManaType];
       
             for (int i = 0; i < ManaAmount; i++)
             {
@@ -82,7 +71,7 @@ namespace PeggleOrbs
 
                 Vector2 _spawnPosition = new(_spawnPointPosition.x + _spawnRandomiserX, _spawnPointPosition.y + _spawnRandomiserY);
 
-                Mana tempMana = Instantiate(OrbMana, _spawnPosition, Quaternion.identity);
+                Mana tempMana = Instantiate(_orbMana, _spawnPosition, Quaternion.identity);
 
                 switch (SpawnManaType)
                 {

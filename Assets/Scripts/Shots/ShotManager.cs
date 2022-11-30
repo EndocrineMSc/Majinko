@@ -18,7 +18,7 @@ public class ShotManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.Instance.GameState == State.Shooting)
+        if (GameManager.Instance.GameState == State.PlayerShooting)
         {
             if (!_ballActive)
             {

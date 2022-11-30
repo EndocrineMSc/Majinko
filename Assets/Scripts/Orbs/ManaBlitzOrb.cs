@@ -1,27 +1,40 @@
+using PeggleAttacks.Player;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using EnumCollection;
 
-namespace PeggleOrbs
+namespace PeggleOrbs.ManaBlitzOrb
 {
     public class ManaBlitzOrb : Orb
     {
+        #region Fields
+
+        [SerializeField] private PlayerAttack _manaBlitz;
+
+        #endregion
+
+        #region Properties
+
+        protected int _damage = 20;
+
+        public int Damage
+        {
+            get { return _damage; }
+            set { _damage = value; }
+        }
+
+        #endregion
+
         private new void OnCollisionEnter2D(Collision2D collision)
         {
             base.OnCollisionEnter2D(collision);
-            ShootBlitz();
+            _manaBlitz.ShootAttack(this, PlayerAttackTarget.FirstEnemy, _damage);
             StartCoroutine(nameof(DestroyThisObject));
-        }
-
-        private void ShootBlitz()
-        {
-            //ToDo: Enemy targeted Mana blitz shot animation
-            //ToDo: Deal Damage to Enemy
         }
 
         private IEnumerator DestroyThisObject()
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1f);
             Destroy(this);
         }
     }
