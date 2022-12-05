@@ -70,5 +70,24 @@ namespace EnumCollection
         LastEnemy,
         RandomEnemy,
     }
+
+    public enum Fade
+    {
+        In,
+        Out,
+    }
+
+    public enum Track
+    {
+        MainMenu,
+        GameTrackOne,
+
+    }
+
+    public enum SFX
+    {
+        ButtonClick,
+        BasicPeggleHit,
+    }
 }
 

@@ -5,7 +5,7 @@ using TMPro;
 using UnityEditor;
 using UnityEngine;
 using PeggleMana;
-
+using GameName.Audio;
 
 namespace PeggleOrbs
 {
@@ -37,9 +37,9 @@ namespace PeggleOrbs
 
         #endregion
 
-        #region Private Functions
+        #region Protected Virtual Functions
 
-        protected void Start()
+        protected virtual void Start()
         {
             //Ignore the collisions between layer 0 (default) and layer 8 (custom layer you set in Inspector window)
             Physics.IgnoreLayerCollision(6, 7);
@@ -48,16 +48,13 @@ namespace PeggleOrbs
             _manaPoolManager = ManaPoolManager.Instance;
         }
 
-        protected void OnCollisionEnter2D(Collision2D collision)
-        {         
+        protected virtual void OnCollisionEnter2D(Collision2D collision)
+        {
+            AudioManager.Instance.PlaySoundEffectNoLimit(SFX.BasicPeggleHit);
             gameObject.GetComponent<SpriteRenderer>().size += new Vector2(0.03f, 0.03f);
             StartCoroutine(nameof(SetInactive));
             SpawnMana();                            
         }
-
-        #endregion
-
-        #region Protected Virtual Functions
 
         //spawns the mana in the respective container
         protected virtual void SpawnMana()
