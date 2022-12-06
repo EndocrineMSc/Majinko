@@ -15,20 +15,12 @@ namespace PeggleOrbs.ManaBlitzOrb
 
         #region Properties
 
-        protected int _damage = 20;
-
-        public int Damage
-        {
-            get { return _damage; }
-            set { _damage = value; }
-        }
-
         #endregion
 
         private new void OnCollisionEnter2D(Collision2D collision)
         {
             base.OnCollisionEnter2D(collision);
-            _manaBlitz.ShootAttack(this, PlayerAttackTarget.FirstEnemy, _damage);
+            _manaBlitz.ShootAttack(_position);
             StartCoroutine(nameof(DestroyThisObject));
         }
 

@@ -18,7 +18,7 @@ TagManager:
   - Orb
   - Player
   - Attack
-  - Monster
+  - Enemy
   - FireMana
   - IceMana
   - LightningMana

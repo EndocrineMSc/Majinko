@@ -161,7 +161,7 @@ namespace Enemies
 
             while (endPosition < currentPosition)
             {
-                _rigidbody.AddForce(Vector2.left * monsterSpeed);
+                _rigidbody.velocity = Vector2.left * monsterSpeed;
                 yield return new WaitForSeconds(0.1f);
                 currentPosition = enemy.transform.position.x;
             }

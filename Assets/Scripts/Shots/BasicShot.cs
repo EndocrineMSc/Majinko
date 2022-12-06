@@ -61,6 +61,7 @@ public class BasicShot : MonoBehaviour
         {
             //destroys the aiming arrow
             Destroy(transform.GetChild(0).gameObject);
+
             _rigidbody.gravityScale = 1;
             _rigidbody.velocity = new Vector2(_direction.x, _direction.y).normalized * force;
 

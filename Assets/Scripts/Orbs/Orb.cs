@@ -20,6 +20,8 @@ namespace PeggleOrbs
 
         protected ManaPoolManager _manaPoolManager;
 
+        protected Vector3 _position;
+
         #endregion
 
         #region Properties
@@ -97,6 +99,11 @@ namespace PeggleOrbs
                         break;
                 }
             }
+        }
+
+        protected virtual void Awake()
+        {
+            _position = transform.position;
         }
 
         #endregion
