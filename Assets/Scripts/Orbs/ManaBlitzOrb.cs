@@ -20,7 +20,7 @@ namespace PeggleOrbs.ManaBlitzOrb
         private new void OnCollisionEnter2D(Collision2D collision)
         {
             base.OnCollisionEnter2D(collision);
-            _manaBlitz.ShootAttack(_position);
+            _manaBlitz.ShootAttack(_position, _manaBlitz);
             StartCoroutine(nameof(DestroyThisObject));
         }
 

@@ -32,7 +32,7 @@ namespace PeggleAttacks.Player
 
         #region Public Functions
 
-        public virtual void ShootAttack(Vector3 startPosition)
+        public virtual void ShootAttack(Vector3 startPosition, PlayerAttack playerAttack)
         {
             Enemy enemy = null;
             Vector3 targetPosition = new();
@@ -53,7 +53,7 @@ namespace PeggleAttacks.Player
 
                 float rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-                PlayerAttack tempAttack = Instantiate(_attack, startPosition, Quaternion.Euler(0, 0, rotation * 2.5f));
+                PlayerAttack tempAttack = Instantiate(playerAttack, startPosition, Quaternion.Euler(0, 0, rotation * 2.5f));
                 Rigidbody2D rigidbody = tempAttack.GetComponent<Rigidbody2D>();
 
                 rigidbody.velocity = new Vector2(direction.x, direction.y).normalized * _attackFlySpeed;
