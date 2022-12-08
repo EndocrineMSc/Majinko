@@ -32,7 +32,7 @@ namespace Enemies
             switch (enemyType)
             {
                 case EnemyType.CloakedZombie:
-                    tempEnemy = Instantiate(_cloakedZombie, new Vector2(10f, -8.93f), Quaternion.identity);
+                    tempEnemy = Instantiate(_cloakedZombie, new Vector2(10.4f, 5.7f), Quaternion.identity);
                     break;
             }
 
