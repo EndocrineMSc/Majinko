@@ -15,9 +15,10 @@ namespace EnumCollection
     public enum State
     {
         MainMenu,
-        PlayerShooting,
-        PlayerTurn,
-        MonsterTurn,
+        CardHandling,
+        Shooting,
+        PlayerActions,
+        EnemyTurn,
         GameOver,
         Quit,
     }

@@ -4,6 +4,7 @@ using UnityEngine;
 using EnumCollection;
 using Enemies;
 using PeggleOrbs;
+using Packages.Rider.Editor.UnitTesting;
 
 namespace PeggleAttacks.Player
 {
@@ -11,10 +12,10 @@ namespace PeggleAttacks.Player
     {
         #region Fields
 
-        protected PlayerAttack _attack;
+        protected Vector2 _insantiatePosition = new Vector2(-7.5f, 5.9f);
+
         [SerializeField] protected PlayerAttackTarget _target;
         [SerializeField] protected float _attackFlySpeed = 10;
-
 
         #endregion
 
@@ -60,6 +61,14 @@ namespace PeggleAttacks.Player
             }           
         }
 
+        public virtual void ShootAttack(PlayerAttack playerAttack)
+        {
+            PlayerAttack tempAttack = Instantiate(playerAttack, _insantiatePosition, Quaternion.Euler(0, 0, -90));
+            Rigidbody2D rigidbody = tempAttack.GetComponent<Rigidbody2D>();
+
+            rigidbody.velocity = Vector3.right * _attackFlySpeed;
+        }
+
         #endregion
 
         #region Protected Functions
@@ -81,11 +90,6 @@ namespace PeggleAttacks.Player
 
             //ToDo: Polish with particle effect or animation here
             Destroy(gameObject);       
-        }
-
-        protected virtual void Awake()
-        {
-            _attack = this;
         }
 
         #endregion

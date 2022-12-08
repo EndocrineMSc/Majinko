@@ -4,6 +4,7 @@ using UnityEngine;
 using EnumCollection;
 using Enemies;
 using Player;
+using PeggleOrbs.OrbActions;
 
 namespace PeggleWars
 {
@@ -49,15 +50,20 @@ namespace PeggleWars
                 case (State.MainMenu):
                     break;
 
-                case (State.PlayerTurn):
-                    yield return new WaitForSeconds(2f);
-                    StartCoroutine(WaitThenChangeState(State.MonsterTurn));
+                case (State.CardHandling):
+                    StartCoroutine(WaitThenChangeState(State.Shooting));
                     break;
 
-                case (State.PlayerShooting):
+                case (State.Shooting):
+                    //Player Shot calls Statechange here?
                     break;
 
-                case (State.MonsterTurn):
+                case (State.PlayerActions):                 
+                    yield return StartCoroutine(OrbActionManager.Instance.HandleAllOrbEffects());
+                    //OrbActionManager goes to EnemyTurn in Coroutine
+                    break;
+
+                case (State.EnemyTurn):
                     
                     if (_enemyManager.Enemies.Count < 4)
                     {
@@ -68,7 +74,7 @@ namespace PeggleWars
                     _enemyManager.MeleeEnemiesAttack();
                     _enemyManager.RangedEnemiesAttack();
 
-                    StartCoroutine(WaitThenChangeState(State.PlayerShooting));
+                    StartCoroutine(WaitThenChangeState(State.Shooting));
                     break;
 
                 case (State.GameOver):
@@ -101,7 +107,7 @@ namespace PeggleWars
         void Start()
         {         
 
-            StartCoroutine(Instance.SwitchState(State.PlayerShooting));
+            StartCoroutine(Instance.SwitchState(State.Shooting));
             _enemyManager = EnemyManager.Instance;
         }
 

@@ -10,7 +10,6 @@ namespace PeggleOrbs.TransientOrbs
     public class TransientOrb : Orb
     {
 
-
         #region Properties
 
         protected Orb _anchorOrb;
@@ -29,8 +28,7 @@ namespace PeggleOrbs.TransientOrbs
         {
             AudioManager.Instance.PlaySoundEffectNoLimit(SFX.BasicPeggleHit);
             gameObject.GetComponent<SpriteRenderer>().size += new Vector2(0.03f, 0.03f);
-            OrbEffect();
-            UnoccupyAnchorOrb();
+            //UnoccupyAnchorOrb();
             StartCoroutine(nameof(DestroyThisObject));
         }
 
@@ -55,7 +53,7 @@ namespace PeggleOrbs.TransientOrbs
         private IEnumerator DestroyThisObject()
         {
             yield return new WaitForSeconds(1f);
-            Destroy(this);
+            Destroy(gameObject);
         }
 
         #endregion

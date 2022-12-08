@@ -46,9 +46,10 @@ namespace PeggleOrbs
 
         #region Public Functions
 
-
-
-
+        public virtual IEnumerator OrbEffect()
+        {
+            yield return null;
+        }
 
         #endregion
 
@@ -67,12 +68,7 @@ namespace PeggleOrbs
         {
             AudioManager.Instance.PlaySoundEffectNoLimit(SFX.BasicPeggleHit);
             gameObject.GetComponent<SpriteRenderer>().size += new Vector2(0.03f, 0.03f);
-            OrbEffect();
-            StartCoroutine(nameof(SetInactive));                         
-        }
-
-        protected virtual void OrbEffect()
-        {
+            StartCoroutine(nameof(SetInactive));
             SpawnMana();
         }
 

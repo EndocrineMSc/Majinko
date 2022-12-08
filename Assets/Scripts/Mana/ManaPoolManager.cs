@@ -84,7 +84,6 @@ namespace PeggleMana
             else
             {
                 Instance = this;
-                DontDestroyOnLoad(this);
             }
         }
 

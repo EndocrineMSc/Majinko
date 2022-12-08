@@ -18,7 +18,7 @@ public class ShotManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.Instance.GameState == State.PlayerShooting)
+        if (GameManager.Instance.GameState == State.Shooting)
         {
             if (!_ballActive)
             {
@@ -30,7 +30,7 @@ public class ShotManager : MonoBehaviour
             {
                 Destroy(_currentBall.gameObject);
                 _ballActive = false;
-                StartCoroutine(GameManager.Instance.SwitchState(State.PlayerTurn));
+                StartCoroutine(GameManager.Instance.SwitchState(State.PlayerActions));
             }
         }
     }
