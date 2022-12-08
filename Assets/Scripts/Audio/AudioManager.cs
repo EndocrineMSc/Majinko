@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using EnumCollection;
-using GameName;
+using PeggleWars;
 using UnityEngine;
 
-namespace GameName.Audio
+namespace PeggleWars.Audio
 {
     //this script is intended as a singleton
     public class AudioManager : MonoBehaviour

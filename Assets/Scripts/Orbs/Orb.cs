@@ -5,7 +5,7 @@ using TMPro;
 using UnityEditor;
 using UnityEngine;
 using PeggleMana;
-using GameName.Audio;
+using PeggleWars.Audio;
 
 namespace PeggleOrbs
 {
@@ -26,8 +26,21 @@ namespace PeggleOrbs
 
         #region Properties
 
+        protected bool _isOccupied;
 
+        public bool IsOccupied
+        {
+            get { return _isOccupied; }
+            set { _isOccupied = value; }
+        }
 
+        [SerializeField] protected OrbType _orbType;
+
+        public OrbType OrbType
+        {
+            get { return _orbType; }
+            private set { _orbType = value; }
+        }
 
         #endregion
 
@@ -54,8 +67,13 @@ namespace PeggleOrbs
         {
             AudioManager.Instance.PlaySoundEffectNoLimit(SFX.BasicPeggleHit);
             gameObject.GetComponent<SpriteRenderer>().size += new Vector2(0.03f, 0.03f);
-            StartCoroutine(nameof(SetInactive));
-            SpawnMana();                            
+            OrbEffect();
+            StartCoroutine(nameof(SetInactive));                         
+        }
+
+        protected virtual void OrbEffect()
+        {
+            SpawnMana();
         }
 
         //spawns the mana in the respective container
@@ -111,7 +129,7 @@ namespace PeggleOrbs
         #region IEnumerators
 
         //Delays the "despawn" so that the size increase can be visible
-        private IEnumerator SetInactive()
+        public IEnumerator SetInactive()
         {
             yield return new WaitForSeconds(0.1f);
             gameObject.GetComponent<SpriteRenderer>().size -= new Vector2(0.02f, 0.02f);

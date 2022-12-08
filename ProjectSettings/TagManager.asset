@@ -7,6 +7,7 @@ TagManager:
   - Monster
   - PassableTankBarrier
   - ManaSpawn
+  - Orb
   layers:
   - Default
   - TransparentFX

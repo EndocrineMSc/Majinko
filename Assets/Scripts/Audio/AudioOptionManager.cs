@@ -1,12 +1,12 @@
-using GameName.Audio;
+using PeggleWars.Audio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using EnumCollection;
-using GameName;
+using PeggleWars;
 
-namespace GameName.AudioOptions
+namespace PeggleWars.AudioOptions
 {
     public class AudioOptionManager : MonoBehaviour
     {

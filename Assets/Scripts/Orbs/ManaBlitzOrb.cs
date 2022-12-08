@@ -3,9 +3,9 @@ using System.Collections;
 using UnityEngine;
 using EnumCollection;
 
-namespace PeggleOrbs.ManaBlitzOrb
+namespace PeggleOrbs.TransientOrbs.ManaBlitzOrb
 {
-    public class ManaBlitzOrb : Orb
+    public class ManaBlitzOrb : TransientOrb
     {
         #region Fields
 
@@ -17,17 +17,16 @@ namespace PeggleOrbs.ManaBlitzOrb
 
         #endregion
 
-        private new void OnCollisionEnter2D(Collision2D collision)
+        #region Protected Functions
+
+        //will be called OnCollisionEnter2D from parent
+        protected override void OrbEffect()
         {
-            base.OnCollisionEnter2D(collision);
-            _manaBlitz.ShootAttack(_position, _manaBlitz);
-            StartCoroutine(nameof(DestroyThisObject));
+            base.OrbEffect();
+            _manaBlitz.ShootAttack(transform.position, _manaBlitz);
         }
 
-        private IEnumerator DestroyThisObject()
-        {
-            yield return new WaitForSeconds(1f);
-            Destroy(this);
-        }
+        #endregion
+
     }
 }
