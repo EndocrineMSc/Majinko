@@ -6,6 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using PeggleMana;
 using PeggleWars.Audio;
+using PeggleWars;
 
 namespace PeggleOrbs
 {
@@ -16,6 +17,7 @@ namespace PeggleOrbs
         [SerializeField] protected Mana _orbMana;
         [SerializeField] protected ManaType SpawnManaType;
         [SerializeField] protected int ManaAmount = 10;
+        [SerializeField] private Orb _defaultOrb;
         protected GameObject[] SpawnArray;
 
         protected ManaPoolManager _manaPoolManager;
@@ -25,14 +27,6 @@ namespace PeggleOrbs
         #endregion
 
         #region Properties
-
-        protected bool _isOccupied;
-
-        public bool IsOccupied
-        {
-            get { return _isOccupied; }
-            set { _isOccupied = value; }
-        }
 
         [SerializeField] protected OrbType _orbType;
 
@@ -68,8 +62,14 @@ namespace PeggleOrbs
         {
             AudioManager.Instance.PlaySoundEffectNoLimit(SFX.BasicPeggleHit);
             gameObject.GetComponent<SpriteRenderer>().size += new Vector2(0.03f, 0.03f);
-            StartCoroutine(nameof(SetInactive));
+                 
+            Orb orb = Instantiate(_defaultOrb, transform.position, Quaternion.identity);
+            orb.gameObject.SetActive(false);
+
             SpawnMana();
+            OrbManager.Instance.OrbList.Remove(this);
+            OrbManager.Instance.OrbList.Add(orb);
+            Destroy(gameObject);
         }
 
         //spawns the mana in the respective container
@@ -113,11 +113,6 @@ namespace PeggleOrbs
                         break;
                 }
             }
-        }
-
-        protected virtual void Awake()
-        {
-            _position = transform.position;
         }
 
         #endregion

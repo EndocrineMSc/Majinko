@@ -11,8 +11,9 @@ namespace PeggleOrbs
     {
         #region Fields
 
-        private List<Orb> _orbList = new List<Orb>();
-        public static OrbManager Instance;
+        [SerializeField] private List<Orb> _orbList = new List<Orb>();
+        public static OrbManager Instance { get; private set; }
+        public List<Orb> OrbList { get => _orbList; set => _orbList = value; }
 
         #endregion
 
@@ -24,14 +25,14 @@ namespace PeggleOrbs
         //missing orbs, will prefer BaseManaOrbs to exchange first
         public void SwitchTransientOrb(TransientOrb orb, int amount)
         {
-            List<Orb> baseOrbs = FindOrbs(_orbList, SearchTag.BaseOrbs);
+            List<Orb> baseOrbs = FindOrbs(OrbList, SearchTag.BaseOrbs);
             List<Orb> unoccupiedBaseOrbs = new();
             List<Orb> activeUnoccupiedBaseOrbs = new();
             
             //no BaseManaOrbs present, so replace any other active Orbs
             if (baseOrbs.Count == 0) 
             {
-                List<Orb> activeOrbs = FindOrbs(_orbList, SearchTag.IsActive);
+                List<Orb> activeOrbs = FindOrbs(OrbList, SearchTag.IsActive);
 
                 if(activeOrbs.Count >= amount)
                 {
@@ -60,6 +61,14 @@ namespace PeggleOrbs
             }
         }
 
+        public void SetAllOrbsActive()
+        {
+            foreach (Orb orb in OrbList)
+            {
+                orb.gameObject.SetActive(true);
+            }
+        }
+
         #endregion
 
         #region Private Functions
@@ -79,12 +88,12 @@ namespace PeggleOrbs
         // Start is called before the first frame update
         private void Start()
         {
-            _orbList = GameObject.FindObjectsOfType<Orb>().ToList();
+            OrbList = GameObject.FindObjectsOfType<Orb>().ToList();
         }
 
         private Orb FindRandomOrbInList(List<Orb> orbs)
         {
-            int randomOrbIndex = Random.Range(0, _orbList.Count - 1);
+            int randomOrbIndex = Random.Range(0, OrbList.Count - 1);
 
             Orb randomOrb = orbs[randomOrbIndex];
 
@@ -106,12 +115,12 @@ namespace PeggleOrbs
                         }
                         break;
 
-                    case SearchTag.IsUnoccupied:
-                        if (tempOrb.IsOccupied)
-                        {
-                            resultOrbs.Add(tempOrb);
-                        }
-                        break;
+                    //case SearchTag.IsUnoccupied:
+                    //    if (tempOrb.IsPermanent)
+                    //    {
+                    //        resultOrbs.Add(tempOrb);
+                    //   }
+                    //   break;
 
                     case SearchTag.IsActive:
                         if (tempOrb.isActiveAndEnabled)
@@ -137,8 +146,8 @@ namespace PeggleOrbs
                 //every other orb should be anchored to a basemanaorb themselves
                 if (isBaseOrb)
                 {
-                    tempOrb.SetAnchorOrb(randomOrb);
-                    randomOrb.SetInactive();
+                    //tempOrb.SetAnchorOrb(randomOrb);
+                    StartCoroutine(randomOrb.SetInactive());
                 }
                 else
                 {

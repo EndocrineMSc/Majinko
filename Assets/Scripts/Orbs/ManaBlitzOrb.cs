@@ -31,9 +31,9 @@ namespace PeggleOrbs.TransientOrbs.ManaBlitzOrb
         #region Protected Functions
 
         //will be called OnCollisionEnter2D from parent
-        protected override void OnCollisionEnter2D(Collision2D collision2D)
+        protected override void OnCollisionEnter2D(Collision2D collision)
         {
-            base.OnCollisionEnter2D(collision2D);
+            base.OnCollisionEnter2D(collision);
             OrbActionManager.Instance.AddOrb(this);
         }
 

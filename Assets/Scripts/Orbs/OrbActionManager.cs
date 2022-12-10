@@ -11,7 +11,7 @@ namespace PeggleOrbs.OrbActions
     {
         #region Fields
 
-        public static OrbActionManager Instance;
+        public static OrbActionManager Instance { get; private set; }
         private List<Orb> _orbActions = new();
 
         private int _orbCounter = 0;
@@ -29,6 +29,7 @@ namespace PeggleOrbs.OrbActions
         {
             Orb tempOrb = Instantiate(orb, new Vector2(11.3f, 3.8f - (0.5f * _orbCounter)), Quaternion.identity);
             _orbActions.Add(tempOrb);
+            _orbCounter++;
         }
 
         public void ResetOrbCounter()
