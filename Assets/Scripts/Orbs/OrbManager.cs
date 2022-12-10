@@ -11,54 +11,96 @@ namespace PeggleOrbs
     {
         #region Fields
 
-        [SerializeField] private List<Orb> _orbList = new List<Orb>();
+        [SerializeField] private List<Orb> _orbList = new();
         public static OrbManager Instance { get; private set; }
         public List<Orb> OrbList { get => _orbList; set => _orbList = value; }
+
+        //only for test purposes
+        [SerializeField] private Orb _manaBlitzOrb;
 
         #endregion
 
         #region Public Functions
 
+        public void TestSwitchOrbs()
+        {
+            SwitchOrbs(_manaBlitzOrb, 1);
+        }
+
         //Will change int amount of orbs into given orb
         //Will only do so for active orbs
         //If not enough active orbs are present, will active
         //missing orbs, will prefer BaseManaOrbs to exchange first
-        public void SwitchTransientOrb(TransientOrb orb, int amount)
+        public void SwitchOrbs(Orb orb, int amount)
         {
-            List<Orb> baseOrbs = FindOrbs(OrbList, SearchTag.BaseOrbs);
-            List<Orb> unoccupiedBaseOrbs = new();
-            List<Orb> activeUnoccupiedBaseOrbs = new();
+            List<Orb> baseOrbs = FindOrbs(Instance.OrbList, SearchTag.BaseOrbs);
+            List<Orb> activeBaseOrbs;
             
             //no BaseManaOrbs present, so replace any other active Orbs
             if (baseOrbs.Count == 0) 
             {
-                List<Orb> activeOrbs = FindOrbs(OrbList, SearchTag.IsActive);
+                List<Orb> activeOrbs = FindOrbs(Instance.OrbList, SearchTag.IsActive);
 
+                //enough other active orbs are present, so replace some of those
                 if(activeOrbs.Count >= amount)
                 {
-                    ReplaceOrbsInList(activeOrbs, amount, orb, false);
-                    return;
-                }                
+                    ReplaceOrbsInList(activeOrbs, amount, orb);
+                }
+                //not enough active orbs present, so replace remaining active orbs, then take inactive ones
+                else
+                {
+                    int availableOrbs = activeOrbs.Count;
+                    ReplaceOrbsInList(activeOrbs, availableOrbs, orb);
+
+                    int missingOrbs = amount - activeOrbs.Count;
+                    List<Orb> inactiveOrbs = FindOrbs(_orbList, SearchTag.IsInactive);
+                    ReplaceOrbsInList(inactiveOrbs, missingOrbs, orb);
+                }
             }
-            else
+            //are there enough remaining baseOrbs present, whether active or inactive, then replace active ones first
+            else if (baseOrbs.Count >= amount)
             {
-                unoccupiedBaseOrbs = FindOrbs(baseOrbs, SearchTag.IsUnoccupied);
+                activeBaseOrbs = FindOrbs(baseOrbs, SearchTag.IsActive);
+                
+                //all base orbs are inactive, so replace random ones in that list
+                if (activeBaseOrbs.Count == 0)
+                {
+                    ReplaceOrbsInList(baseOrbs, amount, orb);
+
+                }
+                else if (activeBaseOrbs.Count >= amount)
+                {
+                    //best case: enough active, unoccupied baseorbs
+                    ReplaceOrbsInList(activeBaseOrbs, amount, orb);
+                }              
+            }
+            //if here, then there are baseOrbs but not enough for the whole amount
+            else if (baseOrbs.Count > 0)
+            {
+                int availableOrbs = baseOrbs.Count;
+                int missingOrbs = amount - availableOrbs;
+
+                ReplaceOrbsInList(baseOrbs,availableOrbs, orb);
+
+                List<Orb> activeOrbs = FindOrbs(Instance.OrbList, SearchTag.IsActive);
+
+                //enough other active orbs are present, so replace some of those
+                if (activeOrbs.Count >= missingOrbs)
+                {
+                    ReplaceOrbsInList(activeOrbs, missingOrbs, orb);
+                }
+                //not enough active orbs present, so replace remaining active orbs, then take inactive ones
+                else
+                {
+                    int availableActiveOrbs = activeOrbs.Count;
+                    ReplaceOrbsInList(activeOrbs, availableActiveOrbs, orb);
+
+                    int missingActiveOrbs = missingOrbs - activeOrbs.Count;
+                    List<Orb> inactiveOrbs = FindOrbs(_orbList, SearchTag.IsInactive);
+                    ReplaceOrbsInList(inactiveOrbs, missingActiveOrbs, orb);
+                }
             }
 
-            if (unoccupiedBaseOrbs.Count == 0)
-            {
-                //end shit right here
-            }
-            else
-            {
-                activeUnoccupiedBaseOrbs = FindOrbs(unoccupiedBaseOrbs, SearchTag.IsActive);
-            }
-
-            //best case: enough active, unoccupied baseorbs
-            if (activeUnoccupiedBaseOrbs.Count >= amount)
-            {
-                ReplaceOrbsInList(activeUnoccupiedBaseOrbs, amount, orb, true);
-            }
         }
 
         public void SetAllOrbsActive()
@@ -93,7 +135,7 @@ namespace PeggleOrbs
 
         private Orb FindRandomOrbInList(List<Orb> orbs)
         {
-            int randomOrbIndex = Random.Range(0, OrbList.Count - 1);
+            int randomOrbIndex = Random.Range(0, orbs.Count - 1);
 
             Orb randomOrb = orbs[randomOrbIndex];
 
@@ -102,7 +144,7 @@ namespace PeggleOrbs
 
         private List<Orb> FindOrbs(List<Orb> orbs, SearchTag searchTag)
         {
-            List<Orb> resultOrbs = new List<Orb>();
+            List<Orb> resultOrbs = new();
 
             foreach (Orb tempOrb in orbs)
             {
@@ -115,16 +157,16 @@ namespace PeggleOrbs
                         }
                         break;
 
-                    //case SearchTag.IsUnoccupied:
-                    //    if (tempOrb.IsPermanent)
-                    //    {
-                    //        resultOrbs.Add(tempOrb);
-                    //   }
-                    //   break;
-
                     case SearchTag.IsActive:
                         if (tempOrb.isActiveAndEnabled)
                         {
+                            resultOrbs.Add(tempOrb);
+                        }
+                        break;
+
+                    case SearchTag.IsInactive:
+                        if (!tempOrb.gameObject.activeSelf) 
+                        { 
                             resultOrbs.Add(tempOrb);
                         }
                         break;
@@ -133,28 +175,21 @@ namespace PeggleOrbs
             return resultOrbs;
         }
         
-        private void ReplaceOrbsInList(List<Orb> orbs, int amount, TransientOrb orb, bool isBaseOrb)
+        private void ReplaceOrbsInList(List<Orb> orbs, int amount, Orb orb)
         {
             for (int i = 0; i < amount; i++)
             {
                 Orb randomOrb = FindRandomOrbInList(orbs);
                 Vector3 randomOrbPosition = randomOrb.transform.position;
-                TransientOrb tempOrb = Instantiate(orb, randomOrbPosition, Quaternion.identity);
+                Instantiate(orb, randomOrbPosition, Quaternion.identity);
+                
+                if (orbs != Instance.OrbList)
+                {
+                    Instance.OrbList.Remove(randomOrb);
+                }               
                 orbs.Remove(randomOrb);
 
-                //only needs an anchor if the replaced Orb is a basemanaorb
-                //every other orb should be anchored to a basemanaorb themselves
-                if (isBaseOrb)
-                {
-                    //tempOrb.SetAnchorOrb(randomOrb);
-                    StartCoroutine(randomOrb.SetInactive());
-                }
-                else
-                {
-                    //ToDo: get AnchorOrb of TransientOrb and set that orb as anchor orb to the new transient orb
-                    //Problem: randomOrb is of type Orb, which doesn't have an AnchorOrb, only TransientOrbs do
-                    Destroy(randomOrb.gameObject);
-                }                            
+                Destroy(randomOrb.gameObject);                            
             }
         }
         #endregion
@@ -162,8 +197,8 @@ namespace PeggleOrbs
         private enum SearchTag
         {
             BaseOrbs,
-            IsUnoccupied,
             IsActive,
+            IsInactive,
         }
     }
 }

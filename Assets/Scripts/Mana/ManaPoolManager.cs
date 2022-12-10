@@ -18,7 +18,7 @@ namespace PeggleMana
         public List<Mana> DarkMana = new();
         public List<Mana> LightMana = new();
 
-        public static ManaPoolManager Instance;
+        public static ManaPoolManager Instance { get; private set; }
 
         #endregion
 
@@ -71,8 +71,7 @@ namespace PeggleMana
                 Destroy(list[0].gameObject);
                 list.RemoveAt(0);
             }
-
-            
+    
         }
 
         private void Awake()
