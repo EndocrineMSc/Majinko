@@ -4,9 +4,9 @@ using UnityEngine;
 using EnumCollection;
 using PeggleOrbs.OrbActions;
 
-namespace PeggleOrbs.TransientOrbs.ManaBlitzOrb
+namespace PeggleOrbs.ManaBlitzOrb
 {
-    public class ManaBlitzOrb : TransientOrb
+    public class ManaBlitzOrb : Orb
     {
         #region Fields
 

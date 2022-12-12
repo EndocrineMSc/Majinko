@@ -39,7 +39,6 @@ namespace Enemies
             Enemies.Add(tempEnemy);           
         }
 
-
         public void MeleeEnemiesAttack()
         {
             Enemy enemy = Enemies[0];
@@ -73,7 +72,6 @@ namespace Enemies
             }
         }
 
-
         //removes an enemy from the global list, and destroys it after 1 second
         public void KillEnemy()
         {
@@ -81,10 +79,10 @@ namespace Enemies
             {
                 if (enemy.Health <= 0)
                 {
-                    Enemy tempEnemy = enemy;
-                    int index = Enemies.IndexOf(enemy);
-                    Enemies.RemoveAt(index);
-                    StartCoroutine(EnemyDeath(tempEnemy));
+                    //Enemy tempEnemy = enemy;
+                    //int index = Enemies.IndexOf(enemy);
+                    Enemies.Remove(enemy);
+                    StartCoroutine(EnemyDeath(enemy));
                 }
             }
         }
@@ -173,7 +171,7 @@ namespace Enemies
         private IEnumerator EnemyDeath(Enemy enemy)
         {
             yield return new WaitForSeconds(1f);
-            Destroy(enemy);
+            Destroy(enemy.gameObject);
         }
         #endregion
 

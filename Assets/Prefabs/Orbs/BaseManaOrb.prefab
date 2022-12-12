@@ -132,7 +132,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2549565476461289553}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f49a3310eb8d1b649aeda48075f76efd, type: 3}
+  m_Script: {fileID: 11500000, guid: 14abd92b533722546bf07b01ad745bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _orbMana: {fileID: 7005893637801753577, guid: dd17e86c997b09b4bb96bc9f5e5292d8, type: 3}

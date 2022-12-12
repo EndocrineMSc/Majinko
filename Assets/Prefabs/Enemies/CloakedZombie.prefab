@@ -119,10 +119,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.013620049, y: -0.116324425}
+  m_Offset: {x: -0.00070405006, y: -0.116324425}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -133,7 +133,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.14465955, y: 1.0365195}
+  m_Size: {x: 0.37861967, y: 1.0365195}
   m_EdgeRadius: 0
 --- !u!95 &1988687641357784034
 Animator:
@@ -170,4 +170,4 @@ MonoBehaviour:
   _enemyAttackType: 0
   _damage: 10
   _health: 20
-  _rottedManaOrb: {fileID: 0}
+  _rottedManaOrb: {fileID: 7479998709122375947, guid: c837957ee74bdcc44a31943daaafc0a8, type: 3}

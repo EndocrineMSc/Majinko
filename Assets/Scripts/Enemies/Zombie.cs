@@ -13,26 +13,13 @@ namespace Enemies.Zombies
 
         #endregion
 
-        #region Properties
-
-        #endregion
-
         #region Public Functions
 
         public override void LoseHealth(int damage)
         {
-            //ToDo: Spawn in Rotted Mana Orbs
+            OrbManager.Instance.SwitchOrbs(_rottedManaOrb, 2);
             base.LoseHealth(damage);
         }
-
-        #endregion
-
-        #region Protected Functions
-
-
-        #endregion
-
-        #region IEnumerators
 
         #endregion
     }

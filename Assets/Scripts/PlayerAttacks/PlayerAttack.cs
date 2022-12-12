@@ -20,7 +20,7 @@ namespace PeggleAttacks.Player
 
         #region Properties
 
-        protected int _damage;
+        [SerializeField] protected int _damage;
 
         public int Damage
         {
@@ -72,7 +72,7 @@ namespace PeggleAttacks.Player
 
         #region Protected Functions
 
-        protected virtual void OnCollisionEnter2D(Collision2D collision)
+        protected virtual void OnTriggerEnter2D(Collider2D collision)
         {
             Enemy enemy = null;
             switch (_target)
@@ -87,8 +87,13 @@ namespace PeggleAttacks.Player
                 enemy.LoseHealth(_damage);
             }
 
-            //ToDo: Polish with particle effect or animation here
-            Destroy(gameObject);       
+            OnHitPolishThenDestroy();    
+        }
+
+        protected virtual void OnHitPolishThenDestroy()
+        {
+            //Do polish stuff here
+            Destroy(gameObject);
         }
 
         #endregion

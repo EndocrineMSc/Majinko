@@ -8,6 +8,7 @@ TagManager:
   - PassableTankBarrier
   - ManaSpawn
   - Orb
+  - CardCanvas
   layers:
   - Default
   - TransparentFX

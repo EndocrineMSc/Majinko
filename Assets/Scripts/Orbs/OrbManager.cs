@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using EnumCollection;
-using PeggleOrbs.TransientOrbs;
 
 namespace PeggleOrbs
 {
@@ -29,7 +28,7 @@ namespace PeggleOrbs
 
         //Will change int amount of orbs into given orb
         //Will only do so for active orbs
-        //If not enough active orbs are present, will active
+        //If not enough active orbs are present, will activate
         //missing orbs, will prefer BaseManaOrbs to exchange first
         public void SwitchOrbs(Orb orb, int amount)
         {

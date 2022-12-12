@@ -7,13 +7,13 @@ namespace Cards.Orbchangers
 {
     public class ManaBlitzCard : Card
     {
-
         [SerializeField] private Orb _manaBlitzOrb;
 
-        public override void CauseEffect()
+        protected override void CardEffect()
         {
-            base.CauseEffect();
-
+            base.CardEffect();
+            Debug.Log("Mana Blitz Card Effect.");
+            OrbManager.Instance.SwitchOrbs(_manaBlitzOrb, 2);
         }
     }
 }

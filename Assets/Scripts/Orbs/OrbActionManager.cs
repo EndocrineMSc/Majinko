@@ -58,16 +58,14 @@ namespace PeggleOrbs.OrbActions
             foreach (Orb orb in _orbActions)
             {
                 yield return StartCoroutine(orb.OrbEffect());
-            }
-
-            foreach (Orb orb in _orbActions)
-            {
                 Destroy(orb.gameObject);
+                yield return new WaitForSeconds(0.5f);
             }
 
             _orbActions.Clear();
             ResetOrbCounter();
 
+            yield return new WaitForSeconds(2f);
             StartCoroutine(GameManager.Instance.SwitchState(State.EnemyTurn));
         }
 
