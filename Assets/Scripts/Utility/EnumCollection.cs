@@ -90,5 +90,21 @@ namespace EnumCollection
         ButtonClick,
         BasicPeggleHit,
     }
+
+    public enum StartDeck
+    {
+        Apprentice,
+        Soldier,
+        Druid,
+        Alchemist
+    }
+
+    public enum CardType
+    {
+        Attack,
+        Defense,
+        Buff,
+        Utility,
+    }
 }
 

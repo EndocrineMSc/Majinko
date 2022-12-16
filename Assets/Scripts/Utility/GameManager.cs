@@ -56,6 +56,7 @@ namespace PeggleWars
 
                 case (State.Shooting):
                     //Player Shot calls Statechange here?
+                    //Probably would be nice to work with an event here? But is there any benefit to that right now?
                     break;
 
                 case (State.PlayerActions):                 
@@ -64,7 +65,8 @@ namespace PeggleWars
                     break;
 
                 case (State.EnemyTurn):
-                    
+
+                    //this part should probably not be handled in here but in a separate script for now it's fine
                     if (_enemyManager.Enemies.Count < 4)
                     {
                         _enemyManager.SpawnGroundEnemy(EnemyType.CloakedZombie);
@@ -106,7 +108,6 @@ namespace PeggleWars
         // Start is called before the first frame update
         void Start()
         {         
-
             StartCoroutine(Instance.SwitchState(State.Shooting));
             _enemyManager = EnemyManager.Instance;
         }

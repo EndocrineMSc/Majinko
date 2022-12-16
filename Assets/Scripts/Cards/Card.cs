@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using EnumCollection;
 using Cards.DragDrop;
-
+using Cards.ScriptableCards;
 
 namespace Cards
 {
     [RequireComponent(typeof(CardDragDrop))]
-    public class Card : MonoBehaviour
+    public abstract class Card : MonoBehaviour
     {
         #region Fields
 
-        protected string _cardName;
-        protected string _cardText;
-        protected int _baseManaCost = 20;
-        protected ManaType _manaType = ManaType.BaseMana;
+        private string _cardName;
+        private string _cardDescription;
+        private int _manaCost;
+        private ManaType _manaType;
         private ManaPoolManager _instance;
-        protected bool _enoughMana;
+        private bool _enoughMana;
         private Vector3 _startPosition;
+        private CardType _cardType;
+
+        [SerializeField] protected ScriptableCard ScriptableCard;
 
         #endregion
 
@@ -46,15 +49,21 @@ namespace Cards
 
         #region Protected Virtual Functions
 
-        protected void Start()
+        protected virtual void Start()
         {
             _startPosition = gameObject.transform.position;
             _instance = ManaPoolManager.Instance;
+
+            _cardName = ScriptableCard.CardName;
+            _cardDescription = ScriptableCard.CardDescription;
+            _manaCost = ScriptableCard.ManaCost;
+            _manaType = ScriptableCard.ManaType;
+            _cardType = ScriptableCard.CardType;
         }
 
         protected virtual void SubtractManaCost()
         {
-            _instance.SpendMana(ManaType.BaseMana, _baseManaCost);
+            _instance.SpendMana(ManaType.BaseMana, _manaCost);
         }
 
         protected virtual void CardEffect()
@@ -64,7 +73,7 @@ namespace Cards
 
         protected virtual void CheckForMana()
         {
-            if (_instance.BasicMana.Count >= _baseManaCost)
+            if (_instance.BasicMana.Count >= _manaCost)
             {
                 _enoughMana = true;
             }

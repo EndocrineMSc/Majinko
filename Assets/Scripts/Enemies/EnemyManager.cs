@@ -100,7 +100,6 @@ namespace Enemies
             else
             {
                 Instance = this;
-                DontDestroyOnLoad(this);
             }
         }
 
@@ -165,7 +164,6 @@ namespace Enemies
             }
 
             _rigidbody.velocity = Vector2.zero;
-            yield break;
         }
 
         private IEnumerator EnemyDeath(Enemy enemy)

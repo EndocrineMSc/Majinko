@@ -806,7 +806,7 @@ GameObject:
   - component: {fileID: 8104484355595315346}
   - component: {fileID: -8017670538569771397}
   m_Layer: 5
-  m_Name: ManaBlitzCard
+  m_Name: OrbChangerCardPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -896,10 +896,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6398440697363082782}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d3b9a280ebc6d348bda15b4a55c6d64, type: 3}
+  m_Script: {fileID: 11500000, guid: 5589ff41520da734099b393c1c6d213b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _manaBlitzOrb: {fileID: 753921620, guid: 54e51abba4bb4494d84196f7eaffd172, type: 3}
+  ScriptableCard: {fileID: 11400000, guid: 564fdc8e098457445ad54f777e77d2d2, type: 2}
 --- !u!1 &7445797175075467034
 GameObject:
   m_ObjectHideFlags: 0
