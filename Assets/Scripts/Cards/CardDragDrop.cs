@@ -1,7 +1,9 @@
+using PeggleWars;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using EnumCollection;
 
 namespace Cards.DragDrop
 {
@@ -14,7 +16,9 @@ namespace Cards.DragDrop
 
         private RectTransform _rectTransform;
         private Vector3 _startPosition;
-        private readonly float _cardEffectBorderY = -5;
+        private readonly float _cardEffectBorderY = -270;
+
+        private bool _cardHandlingTurn;
 
         #endregion
 
@@ -35,25 +39,45 @@ namespace Cards.DragDrop
 
         public void OnBeginDrag(PointerEventData eventData)
         {
-            _startPosition = gameObject.transform.position;
+            if (_cardHandlingTurn)
+            {
+                _startPosition = gameObject.transform.position;
+            }
         }
 
         public void OnDrag(PointerEventData eventData)
         {
-            _rectTransform.anchoredPosition += eventData.delta / _canvas.scaleFactor;
+            if (_cardHandlingTurn)
+            {
+                _rectTransform.anchoredPosition += eventData.delta / _canvas.scaleFactor;
+            }  
         }
 
         public void OnEndDrag(PointerEventData eventData)
         {
+            Debug.Log(_rectTransform.anchoredPosition.y);
             if (_rectTransform.anchoredPosition.y >= _cardEffectBorderY)
             {
+                Debug.Log(_rectTransform.anchoredPosition.y);
                 _card.CardDropEffect();
             }
             else
             {
                 gameObject.transform.position = _startPosition;
             }
-        }        
+        }
+
+        private void Update()
+        {
+            if (GameManager.Instance.GameState == State.CardHandling)
+            {
+                _cardHandlingTurn = true;
+            }
+            else
+            {
+                _cardHandlingTurn = false;
+            }
+        }
 
         #endregion
     }

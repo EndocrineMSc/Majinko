@@ -43,7 +43,7 @@ namespace PeggleWars
 
         public IEnumerator SwitchState(State state)
         {
-            _gameState= state;
+            _gameState = state;
 
             switch (state)
             {
@@ -51,7 +51,7 @@ namespace PeggleWars
                     break;
 
                 case (State.CardHandling):
-                    StartCoroutine(WaitThenChangeState(State.Shooting));
+                    //End Turn Button calls State Change
                     break;
 
                 case (State.Shooting):
@@ -76,7 +76,7 @@ namespace PeggleWars
                     _enemyManager.MeleeEnemiesAttack();
                     _enemyManager.RangedEnemiesAttack();
 
-                    StartCoroutine(WaitThenChangeState(State.Shooting));
+                    StartCoroutine(WaitThenChangeState(State.CardHandling));
                     break;
 
                 case (State.GameOver):
@@ -86,6 +86,11 @@ namespace PeggleWars
                     break;
 
             }
+        }
+
+        public void EndTurn()
+        {
+            StartCoroutine(Instance.SwitchState(State.Shooting));
         }
 
         #endregion
@@ -108,7 +113,7 @@ namespace PeggleWars
         // Start is called before the first frame update
         void Start()
         {         
-            StartCoroutine(Instance.SwitchState(State.Shooting));
+            StartCoroutine(Instance.SwitchState(State.CardHandling));
             _enemyManager = EnemyManager.Instance;
         }
 
