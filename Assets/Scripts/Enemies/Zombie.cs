@@ -2,23 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PeggleOrbs;
+using EnumCollection;
 
 namespace Enemies.Zombies
 {
     public class Zombie : Enemy
     {
-        #region Fields
-
-        [SerializeField] private Orb _rottedManaOrb;
-
-        #endregion
 
         #region Public Functions
 
-        public override void LoseHealth(int damage)
+        protected override void HandleDeath()
         {
-            OrbManager.Instance.SwitchOrbs(_rottedManaOrb, 2);
-            base.LoseHealth(damage);
+            base.HandleDeath();
+            OrbManager.Instance.SwitchOrbs(OrbType.RottedOrb, 2);
         }
 
         #endregion

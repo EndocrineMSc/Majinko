@@ -1,12 +1,8 @@
 using EnumCollection;
 using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using UnityEditor;
 using UnityEngine;
 using PeggleMana;
 using PeggleWars.Audio;
-using PeggleWars;
 
 namespace PeggleOrbs
 {
@@ -18,7 +14,7 @@ namespace PeggleOrbs
         [SerializeField] protected ManaType SpawnManaType;
         [SerializeField] protected int ManaAmount = 10;
         [SerializeField] private Orb _defaultOrb;
-        protected GameObject[] SpawnArray;
+        protected GameObject _spawnPoint;
 
         protected ManaPoolManager _manaPoolManager;
 
@@ -53,9 +49,9 @@ namespace PeggleOrbs
         {
             //Ignore the collisions between layer 0 (default) and layer 8 (custom layer you set in Inspector window)
             Physics.IgnoreLayerCollision(6, 7);
-
-            SpawnArray = GameObject.FindGameObjectsWithTag("ManaSpawn");
+       
             _manaPoolManager = ManaPoolManager.Instance;
+            _spawnPoint = FindSpawnPoint();
         }
 
         protected virtual void OnCollisionEnter2D(Collision2D collision)
@@ -67,15 +63,15 @@ namespace PeggleOrbs
             orb.gameObject.SetActive(false);
 
             SpawnMana();
-            OrbManager.Instance.OrbList.Remove(this);
-            OrbManager.Instance.OrbList.Add(orb);
+            OrbManager.Instance.SceneOrbList.Remove(this);
+            OrbManager.Instance.SceneOrbList.Add(orb);
             Destroy(gameObject);
         }
 
         //spawns the mana in the respective container
         protected virtual void SpawnMana()
         {
-            Vector2 _spawnPointPosition = SpawnArray[(int)SpawnManaType].transform.position;
+            Vector2 _spawnPointPosition = _spawnPoint.transform.position;
       
             for (int i = 0; i < ManaAmount; i++)
             {
@@ -113,6 +109,44 @@ namespace PeggleOrbs
                         break;
                 }
             }
+        }
+
+        #endregion
+
+        #region Private Funtions
+
+        private GameObject FindSpawnPoint()
+        {
+            GameObject spawnPoint = null;
+
+            switch (SpawnManaType)
+            {
+                case ManaType.BaseMana:
+                    spawnPoint = GameObject.FindGameObjectWithTag("BaseManaSpawn");
+                    break;
+
+                case ManaType.FireMana:
+                    spawnPoint = GameObject.FindGameObjectWithTag("FireManaSpawn");
+                    break;
+
+                case ManaType.IceMana:
+                    spawnPoint = GameObject.FindGameObjectWithTag("IceManaSpawn");
+                    break;
+
+                case ManaType.LightningMana:
+                    spawnPoint = GameObject.FindGameObjectWithTag("LightningManaSpawn");
+                    break;
+
+                case ManaType.DarkMana:
+                    spawnPoint = GameObject.FindGameObjectWithTag("DarkManaSpawn");
+                    break;
+
+                case ManaType.LightMana:
+                    spawnPoint = GameObject.FindGameObjectWithTag("LightManaSpawn");
+                    break;
+            }
+
+            return spawnPoint;
         }
 
         #endregion

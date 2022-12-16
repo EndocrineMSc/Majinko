@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d89581c5712e11a42b5bee6ebf28d045, type: 3}
-  m_Name: ManaBlitzScriptable
+  m_Name: ManaShieldScriptableCard
   m_EditorClassIdentifier: 
-  _cardName: Mana Blitz
-  _cardDescription: Spawns two Mana Blitz Orbs. When hit, the apprentice Shoots a
-    Mana Blitz at the enemy, dealing 10 damage.
+  _cardName: Mana Shield
+  _cardDescription: Spawns two Mana Shield Orbs. When hit, the apprentice casts a
+    mana shield on himself, blocking the next 10 damage. Stacks, but is lost on turn
+    end.
   _manaCost: 10
   _manaType: 0
   _cardType: 0
-  _cardOrb: {fileID: 7479998709122375947, guid: c837957ee74bdcc44a31943daaafc0a8, type: 3}
-  _amountOrbs: 0
+  _spawnOrb: 13
+  _amountOrbs: 2

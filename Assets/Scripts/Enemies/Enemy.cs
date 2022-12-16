@@ -60,6 +60,12 @@ namespace Enemies
             }
         }
 
+        protected virtual void HandleDeath()
+        {
+            _animator.SetTrigger("Death");
+            EnemyManager.Instance.Enemies.Remove(this);
+        }
+
         #endregion
 
         #region Public Functions
@@ -70,9 +76,19 @@ namespace Enemies
 
             if (_health <= 0)
             {
-                _animator.SetTrigger("Death");
-                EnemyManager.Instance.KillEnemy();
+                HandleDeath();
+                StartCoroutine(DestroyEnemy());
             }
+        }
+
+        #endregion
+
+        #region IEnumerators
+
+        protected virtual IEnumerator DestroyEnemy()
+        {
+            yield return new WaitForSeconds(1f);
+            Destroy(gameObject);
         }
 
         #endregion

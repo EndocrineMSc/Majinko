@@ -8,37 +8,33 @@ namespace PeggleOrbs
 {
     public class OrbManager : MonoBehaviour
     {
-        #region Fields
+        #region Fields/Properties
 
-        [SerializeField] private List<Orb> _orbList = new();
+        [SerializeField] private List<Orb> _sceneOrbList = new();
         public static OrbManager Instance { get; private set; }
-        public List<Orb> OrbList { get => _orbList; set => _orbList = value; }
+        public List<Orb> SceneOrbList { get => _sceneOrbList; set => _sceneOrbList = value; }
 
-        //only for test purposes
-        [SerializeField] private Orb _manaBlitzOrb;
+        //list of all orb prefabs, made in start() in alphabetical order from resources
+        private List<Orb> _allOrbsList = new();
 
         #endregion
 
         #region Public Functions
 
-        public void TestSwitchOrbs()
-        {
-            SwitchOrbs(_manaBlitzOrb, 1);
-        }
-
         //Will change int amount of orbs into given orb
         //Will only do so for active orbs
         //If not enough active orbs are present, will activate
         //missing orbs, will prefer BaseManaOrbs to exchange first
-        public void SwitchOrbs(Orb orb, int amount)
+        public void SwitchOrbs(OrbType orbType, int amount)
         {
-            List<Orb> baseOrbs = FindOrbs(Instance.OrbList, SearchTag.BaseOrbs);
+            List<Orb> baseOrbs = FindOrbs(Instance.SceneOrbList, SearchTag.BaseOrbs);
             List<Orb> activeBaseOrbs;
-            
+            Orb orb = _allOrbsList[(int)orbType];
+
             //no BaseManaOrbs present, so replace any other active Orbs
             if (baseOrbs.Count == 0) 
             {
-                List<Orb> activeOrbs = FindOrbs(Instance.OrbList, SearchTag.IsActive);
+                List<Orb> activeOrbs = FindOrbs(Instance.SceneOrbList, SearchTag.IsActive);
 
                 //enough other active orbs are present, so replace some of those
                 if(activeOrbs.Count >= amount)
@@ -52,7 +48,7 @@ namespace PeggleOrbs
                     ReplaceOrbsInList(activeOrbs, availableOrbs, orb);
 
                     int missingOrbs = amount - activeOrbs.Count;
-                    List<Orb> inactiveOrbs = FindOrbs(_orbList, SearchTag.IsInactive);
+                    List<Orb> inactiveOrbs = FindOrbs(_sceneOrbList, SearchTag.IsInactive);
                     ReplaceOrbsInList(inactiveOrbs, missingOrbs, orb);
                 }
             }
@@ -81,7 +77,7 @@ namespace PeggleOrbs
 
                 ReplaceOrbsInList(baseOrbs,availableOrbs, orb);
 
-                List<Orb> activeOrbs = FindOrbs(Instance.OrbList, SearchTag.IsActive);
+                List<Orb> activeOrbs = FindOrbs(Instance.SceneOrbList, SearchTag.IsActive);
 
                 //enough other active orbs are present, so replace some of those
                 if (activeOrbs.Count >= missingOrbs)
@@ -95,7 +91,7 @@ namespace PeggleOrbs
                     ReplaceOrbsInList(activeOrbs, availableActiveOrbs, orb);
 
                     int missingActiveOrbs = missingOrbs - activeOrbs.Count;
-                    List<Orb> inactiveOrbs = FindOrbs(_orbList, SearchTag.IsInactive);
+                    List<Orb> inactiveOrbs = FindOrbs(_sceneOrbList, SearchTag.IsInactive);
                     ReplaceOrbsInList(inactiveOrbs, missingActiveOrbs, orb);
                 }
             }
@@ -104,7 +100,7 @@ namespace PeggleOrbs
 
         public void SetAllOrbsActive()
         {
-            foreach (Orb orb in OrbList)
+            foreach (Orb orb in SceneOrbList)
             {
                 orb.gameObject.SetActive(true);
             }
@@ -129,7 +125,8 @@ namespace PeggleOrbs
         // Start is called before the first frame update
         private void Start()
         {
-            OrbList = GameObject.FindObjectsOfType<Orb>().ToList();
+            SceneOrbList = GameObject.FindObjectsOfType<Orb>().ToList();
+            _allOrbsList = Resources.LoadAll<Orb>("OrbPrefabs").ToList();
         }
 
         private Orb FindRandomOrbInList(List<Orb> orbs)
@@ -150,7 +147,7 @@ namespace PeggleOrbs
                 switch (searchTag)
                 {
                     case SearchTag.BaseOrbs:
-                        if (tempOrb.OrbType == OrbType.BaseOrb)
+                        if (tempOrb.OrbType == OrbType.BaseManaOrb)
                         {
                             resultOrbs.Add(tempOrb);
                         }
@@ -182,9 +179,9 @@ namespace PeggleOrbs
                 Vector3 randomOrbPosition = randomOrb.transform.position;
                 Instantiate(orb, randomOrbPosition, Quaternion.identity);
                 
-                if (orbs != Instance.OrbList)
+                if (orbs != Instance.SceneOrbList)
                 {
-                    Instance.OrbList.Remove(randomOrb);
+                    Instance.SceneOrbList.Remove(randomOrb);
                 }               
                 orbs.Remove(randomOrb);
 

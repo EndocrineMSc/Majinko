@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6003572172334522846}
   m_Layer: 0
   m_Name: IceManaSpawn
-  m_TagString: ManaSpawn
+  m_TagString: IceManaSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 6003572172571390947}
   m_Layer: 0
   m_Name: FireManaSpawn
-  m_TagString: ManaSpawn
+  m_TagString: FireManaSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 6003572173449844460}
   m_Layer: 0
   m_Name: DarkManaSpawn
-  m_TagString: ManaSpawn
+  m_TagString: DarkManaSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 6003572173699175254}
   m_Layer: 0
   m_Name: BaseManaSpawn
-  m_TagString: ManaSpawn
+  m_TagString: BaseManaSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 6003572173869833310}
   m_Layer: 0
   m_Name: LightManaSpawn
-  m_TagString: ManaSpawn
+  m_TagString: LightManaSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -469,7 +469,7 @@ GameObject:
   - component: {fileID: 6003572173960073860}
   m_Layer: 0
   m_Name: LightningManaSpawn
-  m_TagString: ManaSpawn
+  m_TagString: LightningManaSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

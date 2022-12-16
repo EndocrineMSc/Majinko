@@ -70,8 +70,7 @@ namespace PeggleMana
             { 
                 Destroy(list[0].gameObject);
                 list.RemoveAt(0);
-            }
-    
+            }   
         }
 
         private void Awake()

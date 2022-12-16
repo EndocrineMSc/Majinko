@@ -44,23 +44,27 @@ namespace EnumCollection
         LightMana,
     }
 
+    //This enum needs to be in alphabetical order!
+    //Will be used to reference orbs in OrbManager, which has a list of alphabetically sorted orb prefabs
     public enum OrbType
     {
-        BaseOrb,            //gives basic Mana
-        FireOrb,            //gives fire Mana
-        IceOrb,             //gives ice Mana
-        LightningOrb,       //gives lightning Mana
-        DarkOrb,            //gives dark Mana
-        LightOrb,           //gives light Mana
-        MultiplierOrb,      //multiplies damage of next x hit orbs
-        HealOrb,            //heals the player
-        DefenseOrb,         //gives player a mana shield to block damage
-        RefreshOrb,         //refreshes the board
-        FireBombOrb,        //explodes, and triggers surrounding orbs
-        IceBombOrb,         //explodes, and freezes surrounding orbs -> can be hit multiple times without shattering
-        LightningBombOrb,   //explodes, and causes random chain lightning propagation to surrounding obs
+        BaseManaOrb,        //gives basic Mana
         DarkBombOrb,        //explodes, and makes a gravitational pull towards the hit peggle? -> shot can stay in air longer?
+        DarkManaOrb,        //gives dark Mana
+        DefenseOrb,         //gives player a mana shield to block damage
+        FireBombOrb,        //explodes, and triggers surrounding orbs
+        FireManaOrb,        //gives fire Mana
+        HealOrb,            //heals the player
+        IceBombOrb,         //explodes, and freezes surrounding orbs -> can be hit multiple times without shattering
+        IceManaOrb,         //gives ice Mana
         LightBombOrb,       //explodes, and blinds all enemies
+        LightManaOrb,       //gives light Mana
+        LightningBombOrb,   //explodes, and causes random chain lightning propagation to surrounding obs
+        LightningManaOrb,   //gives lightning Mana
+        ManaBlitzOrb,       //shoots a ManaBlitz at the first enemy
+        MultiplierOrb,      //multiplies damage of next x hit orbs
+        RefreshOrb,         //refreshes the board
+        RottedOrb,          //does something negative, spawned by zombies
     }
 
     public enum PlayerAttackTarget

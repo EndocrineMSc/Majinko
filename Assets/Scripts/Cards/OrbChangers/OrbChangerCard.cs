@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using PeggleOrbs;
 using Cards.ScriptableCards;
-using Unity.VisualScripting;
+using EnumCollection;
 
 namespace Cards.Orbchangers
 {
     public class OrbChangerCard : Card
     {
-        private Orb _orb;
+        private OrbType _orbType;
         private int _AmountOrbs;
 
         protected override void Start()
@@ -17,14 +17,14 @@ namespace Cards.Orbchangers
             base.Start();
             ScriptableOrbChangerCard _scriptableOrbChangerCard;
             _scriptableOrbChangerCard = (ScriptableOrbChangerCard)base.ScriptableCard;
-            _orb = _scriptableOrbChangerCard.CardOrb;
+            _orbType = _scriptableOrbChangerCard.SpawnOrb;
             _AmountOrbs = _scriptableOrbChangerCard.AmountOrbs;
         }
 
         protected override void CardEffect()
         {
             base.CardEffect();
-            OrbManager.Instance.SwitchOrbs(_orb, _AmountOrbs);
+            OrbManager.Instance.SwitchOrbs(_orbType, _AmountOrbs);
         }
     }
 }

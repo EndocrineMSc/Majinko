@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89581c5712e11a42b5bee6ebf28d045, type: 3}
+  m_Name: ManaBlitzScriptableCard
+  m_EditorClassIdentifier: 
+  _cardName: Mana Blitz
+  _cardDescription: Spawns two Mana Blitz Orbs. When hit, the apprentice Shoots a
+    Mana Blitz at the enemy, dealing 10 damage.
+  _manaCost: 10
+  _manaType: 0
+  _cardType: 0
+  _spawnOrb: 13
+  _amountOrbs: 2

@@ -6,9 +6,14 @@ TagManager:
   tags:
   - Monster
   - PassableTankBarrier
-  - ManaSpawn
   - Orb
   - CardCanvas
+  - BaseManaSpawn
+  - FireManaSpawn
+  - IceManaSpawn
+  - LightningManaSpawn
+  - DarkManaSpawn
+  - LightManaSpawn
   layers:
   - Default
   - TransparentFX

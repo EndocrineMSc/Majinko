@@ -2,14 +2,15 @@ using PeggleOrbs;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EnumCollection;
 
 namespace Cards.ScriptableCards
 {
     [CreateAssetMenu]
     public class ScriptableOrbChangerCard : ScriptableCard
     {
-        [SerializeField] private Orb _cardOrb;
-        public Orb CardOrb { get => _cardOrb; }
+        [SerializeField] private OrbType _spawnOrb;
+        public OrbType SpawnOrb { get => _spawnOrb; }
 
 
         [SerializeField] private int _amountOrbs;

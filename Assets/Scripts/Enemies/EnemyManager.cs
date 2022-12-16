@@ -18,7 +18,7 @@ namespace Enemies
         [SerializeField] private Zombie _cloakedZombie;
         private bool needToMove;
         [SerializeField] private float monsterSpeed = 2;
-        private float finalDestination = 2f;
+        private readonly float finalDestination = 2f;
 
         public List<Enemy> Enemies = new List<Enemy>();
 
@@ -68,21 +68,6 @@ namespace Enemies
                         int damage = enemy.Damage;
                         Vampire.Nosferatu.TakeDamage(damage);
                     }
-                }
-            }
-        }
-
-        //removes an enemy from the global list, and destroys it after 1 second
-        public void KillEnemy()
-        {
-            foreach (Enemy enemy in Enemies)
-            {
-                if (enemy.Health <= 0)
-                {
-                    //Enemy tempEnemy = enemy;
-                    //int index = Enemies.IndexOf(enemy);
-                    Enemies.Remove(enemy);
-                    StartCoroutine(EnemyDeath(enemy));
                 }
             }
         }
@@ -166,11 +151,6 @@ namespace Enemies
             _rigidbody.velocity = Vector2.zero;
         }
 
-        private IEnumerator EnemyDeath(Enemy enemy)
-        {
-            yield return new WaitForSeconds(1f);
-            Destroy(enemy.gameObject);
-        }
         #endregion
 
     }
