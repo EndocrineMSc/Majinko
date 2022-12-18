@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Cards.ScriptableCards
 {
-    public class DivinePathScriptableCard : ScriptableObject, IScriptableCard
+    public class DivinePathScriptableCard : ScriptableObject
     {
         public string CardName { get; } = "Divine Path";
 

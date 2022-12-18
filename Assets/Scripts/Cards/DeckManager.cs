@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using EnumCollection;
 using TMPro;
+using Cards.DeckManagement.Global;
 
 namespace Cards.DeckManagement
 {
@@ -12,14 +13,14 @@ namespace Cards.DeckManagement
 
         public static DeckManager Instance { get; private set; }
 
-        private List<Card> _globalDeck = new();
         private List<Card> _localDeck = new();
         private List<Card> _discardPile = new();
         private List<Card> _abolishedPile = new();
 
-        private Card[] _cardLibrary;
-
         public StartDeck StartDeck { get; private set; }
+
+        private List<Card> _handCards = new();
+        public List<Card> HandCards { get => _handCards; }
 
         #endregion
 
@@ -34,27 +35,36 @@ namespace Cards.DeckManagement
             else
             {
                 Instance = this;
-                DontDestroyOnLoad(this);
             }
         }
 
         private void Start()
         {
-            Instance._cardLibrary = GetComponents<Card>();
-
-            Instance.BuildStartDeck(StartDeck.Apprentice); //temporary line until choice screen and logic is implemented
+            _localDeck = GlobalDeckManager.Instance.GlobalDeck;
         }
 
         #endregion
 
-        #region Public Functions
 
-        public void BuildStartDeck(StartDeck startDeck)
+        #region Private Functions
+
+        public void DrawCards(int amount = 5)
         {
-            switch (startDeck)
+            for (int i = 0; i < amount; i++)
             {
-                case StartDeck.Apprentice:
-                    break;
+                int randomIndex = Random.Range(0, _localDeck.Count);
+                Card randomCard = _localDeck[randomIndex];
+                _localDeck.Remove(randomCard);
+                _handCards.Add(randomCard);
+            }
+        }
+
+        public void EndTurnDiscard()
+        {
+            foreach (Card card in _handCards)
+            {
+                _handCards.Remove(card);
+                _discardPile.Add(card);
             }
         }
 

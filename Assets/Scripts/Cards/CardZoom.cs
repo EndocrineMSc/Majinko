@@ -6,12 +6,15 @@ using UnityEngine.EventSystems;
 
 namespace Cards.Zoom
 {
-    public class CardZoom : MonoBehaviour
+    public class CardZoom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         #region Fields
 
-        private Card _card;
-        private SpriteRenderer _renderer;
+        private Vector3 _normalScale;
+        private readonly float _zoomOffset = 90;
+        private readonly float _zoomSize = 1.5f;
+        private int _index;
+        private Vector3 _startPosition;
 
         #endregion
 
@@ -19,25 +22,30 @@ namespace Cards.Zoom
 
         private void Start()
         {
-            _card = this.GetComponent<Card>();
-
+            _normalScale = transform.localScale;
+            _index = transform.GetSiblingIndex();
+            _startPosition = transform.position;
         }
 
-        private void OnPointerEnter(PointerEventData eventData)
+        void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
         {
-
+            transform.localScale = new Vector3(_zoomSize,_zoomSize,_zoomSize);
+            transform.position = new Vector3(transform.position.x, transform.position.y + _zoomOffset, transform.position.z);
+            transform.SetAsLastSibling();
         }
-        #endregion
 
-        #region Public Functions
-        public void TriggerCost()
+        public void OnPointerExit(PointerEventData eventData)
         {
-            //ToDo: Make respective Mana fly to player if enough mana is present
+            transform.localScale = _normalScale;
+            transform.SetSiblingIndex(_index);
+
+            if (transform.position != _startPosition)
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y - _zoomOffset, transform.position.z);
+            }
         }
 
-        #endregion
 
-        #region IEnumerators
 
         #endregion
     }

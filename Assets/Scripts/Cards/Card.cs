@@ -5,10 +5,12 @@ using UnityEngine;
 using EnumCollection;
 using Cards.DragDrop;
 using Cards.ScriptableCards;
+using Cards.Zoom;
 
 namespace Cards
 {
     [RequireComponent(typeof(CardDragDrop))]
+    [RequireComponent(typeof(CardZoom))]
     public abstract class Card : MonoBehaviour
     {
         #region Fields

@@ -26,5 +26,10 @@ namespace Cards.Orbchangers
             base.CardEffect();
             OrbManager.Instance.SwitchOrbs(_orbType, _AmountOrbs);
         }
+
+        public OrbChangerCard(ScriptableCard card)
+        {
+            base.ScriptableCard = card;
+        }
     }
 }
