@@ -56,7 +56,7 @@ namespace PeggleOrbs
 
         protected virtual void OnCollisionEnter2D(Collision2D collision)
         {
-            AudioManager.Instance.PlaySoundEffectNoLimit(SFX.BasicPeggleHit);
+            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX.SFX_0002_BasicPeggleHit);
             gameObject.GetComponent<SpriteRenderer>().size += new Vector2(0.03f, 0.03f);
                  
             Orb orb = Instantiate(_defaultOrb, transform.position, Quaternion.identity);

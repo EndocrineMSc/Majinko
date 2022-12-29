@@ -84,15 +84,17 @@ namespace EnumCollection
 
     public enum Track
     {
-        MainMenu,
+        Track_0001_LevelOne,
         GameTrackOne,
 
     }
 
     public enum SFX
     {
-        ButtonClick,
-        BasicPeggleHit,
+        SFX_0001_ButtonClick,
+        SFX_0002_BasicPeggleHit,
+        SFX_0003_ManaBlitz,
+        SFX_0004_MouseOverCard
     }
 
     public enum StartDeck

@@ -5,6 +5,7 @@ using EnumCollection;
 using Enemies;
 using Player;
 using PeggleOrbs.OrbActions;
+using PeggleWars.Audio;
 
 namespace PeggleWars
 {
@@ -15,6 +16,7 @@ namespace PeggleWars
 
         public static GameManager Instance { get; private set; }
         private EnemyManager _enemyManager;
+        private AudioManager _audioManager;
 
         #endregion
 
@@ -51,6 +53,8 @@ namespace PeggleWars
                     break;
 
                 case (State.CardHandling):
+                    _audioManager.PlayGameTrack(Track.Track_0001_LevelOne);
+                    _audioManager.FadeGameTrack(Track.Track_0001_LevelOne, Fade.In);
                     //End Turn Button calls State Change
                     break;
 
@@ -113,8 +117,9 @@ namespace PeggleWars
         // Start is called before the first frame update
         void Start()
         {         
-            StartCoroutine(Instance.SwitchState(State.CardHandling));
             _enemyManager = EnemyManager.Instance;
+            _audioManager = AudioManager.Instance;
+            StartCoroutine(Instance.SwitchState(State.CardHandling));
         }
 
         #endregion

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using EnumCollection;
-using PeggleWars;
 
 namespace PeggleWars.AudioOptions
 {
@@ -37,7 +36,7 @@ namespace PeggleWars.AudioOptions
         {
             _audioMixer.SetFloat("Master", volume > 0 ? Mathf.Log(volume) * 20f : -80f);
             //Play an exemplary SFX to give the play an auditory volume feedback
-            AudioManager.Instance.PlaySoundEffect(SFX.BasicPeggleHit);
+            AudioManager.Instance.PlaySoundEffect(SFX.SFX_0002_BasicPeggleHit);
         }
 
         #endregion

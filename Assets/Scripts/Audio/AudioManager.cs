@@ -1,46 +1,54 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using EnumCollection;
-using PeggleWars;
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace PeggleWars.Audio
 {
     //this script is intended as a singleton
+    //All Clips should be in the Folders Resources/"GameTracks" or Resources/"SoundEffects"
+    //respectively
     public class AudioManager : MonoBehaviour
     {
         #region Fields
 
         public static AudioManager Instance { get; private set; }
 
-        private List<AudioSource> _gameTracks = new();
-        private List<AudioSource> _soundEffects = new();
+        private List<AudioSource> _soundEffects;
+        private List<AudioSource> _gameTracks;
 
-        [SerializeField] private GameObject _gameTracksObject;
-        [SerializeField] private GameObject _soundEffectsObject;
+        [SerializeField] private AudioMixerGroup _SFX;
+        [SerializeField] private AudioMixerGroup _music;
 
         #endregion
 
         #region Public Functions
 
-        //Fades music in or out depending on whether it is already
-        //playing or not. Uses the enum Track to get a specific
-        //Track according to the enum from the Track-List
-        //Order in List will be according to order in GameObject
+        //Fades music in or out depending on the Fade enum.
+        //Uses the enum Track to get a specific Track from the Track-Array
+        //Order in Array will be alphabetical
         public void FadeGameTrack(Track track, Fade fade)
         {
-            AudioSource audioSource = _gameTracks[(int)track];
+            AudioSource audioSource = _gameTracks[(int)track];   
 
             if (fade == Fade.In)
             {
-                audioSource.volume = 0;
                 StartCoroutine(StartFade(audioSource, 3f, 1f));
             }
             else if (fade == Fade.Out) 
             {
                 StartCoroutine(StartFade(audioSource, 3f, 0f));
+            }
+        }
+
+        public void PlayGameTrack(Track track)
+        {
+            AudioSource audioSource = _gameTracks[(int)track];
+
+            if (!audioSource.isPlaying)
+            { 
+                audioSource.Play();
             }
         }
 
@@ -56,7 +64,8 @@ namespace PeggleWars.Audio
             }
         }
 
-        public void PlaySoundEffectNoLimit(SFX sfx)
+        //Plays a Sound Effect according to the enum index
+        public void PlaySoundEffectWithoutLimit(SFX sfx)
         {
             AudioSource audioSource = _soundEffects[(int)sfx];
             audioSource.Play();
@@ -78,14 +87,49 @@ namespace PeggleWars.Audio
             {
                 Instance = this;
             }
-
             DontDestroyOnLoad(this);
+
+            //Builds the Lists to be used from the Assets/Resources Folder
+            _gameTracks = BuildGameTrackList();
+            _soundEffects = BuildSoundEffectList();
         }
 
-        private void Start()
+        private List<AudioSource> BuildGameTrackList()
         {
-            _gameTracks = _gameTracksObject.GetComponents<AudioSource>().ToList<AudioSource>();
-            _soundEffects = _soundEffectsObject.GetComponents<AudioSource>().ToList<AudioSource>();
+            AudioClip[] _gameTrackArray = Resources.LoadAll<AudioClip>("GameTracks");
+            List<AudioSource> _tempList = new();
+
+            foreach (AudioClip _clip in _gameTrackArray)
+            {
+                AudioSource audioSource = gameObject.AddComponent<AudioSource>();
+
+                audioSource.clip = _clip;
+                audioSource.loop = true;
+                audioSource.volume = 0;
+                audioSource.playOnAwake = false;
+                audioSource.outputAudioMixerGroup = _music;
+
+                _tempList.Add(audioSource);
+            }
+            return _tempList;
+        }
+
+        private List<AudioSource> BuildSoundEffectList()
+        {
+            AudioClip[] _soundEffectArray = Resources.LoadAll<AudioClip>("SoundEffects");
+            List<AudioSource> _tempList = new();
+
+            foreach (AudioClip _clip in _soundEffectArray)
+            {
+                AudioSource audioSource = gameObject.AddComponent<AudioSource>();
+
+                audioSource.clip = _clip;
+                audioSource.outputAudioMixerGroup = _SFX;
+                audioSource.playOnAwake = false;
+
+                _tempList.Add(audioSource);
+            }
+            return _tempList;
         }
 
         #endregion
