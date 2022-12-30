@@ -63,6 +63,8 @@ namespace Enemies
         protected virtual void HandleDeath()
         {
             _animator.SetTrigger("Death");
+            Collider2D collider = GetComponent<Collider2D>();
+            collider.enabled = false;
             EnemyManager.Instance.Enemies.Remove(this);
         }
 

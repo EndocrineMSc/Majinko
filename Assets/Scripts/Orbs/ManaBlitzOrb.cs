@@ -44,7 +44,7 @@ namespace PeggleOrbs.ManaBlitzOrb
 
             if (transform.position.x <= 11)
             {
-                AudioManager.Instance.PlaySoundEffect(SFX.SFX_0008_ManaBlitzSpawn);
+                AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX.SFX_0008_ManaBlitzSpawn);
             }
         }
 
