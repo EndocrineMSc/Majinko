@@ -1,9 +1,8 @@
 using PeggleWars;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using EnumCollection;
+using PeggleWars.Audio;
 
 namespace Cards.DragDrop
 {
@@ -42,6 +41,7 @@ namespace Cards.DragDrop
             if (_cardHandlingTurn)
             {
                 _startPosition = gameObject.transform.position;
+                AudioManager.Instance.PlaySoundEffect(SFX.SFX_0006_CardDrag);
             }
         }
 
@@ -55,14 +55,14 @@ namespace Cards.DragDrop
 
         public void OnEndDrag(PointerEventData eventData)
         {
-            Debug.Log(_rectTransform.anchoredPosition.y);
             if (_rectTransform.anchoredPosition.y >= _cardEffectBorderY)
             {
-                Debug.Log(_rectTransform.anchoredPosition.y);
-                _card.CardDropEffect();
+                bool enoughMana = _card.CardDropEffect(_startPosition);
+                if (!enoughMana) { AudioManager.Instance.PlaySoundEffect(SFX.SFX_0007_CardDragReturn); }
             }
             else
             {
+                AudioManager.Instance.PlaySoundEffect(SFX.SFX_0007_CardDragReturn);
                 gameObject.transform.position = _startPosition;
             }
         }

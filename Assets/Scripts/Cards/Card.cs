@@ -30,7 +30,7 @@ namespace Cards
 
         #region Public Virtual Functions
 
-        public virtual void CardDropEffect()
+        public virtual bool CardDropEffect(Vector3 startPosition)
         {
             CheckForMana();
             if (_enoughMana)
@@ -39,11 +39,13 @@ namespace Cards
                 CardEffect();
                 //ToDo: put Card into discard pile list
                 StartCoroutine(DestroyCard());
+                return true;
             }
             else
             {
                 //ToDo: Player Feedback for not enough mana
-                gameObject.transform.position = _startPosition;
+                gameObject.transform.position = startPosition;
+                return false;
             }
         }
 

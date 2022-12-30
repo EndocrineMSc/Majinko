@@ -94,7 +94,11 @@ namespace EnumCollection
         SFX_0001_ButtonClick,
         SFX_0002_BasicPeggleHit,
         SFX_0003_ManaBlitz,
-        SFX_0004_MouseOverCard
+        SFX_0004_MouseOverCard,
+        SFX_0005_EndTurnClick,
+        SFX_0006_CardDrag,
+        SFX_0007_CardDragReturn,
+        SFX_0008_ManaBlitzSpawn,
     }
 
     public enum StartDeck

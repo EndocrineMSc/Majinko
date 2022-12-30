@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using EnumCollection;
 using PeggleOrbs.OrbActions;
+using PeggleWars.Audio;
 
 namespace PeggleOrbs.ManaBlitzOrb
 {
@@ -37,7 +38,16 @@ namespace PeggleOrbs.ManaBlitzOrb
             OrbActionManager.Instance.AddOrb(this);
         }
 
-        #endregion
+        protected override void Start()
+        {
+            base.Start();
 
+            if (transform.position.x <= 11)
+            {
+                AudioManager.Instance.PlaySoundEffect(SFX.SFX_0008_ManaBlitzSpawn);
+            }
+        }
+
+        #endregion
     }
 }
