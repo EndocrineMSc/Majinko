@@ -8,10 +8,15 @@ namespace PeggleAttacks.Player.ManaBlitz
 {
     public class ManaBlitz : PlayerAttack
     {
-        //ToDo: Do special stuff in here
+        //Do special stuff in here
         private void Awake()
         {
             AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX.SFX_0003_ManaBlitz);
+        }
+
+        protected override void OnHitPolish()
+        {
+            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX.SFX_0010_BluntSpellImpact);
         }
     }
 }

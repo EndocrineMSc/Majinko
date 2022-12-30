@@ -99,6 +99,9 @@ namespace EnumCollection
         SFX_0006_CardDrag,
         SFX_0007_CardDragReturn,
         SFX_0008_ManaBlitzSpawn,
+        SFX_0009_ZombieSpawn,
+        SFX_0010_BluntSpellImpact,
+        SFX_0011_ZombieDeath,
     }
 
     public enum StartDeck

@@ -50,6 +50,7 @@ namespace Enemies
         {
             _animator = GetComponent<Animator>();
             _animator.SetTrigger("Spawn");
+            PlaySpawnSound();
         }
 
         protected virtual void OnTriggerEnter2D(Collider2D other)
@@ -57,6 +58,7 @@ namespace Enemies
             if (other.gameObject.name.Contains("Attack"))
             {
                 _animator.SetTrigger("Hurt");
+                PlayHurtSound();
             }
         }
 
@@ -66,6 +68,16 @@ namespace Enemies
             Collider2D collider = GetComponent<Collider2D>();
             collider.enabled = false;
             EnemyManager.Instance.Enemies.Remove(this);
+        }
+
+        protected virtual void PlaySpawnSound()
+        {
+            //overrides will implement spawn sounds here
+        }
+
+        protected virtual void PlayHurtSound()
+        {
+            //overrides will implement hurt sounds here
         }
 
         #endregion

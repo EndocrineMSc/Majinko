@@ -87,13 +87,13 @@ namespace PeggleAttacks.Player
                 enemy.LoseHealth(_damage);
             }
 
-            OnHitPolishThenDestroy();    
+            OnHitPolish();
+            Destroy(gameObject);
         }
 
-        protected virtual void OnHitPolishThenDestroy()
+        protected virtual void OnHitPolish()
         {
-            //Do polish stuff here
-            Destroy(gameObject);
+            //Do polish stuff here 
         }
 
         #endregion
