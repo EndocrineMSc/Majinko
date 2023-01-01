@@ -30,10 +30,10 @@ namespace Cards.DragDrop
 
         private void Start()
         {
-            GameObject cardCanvas = GameObject.FindGameObjectWithTag("CardCanvas");
-            _canvas = cardCanvas.GetComponent<Canvas>();
-            _card = GetComponent<Card>();
-            _startPosition = gameObject.transform.position;
+           GameObject cardCanvas = GameObject.FindGameObjectWithTag("CardCanvas");
+           _canvas = cardCanvas.GetComponent<Canvas>();
+           _card = GetComponent<Card>();
+           _startPosition = gameObject.transform.position;
         }
 
         public void OnBeginDrag(PointerEventData eventData)
@@ -57,8 +57,12 @@ namespace Cards.DragDrop
         {
             if (_rectTransform.anchoredPosition.y >= _cardEffectBorderY)
             {
-                bool enoughMana = _card.CardDropEffect(_startPosition);
-                if (!enoughMana) { AudioManager.Instance.PlaySoundEffect(SFX.SFX_0007_CardDragReturn); }
+                bool enoughMana = _card.CardEndDragEffect(_startPosition);
+                if (!enoughMana)
+                {
+                    AudioManager.Instance.PlaySoundEffect(SFX.SFX_0007_CardDragReturn);
+                    gameObject.transform.position = _startPosition;
+                }
             }
             else
             {

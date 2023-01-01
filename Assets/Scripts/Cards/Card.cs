@@ -6,6 +6,8 @@ using EnumCollection;
 using Cards.DragDrop;
 using Cards.ScriptableCards;
 using Cards.Zoom;
+using Cards.DeckManagement;
+using Cards.DeckManagement.HandHandling;
 
 namespace Cards
 {
@@ -13,38 +15,51 @@ namespace Cards
     [RequireComponent(typeof(CardZoom))]
     public abstract class Card : MonoBehaviour
     {
-        #region Fields
+        #region Fields and Properties
 
+        //Fields set by Scriptable Object
         private string _cardName;
         private string _cardDescription;
         private int _manaCost;
         private ManaType _manaType;
-        private ManaPoolManager _instance;
-        private bool _enoughMana;
-        private Vector3 _startPosition;
         private CardType _cardType;
+        private bool _exhaustCard;
+        private Sprite _cardImage;
 
-        [SerializeField] protected ScriptableCard ScriptableCard;
+        private ManaPoolManager _manaPoolManager;
+        private DeckManager _deckManager;
+        private HandManager _hand;
+
+        [SerializeField] protected ScriptableCard _scriptableCard;
+
+        [SerializeField] protected GameObject _cardPrefab;
+
+        public GameObject CardPrefab { get => _cardPrefab; set => _cardPrefab = value; }
+
+
+        public string CardName { get => _cardName;}
+        public string CardDescription { get => _cardDescription;}
+        public int ManaCost { get => _manaCost;}
+        public CardType CardType { get => _cardType;}
+        public bool ExhaustCard { get => _exhaustCard;}
+        public Sprite CardImage { get => _cardImage; }
 
         #endregion
 
         #region Public Virtual Functions
 
-        public virtual bool CardDropEffect(Vector3 startPosition)
+        public virtual bool CardEndDragEffect(Vector3 startPosition)
         {
-            CheckForMana();
-            if (_enoughMana)
+            bool enoughMana = CheckForMana();
+            if (enoughMana)
             {
                 SubtractManaCost();
                 CardEffect();
-                //ToDo: put Card into discard pile list
-                StartCoroutine(DestroyCard());
+                Destroy(gameObject);
                 return true;
             }
             else
             {
-                //ToDo: Player Feedback for not enough mana
-                gameObject.transform.position = startPosition;
                 return false;
             }
         }
@@ -55,42 +70,40 @@ namespace Cards
 
         protected virtual void Start()
         {
-            _startPosition = gameObject.transform.position;
-            _instance = ManaPoolManager.Instance;
+            _manaPoolManager = ManaPoolManager.Instance;
+            _deckManager = DeckManager.Instance;
+            _hand = HandManager.Instance;
 
-            _cardName = ScriptableCard.CardName;
-            _cardDescription = ScriptableCard.CardDescription;
-            _manaCost = ScriptableCard.ManaCost;
-            _manaType = ScriptableCard.ManaType;
-            _cardType = ScriptableCard.CardType;
+            _cardName = _scriptableCard.CardName;
+            _cardDescription = _scriptableCard.CardDescription;
+            _manaCost = _scriptableCard.ManaCost;
+            _manaType = _scriptableCard.ManaType;
+            _cardType = _scriptableCard.CardType;
+            _exhaustCard = _scriptableCard.IsExhaustCard;
+            _cardImage = _scriptableCard.CardImage;
+            _cardPrefab= _scriptableCard.CardPrefab;
         }
 
         protected virtual void SubtractManaCost()
         {
-            _instance.SpendMana(ManaType.BaseMana, _manaCost);
+            _manaPoolManager.SpendMana(ManaType.BaseMana, _manaCost);
         }
 
         protected virtual void CardEffect()
         {
-            Debug.Log("Test effect.");
+            //actual effects are implemented in child classes
         }
 
-        protected virtual void CheckForMana()
+        protected virtual bool CheckForMana()
         {
-            if (_instance.BasicMana.Count >= _manaCost)
+            if (_manaPoolManager.BasicMana.Count >= _manaCost)
             {
-                _enoughMana = true;
+                return true;
             }
-        }
-
-        #endregion
-
-        #region IEnumerators
-
-        private IEnumerator DestroyCard()
-        {
-            yield return new WaitForSeconds(0.1f);
-            Destroy(gameObject);
+            else
+            {
+                return false;
+            }
         }
 
         #endregion

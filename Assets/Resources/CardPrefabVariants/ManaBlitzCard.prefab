@@ -7,6 +7,39 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _orbType
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _cardName
+      value: Mana Blitz
+      objectReference: {fileID: 0}
+    - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _manaCost
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _cardImage
+      value: 
+      objectReference: {fileID: -1108296715, guid: ae95ac84f6d72fc41b6c7ea13549b708, type: 3}
+    - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _amountOrbs
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _cardPrefab
+      value: 
+      objectReference: {fileID: 3457891280226941752}
+    - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _scriptableCard
+      value: 
+      objectReference: {fileID: 11400000, guid: 564fdc8e098457445ad54f777e77d2d2, type: 2}
+    - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _cardDescription
+      value: Spawns two Mana Blitz Orbs. On hit, shoots a Mana Blitz at the enemy,
+        dealing 10 damage.
+      objectReference: {fileID: 0}
     - target: {fileID: 4812993297873364277, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -93,7 +126,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6398440697363082782, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Name
-      value: OrbChangerCardPrefab
+      value: ManaBlitzCard
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5484072417001946136, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+--- !u!1 &3457891280226941752 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6398440697363082782, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+  m_PrefabInstance: {fileID: 8590394349045568806}
+  m_PrefabAsset: {fileID: 0}

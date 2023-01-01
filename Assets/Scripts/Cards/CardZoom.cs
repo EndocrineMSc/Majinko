@@ -31,7 +31,6 @@ namespace Cards.Zoom
             transform.localScale = new Vector3(_zoomSize,_zoomSize,_zoomSize);
             transform.position = new Vector3(transform.position.x, transform.position.y + _zoomOffset, transform.position.z);
             transform.SetAsLastSibling();
-            //AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX.SFX_0004_MouseOverCard);
         }
 
         public void OnPointerExit(PointerEventData eventData)
@@ -44,8 +43,6 @@ namespace Cards.Zoom
                 transform.position = new Vector3(transform.position.x, transform.position.y - _zoomOffset, transform.position.z);
             }
         }
-
-
 
         #endregion
     }

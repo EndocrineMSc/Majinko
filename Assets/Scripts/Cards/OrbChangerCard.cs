@@ -9,27 +9,13 @@ namespace Cards.Orbchangers
 {
     public class OrbChangerCard : Card
     {
-        private OrbType _orbType;
-        private int _AmountOrbs;
-
-        protected override void Start()
-        {
-            base.Start();
-            ScriptableOrbChangerCard _scriptableOrbChangerCard;
-            _scriptableOrbChangerCard = (ScriptableOrbChangerCard)base.ScriptableCard;
-            _orbType = _scriptableOrbChangerCard.SpawnOrb;
-            _AmountOrbs = _scriptableOrbChangerCard.AmountOrbs;
-        }
+        [SerializeField] private OrbType _orbType;
+        [SerializeField] private int _amountOrbs;
 
         protected override void CardEffect()
         {
             base.CardEffect();
-            OrbManager.Instance.SwitchOrbs(_orbType, _AmountOrbs);
-        }
-
-        public OrbChangerCard(ScriptableCard card)
-        {
-            base.ScriptableCard = card;
+            OrbManager.Instance.SwitchOrbs(_orbType, _amountOrbs);
         }
     }
 }

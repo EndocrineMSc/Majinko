@@ -1,6 +1,4 @@
 using EnumCollection;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Cards.ScriptableCards
@@ -21,5 +19,14 @@ namespace Cards.ScriptableCards
 
         [SerializeField] private CardType _cardType;
         public CardType CardType { get  => _cardType; }
+
+        [SerializeField] private bool _exhaustCard;
+        public bool IsExhaustCard { get => _exhaustCard; }
+
+        [SerializeField] private Sprite _cardImage;
+        public Sprite CardImage { get => _cardImage; }
+
+        [SerializeField] private GameObject _cardPrefab;
+        public GameObject CardPrefab { get => _cardPrefab; }
     }
 }

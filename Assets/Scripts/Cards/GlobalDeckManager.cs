@@ -42,10 +42,6 @@ namespace Cards.DeckManagement.Global
             }
 
             _allCards = Resources.LoadAll<Card>("CardPrefabVariants").ToList();
-        }
-
-        private void Start()
-        {
             Instance.BuildStartDeck(StartDeck.Apprentice);
         }
 

@@ -1,11 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using EnumCollection;
 using Enemies;
-using Player;
 using PeggleOrbs.OrbActions;
 using PeggleWars.Audio;
+using PeggleWars.TurnManagement;
 
 namespace PeggleWars
 {
@@ -17,6 +16,7 @@ namespace PeggleWars
         public static GameManager Instance { get; private set; }
         private EnemyManager _enemyManager;
         private AudioManager _audioManager;
+        private CardTurnManager _cardTurnManager;
 
         #endregion
 
@@ -50,9 +50,12 @@ namespace PeggleWars
             switch (state)
             {
                 case (State.MainMenu):
+                    yield return new WaitForSeconds(1);
+                    StartCoroutine(Instance.SwitchState(State.CardHandling));
                     break;
 
                 case (State.CardHandling):
+                    Instance._cardTurnManager.RaiseStartCardTurn();
                     _audioManager.PlayGameTrack(Track.Track_0001_LevelOne);
                     _audioManager.FadeGameTrack(Track.Track_0001_LevelOne, Fade.In);
                     //End Turn Button calls State Change
@@ -92,8 +95,9 @@ namespace PeggleWars
             }
         }
 
-        public void EndTurn()
+        public void EndCardTurn()
         {
+            Instance._cardTurnManager.RaiseEndCardTurn();
             StartCoroutine(Instance.SwitchState(State.Shooting));
         }
 
@@ -111,7 +115,7 @@ namespace PeggleWars
             {
                 Instance = this;
                 DontDestroyOnLoad(this);
-            }          
+            }             
         }
 
         // Start is called before the first frame update
@@ -119,7 +123,8 @@ namespace PeggleWars
         {         
             _enemyManager = EnemyManager.Instance;
             _audioManager = AudioManager.Instance;
-            StartCoroutine(Instance.SwitchState(State.CardHandling));
+            _cardTurnManager = CardTurnManager.Instance;
+            StartCoroutine(Instance.WaitThenChangeState(State.MainMenu));
         }
 
         #endregion
