@@ -102,6 +102,7 @@ namespace EnumCollection
         SFX_0009_ZombieSpawn,
         SFX_0010_BluntSpellImpact,
         SFX_0011_ZombieDeath,
+        SFX_0012_DrawHand,
     }
 
     public enum StartDeck

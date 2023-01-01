@@ -97,8 +97,13 @@ namespace PeggleWars
 
         public void EndCardTurn()
         {
-            Instance._cardTurnManager.RaiseEndCardTurn();
-            StartCoroutine(Instance.SwitchState(State.Shooting));
+            _audioManager.PlaySoundEffect(SFX.SFX_0001_ButtonClick);
+
+            if (_gameState == State.CardHandling)
+            {
+                Instance._cardTurnManager.RaiseEndCardTurn();
+                StartCoroutine(Instance.SwitchState(State.Shooting));
+            }
         }
 
         #endregion

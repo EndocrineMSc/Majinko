@@ -14,12 +14,14 @@ namespace Cards.DeckManagement
 
         public static DeckManager Instance { get; private set; }
 
-        [SerializeField] private List<Card> _localDeck = new();
-        [SerializeField] private List<Card> _discardPile = new();
+        private List<Card> _localDeck = new();
+        private List<Card> _discardPile = new();
         private List<Card> _exhaustPile = new();
 
         public int DrawAmount { get; set; } = 5;
         public List<Card> DiscardPile { get => _discardPile; set => _discardPile = value; }
+        public List<Card> LocalDeck { get => _localDeck; set => _localDeck = value; }
+        public List<Card> DiscardPile1 { get => _discardPile; set => _discardPile = value; }
 
         private HandManager _hand;
 

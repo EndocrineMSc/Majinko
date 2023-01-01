@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1932135611}
   - component: {fileID: 3295636695925836902}
+  - component: {fileID: 1619995357}
   m_Layer: 0
   m_Name: DeckManager
   m_TagString: Untagged
@@ -46,6 +47,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _localDeck: []
   _discardPile: []
+--- !u!114 &1619995357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932135610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2c68862c8fcb424ea565b586249049e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _remainingCardsInDeck: {fileID: 0}
+  _remainingCardsInDiscardPile: {fileID: 0}
 --- !u!1 &2141976371
 GameObject:
   m_ObjectHideFlags: 0

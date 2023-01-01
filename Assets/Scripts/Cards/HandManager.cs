@@ -1,9 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using PeggleWars;
-using UnityEngine.UI;
-using System;
 using PeggleWars.TurnManagement;
+using PeggleWars.Audio;
+using System.Collections;
+using EnumCollection;
 
 namespace Cards.DeckManagement.HandHandling
 {
@@ -14,10 +15,10 @@ namespace Cards.DeckManagement.HandHandling
         #region Fields and Properties
         public static HandManager Instance { get; private set; }
 
-        [SerializeField] private List<Card> _handCards = new List<Card>();
+        [SerializeField] private List<Card> _handCards = new();
         public List<Card> HandCards { get => _handCards; set => _handCards = value; }
 
-        private List<GameObject> _handObjects = new List<GameObject>();
+        private List<GameObject> _handObjects = new();
 
         private DeckManager _deckManager;
         private CardTurnManager _cardTurnManager;
@@ -35,23 +36,9 @@ namespace Cards.DeckManagement.HandHandling
                 Card card = _deckManager.DrawCard();
                 Instance.HandCards.Add(card);
             }
-            Instance.DisplayHand();
-        }
 
-        public void DisplayHand()
-        {
-            foreach (GameObject cardObject in _handObjects)
-            {
-                Destroy(cardObject);
-            }
-
-            _handObjects.Clear();
-
-            foreach (Card card in _handCards)
-            {
-                GameObject cardObject = Instantiate(card.CardPrefab, _parentTransform);
-                _handObjects.Add(cardObject);
-            }
+            AudioManager.Instance.PlaySoundEffect(SFX.SFX_0012_DrawHand);
+            StartCoroutine(Instance.DisplayHand());
         }
 
         public void OnCardTurnStart()
@@ -67,7 +54,7 @@ namespace Cards.DeckManagement.HandHandling
             }
 
             Instance._handCards.Clear();
-            Instance.DisplayHand();
+            StartCoroutine(Instance.DisplayHand());
         }
 
         public void RemoveCardFromHand(Card card)
@@ -107,5 +94,27 @@ namespace Cards.DeckManagement.HandHandling
         }
 
         #endregion
+
+        #region IEnumerators
+
+        public IEnumerator DisplayHand()
+        {
+            foreach (GameObject cardObject in _handObjects)
+            {
+                Destroy(cardObject);
+            }
+
+            _handObjects.Clear();
+
+            foreach (Card card in _handCards)
+            {
+                GameObject cardObject = Instantiate(card.CardPrefab, _parentTransform);
+                yield return new WaitForSeconds(0.2f);
+                _handObjects.Add(cardObject);
+            }
+        }
+
+        #endregion
+
     }
 }
