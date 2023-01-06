@@ -4,6 +4,7 @@ using UnityEngine;
 using EnumCollection;
 using Enemies;
 using PeggleOrbs;
+using PeggleAttacks.AttackManager;
 
 namespace PeggleAttacks.Player
 {
@@ -12,6 +13,7 @@ namespace PeggleAttacks.Player
         #region Fields
 
         protected Vector2 _insantiatePosition = new Vector2(-7.5f, 5.9f);
+        protected PlayerAttackManager _playerAttackManager;
 
         [SerializeField] protected PlayerAttackTarget _target;
         [SerializeField] protected float _attackFlySpeed = 10;
@@ -96,6 +98,11 @@ namespace PeggleAttacks.Player
             //Do polish stuff here 
         }
 
+        protected virtual void Start()
+        {
+            _playerAttackManager = PlayerAttackManager.Instance;
+            _damage *= Mathf.RoundToInt(_playerAttackManager.DamageModifierTurn);
+        }
         #endregion
     }
 }
