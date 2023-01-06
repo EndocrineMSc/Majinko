@@ -3,15 +3,17 @@ using Enemies;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using PeggleAttacks.AttackVisuals.PopUps;
 
 namespace Enemies
 {
+    [RequireComponent(typeof(PopUpSpawner))]
     public class Enemy : MonoBehaviour
     {
         #region Fields
 
         protected Animator _animator;
+        protected PopUpSpawner _popUpSpawner;
 
         #endregion
 
@@ -51,6 +53,7 @@ namespace Enemies
             _animator = GetComponent<Animator>();
             _animator.SetTrigger("Spawn");
             PlaySpawnSound();
+            _popUpSpawner = GetComponent<PopUpSpawner>();
         }
 
         protected virtual void OnTriggerEnter2D(Collider2D other)
@@ -87,6 +90,8 @@ namespace Enemies
         public virtual void LoseHealth(int damage)
         {
             _health -= damage;
+
+            _popUpSpawner.SpawnPopUp(damage);
 
             if (_health <= 0)
             {

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1988687641357784045}
   - component: {fileID: 1988687641357784034}
   - component: {fileID: 5369486542510637726}
+  - component: {fileID: 1161808695900130219}
   m_Layer: 10
   m_Name: CloakedZombie
   m_TagString: Monster
@@ -170,4 +171,16 @@ MonoBehaviour:
   _enemyAttackType: 0
   _damage: 10
   _health: 20
-  _rottedManaOrb: {fileID: 7479998709122375947, guid: c837957ee74bdcc44a31943daaafc0a8, type: 3}
+--- !u!114 &1161808695900130219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988687641357784032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 879a8ece72bb7864cb961af5a6f8eb2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _popUpPrefab: {fileID: 4040299982350315029, guid: 75d35d7dddf446540997f576345054c5, type: 3}

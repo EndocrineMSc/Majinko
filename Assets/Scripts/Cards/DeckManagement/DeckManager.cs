@@ -44,11 +44,11 @@ namespace Cards.DeckManagement
         private void Start()
         {
             _localDeck = GlobalDeckManager.Instance.GlobalDeck;
+            ShuffleDeck();
             _hand = HandManager.Instance;
         }
 
         #endregion
-
 
         #region Public Functions
 

@@ -55,13 +55,13 @@ namespace PeggleWars.Player
                 _shield = 0;
                 _health -= calcDamage;
                 StartCoroutine(nameof(ColorShiftDamage));
-                _animator.SetTrigger("Hurt");
+                //_animator.SetTrigger("Hurt");
             }
             else
             {
                 _health -= damage;
                 StartCoroutine(nameof(ColorShiftDamage));
-                _animator.SetTrigger("Hurt");
+                //_animator.SetTrigger("Hurt");
             }
         }
 
