@@ -62,9 +62,10 @@ namespace EnumCollection
         LightningBombOrb,   //explodes, and causes random chain lightning propagation to surrounding obs
         LightningManaOrb,   //gives lightning Mana
         ManaBlitzOrb,       //shoots a ManaBlitz at the first enemy
+        ManaShieldOrb,      //shields player from incoming damage
         MultiplierOrb,      //multiplies damage of next x hit orbs
         RefreshOrb,         //refreshes the board
-        RottedOrb,          //does something negative, spawned by zombies
+        RottedOrb,          //spawns rotted mana (reduces player attack power when used)
     }
 
     public enum PlayerAttackTarget

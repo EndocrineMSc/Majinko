@@ -25,7 +25,7 @@ PrefabInstance:
       objectReference: {fileID: -1108296715, guid: ae95ac84f6d72fc41b6c7ea13549b708, type: 3}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _amountOrbs
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _cardPrefab
@@ -130,7 +130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6398440697363082782, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Name
-      value: ManaBlitzCard
+      value: ManaBlitzCardPrefab
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5484072417001946136, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}

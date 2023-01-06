@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2549565476461289564}
   - component: {fileID: 2549565476461289555}
-  - component: {fileID: 2549565476461289554}
   - component: {fileID: 5099420647275916350}
-  - component: {fileID: 7479998709122375947}
+  - component: {fileID: 4310996230816315775}
+  - component: {fileID: 7926205557576978514}
   m_Layer: 0
   m_Name: RefreshOrb
   m_TagString: Orb
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1024771562, guid: 522e9f14206c0a5479c134ca28d25361, type: 3}
+  m_Sprite: {fileID: -1238994869, guid: 0992c31493c28ff4bb95521c4a3cebab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -87,26 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &2549565476461289554
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2549565476461289553}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 296ca6d56a0296242a59835a37457827, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &5099420647275916350
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -123,7 +103,27 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.07
---- !u!114 &7479998709122375947
+--- !u!95 &4310996230816315775
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549565476461289553}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f0c0b2f8c1eead94db4a2b01ed1d4d4a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7926205557576978514
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,11 +132,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2549565476461289553}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14abd92b533722546bf07b01ad745bce, type: 3}
+  m_Script: {fileID: 11500000, guid: d925f8eaa5674474aaba0083a07ff9b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _orbMana: {fileID: 7005893637801753577, guid: dd17e86c997b09b4bb96bc9f5e5292d8, type: 3}
   SpawnManaType: 0
-  ManaAmount: 10
-  _defaultOrb: {fileID: 7479998709122375947}
-  _orbType: 0
+  ManaAmount: 0
+  _defaultOrb: {fileID: 7479998709122375947, guid: c837957ee74bdcc44a31943daaafc0a8, type: 3}
+  _orbType: 16

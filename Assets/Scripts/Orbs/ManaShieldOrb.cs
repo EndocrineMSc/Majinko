@@ -1,21 +1,25 @@
-using PeggleAttacks.Player;
+using PeggleWars.Player;
 using System.Collections;
 using UnityEngine;
 using EnumCollection;
 using PeggleOrbs.OrbActions;
 using PeggleWars.Audio;
 
-namespace PeggleOrbs.ManaBlitzOrb
+namespace PeggleOrbs.ManaShieldOrb
+
 {
-    public class ManaBlitzOrb : Orb
+    public class ManaShieldOrb : Orb
     {
-        #region Fields
+        #region Fields and Properties
+        private Player _player;
 
-        [SerializeField] private PlayerAttack _manaBlitz;
+        [SerializeField] private int _shieldValue;
 
-        #endregion
-
-        #region Properties
+        public int ShieldValue
+        {
+            get { return _shieldValue; }
+            set { _shieldValue = value; }
+        }
 
         #endregion
 
@@ -23,7 +27,7 @@ namespace PeggleOrbs.ManaBlitzOrb
         public override IEnumerator OrbEffect()
         {
             StartCoroutine(base.OrbEffect());
-            _manaBlitz.ShootAttack(_manaBlitz);
+            _player.Shield += _shieldValue;
             yield return new WaitForSeconds(0.2f);
         }
 
@@ -40,6 +44,8 @@ namespace PeggleOrbs.ManaBlitzOrb
         protected override void Start()
         {
             base.Start();
+
+            _player = Player.Instance;
 
             if (transform.position.x <= 11)
             {

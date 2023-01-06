@@ -12,7 +12,7 @@ namespace Cards.DeckManagement.Global
 
         public static GlobalDeckManager Instance { get; private set; }
 
-        private readonly int[] _apprenticeDeck = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        private readonly int[] _apprenticeDeck = new int[] { 0, 0, 1, 1, 1, 1, 2, 2, 2, 2 };
 
         private List<Card> _allCards;
         [SerializeField] private List<Card> _globalDeck = new();

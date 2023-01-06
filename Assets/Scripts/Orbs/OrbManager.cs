@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using EnumCollection;
+using PeggleWars.TurnManagement;
+using PeggleWars;
 
 namespace PeggleOrbs
 {
@@ -105,6 +107,25 @@ namespace PeggleOrbs
                 orb.gameObject.SetActive(true);
             }
         }
+        public void CheckForRefreshOrbs()
+        {
+            bool refreshPresent = false;
+
+            foreach (Orb orb in SceneOrbList)
+            {
+                if (orb.OrbType == OrbType.RefreshOrb)
+                {
+                    refreshPresent = true;
+                }
+            }
+
+            if (!refreshPresent)
+            {
+                //if working correctly, this should only trigger when no RefreshOrbs are present
+                SwitchOrbs(OrbType.RefreshOrb, 1);
+            }
+
+        }
 
         #endregion
 
@@ -177,13 +198,10 @@ namespace PeggleOrbs
             {
                 Orb randomOrb = FindRandomOrbInList(orbs);
                 Vector3 randomOrbPosition = randomOrb.transform.position;
-                Instantiate(orb, randomOrbPosition, Quaternion.identity);
-                
-                if (orbs != Instance.SceneOrbList)
-                {
-                    Instance.SceneOrbList.Remove(randomOrb);
-                }               
-                orbs.Remove(randomOrb);
+                Orb tempOrb = Instantiate(orb, randomOrbPosition, Quaternion.identity);
+
+                Instance.SceneOrbList.Remove(randomOrb);
+                Instance.SceneOrbList.Add(tempOrb);
 
                 Destroy(randomOrb.gameObject);                            
             }

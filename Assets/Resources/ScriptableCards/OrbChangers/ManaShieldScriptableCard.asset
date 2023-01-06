@@ -19,5 +19,8 @@ MonoBehaviour:
   _manaCost: 10
   _manaType: 0
   _cardType: 0
+  _exhaustCard: 0
+  _cardImage: {fileID: -1479631910, guid: 29d4377f97a64f04c8cebb689dbe6ea4, type: 3}
+  _cardPrefab: {fileID: 0}
   _spawnOrb: 13
   _amountOrbs: 2

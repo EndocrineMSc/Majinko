@@ -8,6 +8,7 @@ using Cards.ScriptableCards;
 using Cards.Zoom;
 using Cards.DeckManagement;
 using Cards.DeckManagement.HandHandling;
+using PeggleOrbs;
 
 namespace Cards
 {
@@ -31,7 +32,6 @@ namespace Cards
         private HandManager _hand;
 
         [SerializeField] protected ScriptableCard _scriptableCard;
-
         [SerializeField] protected GameObject _cardPrefab;
 
         public GameObject CardPrefab { get => _cardPrefab; set => _cardPrefab = value; }
@@ -55,6 +55,7 @@ namespace Cards
             {
                 SubtractManaCost();
                 CardEffect();
+                OrbManager.Instance.CheckForRefreshOrbs(); //Checks if RefreshOrb was overwritten and makes a new one if so
                 Destroy(gameObject);
                 return true;
             }

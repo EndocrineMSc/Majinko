@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using EnumCollection;
-using Player;
+using PeggleWars.Player;
 using Enemies.Zombies;
 
 namespace Enemies
@@ -50,7 +50,7 @@ namespace Enemies
                     enemy.GetComponent<Animator>().SetTrigger("Attack");
 
                     int damage = enemy.Damage;
-                    Vampire.Nosferatu.TakeDamage(damage);                 
+                    Player.Instance.TakeDamage(damage);                 
                 }
             }          
         }
@@ -66,7 +66,7 @@ namespace Enemies
                         enemy.GetComponent<Animator>().SetTrigger("Attack");
 
                         int damage = enemy.Damage;
-                        Vampire.Nosferatu.TakeDamage(damage);
+                        Player.Instance.TakeDamage(damage);
                     }
                 }
             }

@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Cards.ScriptableCards
 {
+    [CreateAssetMenu]
     public class ScriptableCard : ScriptableObject
     {
         [SerializeField] private string _cardName;

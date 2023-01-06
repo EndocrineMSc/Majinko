@@ -1,79 +1,155 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using TMPro;
 using UnityEngine;
 
-public class BasicShot : MonoBehaviour
+namespace PeggleWars.Shots
 {
-    #region Fields
-
-    private Rigidbody2D _rigidbody;
-    private bool _unshotBall = true;
-    [SerializeField] private float force;
-
-    //fields for Rotation
-
-    private Camera _mainCam;
-    private Vector3 _mousePosition;
-
-    #endregion
-
-    #region Properties
-
-    private bool _destroyBall;
-
-    public bool DestroyBall
+    public class BasicShot : MonoBehaviour
     {
-        get { return _destroyBall; }
-        private set { _destroyBall = value; }
-    }
+        #region Fields
+
+        private Rigidbody2D _rigidbody;
+        private bool _unshotBall = true;
+        [SerializeField] private float _force;
+        private ShotManager _shotManager;
 
 
-    #endregion
+        //fields for indicators
+        [SerializeField] private GameObject _shotIndicatorPrefab;
+        private List<GameObject> _indicators = new();
+        private float _indicatorFrequency = 0.2f;
+        private bool _waitingForCoroutine;
 
-    private void Awake()
-    {
-        _rigidbody = GetComponent<Rigidbody2D>();
+        //fields for Rotation
+        private Camera _mainCam;
+        private Vector2 _shotPosition;
+        private Vector2 _direction;
+        private Vector2 _mousePosition;
+        private float _rotationZ;
 
-        //holds the ball in place until shot per mouseclidc
-        _rigidbody.gravityScale = 0;
+        #endregion
 
-        _mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        #region Properties
 
-    }
+        private bool _destroyBall;
 
-    private void Update()
-    {
-        //following four lines set rotation around the ball, depending on mouse position
-        _mousePosition = _mainCam.ScreenToWorldPoint(Input.mousePosition);
-
-        Vector3 _direction = _mousePosition - transform.position;
-
-        float _rotationZ = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
-
-
-        if (_unshotBall)
+        public bool DestroyBall
         {
-            transform.rotation = Quaternion.Euler(0, 0, _rotationZ);
+            get { return _destroyBall; }
+            private set { _destroyBall = value; }
         }
 
-        if (Input.GetMouseButtonDown(0) && _unshotBall)
+
+        #endregion
+
+        private void Awake()
         {
-            //destroys the aiming arrow
-            Destroy(transform.GetChild(0).gameObject);
+            _rigidbody = GetComponent<Rigidbody2D>();
 
-            _rigidbody.gravityScale = 1;
-            _rigidbody.velocity = new Vector2(_direction.x, _direction.y).normalized * force;
+            //holds the ball in place until shot per mouseclidc
+            _rigidbody.gravityScale = 0;
 
-            _unshotBall = false;
+            _mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+            Physics2D.IgnoreLayerCollision(16, 17);
         }
-    }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.name.Contains("Portal"))
+        private void Start()
         {
-            _destroyBall = true;
+            _shotManager = ShotManager.Instance;
+        }
+
+        private IEnumerator ShootIndicators()
+        {
+            if (_unshotBall)
+            {
+                _waitingForCoroutine = true;
+                GameObject indicator = Instantiate(_shotIndicatorPrefab, transform.position, Quaternion.Euler(0, 0, _rotationZ));
+                _indicators.Add(indicator);
+                Rigidbody2D tempBody = indicator.GetComponent<Rigidbody2D>();
+                tempBody.gravityScale = 1;
+                tempBody.velocity = new Vector2(_direction.x, _direction.y).normalized * _force;
+               
+                if (_indicators.Count > _shotManager.NumberOfIndicators)
+                {
+                    GameObject doomedIndicator = _indicators[0];
+                    Destroy(doomedIndicator);
+                    _indicators.RemoveAt(0);
+                }
+                
+            }
+            yield return new WaitForSeconds(_indicatorFrequency);
+            _waitingForCoroutine = false;
+        }
+
+        private void DestroyAllIndicators()
+        {
+            foreach (GameObject indicator in _indicators)
+            {
+                Destroy(indicator);
+            }
+            _indicators.Clear();
+        }
+
+        private void RotateShot()
+        {          
+            if (_unshotBall)
+            {
+                transform.rotation = Quaternion.Euler(0, 0, _rotationZ);
+            }
+        }
+
+        private void GetDirectionAndRotation()
+        {
+            _mousePosition = _mainCam.ScreenToWorldPoint(Input.mousePosition);
+            _shotPosition = transform.position;
+            _direction = _mousePosition - _shotPosition;
+
+            _rotationZ = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
+        }
+
+        private void ShootOnClick()
+        {
+            if (Input.GetMouseButtonDown(0) && _unshotBall)
+            {
+                DestroyAllIndicators();
+
+                _rigidbody.gravityScale = 1;
+                _rigidbody.velocity = new Vector2(_direction.x, _direction.y).normalized * _force;
+
+                _unshotBall = false;
+            }
+        }
+
+        private void HasMouseMoved()
+        {
+            if((Vector2)_mainCam.ScreenToWorldPoint(Input.mousePosition) != _mousePosition)
+            {
+                DestroyAllIndicators();
+            }
+
+        }
+
+        private void Update()
+        {
+            GetDirectionAndRotation();
+            RotateShot();
+
+            if(!_waitingForCoroutine)
+            {
+                StartCoroutine(ShootIndicators());
+            }
+            
+            HasMouseMoved(); //destroy indicators on moving mouse for crisper visuals
+            ShootOnClick();
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.name.Contains("Portal"))
+            {
+                _destroyBall = true;
+            }
         }
     }
 }

@@ -13,7 +13,7 @@ namespace PeggleOrbs
         [SerializeField] protected Mana _orbMana;
         [SerializeField] protected ManaType SpawnManaType;
         [SerializeField] protected int ManaAmount = 10;
-        [SerializeField] private Orb _defaultOrb;
+        [SerializeField] protected Orb _defaultOrb;
         protected GameObject _spawnPoint;
 
         protected ManaPoolManager _manaPoolManager;
@@ -47,25 +47,34 @@ namespace PeggleOrbs
 
         protected virtual void Start()
         {
-            //Ignore the collisions between layer 0 (default) and layer 8 (custom layer you set in Inspector window)
-            Physics.IgnoreLayerCollision(6, 7);
+            Physics2D.IgnoreLayerCollision(6, 7);
        
             _manaPoolManager = ManaPoolManager.Instance;
             _spawnPoint = FindSpawnPoint();
         }
 
-        protected virtual void OnCollisionEnter2D(Collision2D collision)
+        protected void OnCollisionEnter2D(Collision2D collision)
         {
-            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX.SFX_0002_BasicPeggleHit);
-            gameObject.GetComponent<SpriteRenderer>().size += new Vector2(0.03f, 0.03f);
-                 
-            Orb orb = Instantiate(_defaultOrb, transform.position, Quaternion.identity);
-            orb.gameObject.SetActive(false);
+            if (collision.gameObject.name.Contains("Shot"))
+            {
+                AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX.SFX_0002_BasicPeggleHit);
+                gameObject.GetComponent<SpriteRenderer>().size += new Vector2(0.03f, 0.03f);
 
-            SpawnMana();
-            OrbManager.Instance.SceneOrbList.Remove(this);
-            OrbManager.Instance.SceneOrbList.Add(orb);
-            Destroy(gameObject);
+                Orb orb = Instantiate(_defaultOrb, transform.position, Quaternion.identity);
+                orb.gameObject.SetActive(false);
+
+                SpawnMana();
+                OrbManager.Instance.SceneOrbList.Remove(this);
+                OrbManager.Instance.SceneOrbList.Add(orb);
+                AdditionalEffects();
+
+                StartCoroutine(DestroyOrb());
+            }
+        }
+
+        protected virtual void AdditionalEffects()
+        {
+            //Add necessary additional effects in children here
         }
 
         //spawns the mana in the respective container
@@ -159,6 +168,12 @@ namespace PeggleOrbs
             yield return new WaitForSeconds(0.1f);
             gameObject.GetComponent<SpriteRenderer>().size -= new Vector2(0.02f, 0.02f);
             gameObject.SetActive(false);
+        }
+
+        private IEnumerator DestroyOrb()
+        {
+            yield return new WaitForSeconds(0.1f);
+            Destroy(gameObject);
         }
 
         #endregion
