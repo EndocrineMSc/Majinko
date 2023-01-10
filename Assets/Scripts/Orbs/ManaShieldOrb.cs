@@ -36,9 +36,9 @@ namespace PeggleOrbs.ManaShieldOrb
         #region Protected Functions
 
         //will be called OnCollisionEnter2D from parent
-        protected override void AdditionalEffects()
+        protected override void AdditionalEffectsOnCollision()
         {
-            OrbActionManager.Instance.AddOrb(this);            
+            StartCoroutine(OrbEffect());         
         }
 
         protected override void Start()

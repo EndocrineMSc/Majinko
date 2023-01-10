@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using PeggleWars;
 using EnumCollection;
+using PeggleWars.TurnManagement;
 
 namespace PeggleWars.Player
 {
@@ -17,6 +18,7 @@ namespace PeggleWars.Player
 
         public static Player Instance { get; private set; }
         private Animator _animator;
+        private CardTurnManager _cardTurnManager;
 
         #endregion
 
@@ -36,6 +38,14 @@ namespace PeggleWars.Player
         {
             get { return _shield; }
             set { _shield = value; }
+        }
+
+        private int _maxHealth;
+
+        public int MaxHealth
+        {
+            get { return _maxHealth; }
+            set { _maxHealth = value; }
         }
 
         #endregion
@@ -79,6 +89,7 @@ namespace PeggleWars.Player
             {
                 Instance = this;
             }
+            _maxHealth = _health;
         }
 
         private void Start()
@@ -86,8 +97,20 @@ namespace PeggleWars.Player
             _animator = GetComponent<Animator>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _color = _spriteRenderer.color;
+            _cardTurnManager = CardTurnManager.Instance;
+
+            _cardTurnManager.StartCardTurn += OnCardTurnStart;
         }
 
+        private void OnDisable()
+        {
+            _cardTurnManager.StartCardTurn -= OnCardTurnStart;
+        }
+
+        private void OnCardTurnStart()
+        {
+            Instance.Shield = 0;
+        }
         #endregion
 
         #region IEnumerators

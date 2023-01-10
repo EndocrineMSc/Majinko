@@ -22,7 +22,7 @@ namespace PeggleOrbs.RefreshOrb
 
         #region Protected Functions
 
-        protected override void AdditionalEffects()
+        protected override void AdditionalEffectsOnCollision()
         {
             StartCoroutine(OrbEffect());
             OrbManager.Instance.CheckForRefreshOrbs();

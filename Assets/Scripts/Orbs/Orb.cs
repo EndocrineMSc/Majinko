@@ -66,13 +66,13 @@ namespace PeggleOrbs
                 SpawnMana();
                 OrbManager.Instance.SceneOrbList.Remove(this);
                 OrbManager.Instance.SceneOrbList.Add(orb);
-                AdditionalEffects();
+                AdditionalEffectsOnCollision();
 
                 StartCoroutine(DestroyOrb());
             }
         }
 
-        protected virtual void AdditionalEffects()
+        protected virtual void AdditionalEffectsOnCollision()
         {
             //Add necessary additional effects in children here
         }
