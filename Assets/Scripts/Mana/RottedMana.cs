@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using PeggleAttacks.AttackManager;
 
-namespace PeggleMana.RottedMana
+namespace PeggleWars.ManaManagement
 {
     public class RottedMana : Mana
     {

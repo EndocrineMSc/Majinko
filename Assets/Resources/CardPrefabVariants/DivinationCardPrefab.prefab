@@ -127,7 +127,8 @@ PrefabInstance:
       propertyPath: m_text
       value: Divination
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6818339945051075234, guid: 92b44770394774247acee543b7baee9f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 92b44770394774247acee543b7baee9f, type: 3}
 --- !u!1 &6172856878084011536 stripped
 GameObject:

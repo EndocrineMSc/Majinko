@@ -1,17 +1,19 @@
-using PeggleMana;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using EnumCollection;
-using Cards.DragDrop;
+using PeggleWars.Cards.DragDrop;
 using Cards.ScriptableCards;
 using Cards.Zoom;
-using Cards.DeckManagement;
-using Cards.DeckManagement.HandHandling;
-using PeggleOrbs;
+using PeggleWars.Cards.DeckManagement.HandHandling;
+using PeggleWars.Orbs;
+using PeggleWars.ManaManagement;
 
-namespace Cards
+namespace PeggleWars.Cards
 {
+    /// <summary>
+    /// Parent class to all Cards used in the game. This class and its children handle what a card is and the effects of cards when drawn, played, discarded, etc.
+    /// A GameObject that has this script (or a child inheriting this script) attached to it also immediatly is assigned the CardDragDrop and CardZoom components. 
+    /// </summary>
+
     [RequireComponent(typeof(CardDragDrop))]
     [RequireComponent(typeof(CardZoom))]
     public abstract class Card : MonoBehaviour
@@ -27,9 +29,10 @@ namespace Cards
         private bool _exhaustCard;
         private Sprite _cardImage;
 
-        private ManaPoolManager _manaPoolManager;
-        private DeckManager _deckManager;
-        private HandManager _hand;
+        //Necessary level references
+        private ManaPool _manaPool;
+        private Hand _hand;
+        private OrbManager _orbManager;
 
         [SerializeField] protected ScriptableCard _scriptableCard;
         [SerializeField] protected GameObject _cardPrefab;
@@ -48,33 +51,59 @@ namespace Cards
 
         #region Public Virtual Functions
 
-        public virtual bool CardEndDragEffect(Vector3 startPosition)
+        /// <summary>
+        /// Handles what happens when the card is dragged and let go.
+        /// Is called by the CardDragDrop class.
+        /// Can be overriden by child classes, if additional effects are necessary.
+        /// </summary>
+        /// <returns>Returns whether there was enough mana to play the card or not (boolean)</returns>
+        public virtual bool CardEndDragEffect()
         {
             bool enoughMana = CheckForMana();
+
             if (enoughMana)
             {
-                SubtractManaCost();
                 CardEffect();
-                OrbManager.Instance.CheckForRefreshOrbs(); //Checks if RefreshOrb was overwritten and makes a new one if so
+
+                _manaPool.SpendMana(_manaType, _manaCost);
+                _orbManager.CheckForRefreshOrbs(); //Checks if RefreshOrb was overwritten and makes a new one if so
+                _hand.InstantiatedCards.Remove(gameObject); //list of instantiated cards in hand
+                _hand.AlignCards();
+
                 Destroy(gameObject);
                 return true;
             }
             else
             {
+                //ToDo: A ManaBurn Effect of some kind.
                 return false;
             }
+        }
+        #endregion
+
+        #region Private Functions
+
+        private void Start()
+        {
+            SetReferencesToLevelComponents();
+            SetCardValuesAndTexts();           
         }
 
         #endregion
 
         #region Protected Virtual Functions
 
-        protected virtual void Start()
+        //Child classes may need additional references
+        protected virtual void SetReferencesToLevelComponents()
         {
-            _manaPoolManager = ManaPoolManager.Instance;
-            _deckManager = DeckManager.Instance;
-            _hand = HandManager.Instance;
+            _manaPool = ManaPool.Instance;
+            _hand = Hand.Instance;
+            _orbManager = OrbManager.Instance;
+        }
 
+        //Child classes may have additional fields to be set
+        protected virtual void SetCardValuesAndTexts()
+        {
             _cardName = _scriptableCard.CardName;
             _cardDescription = _scriptableCard.CardDescription;
             _manaCost = _scriptableCard.ManaCost;
@@ -82,29 +111,19 @@ namespace Cards
             _cardType = _scriptableCard.CardType;
             _exhaustCard = _scriptableCard.IsExhaustCard;
             _cardImage = _scriptableCard.CardImage;
-            _cardPrefab= _scriptableCard.CardPrefab;
-        }
-
-        protected virtual void SubtractManaCost()
-        {
-            _manaPoolManager.SpendMana(ManaType.BaseMana, _manaCost);
+            _cardPrefab = _scriptableCard.CardPrefab;
         }
 
         protected virtual void CardEffect()
         {
-            //actual effects are implemented in child classes
+            //actual effects are implemented in child classes via override
         }
 
+        //Child classes may have multiple types of mana
         protected virtual bool CheckForMana()
         {
-            if (_manaPoolManager.BasicMana.Count >= _manaCost)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            bool enoughMana = _manaPool.CheckForManaAmount(_manaType, _manaCost);
+            return enoughMana;
         }
 
         #endregion

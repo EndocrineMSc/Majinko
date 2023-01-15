@@ -1,16 +1,15 @@
-using PeggleWars.Player;
 using System.Collections;
 using UnityEngine;
 using EnumCollection;
-using PeggleOrbs.OrbActions;
+using PeggleWars;
 using PeggleWars.Audio;
 
-namespace PeggleOrbs.ManaShieldOrb
-
+namespace PeggleWars.Orbs.ManaShieldOrb
 {
     public class ManaShieldOrb : Orb
     {
         #region Fields and Properties
+
         private Player _player;
 
         [SerializeField] private int _shieldValue;
@@ -24,6 +23,7 @@ namespace PeggleOrbs.ManaShieldOrb
         #endregion
 
         #region Public Functions
+
         public override IEnumerator OrbEffect()
         {
             StartCoroutine(base.OrbEffect());
@@ -41,16 +41,10 @@ namespace PeggleOrbs.ManaShieldOrb
             StartCoroutine(OrbEffect());         
         }
 
-        protected override void Start()
+        protected override void SetReferences()
         {
-            base.Start();
-
+            base.SetReferences();
             _player = Player.Instance;
-
-            if (transform.position.x <= 11)
-            {
-                AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX.SFX_0008_ManaBlitzSpawn);
-            }
         }
 
         #endregion

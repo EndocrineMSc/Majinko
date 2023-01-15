@@ -1,29 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using EnumCollection;
-using Enemies;
-using PeggleOrbs;
 using PeggleAttacks.AttackManager;
+using PeggleWars.Enemies;
 
-namespace PeggleAttacks.Player
+namespace PeggleWars.PlayerAttacks
 {
     public class PlayerAttack : MonoBehaviour
     {
-        #region Fields
+        #region Fields and Properties
 
-        protected Vector2 _insantiatePosition = new Vector2(-7.5f, 5.9f);
+        protected Vector2 _insantiatePosition = new(-7.5f, 5.9f);
         protected PlayerAttackManager _playerAttackManager;
 
         [SerializeField] protected PlayerAttackTarget _target;
         [SerializeField] protected float _attackFlySpeed = 10;
 
-        #endregion
-
-        #region Properties
-
         [SerializeField] protected int _damage;
-
         public int Damage
         {
             get { return _damage; }
@@ -39,12 +31,12 @@ namespace PeggleAttacks.Player
             Enemy enemy = null;
             Vector3 targetPosition = new();
 
-            if (EnemyManager.Instance.Enemies.Count > 0 ) 
+            if (EnemyManager.Instance.EnemiesInScene.Count > 0 ) 
             {
                 switch (_target)
                 {
                     case PlayerAttackTarget.FirstEnemy:
-                        enemy = EnemyManager.Instance.Enemies[0];
+                        enemy = EnemyManager.Instance.EnemiesInScene[0];
                         targetPosition = enemy.transform.position;
                         break;
                 }
@@ -80,7 +72,7 @@ namespace PeggleAttacks.Player
             switch (_target)
             {
                 case PlayerAttackTarget.FirstEnemy:
-                enemy = EnemyManager.Instance.Enemies[0];
+                enemy = EnemyManager.Instance.EnemiesInScene[0];
                 break;                       
             }
 
@@ -103,6 +95,7 @@ namespace PeggleAttacks.Player
             _playerAttackManager = PlayerAttackManager.Instance;
             _damage *= Mathf.RoundToInt(_playerAttackManager.DamageModifierTurn);
         }
+
         #endregion
     }
 }

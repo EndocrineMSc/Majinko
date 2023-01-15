@@ -1,16 +1,19 @@
 using TMPro;
 using UnityEngine;
 
-namespace Cards.DeckManagement
+namespace PeggleWars.Cards.DeckManagement
 {
+    /// <summary>
+    /// This class displays necessary deck information on screen.
+    /// </summary>
     public class DisplayDeck : MonoBehaviour
     {
-        #region Fields
+        #region Fields and Properties
 
         private TextMeshProUGUI _remainingCardsInDeck;
         private TextMeshProUGUI _remainingCardsInDiscardPile;
 
-        private DeckManager _deckManager;
+        private Deck _deckManager;
 
         #endregion
 
@@ -18,7 +21,7 @@ namespace Cards.DeckManagement
 
         private void Start()
         {
-            _deckManager = DeckManager.Instance;
+            _deckManager = Deck.Instance;
             _remainingCardsInDeck = GameObject.FindGameObjectWithTag("DeckNumber").GetComponent<TextMeshProUGUI>();
             _remainingCardsInDiscardPile = GameObject.FindGameObjectWithTag("DiscardNumber").GetComponent<TextMeshProUGUI>();
         }

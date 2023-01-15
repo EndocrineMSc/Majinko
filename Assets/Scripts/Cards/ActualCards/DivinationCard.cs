@@ -1,24 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Cards;
 using PeggleWars.Shots;
 
-namespace Cards
+namespace PeggleWars.Cards.InstantEffects
 {
+    /// <summary>
+    /// Child class to cards, has an instant effect on the game.
+    /// Increases the range for shot prediction for the player.
+    /// </summary>
     public class DivinationCard : Card
     {
         private ShotManager _shotManager;
 
-        protected override void Start()
+        protected override void SetReferencesToLevelComponents()
         {
-            base.Start();
+            base.SetReferencesToLevelComponents();
             _shotManager = ShotManager.Instance;
         }
 
         protected override void CardEffect()
         {
-            base.CardEffect();
             _shotManager.NumberOfIndicators += 2;
             _shotManager.MaxIndicatorCollisions++;
         }

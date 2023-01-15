@@ -1,11 +1,14 @@
 using EnumCollection;
 using System.Collections;
 using UnityEngine;
-using PeggleMana;
+using PeggleWars.ManaManagement;
 using PeggleWars.Audio;
 
-namespace PeggleOrbs
+namespace PeggleWars.Orbs
 {
+    /// <summary>
+    /// Parent class to all orbs. Defines what a Orb is. BaseManaOrb directly uses this script. Every other orb needs a new class inheriting this one.
+    /// </summary>
     public class Orb : MonoBehaviour
     {
         #region Fields
@@ -16,7 +19,9 @@ namespace PeggleOrbs
         [SerializeField] protected Orb _defaultOrb;
         protected GameObject _spawnPoint;
 
-        protected ManaPoolManager _manaPoolManager;
+        protected ManaPool _manaPool;
+        protected OrbManager _orbManager;
+        protected AudioManager _audioManager;
 
         protected Vector3 _position;
 
@@ -41,88 +46,41 @@ namespace PeggleOrbs
             yield return null;
         }
 
-        #endregion
-
-        #region Protected Virtual Functions
-
-        protected virtual void Start()
+        //Delays the "despawn" so that the size increase can be visible
+        public IEnumerator SetInactive()
         {
-            Physics2D.IgnoreLayerCollision(6, 7);
-       
-            _manaPoolManager = ManaPoolManager.Instance;
-            _spawnPoint = FindSpawnPoint();
+            yield return new WaitForSeconds(0.15f);
+            gameObject.GetComponent<SpriteRenderer>().size -= new Vector2(0.02f, 0.02f);
+            gameObject.SetActive(false);
         }
 
-        protected void OnCollisionEnter2D(Collision2D collision)
+        #endregion
+
+        #region Private Functions
+
+        private void Start()
+        {
+            SetReferences();
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.name.Contains("Shot"))
             {
-                AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX.SFX_0002_BasicPeggleHit);
-                gameObject.GetComponent<SpriteRenderer>().size += new Vector2(0.03f, 0.03f);
-
-                Orb orb = Instantiate(_defaultOrb, transform.position, Quaternion.identity);
-                orb.gameObject.SetActive(false);
-
+                PlayOrbOnHitSound();
+                OnCollisionVisualPolish();
                 SpawnMana();
-                OrbManager.Instance.SceneOrbList.Remove(this);
-                OrbManager.Instance.SceneOrbList.Add(orb);
+                ReplaceHitOrb();               
                 AdditionalEffectsOnCollision();
-
                 StartCoroutine(DestroyOrb());
             }
         }
 
-        protected virtual void AdditionalEffectsOnCollision()
+        private IEnumerator DestroyOrb()
         {
-            //Add necessary additional effects in children here
+            yield return new WaitForSeconds(0.1f);
+            Destroy(gameObject);
         }
-
-        //spawns the mana in the respective container
-        protected virtual void SpawnMana()
-        {
-            Vector2 _spawnPointPosition = _spawnPoint.transform.position;
-      
-            for (int i = 0; i < ManaAmount; i++)
-            {
-                float _spawnRandomiserX = Random.Range(-0.7f, 0.7f);
-                float _spawnRandomiserY = Random.Range(-0.2f, 0.2f);
-
-                Vector2 _spawnPosition = new(_spawnPointPosition.x + _spawnRandomiserX, _spawnPointPosition.y + _spawnRandomiserY);
-
-                Mana tempMana = Instantiate(_orbMana, _spawnPosition, Quaternion.identity);
-
-                switch (SpawnManaType)
-                {
-                    case ManaType.BaseMana:
-                        _manaPoolManager.BasicMana.Add(tempMana);
-                        break;
-
-                    case ManaType.FireMana:
-                        _manaPoolManager.FireMana.Add(tempMana);
-                        break;
-
-                    case ManaType.IceMana:
-                        _manaPoolManager.IceMana.Add(tempMana);
-                        break;
-
-                    case ManaType.LightningMana:
-                        _manaPoolManager.LightningMana.Add(tempMana);
-                        break;
-
-                    case ManaType.DarkMana:
-                        _manaPoolManager.DarkMana.Add(tempMana);
-                        break;
-
-                    case ManaType.LightMana:
-                        _manaPoolManager.LightMana.Add(tempMana);
-                        break;
-                }
-            }
-        }
-
-        #endregion
-
-        #region Private Funtions
 
         private GameObject FindSpawnPoint()
         {
@@ -160,20 +118,80 @@ namespace PeggleOrbs
 
         #endregion
 
-        #region IEnumerators
+        #region Protected Virtual Functions
 
-        //Delays the "despawn" so that the size increase can be visible
-        public IEnumerator SetInactive()
+        protected virtual void SetReferences()
         {
-            yield return new WaitForSeconds(0.1f);
-            gameObject.GetComponent<SpriteRenderer>().size -= new Vector2(0.02f, 0.02f);
-            gameObject.SetActive(false);
+            _manaPool = ManaPool.Instance;
+            _orbManager = OrbManager.Instance;
+            _audioManager = AudioManager.Instance;
+            _spawnPoint = FindSpawnPoint();
         }
 
-        private IEnumerator DestroyOrb()
+        protected virtual void ReplaceHitOrb()
         {
-            yield return new WaitForSeconds(0.1f);
-            Destroy(gameObject);
+            Orb orb = Instantiate(_defaultOrb, transform.position, Quaternion.identity);
+            orb.gameObject.SetActive(false);
+            _orbManager.SceneOrbList.Remove(this);
+            _orbManager.SceneOrbList.Add(orb);
+        }
+
+        protected virtual void PlayOrbOnHitSound()
+        {
+            _audioManager.PlaySoundEffectWithoutLimit(SFX._0002_BasicPeggleHit);
+        }
+
+        protected virtual void AdditionalEffectsOnCollision()
+        {
+            //Add necessary additional effects in children here
+        }
+
+        protected virtual void OnCollisionVisualPolish()
+        {
+            gameObject.GetComponent<SpriteRenderer>().size += new Vector2(0.03f, 0.03f);
+        }
+
+        //spawns the mana in the respective container
+        protected virtual void SpawnMana()
+        {
+            Vector2 _spawnPointPosition = _spawnPoint.transform.position;
+
+            for (int i = 0; i < ManaAmount; i++)
+            {
+                float _spawnRandomiserX = Random.Range(-0.7f, 0.7f);
+                float _spawnRandomiserY = Random.Range(-0.2f, 0.2f);
+
+                Vector2 _spawnPosition = new(_spawnPointPosition.x + _spawnRandomiserX, _spawnPointPosition.y + _spawnRandomiserY);
+
+                Mana tempMana = Instantiate(_orbMana, _spawnPosition, Quaternion.identity);
+
+                switch (SpawnManaType)
+                {
+                    case ManaType.BaseMana:
+                        _manaPool.BasicMana.Add(tempMana);
+                        break;
+
+                    case ManaType.FireMana:
+                        _manaPool.FireMana.Add(tempMana);
+                        break;
+
+                    case ManaType.IceMana:
+                        _manaPool.IceMana.Add(tempMana);
+                        break;
+
+                    case ManaType.LightningMana:
+                        _manaPool.LightningMana.Add(tempMana);
+                        break;
+
+                    case ManaType.DarkMana:
+                        _manaPool.DarkMana.Add(tempMana);
+                        break;
+
+                    case ManaType.LightMana:
+                        _manaPool.LightMana.Add(tempMana);
+                        break;
+                }
+            }
         }
 
         #endregion

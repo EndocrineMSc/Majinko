@@ -1,16 +1,17 @@
-using PeggleWars.Shots;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace PeggleWar.Shots.Indicators
+namespace PeggleWars.Shots.Indicators
 {
-    public class IndicatorCollision : MonoBehaviour
+    /// <summary>
+    /// This class mainly tracks how many collisions with a orb a ShotIndicator already had.
+    /// </summary>
+    public class ShotIndicator : MonoBehaviour
     {
         private ShotManager _shotManager;
         private int _currentNumberOfCollisions;
 
+        //ignore collisions with shots and shotindicators
         private void Awake()
         {
             Physics2D.IgnoreLayerCollision(16, 17);

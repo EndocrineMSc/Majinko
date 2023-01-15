@@ -1,8 +1,8 @@
 using System.Collections;
 using UnityEngine;
 using EnumCollection;
-using Enemies;
-using PeggleOrbs.OrbActions;
+using PeggleWars.Enemies;
+using PeggleWars.Orbs.OrbActions;
 using PeggleWars.Audio;
 using PeggleWars.TurnManagement;
 
@@ -16,7 +16,7 @@ namespace PeggleWars
         public static GameManager Instance { get; private set; }
         private EnemyManager _enemyManager;
         private AudioManager _audioManager;
-        private CardTurnManager _cardTurnManager;
+        private TurnManager _cardTurnManager;
 
         #endregion
 
@@ -56,8 +56,8 @@ namespace PeggleWars
 
                 case (State.CardHandling):
                     Instance._cardTurnManager.RaiseStartCardTurn();
-                    _audioManager.PlayGameTrack(Track.Track_0001_LevelOne);
-                    _audioManager.FadeGameTrack(Track.Track_0001_LevelOne, Fade.In);
+                    _audioManager.PlayGameTrack(Track._0001_LevelOne);
+                    _audioManager.FadeGameTrack(Track._0001_LevelOne, Fade.In);
                     //End Turn Button calls State Change
                     break;
 
@@ -74,11 +74,11 @@ namespace PeggleWars
                 case (State.EnemyTurn):
 
                     //this part should probably not be handled in here but in a separate script for now it's fine
-                    if (_enemyManager.Enemies.Count < 4)
+                    if (_enemyManager.EnemiesInScene.Count < 4)
                     {
-                        _enemyManager.SpawnGroundEnemy(EnemyType.CloakedZombie);
+                        _enemyManager.SpawnEnemy(EnemyType.CloakedZombie);
                     }
-                    yield return StartCoroutine(_enemyManager.MoveRightEnemies());
+                    yield return StartCoroutine(_enemyManager.MoveAllEnemies());
 
                     _enemyManager.MeleeEnemiesAttack();
                     _enemyManager.RangedEnemiesAttack();
@@ -97,7 +97,7 @@ namespace PeggleWars
 
         public void EndCardTurn()
         {
-            _audioManager.PlaySoundEffect(SFX.SFX_0001_ButtonClick);
+            _audioManager.PlaySoundEffectOnce(SFX._0001_ButtonClick);
 
             if (_gameState == State.CardHandling)
             {
@@ -128,7 +128,7 @@ namespace PeggleWars
         {         
             _enemyManager = EnemyManager.Instance;
             _audioManager = AudioManager.Instance;
-            _cardTurnManager = CardTurnManager.Instance;
+            _cardTurnManager = TurnManager.Instance;
             StartCoroutine(Instance.WaitThenChangeState(State.MainMenu));
         }
 

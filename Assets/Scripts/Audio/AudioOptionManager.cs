@@ -1,15 +1,17 @@
-using PeggleWars.Audio;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using EnumCollection;
 
-namespace PeggleWars.AudioOptions
+namespace PeggleWars.Audio.Options
 {
+    /// <summary>
+    /// Intended as a component to the AudioManager.
+    /// Provides functions for master, music and sound effect volume sliders.
+    /// The AudioManager set the respective AudioGroups of the AudioSources automatically, depending on the folder the clips were in.
+    /// </summary>
     public class AudioOptionManager : MonoBehaviour
     {
-        #region Fields
+        #region Fields and Properties
 
         [SerializeField] private AudioMixer _audioMixer;
 
@@ -17,11 +19,12 @@ namespace PeggleWars.AudioOptions
 
         #region Public Functions
 
-        //Functions for Menu Sliders with an Audio Mixer Asset
-        //Music and EffectSound AudioSource need to have that
-        //Mixer assigned to their OutPut
-        //Log volume makes slider volume change linear instead
-        //of logarihtmic, because decibels are on a log scale
+        /// <summary>
+        /// Actual functions for volume sliders.
+        /// The actual volume is in decibel, which is on a logharithmic scale.
+        /// </summary>
+        /// <param name="volume">Float set by the respective slider on a linear scale (between -80 and 20)</param>
+
         public void SetMasterVolume(float volume)
         {
             _audioMixer.SetFloat("Master", volume > 0 ? Mathf.Log(volume) *20f : -80f);
@@ -29,21 +32,17 @@ namespace PeggleWars.AudioOptions
 
         public void SetMusicVolume(float volume)
         {
-            _audioMixer.SetFloat("Master", volume > 0 ? Mathf.Log(volume) * 20f : -80f);
+            _audioMixer.SetFloat("Music", volume > 0 ? Mathf.Log(volume) * 20f : -80f);
         }
 
         public void SetEffectsVolume(float volume)
         {
-            _audioMixer.SetFloat("Master", volume > 0 ? Mathf.Log(volume) * 20f : -80f);
+            _audioMixer.SetFloat("SFX", volume > 0 ? Mathf.Log(volume) * 20f : -80f);
+            
             //Play an exemplary SFX to give the play an auditory volume feedback
-            AudioManager.Instance.PlaySoundEffect(SFX.SFX_0002_BasicPeggleHit);
+            AudioManager.Instance.PlaySoundEffectOnce(SFX._0002_BasicPeggleHit);
         }
 
         #endregion
-
-        #region Private Functions
-
-        #endregion
-
     }
 }

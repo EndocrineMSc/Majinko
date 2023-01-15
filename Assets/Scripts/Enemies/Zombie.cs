@@ -1,27 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using PeggleOrbs;
 using EnumCollection;
 using PeggleWars.Audio;
+using PeggleWars.Orbs;
 
-namespace Enemies.Zombies
+namespace PeggleWars.Enemies.Zombies
 {
     public class Zombie : Enemy
     {
-
         #region Public Functions
-
-        protected override void HandleDeath()
-        {
-            base.HandleDeath();
-            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX.SFX_0011_ZombieDeath);
-            OrbManager.Instance.SwitchOrbs(OrbType.RottedOrb, 2);
-        }
 
         protected override void PlaySpawnSound()
         {
-            AudioManager.Instance.PlaySoundEffect(SFX.SFX_0009_ZombieSpawn);
+            AudioManager.Instance.PlaySoundEffectOnce(SFX._0009_ZombieSpawn);
+        }
+
+        protected override void PlayDeathSound()
+        {
+            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0011_ZombieDeath);
+        }
+
+        protected override void OnDeathEffect()
+        {
+            OrbManager.Instance.SwitchOrbs(OrbType.RottedOrb, 2);          
         }
 
         #endregion

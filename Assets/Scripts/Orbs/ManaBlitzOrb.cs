@@ -1,11 +1,11 @@
-using PeggleAttacks.Player;
 using System.Collections;
 using UnityEngine;
 using EnumCollection;
-using PeggleOrbs.OrbActions;
+using PeggleWars.Orbs.OrbActions;
 using PeggleWars.Audio;
+using PeggleWars.PlayerAttacks;
 
-namespace PeggleOrbs.ManaBlitzOrb
+namespace PeggleWars.Orbs.ManaBlitzOrb
 {
     public class ManaBlitzOrb : Orb
     {
@@ -34,17 +34,7 @@ namespace PeggleOrbs.ManaBlitzOrb
         //will be called OnCollisionEnter2D from parent
         protected override void AdditionalEffectsOnCollision()
         {
-            OrbActionManager.Instance.AddOrb(this);            
-        }
-
-        protected override void Start()
-        {
-            base.Start();
-
-            if (transform.position.x <= 11)
-            {
-                AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX.SFX_0008_ManaBlitzSpawn);
-            }
+            OrbActionManager.Instance.AddOrbToActionList(this);            
         }
 
         #endregion

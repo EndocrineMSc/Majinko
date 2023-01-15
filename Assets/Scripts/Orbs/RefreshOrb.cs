@@ -1,11 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using PeggleOrbs.OrbActions;
-using EnumCollection;
-using PeggleWars.Audio;
 
-namespace PeggleOrbs.RefreshOrb
+namespace PeggleWars.Orbs.RefreshOrb
 {
     public class RefreshOrb : Orb
     {

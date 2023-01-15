@@ -1,13 +1,13 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using PeggleMana;
 using EnumCollection;
 
-namespace PeggleMana
+namespace PeggleWars.ManaManagement
 {
-
-    public class ManaPoolManager : MonoBehaviour
+    /// <summary>
+    /// This class handles the the usage of mana. Stores available mana in lists.
+    /// </summary>
+    public class ManaPool : MonoBehaviour
     {
         #region
 
@@ -18,7 +18,7 @@ namespace PeggleMana
         public List<Mana> DarkMana = new();
         public List<Mana> LightMana = new();
 
-        public static ManaPoolManager Instance { get; private set; }
+        public static ManaPool Instance { get; private set; }
 
         #endregion
 
@@ -54,13 +54,46 @@ namespace PeggleMana
             }
         }
 
+        public bool CheckForManaAmount(ManaType manaType, int amount)
+        {
+            bool enoughMana = false;
+
+            switch (manaType)
+            {
+                case ManaType.BaseMana:
+                    enoughMana = CheckIfEnoughManaByList(BasicMana, amount);
+                    break;
+
+                case ManaType.FireMana:
+                    enoughMana = CheckIfEnoughManaByList(FireMana, amount);
+                    break;
+
+                case ManaType.IceMana:
+                    enoughMana = CheckIfEnoughManaByList(IceMana, amount);
+                    break;
+
+                case ManaType.LightningMana:
+                    enoughMana = CheckIfEnoughManaByList(LightningMana, amount);
+                    break;
+
+                case ManaType.DarkMana:
+                    enoughMana = CheckIfEnoughManaByList(DarkMana, amount);
+                    break;
+
+                case ManaType.LightMana:
+                    enoughMana = CheckIfEnoughManaByList(LightMana, amount);
+                    break;
+            }
+            return enoughMana;
+        }
+
         #endregion
 
         #region Private Functions
 
-        private void SpendManaByList(List<Mana> list, int amount)
+        private void SpendManaByList(List<Mana> manaList, int amount)
         {
-            if (list.Count < amount)
+            if (manaList.Count < amount)
             {
                 Debug.Log("Not enough Mana");
                 return;
@@ -68,9 +101,21 @@ namespace PeggleMana
 
             for (int i = 0; i < amount; i++)
             { 
-                Destroy(list[0].gameObject);
-                list.RemoveAt(0);
+                Destroy(manaList[0].gameObject);
+                manaList.RemoveAt(0);
             }   
+        }
+
+        private bool CheckIfEnoughManaByList(List<Mana> manaList, int amount)
+        {
+            if (manaList.Count > amount)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private void Awake()

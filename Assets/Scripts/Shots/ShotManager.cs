@@ -4,14 +4,17 @@ using PeggleWars.TurnManagement;
 
 namespace PeggleWars.Shots
 {
+    /// <summary>
+    /// Class for instantiating new shots when the old ones are gone. Also keeps track of any modifications
+    /// to the ball made by cards or other effects.
+    /// </summary>
     public class ShotManager : MonoBehaviour
     {
-
         #region Fields and Properties
 
         [SerializeField] private BasicShot _basicShot;
         private BasicShot _currentBall;
-        private CardTurnManager _cardTurnManager;
+        private TurnManager _cardTurnManager;
         private bool _ballActive;
 
         private int _maxNumberOfIndicators;
@@ -24,12 +27,14 @@ namespace PeggleWars.Shots
             set { _maxIndicatorCollisions = value; }
         }
 
-        private int _staticMaxNumberOfIndicators = 3;
-        private int _staticMaxIndicatorsCollisions = 1;
+        private int _maxNumberOfIndicatorsBaseline = 3;
+        private int _maxIndicatorsCollisionsBaseline = 1;
 
         public static ShotManager Instance { get; private set; }
 
         #endregion
+
+        #region Private Functions
 
         private void Awake()
         {
@@ -45,14 +50,15 @@ namespace PeggleWars.Shots
 
         private void Start()
         {
-            _cardTurnManager = CardTurnManager.Instance;
+            _cardTurnManager = TurnManager.Instance;
             _cardTurnManager.StartCardTurn += OnStartCardTurn;
         }
 
+        //Reset all temporary modifications to the shot
         private void OnStartCardTurn()
         {
-            Instance.MaxIndicatorCollisions = _staticMaxIndicatorsCollisions;
-            Instance.NumberOfIndicators = _staticMaxNumberOfIndicators;
+            Instance.MaxIndicatorCollisions = _maxIndicatorsCollisionsBaseline;
+            Instance.NumberOfIndicators = _maxNumberOfIndicatorsBaseline;
         }
 
         private void OnDisable()
@@ -61,7 +67,7 @@ namespace PeggleWars.Shots
         }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
             if (GameManager.Instance.GameState == State.Shooting)
             {
@@ -79,5 +85,7 @@ namespace PeggleWars.Shots
                 }
             }
         }
+
+        #endregion
     }
 }

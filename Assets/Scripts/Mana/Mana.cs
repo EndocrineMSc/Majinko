@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using EnumCollection;
 
-namespace PeggleMana
+namespace PeggleWars.ManaManagement
 {
     public class Mana : MonoBehaviour
     {

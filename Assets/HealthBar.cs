@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace PeggleWars.Player.HealthUI
+namespace PeggleWars.HealthUI
 {
     public class HealthBar : MonoBehaviour
     {

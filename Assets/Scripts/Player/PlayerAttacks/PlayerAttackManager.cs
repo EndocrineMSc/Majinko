@@ -11,7 +11,7 @@ namespace PeggleAttacks.AttackManager
         #region Fields and Properties
 
         public static PlayerAttackManager Instance { get; private set; }
-        private CardTurnManager _cardTurnManager;
+        private TurnManager _cardTurnManager;
 
         private List<float> _damageModificationsForTurn = new();
 
@@ -70,7 +70,7 @@ namespace PeggleAttacks.AttackManager
 
         private void Start()
         {
-            Instance._cardTurnManager = GameManager.Instance.GetComponent<CardTurnManager>();
+            Instance._cardTurnManager = GameManager.Instance.GetComponent<TurnManager>();
             Instance._cardTurnManager.StartCardTurn += OnCardTurnStart;
         }
 

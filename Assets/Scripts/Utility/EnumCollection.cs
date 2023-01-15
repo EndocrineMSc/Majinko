@@ -85,25 +85,24 @@ namespace EnumCollection
 
     public enum Track
     {
-        Track_0001_LevelOne,
+        _0001_LevelOne,
         GameTrackOne,
-
     }
 
     public enum SFX
     {
-        SFX_0001_ButtonClick,
-        SFX_0002_BasicPeggleHit,
-        SFX_0003_ManaBlitz,
-        SFX_0004_MouseOverCard,
-        SFX_0005_EndTurnClick,
-        SFX_0006_CardDrag,
-        SFX_0007_CardDragReturn,
-        SFX_0008_ManaBlitzSpawn,
-        SFX_0009_ZombieSpawn,
-        SFX_0010_BluntSpellImpact,
-        SFX_0011_ZombieDeath,
-        SFX_0012_DrawHand,
+        _0001_ButtonClick,
+        _0002_BasicPeggleHit,
+        _0003_ManaBlitz,
+        _0004_MouseOverCard,
+        _0005_EndTurnClick,
+        _0006_CardDrag,
+        _0007_CardDragReturn,
+        _0008_ManaBlitzSpawn,
+        _0009_ZombieSpawn,
+        _0010_BluntSpellImpact,
+        _0011_ZombieDeath,
+        _0012_DrawHand,
     }
 
     public enum StartDeck

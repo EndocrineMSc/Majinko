@@ -1,10 +1,12 @@
-using PeggleWars.Audio;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using EnumCollection;
 
 namespace Cards.Zoom
 {
+    /// <summary>
+    /// Zooms out cards on mouse-over for better inspection by the player.
+    /// Is automatically attached to any GameObject with a "Card" component.
+    /// </summary>
     public class CardZoom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         #region Fields
@@ -22,14 +24,18 @@ namespace Cards.Zoom
         private void Start()
         {
             _normalScale = transform.localScale;
-            _index = transform.GetSiblingIndex();
             _startPosition = transform.position;
+
+            //index in hierarchy determines which UI element is in front, so _index is the default state of the card
+            _index = transform.GetSiblingIndex();
         }
 
         void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
         {
             transform.localScale = new Vector3(_zoomSize,_zoomSize,_zoomSize);
             transform.position = new Vector3(transform.position.x, transform.position.y + _zoomOffset, transform.position.z);
+            
+            //the last sibling will be in front of the other cards
             transform.SetAsLastSibling();
         }
 

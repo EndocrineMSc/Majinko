@@ -1,103 +1,67 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using EnumCollection;
-using PeggleWars.TurnManagement;
-using PeggleWars;
 
-namespace PeggleOrbs
+namespace PeggleWars.Orbs
 {
     public class OrbManager : MonoBehaviour
     {
-        #region Fields/Properties
+        #region Fields and Properties
 
         [SerializeField] private List<Orb> _sceneOrbList = new();
         public static OrbManager Instance { get; private set; }
         public List<Orb> SceneOrbList { get => _sceneOrbList; set => _sceneOrbList = value; }
 
-        //list of all orb prefabs, made in start() in alphabetical order from resources
+        //List of all orb prefabs, made in start() in alphabetical order from resources
         private List<Orb> _allOrbsList = new();
 
         #endregion
 
         #region Public Functions
 
-        //Will change int amount of orbs into given orb
-        //Will only do so for active orbs
-        //If not enough active orbs are present, will activate
-        //missing orbs, will prefer BaseManaOrbs to exchange first
-        public void SwitchOrbs(OrbType orbType, int amount)
+        /// <summary>
+        /// Will change a given amount of orbs into new ones, prioritizing switching out active BaseManaOrbs first.
+        /// If not enough active BaseManaOrbs are present, it switches the active ones and then inactive ones.
+        /// If no BaseManaOrbs are present, it switches random other active orbs first, then inactive random orbs second.
+        /// </summary>
+        /// <param name="orbType">Type of orb that will be instantiated into the level</param>
+        /// <param name="switchAmount">Amount of orbs to be switched out</param>
+        public void SwitchOrbs(OrbType orbType, int switchAmount)
         {
-            List<Orb> baseOrbs = FindOrbs(Instance.SceneOrbList, SearchTag.BaseOrbs);
-            List<Orb> activeBaseOrbs;
-            Orb orb = _allOrbsList[(int)orbType];
+            List<Orb> baseOrbs = FindOrbs(SceneOrbList, SearchTag.BaseOrbs);          
+            List<Orb> activeBaseOrbs = FindOrbs(baseOrbs, SearchTag.IsActive);
+           
+            Orb orbToBeInserted = _allOrbsList[(int)orbType];
 
-            //no BaseManaOrbs present, so replace any other active Orbs
-            if (baseOrbs.Count == 0) 
+            //Case 1: enough active base orbs present, so switch some of those
+            if (activeBaseOrbs.Count >= switchAmount)
             {
-                List<Orb> activeOrbs = FindOrbs(Instance.SceneOrbList, SearchTag.IsActive);
-
-                //enough other active orbs are present, so replace some of those
-                if(activeOrbs.Count >= amount)
-                {
-                    ReplaceOrbsInList(activeOrbs, amount, orb);
-                }
-                //not enough active orbs present, so replace remaining active orbs, then take inactive ones
-                else
-                {
-                    int availableOrbs = activeOrbs.Count;
-                    ReplaceOrbsInList(activeOrbs, availableOrbs, orb);
-
-                    int missingOrbs = amount - activeOrbs.Count;
-                    List<Orb> inactiveOrbs = FindOrbs(_sceneOrbList, SearchTag.IsInactive);
-                    ReplaceOrbsInList(inactiveOrbs, missingOrbs, orb);
-                }
+                ReplaceOrbsInList(activeBaseOrbs, switchAmount, orbToBeInserted);
             }
-            //are there enough remaining baseOrbs present, whether active or inactive, then replace active ones first
-            else if (baseOrbs.Count >= amount)
+            //Case 2: enough base orbs are present, but some of them are inactive, so switch the active ones first, then the inactive ones
+            else if (baseOrbs.Count >= switchAmount)
             {
-                activeBaseOrbs = FindOrbs(baseOrbs, SearchTag.IsActive);
-                
-                //all base orbs are inactive, so replace random ones in that list
-                if (activeBaseOrbs.Count == 0)
-                {
-                    ReplaceOrbsInList(baseOrbs, amount, orb);
+                List<Orb> inactiveBaseOrbs = FindOrbs(baseOrbs, SearchTag.IsInactive);
 
-                }
-                else if (activeBaseOrbs.Count >= amount)
-                {
-                    //best case: enough active, unoccupied baseorbs
-                    ReplaceOrbsInList(activeBaseOrbs, amount, orb);
-                }              
+                int availableOrbs = activeBaseOrbs.Count;
+                ReplaceOrbsInList(activeBaseOrbs, availableOrbs, orbToBeInserted);
+
+                int missingOrbs = switchAmount - activeBaseOrbs.Count;
+                ReplaceOrbsInList(inactiveBaseOrbs, missingOrbs, orbToBeInserted);
             }
-            //if here, then there are baseOrbs but not enough for the whole amount
-            else if (baseOrbs.Count > 0)
+            //Case 3: there are only non-base orbs left (unlikely) so switch active ones first then inactive ones second
+            else
             {
-                int availableOrbs = baseOrbs.Count;
-                int missingOrbs = amount - availableOrbs;
+                List<Orb> activeOrbs = FindOrbs(SceneOrbList, SearchTag.IsActive);
+                List<Orb> inactiveOrbs = FindOrbs(SceneOrbList, SearchTag.IsInactive);
 
-                ReplaceOrbsInList(baseOrbs,availableOrbs, orb);
+                int availableOrbs = activeOrbs.Count;
+                ReplaceOrbsInList(activeOrbs, availableOrbs, orbToBeInserted);
 
-                List<Orb> activeOrbs = FindOrbs(Instance.SceneOrbList, SearchTag.IsActive);
-
-                //enough other active orbs are present, so replace some of those
-                if (activeOrbs.Count >= missingOrbs)
-                {
-                    ReplaceOrbsInList(activeOrbs, missingOrbs, orb);
-                }
-                //not enough active orbs present, so replace remaining active orbs, then take inactive ones
-                else
-                {
-                    int availableActiveOrbs = activeOrbs.Count;
-                    ReplaceOrbsInList(activeOrbs, availableActiveOrbs, orb);
-
-                    int missingActiveOrbs = missingOrbs - activeOrbs.Count;
-                    List<Orb> inactiveOrbs = FindOrbs(_sceneOrbList, SearchTag.IsInactive);
-                    ReplaceOrbsInList(inactiveOrbs, missingActiveOrbs, orb);
-                }
+                int missingOrbs = switchAmount - activeOrbs.Count;
+                ReplaceOrbsInList(inactiveOrbs, missingOrbs, orbToBeInserted);
             }
-
         }
 
         public void SetAllOrbsActive()
@@ -107,6 +71,7 @@ namespace PeggleOrbs
                 orb.gameObject.SetActive(true);
             }
         }
+
         public void CheckForRefreshOrbs()
         {
             bool refreshPresent = false;
@@ -124,7 +89,6 @@ namespace PeggleOrbs
                 //if working correctly, this should only trigger when no RefreshOrbs are present
                 SwitchOrbs(OrbType.RefreshOrb, 1);
             }
-
         }
 
         #endregion
@@ -143,7 +107,6 @@ namespace PeggleOrbs
             }           
         }
 
-        // Start is called before the first frame update
         private void Start()
         {
             SceneOrbList = GameObject.FindObjectsOfType<Orb>().ToList();

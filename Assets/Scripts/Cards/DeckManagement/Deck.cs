@@ -1,18 +1,23 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using EnumCollection;
-using TMPro;
-using Cards.DeckManagement.Global;
-using Cards.DeckManagement.HandHandling;
+using PeggleWars.Cards.DeckManagement.Global;
+using PeggleWars.Cards.DeckManagement.HandHandling;
 
-namespace Cards.DeckManagement
+namespace PeggleWars.Cards.DeckManagement
 {
-    public class DeckManager : MonoBehaviour
+    /// <summary>
+    /// Handles local Deckmanagement in the scene. Cards are stored in distinct lists according to their state.
+    /// Makes a new deck on level start, depending on the deck stored in the global Deck, which stores modifications to the player deck throughout a run.
+    /// The Cards will never be destroyed, just switch between lists. Their instantiated objects that are visible on the screen
+    /// will be handled and destroyed in the Hand class.
+    /// DisplayDeck handles the visuals of necessary information for the player in the scene.
+    /// </summary>
+    [RequireComponent(typeof(DisplayDeck))]
+    public class Deck : MonoBehaviour
     {
-        #region Fields
+        #region Fields and Properties
 
-        public static DeckManager Instance { get; private set; }
+        public static Deck Instance { get; private set; }
 
         private List<Card> _localDeck = new();
         private List<Card> _discardPile = new();
@@ -21,9 +26,9 @@ namespace Cards.DeckManagement
         public int DrawAmount { get; set; } = 5;
         public List<Card> DiscardPile { get => _discardPile; set => _discardPile = value; }
         public List<Card> LocalDeck { get => _localDeck; set => _localDeck = value; }
-        public List<Card> DiscardPile1 { get => _discardPile; set => _discardPile = value; }
+        public List<Card> ExhaustPile { get => _exhaustPile; set => _exhaustPile = value; }
 
-        private HandManager _hand;
+        private Hand _hand;
 
         #endregion
 
@@ -44,8 +49,8 @@ namespace Cards.DeckManagement
         private void Start()
         {
             _localDeck = GlobalDeckManager.Instance.GlobalDeck;
+            _hand = Hand.Instance;
             ShuffleDeck();
-            _hand = HandManager.Instance;
         }
 
         #endregion
@@ -72,6 +77,7 @@ namespace Cards.DeckManagement
             _hand.HandCards.Remove(card);
         }
 
+        //Exhausted cards don't returen to the draw pile
         public void ExhaustCard(Card card)
         {
             _exhaustPile.Add(card);

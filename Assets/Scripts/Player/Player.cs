@@ -1,16 +1,11 @@
-using JetBrains.Annotations;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using PeggleWars;
-using EnumCollection;
 using PeggleWars.TurnManagement;
 
-namespace PeggleWars.Player
+namespace PeggleWars
 {
     public class Player : MonoBehaviour
     {
-
         #region Fields
 
         private SpriteRenderer _spriteRenderer;
@@ -18,7 +13,7 @@ namespace PeggleWars.Player
 
         public static Player Instance { get; private set; }
         private Animator _animator;
-        private CardTurnManager _cardTurnManager;
+        private TurnManager _turnManager;
 
         #endregion
 
@@ -97,23 +92,20 @@ namespace PeggleWars.Player
             _animator = GetComponent<Animator>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _color = _spriteRenderer.color;
-            _cardTurnManager = CardTurnManager.Instance;
+            _turnManager = TurnManager.Instance;
 
-            _cardTurnManager.StartCardTurn += OnCardTurnStart;
+            _turnManager.StartCardTurn += OnCardTurnStart;
         }
 
         private void OnDisable()
         {
-            _cardTurnManager.StartCardTurn -= OnCardTurnStart;
+            _turnManager.StartCardTurn -= OnCardTurnStart;
         }
 
         private void OnCardTurnStart()
         {
-            Instance.Shield = 0;
+            Shield = 0;
         }
-        #endregion
-
-        #region IEnumerators
 
         private IEnumerator ColorShiftDamage()
         {
