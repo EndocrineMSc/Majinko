@@ -23,11 +23,39 @@ namespace PeggleWars.Enemies
         private List<Enemy> _enemiesInScene = new();
         public List<Enemy> EnemiesInScene { get => _enemiesInScene; set => _enemiesInScene = value; }
 
+        private Vector2[,] _enemyPositions;
+        public Vector2[,] EnemyPositions { get => _enemyPositions; private set => _enemyPositions = value; }
+
         private Enemy[] _enemyLibrary;
 
         #endregion
 
-        #region Public Functions
+        #region Functions
+
+        private void Start()
+        {
+            _enemyPositions = SetEnemyPositions();
+        }
+
+        private Vector2[,] SetEnemyPositions()
+        {
+            int cellWidth = 32;
+            int cellHeight = 64;
+            int enemyRows = 2;
+            int amountOfCells = Screen.width / cellWidth;
+
+            Vector2[,] enemyPositions = new Vector2[enemyRows, amountOfCells];
+
+            for (int x = 0; x < amountOfCells; x++)
+            {
+                for (int y = 0; y < enemyRows; y++)
+                {
+                    enemyPositions[y, x] = new Vector2((x + 1) * cellWidth, (y + 1) * cellHeight);
+                    Debug.Log(enemyPositions[y, x]);
+                }
+            }          
+            return enemyPositions;
+        }
 
         /// <summary>
         /// Spawns in enemies on the right side of the levelscreen.
@@ -76,10 +104,6 @@ namespace PeggleWars.Enemies
             }
         }
 
-        /// <summary>
-        /// Checks if enemy has arrived at the player, and moves enemies if there is space left of them.
-        /// </summary>
-        /// <returns>IEnumerator so that only one enemy moves at any given time, one after another</returns>
         public IEnumerator MoveAllEnemies()
         {
             foreach (Enemy enemy in EnemiesInScene)
@@ -92,9 +116,6 @@ namespace PeggleWars.Enemies
                 }
             }
         }
-        #endregion
-
-        #region Private Functions
 
         private void Awake()
         {

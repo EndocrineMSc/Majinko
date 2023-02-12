@@ -1,10 +1,11 @@
 using System.Collections;
 using UnityEngine;
 using PeggleWars.TurnManagement;
+using PeggleWars.Characters.Interfaces;
 
 namespace PeggleWars
 {
-    public class Player : MonoBehaviour
+    public class Player : MonoBehaviour, IDamagable
     {
         #region Fields
 

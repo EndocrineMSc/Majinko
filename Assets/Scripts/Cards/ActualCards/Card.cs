@@ -16,6 +16,7 @@ namespace PeggleWars.Cards
 
     [RequireComponent(typeof(CardDragDrop))]
     [RequireComponent(typeof(CardZoom))]
+    [RequireComponent(typeof(CardZoomEventMovement))]
     public abstract class Card : MonoBehaviour
     {
         #region Fields and Properties
@@ -59,7 +60,7 @@ namespace PeggleWars.Cards
         /// <returns>Returns whether there was enough mana to play the card or not (boolean)</returns>
         public virtual bool CardEndDragEffect()
         {
-            bool enoughMana = CheckForMana();
+            bool enoughMana = CheckIfEnoughMana();
 
             if (enoughMana)
             {
@@ -75,7 +76,6 @@ namespace PeggleWars.Cards
             }
             else
             {
-                //ToDo: A ManaBurn Effect of some kind.
                 return false;
             }
         }
@@ -93,7 +93,6 @@ namespace PeggleWars.Cards
 
         #region Protected Virtual Functions
 
-        //Child classes may need additional references
         protected virtual void SetReferencesToLevelComponents()
         {
             _manaPool = ManaPool.Instance;
@@ -101,7 +100,6 @@ namespace PeggleWars.Cards
             _orbManager = OrbManager.Instance;
         }
 
-        //Child classes may have additional fields to be set
         protected virtual void SetCardValuesAndTexts()
         {
             _cardName = _scriptableCard.CardName;
@@ -114,13 +112,9 @@ namespace PeggleWars.Cards
             _cardPrefab = _scriptableCard.CardPrefab;
         }
 
-        protected virtual void CardEffect()
-        {
-            //actual effects are implemented in child classes via override
-        }
+        protected abstract void CardEffect();      
 
-        //Child classes may have multiple types of mana
-        protected virtual bool CheckForMana()
+        protected virtual bool CheckIfEnoughMana()
         {
             bool enoughMana = _manaPool.CheckForManaAmount(_manaType, _manaCost);
             return enoughMana;

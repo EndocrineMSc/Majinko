@@ -2727,6 +2727,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2549565476461289564, guid: c837957ee74bdcc44a31943daaafc0a8, type: 3}
   m_PrefabInstance: {fileID: 27828339}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &386805629 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1765758937400561808, guid: 7322e6d325387694291c5af48619034c, type: 3}
+  m_PrefabInstance: {fileID: 6138521203825574101}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &386805631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386805629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3ebf1eb215908249934713dff15a636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardZoomIn:
+    m_PersistentCalls:
+      m_Calls: []
+  CardZoomOut:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &400510595
 PrefabInstance:
   m_ObjectHideFlags: 0

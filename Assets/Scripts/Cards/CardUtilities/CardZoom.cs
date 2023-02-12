@@ -1,5 +1,7 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using PeggleWars.Cards.DeckManagement.HandHandling;
 
 namespace Cards.Zoom
 {
@@ -16,6 +18,7 @@ namespace Cards.Zoom
         private readonly float _zoomSize = 1.5f;
         private int _index;
         private Vector3 _startPosition;
+        private CardZoomEventHandler _otherCardsMovement;
 
         #endregion
 
@@ -28,12 +31,15 @@ namespace Cards.Zoom
 
             //index in hierarchy determines which UI element is in front, so _index is the default state of the card
             _index = transform.GetSiblingIndex();
+            _otherCardsMovement = Hand.Instance.GetComponent<CardZoomEventHandler>();
         }
 
         void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
         {
             transform.localScale = new Vector3(_zoomSize,_zoomSize,_zoomSize);
             transform.position = new Vector3(transform.position.x, transform.position.y + _zoomOffset, transform.position.z);
+            
+            _otherCardsMovement.InvokeCardZoomIn(transform.position);
             
             //the last sibling will be in front of the other cards
             transform.SetAsLastSibling();
@@ -43,6 +49,8 @@ namespace Cards.Zoom
         {
             transform.localScale = _normalScale;
             transform.SetSiblingIndex(_index);
+
+            _otherCardsMovement.InvokeCardZoomOut(_startPosition);
 
             if (transform.position != _startPosition)
             {

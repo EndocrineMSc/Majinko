@@ -43,8 +43,6 @@ namespace PeggleWars.PlayerAttacks
 
                 Vector3 direction = targetPosition - startPosition;
 
-                Debug.Log("StartPosition: " + startPosition + " to " + direction + " to " + targetPosition);
-
                 float rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
                 PlayerAttack tempAttack = Instantiate(playerAttack, startPosition, Quaternion.Euler(0, 0, rotation * 2.5f));
@@ -78,7 +76,7 @@ namespace PeggleWars.PlayerAttacks
 
             if (enemy != null)
             {
-                enemy.LoseHealth(_damage);
+                enemy.TakeDamage(_damage);
             }
 
             OnHitPolish();

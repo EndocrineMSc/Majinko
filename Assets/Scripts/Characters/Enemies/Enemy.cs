@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using PeggleAttacks.AttackVisuals.PopUps;
 using PeggleWars;
+using PeggleWars.Characters.Interfaces;
 
 namespace PeggleWars.Enemies
 {
@@ -12,7 +13,7 @@ namespace PeggleWars.Enemies
     /// </summary>
 
     [RequireComponent(typeof(PopUpSpawner))]
-    public class Enemy : MonoBehaviour
+    public class Enemy : MonoBehaviour, IDamagable
     {
         #region Fields and Properties
 
@@ -120,7 +121,7 @@ namespace PeggleWars.Enemies
 
         #region Public Functions
 
-        public void LoseHealth(int damage)
+        public void TakeDamage(int damage)
         {
             _health -= damage;
 
