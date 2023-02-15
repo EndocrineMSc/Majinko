@@ -12,7 +12,6 @@ namespace Cards.Zoom
 
         public void InvokeCardZoomIn(Vector3 position)
         {
-            Debug.Log("ZoomCard position: " + position.x);
             CardZoomIn?.Invoke(position);
         }
 

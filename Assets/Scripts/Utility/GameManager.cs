@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using EnumCollection;
-using PeggleWars.Enemies;
 using PeggleWars.Orbs.OrbActions;
 using PeggleWars.Audio;
 using PeggleWars.TurnManagement;
@@ -10,17 +9,11 @@ namespace PeggleWars
 {
     public class GameManager : MonoBehaviour
     {
-
-        #region Fields
+        #region Fields and Properties
 
         public static GameManager Instance { get; private set; }
-        private EnemyManager _enemyManager;
         private AudioManager _audioManager;
-        private TurnManager _cardTurnManager;
-
-        #endregion
-
-        #region Properties
+        private TurnManager _turnManager;
 
         private State _gameState;
 
@@ -38,77 +31,9 @@ namespace PeggleWars
             private set { _turn = value; }
         }
 
-
         #endregion
 
-        #region Public Functions
-
-        public IEnumerator SwitchState(State state)
-        {
-            _gameState = state;
-
-            switch (state)
-            {
-                case (State.MainMenu):
-                    yield return new WaitForSeconds(1);
-                    StartCoroutine(Instance.SwitchState(State.CardHandling));
-                    break;
-
-                case (State.CardHandling):
-                    Instance._cardTurnManager.RaiseStartCardTurn();
-                    _audioManager.PlayGameTrack(Track._0001_LevelOne);
-                    _audioManager.FadeGameTrack(Track._0001_LevelOne, Fade.In);
-                    //End Turn Button calls State Change
-                    break;
-
-                case (State.Shooting):
-                    //Player Shot calls Statechange here?
-                    //Probably would be nice to work with an event here? But is there any benefit to that right now?
-                    break;
-
-                case (State.PlayerActions):                 
-                    yield return StartCoroutine(OrbActionManager.Instance.HandleAllOrbEffects());
-                    //OrbActionManager goes to EnemyTurn in Coroutine
-                    break;
-
-                case (State.EnemyTurn):
-
-                    //this part should probably not be handled in here but in a separate script for now it's fine
-                    if (_enemyManager.EnemiesInScene.Count < 4)
-                    {
-                        _enemyManager.SpawnEnemy(EnemyType.CloakedZombie);
-                    }
-                    yield return StartCoroutine(_enemyManager.MoveAllEnemies());
-
-                    _enemyManager.MeleeEnemiesAttack();
-                    _enemyManager.RangedEnemiesAttack();
-
-                    StartCoroutine(WaitThenChangeState(State.CardHandling));
-                    break;
-
-                case (State.GameOver):
-                    break;
-
-                case (State.Quit):
-                    break;
-
-            }
-        }
-
-        public void EndCardTurn()
-        {
-            _audioManager.PlaySoundEffectOnce(SFX._0001_ButtonClick);
-
-            if (_gameState == State.CardHandling)
-            {
-                Instance._cardTurnManager.RaiseEndCardTurn();
-                StartCoroutine(Instance.SwitchState(State.Shooting));
-            }
-        }
-
-        #endregion
-
-        #region Private Functions
+        #region Functions
 
         private void Awake()
         {
@@ -120,26 +45,81 @@ namespace PeggleWars
             {
                 Instance = this;
                 DontDestroyOnLoad(this);
-            }             
+            }
         }
 
-        // Start is called before the first frame update
-        void Start()
-        {         
-            _enemyManager = EnemyManager.Instance;
+        private void Start()
+        {
             _audioManager = AudioManager.Instance;
-            _cardTurnManager = TurnManager.Instance;
-            StartCoroutine(Instance.WaitThenChangeState(State.MainMenu));
+            _turnManager = TurnManager.Instance;
+            StartCoroutine(WaitThenChangeState(State.MainMenu));
+            _turnManager.EndEnemyTurn += OnEndEnemyTurn;
         }
 
-        #endregion
+        private void OnDisable()
+        {
+            _turnManager.EndEnemyTurn -= OnEndEnemyTurn;
+        }
 
-        #region IEnumerators
+        public IEnumerator SwitchState(State state)
+        {
+            _gameState = state;
+
+            switch (state)
+            {
+                case (State.MainMenu):
+                    yield return new WaitForSeconds(1);
+                    StartCoroutine(SwitchState(State.CardHandling));
+                    break;
+
+                case (State.CardHandling):
+                    _turnManager.RaiseStartCardTurn();
+                    _audioManager.PlayGameTrack(Track._0001_LevelOne);
+                    _audioManager.FadeGameTrack(Track._0001_LevelOne, Fade.In);
+                    break;
+
+                case (State.Shooting):
+                    //No action, other scripts may depend on this state
+                    break;
+
+                case (State.PlayerActions):                 
+                    yield return StartCoroutine(OrbActionManager.Instance.HandleAllOrbEffects());
+                    //OrbActionManager goes to EnemyTurn in Coroutine
+                    break;
+
+                case (State.EnemyTurn):
+                    TurnManager.Instance.RaiseStartEnemyTurn();
+                    break;
+
+                case (State.GameOver):
+                    break;
+
+                case (State.Quit):
+                    break;
+
+            }
+        }
+        
+        public void EndCardTurnButton()
+        {
+            _audioManager.PlaySoundEffectOnce(SFX._0001_ButtonClick);
+
+            if (_gameState == State.CardHandling)
+            {
+                _turnManager.RaiseEndCardTurn();
+                StartCoroutine(SwitchState(State.Shooting));
+            }
+        }
 
         private IEnumerator WaitThenChangeState(State state)
         {
             yield return new WaitForSeconds(0.1f);
             StartCoroutine(Instance.SwitchState(state));
+        }
+
+        private void OnEndEnemyTurn()
+        {
+            StartCoroutine(SwitchState(State.CardHandling));
         }
 
         #endregion

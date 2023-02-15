@@ -10,7 +10,7 @@ namespace PeggleWars.Enemies.Zombies
 
         protected override void PlaySpawnSound()
         {
-            AudioManager.Instance.PlaySoundEffectOnce(SFX._0009_ZombieSpawn);
+            //AudioManager.Instance.PlaySoundEffectOnce(SFX._0009_ZombieSpawn);
         }
 
         protected override void PlayDeathSound()
@@ -21,6 +21,16 @@ namespace PeggleWars.Enemies.Zombies
         protected override void OnDeathEffect()
         {
             OrbManager.Instance.SwitchOrbs(OrbType.RottedOrb, 2);          
+        }
+
+        protected override void PlayHurtSound()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        protected override void AdditionalAttackEffects()
+        {
+            throw new System.NotImplementedException();
         }
 
         #endregion

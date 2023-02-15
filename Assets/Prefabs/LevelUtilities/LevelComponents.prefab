@@ -212,6 +212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9009976784701639187}
   - component: {fileID: 2697852061426158664}
+  - component: {fileID: 386805631}
   m_Layer: 0
   m_Name: Hand
   m_TagString: Untagged
@@ -252,6 +253,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbc99ffa63a456941ad5b6e4d7d17dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &386805631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765758937400561808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3ebf1eb215908249934713dff15a636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardZoomIn:
+    m_PersistentCalls:
+      m_Calls: []
+  CardZoomOut:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1854788984749564252
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,6 +281,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5907947989875249800}
   - component: {fileID: 3228581348471520946}
+  - component: {fileID: 3253383798700313159}
+  - component: {fileID: 5730707899286231677}
   m_Layer: 0
   m_Name: EnemyManager
   m_TagString: Untagged
@@ -296,8 +317,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc52d21f5d1ae54689f546764f1f989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cloakedZombiePrefab: {fileID: 5369486542510637726, guid: ad84af36fc1f0d046aaa4b890f46609e, type: 3}
-  monsterSpeed: 2
+--- !u!114 &3253383798700313159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854788984749564252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa8a247b05f2d24eb979284953cf6dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5730707899286231677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854788984749564252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 782532bb9e178b346a2ee932f4bdfbdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3478357083050585488
 GameObject:
   m_ObjectHideFlags: 0

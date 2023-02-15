@@ -4,6 +4,7 @@ using UnityEngine;
 using PeggleAttacks.AttackVisuals.PopUps;
 using PeggleWars;
 using PeggleWars.Characters.Interfaces;
+using PeggleWars.TurnManagement;
 
 namespace PeggleWars.Enemies
 {
@@ -13,13 +14,22 @@ namespace PeggleWars.Enemies
     /// </summary>
 
     [RequireComponent(typeof(PopUpSpawner))]
-    public class Enemy : MonoBehaviour, IDamagable
+    [RequireComponent(typeof(EnemyAttack))]
+    public abstract class Enemy : MonoBehaviour, IDamagable
     {
         #region Fields and Properties
 
         protected Animator _animator;
         protected PopUpSpawner _popUpSpawner;
         protected Player _player;
+        protected TurnManager _turnManager;
+        protected EnemyManager _enemyManager;
+
+        protected string ATTACK_PARAM = "Attack";
+        protected string HURT_PARAM = "Hurt";
+        protected string DEATH_PARAM = "Death";
+        protected string SPAWN_PARAM = "Spawn";
+        protected float _deathDelayForAnimation = 1f;
 
         [SerializeField] protected EnemyAttackType _enemyAttackType; //melee, ranged
         public EnemyAttackType AttackType
@@ -47,12 +57,27 @@ namespace PeggleWars.Enemies
         public bool IsFlying
         {
             get { return _isFlying; }
-            set { _isFlying = value; }
+            private set { _isFlying = value; }
+        }
+
+        [SerializeField] private bool _isInAttackPosition;
+
+        public bool IsInAttackPosition
+        {
+            get { return _isInAttackPosition; }
+            private set { _isInAttackPosition = value; }
+        }
+
+        [SerializeField] protected int _attackFrequency; // in X turns
+        public int AttackFrequency
+        {
+            get { return _attackFrequency; }
+            private set { _attackFrequency = value; }
         }
 
         #endregion
 
-        #region Private Functions
+        #region Functions
 
         private void Awake()
         {
@@ -60,9 +85,68 @@ namespace PeggleWars.Enemies
             PlaySpawnSound();
         }
 
+        private void OnEnable()
+        {
+            TurnManager.Instance.EndEnemyTurn += OnEndEnemyTurn;
+        }
+
+        private void OnDisable()
+        {
+            TurnManager.Instance.EndEnemyTurn -= OnEndEnemyTurn;
+        }
+        protected virtual void SetReferences()
+        {
+            _animator = GetComponent<Animator>();
+            _animator.SetTrigger(SPAWN_PARAM);
+            _popUpSpawner = GetComponent<PopUpSpawner>();
+            _enemyManager = EnemyManager.Instance;
+        }
+
+        protected void OnEndEnemyTurn()
+        {
+            if (_enemyAttackType == EnemyAttackType.Distance)
+            {
+                _isInAttackPosition = true;
+            }
+            else
+            {
+                Vector2 walkerMeleeAttackPosition = _enemyManager.EnemyPositions[0, 0];
+                Vector2 flyerMeleeAttackPosition = _enemyManager.EnemyPositions[1, 0];
+                if (transform.position.Equals(walkerMeleeAttackPosition) 
+                    || transform.position.Equals(flyerMeleeAttackPosition))
+                {
+                    _isInAttackPosition = true;
+                }
+                else
+                {
+                    _isInAttackPosition = false;
+                }
+            }
+        }
+        public void TakeDamage(int damage)
+        {
+            _health -= damage;
+            _popUpSpawner.SpawnPopUp(damage);
+            _animator.SetTrigger(HURT_PARAM);
+            PlayHurtSound();
+
+            if (_health <= 0)
+            {
+                HandleDeath();
+                StartCoroutine(DestroyThisEnemyWithDelay());
+            }
+        }
+        public void Attack()
+        {
+            _animator.SetTrigger(ATTACK_PARAM);
+            Player.Instance.TakeDamage(_damage);
+
+            AdditionalAttackEffects();
+        }
+
         private void HandleDeath()
         {
-            _animator.SetTrigger("Death");
+            _animator.SetTrigger(DEATH_PARAM);
 
             Collider2D collider = GetComponent<Collider2D>();
             collider.enabled = false;
@@ -72,83 +156,19 @@ namespace PeggleWars.Enemies
             OnDeathEffect();
         }
 
-        #endregion
+        protected abstract void PlayDeathSound();
 
-        #region Protected Functions
+        protected abstract void PlaySpawnSound();
 
-        protected virtual void SetReferences()
+        protected abstract void PlayHurtSound();
+
+        protected abstract void OnDeathEffect();
+
+        protected abstract void AdditionalAttackEffects();
+
+        protected virtual IEnumerator DestroyThisEnemyWithDelay()
         {
-            _animator = GetComponent<Animator>();
-            _animator.SetTrigger("Spawn");
-            _popUpSpawner = GetComponent<PopUpSpawner>();           
-        }
-
-        protected virtual void OnTriggerEnter2D(Collider2D other)
-        {
-            if (other.gameObject.name.Contains("Attack"))
-            {
-                _animator.SetTrigger("Hurt");
-                PlayHurtSound();
-            }
-        }
-
-        protected virtual void PlayDeathSound()
-        {
-            //children will implement death sounds here
-        }
-
-        protected virtual void PlaySpawnSound()
-        {
-            //children will implement spawn sounds here
-        }
-
-        protected virtual void PlayHurtSound()
-        {
-            //children will implement hurt sounds here
-        }
-
-        protected virtual void OnDeathEffect()
-        {
-            //children will implement on death effects here
-        }
-
-        protected virtual void AdditionalAttackEffects()
-        {
-            //children will implement additional effects if necessary
-        }
-
-        #endregion
-
-        #region Public Functions
-
-        public void TakeDamage(int damage)
-        {
-            _health -= damage;
-
-            _popUpSpawner.SpawnPopUp(damage);
-
-            if (_health <= 0)
-            {
-                HandleDeath();
-                StartCoroutine(DestroyEnemy());
-            }
-        }
-
-        public void Attack()
-        {
-            _animator.SetTrigger("Attack");
-            Player.Instance.TakeDamage(_damage);
-
-            AdditionalAttackEffects();
-        }
-
-        #endregion
-
-        #region IEnumerators
-
-        protected virtual IEnumerator DestroyEnemy()
-        {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(_deathDelayForAnimation);
             Destroy(gameObject);
         }
 
