@@ -1,24 +1,19 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using EnumCollection;
-using PeggleWars.Enemies.Zombies;
+
 
 namespace PeggleWars.Enemies
 {
-    /// <summary>
-    /// This class handles movement and attack-initiation of enemies.
-    /// </summary>
+    [RequireComponent(typeof(EnemySpawnManager))]
+    [RequireComponent(typeof(EnemyTurnMovement))]
     public class EnemyManager : MonoBehaviour
     {
-        #region Fields and Properties
+        #region Fields
 
         public static EnemyManager Instance { get; private set; }
 
-        [SerializeField] private Zombie _cloakedZombiePrefab;
-
-        [SerializeField] private float monsterSpeed = 2;
-        private readonly float finalDestination = 2f; //x where Enemy stops walking towards the player
+        private Enemy[] _enemyLibrary;
+        public Enemy[] EnemyLibrary { get { return _enemyLibrary; } private set { _enemyLibrary = value; } }
 
         private List<Enemy> _enemiesInScene = new();
         public List<Enemy> EnemiesInScene { get => _enemiesInScene; set => _enemiesInScene = value; }
@@ -26,96 +21,12 @@ namespace PeggleWars.Enemies
         private Vector2[,] _enemyPositions;
         public Vector2[,] EnemyPositions { get => _enemyPositions; private set => _enemyPositions = value; }
 
-        private Enemy[] _enemyLibrary;
+        private readonly int _amountOfCharacterPositionsOnXAxis = 5;
+        private readonly int _amountOfEnemyRows = 2;
 
         #endregion
 
         #region Functions
-
-        private void Start()
-        {
-            _enemyPositions = SetEnemyPositions();
-        }
-
-        private Vector2[,] SetEnemyPositions()
-        {
-            int cellWidth = 32;
-            int cellHeight = 64;
-            int enemyRows = 2;
-            int amountOfCells = Screen.width / cellWidth;
-
-            Vector2[,] enemyPositions = new Vector2[enemyRows, amountOfCells];
-
-            for (int x = 0; x < amountOfCells; x++)
-            {
-                for (int y = 0; y < enemyRows; y++)
-                {
-                    enemyPositions[y, x] = new Vector2((x + 1) * cellWidth, (y + 1) * cellHeight);
-                    Debug.Log(enemyPositions[y, x]);
-                }
-            }          
-            return enemyPositions;
-        }
-
-        /// <summary>
-        /// Spawns in enemies on the right side of the levelscreen.
-        /// </summary>
-        /// <param name="enemyType">Enum referencing different enemies alphabetically</param>
-        public void SpawnEnemy(EnemyType enemyType)
-        {
-            Enemy tempEnemy = _enemyLibrary[(int)enemyType];
-            Vector2 spawnPosition;
-            
-            if (tempEnemy.IsFlying)
-            {
-                spawnPosition = new Vector2(10.4f, 10.7f);
-            }
-            else
-            {
-                spawnPosition = new Vector2(10.4f, 5.7f);
-            }
-
-            Enemy instantiatedEnemy = Instantiate(tempEnemy, spawnPosition, Quaternion.identity); ;            
-            EnemiesInScene.Add(instantiatedEnemy);           
-        }
-
-        //If enemy is in range to the player, attack
-        public void MeleeEnemiesAttack()
-        {
-            for (int i = 0; i < EnemiesInScene.Count; i++)
-            {
-                Enemy enemy = EnemiesInScene[i];
-
-                if (enemy.transform.position.x <= finalDestination && enemy.AttackType == EnemyAttackType.Melee)
-                {
-                    enemy.Attack();
-                }
-            }
-        }
-
-        public void RangedEnemiesAttack()
-        {
-            foreach (Enemy enemy in EnemiesInScene)
-            {
-                if (enemy.AttackType == EnemyAttackType.Distance)
-                {
-                    enemy.Attack();
-                }
-            }
-        }
-
-        public IEnumerator MoveAllEnemies()
-        {
-            foreach (Enemy enemy in EnemiesInScene)
-            {
-                bool needToMove = CheckForMoveNecessity(enemy);
-
-                if (needToMove)
-                {
-                    yield return StartCoroutine(Move(enemy));
-                }
-            }
-        }
 
         private void Awake()
         {
@@ -127,65 +38,42 @@ namespace PeggleWars.Enemies
             {
                 Instance = this;
             }
-
             _enemyLibrary = Resources.LoadAll<Enemy>("EnemyPrefabs");
         }
 
-        //Moves the enemy one "space" to the left
-        private IEnumerator Move(Enemy enemy)
+        private void Start()
         {
-            float startPosition = enemy.transform.position.x;
-            float endPosition = Mathf.Round(enemy.transform.position.x - 2);
-            float currentPosition = startPosition;
-            
-            enemy.GetComponent<Animator>().SetFloat("Speed", 1);
-
-            Rigidbody2D _rigidbody = enemy.GetComponent<Rigidbody2D>();
-
-            while (endPosition < currentPosition)
-            {
-                _rigidbody.velocity = Vector2.left * monsterSpeed;
-                yield return new WaitForSeconds(0.1f);
-                currentPosition = enemy.transform.position.x;
-            }
-
-            enemy.GetComponent<Animator>().SetFloat("Speed", 0);
-            _rigidbody.velocity = Vector2.zero;
+            _enemyPositions = new Vector2[_amountOfEnemyRows, _amountOfCharacterPositionsOnXAxis];
+            SetEnemyPositions();
         }
 
-        //enemies shouldn't move if the space left to them is blocked
-        //ToDo: this needs to account for flying enemies aswell
-        private bool CheckForMoveNecessity(Enemy enemy)
+        private void SetEnemyPositions()
         {
-            bool needsToMove;
-            
-            float currentPosition = enemy.transform.position.x;
-            int index = EnemiesInScene.IndexOf(enemy);
+            Camera camera = Camera.main;
+            int cellHeight = Screen.height / 10;
+            float yLowerRow = Screen.height - (cellHeight * 1.5f);
+            float yUpperRow = Screen.height - cellHeight / 2;
+            float cellWidth = Screen.width / _amountOfCharacterPositionsOnXAxis;
+            float xPositionOffset = 3;
 
-            if (currentPosition <= finalDestination) //already at vampire position
+            for (int x = 0; x < _amountOfCharacterPositionsOnXAxis; x++)
             {
-                needsToMove = false;
-            }
-            else if (index == 0) //if i == 0, => lefmost monster => monsterLeft is always null
-            {
-                needsToMove = true;
-            }
-            else
-            {
-                Enemy enemyLeft = EnemiesInScene[index - 1];
-                float enemyLeftPosition = enemyLeft.transform.position.x;
-                float distance = currentPosition - enemyLeftPosition;
-
-                if (distance > 2.5f)
+                for (int y = 0; y < _amountOfEnemyRows; y++)
                 {
-                    needsToMove = true;
-                }
-                else
-                {
-                    needsToMove = false;
+                    if (y == 0)
+                    {
+                        Vector2 possibleCharacterPositionOnScreen = new((x + xPositionOffset) * cellWidth, yLowerRow);
+                        Vector2 possibleCharacterPositionAsWorldPoint = camera.ScreenToWorldPoint(possibleCharacterPositionOnScreen);
+                        _enemyPositions[y, x] = possibleCharacterPositionAsWorldPoint;
+                    }
+                    else
+                    {
+                        Vector2 possibleCharacterPositionOnScreen = new((x + xPositionOffset) * cellWidth, yUpperRow);
+                        Vector2 possibleCharacterPositionAsWorldPoint = camera.ScreenToWorldPoint(possibleCharacterPositionOnScreen);
+                        _enemyPositions[y, x] = possibleCharacterPositionAsWorldPoint;
+                    }
                 }
             }
-            return needsToMove;
         }
 
         #endregion
