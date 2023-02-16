@@ -21,7 +21,8 @@ namespace PeggleWars.Enemies
         private Vector2[,] _enemyPositions;
         public Vector2[,] EnemyPositions { get => _enemyPositions; private set => _enemyPositions = value; }
 
-        private readonly int _amountOfCharacterPositionsOnXAxis = 5;
+        private readonly int _amountOfXScreenDivisions = 10;
+        private readonly int _amountOfCharacterPositionsOnXAxis = 6;
         private readonly int _amountOfEnemyRows = 2;
 
         #endregion
@@ -53,7 +54,7 @@ namespace PeggleWars.Enemies
             int cellHeight = Screen.height / 10;
             float yLowerRow = Screen.height - (cellHeight * 1.5f);
             float yUpperRow = Screen.height - cellHeight / 2;
-            float cellWidth = Screen.width / _amountOfCharacterPositionsOnXAxis;
+            float cellWidth = Screen.width / _amountOfXScreenDivisions;
             float xPositionOffset = 3;
 
             for (int x = 0; x < _amountOfCharacterPositionsOnXAxis; x++)

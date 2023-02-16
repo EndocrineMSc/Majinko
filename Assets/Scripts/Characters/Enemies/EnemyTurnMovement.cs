@@ -95,7 +95,7 @@ namespace PeggleWars.Enemies
             {
                 float enemyPositionOnXAxis = enemyList[0].gameObject.transform.position.x;
 
-                if (i )
+                if (i == 0)
                 {
                     tempList.Add(enemyList[i]);
                 }
@@ -157,10 +157,12 @@ namespace PeggleWars.Enemies
 
                 if (deltaEnemyXPositions >= _gapSpace)
                 {
+                    Debug.Log("There is a gap!");
                     return true;
                 }
                 else
                 {
+                    Debug.Log("There is no gap!");
                     return false;
                 }
             }
@@ -175,10 +177,12 @@ namespace PeggleWars.Enemies
             if (enemyPosition.Equals(walkerMeleeAttackPosition)
                 || enemyPosition.Equals(flyerMeleeAttackPosition))
             {
+                Debug.Log("I am in attack position!");
                 return true;
             }
             else
             {
+                Debug.Log("I am not in reach yet!");
                 return false;
             }
         }
@@ -187,14 +191,17 @@ namespace PeggleWars.Enemies
         {
             if (_flyingEnemiesInScene.IndexOf(enemy) > 0)
             {
+                Debug.Log("I am not the leftmost flying enemy");
                 return false;
             }
             else if (_walkingEnemiesInScene.IndexOf(enemy) > 0)
             {
+                Debug.Log("I am not the leftmost enemy");
                 return false;
             }
             else
             {
+                Debug.Log("I am the leftmost enemy!");
                 return true;
             }
         }
@@ -209,11 +216,11 @@ namespace PeggleWars.Enemies
             
             if (enemy.IsFlying)
             {
-                endPosition = _enemyManager.EnemyPositions[1, xIndexOfEnemy];
+                endPosition = _enemyManager.EnemyPositions[1, xIndexOfEnemy-1];
             }
             else
             {
-                endPosition = _enemyManager.EnemyPositions[0, xIndexOfEnemy];
+                endPosition = _enemyManager.EnemyPositions[0, xIndexOfEnemy-1];
             }
 
             enemy.GetComponent<Animator>().SetFloat(SPEED_PARAM, 1);
@@ -229,6 +236,7 @@ namespace PeggleWars.Enemies
 
             enemy.GetComponent<Animator>().SetFloat(SPEED_PARAM, 0);
             _rigidbody.velocity = Vector2.zero;
+            enemy.transform.position = endPosition;
         }
 
         private int GetEnemyPositionIndex(Enemy enemy)
