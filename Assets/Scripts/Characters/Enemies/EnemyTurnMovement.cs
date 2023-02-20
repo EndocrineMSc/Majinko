@@ -30,13 +30,12 @@ namespace PeggleWars.Enemies
         {
             _turnManager = TurnManager.Instance;
             _enemyManager = EnemyManager.Instance;
-            _gapSpace = _enemyManager.EnemyPositions[0,3].x - _enemyManager.EnemyPositions[0,1].x;
+            _gapSpace = (_enemyManager.EnemyPositions[0, 3].x - _enemyManager.EnemyPositions[0, 2].x) * 1.2f;
 
             TurnManager.Instance.StartEnemyTurn += OnStartEnemyTurn;
             TurnManager.Instance.EndEnemyTurn += OnEndEnemyTurn;
 
             SetLocalEnemyLists();
-            SortLocalEnemyLists();
         }
 
         private void OnDisable()
@@ -47,6 +46,23 @@ namespace PeggleWars.Enemies
 
         private void OnStartEnemyTurn()
         {
+            SetLocalEnemyLists();
+
+            if (_enemyManager.EnemiesInScene.Count > 0)
+            {
+                SortLocalEnemyLists();
+
+                foreach (Enemy enemy in _flyingEnemiesInScene)
+                {
+                    Debug.Log(_flyingEnemiesInScene.IndexOf(enemy) + " flying " + enemy.name);
+                }
+
+                foreach (Enemy enemy in _walkingEnemiesInScene)
+                {
+                    Debug.Log(_walkingEnemiesInScene.IndexOf(enemy) + " walking " + enemy.name);
+                }
+            }
+
             foreach (Enemy enemy in _enemyManager.EnemiesInScene)
             {
                 if (CheckForMoveNecessity(enemy))
@@ -62,8 +78,6 @@ namespace PeggleWars.Enemies
         {
             _flyingEnemiesInScene.Clear();
             _walkingEnemiesInScene.Clear();
-            SetLocalEnemyLists();
-            SortLocalEnemyLists();
         }
 
         private void SetLocalEnemyLists()
@@ -78,7 +92,7 @@ namespace PeggleWars.Enemies
                 {
                     _walkingEnemiesInScene.Add(enemy);
                 }
-            }           
+            }
         }
 
         private void SortLocalEnemyLists()
@@ -91,26 +105,39 @@ namespace PeggleWars.Enemies
         {
             List<Enemy> tempList = new();
 
+            if (enemyList.Count == 0)
+            {
+                return tempList;
+            }
+
             for (int i = 0; i < enemyList.Count; i++)
             {
-                float enemyPositionOnXAxis = enemyList[0].gameObject.transform.position.x;
-
-                if (i == 0)
+                if (tempList.Count == 0)
                 {
-                    tempList.Add(enemyList[i]);
+                    tempList.Add(enemyList[0]);
                 }
                 else
                 {
-                    for (int k = 0; k < tempList.Count; k++)
+                    float currentEnemyPositionOnXAxis = enemyList[i].gameObject.transform.position.x;
+                    int sortedEnemies = tempList.Count;
+
+                    for (int k = 0; k < sortedEnemies; k++)
                     {
-                        if (tempList[k].gameObject.transform.position.x > enemyPositionOnXAxis)
+                        float tempListEnemyXPosition = tempList[k].gameObject.transform.position.x;
+
+                        if (currentEnemyPositionOnXAxis < tempListEnemyXPosition)
                         {
                             tempList.Insert(k, enemyList[i]);
+                            break;
+                        }
+
+                        if (k == (sortedEnemies - 1))
+                        {
+                            tempList.Add(enemyList[i]);
                         }
                     }
                 }
             }
-
             return tempList;
         }
 
@@ -140,7 +167,7 @@ namespace PeggleWars.Enemies
                 float leftEnemyXPosition = _flyingEnemiesInScene[enemyIndex - 1].transform.position.x;
                 float deltaEnemyXPositions = enemyXPosition - leftEnemyXPosition;
 
-                if (deltaEnemyXPositions >= _gapSpace)
+                if (deltaEnemyXPositions > _gapSpace)
                 {
                     return true;
                 }
@@ -155,7 +182,7 @@ namespace PeggleWars.Enemies
                 float leftEnemyXPosition = _walkingEnemiesInScene[enemyIndex - 1].transform.position.x;
                 float deltaEnemyXPositions = enemyXPosition - leftEnemyXPosition;
 
-                if (deltaEnemyXPositions >= _gapSpace)
+                if (deltaEnemyXPositions > _gapSpace)
                 {
                     Debug.Log("There is a gap!");
                     return true;
@@ -230,7 +257,7 @@ namespace PeggleWars.Enemies
             while (endPosition.x < currentPosition.x)
             {
                 _rigidbody.velocity = Vector2.left * _enemySpeed;
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.2f);
                 currentPosition = enemy.transform.position;
             }
 

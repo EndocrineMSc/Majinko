@@ -45,25 +45,6 @@ namespace PeggleWars.Enemies
             SpawnEnemy(EnemyType.CloakedZombie);
         }
 
-        public void DebugSpawnEnemy()
-        {
-            Enemy tempEnemy = _enemyManager.EnemyLibrary[(int)EnemyType.CloakedZombie];
-            int amountXPositions = _enemyPositions.GetLength(1);
-            int amountYPositions = _enemyPositions.GetLength(0);
-           
-            Vector2 spawnPosition;
-            
-            for (int x = 0; x < amountXPositions; x++)
-            {
-                for (int y = 0; y < amountYPositions; y++)
-                {
-                    spawnPosition = _enemyPositions[y, x];
-                    Enemy instantiatedEnemy = Instantiate(tempEnemy, spawnPosition, Quaternion.identity); ;
-                    _enemyManager.EnemiesInScene.Add(instantiatedEnemy);
-                }
-            }
-        }
-
         public void SpawnEnemy(EnemyType enemyType)
         {
             Enemy tempEnemy = _enemyManager.EnemyLibrary[(int)enemyType];
