@@ -17,6 +17,7 @@ namespace PeggleWars.Cards.DeckManagement.Global
         private readonly int[] _apprenticeDeck = new int[] { 0, 0, 1, 1, 1, 1, 2, 2, 2, 2 }; //stores the indeces of the cards in the list _allCards
 
         private List<Card> _allCards; //List of all Cards, built from Resources Folder
+        public List<Card> AllCards { get { return _allCards; } }
         
         private List<Card> _globalDeck = new(); //List of all cards in the player deck, will store any modifications (added or removed cards) during a run
         public List<Card> GlobalDeck

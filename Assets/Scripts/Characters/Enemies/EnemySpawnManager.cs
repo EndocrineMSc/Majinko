@@ -1,6 +1,8 @@
 using EnumCollection;
 using PeggleWars.TurnManagement;
+using System;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 namespace PeggleWars.Enemies
@@ -19,6 +21,14 @@ namespace PeggleWars.Enemies
         Vector2 _flyingEnemySpawnPosition;
         Vector2 _walkingEnemySpawnPosition;
 
+        [SerializeField] private int _overworldIndex = 1;
+        private EnemyType[] _enemiesForLevel;
+        private string WORLD_ONE_PARAM = "ScriptableEnemySets/World 1 Levels";
+        private int _amountOfEnemiesInLevel;
+        public int AmountOfEnemiesInLevel { get { return _amountOfEnemiesInLevel; } } 
+        private int _enemySpawnCounter;
+        public int EnemySpawnCounter { get { return _enemySpawnCounter; } }
+
         #endregion
 
         #region Functions
@@ -33,6 +43,9 @@ namespace PeggleWars.Enemies
             _walkingEnemySpawnPosition = _enemyPositions[_enemyBottomRow, _rightMostEnemyPosition];
 
             TurnManager.Instance.StartEnemyTurn += OnStartEnemyTurn;
+
+            _enemiesForLevel = GetEnemyArrayByWorld();
+            _amountOfEnemiesInLevel = _enemiesForLevel.Length;
         }
 
         private void OnDisable()
@@ -40,9 +53,29 @@ namespace PeggleWars.Enemies
             TurnManager.Instance.StartEnemyTurn -= OnStartEnemyTurn;
         }
 
+        private EnemyType[] GetEnemyArrayByWorld()
+        {
+            EnemyType[] tempArray = null;
+
+            switch (_overworldIndex)
+            {
+                case 1:
+                    ScriptableEnemySet[] tempAllEnemySets = Resources.LoadAll<ScriptableEnemySet>(WORLD_ONE_PARAM);
+                    int randomSet = UnityEngine.Random.Range(0, tempAllEnemySets.Length);
+                    ScriptableEnemySet tempEnemySet = tempAllEnemySets[randomSet];
+                    tempArray = tempEnemySet.EnemyArray;
+                    break;
+            }
+            return tempArray;
+        }
+
         private void OnStartEnemyTurn()
         {
-            SpawnEnemy(EnemyType.CloakedZombie);
+            if (_enemySpawnCounter < _amountOfEnemiesInLevel)
+            {
+                EnemyType tempEnemy = _enemiesForLevel[_enemySpawnCounter];
+                SpawnEnemy(tempEnemy);
+            }
         }
 
         public void SpawnEnemy(EnemyType enemyType)
@@ -65,6 +98,7 @@ namespace PeggleWars.Enemies
             {
                 Enemy instantiatedEnemy = Instantiate(tempEnemy, spawnPosition, Quaternion.identity); ;
                 _enemyManager.EnemiesInScene.Add(instantiatedEnemy);
+                _enemySpawnCounter++;
             }
         }
 

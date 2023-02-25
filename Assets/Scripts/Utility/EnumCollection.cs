@@ -12,13 +12,15 @@ namespace EnumCollection
         Four,
     }
 
-    public enum State
+    public enum GameState
     {
         MainMenu,
         CardHandling,
         Shooting,
         PlayerActions,
         EnemyTurn,
+        LevelWon,
+        NewLevel,
         GameOver,
         Quit,
     }
@@ -37,9 +39,6 @@ namespace EnumCollection
     public enum ManaType
     {
         BaseMana,
-        FireMana,
-        IceMana,
-        LightningMana,
         DarkMana,
         LightMana,
     }

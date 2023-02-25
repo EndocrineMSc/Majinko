@@ -16,7 +16,7 @@ namespace PeggleWars.Orbs
         [SerializeField] protected Mana _orbMana;
         [SerializeField] protected ManaType SpawnManaType;
         [SerializeField] protected int ManaAmount = 10;
-        [SerializeField] protected Orb _defaultOrb;
+        [SerializeField] protected GameObject _defaultOrb;
         protected GameObject _spawnPoint;
 
         protected ManaPool _manaPool;
@@ -24,6 +24,7 @@ namespace PeggleWars.Orbs
         protected AudioManager _audioManager;
 
         protected Vector3 _position;
+
 
         #endregion
 
@@ -92,18 +93,6 @@ namespace PeggleWars.Orbs
                     spawnPoint = GameObject.FindGameObjectWithTag("BaseManaSpawn");
                     break;
 
-                case ManaType.FireMana:
-                    spawnPoint = GameObject.FindGameObjectWithTag("FireManaSpawn");
-                    break;
-
-                case ManaType.IceMana:
-                    spawnPoint = GameObject.FindGameObjectWithTag("IceManaSpawn");
-                    break;
-
-                case ManaType.LightningMana:
-                    spawnPoint = GameObject.FindGameObjectWithTag("LightningManaSpawn");
-                    break;
-
                 case ManaType.DarkMana:
                     spawnPoint = GameObject.FindGameObjectWithTag("DarkManaSpawn");
                     break;
@@ -130,10 +119,10 @@ namespace PeggleWars.Orbs
 
         protected virtual void ReplaceHitOrb()
         {
-            Orb orb = Instantiate(_defaultOrb, transform.position, Quaternion.identity);
-            orb.gameObject.SetActive(false);
+            GameObject orb = Instantiate(_defaultOrb, transform.position, Quaternion.identity);
+            orb.SetActive(false);
             _orbManager.SceneOrbList.Remove(this);
-            _orbManager.SceneOrbList.Add(orb);
+            _orbManager.SceneOrbList.Add(orb.GetComponent<Orb>());
         }
 
         protected virtual void PlayOrbOnHitSound()
@@ -158,7 +147,7 @@ namespace PeggleWars.Orbs
 
             for (int i = 0; i < ManaAmount; i++)
             {
-                float _spawnRandomiserX = Random.Range(-0.7f, 0.7f);
+                float _spawnRandomiserX = Random.Range(-0.2f, 0.2f);
                 float _spawnRandomiserY = Random.Range(-0.2f, 0.2f);
 
                 Vector2 _spawnPosition = new(_spawnPointPosition.x + _spawnRandomiserX, _spawnPointPosition.y + _spawnRandomiserY);
@@ -169,18 +158,6 @@ namespace PeggleWars.Orbs
                 {
                     case ManaType.BaseMana:
                         _manaPool.BasicMana.Add(tempMana);
-                        break;
-
-                    case ManaType.FireMana:
-                        _manaPool.FireMana.Add(tempMana);
-                        break;
-
-                    case ManaType.IceMana:
-                        _manaPool.IceMana.Add(tempMana);
-                        break;
-
-                    case ManaType.LightningMana:
-                        _manaPool.LightningMana.Add(tempMana);
                         break;
 
                     case ManaType.DarkMana:

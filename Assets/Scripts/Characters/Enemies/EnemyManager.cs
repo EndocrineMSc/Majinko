@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 
 namespace PeggleWars.Enemies
 {
@@ -24,6 +24,8 @@ namespace PeggleWars.Enemies
         private readonly int _amountOfXScreenDivisions = 10;
         private readonly int _amountOfCharacterPositionsOnXAxis = 6;
         private readonly int _amountOfEnemyRows = 2;
+
+        public UnityEvent EnemyDeathEvent;
 
         #endregion
 

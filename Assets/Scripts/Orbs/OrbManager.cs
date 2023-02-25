@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using EnumCollection;
-
+using UnityEngine.Events;
 namespace PeggleWars.Orbs
 {
     public class OrbManager : MonoBehaviour
@@ -16,17 +16,53 @@ namespace PeggleWars.Orbs
         //List of all orb prefabs, made in start() in alphabetical order from resources
         private List<Orb> _allOrbsList = new();
 
+        [SerializeField] private ScriptableOrbLayout _layout;
+
+        public ManaSpawnEvent ManaSpawnTrigger;
+
         #endregion
 
-        #region Public Functions
+        #region Functions
+        private void Awake()
+        {
+           
+            if (Instance != null && Instance != this)
+            {
+                Destroy(this);
+            }
+            else
+            {
+                Instance = this;                
+            }
+        }
+        private void Start()
+        {
+            if (ManaSpawnTrigger == null)
+            {
+                ManaSpawnTrigger = new ManaSpawnEvent();
+            }
 
-        /// <summary>
-        /// Will change a given amount of orbs into new ones, prioritizing switching out active BaseManaOrbs first.
-        /// If not enough active BaseManaOrbs are present, it switches the active ones and then inactive ones.
-        /// If no BaseManaOrbs are present, it switches random other active orbs first, then inactive random orbs second.
-        /// </summary>
-        /// <param name="orbType">Type of orb that will be instantiated into the level</param>
-        /// <param name="switchAmount">Amount of orbs to be switched out</param>
+            OrbGridPositions test = new();
+            _allOrbsList = Resources.LoadAll<Orb>("OrbPrefabs").ToList();
+
+            bool[,] orbLayout = _layout.InitializeOrbLayout();
+
+            for (int x = 0; x < orbLayout.GetLength(0); x++)
+            {
+                for (int y = 0; y < orbLayout.GetLength(1); y++)
+                {
+                    if (orbLayout[x, y])
+                    {
+                        Vector2 instantiatePosition = test.GridArray[x, y];
+                        Instantiate(_allOrbsList[0], instantiatePosition, Quaternion.identity);
+                    }
+                    
+                }
+            }
+            
+            SceneOrbList = GameObject.FindObjectsOfType<Orb>().ToList();
+        }
+
         public void SwitchOrbs(OrbType orbType, int switchAmount)
         {
             List<Orb> baseOrbs = FindOrbs(SceneOrbList, SearchTag.BaseOrbs);          
@@ -86,32 +122,11 @@ namespace PeggleWars.Orbs
 
             if (!refreshPresent)
             {
-                //if working correctly, this should only trigger when no RefreshOrbs are present
                 SwitchOrbs(OrbType.RefreshOrb, 1);
             }
         }
 
-        #endregion
 
-        #region Private Functions
-        private void Awake()
-        {
-           
-            if (Instance != null && Instance != this)
-            {
-                Destroy(this);
-            }
-            else
-            {
-                Instance = this;                
-            }           
-        }
-
-        private void Start()
-        {
-            SceneOrbList = GameObject.FindObjectsOfType<Orb>().ToList();
-            _allOrbsList = Resources.LoadAll<Orb>("OrbPrefabs").ToList();
-        }
 
         private Orb FindRandomOrbInList(List<Orb> orbs)
         {

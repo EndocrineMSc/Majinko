@@ -34,7 +34,7 @@ namespace PeggleWars.Orbs.OrbActions
             ResetOrbCounter();
 
             yield return new WaitForSeconds(2f);
-            StartCoroutine(GameManager.Instance.SwitchState(State.EnemyTurn));
+            StartCoroutine(GameManager.Instance.SwitchState(GameState.EnemyTurn));
         }
 
         public void AddOrbToActionList(Orb orb)

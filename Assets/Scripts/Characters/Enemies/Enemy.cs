@@ -5,6 +5,8 @@ using PeggleAttacks.AttackVisuals.PopUps;
 using PeggleWars;
 using PeggleWars.Characters.Interfaces;
 using PeggleWars.TurnManagement;
+using UnityEngine.Events;
+using System;
 
 namespace PeggleWars.Enemies
 {
@@ -128,7 +130,14 @@ namespace PeggleWars.Enemies
             _health -= damage;
             _popUpSpawner.SpawnPopUp(damage);
             _animator.SetTrigger(HURT_PARAM);
-            PlayHurtSound();
+            try
+            {
+                PlayHurtSound();
+            }
+            catch (NotImplementedException)
+            {
+                Debug.Log("Hurt Sound not implemented yet.");
+            }
 
             if (_health <= 0)
             {
@@ -146,6 +155,7 @@ namespace PeggleWars.Enemies
 
         private void HandleDeath()
         {
+            _enemyManager.EnemyDeathEvent?.Invoke();
             _animator.SetTrigger(DEATH_PARAM);
 
             Collider2D collider = GetComponent<Collider2D>();

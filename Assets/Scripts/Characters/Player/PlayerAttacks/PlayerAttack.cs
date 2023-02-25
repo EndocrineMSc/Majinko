@@ -5,11 +5,11 @@ using PeggleWars.Enemies;
 
 namespace PeggleWars.PlayerAttacks
 {
-    public class PlayerAttack : MonoBehaviour
+    public abstract class PlayerAttack : MonoBehaviour
     {
         #region Fields and Properties
 
-        protected Vector2 _insantiatePosition = new(-7.5f, 5.9f);
+        protected Vector2 _insantiatePosition = new(-7.5f, 7f);
         protected PlayerAttackManager _playerAttackManager;
 
         [SerializeField] protected PlayerAttackTarget _target;
@@ -24,7 +24,20 @@ namespace PeggleWars.PlayerAttacks
 
         #endregion
 
-        #region Public Functions
+        #region Functions
+
+        protected virtual void Start()
+        {
+            _playerAttackManager = PlayerAttackManager.Instance;
+            _damage *= Mathf.RoundToInt(_playerAttackManager.DamageModifierTurn);
+        }
+
+        public virtual void ShootAttack(PlayerAttack playerAttack)
+        {
+            PlayerAttack tempAttack = Instantiate(playerAttack, _insantiatePosition, Quaternion.Euler(0, 0, -90));
+            Rigidbody2D rigidbody = tempAttack.GetComponent<Rigidbody2D>();
+            rigidbody.velocity = Vector3.right * _attackFlySpeed;
+        }
 
         public virtual void ShootAttack(Vector3 startPosition, PlayerAttack playerAttack)
         {
@@ -52,18 +65,6 @@ namespace PeggleWars.PlayerAttacks
             }           
         }
 
-        public virtual void ShootAttack(PlayerAttack playerAttack)
-        {
-            PlayerAttack tempAttack = Instantiate(playerAttack, _insantiatePosition, Quaternion.Euler(0, 0, -90));
-            Rigidbody2D rigidbody = tempAttack.GetComponent<Rigidbody2D>();
-
-            rigidbody.velocity = Vector3.right * _attackFlySpeed;
-        }
-
-        #endregion
-
-        #region Protected Functions
-
         protected virtual void OnTriggerEnter2D(Collider2D collision)
         {
             Enemy enemy = null;
@@ -83,16 +84,7 @@ namespace PeggleWars.PlayerAttacks
             Destroy(gameObject);
         }
 
-        protected virtual void OnHitPolish()
-        {
-            //Do polish stuff here 
-        }
-
-        protected virtual void Start()
-        {
-            _playerAttackManager = PlayerAttackManager.Instance;
-            _damage *= Mathf.RoundToInt(_playerAttackManager.DamageModifierTurn);
-        }
+        protected abstract void OnHitPolish();
 
         #endregion
     }

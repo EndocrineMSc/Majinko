@@ -69,21 +69,29 @@ namespace PeggleWars.Shots
         // Update is called once per frame
         private void Update()
         {
-            if (GameManager.Instance.GameState == State.Shooting)
+            if (GameManager.Instance.GameState == GameState.Shooting)
             {
                 if (!_ballActive)
                 {
-                    _currentBall = Instantiate(_basicShot, new Vector3(1, 3), Quaternion.identity);
-                    _ballActive = true;
+                    SpawnBall();
                 }
 
                 if (_currentBall.DestroyBall)
                 {
                     Destroy(_currentBall.gameObject);
                     _ballActive = false;
-                    StartCoroutine(GameManager.Instance.SwitchState(State.PlayerActions));
+                    StartCoroutine(GameManager.Instance.SwitchState(GameState.PlayerActions));
                 }
             }
+        }
+
+        private void SpawnBall()
+        {
+            Vector2 spawnScreenPosition = new Vector2 (Screen.width / 2 , Screen.height - (Screen.height / 4));
+            Vector2 spawnWorldPosition = Camera.main.ScreenToWorldPoint(spawnScreenPosition);
+            
+            _currentBall = Instantiate(_basicShot, spawnWorldPosition, Quaternion.identity);
+            _ballActive = true;
         }
 
         #endregion
