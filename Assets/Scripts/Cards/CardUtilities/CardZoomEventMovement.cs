@@ -14,11 +14,11 @@ namespace Cards.Zoom
         private string _leftOrRightOfZoomCard;
         CardZoomEventHandler _otherCardIsBeingZoomed;
 
-        private void OnEnable()
+        private void Start()
         {
             _otherCardIsBeingZoomed = Hand.Instance.GetComponent<CardZoomEventHandler>();
             _otherCardIsBeingZoomed.CardZoomIn.AddListener(OnOtherCardZoomIn);
-            _otherCardIsBeingZoomed.CardZoomOut.AddListener(OnOtherCardZoomOut);
+            _otherCardIsBeingZoomed.CardZoomOut.AddListener(OnOtherCardZoomOut);            
         }
 
         private void OnDisable()

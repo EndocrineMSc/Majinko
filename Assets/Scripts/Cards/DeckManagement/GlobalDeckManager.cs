@@ -14,7 +14,7 @@ namespace PeggleWars.Cards.DeckManagement.Global
 
         public static GlobalDeckManager Instance { get; private set; }
 
-        private readonly int[] _apprenticeDeck = new int[] { 0, 0, 1, 1, 1, 1, 2, 2, 2, 2 }; //stores the indeces of the cards in the list _allCards
+        private readonly int[] _apprenticeDeck = new int[] { 0, 0, 1, 1, 1, 3, 2, 2, 2, 3 }; //stores the indeces of the cards in the list _allCards
 
         private List<Card> _allCards; //List of all Cards, built from Resources Folder
         public List<Card> AllCards { get { return _allCards; } }
@@ -27,6 +27,8 @@ namespace PeggleWars.Cards.DeckManagement.Global
         }
 
         public StartDeck StartDeck { get; private set; } // enum for choice of startdecks
+
+        private string RESOURCE_LOAD_PARAM = "CardPrefabVariants";
 
         #endregion
 
@@ -44,7 +46,7 @@ namespace PeggleWars.Cards.DeckManagement.Global
                 DontDestroyOnLoad(this);
             }
 
-            _allCards = Resources.LoadAll<Card>("CardPrefabVariants").ToList();
+            _allCards = Resources.LoadAll<Card>(RESOURCE_LOAD_PARAM).ToList();
             Instance.BuildStartDeck(StartDeck.Apprentice);
         }
 

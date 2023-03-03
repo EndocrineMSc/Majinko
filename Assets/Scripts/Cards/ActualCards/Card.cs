@@ -86,7 +86,7 @@ namespace PeggleWars.Cards
         private void Start()
         {
             SetReferencesToLevelComponents();
-            SetCardValuesAndTexts();           
+            //SetCardValuesAndTexts();           
         }
 
         #endregion
@@ -100,6 +100,7 @@ namespace PeggleWars.Cards
             _orbManager = OrbManager.Instance;
         }
 
+        /*
         protected virtual void SetCardValuesAndTexts()
         {
             _cardName = _scriptableCard.CardName;
@@ -111,11 +112,13 @@ namespace PeggleWars.Cards
             _cardImage = _scriptableCard.CardImage;
             _cardPrefab = _scriptableCard.CardPrefab;
         }
+        */
 
         protected abstract void CardEffect();      
 
         protected virtual bool CheckIfEnoughMana()
         {
+            Debug.Log(_manaPool.name);
             bool enoughMana = _manaPool.CheckForManaAmount(_manaType, _manaCost);
             return enoughMana;
         }

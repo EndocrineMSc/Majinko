@@ -119,5 +119,11 @@ namespace EnumCollection
         Buff,
         Utility,
     }
+
+    public enum ShotType
+    {
+        BasicShot,
+        MultiShot,
+    }
 }
 

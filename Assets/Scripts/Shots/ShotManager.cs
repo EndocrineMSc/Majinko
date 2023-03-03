@@ -1,6 +1,9 @@
 using UnityEngine;
 using EnumCollection;
 using PeggleWars.TurnManagement;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine.Events;
 
 namespace PeggleWars.Shots
 {
@@ -12,13 +15,20 @@ namespace PeggleWars.Shots
     {
         #region Fields and Properties
 
-        [SerializeField] private BasicShot _basicShot;
-        private BasicShot _currentBall;
+        private List<Shot> _allShots = new();
+
+        private Shot _currentShot;
         private TurnManager _cardTurnManager;
-        private bool _ballActive;
 
         private int _maxNumberOfIndicators;
         public int NumberOfIndicators { get => _maxNumberOfIndicators; set => _maxNumberOfIndicators = value; }
+        
+        private Shot _spawnShot;
+        public Shot ShotToBeSpawned
+        {
+            get { return _spawnShot; }
+            private set { _spawnShot = value; }
+        }
 
         private int _maxIndicatorCollisions;
         public int MaxIndicatorCollisions
@@ -31,6 +41,15 @@ namespace PeggleWars.Shots
         private int _maxIndicatorsCollisionsBaseline = 1;
 
         public static ShotManager Instance { get; private set; }
+
+        private string RESOURCE_LOAD_PARAM = "ShotPrefabs";
+
+        public UnityEvent OnShotStacked;
+
+        public List<Shot> AllShots
+        {
+            get { return _allShots; }
+        }
 
         #endregion
 
@@ -46,6 +65,9 @@ namespace PeggleWars.Shots
             {
                 Instance = this;
             }
+
+            _allShots = Resources.LoadAll<Shot>(RESOURCE_LOAD_PARAM).ToList();
+            _spawnShot = _allShots[(int)ShotType.BasicShot];
         }
 
         private void Start()
@@ -57,8 +79,10 @@ namespace PeggleWars.Shots
         //Reset all temporary modifications to the shot
         private void OnStartCardTurn()
         {
-            Instance.MaxIndicatorCollisions = _maxIndicatorsCollisionsBaseline;
-            Instance.NumberOfIndicators = _maxNumberOfIndicatorsBaseline;
+            MaxIndicatorCollisions = _maxIndicatorsCollisionsBaseline;
+            NumberOfIndicators = _maxNumberOfIndicatorsBaseline;
+            _spawnShot = _allShots[(int)ShotType.BasicShot];
+            SpawnShot();
         }
 
         private void OnDisable()
@@ -69,29 +93,34 @@ namespace PeggleWars.Shots
         // Update is called once per frame
         private void Update()
         {
-            if (GameManager.Instance.GameState == GameState.Shooting)
+            if (GameManager.Instance.GameState == GameState.Shooting && _currentShot.DestroyBall)
             {
-                if (!_ballActive)
-                {
-                    SpawnBall();
-                }
-
-                if (_currentBall.DestroyBall)
-                {
-                    Destroy(_currentBall.gameObject);
-                    _ballActive = false;
-                    StartCoroutine(GameManager.Instance.SwitchState(GameState.PlayerActions));
-                }
+                Destroy(_currentShot.gameObject);
+                StartCoroutine(GameManager.Instance.SwitchState(GameState.PlayerActions));
             }
         }
 
-        private void SpawnBall()
+        private void SpawnShot()
         {
-            Vector2 spawnScreenPosition = new Vector2 (Screen.width / 2 , Screen.height - (Screen.height / 4));
+            Vector2 spawnScreenPosition = new(Screen.width / 2 , Screen.height - (Screen.height / 4));
             Vector2 spawnWorldPosition = Camera.main.ScreenToWorldPoint(spawnScreenPosition);
             
-            _currentBall = Instantiate(_basicShot, spawnWorldPosition, Quaternion.identity);
-            _ballActive = true;
+            _currentShot = Instantiate(_spawnShot, spawnWorldPosition, Quaternion.identity);
+        }
+
+        public void SetShotToBeSpawned(Shot shot)
+        {
+            _spawnShot = shot;
+            ReplaceShot();
+        }
+
+        private void ReplaceShot()
+        {
+            if(_currentShot != null)
+            {
+                Destroy(_currentShot.gameObject);
+            }
+            SpawnShot();
         }
 
         #endregion
