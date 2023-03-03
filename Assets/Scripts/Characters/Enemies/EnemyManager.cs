@@ -29,6 +29,7 @@ namespace PeggleWars.Enemies
 
         #endregion
 
+
         #region Functions
 
         private void Awake()
