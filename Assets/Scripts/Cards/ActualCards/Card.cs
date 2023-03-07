@@ -1,7 +1,6 @@
 using UnityEngine;
 using EnumCollection;
 using PeggleWars.Cards.DragDrop;
-using Cards.ScriptableCards;
 using Cards.Zoom;
 using PeggleWars.Cards.DeckManagement.HandHandling;
 using PeggleWars.Orbs;
@@ -23,7 +22,6 @@ namespace PeggleWars.Cards
     {
         #region Fields and Properties
 
-        //Fields set by Scriptable Object
         [SerializeField] protected string _cardName;
         [SerializeField] protected string _cardDescription;
         [SerializeField] protected int _manaCost;
@@ -42,7 +40,6 @@ namespace PeggleWars.Cards
         [SerializeField] protected GameObject _cardPrefab;
 
         public GameObject CardPrefab { get => _cardPrefab; set => _cardPrefab = value; }
-
 
         public string CardName { get => _cardName;}
         public string CardDescription { get => _cardDescription;}
@@ -69,7 +66,7 @@ namespace PeggleWars.Cards
 
                 _manaPool.SpendMana(_manaType, _manaCost);
                 _orbManager.CheckForRefreshOrbs(); //Checks if RefreshOrb was overwritten and makes a new one if so
-                _hand.InstantiatedCards.Remove(gameObject); //list of instantiated cards in hand
+                _hand.InstantiatedCards.Remove(this); //list of instantiated cards in hand
                 _hand.AlignCards();
                 HandleDiscard();
 
@@ -97,15 +94,12 @@ namespace PeggleWars.Cards
         protected virtual void HandleDiscard()
         {
             if (_exhaustCard)
-            {
-                int index = _globalDeckManager.AllCards.IndexOf(GetComponent<Card>());
-                _deck.ExhaustCard(_globalDeckManager.AllCards[index]);
+            {              
+                _deck.ExhaustCard(_globalDeckManager.AllCards[(int)_cardType]);
             }
             else
             {
-                int index = _globalDeckManager.AllCards.IndexOf(GetComponent<Card>());
-                Debug.Log(index);
-                _deck.DiscardCard(_globalDeckManager.AllCards[index]);
+                _deck.DiscardCard(_globalDeckManager.AllCards[(int)_cardType]);
             }
         }
 

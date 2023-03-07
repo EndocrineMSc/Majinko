@@ -19,8 +19,8 @@ namespace PeggleWars.Cards.DeckManagement.HandHandling
         [SerializeField] private List<Card> _handCards = new();
         public List<Card> HandCards { get => _handCards; set => _handCards = value; }
 
-        private List<GameObject> _instantiatedCards = new();
-        public List<GameObject> InstantiatedCards { get => _instantiatedCards; set => _instantiatedCards = value; }
+        private List<Card> _instantiatedCards = new();
+        public List<Card> InstantiatedCards { get => _instantiatedCards; set => _instantiatedCards = value; }
 
         private Deck _deck;
         private TurnManager _turnManager;
@@ -64,16 +64,16 @@ namespace PeggleWars.Cards.DeckManagement.HandHandling
         //basically makes a new set of displayed instantiated cards for each card in the _handCards list
         public IEnumerator DisplayHand()
         {
-            foreach (GameObject cardObject in _instantiatedCards)
+            foreach (Card card in _instantiatedCards)
             {
-                Destroy(cardObject);
+                Destroy(card.gameObject);
             }
 
             _instantiatedCards.Clear();
 
             foreach (Card card in _handCards)
             {
-                GameObject cardObject = Instantiate(card.CardPrefab, _parentTransform);
+                Card cardObject = Instantiate(card, _parentTransform);
                 _instantiatedCards.Add(cardObject);
                 AlignCards();
                 yield return new WaitForSeconds(0.2f);

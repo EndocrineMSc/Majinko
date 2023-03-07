@@ -112,14 +112,6 @@ namespace EnumCollection
         Alchemist
     }
 
-    public enum CardType
-    {
-        Attack,
-        Defense,
-        Buff,
-        Utility,
-    }
-
     public enum ShotType
     {
         BasicShot,
