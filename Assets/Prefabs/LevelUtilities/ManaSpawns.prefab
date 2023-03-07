@@ -45,8 +45,8 @@ GameObject:
   - component: {fileID: 6003572173449844461}
   - component: {fileID: 6003572173449844460}
   m_Layer: 0
-  m_Name: DarkManaSpawn
-  m_TagString: DarkManaSpawn
+  m_Name: FireManaSpawn
+  m_TagString: FireManaSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -213,8 +213,8 @@ GameObject:
   - component: {fileID: 6003572173869833311}
   - component: {fileID: 6003572173869833310}
   m_Layer: 0
-  m_Name: LightManaSpawn
-  m_TagString: LightManaSpawn
+  m_Name: IceManaSpawn
+  m_TagString: IceManaSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647

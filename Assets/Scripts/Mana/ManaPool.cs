@@ -13,20 +13,20 @@ namespace PeggleWars.ManaManagement
         #region Fields and Properties
 
         public List<Mana> BasicMana = new();
-        public List<Mana> DarkMana = new();
-        public List<Mana> LightMana = new();
+        public List<Mana> FireMana = new();
+        public List<Mana> IceMana = new();
 
         private GameObject _baseManaSpawn;
-        private GameObject _lightManaSpawn;
-        private GameObject _darkManaSpawn;
+        private GameObject _fireManaSpawn;
+        private GameObject _iceManaSpawn;
 
         [SerializeField] private GameObject _basicManaPrefab;
-        [SerializeField] private GameObject _lightManaPrefab;
-        [SerializeField] private GameObject _darkManaPrefab;
+        [SerializeField] private GameObject _fireManaPrefab;
+        [SerializeField] private GameObject _iceManaPrefab;
 
         private string BASEMANASPAWN_PARAM = "BaseManaSpawn";
-        private string LIGHTMANASPAWN_PARAM = "LightManaSpawn";
-        private string DARKMANASPAWN_PARAM = "DarkManaSpawn";
+        private string FIREMANASPAWN_PARAM = "FireManaSpawn";
+        private string ICEMANASPAWN_PARAM = "IceManaSpawn";
 
         public static ManaPool Instance { get; private set; }
         private OrbManager _orbManager;
@@ -56,8 +56,8 @@ namespace PeggleWars.ManaManagement
         private void FindSpawnPoints()
         {
             _baseManaSpawn = GameObject.FindGameObjectWithTag(BASEMANASPAWN_PARAM);
-            _darkManaSpawn = GameObject.FindGameObjectWithTag(DARKMANASPAWN_PARAM);
-            _lightManaSpawn = GameObject.FindGameObjectWithTag(LIGHTMANASPAWN_PARAM);
+            _iceManaSpawn = GameObject.FindGameObjectWithTag(ICEMANASPAWN_PARAM);
+            _fireManaSpawn = GameObject.FindGameObjectWithTag(FIREMANASPAWN_PARAM);
         }
 
         private void SetReferences()
@@ -71,8 +71,8 @@ namespace PeggleWars.ManaManagement
             var spawnPointPosition = manaType switch
             {
                 ManaType.BaseMana => (Vector2)_baseManaSpawn.transform.position,
-                ManaType.DarkMana => (Vector2)_darkManaSpawn.transform.position,
-                ManaType.LightMana => (Vector2)_lightManaSpawn.transform.position,
+                ManaType.FireMana => (Vector2)_iceManaSpawn.transform.position,
+                ManaType.IceMana => (Vector2)_fireManaSpawn.transform.position,
                 _ => (Vector2)_baseManaSpawn.transform.position,
             };
             for (int i = 0; i < amount; i++)
@@ -92,16 +92,16 @@ namespace PeggleWars.ManaManagement
                         BasicMana.Add(tempMana);
                         break;
 
-                    case ManaType.DarkMana:
-                        tempManaObject = Instantiate(_darkManaPrefab, _spawnPosition, Quaternion.identity);
+                    case ManaType.FireMana:
+                        tempManaObject = Instantiate(_iceManaPrefab, _spawnPosition, Quaternion.identity);
                         tempMana = tempManaObject.GetComponent<Mana>();
-                        DarkMana.Add(tempMana);
+                        FireMana.Add(tempMana);
                         break;
 
-                    case ManaType.LightMana:
-                        tempManaObject = Instantiate(_lightManaPrefab, _spawnPosition, Quaternion.identity);
+                    case ManaType.IceMana:
+                        tempManaObject = Instantiate(_fireManaPrefab, _spawnPosition, Quaternion.identity);
                         tempMana = tempManaObject.GetComponent<Mana>();
-                        LightMana.Add(tempMana);
+                        IceMana.Add(tempMana);
                         break;
                 }
             }
@@ -115,12 +115,12 @@ namespace PeggleWars.ManaManagement
                     SpendManaByList(BasicMana, amount);
                     break;
 
-                case ManaType.DarkMana:
-                    SpendManaByList(DarkMana, amount);
+                case ManaType.FireMana:
+                    SpendManaByList(FireMana, amount);
                     break;
 
-                case ManaType.LightMana:
-                    SpendManaByList(LightMana, amount);
+                case ManaType.IceMana:
+                    SpendManaByList(IceMana, amount);
                     break;
             }
         }
@@ -135,12 +135,12 @@ namespace PeggleWars.ManaManagement
                     enoughMana = CheckIfEnoughManaByList(BasicMana, amount);
                     break;
 
-                case ManaType.DarkMana:
-                    enoughMana = CheckIfEnoughManaByList(DarkMana, amount);
+                case ManaType.FireMana:
+                    enoughMana = CheckIfEnoughManaByList(FireMana, amount);
                     break;
 
-                case ManaType.LightMana:
-                    enoughMana = CheckIfEnoughManaByList(LightMana, amount);
+                case ManaType.IceMana:
+                    enoughMana = CheckIfEnoughManaByList(IceMana, amount);
                     break;
             }
             return enoughMana;

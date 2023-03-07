@@ -12,6 +12,18 @@ PrefabInstance:
       value: 14
       objectReference: {fileID: 0}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _cardName
+      value: Mana Shield
+      objectReference: {fileID: 0}
+    - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _cardType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _manaCost
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _amountOrbs
       value: 1
       objectReference: {fileID: 0}
@@ -23,6 +35,11 @@ PrefabInstance:
       propertyPath: _scriptableCard
       value: 
       objectReference: {fileID: 11400000, guid: c9a2211082f5a29458ac4c7b0d262caa, type: 2}
+    - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _cardDescription
+      value: Spawns two Mana Shield Orbs. When hit, the apprentice casts a mana shield
+        on himself, blocking the next 10 damage. Stacks, but is lost on turn end.
+      objectReference: {fileID: 0}
     - target: {fileID: 2663367635832773738, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_text
       value: Defense

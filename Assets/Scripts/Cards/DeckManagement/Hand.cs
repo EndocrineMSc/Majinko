@@ -16,7 +16,7 @@ namespace PeggleWars.Cards.DeckManagement.HandHandling
         #region Fields and Properties
         public static Hand Instance { get; private set; }
 
-        private List<Card> _handCards = new();
+        [SerializeField] private List<Card> _handCards = new();
         public List<Card> HandCards { get => _handCards; set => _handCards = value; }
 
         private List<GameObject> _instantiatedCards = new();

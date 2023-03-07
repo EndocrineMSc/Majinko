@@ -3,8 +3,11 @@ using System.Linq;
 using UnityEngine;
 using EnumCollection;
 using UnityEngine.Events;
+using System;
+
 namespace PeggleWars.Orbs
 {
+    [Serializable]
     public class OrbManager : MonoBehaviour
     {
         #region Fields and Properties
@@ -19,6 +22,8 @@ namespace PeggleWars.Orbs
         [SerializeField] private ScriptableOrbLayout _layout;
 
         public ManaSpawnEvent ManaSpawnTrigger;
+        
+        private GlobalOrbManager _globalOrbManager;
 
         #endregion
 
@@ -35,15 +40,15 @@ namespace PeggleWars.Orbs
                 Instance = this;                
             }
         }
+
         private void Start()
         {
-            if (ManaSpawnTrigger == null)
-            {
-                ManaSpawnTrigger = new ManaSpawnEvent();
-            }
+            _globalOrbManager = GlobalOrbManager.Instance;
+            
+            ManaSpawnTrigger ??= new ManaSpawnEvent();
 
             OrbGridPositions test = new();
-            _allOrbsList = Resources.LoadAll<Orb>("OrbPrefabs").ToList();
+            _allOrbsList = _globalOrbManager.AllOrbsList;
 
             bool[,] orbLayout = _layout.InitializeOrbLayout();
 
@@ -61,9 +66,18 @@ namespace PeggleWars.Orbs
             }
             
             SceneOrbList = GameObject.FindObjectsOfType<Orb>().ToList();
+            InsertLevelLoadOrbs();
         }
 
-        public void SwitchOrbs(OrbType orbType, int switchAmount)
+        private void InsertLevelLoadOrbs()
+        {
+            foreach (Orb orb in _globalOrbManager.LevelLoadOrbs)
+            {
+                SwitchOrbs(orb.OrbType, 1);
+            }
+        }
+
+        public void SwitchOrbs(OrbType orbType, int switchAmount = 1)
         {
             List<Orb> baseOrbs = FindOrbs(SceneOrbList, SearchTag.BaseOrbs);          
             List<Orb> activeBaseOrbs = FindOrbs(baseOrbs, SearchTag.IsActive);
@@ -130,7 +144,7 @@ namespace PeggleWars.Orbs
 
         private Orb FindRandomOrbInList(List<Orb> orbs)
         {
-            int randomOrbIndex = Random.Range(0, orbs.Count - 1);
+            int randomOrbIndex = UnityEngine.Random.Range(0, orbs.Count - 1);
 
             Orb randomOrb = orbs[randomOrbIndex];
 

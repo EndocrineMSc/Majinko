@@ -93,12 +93,12 @@ namespace PeggleWars.Orbs
                     spawnPoint = GameObject.FindGameObjectWithTag("BaseManaSpawn");
                     break;
 
-                case ManaType.DarkMana:
-                    spawnPoint = GameObject.FindGameObjectWithTag("DarkManaSpawn");
+                case ManaType.FireMana:
+                    spawnPoint = GameObject.FindGameObjectWithTag("FireManaSpawn");
                     break;
 
-                case ManaType.LightMana:
-                    spawnPoint = GameObject.FindGameObjectWithTag("LightManaSpawn");
+                case ManaType.IceMana:
+                    spawnPoint = GameObject.FindGameObjectWithTag("IceManaSpawn");
                     break;
             }
 
@@ -160,12 +160,12 @@ namespace PeggleWars.Orbs
                         _manaPool.BasicMana.Add(tempMana);
                         break;
 
-                    case ManaType.DarkMana:
-                        _manaPool.DarkMana.Add(tempMana);
+                    case ManaType.FireMana:
+                        _manaPool.FireMana.Add(tempMana);
                         break;
 
-                    case ManaType.LightMana:
-                        _manaPool.LightMana.Add(tempMana);
+                    case ManaType.IceMana:
+                        _manaPool.IceMana.Add(tempMana);
                         break;
                 }
             }

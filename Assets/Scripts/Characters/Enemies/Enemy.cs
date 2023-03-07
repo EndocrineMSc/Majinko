@@ -77,6 +77,22 @@ namespace PeggleWars.Enemies
             private set { _attackFrequency = value; }
         }
 
+        protected int _fireStacks;
+
+        public int FireStacks
+        {
+            get { return _fireStacks; }
+            private set { _fireStacks = value; }
+        }
+
+        protected int _iceStacks;
+
+        public int IceStacks
+        {
+            get { return _iceStacks; }
+            private set { _iceStacks = value; }
+        }
+
         #endregion
 
         #region Functions
@@ -90,11 +106,13 @@ namespace PeggleWars.Enemies
         private void OnEnable()
         {
             TurnManager.Instance.EndEnemyTurn += OnEndEnemyTurn;
+            TurnManager.Instance.StartEnemyTurn += OnStartEnemyTurn;
         }
 
         private void OnDisable()
         {
             TurnManager.Instance.EndEnemyTurn -= OnEndEnemyTurn;
+            TurnManager.Instance.StartEnemyTurn -= OnStartEnemyTurn;
         }
         protected virtual void SetReferences()
         {
@@ -125,9 +143,26 @@ namespace PeggleWars.Enemies
                 }
             }
         }
+
+        protected void OnStartEnemyTurn()
+        {
+            if (_fireStacks > 0)
+            {
+                TakeDamage(_fireStacks);
+                _fireStacks--;
+            }
+        }
+
         public void TakeDamage(int damage)
         {
             _health -= damage;
+
+            if (_iceStacks > 0)
+            {
+                _health -= _iceStacks;
+                _iceStacks = 0;
+                _popUpSpawner.SpawnPopUp(_iceStacks);
+            }
             _popUpSpawner.SpawnPopUp(damage);
             _animator.SetTrigger(HURT_PARAM);
             try
@@ -164,6 +199,16 @@ namespace PeggleWars.Enemies
 
             PlayDeathSound();
             OnDeathEffect();
+        }
+
+        public void SetOnFire(int fireStacks)
+        {
+            _fireStacks += fireStacks;
+        }
+
+        public void Freeze(int iceStacks)
+        {
+            _iceStacks += iceStacks;
         }
 
         protected abstract void PlayDeathSound();

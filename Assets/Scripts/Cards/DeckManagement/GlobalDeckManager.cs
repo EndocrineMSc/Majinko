@@ -14,9 +14,9 @@ namespace PeggleWars.Cards.DeckManagement.Global
 
         public static GlobalDeckManager Instance { get; private set; }
 
-        private readonly int[] _apprenticeDeck = new int[] { 0, 0, 1, 1, 1, 3, 2, 2, 2, 3 }; //stores the indeces of the cards in the list _allCards
+        private readonly int[] _apprenticeDeck = new int[] { 0, 0, 1, 2, 3, 3, 4, 4, 5, 6 }; //stores the indeces of the cards in the list _allCards
 
-        private List<Card> _allCards; //List of all Cards, built from Resources Folder
+        [SerializeField] private List<Card> _allCards; //List of all Cards, built from Resources Folder
         public List<Card> AllCards { get { return _allCards; } }
         
         private List<Card> _globalDeck = new(); //List of all cards in the player deck, will store any modifications (added or removed cards) during a run
@@ -32,7 +32,7 @@ namespace PeggleWars.Cards.DeckManagement.Global
 
         #endregion
 
-        #region Private Functions
+        #region Functions
 
         private void Awake()
         {
@@ -50,10 +50,6 @@ namespace PeggleWars.Cards.DeckManagement.Global
             Instance.BuildStartDeck(StartDeck.Apprentice);
         }
 
-        #endregion
-
-        #region Public Functions
-
         public void BuildStartDeck(StartDeck startDeck)
         {
             switch(startDeck)
@@ -65,6 +61,11 @@ namespace PeggleWars.Cards.DeckManagement.Global
                     }
                     break;
             }
+        }
+
+        public void RemoveCardFromGlobalDeck(Card card)
+        {
+            _globalDeck.Remove(card);
         }
 
         #endregion

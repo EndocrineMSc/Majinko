@@ -6,6 +6,8 @@ using Cards.Zoom;
 using PeggleWars.Cards.DeckManagement.HandHandling;
 using PeggleWars.Orbs;
 using PeggleWars.ManaManagement;
+using PeggleWars.Cards.DeckManagement;
+using PeggleWars.Cards.DeckManagement.Global;
 
 namespace PeggleWars.Cards
 {
@@ -22,20 +24,21 @@ namespace PeggleWars.Cards
         #region Fields and Properties
 
         //Fields set by Scriptable Object
-        private string _cardName;
-        private string _cardDescription;
-        private int _manaCost;
-        private ManaType _manaType;
-        private CardType _cardType;
-        private bool _exhaustCard;
-        private Sprite _cardImage;
+        [SerializeField] protected string _cardName;
+        [SerializeField] protected string _cardDescription;
+        [SerializeField] protected int _manaCost;
+        [SerializeField] protected ManaType _manaType;
+        [SerializeField] protected CardType _cardType;
+        [SerializeField] protected bool _exhaustCard;
+        protected Sprite _cardImage;
 
         //Necessary level references
-        private ManaPool _manaPool;
-        private Hand _hand;
-        private OrbManager _orbManager;
+        protected ManaPool _manaPool;
+        protected Hand _hand;
+        protected OrbManager _orbManager;
+        protected Deck _deck;
+        protected GlobalDeckManager _globalDeckManager;
 
-        [SerializeField] protected ScriptableCard _scriptableCard;
         [SerializeField] protected GameObject _cardPrefab;
 
         public GameObject CardPrefab { get => _cardPrefab; set => _cardPrefab = value; }
@@ -50,14 +53,12 @@ namespace PeggleWars.Cards
 
         #endregion
 
-        #region Public Virtual Functions
+        #region Functions
+        protected void Start()
+        {
+            SetReferencesToLevelComponents();      
+        }
 
-        /// <summary>
-        /// Handles what happens when the card is dragged and let go.
-        /// Is called by the CardDragDrop class.
-        /// Can be overriden by child classes, if additional effects are necessary.
-        /// </summary>
-        /// <returns>Returns whether there was enough mana to play the card or not (boolean)</returns>
         public virtual bool CardEndDragEffect()
         {
             bool enoughMana = CheckIfEnoughMana();
@@ -70,6 +71,7 @@ namespace PeggleWars.Cards
                 _orbManager.CheckForRefreshOrbs(); //Checks if RefreshOrb was overwritten and makes a new one if so
                 _hand.InstantiatedCards.Remove(gameObject); //list of instantiated cards in hand
                 _hand.AlignCards();
+                HandleDiscard();
 
                 Destroy(gameObject);
                 return true;
@@ -79,46 +81,36 @@ namespace PeggleWars.Cards
                 return false;
             }
         }
-        #endregion
 
-        #region Private Functions
-
-        private void Start()
-        {
-            SetReferencesToLevelComponents();
-            //SetCardValuesAndTexts();           
-        }
-
-        #endregion
-
-        #region Protected Virtual Functions
 
         protected virtual void SetReferencesToLevelComponents()
         {
             _manaPool = ManaPool.Instance;
             _hand = Hand.Instance;
             _orbManager = OrbManager.Instance;
-        }
+            _deck = Deck.Instance;
+            _globalDeckManager = GlobalDeckManager.Instance;
+        }    
 
-        /*
-        protected virtual void SetCardValuesAndTexts()
+        protected abstract void CardEffect();
+
+        protected virtual void HandleDiscard()
         {
-            _cardName = _scriptableCard.CardName;
-            _cardDescription = _scriptableCard.CardDescription;
-            _manaCost = _scriptableCard.ManaCost;
-            _manaType = _scriptableCard.ManaType;
-            _cardType = _scriptableCard.CardType;
-            _exhaustCard = _scriptableCard.IsExhaustCard;
-            _cardImage = _scriptableCard.CardImage;
-            _cardPrefab = _scriptableCard.CardPrefab;
+            if (_exhaustCard)
+            {
+                int index = _globalDeckManager.AllCards.IndexOf(GetComponent<Card>());
+                _deck.ExhaustCard(_globalDeckManager.AllCards[index]);
+            }
+            else
+            {
+                int index = _globalDeckManager.AllCards.IndexOf(GetComponent<Card>());
+                Debug.Log(index);
+                _deck.DiscardCard(_globalDeckManager.AllCards[index]);
+            }
         }
-        */
-
-        protected abstract void CardEffect();      
 
         protected virtual bool CheckIfEnoughMana()
         {
-            Debug.Log(_manaPool.name);
             bool enoughMana = _manaPool.CheckForManaAmount(_manaType, _manaCost);
             return enoughMana;
         }

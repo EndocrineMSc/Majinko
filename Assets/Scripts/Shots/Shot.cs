@@ -48,9 +48,9 @@ namespace PeggleWars.Shots
             protected set { _destroyBall = value; }
         }
 
-        protected int _gravity = 1;
+        protected float _gravity = 1;
 
-        public int Gravity
+        public float Gravity
         {
             get { return _gravity; }
             protected set { _gravity = value; }
@@ -210,7 +210,7 @@ namespace PeggleWars.Shots
             return false;
         }
 
-        protected void OnTriggerEnter2D(Collider2D collision)
+        protected virtual void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.name.Contains(PORTAL_PARAM))
             {

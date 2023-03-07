@@ -20,7 +20,7 @@ namespace PeggleWars.Cards.DeckManagement
         public static Deck Instance { get; private set; }
 
         private List<Card> _localDeck = new();
-        private List<Card> _discardPile = new();
+        [SerializeField] private List<Card> _discardPile = new();
         private List<Card> _exhaustPile = new();
 
         public int DrawAmount { get; set; } = 5;
@@ -61,8 +61,10 @@ namespace PeggleWars.Cards.DeckManagement
         {
             if (_localDeck.Count == 0)
             {
+                Debug.Log("Discard Pile Size: " + _discardPile.Count);
                 _localDeck.AddRange(_discardPile);
                 _discardPile.Clear();
+                Debug.Log("Discard Pils Size after Clear: " + _discardPile.Count);
                 ShuffleDeck();
             }
 
@@ -74,10 +76,10 @@ namespace PeggleWars.Cards.DeckManagement
         public void DiscardCard(Card card)
         {
             _discardPile.Add(card);
+            Debug.Log("Discarded card, now: " + _discardPile.Count + "discarded cards");
             _hand.HandCards.Remove(card);
         }
 
-        //Exhausted cards don't returen to the draw pile
         public void ExhaustCard(Card card)
         {
             _exhaustPile.Add(card);

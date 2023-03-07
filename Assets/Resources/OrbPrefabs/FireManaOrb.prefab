@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2549565476461289555}
   - component: {fileID: 2549565476461289554}
   - component: {fileID: 5099420647275916350}
-  - component: {fileID: -2702229658423009267}
+  - component: {fileID: -4934897474713566285}
   m_Layer: 0
   m_Name: FireManaOrb
   m_TagString: Orb
@@ -123,7 +123,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.07
---- !u!114 &-2702229658423009267
+--- !u!114 &-4934897474713566285
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,11 +132,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2549565476461289553}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14abd92b533722546bf07b01ad745bce, type: 3}
+  m_Script: {fileID: 11500000, guid: f6742a78ca1134340b25829d57308559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _orbMana: {fileID: 7005893637801753577, guid: 6332fb61d8db02643a35f651f55ff389, type: 3}
   SpawnManaType: 1
   ManaAmount: 10
-  _defaultOrb: {fileID: 0}
-  _orbType: 0
+  _defaultOrb: {fileID: 2549565476461289553}
+  _orbType: 5

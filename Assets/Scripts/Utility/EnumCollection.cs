@@ -39,8 +39,8 @@ namespace EnumCollection
     public enum ManaType
     {
         BaseMana,
-        DarkMana,
-        LightMana,
+        FireMana,
+        IceMana,
     }
 
     //This enum needs to be in alphabetical order!
@@ -124,6 +124,7 @@ namespace EnumCollection
     {
         BasicShot,
         MultiShot,
+        PowerShot,
     }
 }
 

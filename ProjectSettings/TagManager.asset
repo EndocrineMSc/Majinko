@@ -11,9 +11,6 @@ TagManager:
   - BaseManaSpawn
   - FireManaSpawn
   - IceManaSpawn
-  - LightningManaSpawn
-  - DarkManaSpawn
-  - LightManaSpawn
   - DeckNumber
   - DiscardNumber
   layers:
