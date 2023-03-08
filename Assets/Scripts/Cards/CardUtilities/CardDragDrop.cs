@@ -3,13 +3,10 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using EnumCollection;
 using PeggleWars.Audio;
+using PeggleWars.Cards.DeckManagement.HandHandling;
 
 namespace PeggleWars.Cards.DragDrop
 {
-    /// <summary>
-    /// This class handles movement of cards and drag and drop visuals and card functionality initiation.
-    /// It is automatically set as a component of any GameObject with a "Card" component.
-    /// </summary>
     public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
     {
         #region Fields
@@ -40,7 +37,7 @@ namespace PeggleWars.Cards.DragDrop
 
         #endregion
 
-        #region Public Functions
+        #region Functions
 
         public void OnBeginDrag(PointerEventData eventData)
         {
@@ -60,15 +57,20 @@ namespace PeggleWars.Cards.DragDrop
                 bool enoughMana = _card.CardEndDragEffect();
                 if (!enoughMana)
                 {
-                    AudioManager.Instance.PlaySoundEffectOnce(SFX._0007_CardDragReturn);
-                    transform.position = _startPosition;
+                    HandleNotEnoughMana();
                 }
             }
             else
             {
-                AudioManager.Instance.PlaySoundEffectOnce(SFX._0007_CardDragReturn);
-                transform.position = _startPosition;
+                HandleNotEnoughMana();
             }
+        }
+
+        private void HandleNotEnoughMana()
+        {
+            AudioManager.Instance.PlaySoundEffectOnce(SFX._0007_CardDragReturn);
+            transform.position = _startPosition;
+            Hand.Instance.AlignCards();
         }
 
         #endregion

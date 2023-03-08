@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4550278420783687888, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: _cardType
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -4550278420783687888, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: _manaCost
@@ -25,6 +25,10 @@ PrefabInstance:
       objectReference: {fileID: 1109285266808240911}
     - target: {fileID: -4550278420783687888, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: _exhaustCard
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4550278420783687888, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: _basicManaCost
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4550278420783687888, guid: 92b44770394774247acee543b7baee9f, type: 3}

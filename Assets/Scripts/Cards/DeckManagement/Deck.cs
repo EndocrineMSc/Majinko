@@ -23,7 +23,6 @@ namespace PeggleWars.Cards.DeckManagement
         [SerializeField] private List<Card> _discardPile = new();
         private List<Card> _exhaustPile = new();
 
-        public int DrawAmount { get; set; } = 5;
         public List<Card> DiscardPile { get => _discardPile; set => _discardPile = value; }
         public List<Card> LocalDeck { get => _localDeck; set => _localDeck = value; }
         public List<Card> ExhaustPile { get => _exhaustPile; set => _exhaustPile = value; }
@@ -32,7 +31,7 @@ namespace PeggleWars.Cards.DeckManagement
 
         #endregion
 
-        #region Private Functions
+        #region Functions
 
         private void Awake()
         {
@@ -53,30 +52,27 @@ namespace PeggleWars.Cards.DeckManagement
             ShuffleDeck();
         }
 
-        #endregion
-
-        #region Public Functions
-
         public Card DrawCard()
         {
-            if (_localDeck.Count == 0)
+            if (_localDeck.Count == 0 && _discardPile.Count != 0)
             {
-                Debug.Log("Discard Pile Size: " + _discardPile.Count);
                 _localDeck.AddRange(_discardPile);
                 _discardPile.Clear();
-                Debug.Log("Discard Pils Size after Clear: " + _discardPile.Count);
                 ShuffleDeck();
             }
 
-            Card card = _localDeck[0];
-            _localDeck.RemoveAt(0);
-            return card;
+            if (_localDeck.Count > 0)
+            {
+                Card card = _localDeck[0];
+                _localDeck.RemoveAt(0);
+                return card;
+            }
+            else { return null; }
         }
 
         public void DiscardCard(Card card)
         {
             _discardPile.Add(card);
-            Debug.Log("Discarded card, now: " + _discardPile.Count + "discarded cards");
             _hand.HandCards.Remove(card);
         }
 

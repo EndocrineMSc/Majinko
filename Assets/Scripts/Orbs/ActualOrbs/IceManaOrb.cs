@@ -1,12 +1,12 @@
 using PeggleWars.Enemies;
+using PeggleWars.Orbs.OrbActions;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 namespace PeggleWars.Orbs
 {
-    public class FireManaOrb : Orb
+    public class IceManaOrb : Orb
     {
         private EnemyManager _enemyManager;
 
@@ -21,9 +21,14 @@ namespace PeggleWars.Orbs
             if (_enemyManager.EnemiesInScene.Count > 0)
             {
                 Enemy enemy = _enemyManager.EnemiesInScene[0];
-                enemy.SetOnFire(1);
+                enemy.Freeze(1);
             }
             yield return null;
+        }
+
+        protected override void AdditionalEffectsOnCollision()
+        {
+            OrbActionManager.Instance.AddOrbToActionList(this);
         }
     }
 }

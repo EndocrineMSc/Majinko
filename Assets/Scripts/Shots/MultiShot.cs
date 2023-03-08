@@ -17,7 +17,6 @@ namespace PeggleWars.Shots
             set { _cannotSpawnMoreShots = value; }
         }
 
-
         protected int _amountOfExtraBalls = 2;
 
         public int ExtraBalls
@@ -26,9 +25,50 @@ namespace PeggleWars.Shots
             set { _amountOfExtraBalls = value; }
         }
 
+        private int _ballsInScene = 3;
+
+        public int BallsInScene { get => _ballsInScene; set { _ballsInScene = value; } }
+        
+        private bool _hasHitPortal;
+
         #endregion
 
         #region Functions
+
+        protected override void Start()
+        {
+            base.Start();
+            _shotManager.BallDestructionEvent?.AddListener(OnBallDestruction);
+        }
+
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+            _shotManager.BallDestructionEvent.RemoveListener(OnBallDestruction);
+        }
+
+        protected void OnBallDestruction()
+        {
+            _ballsInScene--;
+
+            if (_hasHitPortal)
+            {
+                if (_ballsInScene <= 0)
+                {
+                    StartCoroutine(GameManager.Instance.SwitchState(EnumCollection.GameState.PlayerActions));
+                }
+                Destroy(gameObject);
+            }
+        }
+
+        protected override void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.name.Contains(PORTAL_PARAM) && !_hasHitPortal)
+            {
+                _hasHitPortal = true;
+                _shotManager.BallDestructionEvent?.Invoke();
+            }
+        }
 
         protected override void OnCollisionEnter2D(Collision2D collision)
         {
@@ -55,6 +95,7 @@ namespace PeggleWars.Shots
 
                 MultiShot tempShot = Instantiate(this, new Vector2(peggleTransform.position.x, peggleTransform.position.y), Quaternion.identity);
                 tempShot.CannotSpawnMoreShots = true;
+                tempShot.BallsInScene = _ballsInScene;
                 tempShot.SetShotAsShotAlready();
                 StartCoroutine(DisableAndResetCollider(tempShot));
 
@@ -73,16 +114,16 @@ namespace PeggleWars.Shots
             collider.enabled = true;
         }
 
-        protected override void OnShootAdditions()
-        {
-           //not implemented yet
-        }
-
         public override void ShotStackEffect()
         {
             _amountOfExtraBalls++;
+            _ballsInScene++;
         }
 
+        protected override void OnShootAdditions()
+        {
+            //ToDo Sound and other polish
+        }
         #endregion
 
     }

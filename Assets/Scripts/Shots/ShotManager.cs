@@ -44,7 +44,8 @@ namespace PeggleWars.Shots
 
         private string RESOURCE_LOAD_PARAM = "ShotPrefabs";
 
-        public UnityEvent OnShotStacked;
+        public UnityEvent ShotStackedEvent;
+        public UnityEvent BallDestructionEvent;
 
         public List<Shot> AllShots
         {
@@ -88,16 +89,6 @@ namespace PeggleWars.Shots
         private void OnDisable()
         {
             _cardTurnManager.StartCardTurn -= OnStartCardTurn;
-        }
-
-        // Update is called once per frame
-        private void Update()
-        {
-            if (GameManager.Instance.GameState == GameState.Shooting && _currentShot.DestroyBall)
-            {
-                Destroy(_currentShot.gameObject);
-                StartCoroutine(GameManager.Instance.SwitchState(GameState.PlayerActions));
-            }
         }
 
         private void SpawnShot()

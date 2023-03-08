@@ -19,6 +19,8 @@ namespace PeggleWars.Cards.DeckManagement.HandHandling
         [SerializeField] private List<Card> _handCards = new();
         public List<Card> HandCards { get => _handCards; set => _handCards = value; }
 
+        public int DrawAmount { get; set; } = 5;
+
         private List<Card> _instantiatedCards = new();
         public List<Card> InstantiatedCards { get => _instantiatedCards; set => _instantiatedCards = value; }
 
@@ -38,7 +40,10 @@ namespace PeggleWars.Cards.DeckManagement.HandHandling
             for (int i = 0; i < amount; i++)
             {
                 Card card = _deck.DrawCard();
-                HandCards.Add(card);
+                if (card != null)
+                {
+                    HandCards.Add(card);
+                }
             }
 
             AudioManager.Instance.PlaySoundEffectOnce(SFX._0012_DrawHand);
@@ -47,7 +52,7 @@ namespace PeggleWars.Cards.DeckManagement.HandHandling
 
         public void OnCardTurnStart()
         {
-            DrawHand(Deck.Instance.DrawAmount);
+            DrawHand(DrawAmount);
         }
 
         public void OnCardTurnEnd()
@@ -59,6 +64,8 @@ namespace PeggleWars.Cards.DeckManagement.HandHandling
 
             _handCards.Clear();
             StartCoroutine(DisplayHand());
+
+            DrawAmount = 5;
         }
 
         //basically makes a new set of displayed instantiated cards for each card in the _handCards list
@@ -111,9 +118,6 @@ namespace PeggleWars.Cards.DeckManagement.HandHandling
                 rectTransform.anchoredPosition = new Vector2(startX + (rectTransform.rect.width / 2f) + (i * _spacing), (-canvasHeight/2 + cardHeight/4));
             }
         }
-        #endregion
-
-        #region Private Functions
 
         private void Awake()
         {

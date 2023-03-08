@@ -25,7 +25,6 @@ namespace PeggleWars.Orbs
 
         protected Vector3 _position;
 
-
         #endregion
 
         #region Properties
@@ -57,12 +56,42 @@ namespace PeggleWars.Orbs
 
         #endregion
 
-        #region Private Functions
+        #region Functions
 
         private void Start()
         {
             SetReferences();
         }
+
+        protected virtual void SetReferences()
+        {
+            _manaPool = ManaPool.Instance;
+            _orbManager = OrbManager.Instance;
+            _audioManager = AudioManager.Instance;
+            _spawnPoint = FindSpawnPoint();
+        }
+
+        private GameObject FindSpawnPoint()
+        {
+            GameObject spawnPoint = null;
+
+            switch (SpawnManaType)
+            {
+                case ManaType.BasicMana:
+                    spawnPoint = GameObject.FindGameObjectWithTag("BaseManaSpawn");
+                    break;
+
+                case ManaType.FireMana:
+                    spawnPoint = GameObject.FindGameObjectWithTag("FireManaSpawn");
+                    break;
+
+                case ManaType.IceMana:
+                    spawnPoint = GameObject.FindGameObjectWithTag("IceManaSpawn");
+                    break;
+            }
+
+            return spawnPoint;
+        } 
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
@@ -77,62 +106,9 @@ namespace PeggleWars.Orbs
             }
         }
 
-        private IEnumerator DestroyOrb()
-        {
-            yield return new WaitForSeconds(0.1f);
-            Destroy(gameObject);
-        }
-
-        private GameObject FindSpawnPoint()
-        {
-            GameObject spawnPoint = null;
-
-            switch (SpawnManaType)
-            {
-                case ManaType.BaseMana:
-                    spawnPoint = GameObject.FindGameObjectWithTag("BaseManaSpawn");
-                    break;
-
-                case ManaType.FireMana:
-                    spawnPoint = GameObject.FindGameObjectWithTag("FireManaSpawn");
-                    break;
-
-                case ManaType.IceMana:
-                    spawnPoint = GameObject.FindGameObjectWithTag("IceManaSpawn");
-                    break;
-            }
-
-            return spawnPoint;
-        }
-
-        #endregion
-
-        #region Protected Virtual Functions
-
-        protected virtual void SetReferences()
-        {
-            _manaPool = ManaPool.Instance;
-            _orbManager = OrbManager.Instance;
-            _audioManager = AudioManager.Instance;
-            _spawnPoint = FindSpawnPoint();
-        }
-
-        protected virtual void ReplaceHitOrb()
-        {
-            GameObject orb = Instantiate(_defaultOrb, transform.position, Quaternion.identity);
-            orb.SetActive(false);
-            _orbManager.SceneOrbList.Remove(this);
-            _orbManager.SceneOrbList.Add(orb.GetComponent<Orb>());
-        }
-
         protected virtual void PlayOrbOnHitSound()
         {
             _audioManager.PlaySoundEffectWithoutLimit(SFX._0002_BasicPeggleHit);
-        }
-
-        protected virtual void AdditionalEffectsOnCollision()
-        {
-            //Add necessary additional effects in children here
         }
 
         protected virtual void OnCollisionVisualPolish()
@@ -140,7 +116,6 @@ namespace PeggleWars.Orbs
             gameObject.GetComponent<SpriteRenderer>().size += new Vector2(0.03f, 0.03f);
         }
 
-        //spawns the mana in the respective container
         protected virtual void SpawnMana()
         {
             Vector2 _spawnPointPosition = _spawnPoint.transform.position;
@@ -156,7 +131,7 @@ namespace PeggleWars.Orbs
 
                 switch (SpawnManaType)
                 {
-                    case ManaType.BaseMana:
+                    case ManaType.BasicMana:
                         _manaPool.BasicMana.Add(tempMana);
                         break;
 
@@ -171,8 +146,26 @@ namespace PeggleWars.Orbs
             }
         }
 
-        #endregion
+        protected virtual void ReplaceHitOrb()
+        {
+            GameObject orb = Instantiate(_defaultOrb, transform.position, Quaternion.identity);
+            orb.SetActive(false);
+            _orbManager.SceneOrbList.Remove(this);
+            _orbManager.SceneOrbList.Add(orb.GetComponent<Orb>());
+        }
 
+        protected virtual void AdditionalEffectsOnCollision()
+        {
+            //Add necessary additional effects in children here
+        }
+
+        private IEnumerator DestroyOrb()
+        {
+            yield return new WaitForSeconds(0.1f);
+            Destroy(gameObject);
+        }
+
+        #endregion
     }
 }
 

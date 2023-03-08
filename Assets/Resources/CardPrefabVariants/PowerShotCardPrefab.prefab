@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5102782085163616900, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: _cardType
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -5102782085163616900, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: _manaCost
@@ -28,9 +28,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5194146975066673121}
     - target: {fileID: -5102782085163616900, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: _iceManaCost
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5102782085163616900, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: _fireManaCost
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5102782085163616900, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: _basicManaCost
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5102782085163616900, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: _scriptableCard
       value: 
       objectReference: {fileID: 11400000, guid: e9d10fad820f69f48af2ef4b8b7e0991, type: 2}
+    - target: {fileID: -5102782085163616900, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: _cardDescription
+      value: A high-power shot unaffected by gravity.  Playing multiple cards will
+        make the shot ignore the Portal for each additional card played.
+      objectReference: {fileID: 0}
     - target: {fileID: 1002801183830465219, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: m_text
       value: "A high-power shot unaffected by gravity. \nPlaying multiple cards will

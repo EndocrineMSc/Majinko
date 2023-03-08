@@ -14,7 +14,7 @@ namespace PeggleWars.Cards.DeckManagement.Global
 
         public static GlobalDeckManager Instance { get; private set; }
 
-        private readonly int[] _apprenticeDeck = new int[] { 0, 0, 1, 2, 3, 3, 4, 4, 5, 6 }; //stores the indeces of the cards in the list _allCards
+        private int[] _apprenticeDeck = new int[] { 0, 1, 2, 3, 3, 4, 4, 5, 6, 5, 6 }; //stores the indeces of the cards in the list _allCards
 
         [SerializeField] private List<Card> _allCards; //List of all Cards, built from Resources Folder
         public List<Card> AllCards { get { return _allCards; } }
@@ -55,7 +55,7 @@ namespace PeggleWars.Cards.DeckManagement.Global
             switch(startDeck)
             {
                 case StartDeck.Apprentice:
-                    for (int i = 0; i < 10; i++)
+                    for (int i = 0; i < _apprenticeDeck.Length; i++)
                     {
                         _globalDeck.Add(_allCards[_apprenticeDeck[i]]);
                     }

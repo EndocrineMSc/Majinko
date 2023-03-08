@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2549565476461289555}
   - component: {fileID: 2549565476461289554}
   - component: {fileID: 5099420647275916350}
-  - component: {fileID: 4808901578133708931}
+  - component: {fileID: -8885269812961393264}
   m_Layer: 0
-  m_Name: IceManaOrb
+  m_Name: FastHandsOrb
   m_TagString: Orb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1024771562, guid: 522e9f14206c0a5479c134ca28d25361, type: 3}
-  m_Color: {r: 0, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: d6c03b01dc950f5488162e32a35892b6, type: 3}
+  m_Color: {r: 0.745283, g: 0.38318795, b: 0.73774415, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -123,7 +123,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.07
---- !u!114 &4808901578133708931
+--- !u!114 &-8885269812961393264
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,11 +132,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2549565476461289553}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c284649258bc1e4479d8e73e87133928, type: 3}
+  m_Script: {fileID: 11500000, guid: d580ff481bb5233458f4f054bddaf657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _orbMana: {fileID: 7005893637801753577, guid: b5b564ea0235c694f8c7d3853a796c29, type: 3}
-  SpawnManaType: 2
-  ManaAmount: 10
-  _defaultOrb: {fileID: 2549565476461289553}
-  _orbType: 9
+  _orbMana: {fileID: 7005893637801753577, guid: dd17e86c997b09b4bb96bc9f5e5292d8, type: 3}
+  SpawnManaType: 0
+  ManaAmount: 0
+  _defaultOrb: {fileID: 2549565476461289553, guid: c837957ee74bdcc44a31943daaafc0a8, type: 3}
+  _orbType: 4

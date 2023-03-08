@@ -10,25 +10,26 @@ using PeggleWars.Cards.DeckManagement.Global;
 
 namespace PeggleWars.Cards
 {
-    /// <summary>
-    /// Parent class to all Cards used in the game. This class and its children handle what a card is and the effects of cards when drawn, played, discarded, etc.
-    /// A GameObject that has this script (or a child inheriting this script) attached to it also immediatly is assigned the CardDragDrop and CardZoom components. 
-    /// </summary>
-
     [RequireComponent(typeof(CardDragDrop))]
     [RequireComponent(typeof(CardZoom))]
     [RequireComponent(typeof(CardZoomEventMovement))]
+    [RequireComponent(typeof(CardTextUI))]
     public abstract class Card : MonoBehaviour
     {
         #region Fields and Properties
 
         [SerializeField] protected string _cardName;
         [SerializeField] protected string _cardDescription;
-        [SerializeField] protected int _manaCost;
-        [SerializeField] protected ManaType _manaType;
+        [SerializeField] protected int _basicManaCost;
+        [SerializeField] protected int _fireManaCost;
+        [SerializeField] protected int _iceManaCost;
         [SerializeField] protected CardType _cardType;
         [SerializeField] protected bool _exhaustCard;
         protected Sprite _cardImage;
+
+        protected int _adjustedBasicManaAmount;
+        protected int _adjustedFireManaAmount;
+        protected int _adjustedIceManaAmount;
 
         //Necessary level references
         protected ManaPool _manaPool;
@@ -37,13 +38,11 @@ namespace PeggleWars.Cards
         protected Deck _deck;
         protected GlobalDeckManager _globalDeckManager;
 
-        [SerializeField] protected GameObject _cardPrefab;
-
-        public GameObject CardPrefab { get => _cardPrefab; set => _cardPrefab = value; }
-
         public string CardName { get => _cardName;}
         public string CardDescription { get => _cardDescription;}
-        public int ManaCost { get => _manaCost;}
+        public int BasicManaCost { get => _basicManaCost;}
+        public int FireManaCost { get => _fireManaCost;}
+        public int IceManaCost { get => _iceManaCost;}
         public CardType CardType { get => _cardType;}
         public bool ExhaustCard { get => _exhaustCard;}
         public Sprite CardImage { get => _cardImage; }
@@ -51,20 +50,37 @@ namespace PeggleWars.Cards
         #endregion
 
         #region Functions
+
         protected void Start()
         {
-            SetReferencesToLevelComponents();      
+            SetReferencesToLevelComponents();
+            CalculateManaAmounts();
+        }
+        protected virtual void SetReferencesToLevelComponents()
+        {
+            _manaPool = ManaPool.Instance;
+            _hand = Hand.Instance;
+            _orbManager = OrbManager.Instance;
+            _deck = Deck.Instance;
+            _globalDeckManager = GlobalDeckManager.Instance;
+        } 
+        
+        protected virtual void CalculateManaAmounts()
+        {
+            int modifier = _manaPool.ManaCostMultiplier;
+
+            _adjustedBasicManaAmount = _basicManaCost * modifier;
+            _adjustedFireManaAmount = _fireManaCost * modifier;
+            _adjustedIceManaAmount = _iceManaCost * modifier;
         }
 
         public virtual bool CardEndDragEffect()
         {
-            bool enoughMana = CheckIfEnoughMana();
-
-            if (enoughMana)
+            if (CheckIfEnoughMana())
             {
                 CardEffect();
 
-                _manaPool.SpendMana(_manaType, _manaCost);
+                _manaPool.SpendMana(_adjustedBasicManaAmount, _adjustedFireManaAmount, _adjustedIceManaAmount);
                 _orbManager.CheckForRefreshOrbs(); //Checks if RefreshOrb was overwritten and makes a new one if so
                 _hand.InstantiatedCards.Remove(this); //list of instantiated cards in hand
                 _hand.AlignCards();
@@ -79,15 +95,19 @@ namespace PeggleWars.Cards
             }
         }
 
-
-        protected virtual void SetReferencesToLevelComponents()
+        protected virtual bool CheckIfEnoughMana()
         {
-            _manaPool = ManaPool.Instance;
-            _hand = Hand.Instance;
-            _orbManager = OrbManager.Instance;
-            _deck = Deck.Instance;
-            _globalDeckManager = GlobalDeckManager.Instance;
-        }    
+            if (_manaPool.BasicMana.Count >= _adjustedBasicManaAmount
+                && _manaPool.FireMana.Count >= _adjustedFireManaAmount
+                && _manaPool.IceMana.Count >= _adjustedIceManaAmount)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         protected abstract void CardEffect();
 
@@ -101,12 +121,6 @@ namespace PeggleWars.Cards
             {
                 _deck.DiscardCard(_globalDeckManager.AllCards[(int)_cardType]);
             }
-        }
-
-        protected virtual bool CheckIfEnoughMana()
-        {
-            bool enoughMana = _manaPool.CheckForManaAmount(_manaType, _manaCost);
-            return enoughMana;
         }
 
         #endregion

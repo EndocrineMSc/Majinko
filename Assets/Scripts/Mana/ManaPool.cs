@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using EnumCollection;
 using PeggleWars.Orbs;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace PeggleWars.ManaManagement
 {
@@ -31,6 +32,9 @@ namespace PeggleWars.ManaManagement
         public static ManaPool Instance { get; private set; }
         private OrbManager _orbManager;
 
+        private int _manaCostMultiplier = 10;
+        public int ManaCostMultiplier { get => _manaCostMultiplier; }
+
         #endregion
 
         #region Functions
@@ -50,7 +54,7 @@ namespace PeggleWars.ManaManagement
         {
             FindSpawnPoints();
             SetReferences();
-            _orbManager.ManaSpawnTrigger?.Invoke(ManaType.BaseMana, 30);
+            _orbManager.ManaSpawnTrigger?.Invoke(ManaType.BasicMana, 30);
         }
 
         private void FindSpawnPoints()
@@ -70,7 +74,7 @@ namespace PeggleWars.ManaManagement
         {
             var spawnPointPosition = manaType switch
             {
-                ManaType.BaseMana => (Vector2)_baseManaSpawn.transform.position,
+                ManaType.BasicMana => (Vector2)_baseManaSpawn.transform.position,
                 ManaType.FireMana => (Vector2)_iceManaSpawn.transform.position,
                 ManaType.IceMana => (Vector2)_fireManaSpawn.transform.position,
                 _ => (Vector2)_baseManaSpawn.transform.position,
@@ -86,7 +90,7 @@ namespace PeggleWars.ManaManagement
 
                 switch (manaType)
                 {
-                    case ManaType.BaseMana:
+                    case ManaType.BasicMana:
                         tempManaObject = Instantiate(_basicManaPrefab, _spawnPosition, Quaternion.identity);
                         tempMana = tempManaObject.GetComponent<Mana>();
                         BasicMana.Add(tempMana);
@@ -107,73 +111,29 @@ namespace PeggleWars.ManaManagement
             }
         }
 
-        public void SpendMana(ManaType manaType, int amount)
+        public void SpendMana(int basicManaAmount, int fireManaAmount, int iceManaAmount)
         {
-            switch (manaType)
-            {
-                case ManaType.BaseMana:
-                    SpendManaByList(BasicMana, amount);
-                    break;
+            SpendManaByList(BasicMana, basicManaAmount);
+            SpendManaByList(FireMana, fireManaAmount);
+            SpendManaByList(IceMana, iceManaAmount);
+        }       
 
-                case ManaType.FireMana:
-                    SpendManaByList(FireMana, amount);
-                    break;
-
-                case ManaType.IceMana:
-                    SpendManaByList(IceMana, amount);
-                    break;
-            }
-        }
-
-        public bool CheckForManaAmount(ManaType manaType, int amount)
-        {
-            bool enoughMana = false;
-
-            switch (manaType)
-            {
-                case ManaType.BaseMana:
-                    enoughMana = CheckIfEnoughManaByList(BasicMana, amount);
-                    break;
-
-                case ManaType.FireMana:
-                    enoughMana = CheckIfEnoughManaByList(FireMana, amount);
-                    break;
-
-                case ManaType.IceMana:
-                    enoughMana = CheckIfEnoughManaByList(IceMana, amount);
-                    break;
-            }
-            return enoughMana;
-        }
-
-        private void SpendManaByList(List<Mana> manaList, int amount)
+        private List<Mana> SpendManaByList(List<Mana> manaList, int amount)
         {
             if (manaList.Count < amount)
             {
                 Debug.Log("Not enough Mana");
-                return;
+                return manaList;
             }
 
             for (int i = 0; i < amount; i++)
             { 
                 Destroy(manaList[0].gameObject);
                 manaList.RemoveAt(0);
-            }   
+            } 
+            
+            return manaList;
         }
-
-        private bool CheckIfEnoughManaByList(List<Mana> manaList, int amount)
-        {
-            if (manaList.Count > amount)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-
         #endregion
     }
 }

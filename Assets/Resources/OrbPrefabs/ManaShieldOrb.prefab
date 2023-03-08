@@ -139,5 +139,5 @@ MonoBehaviour:
   SpawnManaType: 0
   ManaAmount: 0
   _defaultOrb: {fileID: 2549565476461289553, guid: c837957ee74bdcc44a31943daaafc0a8, type: 3}
-  _orbType: 14
+  _orbType: 15
   _shieldValue: 10

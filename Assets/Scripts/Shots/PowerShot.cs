@@ -25,7 +25,6 @@ namespace PeggleWars.Shots
         protected override void OnShootAdditions()
         {
             //ToDo: Implement sound and stuff later
-            Debug.Log(_rigidbody.velocity);
         }
 
         protected override void OnTriggerEnter2D(Collider2D collision)
@@ -34,7 +33,8 @@ namespace PeggleWars.Shots
             {
                 if (_allowedPortalCollisions <= 0) 
                 {
-                    _destroyBall = true;
+                    StartCoroutine(GameManager.Instance.SwitchState(EnumCollection.GameState.PlayerActions));
+                    Destroy(gameObject);
                 }
                 else
                 {

@@ -25,7 +25,6 @@ namespace PeggleWars.TurnManagement
 
         public void RaiseStartEnemyTurn()
         {
-            Debug.Log("Start of Enemy Turn!");
             StartEnemyTurn?.Invoke();
         }
 

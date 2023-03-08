@@ -31,10 +31,6 @@ namespace PeggleWars.Orbs.ManaShieldOrb
             yield return new WaitForSeconds(0.2f);
         }
 
-        #endregion
-
-        #region Protected Functions
-
         //will be called OnCollisionEnter2D from parent
         protected override void AdditionalEffectsOnCollision()
         {

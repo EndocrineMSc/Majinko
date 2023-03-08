@@ -7,8 +7,9 @@ namespace PeggleWars.Cards
     public enum CardType
     {
         Divination,
-        FireOrb,
-        IceOrb,
+        FastHands,
+        FireMana,
+        IceMana,
         ManaBlitz,
         ManaShield,
         MultiShot,

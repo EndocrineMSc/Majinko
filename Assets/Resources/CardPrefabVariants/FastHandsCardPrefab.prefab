@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8590394349045568806
+--- !u!1001 &7631445437422453593
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,44 +9,28 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _orbType
-      value: 14
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _cardName
-      value: Mana Blitz
+      value: Fast Hands
       objectReference: {fileID: 0}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _cardType
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
-      propertyPath: _manaCost
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
-      propertyPath: _cardImage
-      value: 
-      objectReference: {fileID: -1108296715, guid: ae95ac84f6d72fc41b6c7ea13549b708, type: 3}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _amountOrbs
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
-      propertyPath: _cardPrefab
-      value: 
-      objectReference: {fileID: 3457891280226941752}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _basicManaCost
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
-      propertyPath: _scriptableCard
-      value: 
-      objectReference: {fileID: 11400000, guid: 564fdc8e098457445ad54f777e77d2d2, type: 2}
-    - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _cardDescription
-      value: Spawns two Mana Blitz Orbs. On hit, shoots a Mana Blitz at the enemy,
-        dealing 10 damage.
+      value: Spawns two Fast Hands Orbs. On hit, they let you draw an additional
+        card next turn.
       objectReference: {fileID: 0}
     - target: {fileID: 4812993297873364277, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Pivot.x
@@ -83,18 +67,6 @@ PrefabInstance:
     - target: {fileID: 4812993297873364277, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_SizeDelta.y
       value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 4812993297873364277, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4812993297873364277, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4812993297873364277, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4812993297873364277, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_LocalPosition.x
@@ -144,24 +116,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4812993297873364277, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5318536725654364929, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6398440697363082782, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Name
-      value: ManaBlitzCardPrefab
+      value: FastHandsCardPrefab
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5484072417001946136, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
-    - {fileID: 7110270198290612162, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
---- !u!1 &3457891280226941752 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6398440697363082782, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
-  m_PrefabInstance: {fileID: 8590394349045568806}
-  m_PrefabAsset: {fileID: 0}

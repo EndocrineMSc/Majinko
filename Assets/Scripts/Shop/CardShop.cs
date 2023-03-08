@@ -46,7 +46,7 @@ namespace Utilities.Progression
         {
             _shopCanvas.enabled = true;
             List<Card> shopCards = SetRandomShopCards();
-            List<GameObject> cardObjects = InstantiateShopCards(shopCards);
+            List<Card> cardObjects = InstantiateShopCards(shopCards);
             DisableCardComponents(cardObjects);
             BuildBuyButtons(cardObjects);
         }
@@ -82,11 +82,11 @@ namespace Utilities.Progression
             return tempCardList;
         }
 
-        private void DisableCardComponents(List<GameObject> cardObjects)
+        private void DisableCardComponents(List<Card> cardObjects)
         {
-            foreach (GameObject cardObject in cardObjects)
+            foreach (Card cardObject in cardObjects)
             {
-                Component[] cardComponents = cardObject.GetComponents(typeof(MonoBehaviour));
+                Component[] cardComponents = cardObject.gameObject.GetComponents(typeof(MonoBehaviour));
 
                 foreach (Component component in cardComponents)
                 {
@@ -98,13 +98,13 @@ namespace Utilities.Progression
             }
         }
 
-        private List<GameObject> InstantiateShopCards(List<Card> cards)
+        private List<Card> InstantiateShopCards(List<Card> cards)
         {
-            List<GameObject> instantiatedCards = new List<GameObject>();
+            List<Card> instantiatedCards = new();
 
             foreach (Card card in cards)
             {
-                GameObject cardObject = Instantiate(card.CardPrefab, Vector2.zero, Quaternion.identity);
+                Card cardObject = Instantiate(card, Vector2.zero, Quaternion.identity);
                 cardObject.transform.parent = _shopCardLayout.transform;              
                 instantiatedCards.Add(cardObject);
             }
@@ -112,11 +112,11 @@ namespace Utilities.Progression
             return instantiatedCards;
         }
 
-        private void BuildBuyButtons(List<GameObject> cardObjects)
+        private void BuildBuyButtons(List<Card> cardObjects)
         {
-            foreach (GameObject gameObject in cardObjects)
+            foreach (Card cardObject in cardObjects)
             {
-                BuildBuyButtonUnderObject(gameObject);
+                BuildBuyButtonUnderObject(cardObject.gameObject);
             }
         }
 

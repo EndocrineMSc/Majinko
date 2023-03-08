@@ -140,8 +140,6 @@ namespace PeggleWars.Orbs
             }
         }
 
-
-
         private Orb FindRandomOrbInList(List<Orb> orbs)
         {
             int randomOrbIndex = UnityEngine.Random.Range(0, orbs.Count - 1);

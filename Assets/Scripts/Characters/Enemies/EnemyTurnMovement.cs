@@ -2,8 +2,6 @@ using PeggleWars.TurnManagement;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
-using System.Runtime.InteropServices;
 
 namespace PeggleWars.Enemies
 {
@@ -51,16 +49,6 @@ namespace PeggleWars.Enemies
             if (_enemyManager.EnemiesInScene.Count > 0)
             {
                 SortLocalEnemyLists();
-
-                foreach (Enemy enemy in _flyingEnemiesInScene)
-                {
-                    Debug.Log(_flyingEnemiesInScene.IndexOf(enemy) + " flying " + enemy.name);
-                }
-
-                foreach (Enemy enemy in _walkingEnemiesInScene)
-                {
-                    Debug.Log(_walkingEnemiesInScene.IndexOf(enemy) + " walking " + enemy.name);
-                }
             }
 
             foreach (Enemy enemy in _enemyManager.EnemiesInScene)
@@ -184,12 +172,10 @@ namespace PeggleWars.Enemies
 
                 if (deltaEnemyXPositions > _gapSpace)
                 {
-                    Debug.Log("There is a gap!");
                     return true;
                 }
                 else
                 {
-                    Debug.Log("There is no gap!");
                     return false;
                 }
             }
@@ -204,12 +190,10 @@ namespace PeggleWars.Enemies
             if (enemyPosition.Equals(walkerMeleeAttackPosition)
                 || enemyPosition.Equals(flyerMeleeAttackPosition))
             {
-                Debug.Log("I am in attack position!");
                 return true;
             }
             else
             {
-                Debug.Log("I am not in reach yet!");
                 return false;
             }
         }
@@ -218,17 +202,14 @@ namespace PeggleWars.Enemies
         {
             if (_flyingEnemiesInScene.IndexOf(enemy) > 0)
             {
-                Debug.Log("I am not the leftmost flying enemy");
                 return false;
             }
             else if (_walkingEnemiesInScene.IndexOf(enemy) > 0)
             {
-                Debug.Log("I am not the leftmost enemy");
                 return false;
             }
             else
             {
-                Debug.Log("I am the leftmost enemy!");
                 return true;
             }
         }

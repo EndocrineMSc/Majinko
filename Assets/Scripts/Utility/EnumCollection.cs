@@ -38,7 +38,7 @@ namespace EnumCollection
 
     public enum ManaType
     {
-        BaseMana,
+        BasicMana,
         FireMana,
         IceMana,
     }
@@ -51,6 +51,7 @@ namespace EnumCollection
         DarkBombOrb,        //explodes, and makes a gravitational pull towards the hit peggle? -> shot can stay in air longer?
         DarkManaOrb,        //gives dark Mana
         DefenseOrb,         //gives player a mana shield to block damage
+        FastHandsOrb,       //draw an extra card on turn start
         FireBombOrb,        //explodes, and triggers surrounding orbs
         FireManaOrb,        //gives fire Mana
         HealOrb,            //heals the player
@@ -71,7 +72,7 @@ namespace EnumCollection
     {
         FirstEnemy,
         HighestHealthEnemy,
-        LowestHeathEnemy,
+        LowestHealthEnemy,
         LastEnemy,
         RandomEnemy,
     }

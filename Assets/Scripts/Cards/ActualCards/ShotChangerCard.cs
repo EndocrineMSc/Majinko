@@ -31,7 +31,7 @@ namespace PeggleWars.Cards.ShotChangers
 
             if (_shotInScene == _shot) //maybe won't work as intended, check first for bugfixes
             {          
-                _shotManager.OnShotStacked?.Invoke();
+                _shotManager.ShotStackedEvent?.Invoke();
             }
             else
             {

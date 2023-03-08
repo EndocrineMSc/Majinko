@@ -171,7 +171,7 @@ namespace PeggleWars.Enemies
             }
             catch (NotImplementedException)
             {
-                Debug.Log("Hurt Sound not implemented yet.");
+                //ToDo: Implement Sound
             }
 
             if (_health <= 0)

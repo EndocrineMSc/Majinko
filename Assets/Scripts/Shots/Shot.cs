@@ -32,20 +32,12 @@ namespace PeggleWars.Shots
         protected Vector2 _mousePosition;
         protected float _rotationZ;
 
-        protected bool _destroyBall;
-
         protected string PORTAL_PARAM = "Portal";
 
         public float ShotSpeed
         {
             get { return _shotSpeed; }
             protected set { _shotSpeed = value; }
-        }
-
-        public bool DestroyBall
-        {
-            get { return _destroyBall; }
-            protected set { _destroyBall = value; }
         }
 
         protected float _gravity = 1;
@@ -75,13 +67,13 @@ namespace PeggleWars.Shots
             _shotManager = ShotManager.Instance;
             _turnManager = TurnManager.Instance;
             _turnManager.EndCardTurn += OnCardTurnEnd;
-            _shotManager.OnShotStacked?.AddListener(ShotStackEffect);
+            _shotManager.ShotStackedEvent?.AddListener(ShotStackEffect);
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
             _turnManager.EndCardTurn -= OnCardTurnEnd;
-            _shotManager.OnShotStacked.RemoveListener(ShotStackEffect);
+            _shotManager.ShotStackedEvent.RemoveListener(ShotStackEffect);
         }
 
         private void OnCardTurnEnd()
@@ -214,7 +206,8 @@ namespace PeggleWars.Shots
         {
             if (collision.gameObject.name.Contains(PORTAL_PARAM))
             {
-                _destroyBall = true;
+                StartCoroutine(GameManager.Instance.SwitchState(EnumCollection.GameState.PlayerActions));
+                Destroy(gameObject);
             }
         }
 
