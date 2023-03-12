@@ -7,14 +7,14 @@ using UnityEngine;
 
 namespace PeggleWars.Enemies
 {
-    public class EnemySpawnManager : MonoBehaviour
+    internal class EnemySpawnManager : MonoBehaviour
     {
         #region Fields and Properties
 
         private EnemyManager _enemyManager;
         private Vector2[,] _enemyPositions;
 
-        int _rightMostEnemyPosition;
+        private int _rightMostEnemyPosition;
         readonly int _enemyBottomRow = 0;
         readonly int _enemyTopRow = 1;
 
@@ -23,15 +23,20 @@ namespace PeggleWars.Enemies
 
         [SerializeField] private int _overworldIndex = 1;
         private EnemyType[] _enemiesForLevel;
-        private string WORLD_ONE_PARAM = "ScriptableEnemySets/World 1 Levels";
+        private readonly string WORLD_ONE_PARAM = "ScriptableEnemySets/World 1 Levels";
         private int _amountOfEnemiesInLevel;
-        public int AmountOfEnemiesInLevel { get { return _amountOfEnemiesInLevel; } } 
+        internal int AmountOfEnemiesInLevel { get { return _amountOfEnemiesInLevel; } } 
         private int _enemySpawnCounter;
-        public int EnemySpawnCounter { get { return _enemySpawnCounter; } }
+        internal int EnemySpawnCounter { get { return _enemySpawnCounter; } }
 
         #endregion
 
         #region Functions
+
+        private void OnEnable()
+        {
+            TurnManager.Instance.StartEnemyTurn?.AddListener(OnStartEnemyTurn);            
+        }
 
         private void Start()
         {
@@ -42,15 +47,13 @@ namespace PeggleWars.Enemies
             _flyingEnemySpawnPosition = _enemyPositions[_enemyTopRow, _rightMostEnemyPosition];
             _walkingEnemySpawnPosition = _enemyPositions[_enemyBottomRow, _rightMostEnemyPosition];
 
-            TurnManager.Instance.StartEnemyTurn += OnStartEnemyTurn;
-
             _enemiesForLevel = GetEnemyArrayByWorld();
             _amountOfEnemiesInLevel = _enemiesForLevel.Length;
         }
 
         private void OnDisable()
         {
-            TurnManager.Instance.StartEnemyTurn -= OnStartEnemyTurn;
+            TurnManager.Instance.StartEnemyTurn?.RemoveListener(OnStartEnemyTurn);
         }
 
         private EnemyType[] GetEnemyArrayByWorld()
@@ -78,7 +81,7 @@ namespace PeggleWars.Enemies
             }
         }
 
-        public void SpawnEnemy(EnemyType enemyType)
+        internal void SpawnEnemy(EnemyType enemyType)
         {
             Enemy tempEnemy = _enemyManager.EnemyLibrary[(int)enemyType];
             Vector2 spawnPosition;

@@ -2,22 +2,15 @@ using EnumCollection;
 using System.Collections;
 using UnityEngine;
 using PeggleAttacks.AttackVisuals.PopUps;
-using PeggleWars;
 using PeggleWars.Characters.Interfaces;
 using PeggleWars.TurnManagement;
-using UnityEngine.Events;
 using System;
 
 namespace PeggleWars.Enemies
 {
-    /// <summary>
-    /// Parent class for all enemies in the game. Will be inherited by singular Enemy classes.
-    /// The PopUpSpawner class spawns DamagePopUps when the enemy takes damage.
-    /// </summary>
-
     [RequireComponent(typeof(PopUpSpawner))]
     [RequireComponent(typeof(EnemyAttack))]
-    public abstract class Enemy : MonoBehaviour, IDamagable
+    internal abstract class Enemy : MonoBehaviour, IDamagable
     {
         #region Fields and Properties
 
@@ -34,21 +27,21 @@ namespace PeggleWars.Enemies
         protected float _deathDelayForAnimation = 1f;
 
         [SerializeField] protected EnemyAttackType _enemyAttackType; //melee, ranged
-        public EnemyAttackType AttackType
+        internal EnemyAttackType AttackType
         {
             get { return _enemyAttackType; }
             private set { _enemyAttackType = value; }
         }
 
         [SerializeField] protected int _damage;
-        public int Damage
+        internal int Damage
         {
             get { return _damage; }
             set { _damage = value; }
         }
 
         [SerializeField] protected int _health = 20;
-        public int Health
+        internal int Health
         {
             get { return _health; }
             private set { _health = value; }
@@ -56,7 +49,7 @@ namespace PeggleWars.Enemies
 
         [SerializeField] private bool _isFlying;
 
-        public bool IsFlying
+        internal bool IsFlying
         {
             get { return _isFlying; }
             private set { _isFlying = value; }
@@ -64,14 +57,14 @@ namespace PeggleWars.Enemies
 
         [SerializeField] private bool _isInAttackPosition;
 
-        public bool IsInAttackPosition
+        internal bool IsInAttackPosition
         {
             get { return _isInAttackPosition; }
             private set { _isInAttackPosition = value; }
         }
 
         [SerializeField] protected int _attackFrequency; // in X turns
-        public int AttackFrequency
+        internal int AttackFrequency
         {
             get { return _attackFrequency; }
             private set { _attackFrequency = value; }
@@ -79,7 +72,7 @@ namespace PeggleWars.Enemies
 
         protected int _fireStacks;
 
-        public int FireStacks
+        internal int FireStacks
         {
             get { return _fireStacks; }
             private set { _fireStacks = value; }
@@ -87,7 +80,7 @@ namespace PeggleWars.Enemies
 
         protected int _iceStacks;
 
-        public int IceStacks
+        internal int IceStacks
         {
             get { return _iceStacks; }
             private set { _iceStacks = value; }
@@ -105,14 +98,14 @@ namespace PeggleWars.Enemies
 
         private void OnEnable()
         {
-            TurnManager.Instance.EndEnemyTurn += OnEndEnemyTurn;
-            TurnManager.Instance.StartEnemyTurn += OnStartEnemyTurn;
+            TurnManager.Instance.EndEnemyTurn?.AddListener(OnEndEnemyTurn);
+            TurnManager.Instance.StartEnemyTurn?.AddListener(OnStartEnemyTurn);
         }
 
         private void OnDisable()
         {
-            TurnManager.Instance.EndEnemyTurn -= OnEndEnemyTurn;
-            TurnManager.Instance.StartEnemyTurn -= OnStartEnemyTurn;
+            TurnManager.Instance.EndEnemyTurn?.RemoveListener(OnEndEnemyTurn);
+            TurnManager.Instance.StartEnemyTurn?.RemoveListener(OnStartEnemyTurn);
         }
         protected virtual void SetReferences()
         {
@@ -180,7 +173,8 @@ namespace PeggleWars.Enemies
                 StartCoroutine(DestroyThisEnemyWithDelay());
             }
         }
-        public void Attack()
+
+        internal void Attack()
         {
             _animator.SetTrigger(ATTACK_PARAM);
             Player.Instance.TakeDamage(_damage);
@@ -190,23 +184,23 @@ namespace PeggleWars.Enemies
 
         private void HandleDeath()
         {
-            _enemyManager.EnemyDeathEvent?.Invoke();
+            EnemyManager.Instance.EnemiesInScene.Remove(this);
+            EnemyEvents.Instance.EnemyDeathEvent?.Invoke();
             _animator.SetTrigger(DEATH_PARAM);
 
             Collider2D collider = GetComponent<Collider2D>();
             collider.enabled = false;
-            EnemyManager.Instance.EnemiesInScene.Remove(this);
 
             PlayDeathSound();
             OnDeathEffect();
         }
 
-        public void SetOnFire(int fireStacks)
+        internal void SetOnFire(int fireStacks)
         {
             _fireStacks += fireStacks;
         }
 
-        public void Freeze(int iceStacks)
+        internal void Freeze(int iceStacks)
         {
             _iceStacks += iceStacks;
         }

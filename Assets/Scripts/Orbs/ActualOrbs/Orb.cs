@@ -6,10 +6,7 @@ using PeggleWars.Audio;
 
 namespace PeggleWars.Orbs
 {
-    /// <summary>
-    /// Parent class to all orbs. Defines what a Orb is. BaseManaOrb directly uses this script. Every other orb needs a new class inheriting this one.
-    /// </summary>
-    public class Orb : MonoBehaviour
+    internal class Orb : MonoBehaviour
     {
         #region Fields
 
@@ -31,7 +28,7 @@ namespace PeggleWars.Orbs
 
         [SerializeField] protected OrbType _orbType;
 
-        public OrbType OrbType
+        internal OrbType OrbType
         {
             get { return _orbType; }
             private set { _orbType = value; }
@@ -39,24 +36,20 @@ namespace PeggleWars.Orbs
 
         #endregion
 
-        #region Public Functions
+        #region Functions
 
-        public virtual IEnumerator OrbEffect()
+        internal virtual IEnumerator OrbEffect()
         {
             yield return null;
         }
 
         //Delays the "despawn" so that the size increase can be visible
-        public IEnumerator SetInactive()
+        internal IEnumerator SetInactive()
         {
             yield return new WaitForSeconds(0.15f);
             gameObject.GetComponent<SpriteRenderer>().size -= new Vector2(0.02f, 0.02f);
             gameObject.SetActive(false);
         }
-
-        #endregion
-
-        #region Functions
 
         private void Start()
         {

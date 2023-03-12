@@ -11,8 +11,6 @@ namespace PeggleWars.Enemies
         #region Fields and Properties
 
         private Enemy _enemy;
-        private EnemyManager _enemyManager;
-        private TurnManager _turnManager;
         private int _turnsTillNextAttack;
 
         #endregion
@@ -22,19 +20,17 @@ namespace PeggleWars.Enemies
         private void Start()
         {
             _enemy = GetComponent<Enemy>();
-            _enemyManager = EnemyManager.Instance;
-            _turnManager = TurnManager.Instance;
             _turnsTillNextAttack = _enemy.AttackFrequency;
         }
 
         private void OnEnable()
         {
-            TurnManager.Instance.StartEnemyTurn += OnStartEnemyTurn;
+            TurnManager.Instance.StartEnemyTurn?.AddListener(OnStartEnemyTurn);
         }
 
         private void OnDisable()
         {
-            _turnManager.StartEnemyTurn -= OnStartEnemyTurn;
+            TurnManager.Instance.StartEnemyTurn?.RemoveListener(OnStartEnemyTurn);
         }
 
         private void OnStartEnemyTurn()

@@ -1,13 +1,11 @@
-using PeggleWars;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using EnumCollection;
 using PeggleWars.Audio;
-using PeggleWars.Cards.DeckManagement.HandHandling;
 
-namespace PeggleWars.Cards.DragDrop
+namespace PeggleWars.Cards
 {
-    public class CardDragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
+    internal class CardDragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
     {
         #region Fields
 

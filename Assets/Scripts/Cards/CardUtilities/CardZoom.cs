@@ -1,15 +1,9 @@
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.EventSystems;
-using PeggleWars.Cards.DeckManagement.HandHandling;
 
-namespace Cards.Zoom
+namespace PeggleWars.Cards
 {
-    /// <summary>
-    /// Zooms out cards on mouse-over for better inspection by the player.
-    /// Is automatically attached to any GameObject with a "Card" component.
-    /// </summary>
-    public class CardZoom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    internal class CardZoom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         #region Fields
 

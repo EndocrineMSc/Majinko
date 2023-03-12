@@ -4,28 +4,25 @@ using PeggleWars.TurnManagement;
 using PeggleWars.Audio;
 using System.Collections;
 using EnumCollection;
+using PeggleWars.Utilities;
 
-namespace PeggleWars.Cards.DeckManagement.HandHandling
+namespace PeggleWars.Cards
 {
-    /// <summary>
-    /// This class handles the cards in hand and especially the instantiation and destruction of the respective
-    /// GameObject the player will see and interact with.
-    /// </summary>
-    public class Hand : MonoBehaviour
+    internal class Hand : MonoBehaviour
     {
         #region Fields and Properties
-        public static Hand Instance { get; private set; }
+
+        internal static Hand Instance { get; private set; }
 
         [SerializeField] private List<Card> _handCards = new();
-        public List<Card> HandCards { get => _handCards; set => _handCards = value; }
+        internal List<Card> HandCards { get => _handCards; set => _handCards = value; }
 
-        public int DrawAmount { get; set; } = 5;
+        internal int DrawAmount { get; set; } = 5;
 
         private List<Card> _instantiatedCards = new();
-        public List<Card> InstantiatedCards { get => _instantiatedCards; set => _instantiatedCards = value; }
+        internal List<Card> InstantiatedCards { get => _instantiatedCards; set => _instantiatedCards = value; }
 
         private Deck _deck;
-        private TurnManager _turnManager;
 
         private Transform _parentTransform;
         private readonly float _spacing = 150f;
@@ -33,9 +30,61 @@ namespace PeggleWars.Cards.DeckManagement.HandHandling
         private Canvas _cardCanvas; //The Card Canvas will be a child of the Hand and contain the UI of instantiated Cards
         #endregion
 
-        #region Public Functions
+        #region Functions
 
-        public void DrawHand(int amount)
+        private void Awake()
+        {
+            if (Instance != null && Instance != this)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                Instance = this;
+            }
+        }
+
+        private void Start()
+        {
+            _deck = Deck.Instance;
+            _cardCanvas = GetComponentInChildren<Canvas>();
+            _parentTransform = _cardCanvas.transform;
+
+            TurnManager.Instance.EndCardTurn?.AddListener(OnCardTurnEnd);
+            TurnManager.Instance.StartCardTurn?.AddListener(OnCardTurnStart);
+            WinLoseConditionManager.Instance.LevelVictory?.AddListener(OnLevelVictory);
+        }
+
+        internal void OnLevelVictory()
+        {
+            TurnManager.Instance.StartCardTurn?.RemoveListener(OnCardTurnStart);
+            TurnManager.Instance.EndCardTurn?.RemoveListener(OnCardTurnEnd);
+        }
+
+        private void OnDisable()
+        {
+            WinLoseConditionManager.Instance.LevelVictory?.RemoveListener(OnLevelVictory);
+        }
+
+        internal void OnCardTurnStart()
+        {
+            DrawHand(DrawAmount);
+        }
+
+        internal void OnCardTurnEnd()
+        {
+            foreach (Card card in _handCards)
+            {
+                _deck.DiscardPile.Add(card);
+            }
+
+            _handCards.Clear();
+            StartCoroutine(DisplayHand());
+
+            DrawAmount = 5;
+        }
+
+        internal void DrawHand(int amount)
         {
             for (int i = 0; i < amount; i++)
             {
@@ -50,26 +99,8 @@ namespace PeggleWars.Cards.DeckManagement.HandHandling
             StartCoroutine(DisplayHand());
         }
 
-        public void OnCardTurnStart()
-        {
-            DrawHand(DrawAmount);
-        }
-
-        public void OnCardTurnEnd()
-        {
-            foreach (Card card in _handCards)
-            {
-                _deck.DiscardPile.Add(card);
-            }
-
-            _handCards.Clear();
-            StartCoroutine(DisplayHand());
-
-            DrawAmount = 5;
-        }
-
         //basically makes a new set of displayed instantiated cards for each card in the _handCards list
-        public IEnumerator DisplayHand()
+        internal IEnumerator DisplayHand()
         {
             foreach (Card card in _instantiatedCards)
             {
@@ -87,12 +118,7 @@ namespace PeggleWars.Cards.DeckManagement.HandHandling
             }
         }
 
-        public void RemoveCardFromHand(Card card)
-        {
-            _handCards.Remove(card);
-        }
-
-        public void AlignCards()
+        internal void AlignCards()
         {
             // Get the width of the canvas in pixels
             float canvasWidth = _cardCanvas.GetComponent<RectTransform>().rect.width;
@@ -117,35 +143,6 @@ namespace PeggleWars.Cards.DeckManagement.HandHandling
                 float cardHeight = rectTransform.rect.height;
                 rectTransform.anchoredPosition = new Vector2(startX + (rectTransform.rect.width / 2f) + (i * _spacing), (-canvasHeight/2 + cardHeight/4));
             }
-        }
-
-        private void Awake()
-        {
-            if (Instance != null && Instance != this)
-            {
-                Destroy(this);
-            }
-            else
-            {
-                Instance = this;
-            }
-        }
-
-        private void Start()
-        {
-            _deck = Deck.Instance;
-            _cardCanvas = GetComponentInChildren<Canvas>();
-            _parentTransform = _cardCanvas.transform;
-
-            _turnManager = GameManager.Instance.GetComponent<TurnManager>();
-            _turnManager.EndCardTurn += OnCardTurnEnd;
-            _turnManager.StartCardTurn += OnCardTurnStart;
-        }
-
-        private void OnDisable()
-        {
-            _turnManager.EndCardTurn -= OnCardTurnEnd;
-            _turnManager.StartCardTurn -= OnCardTurnStart;
         }
 
         #endregion

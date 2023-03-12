@@ -18,7 +18,7 @@ namespace PeggleWars.Enemies
         private List<Enemy> _flyingEnemiesInScene = new();
         private List<Enemy> _walkingEnemiesInScene = new();
 
-        private string SPEED_PARAM = "Speed";
+        private readonly string SPEED_PARAM = "Speed";
 
         #endregion
 
@@ -30,16 +30,16 @@ namespace PeggleWars.Enemies
             _enemyManager = EnemyManager.Instance;
             _gapSpace = (_enemyManager.EnemyPositions[0, 3].x - _enemyManager.EnemyPositions[0, 2].x) * 1.2f;
 
-            TurnManager.Instance.StartEnemyTurn += OnStartEnemyTurn;
-            TurnManager.Instance.EndEnemyTurn += OnEndEnemyTurn;
+            TurnManager.Instance.StartEnemyTurn?.AddListener(OnStartEnemyTurn);
+            TurnManager.Instance.EndEnemyTurn?.AddListener(OnEndEnemyTurn);
 
             SetLocalEnemyLists();
         }
 
         private void OnDisable()
         {
-            _turnManager.StartEnemyTurn -= OnStartEnemyTurn;
-            _turnManager.EndEnemyTurn -= OnEndEnemyTurn;
+            TurnManager.Instance.StartEnemyTurn?.RemoveListener(OnStartEnemyTurn);
+            TurnManager.Instance.EndEnemyTurn?.RemoveListener(OnEndEnemyTurn);
         }
 
         private void OnStartEnemyTurn()
@@ -59,7 +59,7 @@ namespace PeggleWars.Enemies
                 }
             }
 
-            TurnManager.Instance.RaiseEndEnemyTurn();
+            TurnManager.Instance.EndEnemyTurn?.Invoke();
         }
 
         private void OnEndEnemyTurn()

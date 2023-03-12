@@ -1,14 +1,12 @@
-using PeggleWars;
 using PeggleWars.Cards;
-using PeggleWars.Cards.DeckManagement.Global;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using EnumCollection;
 
-namespace Utilities.Progression
+namespace PeggleWars.Utilities
 {
-    public class CardShop : MonoBehaviour
+    internal class CardShop : MonoBehaviour
     {
         #region Fields
 
@@ -27,19 +25,18 @@ namespace Utilities.Progression
               SetReferences();
         }
 
+        private void OnEnable()
+        {           
+            WinLoseConditionManager.Instance.LevelVictory?.AddListener(OnLevelVictory);
+        }
+
         private void SetReferences()
         {
             _shopCanvas = GetComponent<Canvas>();
             _gameManager = GameManager.Instance;
-            _gameManager.LevelVictory.AddListener(OnLevelVictory);
             _shopCanvas.enabled = false;
             _globalDeckManager = GlobalDeckManager.Instance;
-            _shopCardLayout = _shopCanvas.GetComponent<HorizontalLayoutGroup>();
-        }
-
-        private void OnDisable()
-        {
-            _gameManager.LevelVictory.RemoveListener(OnLevelVictory);
+            _shopCardLayout = _shopCanvas.GetComponentInChildren<HorizontalLayoutGroup>();
         }
 
         private void OnLevelVictory()
@@ -51,6 +48,11 @@ namespace Utilities.Progression
             BuildBuyButtons(cardObjects);
         }
 
+        private void OnDisable()
+        {
+            WinLoseConditionManager.Instance.LevelVictory?.RemoveListener(OnLevelVictory);
+        }
+
         private List<Card> SetRandomShopCards(int amountCardChoices = 3)
         {
             List<Card> tempCardList = new();
@@ -58,7 +60,7 @@ namespace Utilities.Progression
 
             for (int i = 0; i < amountCardChoices; i++)
             {
-                int randomCardIndex = Random.Range(0, cardPoolSize);
+                int randomCardIndex = UnityEngine.Random.Range(0, cardPoolSize);
                 
                 if (tempCardList == null)
                 {
@@ -86,15 +88,8 @@ namespace Utilities.Progression
         {
             foreach (Card cardObject in cardObjects)
             {
-                Component[] cardComponents = cardObject.gameObject.GetComponents(typeof(MonoBehaviour));
-
-                foreach (Component component in cardComponents)
-                {
-                    if (!component.GetType().Equals(typeof(SpriteRenderer)))
-                    {
-                        Destroy(component);
-                    }
-                }
+                cardObject.GetComponent<CardDragDrop>().enabled = false;
+                cardObject.GetComponent<CardZoom>().enabled = false;
             }
         }
 
@@ -105,7 +100,7 @@ namespace Utilities.Progression
             foreach (Card card in cards)
             {
                 Card cardObject = Instantiate(card, Vector2.zero, Quaternion.identity);
-                cardObject.transform.parent = _shopCardLayout.transform;              
+                cardObject.GetComponent<RectTransform>().SetParent(_shopCardLayout.transform, false);             
                 instantiatedCards.Add(cardObject);
             }
 
@@ -126,7 +121,7 @@ namespace Utilities.Progression
             float ySpawnPosition = gameObject.transform.position.y - (rectTransform.rect.height * 0.75f);
             float xSpawnPosition = gameObject.transform.position.x;
             Card buyableCard = gameObject.GetComponent<Card>();
-            int cardIndex = _globalDeckManager.AllCards.IndexOf(buyableCard);
+            int cardIndex = (int)buyableCard.CardType;
 
             Vector2 instantiatePosition = new(xSpawnPosition, ySpawnPosition);
             
@@ -134,6 +129,7 @@ namespace Utilities.Progression
 
             buyButton.transform.SetParent(gameObject.transform, true);
             buyButton.onClick.AddListener(delegate { BuyCard(cardIndex); });
+            buyButton.onClick.AddListener(delegate { ChangeGameState(); });
         }
 
         private void BuyCard(int cardIndex)
@@ -141,6 +137,11 @@ namespace Utilities.Progression
             Card cardToBeAddedToDeck = _globalDeckManager.AllCards[cardIndex];
             _globalDeckManager.GlobalDeck.Add(cardToBeAddedToDeck);
             StartCoroutine(_gameManager.SwitchState(GameState.NewLevel));
+        }
+
+        private void ChangeGameState()
+        {
+            StartCoroutine(GameManager.Instance.SwitchState(GameState.NewLevel));
         }
 
         #endregion

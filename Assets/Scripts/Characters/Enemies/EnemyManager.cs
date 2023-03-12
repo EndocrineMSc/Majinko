@@ -6,34 +6,31 @@ namespace PeggleWars.Enemies
 {
     [RequireComponent(typeof(EnemySpawnManager))]
     [RequireComponent(typeof(EnemyTurnMovement))]
-    public class EnemyManager : MonoBehaviour
+    internal class EnemyManager : MonoBehaviour
     {
         #region Fields
 
-        public static EnemyManager Instance { get; private set; }
+        internal static EnemyManager Instance { get; private set; }
 
         private Enemy[] _enemyLibrary;
-        public Enemy[] EnemyLibrary { get { return _enemyLibrary; } private set { _enemyLibrary = value; } }
+        internal Enemy[] EnemyLibrary { get { return _enemyLibrary; } private set { _enemyLibrary = value; } }
 
         private List<Enemy> _enemiesInScene = new();
-        public List<Enemy> EnemiesInScene { get => _enemiesInScene; set => _enemiesInScene = value; }
+        internal List<Enemy> EnemiesInScene { get => _enemiesInScene; set => _enemiesInScene = value; }
 
         private Vector2[,] _enemyPositions;
-        public Vector2[,] EnemyPositions { get => _enemyPositions; private set => _enemyPositions = value; }
+        internal Vector2[,] EnemyPositions { get => _enemyPositions; private set => _enemyPositions = value; }
 
         private readonly int _amountOfXScreenDivisions = 10;
         private readonly int _amountOfCharacterPositionsOnXAxis = 6;
         private readonly int _amountOfEnemyRows = 2;
 
-        public UnityEvent EnemyDeathEvent;
-
         #endregion
-
 
         #region Functions
 
         private void Awake()
-        {
+        {           
             if (Instance != null && Instance != this)
             {
                 Destroy(this);
@@ -41,7 +38,7 @@ namespace PeggleWars.Enemies
             else
             {
                 Instance = this;
-            }
+            }            
             _enemyLibrary = Resources.LoadAll<Enemy>("EnemyPrefabs");
         }
 

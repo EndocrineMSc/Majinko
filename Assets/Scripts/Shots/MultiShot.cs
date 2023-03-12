@@ -5,13 +5,13 @@ using PeggleWars.Orbs;
 
 namespace PeggleWars.Shots
 {
-    public class MultiShot : Shot
+    internal class MultiShot : Shot
     {
         #region Fields
 
         private bool _cannotSpawnMoreShots;
 
-        public bool CannotSpawnMoreShots
+        internal bool CannotSpawnMoreShots
         {
             get { return _cannotSpawnMoreShots; }
             set { _cannotSpawnMoreShots = value; }
@@ -19,7 +19,7 @@ namespace PeggleWars.Shots
 
         protected int _amountOfExtraBalls = 2;
 
-        public int ExtraBalls
+        internal int ExtraBalls
         {
             get { return _amountOfExtraBalls; }
             set { _amountOfExtraBalls = value; }
@@ -27,7 +27,7 @@ namespace PeggleWars.Shots
 
         private int _ballsInScene = 3;
 
-        public int BallsInScene { get => _ballsInScene; set { _ballsInScene = value; } }
+        internal int BallsInScene { get => _ballsInScene; set { _ballsInScene = value; } }
         
         private bool _hasHitPortal;
 
@@ -35,16 +35,16 @@ namespace PeggleWars.Shots
 
         #region Functions
 
-        protected override void Start()
+        protected override void OnEnable()
         {
-            base.Start();
-            _shotManager.BallDestructionEvent?.AddListener(OnBallDestruction);
+            base.OnEnable();
+            ShotEvents.Instance.ShotDestructionEvent?.AddListener(OnBallDestruction);
         }
 
         protected override void OnDisable()
         {
             base.OnDisable();
-            _shotManager.BallDestructionEvent.RemoveListener(OnBallDestruction);
+            ShotEvents.Instance.ShotDestructionEvent?.RemoveListener(OnBallDestruction);
         }
 
         protected void OnBallDestruction()
@@ -66,7 +66,7 @@ namespace PeggleWars.Shots
             if (collision.gameObject.name.Contains(PORTAL_PARAM) && !_hasHitPortal)
             {
                 _hasHitPortal = true;
-                _shotManager.BallDestructionEvent?.Invoke();
+                ShotEvents.Instance.ShotDestructionEvent?.Invoke();
             }
         }
 
@@ -114,7 +114,7 @@ namespace PeggleWars.Shots
             collider.enabled = true;
         }
 
-        public override void ShotStackEffect()
+        internal override void ShotStackEffect()
         {
             _amountOfExtraBalls++;
             _ballsInScene++;

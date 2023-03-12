@@ -2,26 +2,26 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using EnumCollection;
-using UnityEngine.Events;
 using System;
+using PeggleWars.ManaManagement;
 
 namespace PeggleWars.Orbs
 {
     [Serializable]
-    public class OrbManager : MonoBehaviour
+    internal class OrbManager : MonoBehaviour
     {
         #region Fields and Properties
 
         [SerializeField] private List<Orb> _sceneOrbList = new();
-        public static OrbManager Instance { get; private set; }
-        public List<Orb> SceneOrbList { get => _sceneOrbList; set => _sceneOrbList = value; }
+        internal static OrbManager Instance { get; private set; }
+        internal List<Orb> SceneOrbList { get => _sceneOrbList; set => _sceneOrbList = value; }
 
         //List of all orb prefabs, made in start() in alphabetical order from resources
         private List<Orb> _allOrbsList = new();
 
         [SerializeField] private ScriptableOrbLayout _layout;
 
-        public ManaSpawnEvent ManaSpawnTrigger;
+        internal ManaSpawnEvent ManaSpawnTrigger;
         
         private GlobalOrbManager _globalOrbManager;
 
@@ -45,7 +45,7 @@ namespace PeggleWars.Orbs
         {
             _globalOrbManager = GlobalOrbManager.Instance;
             
-            ManaSpawnTrigger ??= new ManaSpawnEvent();
+            ManaSpawnTrigger = new ManaSpawnEvent();
 
             OrbGridPositions test = new();
             _allOrbsList = _globalOrbManager.AllOrbsList;
@@ -77,7 +77,7 @@ namespace PeggleWars.Orbs
             }
         }
 
-        public void SwitchOrbs(OrbType orbType, int switchAmount = 1)
+        internal void SwitchOrbs(OrbType orbType, int switchAmount = 1)
         {
             List<Orb> baseOrbs = FindOrbs(SceneOrbList, SearchTag.BaseOrbs);          
             List<Orb> activeBaseOrbs = FindOrbs(baseOrbs, SearchTag.IsActive);
@@ -114,7 +114,7 @@ namespace PeggleWars.Orbs
             }
         }
 
-        public void SetAllOrbsActive()
+        internal void SetAllOrbsActive()
         {
             foreach (Orb orb in SceneOrbList)
             {
@@ -122,7 +122,7 @@ namespace PeggleWars.Orbs
             }
         }
 
-        public void CheckForRefreshOrbs()
+        internal void CheckForRefreshOrbs()
         {
             bool refreshPresent = false;
 

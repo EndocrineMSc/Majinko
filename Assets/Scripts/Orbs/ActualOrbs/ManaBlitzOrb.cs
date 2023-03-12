@@ -1,35 +1,25 @@
 using System.Collections;
 using UnityEngine;
-using EnumCollection;
-using PeggleWars.Orbs.OrbActions;
-using PeggleWars.Audio;
 using PeggleWars.PlayerAttacks;
 
-namespace PeggleWars.Orbs.ManaBlitzOrb
+namespace PeggleWars.Orbs
 {
-    public class ManaBlitzOrb : Orb
+    internal class ManaBlitzOrb : Orb
     {
-        #region Fields
+        #region Fields and Properties
 
         [SerializeField] private PlayerAttack _manaBlitz;
 
         #endregion
 
-        #region Properties
+        #region Functions
 
-        #endregion
-
-        #region Public Functions
-        public override IEnumerator OrbEffect()
+        internal override IEnumerator OrbEffect()
         {
             StartCoroutine(base.OrbEffect());
             _manaBlitz.ShootAttack(_manaBlitz);
             yield return new WaitForSeconds(0.2f);
         }
-
-        #endregion
-
-        #region Protected Functions
 
         //will be called OnCollisionEnter2D from parent
         protected override void AdditionalEffectsOnCollision()

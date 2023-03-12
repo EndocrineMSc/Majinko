@@ -6,9 +6,9 @@ using EnumCollection;
 namespace PeggleWars.Enemies
 {
     [CreateAssetMenu]
-    public class ScriptableEnemySet : ScriptableObject
+    internal class ScriptableEnemySet : ScriptableObject
     {
         [SerializeField] private EnemyType[] _enemyArray;
-        public EnemyType[] EnemyArray { get => _enemyArray; }
+        internal EnemyType[] EnemyArray { get => _enemyArray; }
     }
 }

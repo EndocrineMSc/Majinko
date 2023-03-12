@@ -6,16 +6,14 @@ using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace PeggleWars.ManaManagement
 {
-    /// <summary>
-    /// This class handles the the usage of mana. Stores available mana in lists.
-    /// </summary>
-    public class ManaPool : MonoBehaviour
+
+    internal class ManaPool : MonoBehaviour
     {
         #region Fields and Properties
 
-        public List<Mana> BasicMana = new();
-        public List<Mana> FireMana = new();
-        public List<Mana> IceMana = new();
+        internal List<Mana> BasicMana = new();
+        internal List<Mana> FireMana = new();
+        internal List<Mana> IceMana = new();
 
         private GameObject _baseManaSpawn;
         private GameObject _fireManaSpawn;
@@ -25,19 +23,20 @@ namespace PeggleWars.ManaManagement
         [SerializeField] private GameObject _fireManaPrefab;
         [SerializeField] private GameObject _iceManaPrefab;
 
-        private string BASEMANASPAWN_PARAM = "BaseManaSpawn";
-        private string FIREMANASPAWN_PARAM = "FireManaSpawn";
-        private string ICEMANASPAWN_PARAM = "IceManaSpawn";
+        private readonly string BASEMANASPAWN_PARAM = "BaseManaSpawn";
+        private readonly string FIREMANASPAWN_PARAM = "FireManaSpawn";
+        private readonly string ICEMANASPAWN_PARAM = "IceManaSpawn";
 
-        public static ManaPool Instance { get; private set; }
+        internal static ManaPool Instance { get; private set; }
         private OrbManager _orbManager;
 
         private int _manaCostMultiplier = 10;
-        public int ManaCostMultiplier { get => _manaCostMultiplier; }
+        internal int ManaCostMultiplier { get => _manaCostMultiplier; }
 
         #endregion
 
         #region Functions
+
         private void Awake()
         {
             if (Instance != null && Instance != this)
@@ -70,7 +69,7 @@ namespace PeggleWars.ManaManagement
             _orbManager.ManaSpawnTrigger?.AddListener(SpawnMana);
         }
 
-        public void SpawnMana(ManaType manaType, int amount)
+        internal void SpawnMana(ManaType manaType, int amount)
         {
             var spawnPointPosition = manaType switch
             {
@@ -111,29 +110,27 @@ namespace PeggleWars.ManaManagement
             }
         }
 
-        public void SpendMana(int basicManaAmount, int fireManaAmount, int iceManaAmount)
+        internal void SpendMana(int basicManaAmount, int fireManaAmount, int iceManaAmount)
         {
             SpendManaByList(BasicMana, basicManaAmount);
             SpendManaByList(FireMana, fireManaAmount);
             SpendManaByList(IceMana, iceManaAmount);
         }       
 
-        private List<Mana> SpendManaByList(List<Mana> manaList, int amount)
+        private void SpendManaByList(List<Mana> manaList, int amount)
         {
             if (manaList.Count < amount)
             {
                 Debug.Log("Not enough Mana");
-                return manaList;
             }
 
             for (int i = 0; i < amount; i++)
             { 
                 Destroy(manaList[0].gameObject);
                 manaList.RemoveAt(0);
-            } 
-            
-            return manaList;
+            }         
         }
+
         #endregion
     }
 }

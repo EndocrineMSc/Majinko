@@ -1,12 +1,9 @@
 using System.Collections;
 using UnityEngine;
-using EnumCollection;
-using PeggleWars;
-using PeggleWars.Audio;
 
-namespace PeggleWars.Orbs.ManaShieldOrb
+namespace PeggleWars.Orbs
 {
-    public class ManaShieldOrb : Orb
+    internal class ManaShieldOrb : Orb
     {
         #region Fields and Properties
 
@@ -14,7 +11,7 @@ namespace PeggleWars.Orbs.ManaShieldOrb
 
         [SerializeField] private int _shieldValue;
 
-        public int ShieldValue
+        internal int ShieldValue
         {
             get { return _shieldValue; }
             set { _shieldValue = value; }
@@ -22,9 +19,9 @@ namespace PeggleWars.Orbs.ManaShieldOrb
 
         #endregion
 
-        #region Public Functions
+        #region Functions
 
-        public override IEnumerator OrbEffect()
+        internal override IEnumerator OrbEffect()
         {
             StartCoroutine(base.OrbEffect());
             _player.Shield += _shieldValue;

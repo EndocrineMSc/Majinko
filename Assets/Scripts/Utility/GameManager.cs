@@ -1,25 +1,25 @@
 using System.Collections;
 using UnityEngine;
 using EnumCollection;
-using PeggleWars.Orbs.OrbActions;
 using PeggleWars.Audio;
 using PeggleWars.TurnManagement;
 using UnityEngine.Events;
+using PeggleWars.Orbs;
+using UnityEngine.SceneManagement;
 
 namespace PeggleWars
 {
-    public class GameManager : MonoBehaviour
+    internal class GameManager : MonoBehaviour
     {
         #region Fields and Properties
 
-        public static GameManager Instance { get; private set; }
+        internal static GameManager Instance { get; private set; }
         private AudioManager _audioManager;
         private TurnManager _turnManager;
-        public UnityEvent LevelVictory;
 
         private GameState _gameState;
 
-        public GameState GameState
+        internal GameState GameState
         {
             get { return _gameState; }
             private set { _gameState = value; }
@@ -27,7 +27,7 @@ namespace PeggleWars
 
         private int _turn = 1;
 
-        public int Turn
+        internal int Turn
         {
             get { return _turn; }
             private set { _turn = value; }
@@ -41,12 +41,12 @@ namespace PeggleWars
         {
             if (Instance != null && Instance != this)
             {
-                Destroy(this);
+                Destroy(gameObject);
             }
             else
             {
                 Instance = this;
-                DontDestroyOnLoad(this);
+                DontDestroyOnLoad(gameObject);
             }
         }
 
@@ -55,15 +55,11 @@ namespace PeggleWars
             _audioManager = AudioManager.Instance;
             _turnManager = TurnManager.Instance;
             StartCoroutine(WaitThenChangeState(GameState.MainMenu));
-            _turnManager.EndEnemyTurn += OnEndEnemyTurn;
+            TurnManager.Instance.EndEnemyTurn?.AddListener(OnEndEnemyTurn);
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
 
-        private void OnDisable()
-        {
-            _turnManager.EndEnemyTurn -= OnEndEnemyTurn;
-        }
-
-        public IEnumerator SwitchState(GameState state)
+        internal IEnumerator SwitchState(GameState state)
         {
             _gameState = state;
 
@@ -75,7 +71,7 @@ namespace PeggleWars
                     break;
 
                 case (GameState.CardHandling):
-                    _turnManager.RaiseStartCardTurn();
+                    TurnManager.Instance.StartCardTurn?.Invoke();
                     _audioManager.PlayGameTrack(Track._0001_LevelOne);
                     _audioManager.FadeGameTrack(Track._0001_LevelOne, Fade.In);
                     break;
@@ -84,18 +80,20 @@ namespace PeggleWars
                     //No action, other scripts may depend on this state
                     break;
 
-                case (GameState.PlayerActions):                 
-                    yield return StartCoroutine(OrbActionManager.Instance.HandleAllOrbEffects());
-                    //OrbActionManager goes to EnemyTurn in Coroutine
+                case (GameState.PlayerActions):
+                    TurnManager.Instance.StartPlayerAttackTurn?.Invoke();
+                    //OrbActionManager goes to EnemyTurn
                     break;
 
                 case (GameState.EnemyTurn):
-                    TurnManager.Instance.RaiseStartEnemyTurn();
+                    TurnManager.Instance.StartEnemyTurn?.Invoke();
                     break;
 
                 case (GameState.LevelWon):
-                    LevelVictory?.Invoke();
-                    Debug.Log("You won the level!");
+                    break;
+
+                case (GameState.NewLevel):
+                    SceneManager.LoadScene("TestScene");
                     break;
 
                 case (GameState.GameOver):
@@ -106,21 +104,29 @@ namespace PeggleWars
 
             }
         }
+
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            if (scene.name.Contains("Level"))
+            {
+                StartCoroutine(WaitThenChangeState(GameState.CardHandling));
+            }
+        }
         
-        public void EndCardTurnButton()
+        internal void EndCardTurnButton()
         {
             _audioManager.PlaySoundEffectOnce(SFX._0001_ButtonClick);
 
             if (_gameState == GameState.CardHandling)
             {
-                _turnManager.RaiseEndCardTurn();
+                TurnManager.Instance.EndCardTurn?.Invoke();
                 StartCoroutine(SwitchState(GameState.Shooting));
             }
         }
 
         private IEnumerator WaitThenChangeState(GameState state)
         {
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(2f);
             StartCoroutine(Instance.SwitchState(state));
         }
 

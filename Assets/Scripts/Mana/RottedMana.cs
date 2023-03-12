@@ -3,7 +3,7 @@ using PeggleAttacks.AttackManager;
 
 namespace PeggleWars.ManaManagement
 {
-    public class RottedMana : Mana
+    internal class RottedMana : Mana
     {
         #region Fields
 
@@ -12,7 +12,7 @@ namespace PeggleWars.ManaManagement
 
         #endregion
 
-        #region Private Functions
+        #region Functions
 
         private void Start()
         {

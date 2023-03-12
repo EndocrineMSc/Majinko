@@ -2,9 +2,9 @@ using EnumCollection;
 using PeggleWars.Audio;
 using PeggleWars.Orbs;
 
-namespace PeggleWars.Enemies.Zombies
+namespace PeggleWars.Enemies
 {
-    public class Zombie : Enemy
+    internal class Zombie : Enemy
     {
         #region Public Functions
 

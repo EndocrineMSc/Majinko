@@ -2,21 +2,23 @@ using UnityEngine;
 using EnumCollection;
 using PeggleAttacks.AttackManager;
 using PeggleWars.Enemies;
+using PeggleWars.Orbs;
 
 namespace PeggleWars.PlayerAttacks
 {
-    public abstract class PlayerAttack : MonoBehaviour
+    internal abstract class PlayerAttack : MonoBehaviour
     {
         #region Fields and Properties
 
-        protected Vector2 _insantiatePosition = new(-7.5f, 7f);
+        protected Vector2 _instantiatePosition = new(-7.5f, 7f);
         protected PlayerAttackManager _playerAttackManager;
 
         [SerializeField] protected PlayerAttackTarget _target;
         [SerializeField] protected float _attackFlySpeed = 10;
 
         [SerializeField] protected int _damage;
-        public int Damage
+       
+        internal int Damage
         {
             get { return _damage; }
             private set { _damage = value; }
@@ -32,14 +34,14 @@ namespace PeggleWars.PlayerAttacks
             _damage *= Mathf.RoundToInt(_playerAttackManager.DamageModifierTurn);
         }
 
-        public virtual void ShootAttack(PlayerAttack playerAttack)
+        internal virtual void ShootAttack(PlayerAttack playerAttack)
         {
-            PlayerAttack tempAttack = Instantiate(playerAttack, _insantiatePosition, Quaternion.Euler(0, 0, -90));
+            PlayerAttack tempAttack = Instantiate(playerAttack, _instantiatePosition, Quaternion.Euler(0, 0, -90));
             Rigidbody2D rigidbody = tempAttack.GetComponent<Rigidbody2D>();
             rigidbody.velocity = Vector3.right * _attackFlySpeed;
         }
 
-        public virtual void ShootAttack(Vector3 startPosition, PlayerAttack playerAttack)
+        internal virtual void ShootAttack(Vector3 startPosition, PlayerAttack playerAttack)
         {
             Enemy enemy = null;
             Vector3 targetPosition = new();
@@ -65,14 +67,24 @@ namespace PeggleWars.PlayerAttacks
             }           
         }
 
+        protected virtual void OnCollisionEnter2D(Collision2D collision)
+        {
+            OrbEvents.Instance.OrbEffectEnd?.Invoke();
+            DestroyGameObject();
+        }
+
         protected virtual void OnTriggerEnter2D(Collider2D collision)
         {
             Enemy enemy = null;
             switch (_target)
             {
                 case PlayerAttackTarget.FirstEnemy:
-                enemy = EnemyManager.Instance.EnemiesInScene[0];
-                break;                       
+                    enemy = EnemyManager.Instance.EnemiesInScene[0];
+                    break;
+
+                case PlayerAttackTarget.LastEnemy:
+                    enemy = EnemyManager.Instance.EnemiesInScene[EnemyManager.Instance.EnemiesInScene.Count - 1];
+                    break;
             }
 
             if (enemy != null)
@@ -81,10 +93,16 @@ namespace PeggleWars.PlayerAttacks
             }
 
             OnHitPolish();
-            Destroy(gameObject);
+            OrbEvents.Instance.OrbEffectEnd?.Invoke();
+            DestroyGameObject();
         }
 
         protected abstract void OnHitPolish();
+
+        protected virtual void DestroyGameObject()
+        {
+            Destroy(gameObject);
+        }
 
         #endregion
     }

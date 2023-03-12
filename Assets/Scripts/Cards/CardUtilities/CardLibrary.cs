@@ -10,9 +10,11 @@ namespace PeggleWars.Cards
         FastHands,
         FireMana,
         IceMana,
+        LightningStrike,
         ManaBlitz,
         ManaShield,
         MultiShot,
         PowerShot,
+        RefreshOrb,
     }
 }

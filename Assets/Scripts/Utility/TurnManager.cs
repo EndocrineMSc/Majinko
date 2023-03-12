@@ -1,37 +1,25 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 namespace PeggleWars.TurnManagement
 {
-    public class TurnManager : MonoBehaviour
+    internal class TurnManager : MonoBehaviour
     {
-        public event Action StartCardTurn;
-        public event Action EndCardTurn;
-        public event Action StartEnemyTurn;
-        public event Action EndEnemyTurn;
+        #region Fields
 
-        public static TurnManager Instance { get; private set; }
+        public UnityEvent StartCardTurn;
+        public UnityEvent EndCardTurn;
+        public UnityEvent StartEnemyTurn;
+        public UnityEvent EndEnemyTurn;
+        public UnityEvent StartPlayerAttackTurn;
 
-        public void RaiseStartCardTurn()
-        {
-            StartCardTurn?.Invoke();
-        }
+        internal static TurnManager Instance { get; private set; }
 
-        public void RaiseEndCardTurn()
-        {
-            EndCardTurn?.Invoke();
-        }
+        #endregion
 
-        public void RaiseStartEnemyTurn()
-        {
-            StartEnemyTurn?.Invoke();
-        }
-
-        public void RaiseEndEnemyTurn()
-        {
-            EndEnemyTurn?.Invoke();
-        }
+        #region Functions
 
         private void Awake()
         {
@@ -42,7 +30,10 @@ namespace PeggleWars.TurnManagement
             else
             {
                 Instance = this;
+                DontDestroyOnLoad(this);
             }
         }
+
+        #endregion
     }
 }

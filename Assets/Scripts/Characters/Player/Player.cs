@@ -5,24 +5,20 @@ using PeggleWars.Characters.Interfaces;
 
 namespace PeggleWars
 {
-    public class Player : MonoBehaviour, IDamagable
+    internal class Player : MonoBehaviour, IDamagable
     {
-        #region Fields
+        #region Fields and Properties
 
         private SpriteRenderer _spriteRenderer;
         private Color _color;
 
-        public static Player Instance { get; private set; }
+        internal static Player Instance { get; private set; }
         private Animator _animator;
         private TurnManager _turnManager;
 
-        #endregion
-
-        #region Properties
-
         [SerializeField] private int _health;
 
-        public int Health
+        internal int Health
         {
             get { return _health; }
             set { _health = value; }
@@ -30,7 +26,7 @@ namespace PeggleWars
 
         private int _shield;
 
-        public int Shield
+        internal int Shield
         {
             get { return _shield; }
             set { _shield = value; }
@@ -38,7 +34,7 @@ namespace PeggleWars
 
         private int _maxHealth;
 
-        public int MaxHealth
+        internal int MaxHealth
         {
             get { return _maxHealth; }
             set { _maxHealth = value; }
@@ -46,7 +42,7 @@ namespace PeggleWars
 
         #endregion
 
-        #region Public Functions
+        #region Functions
 
         public void TakeDamage(int damage)
         {
@@ -88,6 +84,11 @@ namespace PeggleWars
             _maxHealth = _health;
         }
 
+        private void OnEnable()
+        {
+            TurnManager.Instance.StartCardTurn?.AddListener(OnCardTurnStart);         
+        }
+
         private void Start()
         {
             _animator = GetComponent<Animator>();
@@ -95,12 +96,11 @@ namespace PeggleWars
             _color = _spriteRenderer.color;
             _turnManager = TurnManager.Instance;
 
-            _turnManager.StartCardTurn += OnCardTurnStart;
         }
 
         private void OnDisable()
         {
-            _turnManager.StartCardTurn -= OnCardTurnStart;
+            TurnManager.Instance.StartCardTurn?.RemoveListener(OnCardTurnStart);
         }
 
         private void OnCardTurnStart()

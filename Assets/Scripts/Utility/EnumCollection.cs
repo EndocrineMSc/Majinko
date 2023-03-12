@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace EnumCollection
 {
-    public enum SpawnNumber
+    internal enum SpawnNumber
     {
         One,
         Two,
@@ -12,7 +12,7 @@ namespace EnumCollection
         Four,
     }
 
-    public enum GameState
+    internal enum GameState
     {
         MainMenu,
         CardHandling,
@@ -25,18 +25,18 @@ namespace EnumCollection
         Quit,
     }
 
-    public enum EnemyAttackType
+    internal enum EnemyAttackType
     {
         Melee,
         Distance,
     }
 
-    public enum EnemyType
+    internal enum EnemyType
     {
         CloakedZombie,
     }
 
-    public enum ManaType
+    internal enum ManaType
     {
         BasicMana,
         FireMana,
@@ -45,7 +45,7 @@ namespace EnumCollection
 
     //This enum needs to be in alphabetical order!
     //Will be used to reference orbs in OrbManager, which has a list of alphabetically sorted orb prefabs
-    public enum OrbType
+    internal enum OrbType
     {
         BaseManaOrb,        //gives basic Mana
         DarkBombOrb,        //explodes, and makes a gravitational pull towards the hit peggle? -> shot can stay in air longer?
@@ -60,7 +60,7 @@ namespace EnumCollection
         LightBombOrb,       //explodes, and blinds all enemies
         LightManaOrb,       //gives light Mana
         LightningBombOrb,   //explodes, and causes random chain lightning propagation to surrounding obs
-        LightningManaOrb,   //gives lightning Mana
+        LightningStrikeOrb, //Attack, strikes last enemy
         ManaBlitzOrb,       //shoots a ManaBlitz at the first enemy
         ManaShieldOrb,      //shields player from incoming damage
         MultiplierOrb,      //multiplies damage of next x hit orbs
@@ -68,7 +68,7 @@ namespace EnumCollection
         RottedOrb,          //spawns rotted mana (reduces player attack power when used)
     }
 
-    public enum PlayerAttackTarget
+    internal enum PlayerAttackTarget
     {
         FirstEnemy,
         HighestHealthEnemy,
@@ -77,19 +77,19 @@ namespace EnumCollection
         RandomEnemy,
     }
 
-    public enum Fade
+    internal enum Fade
     {
         In,
         Out,
     }
 
-    public enum Track
+    internal enum Track
     {
         _0001_LevelOne,
         GameTrackOne,
     }
 
-    public enum SFX
+    internal enum SFX
     {
         _0001_ButtonClick,
         _0002_BasicPeggleHit,
@@ -105,7 +105,7 @@ namespace EnumCollection
         _0012_DrawHand,
     }
 
-    public enum StartDeck
+    internal enum StartDeck
     {
         Apprentice,
         Soldier,
@@ -113,7 +113,7 @@ namespace EnumCollection
         Alchemist
     }
 
-    public enum ShotType
+    internal enum ShotType
     {
         BasicShot,
         MultiShot,

@@ -1,21 +1,17 @@
 using System.Collections;
 
-namespace PeggleWars.Orbs.RefreshOrb
+namespace PeggleWars.Orbs
 {
-    public class RefreshOrb : Orb
+    internal class RefreshOrb : Orb
     {
-        #region Public Functions
+        #region Functions
 
-        public override IEnumerator OrbEffect()
+        internal override IEnumerator OrbEffect()
         {
             StartCoroutine(base.OrbEffect());
             OrbManager.Instance.SetAllOrbsActive();
             yield return null;
         }
-
-        #endregion
-
-        #region Protected Functions
 
         protected override void AdditionalEffectsOnCollision()
         {

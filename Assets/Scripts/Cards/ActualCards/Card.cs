@@ -1,12 +1,6 @@
 using UnityEngine;
-using EnumCollection;
-using PeggleWars.Cards.DragDrop;
-using Cards.Zoom;
-using PeggleWars.Cards.DeckManagement.HandHandling;
 using PeggleWars.Orbs;
 using PeggleWars.ManaManagement;
-using PeggleWars.Cards.DeckManagement;
-using PeggleWars.Cards.DeckManagement.Global;
 
 namespace PeggleWars.Cards
 {
@@ -14,7 +8,7 @@ namespace PeggleWars.Cards
     [RequireComponent(typeof(CardZoom))]
     [RequireComponent(typeof(CardZoomEventMovement))]
     [RequireComponent(typeof(CardTextUI))]
-    public abstract class Card : MonoBehaviour
+    internal abstract class Card : MonoBehaviour
     {
         #region Fields and Properties
 
@@ -38,14 +32,14 @@ namespace PeggleWars.Cards
         protected Deck _deck;
         protected GlobalDeckManager _globalDeckManager;
 
-        public string CardName { get => _cardName;}
-        public string CardDescription { get => _cardDescription;}
-        public int BasicManaCost { get => _basicManaCost;}
-        public int FireManaCost { get => _fireManaCost;}
-        public int IceManaCost { get => _iceManaCost;}
-        public CardType CardType { get => _cardType;}
-        public bool ExhaustCard { get => _exhaustCard;}
-        public Sprite CardImage { get => _cardImage; }
+        internal string CardName { get => _cardName;}
+        internal string CardDescription { get => _cardDescription;}
+        internal int BasicManaCost { get => _basicManaCost;}
+        internal int FireManaCost { get => _fireManaCost;}
+        internal int IceManaCost { get => _iceManaCost;}
+        internal CardType CardType { get => _cardType;}
+        internal bool ExhaustCard { get => _exhaustCard;}
+        internal Sprite CardImage { get => _cardImage; }
 
         #endregion
 
@@ -56,6 +50,7 @@ namespace PeggleWars.Cards
             SetReferencesToLevelComponents();
             CalculateManaAmounts();
         }
+
         protected virtual void SetReferencesToLevelComponents()
         {
             _manaPool = ManaPool.Instance;
@@ -74,7 +69,7 @@ namespace PeggleWars.Cards
             _adjustedIceManaAmount = _iceManaCost * modifier;
         }
 
-        public virtual bool CardEndDragEffect()
+        internal virtual bool CardEndDragEffect()
         {
             if (CheckIfEnoughMana())
             {
@@ -82,9 +77,9 @@ namespace PeggleWars.Cards
 
                 _manaPool.SpendMana(_adjustedBasicManaAmount, _adjustedFireManaAmount, _adjustedIceManaAmount);
                 _orbManager.CheckForRefreshOrbs(); //Checks if RefreshOrb was overwritten and makes a new one if so
+                HandleDiscard();
                 _hand.InstantiatedCards.Remove(this); //list of instantiated cards in hand
                 _hand.AlignCards();
-                HandleDiscard();
 
                 Destroy(gameObject);
                 return true;

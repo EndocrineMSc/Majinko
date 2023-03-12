@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using EnumCollection;
 using PeggleWars.Shots;
 
-namespace PeggleWars.Cards.ShotChangers
+namespace PeggleWars.Cards
 {
-    public class ShotChangerCard : Card
+    internal class ShotChangerCard : Card
     {
         #region Fields and Properties
 
@@ -31,13 +29,14 @@ namespace PeggleWars.Cards.ShotChangers
 
             if (_shotInScene == _shot) //maybe won't work as intended, check first for bugfixes
             {          
-                _shotManager.ShotStackedEvent?.Invoke();
+                ShotEvents.Instance.ShotStackedEvent?.Invoke();
             }
             else
             {
                 _shotManager.SetShotToBeSpawned(_shot);
             }
         }
+
         #endregion
     }
 }

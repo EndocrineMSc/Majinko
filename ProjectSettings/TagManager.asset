@@ -5,7 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - Monster
-  - PassableTankBarrier
   - Orb
   - CardCanvas
   - BaseManaSpawn
@@ -13,6 +12,8 @@ TagManager:
   - IceManaSpawn
   - DeckNumber
   - DiscardNumber
+  - ExhaustNumber
+  - ActionOrbSpawn
   layers:
   - Default
   - TransparentFX

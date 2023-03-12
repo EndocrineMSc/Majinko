@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Cards.Zoom
+namespace PeggleWars.Cards
 {
-    public class CardZoomEventHandler : MonoBehaviour
+    internal class CardZoomEventHandler : MonoBehaviour
     {
         public UnityEvent<Vector3> CardZoomIn;
         public UnityEvent<Vector3> CardZoomOut;
@@ -19,6 +17,5 @@ namespace Cards.Zoom
         {
             CardZoomOut?.Invoke(position);
         }
-
     }
 }

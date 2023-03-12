@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -4550278420783687888, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: _cardName
-      value: Divination Card
+      value: Divination
       objectReference: {fileID: 0}
     - target: {fileID: -4550278420783687888, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: _cardType

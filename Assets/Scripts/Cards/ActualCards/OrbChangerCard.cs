@@ -2,13 +2,9 @@ using UnityEngine;
 using EnumCollection;
 using PeggleWars.Orbs;
 
-namespace PeggleWars.Cards.Orbchangers
+namespace PeggleWars.Cards
 {
-    /// <summary>
-    /// These kind of cards will change one or more orbs on the fields into a new kind of orb.
-    /// The new Orb is signified by the enum OrbType
-    /// </summary>
-    public class OrbChangerCard : Card
+    internal class OrbChangerCard : Card
     {
         //will be set in the inspector of the respective Card
         [SerializeField] private OrbType _orbType;

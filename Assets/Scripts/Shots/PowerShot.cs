@@ -1,11 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
 namespace PeggleWars.Shots
 {
-    public class PowerShot : Shot
+    internal class PowerShot : Shot
     {
         protected int _allowedPortalCollisions = 0;
         protected bool _isWithinPortal;
@@ -17,7 +15,7 @@ namespace PeggleWars.Shots
             _shotSpeed *= 3f;
         }
 
-        public override void ShotStackEffect()
+        internal override void ShotStackEffect()
         {
             _allowedPortalCollisions++;
         }

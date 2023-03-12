@@ -1,14 +1,12 @@
-using PeggleWars.Shots;
 using PeggleWars.TurnManagement;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 
 namespace PeggleWars.Shots
 {
-    public abstract class Shot : MonoBehaviour
+    internal abstract class Shot : MonoBehaviour
     {
         #region Fields and Properties
 
@@ -17,8 +15,6 @@ namespace PeggleWars.Shots
         protected bool _isNotShotYet = true;
         protected bool _isInShootingTurn;
         protected float _shotSpeed = 7f;
-        protected ShotManager _shotManager;
-        protected TurnManager _turnManager;
 
         //fields for indicators
         [SerializeField] protected GameObject _shotIndicatorPrefab;
@@ -32,20 +28,20 @@ namespace PeggleWars.Shots
         protected Vector2 _mousePosition;
         protected float _rotationZ;
 
-        protected string PORTAL_PARAM = "Portal";
+        protected readonly string PORTAL_PARAM = "Portal";
 
-        public float ShotSpeed
+        internal float ShotSpeed
         {
             get { return _shotSpeed; }
-            protected set { _shotSpeed = value; }
+            private set { _shotSpeed = value; }
         }
 
         protected float _gravity = 1;
 
-        public float Gravity
+        internal float Gravity
         {
             get { return _gravity; }
-            protected set { _gravity = value; }
+            private set { _gravity = value; }
         }
 
         #endregion
@@ -62,18 +58,16 @@ namespace PeggleWars.Shots
             Physics2D.IgnoreLayerCollision(16, 17);
         }
 
-        protected virtual void Start()
+        protected virtual void OnEnable()
         {
-            _shotManager = ShotManager.Instance;
-            _turnManager = TurnManager.Instance;
-            _turnManager.EndCardTurn += OnCardTurnEnd;
-            _shotManager.ShotStackedEvent?.AddListener(ShotStackEffect);
+            TurnManager.Instance.EndCardTurn?.AddListener(OnCardTurnEnd);
+            ShotEvents.Instance.ShotStackedEvent?.AddListener(ShotStackEffect);           
         }
 
         protected virtual void OnDisable()
         {
-            _turnManager.EndCardTurn -= OnCardTurnEnd;
-            _shotManager.ShotStackedEvent.RemoveListener(ShotStackEffect);
+            TurnManager.Instance.EndCardTurn?.RemoveListener(OnCardTurnEnd);
+            ShotEvents.Instance.ShotStackedEvent?.RemoveListener(ShotStackEffect);
         }
 
         private void OnCardTurnEnd()
@@ -109,12 +103,12 @@ namespace PeggleWars.Shots
             }
         }
 
-        public virtual void SetShotForce(float shotSpeed)
+        internal virtual void SetShotForce(float shotSpeed)
         {
             _shotSpeed = shotSpeed;
         }
 
-        public virtual void SetShotAsShotAlready()
+        internal virtual void SetShotAsShotAlready()
         {
             _isNotShotYet = false;
         }
@@ -143,7 +137,7 @@ namespace PeggleWars.Shots
 
         protected void LimitIndicatorNumber(int amountIndicators)
         {
-            if (amountIndicators > _shotManager.NumberOfIndicators)
+            if (amountIndicators > ShotManager.Instance.NumberOfIndicators)
             {
                 GameObject doomedIndicator = _indicators[0];
                 Destroy(doomedIndicator);
@@ -221,7 +215,7 @@ namespace PeggleWars.Shots
             //ToDo: implement SoundEffect;
         }
 
-        public abstract void ShotStackEffect();
+        internal abstract void ShotStackEffect();
             
 
         #endregion

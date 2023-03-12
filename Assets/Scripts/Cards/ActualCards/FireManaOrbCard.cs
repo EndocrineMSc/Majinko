@@ -3,27 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using PeggleWars.Orbs;
 using EnumCollection;
-using PeggleWars.Cards.DeckManagement.Global;
 
 namespace PeggleWars.Cards
 {
-    public class FireManaOrbCard : Card
-    {
-        protected override void SetReferencesToLevelComponents()
-        {
-            base.SetReferencesToLevelComponents();
-            _globalDeckManager = GlobalDeckManager.Instance;
-        }
-
+    internal class FireManaOrbCard : Card
+    { 
         protected override void CardEffect()
         {
-            GlobalOrbManager globalOrbManager = GlobalOrbManager.Instance;
-            globalOrbManager.AddGlobalOrb(globalOrbManager.AllOrbsList[(int)OrbType.FireManaOrb]);
+            GlobalOrbManager.Instance.AddGlobalOrb(GlobalOrbManager.Instance.AllOrbsList[(int)OrbType.FireManaOrb]);
+            OrbManager.Instance.SwitchOrbs(OrbType.FireManaOrb);
 
-            OrbManager orbManager = OrbManager.Instance;
-            orbManager.SwitchOrbs(OrbType.FireManaOrb);
-
-            _globalDeckManager.RemoveCardFromGlobalDeck(this);
+            _globalDeckManager.RemoveCardFromGlobalDeck(_globalDeckManager.AllCards[(int)_cardType]);
         }
     }
 }

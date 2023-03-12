@@ -3,7 +3,7 @@ using PeggleWars.Audio;
 
 namespace PeggleWars.PlayerAttacks.ManaBlitz
 {
-    public class ManaBlitz : PlayerAttack
+    internal class ManaBlitz : PlayerAttack
     {
         //Do special stuff in here
         private void Awake()

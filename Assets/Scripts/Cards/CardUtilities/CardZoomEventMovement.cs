@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using PeggleWars.Cards.DeckManagement.HandHandling;
-using PeggleWars.Cards;
 
-namespace Cards.Zoom
+namespace PeggleWars.Cards
 {
-    public class CardZoomEventMovement : MonoBehaviour
+    internal class CardZoomEventMovement : MonoBehaviour
     {
         private float _moveDistance = 50f;
         private readonly string _leftOfZoomCard = "Left";
         private readonly string _rightOfZoomCard = "Right";
         private string _leftOrRightOfZoomCard;
-        CardZoomEventHandler _otherCardIsBeingZoomed;
+        private CardZoomEventHandler _otherCardIsBeingZoomed;
 
         private void Start()
         {
@@ -23,8 +19,8 @@ namespace Cards.Zoom
 
         private void OnDisable()
         {
-            _otherCardIsBeingZoomed.CardZoomIn?.RemoveListener(OnOtherCardZoomIn);
-            _otherCardIsBeingZoomed.CardZoomOut?.RemoveListener(OnOtherCardZoomOut);
+            Hand.Instance.GetComponent<CardZoomEventHandler>().CardZoomIn?.RemoveListener(OnOtherCardZoomIn);
+            Hand.Instance.GetComponent<CardZoomEventHandler>().CardZoomOut?.RemoveListener(OnOtherCardZoomOut);
         }
 
         private void OnOtherCardZoomIn(Vector3 otherCardPosition)

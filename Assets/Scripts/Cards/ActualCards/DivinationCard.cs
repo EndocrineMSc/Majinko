@@ -1,12 +1,8 @@
 using PeggleWars.Shots;
 
-namespace PeggleWars.Cards.InstantEffects
+namespace PeggleWars.Cards
 {
-    /// <summary>
-    /// Child class to cards, has an instant effect on the game.
-    /// Increases the range for shot prediction for the player.
-    /// </summary>
-    public class DivinationCard : Card
+    internal class DivinationCard : Card
     {
         private ShotManager _shotManager;
 

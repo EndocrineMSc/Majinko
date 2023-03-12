@@ -7,54 +7,46 @@ using UnityEngine.Events;
 
 namespace PeggleWars.Shots
 {
-    /// <summary>
-    /// Class for instantiating new shots when the old ones are gone. Also keeps track of any modifications
-    /// to the ball made by cards or other effects.
-    /// </summary>
-    public class ShotManager : MonoBehaviour
+    internal class ShotManager : MonoBehaviour
     {
         #region Fields and Properties
 
         private List<Shot> _allShots = new();
 
         private Shot _currentShot;
-        private TurnManager _cardTurnManager;
 
         private int _maxNumberOfIndicators;
-        public int NumberOfIndicators { get => _maxNumberOfIndicators; set => _maxNumberOfIndicators = value; }
+        internal int NumberOfIndicators { get => _maxNumberOfIndicators; set => _maxNumberOfIndicators = value; }
         
         private Shot _spawnShot;
-        public Shot ShotToBeSpawned
+        internal Shot ShotToBeSpawned
         {
             get { return _spawnShot; }
             private set { _spawnShot = value; }
         }
 
         private int _maxIndicatorCollisions;
-        public int MaxIndicatorCollisions
+        internal int MaxIndicatorCollisions
         {
             get { return _maxIndicatorCollisions; }
             set { _maxIndicatorCollisions = value; }
         }
 
-        private int _maxNumberOfIndicatorsBaseline = 3;
-        private int _maxIndicatorsCollisionsBaseline = 1;
+        private readonly int _maxNumberOfIndicatorsBaseline = 3;
+        private readonly int _maxIndicatorsCollisionsBaseline = 1;
 
-        public static ShotManager Instance { get; private set; }
+        internal static ShotManager Instance { get; private set; }
 
         private string RESOURCE_LOAD_PARAM = "ShotPrefabs";
 
-        public UnityEvent ShotStackedEvent;
-        public UnityEvent BallDestructionEvent;
-
-        public List<Shot> AllShots
+        internal List<Shot> AllShots
         {
             get { return _allShots; }
         }
 
         #endregion
 
-        #region Private Functions
+        #region Functions
 
         private void Awake()
         {
@@ -69,26 +61,25 @@ namespace PeggleWars.Shots
 
             _allShots = Resources.LoadAll<Shot>(RESOURCE_LOAD_PARAM).ToList();
             _spawnShot = _allShots[(int)ShotType.BasicShot];
+            ResetIndicatorNumbers();
         }
 
-        private void Start()
+        private void OnEnable()
         {
-            _cardTurnManager = TurnManager.Instance;
-            _cardTurnManager.StartCardTurn += OnStartCardTurn;
+            TurnManager.Instance.StartCardTurn?.AddListener(OnStartCardTurn);           
+        }
+
+        private void OnDisable()
+        {
+            TurnManager.Instance.StartCardTurn?.RemoveListener(OnStartCardTurn);
         }
 
         //Reset all temporary modifications to the shot
         private void OnStartCardTurn()
         {
-            MaxIndicatorCollisions = _maxIndicatorsCollisionsBaseline;
-            NumberOfIndicators = _maxNumberOfIndicatorsBaseline;
+            ResetIndicatorNumbers();
             _spawnShot = _allShots[(int)ShotType.BasicShot];
             SpawnShot();
-        }
-
-        private void OnDisable()
-        {
-            _cardTurnManager.StartCardTurn -= OnStartCardTurn;
         }
 
         private void SpawnShot()
@@ -99,7 +90,7 @@ namespace PeggleWars.Shots
             _currentShot = Instantiate(_spawnShot, spawnWorldPosition, Quaternion.identity);
         }
 
-        public void SetShotToBeSpawned(Shot shot)
+        internal void SetShotToBeSpawned(Shot shot)
         {
             _spawnShot = shot;
             ReplaceShot();
@@ -112,6 +103,12 @@ namespace PeggleWars.Shots
                 Destroy(_currentShot.gameObject);
             }
             SpawnShot();
+        }
+
+        private void ResetIndicatorNumbers()
+        {
+            MaxIndicatorCollisions = _maxIndicatorsCollisionsBaseline;
+            NumberOfIndicators = _maxNumberOfIndicatorsBaseline;
         }
 
         #endregion

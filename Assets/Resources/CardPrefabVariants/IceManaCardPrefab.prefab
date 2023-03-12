@@ -177,10 +177,31 @@ PrefabInstance:
       propertyPath: m_text
       value: Ice Orb
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4550278420783687888, guid: 92b44770394774247acee543b7baee9f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 92b44770394774247acee543b7baee9f, type: 3}
 --- !u!1 &3294751627346565167 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6398440697363082782, guid: 92b44770394774247acee543b7baee9f, type: 3}
   m_PrefabInstance: {fileID: 8462999066439808561}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &-3081539241788493630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3294751627346565167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0c4ff3c84c8bcb489aaca6ac029ec7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardName: Ice Orb
+  _cardDescription: Permanently adds an Ice Orb to the playing field. This card is
+    removed from the deck completely after playing it once.
+  _basicManaCost: 1
+  _fireManaCost: 0
+  _iceManaCost: 0
+  _cardType: 3
+  _exhaustCard: 1
