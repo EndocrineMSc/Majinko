@@ -1,3 +1,4 @@
+using PeggleWars.ScrollDisplay;
 using PeggleWars.TurnManagement;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using UnityEngine;
 
 namespace PeggleWars.Shots
 {
+    [RequireComponent(typeof(ScrollDisplayer))]
     internal abstract class Shot : MonoBehaviour
     {
         #region Fields and Properties
@@ -217,7 +219,6 @@ namespace PeggleWars.Shots
 
         internal abstract void ShotStackEffect();
             
-
         #endregion
     }
 }

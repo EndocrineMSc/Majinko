@@ -33,11 +33,6 @@ namespace PeggleWars.Enemies
 
         #region Functions
 
-        private void OnEnable()
-        {
-            TurnManager.Instance.StartEnemyTurn?.AddListener(OnStartEnemyTurn);            
-        }
-
         private void Start()
         {
             _enemyManager = EnemyManager.Instance;
@@ -49,6 +44,7 @@ namespace PeggleWars.Enemies
 
             _enemiesForLevel = GetEnemyArrayByWorld();
             _amountOfEnemiesInLevel = _enemiesForLevel.Length;
+            TurnManager.Instance.StartEnemyTurn?.AddListener(OnStartEnemyTurn);            
         }
 
         private void OnDisable()

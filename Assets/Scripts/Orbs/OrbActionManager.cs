@@ -35,16 +35,13 @@ namespace PeggleWars.Orbs
             }
         }
 
-        private void OnEnable()
-        {
-            OrbEvents.Instance.OrbEffectEnd?.AddListener(OnOrbEffectEnd);
-            TurnManager.Instance.StartPlayerAttackTurn?.AddListener(OnPlayerTurnStart);            
-        }
-
         private void Start()
         {
             _actionOrbSpawn = SetActionOrbSpawn();
             _xOrbOffset = GetXOrbOffsSet();
+
+            OrbEvents.Instance.OrbEffectEnd?.AddListener(OnOrbEffectEnd);
+            TurnManager.Instance.StartPlayerAttackTurn?.AddListener(OnPlayerTurnStart);            
         }
 
         private void OnDisable()

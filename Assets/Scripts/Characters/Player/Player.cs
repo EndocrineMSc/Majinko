@@ -84,11 +84,6 @@ namespace PeggleWars
             _maxHealth = _health;
         }
 
-        private void OnEnable()
-        {
-            TurnManager.Instance.StartCardTurn?.AddListener(OnCardTurnStart);         
-        }
-
         private void Start()
         {
             _animator = GetComponent<Animator>();
@@ -96,6 +91,7 @@ namespace PeggleWars
             _color = _spriteRenderer.color;
             _turnManager = TurnManager.Instance;
 
+            TurnManager.Instance.StartCardTurn?.AddListener(OnCardTurnStart);         
         }
 
         private void OnDisable()

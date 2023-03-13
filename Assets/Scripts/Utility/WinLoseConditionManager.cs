@@ -17,6 +17,8 @@ namespace PeggleWars.Utilities
         public UnityEvent LevelVictory;
         public UnityEvent GameOver;
 
+        private bool _isFirstStart = true;
+
         #endregion
 
         #region Functions
@@ -34,9 +36,13 @@ namespace PeggleWars.Utilities
             }
         }
 
-        private void OnEnable()
+        private void Start()
         {
-            EnemyEvents.Instance.EnemyDeathEvent?.AddListener(OnEnemyDeath);
+            if (_isFirstStart)
+            {
+                EnemyEvents.Instance.EnemyDeathEvent?.AddListener(OnEnemyDeath);
+                _isFirstStart = false;
+            }
         }
 
         private void OnDisable()

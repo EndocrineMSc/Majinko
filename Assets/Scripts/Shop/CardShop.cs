@@ -25,11 +25,6 @@ namespace PeggleWars.Utilities
               SetReferences();
         }
 
-        private void OnEnable()
-        {           
-            WinLoseConditionManager.Instance.LevelVictory?.AddListener(OnLevelVictory);
-        }
-
         private void SetReferences()
         {
             _shopCanvas = GetComponent<Canvas>();
@@ -37,6 +32,8 @@ namespace PeggleWars.Utilities
             _shopCanvas.enabled = false;
             _globalDeckManager = GlobalDeckManager.Instance;
             _shopCardLayout = _shopCanvas.GetComponentInChildren<HorizontalLayoutGroup>();
+            
+            WinLoseConditionManager.Instance.LevelVictory?.AddListener(OnLevelVictory);
         }
 
         private void OnLevelVictory()

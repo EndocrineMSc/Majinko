@@ -64,7 +64,7 @@ namespace PeggleWars.Shots
             ResetIndicatorNumbers();
         }
 
-        private void OnEnable()
+        private void Start()
         {
             TurnManager.Instance.StartCardTurn?.AddListener(OnStartCardTurn);           
         }

@@ -39,7 +39,7 @@ namespace PeggleAttacks.AttackManager
             }
         }
 
-        private void OnEnable()
+        private void Start()
         {
             TurnManager.Instance.StartCardTurn?.AddListener(OnCardTurnStart);
         }

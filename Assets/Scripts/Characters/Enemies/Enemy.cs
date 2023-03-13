@@ -5,11 +5,13 @@ using PeggleAttacks.AttackVisuals.PopUps;
 using PeggleWars.Characters.Interfaces;
 using PeggleWars.TurnManagement;
 using System;
+using PeggleWars.ScrollDisplay;
 
 namespace PeggleWars.Enemies
 {
     [RequireComponent(typeof(PopUpSpawner))]
     [RequireComponent(typeof(EnemyAttack))]
+    [RequireComponent(typeof(ScrollDisplayer))]
     internal abstract class Enemy : MonoBehaviour, IDamagable
     {
         #region Fields and Properties

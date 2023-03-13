@@ -3,9 +3,11 @@ using System.Collections;
 using UnityEngine;
 using PeggleWars.ManaManagement;
 using PeggleWars.Audio;
+using PeggleWars.ScrollDisplay;
 
 namespace PeggleWars.Orbs
 {
+    [RequireComponent(typeof(ScrollDisplayer))]
     internal class Orb : MonoBehaviour
     {
         #region Fields
