@@ -173,7 +173,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6398440697363082782, guid: 92b44770394774247acee543b7baee9f, type: 3}
   m_PrefabInstance: {fileID: 6318316061227177233}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5510829674938809541
+--- !u!114 &2677229966083117987
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1109285266808240911}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6c4fdbce6342f84da797278cffae1fb, type: 3}
+  m_Script: {fileID: 11500000, guid: e33d4f1300a4d164ba862c03877caff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _cardName: Fire Orb
@@ -193,3 +193,6 @@ MonoBehaviour:
   _iceManaCost: 0
   _cardType: 2
   _exhaustCard: 1
+  _cardRarity: 2
+  _orbType: 6
+  _amountOrbs: 1

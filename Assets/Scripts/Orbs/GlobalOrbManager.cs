@@ -28,6 +28,8 @@ namespace PeggleWars.Orbs
             private set { _allOrbsList = value;}
         }
 
+        internal int AmountOfRefreshOrbs { get; private set; } = 1;
+
         private string ORBFOLDER_PARAM = "OrbPrefabs";
 
         #endregion
@@ -47,9 +49,8 @@ namespace PeggleWars.Orbs
             }
             _allOrbsList = Resources.LoadAll<Orb>(ORBFOLDER_PARAM).ToList();
             _levelLoadOrbs.Add(_allOrbsList[(int)OrbType.RefreshOrb]);
-            _levelLoadOrbs.Add(_allOrbsList[(int)(OrbType.FireManaOrb)]);
-            _levelLoadOrbs.Add(_allOrbsList[(int)(OrbType.IceManaOrb)]);
-            _levelLoadOrbs.Add(_allOrbsList[(int)(OrbType.LightningStrikeOrb)]);
+            _levelLoadOrbs.Add(_allOrbsList[(int)OrbType.FireManaOrb]);
+            _levelLoadOrbs.Add(_allOrbsList[(int)OrbType.IceManaOrb]);
         }
 
         internal void AddGlobalOrb(Orb orb, int amount = 1)
@@ -58,11 +59,18 @@ namespace PeggleWars.Orbs
             {
                 _levelLoadOrbs.Add(orb);
             }
+
+            if (orb.OrbType == OrbType.RefreshOrb)
+            {
+                AmountOfRefreshOrbs++;
+            }
         }
 
         internal void RemoveGlobalOrb(Orb orb)
         {
             _levelLoadOrbs.Remove(orb);
+
+            if (orb.OrbType == OrbType.RefreshOrb) {AmountOfRefreshOrbs--;}
         }
 
         #endregion

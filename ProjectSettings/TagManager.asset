@@ -14,6 +14,12 @@ TagManager:
   - DiscardNumber
   - ExhaustNumber
   - ActionOrbSpawn
+  - ForbiddenE
+  - ForbiddenX
+  - ForbiddenO
+  - ForbiddenD
+  - ForbiddenI
+  - ForbiddenA
   layers:
   - Default
   - TransparentFX
@@ -28,9 +34,9 @@ TagManager:
   - Enemy
   - FireMana
   - IceMana
-  - LightningMana
-  - DarkMana
-  - LightMana
+  - RottenMana
+  - 
+  - 
   - ShotIndicators
   - Shots
   - 

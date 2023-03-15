@@ -1,5 +1,7 @@
 using PeggleWars.Enemies;
+using PeggleWars.ScrollDisplay;
 using System.Collections;
+using System.Net.NetworkInformation;
 using UnityEngine;
 
 namespace PeggleWars.Orbs
@@ -28,6 +30,12 @@ namespace PeggleWars.Orbs
         protected override void AdditionalEffectsOnCollision()
         {
             OrbActionManager.Instance.AddOrbToActionList(this);
+        }
+
+        public override void SetDisplayDescription()
+        {
+            IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
+            displayOnScroll.DisplayDescription = "Upon being hit, this orb spawns Ice Mana and inflicts freezing on all enemies.";
         }
     }
 }

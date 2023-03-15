@@ -14,6 +14,7 @@ namespace PeggleWars.Utilities
         private GlobalDeckManager _globalDeckManager;
         private GameManager _gameManager;
         private HorizontalLayoutGroup _shopCardLayout;
+        private bool _levelIsWon;
         [SerializeField] private Button _buyButtonPrefab;
 
         #endregion
@@ -38,11 +39,15 @@ namespace PeggleWars.Utilities
 
         private void OnLevelVictory()
         {
-            _shopCanvas.enabled = true;
-            List<Card> shopCards = SetRandomShopCards();
-            List<Card> cardObjects = InstantiateShopCards(shopCards);
-            DisableCardComponents(cardObjects);
-            BuildBuyButtons(cardObjects);
+            if (!_levelIsWon)
+            {
+                _shopCanvas.enabled = true;
+                List<Card> shopCards = SetRandomShopCards();
+                List<Card> cardObjects = InstantiateShopCards(shopCards);
+                DisableCardComponents(cardObjects);
+                BuildBuyButtons(cardObjects);
+            }
+            _levelIsWon = true;
         }
 
         private void OnDisable()

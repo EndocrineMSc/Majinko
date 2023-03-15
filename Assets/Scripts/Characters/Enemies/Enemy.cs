@@ -12,7 +12,7 @@ namespace PeggleWars.Enemies
     [RequireComponent(typeof(PopUpSpawner))]
     [RequireComponent(typeof(EnemyAttack))]
     [RequireComponent(typeof(ScrollDisplayer))]
-    internal abstract class Enemy : MonoBehaviour, IDamagable
+    internal abstract class Enemy : MonoBehaviour, IDamagable, IHaveDisplayDescription
     {
         #region Fields and Properties
 
@@ -115,6 +115,7 @@ namespace PeggleWars.Enemies
             _animator.SetTrigger(SPAWN_PARAM);
             _popUpSpawner = GetComponent<PopUpSpawner>();
             _enemyManager = EnemyManager.Instance;
+            SetDisplayDescription();
         }
 
         protected void OnEndEnemyTurn()
@@ -222,6 +223,8 @@ namespace PeggleWars.Enemies
             yield return new WaitForSeconds(_deathDelayForAnimation);
             Destroy(gameObject);
         }
+
+        public abstract void SetDisplayDescription();
 
         #endregion
     }

@@ -11,7 +11,6 @@ namespace PeggleAttacks.AttackManager
         #region Fields and Properties
 
         internal static PlayerAttackManager Instance { get; private set; }
-        private TurnManager _cardTurnManager;
 
         private List<float> _damageModificationsForTurn = new();
 
@@ -52,19 +51,16 @@ namespace PeggleAttacks.AttackManager
         internal float CalculateModifier()
         {
             float finalDamageModifier = 1;
-            float damageModifierSum = 0;
 
             if (_damageModificationsForTurn.Count > 0)
             {
                 foreach (float modifier in _damageModificationsForTurn)
                 {
-                    damageModifierSum += modifier;
+                    finalDamageModifier *= modifier;
                 }
 
-                float damageModifierMean = damageModifierSum / _damageModificationsForTurn.Count;
-                finalDamageModifier *= damageModifierMean;
+                
             }
-
             return finalDamageModifier;
         }
 

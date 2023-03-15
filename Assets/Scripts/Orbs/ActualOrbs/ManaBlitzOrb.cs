@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using PeggleWars.PlayerAttacks;
+using PeggleWars.ScrollDisplay;
 
 namespace PeggleWars.Orbs
 {
@@ -25,6 +26,13 @@ namespace PeggleWars.Orbs
         protected override void AdditionalEffectsOnCollision()
         {
             OrbActionManager.Instance.AddOrbToActionList(this);            
+        }
+
+        public override void SetDisplayDescription()
+        {
+            IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
+            displayOnScroll.DisplayDescription = "Hitting this orb will enable the player to cast a standard Mana Blitz on the closest enemy. " +
+                "One of the earliest spells taught to wizard apprentices.";
         }
 
         #endregion

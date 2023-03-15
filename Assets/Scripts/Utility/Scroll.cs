@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace PeggleWars.ScrollDisplay
@@ -11,6 +12,7 @@ namespace PeggleWars.ScrollDisplay
         private Animator _scrollAnimator;
         private GameObject _scrollDisplay;
         private SpriteRenderer _scrollRenderer;
+        private TextMeshProUGUI _scrollDescriptionBox;
 
         #endregion
 
@@ -18,10 +20,12 @@ namespace PeggleWars.ScrollDisplay
 
         private void Start()
         {
-            _scrollDisplay = transform.GetChild(0).gameObject;            
+            _scrollDisplay = transform.GetChild(0).gameObject;
+            _scrollDescriptionBox = transform.GetComponentInChildren<TextMeshProUGUI>();
             _scrollRenderer = _scrollDisplay.GetComponent<SpriteRenderer>();
             _scrollAnimator = _scrollDisplay.GetComponent<Animator>();
             _scrollRenderer.enabled = false;
+            _scrollDescriptionBox.enabled = false;
 
             ScrollEvents.Instance.ScrollDisplayEvent?.AddListener(DisplayOnScroll);
             ScrollEvents.Instance.StopDisplayingEvent?.AddListener(StopDisplaying);
@@ -29,10 +33,10 @@ namespace PeggleWars.ScrollDisplay
 
         private void DisplayOnScroll(GameObject displayObject)
         {
-            Debug.Log("I'm in the function");
             _scrollRenderer.enabled = true;
 
             Animator gameobjectAnimator = displayObject.GetComponent<Animator>();
+            string displayText = displayObject.GetComponentInChildren<IDisplayOnScroll>()?.DisplayDescription;
 
             if(gameobjectAnimator != null)
             {
@@ -46,11 +50,14 @@ namespace PeggleWars.ScrollDisplay
             }
 
             _scrollDisplay.transform.localScale = displayObject.transform.localScale * 4;
+            _scrollDescriptionBox.enabled = true;
+            _scrollDescriptionBox.text = displayText;
         }
 
         private void StopDisplaying()
         {
             _scrollRenderer.GetComponent<SpriteRenderer>().enabled = false;
+            _scrollDescriptionBox.enabled = false;
         }
 
 

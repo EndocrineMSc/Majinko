@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3911397808331039311}
   - component: {fileID: 3911397808331039304}
   - component: {fileID: 9019434043406141556}
-  m_Layer: 6
+  m_Layer: 13
   m_Name: RottedMana
   m_TagString: Untagged
   m_Icon: {fileID: 0}

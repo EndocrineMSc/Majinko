@@ -31,7 +31,7 @@ namespace PeggleWars.PlayerAttacks
         protected virtual void Start()
         {
             _playerAttackManager = PlayerAttackManager.Instance;
-            _damage *= Mathf.RoundToInt(_playerAttackManager.DamageModifierTurn);
+            _damage = Mathf.RoundToInt(_damage * _playerAttackManager.DamageModifierTurn);
         }
 
         internal virtual void ShootAttack(PlayerAttack playerAttack)
@@ -67,34 +67,36 @@ namespace PeggleWars.PlayerAttacks
             }           
         }
 
-        protected virtual void OnCollisionEnter2D(Collision2D collision)
-        {
-            OrbEvents.Instance.OrbEffectEnd?.Invoke();
-            DestroyGameObject();
-        }
-
         protected virtual void OnTriggerEnter2D(Collider2D collision)
         {
-            Enemy enemy = null;
-            switch (_target)
+            if (collision.gameObject.name.Contains("Despawn"))
             {
-                case PlayerAttackTarget.FirstEnemy:
-                    enemy = EnemyManager.Instance.EnemiesInScene[0];
-                    break;
-
-                case PlayerAttackTarget.LastEnemy:
-                    enemy = EnemyManager.Instance.EnemiesInScene[EnemyManager.Instance.EnemiesInScene.Count - 1];
-                    break;
+                OrbEvents.Instance.OrbEffectEnd?.Invoke();
+                DestroyGameObject();
             }
-
-            if (enemy != null)
+            else
             {
-                enemy.TakeDamage(_damage);
-            }
+                Enemy enemy = null;
+                switch (_target)
+                {
+                    case PlayerAttackTarget.FirstEnemy:
+                        enemy = EnemyManager.Instance.EnemiesInScene[0];
+                        break;
 
-            OnHitPolish();
-            OrbEvents.Instance.OrbEffectEnd?.Invoke();
-            DestroyGameObject();
+                    case PlayerAttackTarget.LastEnemy:
+                        enemy = EnemyManager.Instance.EnemiesInScene[EnemyManager.Instance.EnemiesInScene.Count - 1];
+                        break;
+                }
+
+                if (enemy != null)
+                {
+                    enemy.TakeDamage(_damage);
+                }
+
+                OnHitPolish();
+                OrbEvents.Instance.OrbEffectEnd?.Invoke();
+                DestroyGameObject();
+            }
         }
 
         protected abstract void OnHitPolish();

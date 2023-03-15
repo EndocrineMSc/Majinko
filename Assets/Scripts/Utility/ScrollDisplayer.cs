@@ -8,6 +8,8 @@ namespace PeggleWars.ScrollDisplay
 {
     internal class ScrollDisplayer : MonoBehaviour, IDisplayOnScroll
     {
+        public string DisplayDescription { get; set; } = "Not implemented";
+
         private void OnMouseEnter()
         {
             DisplayOnScroll();                     
@@ -20,13 +22,19 @@ namespace PeggleWars.ScrollDisplay
 
         public void DisplayOnScroll()
         {
-            ScrollEvents.Instance.ScrollDisplayEvent?.Invoke(gameObject);
+            StartCoroutine(PolishDisplayTimer());
         }
 
         public void StopDisplayOnScroll()
         {
+            StopAllCoroutines();
             ScrollEvents.Instance.StopDisplayingEvent?.Invoke();
         }
 
+        private IEnumerator PolishDisplayTimer()
+        {
+            yield return new WaitForSeconds(0.2f);
+            ScrollEvents.Instance.ScrollDisplayEvent?.Invoke(gameObject);
+        }
     }
 }

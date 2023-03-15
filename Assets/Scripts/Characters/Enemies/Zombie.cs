@@ -1,6 +1,7 @@
 using EnumCollection;
 using PeggleWars.Audio;
 using PeggleWars.Orbs;
+using PeggleWars.ScrollDisplay;
 
 namespace PeggleWars.Enemies
 {
@@ -31,6 +32,12 @@ namespace PeggleWars.Enemies
         protected override void AdditionalAttackEffects()
         {
             throw new System.NotImplementedException();
+        }
+
+        public override void SetDisplayDescription()
+        {
+            IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
+            displayOnScroll.DisplayDescription = "A regular old zombie. Will spawn two Rotten Mana orbs on death.";
         }
 
         #endregion

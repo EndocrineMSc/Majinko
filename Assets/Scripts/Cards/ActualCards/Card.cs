@@ -1,6 +1,7 @@
 using UnityEngine;
 using PeggleWars.Orbs;
 using PeggleWars.ManaManagement;
+using EnumCollection;
 
 namespace PeggleWars.Cards
 {
@@ -19,6 +20,7 @@ namespace PeggleWars.Cards
         [SerializeField] protected int _iceManaCost;
         [SerializeField] protected CardType _cardType;
         [SerializeField] protected bool _exhaustCard;
+        [SerializeField] protected CardRarity _cardRarity;
         protected Sprite _cardImage;
 
         protected int _adjustedBasicManaAmount;
@@ -40,6 +42,7 @@ namespace PeggleWars.Cards
         internal CardType CardType { get => _cardType;}
         internal bool ExhaustCard { get => _exhaustCard;}
         internal Sprite CardImage { get => _cardImage; }
+        internal CardRarity Rarity { get => _cardRarity;}
 
         #endregion
 

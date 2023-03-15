@@ -54,12 +54,15 @@ namespace EnumCollection
         FastHandsOrb,       //draw an extra card on turn start
         FireBombOrb,        //explodes, and triggers surrounding orbs
         FireManaOrb,        //gives fire Mana
+        ForbiddenOrbA,      //
+        ForbiddenOrbD,      //
+        ForbiddenOrbE,      //
+        ForbiddenOrbI,      //
+        ForbiddenOrbO,      //
+        ForbiddenOrbX,      //
         HealOrb,            //heals the player
         IceBombOrb,         //explodes, and freezes surrounding orbs -> can be hit multiple times without shattering
         IceManaOrb,         //gives ice Mana
-        LightBombOrb,       //explodes, and blinds all enemies
-        LightManaOrb,       //gives light Mana
-        LightningBombOrb,   //explodes, and causes random chain lightning propagation to surrounding obs
         LightningStrikeOrb, //Attack, strikes last enemy
         ManaBlitzOrb,       //shoots a ManaBlitz at the first enemy
         ManaShieldOrb,      //shields player from incoming damage
@@ -118,6 +121,16 @@ namespace EnumCollection
         BasicShot,
         MultiShot,
         PowerShot,
+    }
+
+    internal enum CardRarity
+    {
+        Basic,
+        Common,
+        Uncommon,
+        Rare,
+        Epic,
+        Legendary,
     }
 }
 

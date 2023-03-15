@@ -29,8 +29,7 @@ namespace PeggleWars.Orbs
 
         #region Functions
         private void Awake()
-        {
-           
+        {         
             if (Instance != null && Instance != this)
             {
                 Destroy(this);
@@ -124,19 +123,20 @@ namespace PeggleWars.Orbs
 
         internal void CheckForRefreshOrbs()
         {
-            bool refreshPresent = false;
+            int refreshOrbsInScene = 0;
 
             foreach (Orb orb in SceneOrbList)
             {
                 if (orb.OrbType == OrbType.RefreshOrb)
                 {
-                    refreshPresent = true;
+                    refreshOrbsInScene++;
                 }
             }
 
-            if (!refreshPresent)
+            if (refreshOrbsInScene < GlobalOrbManager.Instance.AmountOfRefreshOrbs)
             {
-                SwitchOrbs(OrbType.RefreshOrb, 1);
+                int refreshOrbDelta = GlobalOrbManager.Instance.AmountOfRefreshOrbs - refreshOrbsInScene;
+                SwitchOrbs(OrbType.RefreshOrb, refreshOrbDelta);
             }
         }
 

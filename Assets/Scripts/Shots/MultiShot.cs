@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PeggleWars.Orbs;
+using PeggleWars.ScrollDisplay;
 
 namespace PeggleWars.Shots
 {
@@ -123,6 +124,13 @@ namespace PeggleWars.Shots
         protected override void OnShootAdditions()
         {
             //ToDo Sound and other polish
+        }
+
+        public override void SetDisplayDescription()
+        {
+            IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
+            displayOnScroll.DisplayDescription = "This sphere will multiply on first contact with an orb. " +
+                "For each additional Multi Sphere card played, an additional sphere will be created on contact.";
         }
         #endregion
 

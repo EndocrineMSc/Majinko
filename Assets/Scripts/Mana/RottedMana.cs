@@ -8,7 +8,7 @@ namespace PeggleWars.ManaManagement
         #region Fields
 
         private PlayerAttackManager _playerAttackManager;
-        [SerializeField] private float _attackModifier = 0.8f;
+        private readonly float _attackModifier = 0.977f;
 
         #endregion
 

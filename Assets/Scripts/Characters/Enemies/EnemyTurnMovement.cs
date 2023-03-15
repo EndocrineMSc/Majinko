@@ -9,7 +9,6 @@ namespace PeggleWars.Enemies
     {
         #region Fields and Properties
 
-        private TurnManager _turnManager;
         private EnemyManager _enemyManager;
 
         private float _enemySpeed = 2;
@@ -26,7 +25,6 @@ namespace PeggleWars.Enemies
 
         private void Start()
         {
-            _turnManager = TurnManager.Instance;
             _enemyManager = EnemyManager.Instance;
             _gapSpace = (_enemyManager.EnemyPositions[0, 3].x - _enemyManager.EnemyPositions[0, 2].x) * 1.2f;
 
@@ -51,16 +49,21 @@ namespace PeggleWars.Enemies
                 SortLocalEnemyLists();
             }
 
-            foreach (Enemy enemy in _enemyManager.EnemiesInScene)
+            StartCoroutine(HandleEnemyMovement());
+        }
+
+        private IEnumerator HandleEnemyMovement()
+        {
+            for (int i = 0; i < _enemyManager.EnemiesInScene.Count; i++)
             {
-                if (CheckForMoveNecessity(enemy))
+                if (CheckForMoveNecessity(_enemyManager.EnemiesInScene[i]))
                 {
-                    StartCoroutine(Move(enemy));
+                    yield return StartCoroutine(Move(_enemyManager.EnemiesInScene[i]));
                 }
             }
-
-            TurnManager.Instance.EndEnemyTurn?.Invoke();
+            EnemyEvents.Instance.EnemyMoveEndEvent?.Invoke();
         }
+
 
         private void OnEndEnemyTurn()
         {

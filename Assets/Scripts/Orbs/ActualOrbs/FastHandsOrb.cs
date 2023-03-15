@@ -1,4 +1,5 @@
 using PeggleWars.Cards;
+using PeggleWars.ScrollDisplay;
 using System.Collections;
 
 namespace PeggleWars.Orbs
@@ -14,6 +15,13 @@ namespace PeggleWars.Orbs
         protected override void AdditionalEffectsOnCollision()
         {
             StartCoroutine(OrbEffect());
+        }
+
+        public override void SetDisplayDescription()
+        {
+            IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
+            displayOnScroll.DisplayDescription = "Upon being hit, this orb grants one stack of \"Fast Hands\". " +
+                "Draw an extra card next turn for each stack of \"Fast Hands\" you have.";
         }
     }
 }

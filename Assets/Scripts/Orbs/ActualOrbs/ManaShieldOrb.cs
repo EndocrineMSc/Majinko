@@ -1,3 +1,4 @@
+using PeggleWars.ScrollDisplay;
 using System.Collections;
 using UnityEngine;
 
@@ -38,6 +39,13 @@ namespace PeggleWars.Orbs
         {
             base.SetReferences();
             _player = Player.Instance;
+        }
+
+        public override void SetDisplayDescription()
+        {
+            IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
+            displayOnScroll.DisplayDescription = "Hitting this orb will enable the player to cast a Mana Shield. " +
+                "One of the earliest spells taught to wizard apprentices.";
         }
 
         #endregion

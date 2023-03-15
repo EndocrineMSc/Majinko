@@ -8,7 +8,7 @@ using UnityEngine;
 namespace PeggleWars.Shots
 {
     [RequireComponent(typeof(ScrollDisplayer))]
-    internal abstract class Shot : MonoBehaviour
+    internal abstract class Shot : MonoBehaviour, IHaveDisplayDescription
     {
         #region Fields and Properties
 
@@ -70,6 +70,11 @@ namespace PeggleWars.Shots
         {
             TurnManager.Instance.EndCardTurn?.RemoveListener(OnCardTurnEnd);
             ShotEvents.Instance.ShotStackedEvent?.RemoveListener(ShotStackEffect);
+        }
+
+        private void Start()
+        {
+            SetDisplayDescription();
         }
 
         private void OnCardTurnEnd()
@@ -218,7 +223,9 @@ namespace PeggleWars.Shots
         }
 
         internal abstract void ShotStackEffect();
-            
+
+        public abstract void SetDisplayDescription();
+
         #endregion
     }
 }

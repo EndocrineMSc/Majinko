@@ -123,12 +123,14 @@ namespace PeggleWars.ManaManagement
             {
                 Debug.Log("Not enough Mana");
             }
-
-            for (int i = 0; i < amount; i++)
-            { 
-                Destroy(manaList[0].gameObject);
-                manaList.RemoveAt(0);
-            }         
+            else
+            {
+                for (int i = 0; i < amount; i++)
+                {
+                    Destroy(manaList[0].gameObject);
+                    manaList.RemoveAt(0);
+                }
+            }
         }
 
         #endregion

@@ -1,3 +1,4 @@
+using PeggleWars.ScrollDisplay;
 using System.Collections;
 using UnityEngine;
 
@@ -56,6 +57,13 @@ namespace PeggleWars.Shots
             yield return new WaitForSeconds(0.2f);
             _allowedPortalCollisions--;
             _isWithinPortal = false;
+        }
+
+        public override void SetDisplayDescription()
+        {
+            IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
+            displayOnScroll.DisplayDescription = "A powerful magic sphere that is almost unaffected by gravity. It won't lose speed until hitting the portal. " +
+                "Will ignore the Portal for each additional time a Power Sphere card is played.";
         }
     }
 }

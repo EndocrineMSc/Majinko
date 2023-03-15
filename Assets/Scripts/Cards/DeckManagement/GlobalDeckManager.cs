@@ -11,7 +11,9 @@ namespace PeggleWars.Cards
 
         internal static GlobalDeckManager Instance { get; private set; }
 
-        private int[] _apprenticeDeck = new int[] { 0, 1, 2, 3, 3, 4, 4, 5, 6, 5, 6 }; //stores the indeces of the cards in the list _allCards
+        private int[] _apprenticeDeck = new int[] { (int) CardType.Divination, (int) CardType.Divination, (int) CardType.ManaBlitz,
+            (int) CardType.ManaBlitz, (int) CardType.ManaBlitz, (int) CardType.ManaBlitz, (int) CardType.ManaShield,(int) CardType.ManaShield,
+            (int) CardType.ManaShield, (int) CardType.ManaShield };
 
         [SerializeField] private List<Card> _allCards; //List of all Cards, built from Resources Folder
         internal List<Card> AllCards { get { return _allCards; } }

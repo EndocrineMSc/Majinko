@@ -8,5 +8,7 @@ namespace PeggleWars.ScrollDisplay
     {
         public void DisplayOnScroll();
         public void StopDisplayOnScroll();
+
+        public string DisplayDescription { get; set; }
     }
 }

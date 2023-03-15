@@ -8,7 +8,7 @@ using PeggleWars.ScrollDisplay;
 namespace PeggleWars.Orbs
 {
     [RequireComponent(typeof(ScrollDisplayer))]
-    internal class Orb : MonoBehaviour
+    internal abstract class Orb : MonoBehaviour, IHaveDisplayDescription
     {
         #region Fields
 
@@ -56,6 +56,7 @@ namespace PeggleWars.Orbs
         private void Start()
         {
             SetReferences();
+            SetDisplayDescription();
         }
 
         protected virtual void SetReferences()
@@ -159,6 +160,8 @@ namespace PeggleWars.Orbs
             yield return new WaitForSeconds(0.1f);
             Destroy(gameObject);
         }
+
+        public abstract void SetDisplayDescription();
 
         #endregion
     }

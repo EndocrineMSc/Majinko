@@ -1,4 +1,5 @@
 using PeggleWars.Enemies;
+using PeggleWars.ScrollDisplay;
 using System.Collections;
 using UnityEngine;
 
@@ -30,6 +31,12 @@ namespace PeggleWars.Orbs
         {
             base.AdditionalEffectsOnCollision();
             OrbActionManager.Instance.AddOrbToActionList(this);
+        }
+
+        public override void SetDisplayDescription()
+        {
+            IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
+            displayOnScroll.DisplayDescription = "Upon being hit, this orb spawns Fire Mana and inflicts burning on all enemies.";
         }
     }
 }

@@ -1,8 +1,5 @@
 using EnumCollection;
 using PeggleWars.TurnManagement;
-using System;
-using System.Collections;
-using System.Linq;
 using UnityEngine;
 
 namespace PeggleWars.Enemies
@@ -44,12 +41,12 @@ namespace PeggleWars.Enemies
 
             _enemiesForLevel = GetEnemyArrayByWorld();
             _amountOfEnemiesInLevel = _enemiesForLevel.Length;
-            TurnManager.Instance.StartEnemyTurn?.AddListener(OnStartEnemyTurn);            
+            EnemyEvents.Instance.EnemyMoveEndEvent?.AddListener(OnEndOfEnemyMovement);
         }
 
         private void OnDisable()
         {
-            TurnManager.Instance.StartEnemyTurn?.RemoveListener(OnStartEnemyTurn);
+            EnemyEvents.Instance.EnemyMoveEndEvent?.RemoveListener(OnEndOfEnemyMovement);
         }
 
         private EnemyType[] GetEnemyArrayByWorld()
@@ -68,13 +65,14 @@ namespace PeggleWars.Enemies
             return tempArray;
         }
 
-        private void OnStartEnemyTurn()
+        private void OnEndOfEnemyMovement()
         {
             if (_enemySpawnCounter < _amountOfEnemiesInLevel)
             {
                 EnemyType tempEnemy = _enemiesForLevel[_enemySpawnCounter];
                 SpawnEnemy(tempEnemy);
             }
+            TurnManager.Instance.EndEnemyTurn?.Invoke();
         }
 
         internal void SpawnEnemy(EnemyType enemyType)

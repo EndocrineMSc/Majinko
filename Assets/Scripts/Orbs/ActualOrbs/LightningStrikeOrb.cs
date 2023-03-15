@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PeggleWars.PlayerAttacks;
+using PeggleWars.ScrollDisplay;
 
 namespace PeggleWars.Orbs
 {
@@ -24,6 +25,12 @@ namespace PeggleWars.Orbs
         protected override void AdditionalEffectsOnCollision()
         {
             OrbActionManager.Instance.AddOrbToActionList(this);
+        }
+
+        public override void SetDisplayDescription()
+        {
+            IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
+            displayOnScroll.DisplayDescription = "Hitting this orb will enable the player to cast a \"Lightning Strike\" on the farthest enemy.";
         }
 
         #endregion

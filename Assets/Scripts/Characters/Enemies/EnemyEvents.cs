@@ -13,6 +13,7 @@ namespace PeggleWars.Enemies
         internal static EnemyEvents Instance { get; private set; }
         
         public UnityEvent EnemyDeathEvent;
+        public UnityEvent EnemyMoveEndEvent;
 
         #endregion
 
