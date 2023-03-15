@@ -73,10 +73,10 @@ namespace PeggleWars.ManaManagement
         {
             var spawnPointPosition = manaType switch
             {
-                ManaType.BasicMana => (Vector2)_baseManaSpawn.transform.position,
-                ManaType.FireMana => (Vector2)_iceManaSpawn.transform.position,
-                ManaType.IceMana => (Vector2)_fireManaSpawn.transform.position,
-                _ => (Vector2)_baseManaSpawn.transform.position,
+                ManaType.BasicMana => _baseManaSpawn.transform.position,
+                ManaType.FireMana => _iceManaSpawn.transform.position,
+                ManaType.IceMana => _fireManaSpawn.transform.position,
+                _ => _baseManaSpawn.transform.position,
             };
             for (int i = 0; i < amount; i++)
             {

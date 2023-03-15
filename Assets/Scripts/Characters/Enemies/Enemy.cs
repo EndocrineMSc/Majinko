@@ -128,15 +128,10 @@ namespace PeggleWars.Enemies
             {
                 Vector2 walkerMeleeAttackPosition = _enemyManager.EnemyPositions[0, 0];
                 Vector2 flyerMeleeAttackPosition = _enemyManager.EnemyPositions[1, 0];
-                if (transform.position.Equals(walkerMeleeAttackPosition) 
-                    || transform.position.Equals(flyerMeleeAttackPosition))
-                {
-                    _isInAttackPosition = true;
-                }
-                else
-                {
-                    _isInAttackPosition = false;
-                }
+
+
+                _isInAttackPosition = transform.position.Equals(walkerMeleeAttackPosition) || transform.position.Equals(flyerMeleeAttackPosition);
+
             }
         }
 

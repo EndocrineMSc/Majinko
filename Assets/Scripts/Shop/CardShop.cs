@@ -60,29 +60,24 @@ namespace PeggleWars.Utilities
             List<Card> tempCardList = new();
             int cardPoolSize = _globalDeckManager.AllCards.Count;
 
-            for (int i = 0; i < amountCardChoices; i++)
+            var retries = 0;
+
+            while (tempCardList.Count < amountCardChoices)
             {
                 int randomCardIndex = UnityEngine.Random.Range(0, cardPoolSize);
-                
-                if (tempCardList == null)
+
+                if (retries > 50)
+                    break;
+
+                if (tempCardList.Contains(_globalDeckManager.AllCards[randomCardIndex]))
                 {
-                    tempCardList.Add(_globalDeckManager.AllCards[randomCardIndex]);
+                    retries++;
+                    continue;
                 }
-                else
-                {
-                    foreach (Card card in tempCardList)
-                    {
-                        int cardIndex = _globalDeckManager.AllCards.IndexOf(card);
-                        
-                        if (cardIndex == randomCardIndex)
-                        {
-                            i--;
-                            break;
-                        }
-                    }
-                    tempCardList.Add(_globalDeckManager.AllCards[randomCardIndex]);
-                }
+
+                tempCardList.Add(_globalDeckManager.AllCards[randomCardIndex]);
             }
+    
             return tempCardList;
         }
 
@@ -98,6 +93,7 @@ namespace PeggleWars.Utilities
         private List<Card> InstantiateShopCards(List<Card> cards)
         {
             List<Card> instantiatedCards = new();
+
 
             foreach (Card card in cards)
             {
