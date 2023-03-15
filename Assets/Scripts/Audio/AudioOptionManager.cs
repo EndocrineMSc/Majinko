@@ -21,7 +21,7 @@ namespace PeggleWars.Audio.Options
 
         /// <summary>
         /// Actual functions for volume sliders.
-        /// The actual volume is in decibel, which is on a logharithmic scale.
+        /// The actual volume is in decibel, which is on a logarithmic scale.
         /// </summary>
         /// <param name="volume">Float set by the respective slider on a linear scale (between -80 and 20)</param>
 

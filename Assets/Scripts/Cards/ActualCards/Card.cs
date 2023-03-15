@@ -95,16 +95,9 @@ namespace PeggleWars.Cards
 
         protected virtual bool CheckIfEnoughMana()
         {
-            if (_manaPool.BasicMana.Count >= _adjustedBasicManaAmount
-                && _manaPool.FireMana.Count >= _adjustedFireManaAmount
-                && _manaPool.IceMana.Count >= _adjustedIceManaAmount)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return _manaPool.BasicMana.Count >= _adjustedBasicManaAmount
+                   && _manaPool.FireMana.Count >= _adjustedFireManaAmount
+                   && _manaPool.IceMana.Count >= _adjustedIceManaAmount;
         }
 
         protected abstract void CardEffect();
