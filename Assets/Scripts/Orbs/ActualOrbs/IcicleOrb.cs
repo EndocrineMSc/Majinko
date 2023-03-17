@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-using PeggleWars.PlayerAttacks;
+using PeggleWars.Attacks;
 using PeggleWars.ScrollDisplay;
 
 namespace PeggleWars.Orbs
@@ -9,15 +9,21 @@ namespace PeggleWars.Orbs
     {
         #region Fields and Properties
 
-        [SerializeField] private PlayerAttack _icicle;
+        [SerializeField] private Attack _icicle;
 
         #endregion
 
         #region Functions
 
+        protected override void SetReferences()
+        {
+            base.SetReferences();
+            _icicle.SetAttackInstantiatePosition(Player.Instance.transform);
+        }
+
         internal override IEnumerator OrbEffect()
         {
-            _icicle.ShootAttack(_icicle);
+            _icicle.ShootAttack();
             yield return new WaitForSeconds(0.2f);
         }
 

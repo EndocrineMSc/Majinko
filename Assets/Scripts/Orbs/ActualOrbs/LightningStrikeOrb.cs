@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using PeggleWars.PlayerAttacks;
+using PeggleWars.Attacks;
 using PeggleWars.ScrollDisplay;
+using PeggleWars.Enemies;
 
 namespace PeggleWars.Orbs
 {
@@ -10,15 +11,26 @@ namespace PeggleWars.Orbs
     {
         #region Fields and Properties
 
-        [SerializeField] private PlayerAttack _lightningStrike;
+        [SerializeField] private Attack _lightningStrike;
 
         #endregion
 
         #region Functions
 
+        protected override void SetReferences()
+        {
+            base.SetReferences();
+            if (EnemyManager.Instance.EnemiesInScene.Count > 0)
+            {
+                Transform targetEnemy = EnemyManager.Instance.EnemiesInScene[EnemyManager.Instance.EnemiesInScene.Count - 1].transform;
+                _lightningStrike.SetAttackInstantiatePosition(targetEnemy);
+            }
+
+        }
+
         internal override IEnumerator OrbEffect()
         {
-            _lightningStrike.ShootAttack(_lightningStrike);
+            _lightningStrike.ShootAttack();
             yield return new WaitForSeconds(0.1f);
         }
 

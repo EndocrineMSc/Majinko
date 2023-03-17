@@ -20,6 +20,7 @@ TagManager:
   - ForbiddenD
   - ForbiddenI
   - ForbiddenA
+  - AOE_Target
   layers:
   - Default
   - TransparentFX

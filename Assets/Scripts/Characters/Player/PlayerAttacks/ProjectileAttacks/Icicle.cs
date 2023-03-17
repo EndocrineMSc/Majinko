@@ -4,14 +4,12 @@ using PeggleWars.Characters.Interfaces;
 using PeggleWars.Enemies;
 using UnityEngine;
 
-namespace PeggleWars.PlayerAttacks
+namespace PeggleWars.Attacks
 {
-    internal class Icicle : PlayerAttack
+    internal class Icicle : ProjectileAttack
     {
         [SerializeField] protected int _freezingStacks = 5;
         [SerializeField] protected int _frozenThreshold = 20;
-        private Enemy _enemy;
-
 
         //Do special stuff in here
         private void Awake()
@@ -26,14 +24,14 @@ namespace PeggleWars.PlayerAttacks
 
         protected override void AdditionalEffectsOnImpact()
         {
-            _enemy = _collision.GetComponent<Enemy>();
-            _enemy.TakeIceDamage();
-            _enemy.ApplyFreezing(_freezingStacks);
+            Enemy enemy = _collision.GetComponent<Enemy>();
+            enemy.TakeIceDamage();
+            enemy.ApplyFreezing(_freezingStacks);
 
             int randomChance = UnityEngine.Random.Range(0, 101);
             if (randomChance < _frozenThreshold)
             {
-                _enemy.ApplyFrozen();
+                enemy.ApplyFrozen();
             }
         }
     }

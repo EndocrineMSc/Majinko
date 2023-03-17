@@ -1,9 +1,9 @@
 using EnumCollection;
 using PeggleWars.Audio;
 
-namespace PeggleWars.PlayerAttacks.ManaBlitz
+namespace PeggleWars.Attacks
 {
-    internal class ManaBlitz : PlayerAttack
+    internal class ManaBlitz : ProjectileAttack
     {
         //Do special stuff in here
         private void Awake()

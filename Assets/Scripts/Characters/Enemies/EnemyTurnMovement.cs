@@ -43,12 +43,10 @@ namespace PeggleWars.Enemies
         private void OnStartEnemyTurn()
         {
             SetLocalEnemyLists();
-
             if (_enemyManager.EnemiesInScene.Count > 0)
             {
                 SortLocalEnemyLists();
             }
-
             StartCoroutine(HandleEnemyMovement());
         }
 

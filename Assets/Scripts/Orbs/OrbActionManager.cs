@@ -39,14 +39,11 @@ namespace PeggleWars.Orbs
         {
             _actionOrbSpawn = SetActionOrbSpawn();
             _xOrbOffset = GetXOrbOffsSet();
-
-            OrbEvents.Instance.OrbEffectEnd?.AddListener(OnOrbEffectEnd);
             TurnManager.Instance.StartPlayerAttackTurn?.AddListener(OnPlayerTurnStart);            
         }
 
         private void OnDisable()
         {
-            OrbEvents.Instance.OrbEffectEnd?.RemoveListener(OnOrbEffectEnd);
             TurnManager.Instance.StartPlayerAttackTurn?.RemoveListener(OnPlayerTurnStart);
         }
 
@@ -70,37 +67,16 @@ namespace PeggleWars.Orbs
             StartCoroutine(CheckOrbActions());
         }
 
-        private void OnOrbEffectEnd()
-        {
-            StartCoroutine(CheckOrbActions());
-        }
-
         private IEnumerator CheckOrbActions()
         {
-            if (_orbActions.Count > 0)
+            foreach (Orb orb in _orbActions)
             {
-                Orb orb = _orbActions[0];
-                StartCoroutine(HandleOrbEffect(orb));
-                if (_orbActions.Count == 1)
-                {
-                    _orbActions.Clear();
-                }
-                else
-                {
-                    _orbActions.RemoveAt(0);
-                }               
+                yield return StartCoroutine(orb.OrbEffect());
+                Destroy(orb.gameObject);
             }
-            else
-            {
-                yield return new WaitForSeconds(2f);
-                StartCoroutine(GameManager.Instance.SwitchState(GameState.EnemyTurn));
-            }
-        }
-
-        private IEnumerator HandleOrbEffect(Orb orb)
-        {
-            yield return StartCoroutine(orb.OrbEffect());
-            Destroy(orb.gameObject);
+            _orbActions.Clear();
+            yield return new WaitForSeconds(2f);
+            StartCoroutine(GameManager.Instance.SwitchState(GameState.EnemyTurn));
         }
 
         internal void AddOrbToActionList(Orb orb)

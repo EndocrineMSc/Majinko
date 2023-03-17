@@ -167,12 +167,15 @@ namespace PeggleWars.Enemies
             _frozenForTurns += frozenStacks;
             GetComponent<SpriteRenderer>().color = Color.blue; //ToDo: Polish this
         }
-       
+
         public void TakeDamage(int damage)
         {
             _health -= damage;
 
-            _popUpSpawner.SpawnPopUp(damage);
+            if (damage > 0)
+            {
+                _popUpSpawner.SpawnPopUp(damage);
+            }
             _animator.SetTrigger(HURT_PARAM);
             try
             {

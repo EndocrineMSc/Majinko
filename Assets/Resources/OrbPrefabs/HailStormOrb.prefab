@@ -153,4 +153,4 @@ MonoBehaviour:
   ManaAmount: 0
   _defaultOrb: {fileID: 2549565476461289553, guid: c837957ee74bdcc44a31943daaafc0a8, type: 3}
   _orbType: 13
-  _hailStorm: {fileID: 0}
+  _hailStorm: {fileID: -8947219914673713340, guid: a8ed61a3b5e047f4d8fbaaaef3aaf71f, type: 3}

@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-using PeggleWars.PlayerAttacks;
+using PeggleWars.Attacks;
 using PeggleWars.ScrollDisplay;
 
 namespace PeggleWars.Orbs
@@ -9,15 +9,21 @@ namespace PeggleWars.Orbs
     {
         #region Fields and Properties
 
-        [SerializeField] private PlayerAttack _manaBlitz;
+        [SerializeField] private Attack _manaBlitz;
 
         #endregion
 
         #region Functions
 
+        protected override void SetReferences()
+        {
+            base.SetReferences();
+            _manaBlitz.SetAttackInstantiatePosition(Player.Instance.transform);
+        }
+
         internal override IEnumerator OrbEffect()
         {
-            _manaBlitz.ShootAttack(_manaBlitz);
+            _manaBlitz.ShootAttack();
             yield return new WaitForSeconds(0.2f);
         }
 

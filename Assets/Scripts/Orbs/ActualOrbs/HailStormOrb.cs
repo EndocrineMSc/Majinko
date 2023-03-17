@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-using PeggleWars.PlayerAttacks;
+using PeggleWars.Attacks;
 using PeggleWars.ScrollDisplay;
 
 namespace PeggleWars.Orbs
@@ -9,15 +9,23 @@ namespace PeggleWars.Orbs
     {
         #region Fields and Properties
 
-        [SerializeField] private PlayerAttack _hailStorm;
+        [SerializeField] private Attack _hailStorm;
+        private string TARGET_PARAM = "AOE_Target";
 
         #endregion
 
         #region Functions
 
+        protected override void SetReferences()
+        {
+            base.SetReferences();
+            GameObject aoeTargetObject = GameObject.FindGameObjectWithTag(TARGET_PARAM);
+            _hailStorm.SetAttackInstantiatePosition(aoeTargetObject.transform);
+        }
+
         internal override IEnumerator OrbEffect()
         {
-            _hailStorm.ShootAttack(_hailStorm);
+            _hailStorm.ShootAttack();
             yield return new WaitForSeconds(0.2f);
         }
 
