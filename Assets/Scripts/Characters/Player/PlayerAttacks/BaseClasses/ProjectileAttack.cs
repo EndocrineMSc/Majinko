@@ -43,6 +43,7 @@ namespace PeggleWars.Attacks
                 }
                 else
                 {
+                    GetComponent<SpriteRenderer>().flipX = true;
                     rigidbody.velocity = Vector3.left * _attackFlySpeed;
                 }
             }           

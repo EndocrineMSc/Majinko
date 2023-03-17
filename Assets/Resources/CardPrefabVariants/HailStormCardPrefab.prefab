@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1965684725060296790
+--- !u!1001 &1891277668005493278
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,49 +9,29 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _orbType
-      value: 19
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _cardName
-      value: Mana Shield
-      objectReference: {fileID: 0}
-    - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
-      propertyPath: _cardType
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
-      propertyPath: _manaCost
-      value: 1
+      value: Hail Storm
       objectReference: {fileID: 0}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _amountOrbs
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
-      propertyPath: _cardPrefab
-      value: 
-      objectReference: {fileID: 4867353525356318280}
-    - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
-      propertyPath: _basicManaCost
-      value: 1
+      propertyPath: _cardRarity
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
-      propertyPath: _scriptableCard
-      value: 
-      objectReference: {fileID: 11400000, guid: c9a2211082f5a29458ac4c7b0d262caa, type: 2}
+      propertyPath: _iceManaCost
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _cardDescription
-      value: Spawns two Mana Shield Orbs. When hit, the apprentice casts a mana shield
-        on himself, blocking the next 10 damage. Stacks, but is lost on turn end.
+      value: Spawns a Hail Storm Orb. When hit will cast a Hail Storm, which applies
+        freezing stacks to all enemies and has a moderate change to apply frozen.
       objectReference: {fileID: 0}
-    - target: {fileID: 2663367635832773738, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
-      propertyPath: m_text
-      value: Defense
-      objectReference: {fileID: 0}
-    - target: {fileID: 2850797536602043785, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -1479631910, guid: 29d4377f97a64f04c8cebb689dbe6ea4, type: 3}
     - target: {fileID: 4812993297873364277, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -87,18 +67,6 @@ PrefabInstance:
     - target: {fileID: 4812993297873364277, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_SizeDelta.y
       value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 4812993297873364277, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4812993297873364277, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4812993297873364277, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4812993297873364277, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_LocalPosition.x
@@ -148,34 +116,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4812993297873364277, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5318536725654364929, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6398440697363082782, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Name
-      value: ManaShieldCardPrefab
+      value: HailStormCardPrefab
       objectReference: {fileID: 0}
-    - target: {fileID: 7670523144989857751, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
-      propertyPath: m_text
-      value: 'Spawns a Mana Shield Orb.
-
-        On hit, the orb shields the player
-        for 10 damage.'
-      objectReference: {fileID: 0}
-    - target: {fileID: 8696175136549785397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
-      propertyPath: m_text
-      value: Mana Shield
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7110270198290612162, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
---- !u!1 &4867353525356318280 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6398440697363082782, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
-  m_PrefabInstance: {fileID: 1965684725060296790}
-  m_PrefabAsset: {fileID: 0}

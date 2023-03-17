@@ -26,12 +26,12 @@ namespace PeggleWars.Enemies
 
         protected override void PlayHurtSound()
         {
-            throw new System.NotImplementedException();
+            //ToDo
         }
 
         protected override void AdditionalAttackEffects()
         {
-            throw new System.NotImplementedException();
+            //ToDo
         }
 
         public override void SetDisplayDescription()
