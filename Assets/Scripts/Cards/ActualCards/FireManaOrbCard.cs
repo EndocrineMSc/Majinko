@@ -13,7 +13,7 @@ namespace PeggleWars.Cards
             GlobalOrbManager.Instance.AddGlobalOrb(GlobalOrbManager.Instance.AllOrbsList[(int)OrbType.FireManaOrb]);
             OrbManager.Instance.SwitchOrbs(OrbType.FireManaOrb);
 
-            _globalDeckManager.RemoveCardFromGlobalDeck(_globalDeckManager.AllCards[(int)_cardType]);
+            _globalDeckManager.RemoveCardFromGlobalDeck(GlobalCardManager.Instance.AllCards[(int)_cardType]);
         }
     }
 }

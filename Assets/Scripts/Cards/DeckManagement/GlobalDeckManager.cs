@@ -4,6 +4,7 @@ using EnumCollection;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.Events;
 
 namespace PeggleWars.Cards
 {
@@ -17,15 +18,6 @@ namespace PeggleWars.Cards
             (int) CardType.ManaBlitz, (int) CardType.ManaBlitz, (int) CardType.ManaBlitz, (int) CardType.ManaShield,(int) CardType.ManaShield,
             (int) CardType.ManaShield, (int) CardType.ManaShield };
 
-        [SerializeField] private List<Card> _allCards; //List of all Cards, built from Resources Folder
-        internal List<Card> AllCards { get { return _allCards; } }
-
-        internal Card GetCardByType(CardType type)
-        {
-            _names ??= Enum.GetNames(typeof(CardType)).OrderBy(x => x).ToList();
-
-            return _allCards[_names.IndexOf(type.ToString())];
-        }
         
         [SerializeField] private List<Card> _globalDeck = new(); //List of all cards in the player deck, will store any modifications (added or removed cards) during a run
         internal List<Card> GlobalDeck
@@ -35,9 +27,6 @@ namespace PeggleWars.Cards
         }
 
         internal StartDeck StartDeck { get; private set; } // enum for choice of startdecks
-
-        private string RESOURCE_LOAD_PARAM = "CardPrefabVariants";
-        private IList<string> _names;
 
         #endregion
 
@@ -54,16 +43,15 @@ namespace PeggleWars.Cards
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
             }
+        }
 
-            _allCards = Resources.LoadAll<Card>(RESOURCE_LOAD_PARAM).OrderBy(x => x.CardName).ToList();
-            
-
-
+        private void Start()
+        {
             if(_globalDeck.Count == 0)
             {
                 BuildStartDeck(StartDeck.Apprentice);
             }
-        }
+        }      
 
         internal void BuildStartDeck(StartDeck startDeck)
         {
@@ -72,7 +60,7 @@ namespace PeggleWars.Cards
                 case StartDeck.Apprentice:
                     for (int i = 0; i < _apprenticeDeck.Length; i++)
                     {
-                        _globalDeck.Add(_allCards[_apprenticeDeck[i]]);
+                        _globalDeck.Add(GlobalCardManager.Instance.AllCards[_apprenticeDeck[i]]);
                     }
                     break;
             }

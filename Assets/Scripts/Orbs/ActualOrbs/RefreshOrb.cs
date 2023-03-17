@@ -9,7 +9,6 @@ namespace PeggleWars.Orbs
 
         internal override IEnumerator OrbEffect()
         {
-            StartCoroutine(base.OrbEffect());
             OrbManager.Instance.SetAllOrbsActive();
             yield return null;
         }

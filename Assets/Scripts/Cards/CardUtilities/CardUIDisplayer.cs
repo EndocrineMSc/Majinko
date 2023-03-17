@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using EnumCollection;
 
 namespace PeggleWars.Cards
 {
-    public class CardTextUI : MonoBehaviour
+    internal class CardUIDisplayer : MonoBehaviour
     {
         #region Fields
 
@@ -19,6 +20,10 @@ namespace PeggleWars.Cards
         [SerializeField] private GameObject _iceBubble;
         [SerializeField] private TextMeshProUGUI _cardText;
         [SerializeField] private GameObject _exhaustBackground;
+        [SerializeField] private GameObject _commonBackground;
+        [SerializeField] private GameObject _rareBackground;
+        [SerializeField] private GameObject _epicBackground;
+        [SerializeField] private GameObject _legendaryBackground;
 
         #endregion
 
@@ -29,6 +34,7 @@ namespace PeggleWars.Cards
             _card = GetComponent<Card>();
             SetCardTexts();
             HideUnusedElements();
+            ActivateRarityBackground();
         }
 
         private void SetCardTexts()
@@ -39,6 +45,27 @@ namespace PeggleWars.Cards
             _fireCost.text = _card.FireManaCost.ToString();
             _iceCost.text = _card.IceManaCost.ToString();
             _cardText.text = _card.CardDescription;
+        }
+
+        private void ActivateRarityBackground()
+        {
+            switch (_card.Rarity)
+            {
+                case CardRarity.Basic:
+                    break;
+                case CardRarity.Common:
+                    _commonBackground.SetActive(true);
+                    break;
+                case CardRarity.Rare:
+                    _rareBackground.SetActive(true);
+                    break;
+                case CardRarity.Epic:
+                    _epicBackground.SetActive(true);
+                    break;
+                case CardRarity.Legendary:
+                    _legendaryBackground.SetActive(true);
+                    break;
+            }
         }
 
         private void HideUnusedElements()

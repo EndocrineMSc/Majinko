@@ -28,6 +28,11 @@ namespace PeggleWars.Enemies
         protected string SPAWN_PARAM = "Spawn";
         protected float _deathDelayForAnimation = 1f;
 
+        protected int _frozenForTurns = 0;
+        protected Color _baseColor;
+
+        internal bool IsFrozen { get; private set; }
+
         [SerializeField] protected EnemyAttackType _enemyAttackType; //melee, ranged
         internal EnemyAttackType AttackType
         {
@@ -116,6 +121,7 @@ namespace PeggleWars.Enemies
             _popUpSpawner = GetComponent<PopUpSpawner>();
             _enemyManager = EnemyManager.Instance;
             SetDisplayDescription();
+            _baseColor = GetComponent<SpriteRenderer>().color;
         }
 
         protected void OnEndEnemyTurn()
@@ -137,23 +143,35 @@ namespace PeggleWars.Enemies
 
         protected void OnStartEnemyTurn()
         {
+            if(IsFrozen)
+            {
+                _frozenForTurns--;
+
+                if(_frozenForTurns < 0)
+                {
+                    IsFrozen = false;
+                    _frozenForTurns = 0;
+                    GetComponent<SpriteRenderer>().color = _baseColor;
+                }
+            }
+
             if (_fireStacks > 0)
             {
                 TakeDamage(_fireStacks);
-                _fireStacks--;
             }
         }
 
+        internal void ApplyFrozen(int frozenStacks = 1)
+        {
+            IsFrozen = true;
+            _frozenForTurns += frozenStacks;
+            GetComponent<SpriteRenderer>().color = Color.blue; //ToDo: Polish this
+        }
+       
         public void TakeDamage(int damage)
         {
             _health -= damage;
 
-            if (_iceStacks > 0)
-            {
-                _health -= _iceStacks;
-                _iceStacks = 0;
-                _popUpSpawner.SpawnPopUp(_iceStacks);
-            }
             _popUpSpawner.SpawnPopUp(damage);
             _animator.SetTrigger(HURT_PARAM);
             try
@@ -198,7 +216,7 @@ namespace PeggleWars.Enemies
             _fireStacks += fireStacks;
         }
 
-        internal void Freeze(int iceStacks)
+        internal void ApplyFreezing(int iceStacks)
         {
             _iceStacks += iceStacks;
         }
@@ -220,6 +238,11 @@ namespace PeggleWars.Enemies
         }
 
         public abstract void SetDisplayDescription();
+
+        public void TakeIceDamage()
+        {
+            TakeDamage(_iceStacks);
+        }
 
         #endregion
     }

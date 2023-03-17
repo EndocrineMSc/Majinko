@@ -66,6 +66,11 @@ namespace PeggleWars.PlayerAttacks
             }
         }
 
+        protected override void AdditionalEffectsOnImpact()
+        {
+            throw new System.NotImplementedException();
+        }
+
         #endregion
     }
 }

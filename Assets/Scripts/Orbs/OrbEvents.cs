@@ -1,3 +1,4 @@
+using PeggleWars.ManaManagement;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,7 @@ namespace PeggleWars.Orbs
         internal static OrbEvents Instance { get; private set; }
 
         public UnityEvent OrbEffectEnd;
+        public ManaSpawnEvent ManaSpawnTrigger;
 
         #endregion
 
@@ -28,6 +30,7 @@ namespace PeggleWars.Orbs
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
             }
+            ManaSpawnTrigger ??= new ManaSpawnEvent();
         }
 
         #endregion

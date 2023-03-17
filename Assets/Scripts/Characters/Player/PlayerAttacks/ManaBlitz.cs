@@ -15,5 +15,10 @@ namespace PeggleWars.PlayerAttacks.ManaBlitz
         {
             AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0010_BluntSpellImpact);
         }
+
+        protected override void AdditionalEffectsOnImpact()
+        {
+            //empty
+        }
     }
 }

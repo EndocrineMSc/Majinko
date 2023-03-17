@@ -21,7 +21,7 @@ namespace PeggleWars.Orbs
             if (_enemyManager.EnemiesInScene.Count > 0)
             {
                 Enemy enemy = _enemyManager.EnemiesInScene[0];
-                enemy.Freeze(1);
+                enemy.ApplyFreezing(1);
             }
             yield return new WaitForSeconds(0.1f);
             OrbEvents.Instance.OrbEffectEnd?.Invoke();

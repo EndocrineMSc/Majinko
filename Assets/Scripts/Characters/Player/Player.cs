@@ -111,6 +111,11 @@ namespace PeggleWars
             _spriteRenderer.color = _color;
         }
 
+        public void TakeIceDamage()
+        {
+            throw new System.NotImplementedException();
+        }
+
         #endregion
     }
 }

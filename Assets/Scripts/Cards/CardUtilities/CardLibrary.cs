@@ -16,6 +16,7 @@ namespace PeggleWars.Cards
         ForbiddenOrbO,
         ForbiddenOrbX,
         IceMana,
+        IcicleOrb,
         LightningStrike,
         ManaBlitz,
         ManaShield,

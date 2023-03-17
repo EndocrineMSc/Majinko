@@ -21,7 +21,7 @@ namespace PeggleWars.Orbs
 
         [SerializeField] private ScriptableOrbLayout _layout;
 
-        internal ManaSpawnEvent ManaSpawnTrigger;
+
         
         private GlobalOrbManager _globalOrbManager;
 
@@ -42,9 +42,7 @@ namespace PeggleWars.Orbs
 
         private void Start()
         {
-            _globalOrbManager = GlobalOrbManager.Instance;
-            
-            ManaSpawnTrigger = new ManaSpawnEvent();
+            _globalOrbManager = GlobalOrbManager.Instance;          
 
             OrbGridPositions test = new();
             _allOrbsList = _globalOrbManager.AllOrbsList;

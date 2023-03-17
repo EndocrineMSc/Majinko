@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5102782085163616900, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: _cardType
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -5102782085163616900, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: _manaCost
@@ -27,6 +27,10 @@ PrefabInstance:
       propertyPath: _cardPrefab
       value: 
       objectReference: {fileID: 5194146975066673121}
+    - target: {fileID: -5102782085163616900, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: _cardRarity
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -5102782085163616900, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: _iceManaCost
       value: 1

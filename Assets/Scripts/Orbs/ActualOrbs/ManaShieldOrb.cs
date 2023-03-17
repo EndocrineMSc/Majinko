@@ -24,7 +24,6 @@ namespace PeggleWars.Orbs
 
         internal override IEnumerator OrbEffect()
         {
-            StartCoroutine(base.OrbEffect());
             _player.Shield += _shieldValue;
             yield return new WaitForSeconds(0.2f);
         }

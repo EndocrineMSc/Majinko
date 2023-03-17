@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 2549565476461289555}
   - component: {fileID: 2549565476461289554}
   - component: {fileID: 5099420647275916350}
-  - component: {fileID: -1410300533514761040}
   - component: {fileID: 4872170773538441819}
+  - component: {fileID: -6669941905192785082}
   m_Layer: 0
-  m_Name: ManaShieldOrb
+  m_Name: IcicleOrb
   m_TagString: Orb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1479631910, guid: 29d4377f97a64f04c8cebb689dbe6ea4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 1024771562, guid: 522e9f14206c0a5479c134ca28d25361, type: 3}
+  m_Color: {r: 0, g: 0.6857805, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -98,7 +98,7 @@ Animator:
   m_GameObject: {fileID: 2549565476461289553}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6ec3a6b5e2e5fc7469d93a3cca38d3a1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 296ca6d56a0296242a59835a37457827, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -124,24 +124,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.07
---- !u!114 &-1410300533514761040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2549565476461289553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de246d97847b9cb47aa6a08e8dd4216a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _orbMana: {fileID: 7005893637801753577, guid: dd17e86c997b09b4bb96bc9f5e5292d8, type: 3}
-  SpawnManaType: 0
-  ManaAmount: 0
-  _defaultOrb: {fileID: 2549565476461289553, guid: c837957ee74bdcc44a31943daaafc0a8, type: 3}
-  _orbType: 19
-  _shieldValue: 10
 --- !u!114 &4872170773538441819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,3 +136,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ed9cf162afe23d4ba1396e99745a321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6669941905192785082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549565476461289553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1bc264e9efac434cbf012a7a39b9e0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _orbMana: {fileID: 7005893637801753577, guid: b5b564ea0235c694f8c7d3853a796c29, type: 3}
+  SpawnManaType: 2
+  ManaAmount: 0
+  _defaultOrb: {fileID: 2549565476461289553, guid: c837957ee74bdcc44a31943daaafc0a8, type: 3}
+  _orbType: 16
+  _icicle: {fileID: 8361171627463059092, guid: 0447ba5c05b7b274caf9854c144a39ed, type: 3}

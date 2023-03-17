@@ -14,8 +14,13 @@ namespace PeggleWars.Utilities
         private GlobalDeckManager _globalDeckManager;
         private GameManager _gameManager;
         private HorizontalLayoutGroup _shopCardLayout;
-        private bool _levelIsWon;
         [SerializeField] private Button _buyButtonPrefab;
+
+        private float _rareThreshold;
+        private float _epicThreshold;
+        private float _legendaryThreshold;
+
+        private bool _isFirstUpdate = true;
 
         #endregion
 
@@ -37,17 +42,24 @@ namespace PeggleWars.Utilities
             WinLoseConditionManager.Instance.LevelVictory?.AddListener(OnLevelVictory);
         }
 
+        private void Update()
+        {
+            if (_isFirstUpdate)
+            {
+                _isFirstUpdate = false;
+                _rareThreshold = GlobalCardManager.Instance.CardRarityThreshold.GetValueOrDefault(CardRarity.Rare);
+                _epicThreshold = GlobalCardManager.Instance.CardRarityThreshold.GetValueOrDefault(CardRarity.Epic);
+                _legendaryThreshold = GlobalCardManager.Instance.CardRarityThreshold.GetValueOrDefault(CardRarity.Legendary);
+            }
+        }
+
         private void OnLevelVictory()
         {
-            if (!_levelIsWon)
-            {
-                _shopCanvas.enabled = true;
-                List<Card> shopCards = SetRandomShopCards();
-                List<Card> cardObjects = InstantiateShopCards(shopCards);
-                DisableCardComponents(cardObjects);
-                BuildBuyButtons(cardObjects);
-            }
-            _levelIsWon = true;
+            _shopCanvas.enabled = true;
+            List<Card> shopCards = SetRandomShopCards();
+            List<Card> cardObjects = InstantiateShopCards(shopCards);
+            DisableCardComponents(cardObjects);
+            BuildBuyButtons(cardObjects);
         }
 
         private void OnDisable()
@@ -57,28 +69,59 @@ namespace PeggleWars.Utilities
 
         private List<Card> SetRandomShopCards(int amountCardChoices = 3)
         {
-            List<Card> tempCardList = new();
-            int cardPoolSize = _globalDeckManager.AllCards.Count;
+            List<Card> shopCardList = new();
+            int cardPoolSize = GlobalCardManager.Instance.AllCards.Count;
 
             var retries = 0;
 
-            while (tempCardList.Count < amountCardChoices)
+            while (shopCardList.Count < amountCardChoices)
             {
-                int randomCardIndex = UnityEngine.Random.Range(0, cardPoolSize);
-
                 if (retries > 50)
                     break;
 
-                if (tempCardList.Contains(_globalDeckManager.AllCards[randomCardIndex]))
+                List<Card> rarityList = DetermineCardRarityList();
+                Card card = GetRandomCardFromList(rarityList);
+                
+                if (shopCardList.Contains(card))
                 {
                     retries++;
                     continue;
                 }
 
-                tempCardList.Add(_globalDeckManager.AllCards[randomCardIndex]);
+                shopCardList.Add(card);
             }
     
-            return tempCardList;
+            return shopCardList;
+        }
+
+        private List<Card> DetermineCardRarityList()
+        {
+            int randomRarityThreshold = UnityEngine.Random.Range(0, 101);
+            Debug.Log(_legendaryThreshold);
+
+            if (randomRarityThreshold > _legendaryThreshold && GlobalCardManager.Instance.LegendaryCards.Count > 0)
+            {
+                return GlobalCardManager.Instance.LegendaryCards;
+            }
+            else if(randomRarityThreshold > _epicThreshold && GlobalCardManager.Instance.EpicCards.Count > 0)
+            {
+                return GlobalCardManager.Instance.EpicCards;
+            }
+            else if(randomRarityThreshold > _rareThreshold && GlobalCardManager.Instance.RareCards.Count > 0)
+            {
+                return GlobalCardManager.Instance.RareCards;
+            }
+            else
+            {
+                return GlobalCardManager.Instance.CommonCards;
+            }
+        }
+
+        private Card GetRandomCardFromList(List<Card> cardList) 
+        {
+            int randomCardIndex = UnityEngine.Random.Range(0, cardList.Count);
+            Card randomCard = cardList[randomCardIndex];
+            return randomCard;
         }
 
         private void DisableCardComponents(List<Card> cardObjects)
@@ -132,7 +175,13 @@ namespace PeggleWars.Utilities
 
         private void BuyCard(int cardIndex)
         {
-            Card cardToBeAddedToDeck = _globalDeckManager.AllCards[cardIndex];
+            Card cardToBeAddedToDeck = GlobalCardManager.Instance.AllCards[cardIndex];
+
+            if (cardToBeAddedToDeck.TryGetComponent<IAmExodia>(out _))
+            {
+                GlobalCardManager.Instance.BoughtExodiaCard(cardToBeAddedToDeck);
+            }
+
             _globalDeckManager.GlobalDeck.Add(cardToBeAddedToDeck);
             StartCoroutine(_gameManager.SwitchState(GameState.NewLevel));
         }

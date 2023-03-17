@@ -60,9 +60,10 @@ namespace EnumCollection
         ForbiddenOrbI,      //
         ForbiddenOrbO,      //
         ForbiddenOrbX,      //
+        HailStormOrb,        //will hit all enemies in scene, adding freezing stack with a chance to apply frozen
         HealOrb,            //heals the player
-        IceBombOrb,         //explodes, and freezes surrounding orbs -> can be hit multiple times without shattering
         IceManaOrb,         //gives ice Mana
+        IcicleOrb,          //shoots an icicle at the first enemy, with a low chance to freeze it on impact
         LightningStrikeOrb, //Attack, strikes last enemy
         ManaBlitzOrb,       //shoots a ManaBlitz at the first enemy
         ManaShieldOrb,      //shields player from incoming damage
@@ -127,7 +128,6 @@ namespace EnumCollection
     {
         Basic,
         Common,
-        Uncommon,
         Rare,
         Epic,
         Legendary,

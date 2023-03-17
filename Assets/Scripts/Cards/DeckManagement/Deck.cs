@@ -13,13 +13,13 @@ namespace PeggleWars.Cards
 
         [SerializeField] private List<Card> _localDeck = new();
         [SerializeField] private List<Card> _discardPile = new();
-        private List<Card> _exhaustPile = new();
 
         internal List<Card> DiscardPile { get => _discardPile; set => _discardPile = value; }
         internal List<Card> LocalDeck { get => _localDeck; set => _localDeck = value; }
-        internal List<Card> ExhaustPile { get => _exhaustPile; set => _exhaustPile = value; }
+        internal List<Card> ExhaustPile { get; set; } = new();
 
         private Hand _hand;
+        private bool _deckIsBuilt;
 
         #endregion
 
@@ -39,15 +39,28 @@ namespace PeggleWars.Cards
 
         private void Start()
         {
-            BuildDeckFromGlobalDeck(GlobalDeckManager.Instance.GlobalDeck);
             _hand = Hand.Instance;
-            ShuffleDeck();
             WinLoseConditionManager.Instance.LevelVictory?.AddListener(OnLevelVictory);
+        }
+
+        private void Update()
+        {
+            if(!_deckIsBuilt)
+            {
+                BuildLevelDeck();
+            }
         }
 
         private void OnDisable()
         {
             WinLoseConditionManager.Instance.LevelVictory?.RemoveListener(OnLevelVictory);
+        }
+
+        private void BuildLevelDeck()
+        {
+            _deckIsBuilt = true;
+            BuildDeckFromGlobalDeck(GlobalDeckManager.Instance.GlobalDeck);
+            ShuffleDeck();
         }
 
         private void BuildDeckFromGlobalDeck(List<Card> globalDeck)
@@ -89,7 +102,7 @@ namespace PeggleWars.Cards
 
         internal void ExhaustCard(Card card)
         {
-            _exhaustPile.Add(card);
+            ExhaustPile.Add(card);
             _hand.HandCards.Remove(card);
         }
 

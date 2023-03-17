@@ -12,6 +12,7 @@ namespace PeggleWars.PlayerAttacks
 
         protected Vector2 _instantiatePosition = new(-7.5f, 7f);
         protected PlayerAttackManager _playerAttackManager;
+        protected Collider2D _collision;
 
         [SerializeField] protected PlayerAttackTarget _target;
         [SerializeField] protected float _attackFlySpeed = 10;
@@ -69,6 +70,8 @@ namespace PeggleWars.PlayerAttacks
 
         protected virtual void OnTriggerEnter2D(Collider2D collision)
         {
+            _collision = collision;
+
             if (collision.gameObject.name.Contains("Despawn"))
             {
                 OrbEvents.Instance.OrbEffectEnd?.Invoke();
@@ -94,10 +97,13 @@ namespace PeggleWars.PlayerAttacks
                 }
 
                 OnHitPolish();
+                AdditionalEffectsOnImpact();
                 OrbEvents.Instance.OrbEffectEnd?.Invoke();
                 DestroyGameObject();
             }
         }
+
+        protected abstract void AdditionalEffectsOnImpact();
 
         protected abstract void OnHitPolish();
 

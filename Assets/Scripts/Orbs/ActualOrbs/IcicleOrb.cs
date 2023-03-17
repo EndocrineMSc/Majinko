@@ -5,11 +5,11 @@ using PeggleWars.ScrollDisplay;
 
 namespace PeggleWars.Orbs
 {
-    internal class ManaBlitzOrb : Orb
+    internal class IcicleOrb : Orb
     {
         #region Fields and Properties
 
-        [SerializeField] private PlayerAttack _manaBlitz;
+        [SerializeField] private PlayerAttack _icicle;
 
         #endregion
 
@@ -17,7 +17,7 @@ namespace PeggleWars.Orbs
 
         internal override IEnumerator OrbEffect()
         {
-            _manaBlitz.ShootAttack(_manaBlitz);
+            _icicle.ShootAttack(_icicle);
             yield return new WaitForSeconds(0.2f);
         }
 
@@ -30,8 +30,7 @@ namespace PeggleWars.Orbs
         public override void SetDisplayDescription()
         {
             IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
-            displayOnScroll.DisplayDescription = "Hitting this orb will enable the player to cast a standard Mana Blitz on the closest enemy. " +
-                "One of the earliest spells taught to wizard apprentices.";
+            displayOnScroll.DisplayDescription = "Hitting this orb will cast an icicle at the first enemy, with a chance of applying frozen.";
         }
 
         #endregion

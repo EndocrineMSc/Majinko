@@ -8,7 +8,7 @@ namespace PeggleWars.Cards
     [RequireComponent(typeof(CardDragDrop))]
     [RequireComponent(typeof(CardZoom))]
     [RequireComponent(typeof(CardZoomEventMovement))]
-    [RequireComponent(typeof(CardTextUI))]
+    [RequireComponent(typeof(CardUIDisplayer))]
     internal abstract class Card : MonoBehaviour
     {
         #region Fields and Properties
@@ -106,11 +106,11 @@ namespace PeggleWars.Cards
         {
             if (_exhaustCard)
             {              
-                _deck.ExhaustCard(_globalDeckManager.AllCards[(int)_cardType]);
+                _deck.ExhaustCard(GlobalCardManager.Instance.AllCards[(int)_cardType]);
             }
             else
             {
-                _deck.DiscardCard(_globalDeckManager.AllCards[(int)_cardType]);
+                _deck.DiscardCard(GlobalCardManager.Instance.AllCards[(int)_cardType]);
             }
         }
 

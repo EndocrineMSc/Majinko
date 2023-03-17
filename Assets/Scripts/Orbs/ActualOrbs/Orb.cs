@@ -40,10 +40,7 @@ namespace PeggleWars.Orbs
 
         #region Functions
 
-        internal virtual IEnumerator OrbEffect()
-        {
-            yield return null;
-        }
+        internal abstract IEnumerator OrbEffect();
 
         //Delays the "despawn" so that the size increase can be visible
         internal IEnumerator SetInactive()

@@ -134,7 +134,11 @@ namespace PeggleWars.Enemies
 
         private bool CheckForMoveNecessity(Enemy enemy)
         {
-            if(CheckIfInMeleeAttackPosition(enemy))
+            if(enemy.IsFrozen)
+            {
+                return false;
+            }
+            else if(CheckIfInMeleeAttackPosition(enemy))
             {
                 return false;
             }

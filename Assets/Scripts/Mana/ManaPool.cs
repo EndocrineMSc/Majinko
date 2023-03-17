@@ -52,8 +52,8 @@ namespace PeggleWars.ManaManagement
         private void Start()
         {
             FindSpawnPoints();
-            SetReferences();
-            _orbManager.ManaSpawnTrigger?.Invoke(ManaType.BasicMana, 30);
+            OrbEvents.Instance.ManaSpawnTrigger?.AddListener(SpawnMana);
+            OrbEvents.Instance.ManaSpawnTrigger?.Invoke(ManaType.BasicMana, 30);
         }
 
         private void FindSpawnPoints()
@@ -61,12 +61,6 @@ namespace PeggleWars.ManaManagement
             _baseManaSpawn = GameObject.FindGameObjectWithTag(BASEMANASPAWN_PARAM);
             _iceManaSpawn = GameObject.FindGameObjectWithTag(ICEMANASPAWN_PARAM);
             _fireManaSpawn = GameObject.FindGameObjectWithTag(FIREMANASPAWN_PARAM);
-        }
-
-        private void SetReferences()
-        {
-            _orbManager = OrbManager.Instance;
-            _orbManager.ManaSpawnTrigger?.AddListener(SpawnMana);
         }
 
         internal void SpawnMana(ManaType manaType, int amount)
