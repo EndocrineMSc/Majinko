@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using EnumCollection;
+using System.Collections;
 
 namespace PeggleWars.Utilities
 {
@@ -97,7 +98,6 @@ namespace PeggleWars.Utilities
         private List<Card> DetermineCardRarityList()
         {
             int randomRarityThreshold = UnityEngine.Random.Range(0, 101);
-            Debug.Log(_legendaryThreshold);
 
             if (randomRarityThreshold > _legendaryThreshold && GlobalCardManager.Instance.LegendaryCards.Count > 0)
             {
@@ -177,11 +177,11 @@ namespace PeggleWars.Utilities
         {
             Card cardToBeAddedToDeck = GlobalCardManager.Instance.AllCards[cardIndex];
 
-            if (cardToBeAddedToDeck.TryGetComponent<IAmExodia>(out _))
+            if (cardToBeAddedToDeck.name.Contains("Forbidden"))
             {
+                Debug.Log(cardToBeAddedToDeck.name);
                 GlobalCardManager.Instance.BoughtExodiaCard(cardToBeAddedToDeck);
             }
-
             _globalDeckManager.GlobalDeck.Add(cardToBeAddedToDeck);
             StartCoroutine(_gameManager.SwitchState(GameState.NewLevel));
         }

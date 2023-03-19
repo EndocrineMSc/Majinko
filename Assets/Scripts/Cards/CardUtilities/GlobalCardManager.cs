@@ -5,6 +5,7 @@ using PeggleWars.Cards;
 using EnumCollection;
 using System.Linq;
 using System;
+using Unity.VisualScripting;
 
 namespace PeggleWars.Cards
 {
@@ -25,12 +26,38 @@ namespace PeggleWars.Cards
        
         private string RESOURCE_LOAD_PARAM = "CardPrefabVariants";
 
-        private IList<string> _names;
-        private int _remainingAmountExodiaCards;
+        private int _remainingAmountExodiaCards = 6;
+        private bool _isFirstInit = true;
 
         #endregion
 
         #region Functions
+
+
+
+        private void Update()
+        {            
+            //Test
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                foreach(Card card in CommonCards)
+                {
+                    Debug.Log("Common Card: " + card.name);
+                }
+                foreach(Card card in RareCards)
+                {
+                    Debug.Log("Rare Card: "+ card.name);
+                }
+                foreach(Card card in EpicCards)
+                {
+                    Debug.Log("Epic Card: " + card.name);
+                }
+                foreach(Card card in LegendaryCards)
+                {
+                    Debug.Log("Legendary Card: "+ card.name);
+                }
+            }
+        }
 
         private void Awake()
         {
@@ -43,17 +70,19 @@ namespace PeggleWars.Cards
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
             }
-            _allCards = Resources.LoadAll<Card>(RESOURCE_LOAD_PARAM).OrderBy(x => x.CardName).ToList();
+            if (_isFirstInit)
+            {
+                _allCards = Resources.LoadAll<Card>(RESOURCE_LOAD_PARAM).OrderBy(x => x.CardName).ToList();
+            }
         }
 
         private void Start()
         {
-            SetRarityThresholds();
-            BuildRarityLists();
-
-            if(GlobalDeckManager.Instance.GlobalDeck.Count > 0)
+            if (_isFirstInit)
             {
-
+                SetRarityThresholds();
+                BuildRarityLists();
+                _isFirstInit = false;
             }
         }
 
@@ -89,69 +118,101 @@ namespace PeggleWars.Cards
             }
         }
 
-        internal Card GetCardByType(CardType type)
-        {
-            _names ??= Enum.GetNames(typeof(CardType)).OrderBy(x => x).ToList();
-
-            return _allCards[_names.IndexOf(type.ToString())];
-        }
-
         internal void BoughtExodiaCard(Card exodiaCard)
         {
             _remainingAmountExodiaCards--;
             CardType cardType = exodiaCard.CardType;
-            RemoveExodiaCardFromList(LegendaryCards, cardType);
-            RemoveExodiaCardFromList(EpicCards, cardType);
-            RemoveExodiaCardFromList(RareCards, cardType);
-            RemoveExodiaCardFromList(CommonCards, cardType);
+            RemoveExodiaCardsFromShop(cardType);
             SortExodiaCardsIntoNewShopList();
         }
 
-        private void RemoveExodiaCardFromList(List<Card> cards, CardType cardType)
-        {
-            foreach (Card card in cards)
+        private void RemoveExodiaCardsFromShop(CardType cardType)
+        {           
+            foreach (Card card in LegendaryCards)
             {
                 if (cardType == card.CardType)
                 {
-                    cards.Remove(card);
+                    LegendaryCards.Remove(card);
+                    break;
+                }
+            }
+            foreach (Card card in EpicCards)
+            {
+                if (cardType == card.CardType)
+                {
+                    EpicCards.Remove(card);
+                    break;
+                }
+            }
+            foreach (Card card in RareCards)
+            {
+                if (cardType == card.CardType)
+                {
+                    RareCards.Remove(card);
+                    break;
+                }
+            }
+            foreach (Card card in CommonCards)
+            {
+                if (cardType == card.CardType)
+                {
+                    CommonCards.Remove(card);
+                    break;
                 }
             }
         }
 
         private void SortExodiaCardsIntoNewShopList()
         {
+            Debug.Log(_remainingAmountExodiaCards);
             if (_remainingAmountExodiaCards == 1)
             {
+                List<Card> newRareCards = new();
                 foreach (Card card in RareCards)
                 {
-                    if (card.TryGetComponent<IAmExodia>(out _))
+                    if (card.name.Contains("Forbidden"))
                     {
-                        CommonCards.Add(card);
-                        RareCards.Remove(card);
+                        CommonCards.Add(AllCards[(int)card.CardType]);
                     }
+                    else
+                    {
+                        newRareCards.Add(card);
+                    }
+                    RareCards = newRareCards;
                 }
             }
             else if (_remainingAmountExodiaCards <= 3)
             {
+                List<Card> newEpicCards = new();
                 foreach (Card card in EpicCards)
                 {
-                    if (card.TryGetComponent<IAmExodia>(out _))
+                    if (card.name.Contains("Forbidden"))
                     {
-                        RareCards.Add(card);
-                        EpicCards.Remove(card);
+                        RareCards.Add(AllCards[(int)card.CardType]);
+                    }
+                    else
+                    {
+                        newEpicCards.Add(card);
                     }
                 }
+                EpicCards = newEpicCards;
             }
             else if (_remainingAmountExodiaCards <= 5)
             {
+                List<Card> newLegendaryList = new();
                 foreach (Card card in LegendaryCards)
                 {
-                    if (card.TryGetComponent<IAmExodia>(out _))
+                    Debug.Log(card.name);
+                    if (card.name.Contains("Forbidden"))
                     {
-                        EpicCards.Add(card);
-                        LegendaryCards.Remove(card);
+                        EpicCards.Add(AllCards[(int)card.CardType]);
+                    }
+                    else
+                    {
+                        newLegendaryList.Add(card);
                     }
                 }
+                LegendaryCards = newLegendaryList;
             }
         }
 

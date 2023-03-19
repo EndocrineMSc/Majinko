@@ -4,17 +4,20 @@ using PeggleAttacks.AttackManager;
 using PeggleWars.Enemies;
 using PeggleWars.Orbs;
 using PeggleWars.Characters.Interfaces;
+using PeggleWars.Utilities;
 
 namespace PeggleWars.Attacks
 {
-    internal abstract class Attack : MonoBehaviour
+    internal abstract class Attack : MonoBehaviour, IHaveBark
     {
         #region Fields and Properties
 
         protected Vector2 _instantiatePosition;
         protected PlayerAttackManager _playerAttackManager;
         protected Collider2D _collision;
+        protected string _noTargetString = "There's no enemy!";
 
+        [SerializeField] protected AttackOrigin _attackOrigin;
         [SerializeField] protected int _damage;
        
         internal int Damage
@@ -23,6 +26,8 @@ namespace PeggleWars.Attacks
             private set { _damage = value; }
         }
 
+        public abstract string Bark { get; }
+
         #endregion
 
         #region Functions
@@ -30,26 +35,35 @@ namespace PeggleWars.Attacks
         protected virtual void Start()
         {
             _playerAttackManager = PlayerAttackManager.Instance;
-            _damage = Mathf.RoundToInt(_damage * _playerAttackManager.DamageModifierTurn);
+            if (_attackOrigin == AttackOrigin.Player)
+            {
+                _damage = Mathf.RoundToInt(_damage * _playerAttackManager.DamageModifierTurn);
+            }
         }
 
         protected virtual void OnTriggerEnter2D(Collider2D collision)
         {
             _collision = collision;
+            Debug.Log(_attackOrigin);
+            Debug.Log(collision.gameObject);
 
-            IDamagable target = collision.GetComponent<IDamagable>();
-            target?.TakeDamage(_damage);
-            OnHitPolish();
-            AdditionalEffectsOnImpact();
-            OrbEvents.Instance.OrbEffectEnd?.Invoke();
-            DestroyGameObject();
+            if ((_attackOrigin == AttackOrigin.Player && collision.gameObject.GetComponent<Enemy>() != null)
+                || _attackOrigin == AttackOrigin.Enemy && collision.gameObject.GetComponent<Player>() != null)
+            {
+                IDamagable target = collision.GetComponent<IDamagable>();
+                target?.TakeDamage(_damage);
+                OnHitPolish();
+                AdditionalEffectsOnImpact();
+                if (_attackOrigin == AttackOrigin.Player) { OrbEvents.Instance.OrbEffectEnd?.Invoke(); }
+                DestroyGameObject();
+            }
         }
 
         internal abstract void ShootAttack();
 
-        internal virtual void SetAttackInstantiatePosition(Transform targetTransform)
+        internal virtual void SetAttackInstantiatePosition(Transform originTransform)
         {
-            _instantiatePosition = targetTransform.position;
+            _instantiatePosition = originTransform.position;
         }
 
         protected abstract void AdditionalEffectsOnImpact();

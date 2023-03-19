@@ -11,13 +11,10 @@ namespace PeggleWars.Enemies
 
         private EnemyManager _enemyManager;
 
-        private float _enemySpeed = 2;
         private float _gapSpace; //space necessary to show that there is a gap between enemies
 
         private List<Enemy> _flyingEnemiesInScene = new();
         private List<Enemy> _walkingEnemiesInScene = new();
-
-        private readonly string SPEED_PARAM = "Speed";
 
         #endregion
 
@@ -28,7 +25,7 @@ namespace PeggleWars.Enemies
             _enemyManager = EnemyManager.Instance;
             _gapSpace = (_enemyManager.EnemyPositions[0, 3].x - _enemyManager.EnemyPositions[0, 2].x) * 1.2f;
 
-            TurnManager.Instance.StartEnemyTurn?.AddListener(OnStartEnemyTurn);
+            EnemyEvents.Instance.EnemyAttacksEndEvent?.AddListener(OnEndAttacks);
             TurnManager.Instance.EndEnemyTurn?.AddListener(OnEndEnemyTurn);
 
             SetLocalEnemyLists();
@@ -36,11 +33,11 @@ namespace PeggleWars.Enemies
 
         private void OnDisable()
         {
-            TurnManager.Instance.StartEnemyTurn?.RemoveListener(OnStartEnemyTurn);
+            TurnManager.Instance.StartEnemyTurn?.RemoveListener(OnEndAttacks);
             TurnManager.Instance.EndEnemyTurn?.RemoveListener(OnEndEnemyTurn);
         }
 
-        private void OnStartEnemyTurn()
+        private void OnEndAttacks()
         {
             SetLocalEnemyLists();
             if (_enemyManager.EnemiesInScene.Count > 0)
@@ -56,7 +53,7 @@ namespace PeggleWars.Enemies
             {
                 if (CheckForMoveNecessity(_enemyManager.EnemiesInScene[i]))
                 {
-                    yield return StartCoroutine(Move(_enemyManager.EnemiesInScene[i]));
+                    yield return StartCoroutine(_enemyManager.EnemiesInScene[i].Move());
                 }
             }
             EnemyEvents.Instance.EnemyMoveEndEvent?.Invoke();
@@ -219,68 +216,6 @@ namespace PeggleWars.Enemies
             }
         }
 
-        //Moves the enemy one "space" to the left
-        private IEnumerator Move(Enemy enemy)
-        {
-            int xIndexOfEnemy = GetEnemyPositionIndex(enemy);
-            Vector2 startPosition = enemy.transform.position;
-            Vector2 endPosition;
-            Vector2 currentPosition = startPosition;
-            
-            if (enemy.IsFlying)
-            {
-                endPosition = _enemyManager.EnemyPositions[1, xIndexOfEnemy-1];
-            }
-            else
-            {
-                endPosition = _enemyManager.EnemyPositions[0, xIndexOfEnemy-1];
-            }
-
-            enemy.GetComponent<Animator>().SetFloat(SPEED_PARAM, 1);
-
-            Rigidbody2D _rigidbody = enemy.GetComponent<Rigidbody2D>();
-
-            while (endPosition.x < currentPosition.x)
-            {
-                _rigidbody.velocity = Vector2.left * _enemySpeed;
-                yield return new WaitForSeconds(0.2f);
-                currentPosition = enemy.transform.position;
-            }
-
-            enemy.GetComponent<Animator>().SetFloat(SPEED_PARAM, 0);
-            _rigidbody.velocity = Vector2.zero;
-            enemy.transform.position = endPosition;
-        }
-
-        private int GetEnemyPositionIndex(Enemy enemy)
-        {
-            Vector2 enemyPosition = enemy.transform.position;
-
-            if (enemy.IsFlying)
-            {
-                for (int i = 0; i < _enemyManager.EnemyPositions.Length; i++)
-                {
-                    Vector2 indexPosition = _enemyManager.EnemyPositions[1, i];
-                    if (indexPosition.Equals(enemyPosition))
-                    {
-                        return i;
-                    }
-                }
-            }
-            else
-            {
-                for (int i = 0; i < _enemyManager.EnemyPositions.Length; i++)
-                {
-                    Vector2 indexPosition = _enemyManager.EnemyPositions[0, i];
-                    if (indexPosition.Equals(enemyPosition))
-                    {
-                        return i;
-                    }
-                }
-            }
-
-            return -1;
-        }
         #endregion
     }
 }

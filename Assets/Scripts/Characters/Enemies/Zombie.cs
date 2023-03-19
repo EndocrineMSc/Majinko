@@ -2,12 +2,13 @@ using EnumCollection;
 using PeggleWars.Audio;
 using PeggleWars.Orbs;
 using PeggleWars.ScrollDisplay;
+using UnityEngine;
 
 namespace PeggleWars.Enemies
 {
-    internal class Zombie : Enemy
+    internal class Zombie : MeleeEnemy
     {
-        #region Public Functions
+        #region Functions
 
         protected override void PlaySpawnSound()
         {
@@ -38,6 +39,36 @@ namespace PeggleWars.Enemies
         {
             IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
             displayOnScroll.DisplayDescription = "A regular old zombie. Will spawn two Rotten Mana orbs on death.";
+        }
+
+        protected override void StartMovementAnimation()
+        {
+            _animator.SetFloat(SPEED_PARAM, 1);
+        }
+
+        protected override void StopMovementAnimation()
+        {
+            _animator.SetFloat(SPEED_PARAM, 0);
+        }
+
+        protected override void TriggerAttackAnimation()
+        {
+            _animator.SetTrigger(ATTACK_PARAM);
+        }
+
+        protected override void TriggerSpawnAnimation()
+        {
+            _animator.SetTrigger(SPAWN_PARAM);
+        }
+
+        protected override void TriggerHurtAnimation()
+        {
+            _animator.SetTrigger(HURT_PARAM);
+        }
+
+        protected override void TriggerDeathAnimation()
+        {
+            _animator.SetTrigger(DEATH_PARAM);
         }
 
         #endregion

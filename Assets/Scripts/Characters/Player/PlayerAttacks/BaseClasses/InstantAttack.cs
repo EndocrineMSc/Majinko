@@ -1,3 +1,4 @@
+using PeggleAttacks.AttackVisuals.PopUps;
 using PeggleWars.Enemies;
 using PeggleWars.Orbs;
 using System.Collections;
@@ -23,6 +24,11 @@ namespace PeggleWars.Attacks
             if (EnemyManager.Instance.EnemiesInScene.Count > 0)
             {
                 Instantiate(this, _instantiatePosition, Quaternion.identity);
+                Player.Instance.GetComponent<PopUpSpawner>().SpawnPopUp(Bark);
+            }
+            else
+            {
+                Player.Instance.GetComponent<PopUpSpawner>().SpawnPopUp(_noTargetString);
             }
         }
 

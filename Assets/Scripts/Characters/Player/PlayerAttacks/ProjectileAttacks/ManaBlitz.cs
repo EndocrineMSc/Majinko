@@ -5,6 +5,8 @@ namespace PeggleWars.Attacks
 {
     internal class ManaBlitz : ProjectileAttack
     {
+        public override string Bark { get; } = "Mana Blitz!";
+
         //Do special stuff in here
         private void Awake()
         {

@@ -74,8 +74,9 @@ namespace PeggleWars.Orbs
             }
         }
 
-        internal void SwitchOrbs(OrbType orbType, int switchAmount = 1)
+        internal List<Orb> SwitchOrbs(OrbType orbType, int switchAmount = 1)
         {
+            List<Orb> newOrbs = new();
             List<Orb> baseOrbs = FindOrbs(SceneOrbList, SearchTag.BaseOrbs);          
             List<Orb> activeBaseOrbs = FindOrbs(baseOrbs, SearchTag.IsActive);
            
@@ -84,7 +85,7 @@ namespace PeggleWars.Orbs
             //Case 1: enough active base orbs present, so switch some of those
             if (activeBaseOrbs.Count >= switchAmount)
             {
-                ReplaceOrbsInList(activeBaseOrbs, switchAmount, orbToBeInserted);
+                newOrbs.AddRange(ReplaceOrbsInList(activeBaseOrbs, switchAmount, orbToBeInserted));
             }
             //Case 2: enough base orbs are present, but some of them are inactive, so switch the active ones first, then the inactive ones
             else if (baseOrbs.Count >= switchAmount)
@@ -92,10 +93,10 @@ namespace PeggleWars.Orbs
                 List<Orb> inactiveBaseOrbs = FindOrbs(baseOrbs, SearchTag.IsInactive);
 
                 int availableOrbs = activeBaseOrbs.Count;
-                ReplaceOrbsInList(activeBaseOrbs, availableOrbs, orbToBeInserted);
+                newOrbs.AddRange(ReplaceOrbsInList(activeBaseOrbs, availableOrbs, orbToBeInserted));
 
                 int missingOrbs = switchAmount - activeBaseOrbs.Count;
-                ReplaceOrbsInList(inactiveBaseOrbs, missingOrbs, orbToBeInserted);
+                newOrbs.AddRange(ReplaceOrbsInList(inactiveBaseOrbs, missingOrbs, orbToBeInserted));
             }
             //Case 3: there are only non-base orbs left (unlikely) so switch active ones first then inactive ones second
             else
@@ -104,11 +105,12 @@ namespace PeggleWars.Orbs
                 List<Orb> inactiveOrbs = FindOrbs(SceneOrbList, SearchTag.IsInactive);
 
                 int availableOrbs = activeOrbs.Count;
-                ReplaceOrbsInList(activeOrbs, availableOrbs, orbToBeInserted);
+                newOrbs.AddRange(ReplaceOrbsInList(activeOrbs, availableOrbs, orbToBeInserted));
 
                 int missingOrbs = switchAmount - activeOrbs.Count;
-                ReplaceOrbsInList(inactiveOrbs, missingOrbs, orbToBeInserted);
+                newOrbs.AddRange(ReplaceOrbsInList(inactiveOrbs, missingOrbs, orbToBeInserted));
             }
+            return newOrbs;
         }
 
         internal void SetAllOrbsActive()
@@ -180,18 +182,40 @@ namespace PeggleWars.Orbs
             return resultOrbs;
         }
         
-        private void ReplaceOrbsInList(List<Orb> orbs, int amount, Orb orb)
+        private List<Orb> ReplaceOrbsInList(List<Orb> orbs, int amount, Orb orb)
         {
+            List<Orb> newOrbs = new();
             for (int i = 0; i < amount; i++)
             {
                 Orb randomOrb = FindRandomOrbInList(orbs);
                 Vector3 randomOrbPosition = randomOrb.transform.position;
                 Orb tempOrb = Instantiate(orb, randomOrbPosition, Quaternion.identity);
-
-                Instance.SceneOrbList.Remove(randomOrb);
-                Instance.SceneOrbList.Add(tempOrb);
-
+                SceneOrbList.Remove(randomOrb);
+                SceneOrbList.Add(tempOrb);
+                newOrbs.Add(tempOrb);             
                 Destroy(randomOrb.gameObject);                            
+            }
+            return newOrbs;
+        }
+
+        internal void ReplaceOrbOfType(OrbType typeToBeReplaced, OrbType typeToReplaceItWith = OrbType.BaseManaOrb)
+        {
+            Orb orbToBeReplaced = null;            
+            foreach (Orb orb in SceneOrbList)
+            {
+                if (orb.OrbType == typeToBeReplaced)
+                {
+                    orbToBeReplaced = orb;
+                    break;
+                }
+            }
+            if (orbToBeReplaced != null)
+            {
+                Vector3 orbPosition = orbToBeReplaced.transform.position;
+                Orb replaceOrb = Instantiate(_allOrbsList[(int)typeToReplaceItWith], orbPosition, Quaternion.identity);
+                SceneOrbList.Remove(orbToBeReplaced);
+                SceneOrbList.Add(replaceOrb);
+                Destroy(orbToBeReplaced.gameObject);
             }
         }
         #endregion

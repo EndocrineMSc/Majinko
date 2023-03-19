@@ -20,9 +20,9 @@ namespace PeggleAttacks.AttackVisuals.PopUps
 
         #endregion
 
-        #region Public Functions
+        #region Functions
 
-        public void Setup(int damageAmount)
+        internal void Setup(int damageAmount)
         {
             _textMesh.text = damageAmount.ToString();
             _textMesh.fontSize = 26 + damageAmount;
@@ -34,9 +34,12 @@ namespace PeggleAttacks.AttackVisuals.PopUps
             _moveVector = new Vector3(1, 1);
         }
 
-        #endregion
-
-        #region Private Functions
+        internal void Setup(string barkText)
+        {
+            _textMesh.text = barkText;
+            _textMesh.fontSize = 26;
+            _moveVector = new Vector3(1, 1);
+        }
 
         private void Awake()
         {

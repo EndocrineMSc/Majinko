@@ -14,6 +14,7 @@ namespace PeggleWars.Enemies
         
         public UnityEvent EnemyDeathEvent;
         public UnityEvent EnemyMoveEndEvent;
+        public UnityEvent EnemyAttacksEndEvent;
 
         #endregion
 

@@ -11,6 +11,8 @@ namespace PeggleWars.Attacks
         [SerializeField] protected int _freezingStacks = 5;
         [SerializeField] protected int _frozenThreshold = 30;
 
+        public override string Bark { get; } = "Hail Storm!";
+
         //Do special stuff in here
         private void Awake()
         {

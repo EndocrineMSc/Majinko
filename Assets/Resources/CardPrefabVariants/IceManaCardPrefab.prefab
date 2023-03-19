@@ -205,6 +205,6 @@ MonoBehaviour:
   _iceManaCost: 0
   _cardType: 10
   _exhaustCard: 1
-  _cardRarity: 2
+  _cardRarity: 1
   _orbType: 15
-  _amountOrbs: 1
+  _amountOrbs: 2

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace PeggleAttacks.AttackVisuals.PopUps
 {
-    public class PopUpSpawner : MonoBehaviour
+    internal class PopUpSpawner : MonoBehaviour
     {
         #region Fields and Properties
 
@@ -12,17 +12,28 @@ namespace PeggleAttacks.AttackVisuals.PopUps
 
         #endregion
 
-        #region Public Functions
+        #region Functions
 
-        public void SpawnPopUp(int damageAmount)
+        internal void SpawnPopUp(int damageAmount)
         {
-            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-            float xOffset = transform.position.x + spriteRenderer.size.x / 2f;
-            float yOffset = transform.position.y + spriteRenderer.size.y / 2f;
+            Transform spawnTransform = transform.GetChild(1).gameObject.transform;
+            float xOffset = spawnTransform.position.x + UnityEngine.Random.Range(-0.1f, 0.1f);
+            float yOffset = spawnTransform.position.y + UnityEngine.Random.Range(-0.1f, 0.1f);
 
-            Vector3 spawnPosition = new(xOffset, yOffset, transform.position.z);
+            Vector3 spawnPosition = new(xOffset, yOffset, spawnTransform.position.z);
             DamagePopUp tempPopUp = Instantiate(_popUpPrefab, spawnPosition, Quaternion.identity);
             tempPopUp.Setup(damageAmount);
+        }
+
+        internal void SpawnPopUp(string bark)
+        {
+            Transform spawnTransform = transform.GetChild(1).gameObject.transform;
+            float xOffset = spawnTransform.position.x + UnityEngine.Random.Range(-0.1f, 0.1f);
+            float yOffset = spawnTransform.position.y + UnityEngine.Random.Range(-0.1f, 0.1f);
+
+            Vector3 spawnPosition = new(xOffset, yOffset, spawnTransform.position.z);
+            DamagePopUp tempPopUp = Instantiate(_popUpPrefab, spawnPosition, Quaternion.identity);
+            tempPopUp.Setup(bark);
         }
 
         #endregion

@@ -24,7 +24,7 @@ namespace PeggleWars.Enemies
         private readonly int _amountOfXScreenDivisions = 10;
         private readonly int _amountOfCharacterPositionsOnXAxis = 6;
         private readonly int _amountOfEnemyRows = 2;
-
+        private bool _isFirstInit = true;
         #endregion
 
         #region Functions
@@ -38,21 +38,28 @@ namespace PeggleWars.Enemies
             else
             {
                 Instance = this;
-            }            
-            _enemyLibrary = Resources.LoadAll<Enemy>("EnemyPrefabs");
+            }
+            if (_isFirstInit)
+            {
+                _enemyLibrary = Resources.LoadAll<Enemy>("EnemyPrefabs");
+            }
         }
 
         private void Start()
         {
-            _enemyPositions = new Vector2[_amountOfEnemyRows, _amountOfCharacterPositionsOnXAxis];
-            SetEnemyPositions();
+            if (_isFirstInit)
+            {
+                _enemyPositions = new Vector2[_amountOfEnemyRows, _amountOfCharacterPositionsOnXAxis];
+                SetEnemyPositions();
+                _isFirstInit = false;
+            }
         }
 
         private void SetEnemyPositions()
         {
             Camera camera = Camera.main;
             int cellHeight = Screen.height / 10;
-            float yLowerRow = Screen.height - (cellHeight * 1.5f);
+            float yLowerRow = Screen.height - cellHeight;
             float yUpperRow = Screen.height - cellHeight / 2;
             float cellWidth = Screen.width / _amountOfXScreenDivisions;
             float xPositionOffset = 3;

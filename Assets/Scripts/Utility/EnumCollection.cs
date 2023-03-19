@@ -28,12 +28,13 @@ namespace EnumCollection
     internal enum EnemyAttackType
     {
         Melee,
-        Distance,
+        Ranged,
     }
 
     internal enum EnemyType
     {
         CloakedZombie,
+        WraithCaster,
     }
 
     internal enum ManaType
@@ -64,6 +65,7 @@ namespace EnumCollection
         HealOrb,            //heals the player
         IceManaOrb,         //gives ice Mana
         IcicleOrb,          //shoots an icicle at the first enemy, with a low chance to freeze it on impact
+        IntangibleEnemyOrb, //will make all enemies with the ability to do so intangible for a turn
         LightningStrikeOrb, //Attack, strikes last enemy
         ManaBlitzOrb,       //shoots a ManaBlitz at the first enemy
         ManaShieldOrb,      //shields player from incoming damage

@@ -46,7 +46,19 @@ namespace PeggleWars.ScrollDisplay
             else
             {
                 _scrollAnimator.enabled = false;
-                _scrollRenderer.sprite = displayObject.GetComponent<SpriteRenderer>().sprite;
+                if(displayObject.TryGetComponent<SpriteRenderer>(out SpriteRenderer spriteRenderer))
+                {
+                    _scrollRenderer.sprite = spriteRenderer.sprite;
+                }
+                else
+                {
+                    GameObject displayObjectChild = displayObject.transform.GetChild(0).gameObject;
+                    if(displayObjectChild.TryGetComponent<SpriteRenderer>(out SpriteRenderer childSpriteRenderer))
+                    {
+                        _scrollRenderer.sprite = childSpriteRenderer.sprite;
+                    }
+                }
+                
             }
 
             _scrollDisplay.transform.localScale = displayObject.transform.localScale * 4;

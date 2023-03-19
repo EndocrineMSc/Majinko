@@ -2,14 +2,16 @@ using System.Collections;
 using UnityEngine;
 using PeggleWars.Attacks;
 using PeggleWars.ScrollDisplay;
+using PeggleWars.Utilities;
 
 namespace PeggleWars.Orbs
 {
-    internal class ManaBlitzOrb : Orb
+    internal class ManaBlitzOrb : Orb, IHaveBark
     {
         #region Fields and Properties
 
         [SerializeField] private Attack _manaBlitz;
+        public string Bark { get; } = "Mana Blitz!";
 
         #endregion
 

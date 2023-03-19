@@ -71,6 +71,11 @@ namespace PeggleWars.Utilities
             StartCoroutine(GameManager.Instance.SwitchState(GameState.GameOver));
         }
 
+        public void CheatButton()
+        {
+            LevelVictory.Invoke();
+        }
+
         #endregion
     }
 }
