@@ -152,7 +152,7 @@ namespace PeggleWars.Orbs
             //Add necessary additional effects in children here
         }
 
-        private IEnumerator DestroyOrb()
+        protected IEnumerator DestroyOrb()
         {
             yield return new WaitForSeconds(0.1f);
             Destroy(gameObject);

@@ -33,5 +33,19 @@ namespace PeggleWars.Orbs
             }
             yield return null;
         }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.name.Contains("Shot"))
+            {
+                GetComponent<Collider2D>().enabled = false;
+                PlayOrbOnHitSound();
+                OnCollisionVisualPolish();
+                SpawnMana();
+                ReplaceHitOrb();
+                AdditionalEffectsOnCollision();
+                StartCoroutine(DestroyOrb());
+            }
+        }
     }
 }

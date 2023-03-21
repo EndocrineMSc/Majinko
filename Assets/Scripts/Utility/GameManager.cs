@@ -93,7 +93,7 @@ namespace PeggleWars
                     break;
 
                 case (GameState.NewLevel):
-                    SceneManager.LoadScene("TestScene");
+                    SceneManager.LoadScene("LoadingScreen");
                     break;
 
                 case (GameState.GameOver):
