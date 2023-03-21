@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2549565476461289554}
   - component: {fileID: 5099420647275916350}
   - component: {fileID: -8885269812961393264}
+  - component: {fileID: 4872170773538441819}
   m_Layer: 0
   m_Name: FastHandsOrb
   m_TagString: Orb
@@ -114,7 +115,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2549565476461289553}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -140,3 +141,15 @@ MonoBehaviour:
   ManaAmount: 0
   _defaultOrb: {fileID: 2549565476461289553, guid: c837957ee74bdcc44a31943daaafc0a8, type: 3}
   _orbType: 4
+--- !u!114 &4872170773538441819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549565476461289553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ed9cf162afe23d4ba1396e99745a321, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -8,6 +8,7 @@ namespace PeggleWars.Cards
     {
         Divination,
         FastHands,
+        FireBombOrb,
         FireMana,
         ForbiddenOrbA,
         ForbiddenOrbD,

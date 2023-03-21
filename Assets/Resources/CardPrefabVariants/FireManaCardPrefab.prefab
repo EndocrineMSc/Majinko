@@ -191,7 +191,7 @@ MonoBehaviour:
   _basicManaCost: 1
   _fireManaCost: 0
   _iceManaCost: 0
-  _cardType: 2
+  _cardType: 3
   _exhaustCard: 1
   _cardRarity: 1
   _orbType: 6

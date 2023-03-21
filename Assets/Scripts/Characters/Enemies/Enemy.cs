@@ -214,7 +214,7 @@ namespace PeggleWars.Enemies
             OnDeathEffect();
         }
 
-        internal void SetOnFire(int fireStacks)
+        internal void ApplyBurning(int fireStacks)
         {
             _fireStacks += fireStacks;
         }

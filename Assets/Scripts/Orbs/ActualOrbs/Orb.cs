@@ -54,6 +54,13 @@ namespace PeggleWars.Orbs
         {
             SetReferences();
             SetDisplayDescription();
+            StartCoroutine(EnableCollider());
+        }
+
+        protected virtual IEnumerator EnableCollider()
+        {
+            yield return new WaitForSeconds(0.1f);
+            GetComponent<Collider2D>().enabled = true;
         }
 
         protected virtual void SetReferences()
@@ -86,15 +93,16 @@ namespace PeggleWars.Orbs
             return spawnPoint;
         } 
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        protected virtual void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.name.Contains("Shot"))
             {
+                GetComponent<Collider2D>().enabled = false;
+                AdditionalEffectsOnCollision();
                 PlayOrbOnHitSound();
                 OnCollisionVisualPolish();
                 SpawnMana();
                 ReplaceHitOrb();               
-                AdditionalEffectsOnCollision();
                 StartCoroutine(DestroyOrb());
             }
         }
@@ -152,7 +160,7 @@ namespace PeggleWars.Orbs
             //Add necessary additional effects in children here
         }
 
-        protected IEnumerator DestroyOrb()
+        protected virtual IEnumerator DestroyOrb()
         {
             yield return new WaitForSeconds(0.1f);
             Destroy(gameObject);
