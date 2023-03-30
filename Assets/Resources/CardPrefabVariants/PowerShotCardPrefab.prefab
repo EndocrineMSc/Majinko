@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5102782085163616900, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: _cardType
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: -5102782085163616900, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: _manaCost
@@ -49,8 +49,8 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: e9d10fad820f69f48af2ef4b8b7e0991, type: 2}
     - target: {fileID: -5102782085163616900, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: _cardDescription
-      value: A high-power shot unaffected by gravity.  Playing multiple cards will
-        make the shot ignore the Portal for each additional card played.
+      value: 'Sphereshifter \n A high-speed sphere unaffected by gravity \n Stackable:
+        Ignore the portal once'
       objectReference: {fileID: 0}
     - target: {fileID: 1002801183830465219, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: m_text

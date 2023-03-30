@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _orbType
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _cardName
@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _cardType
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _amountOrbs
@@ -33,8 +33,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _cardDescription
-      value: Spawns a Hail Storm Orb. When hit will cast a Hail Storm, which applies
-        freezing stacks to all enemies and has a moderate change to apply frozen.
+      value: Orbshifter 1 \n Applies freezing, moderate chance to apply frozen
       objectReference: {fileID: 0}
     - target: {fileID: 4812993297873364277, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Pivot.x

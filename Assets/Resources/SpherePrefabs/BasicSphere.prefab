@@ -10,11 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5215213442947256869}
   - component: {fileID: 1672878411711753588}
-  - component: {fileID: 1610338880124931751}
+  - component: {fileID: 3788764008735259943}
   - component: {fileID: 2244647004272071695}
   - component: {fileID: 3846966178673491844}
+  - component: {fileID: 8287759762026316844}
   m_Layer: 17
-  m_Name: PowerShot
+  m_Name: BasicSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 330071848219984103}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.012341806, g: 0, b: 0.5660378, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 1cc70a07e3471e14d9749a8fe252197d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -87,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1610338880124931751
+--- !u!114 &3788764008735259943
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,7 +97,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 330071848219984103}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ba249e5b4c339f47b0e2aa875baf045, type: 3}
+  m_Script: {fileID: 11500000, guid: 573c5c1a830ee454b883eefd8e75de5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _shotIndicatorPrefab: {fileID: 7903168895090040341, guid: afbba29825c7dc341b1247d2500388b4, type: 3}
@@ -115,7 +116,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.084022194
+  m_Radius: 0.07
 --- !u!50 &3846966178673491844
 Rigidbody2D:
   serializedVersion: 4
@@ -130,10 +131,22 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0
+  m_AngularDrag: 0.3
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 005390a525cab5c448015082d3085db5, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8287759762026316844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330071848219984103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ed9cf162afe23d4ba1396e99745a321, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

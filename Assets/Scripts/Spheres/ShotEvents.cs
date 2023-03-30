@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace PeggleWars.Shots
+namespace PeggleWars.Spheres
 {
     internal class ShotEvents : MonoBehaviour
     {

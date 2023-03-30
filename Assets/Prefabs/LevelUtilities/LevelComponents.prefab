@@ -4769,7 +4769,7 @@ GameObject:
   - component: {fileID: 2979216601743588876}
   - component: {fileID: 6454954158609571663}
   m_Layer: 0
-  m_Name: ShotManager
+  m_Name: SphereManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5642,21 +5642,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7282953036621514585}
     m_Modifications:
-    - target: {fileID: 3669329277465200522, guid: cef341aa7d34dc045998e49e1074c32c, type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6837642939876966639, guid: cef341aa7d34dc045998e49e1074c32c, type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 8722768749525290215, guid: cef341aa7d34dc045998e49e1074c32c, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722768749525290215, guid: cef341aa7d34dc045998e49e1074c32c, type: 3}
-      propertyPath: m_Layer
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8722768749525290218, guid: cef341aa7d34dc045998e49e1074c32c, type: 3}
       propertyPath: m_RootOrder

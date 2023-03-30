@@ -1,6 +1,6 @@
 using UnityEngine;
 using EnumCollection;
-using PeggleWars.Shots;
+using PeggleWars.Spheres;
 
 namespace PeggleWars.Cards
 {
@@ -9,8 +9,8 @@ namespace PeggleWars.Cards
         #region Fields and Properties
 
         [SerializeField] private ShotType _shotType;
-        private ShotManager _shotManager;
-        private Shot _shot;
+        private SphereManager _shotManager;
+        private Sphere _shot;
 
         #endregion
 
@@ -19,13 +19,13 @@ namespace PeggleWars.Cards
         protected override void SetReferencesToLevelComponents()
         {
             base.SetReferencesToLevelComponents();
-            _shotManager = ShotManager.Instance;
+            _shotManager = SphereManager.Instance;
             _shot = _shotManager.AllShots[(int)_shotType];
         }
 
         protected override void CardEffect()
         {
-            Shot _shotInScene = _shotManager.ShotToBeSpawned;
+            Sphere _shotInScene = _shotManager.ShotToBeSpawned;
 
             if (_shotInScene == _shot) //maybe won't work as intended, check first for bugfixes
             {          

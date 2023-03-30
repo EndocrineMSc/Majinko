@@ -44,33 +44,6 @@ namespace PeggleWars
 
         #region Functions
 
-        public void TakeDamage(int damage)
-        {
-            int calcDamage = damage;
-            if (_shield > calcDamage)
-            {
-                _shield -= damage;
-            }
-            else if (_shield > 0)
-            {
-                calcDamage = damage - _shield;
-                _shield = 0;
-                _health -= calcDamage;
-                StartCoroutine(nameof(ColorShiftDamage));
-                //_animator.SetTrigger("Hurt");
-            }
-            else
-            {
-                _health -= damage;
-                StartCoroutine(nameof(ColorShiftDamage));
-                //_animator.SetTrigger("Hurt");
-            }
-        }
-
-        #endregion
-
-        #region Private Functions
-
         private void Awake()
         {
             if (Instance != null && Instance != this)
@@ -92,6 +65,29 @@ namespace PeggleWars
             _turnManager = TurnManager.Instance;
 
             TurnManager.Instance.StartCardTurn?.AddListener(OnCardTurnStart);         
+        }
+
+        public void TakeDamage(int damage)
+        {
+            int calcDamage = damage;
+            if (_shield > calcDamage)
+            {
+                _shield -= damage;
+            }
+            else if (_shield > 0)
+            {
+                calcDamage = damage - _shield;
+                _shield = 0;
+                _health -= calcDamage;
+                StartCoroutine(nameof(ColorShiftDamage));
+                //_animator.SetTrigger("Hurt");
+            }
+            else
+            {
+                _health -= damage;
+                StartCoroutine(nameof(ColorShiftDamage));
+                //_animator.SetTrigger("Hurt");
+            }
         }
 
         private void OnDisable()

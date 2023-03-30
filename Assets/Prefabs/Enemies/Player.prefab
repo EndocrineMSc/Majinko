@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4601825820838371278}
   - component: {fileID: 858128373076886677}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PopUpSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 5690429500704751957}
   - component: {fileID: 2552433896791904347}
   - component: {fileID: 4075424000639214978}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 8722768749525290219}
   - component: {fileID: 664240588296104951}
   - component: {fileID: 2580491591936064414}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}

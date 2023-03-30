@@ -186,13 +186,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardName: Fire Orb
-  _cardDescription: Permanently adds a Fire Orb to the playing field. This card is
-    removed from the deck completely after playing it once.
+  _cardDescription: 'Orbshifter 1, persitent \n Orb: Gain fire mana and apply burning
+    \n Single use'
   _basicManaCost: 1
   _fireManaCost: 0
   _iceManaCost: 0
-  _cardType: 3
+  _cardType: 4
   _exhaustCard: 1
   _cardRarity: 1
-  _orbType: 6
+  _orbType: 7
   _amountOrbs: 2

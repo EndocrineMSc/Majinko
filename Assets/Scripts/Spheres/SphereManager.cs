@@ -5,21 +5,21 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.Events;
 
-namespace PeggleWars.Shots
+namespace PeggleWars.Spheres
 {
-    internal class ShotManager : MonoBehaviour
+    internal class SphereManager : MonoBehaviour
     {
         #region Fields and Properties
 
-        private List<Shot> _allShots = new();
+        private List<Sphere> _allShots = new();
 
-        private Shot _currentShot;
+        private Sphere _currentShot;
 
         private int _maxNumberOfIndicators;
         internal int NumberOfIndicators { get => _maxNumberOfIndicators; set => _maxNumberOfIndicators = value; }
         
-        private Shot _spawnShot;
-        internal Shot ShotToBeSpawned
+        private Sphere _spawnShot;
+        internal Sphere ShotToBeSpawned
         {
             get { return _spawnShot; }
             private set { _spawnShot = value; }
@@ -35,11 +35,11 @@ namespace PeggleWars.Shots
         private readonly int _maxNumberOfIndicatorsBaseline = 3;
         private readonly int _maxIndicatorsCollisionsBaseline = 1;
 
-        internal static ShotManager Instance { get; private set; }
+        internal static SphereManager Instance { get; private set; }
 
-        private string RESOURCE_LOAD_PARAM = "ShotPrefabs";
+        private string RESOURCE_LOAD_PARAM = "SpherePrefabs";
 
-        internal List<Shot> AllShots
+        internal List<Sphere> AllShots
         {
             get { return _allShots; }
         }
@@ -59,7 +59,7 @@ namespace PeggleWars.Shots
                 Instance = this;
             }
 
-            _allShots = Resources.LoadAll<Shot>(RESOURCE_LOAD_PARAM).ToList();
+            _allShots = Resources.LoadAll<Sphere>(RESOURCE_LOAD_PARAM).ToList();
             _spawnShot = _allShots[(int)ShotType.BasicShot];
             ResetIndicatorNumbers();
         }
@@ -90,7 +90,7 @@ namespace PeggleWars.Shots
             _currentShot = Instantiate(_spawnShot, spawnWorldPosition, Quaternion.identity);
         }
 
-        internal void SetShotToBeSpawned(Shot shot)
+        internal void SetShotToBeSpawned(Sphere shot)
         {
             _spawnShot = shot;
             ReplaceShot();

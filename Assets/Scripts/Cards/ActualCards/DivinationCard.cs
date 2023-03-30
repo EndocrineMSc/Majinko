@@ -1,15 +1,15 @@
-using PeggleWars.Shots;
+using PeggleWars.Spheres;
 
 namespace PeggleWars.Cards
 {
     internal class DivinationCard : Card
     {
-        private ShotManager _shotManager;
+        private SphereManager _shotManager;
 
         protected override void SetReferencesToLevelComponents()
         {
             base.SetReferencesToLevelComponents();
-            _shotManager = ShotManager.Instance;
+            _shotManager = SphereManager.Instance;
         }
 
         protected override void CardEffect()

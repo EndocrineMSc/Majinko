@@ -198,13 +198,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardName: Ice Orb
-  _cardDescription: Permanently adds an Ice Orb to the playing field. This card is
-    removed from the deck completely after playing it once.
+  _cardDescription: 'Orbshifter 1, persitent \n Orb: Gain ice mana and apply freezing
+    \n Single use'
   _basicManaCost: 1
   _fireManaCost: 0
   _iceManaCost: 0
-  _cardType: 11
+  _cardType: 12
   _exhaustCard: 1
   _cardRarity: 1
-  _orbType: 15
+  _orbType: 16
   _amountOrbs: 2

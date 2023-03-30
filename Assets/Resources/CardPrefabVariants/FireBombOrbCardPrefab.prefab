@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _cardType
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _amountOrbs
@@ -33,9 +33,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _cardDescription
-      value: Spawns a fire bomb orb. When hit it, the resulting explosion activates
-        nearby peggles as well. Will enable the player to cast fire bomb on the enemies,
-        dealing damage and setting them on fire.
+      value: 'Orbshifter 1 \n Orb: Explodes, activating nearby orbs aswell. Deals
+        area of effect damage and applies burning'
       objectReference: {fileID: 0}
     - target: {fileID: 4812993297873364277, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Pivot.x

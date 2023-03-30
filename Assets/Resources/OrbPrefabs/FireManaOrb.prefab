@@ -140,7 +140,7 @@ MonoBehaviour:
   SpawnManaType: 1
   ManaAmount: 10
   _defaultOrb: {fileID: 2549565476461289553}
-  _orbType: 6
+  _orbType: 7
 --- !u!114 &4872170773538441819
 MonoBehaviour:
   m_ObjectHideFlags: 0

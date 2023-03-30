@@ -2,9 +2,9 @@ using PeggleWars.ScrollDisplay;
 using System.Collections;
 using UnityEngine;
 
-namespace PeggleWars.Shots
+namespace PeggleWars.Spheres
 {
-    internal class PowerShot : Shot
+    internal class PowerSphere : Sphere
     {
         protected int _allowedPortalCollisions = 0;
         protected bool _isWithinPortal;

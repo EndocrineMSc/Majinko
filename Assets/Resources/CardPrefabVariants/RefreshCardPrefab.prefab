@@ -116,11 +116,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardName: Refresh Orb
-  _cardDescription: Permanently adds a Refresh Orb to the playing field. This card
-    is removed from the deck completely after playing it once.
+  _cardDescription: 'Orbshifter 1, persitent \n Orb: Refreshes the arena \n Single-use'
   _basicManaCost: 1
   _fireManaCost: 0
   _iceManaCost: 0
-  _cardType: 18
+  _cardType: 19
   _exhaustCard: 1
-  _cardRarity: 0
+  _cardRarity: 3

@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _orbType
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _cardName
@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _cardType
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _amountOrbs
@@ -33,8 +33,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _cardDescription
-      value: Spawns an icicle orb. Will shoot an icicle at the first enemy, dealing
-        damage, applying freezing and has a chance to apply frozen.
+      value: 'Orbshifter 1 \n Orb: Deal ice damage, apply freezing, minor chance
+        to apply frozen'
       objectReference: {fileID: 0}
     - target: {fileID: 4812993297873364277, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Pivot.x

@@ -53,6 +53,7 @@ namespace EnumCollection
         DarkManaOrb,        //gives dark Mana
         DefenseOrb,         //gives player a mana shield to block damage
         FastHandsOrb,       //draw an extra card on turn start
+        FireArrowOrb,       //fire version of the manablitz, sets enemy on fires
         FireBombOrb,        //explodes, and triggers surrounding orbs
         FireManaOrb,        //gives fire Mana
         ForbiddenOrbA,      //
@@ -61,7 +62,7 @@ namespace EnumCollection
         ForbiddenOrbI,      //
         ForbiddenOrbO,      //
         ForbiddenOrbX,      //
-        HailStormOrb,        //will hit all enemies in scene, adding freezing stack with a chance to apply frozen
+        HailStormOrb,       //will hit all enemies in scene, adding freezing stack with a chance to apply frozen
         HealOrb,            //heals the player
         IceManaOrb,         //gives ice Mana
         IcicleOrb,          //shoots an icicle at the first enemy, with a low chance to freeze it on impact

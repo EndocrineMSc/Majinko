@@ -1,9 +1,9 @@
 
 using PeggleWars.ScrollDisplay;
 
-namespace PeggleWars.Shots
+namespace PeggleWars.Spheres
 {
-    internal class BasicShot : Shot
+    internal class BasicSphere : Sphere
     {
         internal override void ShotStackEffect()
         {

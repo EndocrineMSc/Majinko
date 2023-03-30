@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5102782085163616900, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: _cardType
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: -5102782085163616900, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: _manaCost
@@ -41,8 +41,8 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: c285dcf7fb7948e4ba861e15cc97dbad, type: 2}
     - target: {fileID: -5102782085163616900, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: _cardDescription
-      value: The shot will split into 3 separate shot upon first orb contact.  Playing
-        multiple cards will add 1 additonal shot each.
+      value: 'Sphereshifter \n The sphere will split into 3 separate spheres upon
+        first orb contact \n Stackable: Add an additional sphere upon splitting'
       objectReference: {fileID: 0}
     - target: {fileID: 1002801183830465219, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: m_text

@@ -116,12 +116,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardName: Forbidden A
-  _cardDescription: A mysterious dark power lies within this card.
+  _cardDescription: Orbshifter 1, persitent \n A mysterious dark power lies within
+    this card \n Single-use
   _basicManaCost: 1
   _fireManaCost: 0
   _iceManaCost: 0
-  _cardType: 4
+  _cardType: 5
   _exhaustCard: 1
   _cardRarity: 4
-  _orbType: 7
+  _orbType: 8
   _amountOrbs: 1

@@ -4,6 +4,7 @@ using UnityEngine;
 using PeggleWars.ManaManagement;
 using PeggleWars.Audio;
 using PeggleWars.ScrollDisplay;
+using PeggleWars.Spheres;
 
 namespace PeggleWars.Orbs
 {
@@ -95,7 +96,7 @@ namespace PeggleWars.Orbs
 
         protected virtual void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.name.Contains("Shot"))
+            if (collision.gameObject.TryGetComponent<IAmSphere>(out _))
             {
                 GetComponent<Collider2D>().enabled = false;
                 AdditionalEffectsOnCollision();

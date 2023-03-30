@@ -4,9 +4,9 @@ using UnityEngine;
 using PeggleWars.Orbs;
 using PeggleWars.ScrollDisplay;
 
-namespace PeggleWars.Shots
+namespace PeggleWars.Spheres
 {
-    internal class MultiShot : Shot
+    internal class MultiSphere : Sphere
     {
         #region Fields
 
@@ -94,7 +94,7 @@ namespace PeggleWars.Shots
                 Vector2 direction = shotDestination - pegglePosition;
                 direction = direction.normalized;         
 
-                MultiShot tempShot = Instantiate(this, new Vector2(peggleTransform.position.x, peggleTransform.position.y), Quaternion.identity);
+                MultiSphere tempShot = Instantiate(this, new Vector2(peggleTransform.position.x, peggleTransform.position.y), Quaternion.identity);
                 tempShot.CannotSpawnMoreShots = true;
                 tempShot.BallsInScene = _ballsInScene;
                 tempShot.SetShotAsShotAlready();
@@ -106,7 +106,7 @@ namespace PeggleWars.Shots
             }
         }
 
-        private IEnumerator DisableAndResetCollider(MultiShot tempShot)
+        private IEnumerator DisableAndResetCollider(MultiSphere tempShot)
         {
             Collider2D collider = tempShot.GetComponent<Collider2D>();
             collider.enabled = false;

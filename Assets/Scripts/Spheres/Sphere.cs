@@ -5,10 +5,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace PeggleWars.Shots
+namespace PeggleWars.Spheres
 {
     [RequireComponent(typeof(ScrollDisplayer))]
-    internal abstract class Shot : MonoBehaviour, IHaveDisplayDescription
+    internal abstract class Sphere : MonoBehaviour, IHaveDisplayDescription, IAmSphere
     {
         #region Fields and Properties
 
@@ -144,7 +144,7 @@ namespace PeggleWars.Shots
 
         protected void LimitIndicatorNumber(int amountIndicators)
         {
-            if (amountIndicators > ShotManager.Instance.NumberOfIndicators)
+            if (amountIndicators > SphereManager.Instance.NumberOfIndicators)
             {
                 GameObject doomedIndicator = _indicators[0];
                 Destroy(doomedIndicator);

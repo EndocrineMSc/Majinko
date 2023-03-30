@@ -152,4 +152,4 @@ MonoBehaviour:
   SpawnManaType: 0
   ManaAmount: 0
   _defaultOrb: {fileID: 2549565476461289553}
-  _orbType: 9
+  _orbType: 10

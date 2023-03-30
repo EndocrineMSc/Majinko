@@ -152,5 +152,5 @@ MonoBehaviour:
   SpawnManaType: 2
   ManaAmount: 2
   _defaultOrb: {fileID: 2549565476461289553, guid: c837957ee74bdcc44a31943daaafc0a8, type: 3}
-  _orbType: 16
+  _orbType: 17
   _icicle: {fileID: 8361171627463059092, guid: 0447ba5c05b7b274caf9854c144a39ed, type: 3}
