@@ -1,6 +1,7 @@
 using PeggleWars.Characters;
 using PeggleWars.Enemies;
 using PeggleWars.ScrollDisplay;
+using PeggleWars.Spheres;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -36,7 +37,7 @@ namespace PeggleWars.Orbs
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.name.Contains("Shot"))
+            if (collision.gameObject.TryGetComponent<IAmSphere>(out _))
             {
                 GetComponent<Collider2D>().enabled = false;
                 PlayOrbOnHitSound();

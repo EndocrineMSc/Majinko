@@ -16,12 +16,12 @@ namespace PeggleWars.Spheres
         protected Rigidbody2D _rigidbody;
         protected bool _isNotShotYet = true;
         protected bool _isInShootingTurn;
-        protected float _shotSpeed = 7f;
+        protected float _shotSpeed = 10.5f;
 
         //fields for indicators
         [SerializeField] protected GameObject _shotIndicatorPrefab;
         protected List<GameObject> _indicators = new();
-        protected float _indicatorFrequency = 0.2f;
+        protected float _indicatorFrequency = 0.15f;
         protected bool _waitingForCoroutine;
 
         //fields for Rotation to mouse

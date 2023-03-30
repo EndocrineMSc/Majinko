@@ -77,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1024771562, guid: 522e9f14206c0a5479c134ca28d25361, type: 3}
-  m_Color: {r: 0.19691172, g: 0.5566038, b: 0.28809297, a: 1}
+  m_Sprite: {fileID: 151197479, guid: 0db05763d09e3d744877e87d73c815cb, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -98,7 +98,7 @@ Animator:
   m_GameObject: {fileID: 2549565476461289553}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 296ca6d56a0296242a59835a37457827, type: 2}
+  m_Controller: {fileID: 9100000, guid: d3a1ccaf9fd10af4cb21a99a7dbb6111, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _orbMana: {fileID: 9019434043406141556, guid: d8f306cd12b86c548a87c0403c007a89, type: 3}
   SpawnManaType: 0
-  ManaAmount: 10
+  ManaAmount: 2
   _defaultOrb: {fileID: 2549565476461289553, guid: c837957ee74bdcc44a31943daaafc0a8, type: 3}
   _orbType: 24
 --- !u!114 &4872170773538441819
