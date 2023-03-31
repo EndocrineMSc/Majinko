@@ -137,8 +137,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _orbMana: {fileID: 7005893637801753577, guid: b5b564ea0235c694f8c7d3853a796c29, type: 3}
-  SpawnManaType: 2
-  ManaAmount: 10
+  _spawnManaType: 2
+  _manaAmount: 10
   _defaultOrb: {fileID: 150168502249141089}
   _orbType: 16
 --- !u!114 &8511080046945398949

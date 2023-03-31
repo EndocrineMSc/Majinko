@@ -15,7 +15,14 @@ namespace PeggleWars.Orbs
 
         internal override IEnumerator OrbEffect()
         {
-            throw new System.NotImplementedException();
+            //not needed
+            yield return null;
         }
+
+        protected override void AdditionalEffectsOnCollision()
+        {
+            //not needed
+        }
+
     }
 }

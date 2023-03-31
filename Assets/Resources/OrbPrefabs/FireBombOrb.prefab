@@ -293,9 +293,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f248b835d3c6644a9be3ecc5d913c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _orbMana: {fileID: 7005893637801753577, guid: 6332fb61d8db02643a35f651f55ff389, type: 3}
-  SpawnManaType: 1
-  ManaAmount: 2
+  _orbMana: {fileID: 3159823683685098634, guid: 6332fb61d8db02643a35f651f55ff389, type: 3}
+  _spawnManaType: 1
+  _manaAmount: 10
   _defaultOrb: {fileID: 2549565476461289553, guid: c837957ee74bdcc44a31943daaafc0a8, type: 3}
   _orbType: 6
   _fireBomb: {fileID: 2397672783851444180, guid: db760c4e0d4be0e4f89c830a4f61f649, type: 3}

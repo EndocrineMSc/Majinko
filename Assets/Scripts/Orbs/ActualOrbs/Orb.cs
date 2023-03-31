@@ -14,10 +14,9 @@ namespace PeggleWars.Orbs
         #region Fields
 
         [SerializeField] protected Mana _orbMana;
-        [SerializeField] protected ManaType SpawnManaType;
-        [SerializeField] protected int ManaAmount = 10;
+        [SerializeField] protected ManaType _spawnManaType;
+        [SerializeField] protected int _manaAmount = 10;
         [SerializeField] protected GameObject _defaultOrb;
-        protected GameObject _spawnPoint;
 
         protected ManaPool _manaPool;
         protected OrbManager _orbManager;
@@ -41,7 +40,6 @@ namespace PeggleWars.Orbs
 
         #region Functions
 
-        internal abstract IEnumerator OrbEffect();
 
         //Delays the "despawn" so that the size increase can be visible
         internal IEnumerator SetInactive()
@@ -69,30 +67,7 @@ namespace PeggleWars.Orbs
             _manaPool = ManaPool.Instance;
             _orbManager = OrbManager.Instance;
             _audioManager = AudioManager.Instance;
-            _spawnPoint = FindSpawnPoint();
         }
-
-        private GameObject FindSpawnPoint()
-        {
-            GameObject spawnPoint = null;
-
-            switch (SpawnManaType)
-            {
-                case ManaType.BasicMana:
-                    spawnPoint = GameObject.FindGameObjectWithTag("BaseManaSpawn");
-                    break;
-
-                case ManaType.FireMana:
-                    spawnPoint = GameObject.FindGameObjectWithTag("FireManaSpawn");
-                    break;
-
-                case ManaType.IceMana:
-                    spawnPoint = GameObject.FindGameObjectWithTag("IceManaSpawn");
-                    break;
-            }
-
-            return spawnPoint;
-        } 
 
         protected virtual void OnCollisionEnter2D(Collision2D collision)
         {
@@ -120,32 +95,7 @@ namespace PeggleWars.Orbs
 
         protected virtual void SpawnMana()
         {
-            Vector2 _spawnPointPosition = _spawnPoint.transform.position;
-
-            for (int i = 0; i < ManaAmount; i++)
-            {
-                float _spawnRandomiserX = Random.Range(-0.2f, 0.2f);
-                float _spawnRandomiserY = Random.Range(-0.2f, 0.2f);
-
-                Vector2 _spawnPosition = new(_spawnPointPosition.x + _spawnRandomiserX, _spawnPointPosition.y + _spawnRandomiserY);
-
-                Mana tempMana = Instantiate(_orbMana, _spawnPosition, Quaternion.identity);
-
-                switch (SpawnManaType)
-                {
-                    case ManaType.BasicMana:
-                        _manaPool.BasicMana.Add(tempMana);
-                        break;
-
-                    case ManaType.FireMana:
-                        _manaPool.FireMana.Add(tempMana);
-                        break;
-
-                    case ManaType.IceMana:
-                        _manaPool.IceMana.Add(tempMana);
-                        break;
-                }
-            }
+            OrbEvents.Instance.ManaSpawnTrigger?.Invoke(_spawnManaType, _manaAmount);
         }
 
         protected virtual void ReplaceHitOrb()
@@ -156,18 +106,17 @@ namespace PeggleWars.Orbs
             _orbManager.SceneOrbList.Add(orb.GetComponent<Orb>());
         }
 
-        protected virtual void AdditionalEffectsOnCollision()
-        {
-            //Add necessary additional effects in children here
-        }
-
         protected virtual IEnumerator DestroyOrb()
         {
             yield return new WaitForSeconds(0.1f);
             Destroy(gameObject);
         }
 
+        protected abstract void AdditionalEffectsOnCollision();
+
         public abstract void SetDisplayDescription();
+
+        internal abstract IEnumerator OrbEffect();
 
         #endregion
     }

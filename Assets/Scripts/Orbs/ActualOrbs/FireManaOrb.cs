@@ -29,7 +29,6 @@ namespace PeggleWars.Orbs
 
         protected override void AdditionalEffectsOnCollision()
         {
-            base.AdditionalEffectsOnCollision();
             OrbActionManager.Instance.AddOrbToActionList(this);
         }
 

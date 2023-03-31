@@ -3,10 +3,10 @@ using UnityEngine;
 using EnumCollection;
 using PeggleWars.Orbs;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Collections;
 
 namespace PeggleWars.ManaManagement
 {
-
     internal class ManaPool : MonoBehaviour
     {
         #region Fields and Properties
@@ -28,9 +28,8 @@ namespace PeggleWars.ManaManagement
         private readonly string ICEMANASPAWN_PARAM = "IceManaSpawn";
 
         internal static ManaPool Instance { get; private set; }
-        private OrbManager _orbManager;
 
-        private int _manaCostMultiplier = 10;
+        private readonly int _manaCostMultiplier = 10;
         internal int ManaCostMultiplier { get => _manaCostMultiplier; }
 
         #endregion
@@ -52,7 +51,7 @@ namespace PeggleWars.ManaManagement
         private void Start()
         {
             FindSpawnPoints();
-            OrbEvents.Instance.ManaSpawnTrigger?.AddListener(SpawnMana);
+            OrbEvents.Instance.ManaSpawnTrigger?.AddListener(SpawnManaWrap);
             OrbEvents.Instance.ManaSpawnTrigger?.Invoke(ManaType.BasicMana, 30);
         }
 
@@ -63,13 +62,20 @@ namespace PeggleWars.ManaManagement
             _fireManaSpawn = GameObject.FindGameObjectWithTag(FIREMANASPAWN_PARAM);
         }
 
-        internal void SpawnMana(ManaType manaType, int amount)
+        private void SpawnManaWrap(ManaType manaType, int amount)
         {
+            StartCoroutine(SpawnMana(manaType, amount));
+        }
+
+        private IEnumerator SpawnMana(ManaType manaType, int amount)
+        {
+            Debug.Log(manaType);
+            Debug.Log(amount);
             var spawnPointPosition = manaType switch
             {
                 ManaType.BasicMana => _baseManaSpawn.transform.position,
-                ManaType.FireMana => _iceManaSpawn.transform.position,
-                ManaType.IceMana => _fireManaSpawn.transform.position,
+                ManaType.FireMana => _fireManaSpawn.transform.position,
+                ManaType.IceMana => _iceManaSpawn.transform.position,
                 _ => _baseManaSpawn.transform.position,
             };
             for (int i = 0; i < amount; i++)
@@ -77,7 +83,7 @@ namespace PeggleWars.ManaManagement
                 float _spawnRandomiserX = Random.Range(-0.2f, 0.2f);
                 float _spawnRandomiserY = Random.Range(-0.2f, 0.2f);
 
-                Vector2 _spawnPosition = new(spawnPointPosition.x + _spawnRandomiserX, spawnPointPosition.y + _spawnRandomiserY);
+                Vector2 _spawnPosition = new((spawnPointPosition.x + _spawnRandomiserX), (spawnPointPosition.y + _spawnRandomiserY));
                 GameObject tempManaObject;
                 Mana tempMana;
 
@@ -87,18 +93,21 @@ namespace PeggleWars.ManaManagement
                         tempManaObject = Instantiate(_basicManaPrefab, _spawnPosition, Quaternion.identity);
                         tempMana = tempManaObject.GetComponent<Mana>();
                         BasicMana.Add(tempMana);
+                        yield return null;
                         break;
 
                     case ManaType.FireMana:
-                        tempManaObject = Instantiate(_iceManaPrefab, _spawnPosition, Quaternion.identity);
+                        tempManaObject = Instantiate(_fireManaPrefab, _spawnPosition, Quaternion.identity);
                         tempMana = tempManaObject.GetComponent<Mana>();
                         FireMana.Add(tempMana);
+                        yield return new WaitForSeconds(0.5f);
                         break;
 
                     case ManaType.IceMana:
-                        tempManaObject = Instantiate(_fireManaPrefab, _spawnPosition, Quaternion.identity);
+                        tempManaObject = Instantiate(_iceManaPrefab, _spawnPosition, Quaternion.identity);
                         tempMana = tempManaObject.GetComponent<Mana>();
                         IceMana.Add(tempMana);
+                        yield return new WaitForSeconds(0.75f);
                         break;
                 }
             }

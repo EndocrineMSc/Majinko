@@ -13,9 +13,15 @@ namespace PeggleWars.Orbs
             displayOnScroll.DisplayDescription = "Upon being hit, this orb spawns \"Rotted Mana\". When consumed to cast spells, lower player damage that turn.";
         }
 
+        protected override void AdditionalEffectsOnCollision()
+        {
+            //not needed
+        }
+
         internal override IEnumerator OrbEffect()
         {
-            throw new System.NotImplementedException();
+            //not needed
+            yield return null;
         }
     }
 }
