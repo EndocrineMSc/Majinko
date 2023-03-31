@@ -9,12 +9,13 @@ namespace PeggleWars
     {
         #region Fields and Properties
 
-        private SpriteRenderer _spriteRenderer;
+        [SerializeField] private SpriteRenderer _spriteRenderer;
         private Color _color;
 
         internal static Player Instance { get; private set; }
         private Animator _animator;
         private TurnManager _turnManager;
+        private string HURT_ANIMATION = "Hurt";
 
         [SerializeField] private int _health;
 
@@ -59,8 +60,7 @@ namespace PeggleWars
 
         private void Start()
         {
-            _animator = GetComponent<Animator>();
-            _spriteRenderer = GetComponent<SpriteRenderer>();
+            _animator = GetComponentInChildren<Animator>();
             _color = _spriteRenderer.color;
             _turnManager = TurnManager.Instance;
 
@@ -80,13 +80,13 @@ namespace PeggleWars
                 _shield = 0;
                 _health -= calcDamage;
                 StartCoroutine(nameof(ColorShiftDamage));
-                //_animator.SetTrigger("Hurt");
+                _animator.SetTrigger(HURT_ANIMATION);
             }
             else
             {
                 _health -= damage;
                 StartCoroutine(nameof(ColorShiftDamage));
-                //_animator.SetTrigger("Hurt");
+                _animator.SetTrigger(HURT_ANIMATION);
             }
         }
 

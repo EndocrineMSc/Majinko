@@ -17,20 +17,10 @@ namespace PeggleWars.Orbs
 
         #region Functions
 
-        protected override void SetReferences()
-        {
-            base.SetReferences();
-            if (EnemyManager.Instance.EnemiesInScene.Count > 0)
-            {
-                Transform targetEnemy = EnemyManager.Instance.EnemiesInScene[EnemyManager.Instance.EnemiesInScene.Count - 1].transform;
-                _lightningStrike.SetAttackInstantiatePosition(targetEnemy);
-            }
-
-        }
-
         internal override IEnumerator OrbEffect()
         {
-            _lightningStrike.ShootAttack();
+            Transform targetEnemy = EnemyManager.Instance.EnemiesInScene[EnemyManager.Instance.EnemiesInScene.Count - 1].transform;
+            _lightningStrike.ShootAttack(targetEnemy.position);
             yield return new WaitForSeconds(0.1f);
         }
 

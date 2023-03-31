@@ -17,15 +17,9 @@ namespace PeggleWars.Orbs
 
         #region Functions
 
-        protected override void SetReferences()
-        {
-            base.SetReferences();
-            _fireArrow.SetAttackInstantiatePosition(Player.Instance.transform);
-        }
-
         internal override IEnumerator OrbEffect()
         {
-            _fireArrow.ShootAttack();
+            _fireArrow.ShootAttack(Player.Instance.transform.position);
             yield return new WaitForSeconds(0.2f);
         }
 

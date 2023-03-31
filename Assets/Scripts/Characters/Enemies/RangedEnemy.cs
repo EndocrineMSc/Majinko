@@ -15,25 +15,11 @@ namespace PeggleWars.Enemies
 
         #region Functions
 
-        protected override void SetReferences()
-        {
-            base.SetReferences();
-            EnemyEvents.Instance.EnemyMoveEndEvent?.AddListener(OnEndMove);
-            _enemyAttack.SetAttackInstantiatePosition(transform);
-        }
-
-        protected void OnEndMove()
-        {
-            _enemyAttack.SetAttackInstantiatePosition(transform);
-        }
-
         protected override void AdditionalAttackEffects()
         {
-            Debug.Log("Pew pew!");
-            _enemyAttack.ShootAttack();
+            _enemyAttack.ShootAttack(gameObject.transform.position);
         }
 
         #endregion
-
     }
 }

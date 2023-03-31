@@ -12,30 +12,28 @@ namespace PeggleWars.Attacks
         #region Fields and Properties
 
         [SerializeField] protected float _attackFlySpeed = 10;
-        [SerializeField] protected float _xInstantiateOffSet = 5f;
+        protected float _xInstantiateOffSet = 0.4f;
 
         #endregion
 
         #region Functions
 
-        internal override void SetAttackInstantiatePosition(Transform originTransform)
+        internal override void ShootAttack(Vector3 instantiatePosition)
         {
-            float enemyPositionsY = EnemyManager.Instance.EnemyPositions[0, 0].y;
+            Debug.Log(instantiatePosition.x);
             if (_attackOrigin == AttackOrigin.Player)
             {
-                _instantiatePosition = new Vector2(originTransform.position.x + _xInstantiateOffSet, enemyPositionsY);
+                instantiatePosition = new Vector3((instantiatePosition.x + _xInstantiateOffSet), instantiatePosition.y, instantiatePosition.z);
             }
             else
             {
-                _instantiatePosition = new Vector2(originTransform.position.x - _xInstantiateOffSet, enemyPositionsY);
-            }           
-        }
+                instantiatePosition = new Vector3((instantiatePosition.x - _xInstantiateOffSet), instantiatePosition.y, instantiatePosition.z);
+            }
+            Debug.Log(instantiatePosition.x);
 
-        internal override void ShootAttack()
-        {
             if (EnemyManager.Instance.EnemiesInScene.Count > 0)
             {
-                Attack attack = Instantiate(this, _instantiatePosition, Quaternion.identity);
+                Attack attack = Instantiate(this, instantiatePosition, Quaternion.identity);
                 Rigidbody2D rigidbody = attack.GetComponent<Rigidbody2D>();
 
                 if (_attackOrigin == AttackOrigin.Player)
@@ -51,7 +49,7 @@ namespace PeggleWars.Attacks
             }
             else
             {
-                Player.Instance.GetComponent<PopUpSpawner>().SpawnPopUp(_noTargetString);
+                Player.Instance.GetComponent<PopUpSpawner>().SpawnPopUp(NO_TARGET_PARAM);
             }
         }
 

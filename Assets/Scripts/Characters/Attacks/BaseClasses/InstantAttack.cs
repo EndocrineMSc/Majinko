@@ -19,16 +19,16 @@ namespace PeggleWars.Attacks
 
         #region Functions
 
-        internal override void ShootAttack()
+        internal override void ShootAttack(Vector3 instantiatePosition)
         {
             if (EnemyManager.Instance.EnemiesInScene.Count > 0)
             {
-                Instantiate(this, _instantiatePosition, Quaternion.identity);
+                Instantiate(this, instantiatePosition, Quaternion.identity);
                 Player.Instance.GetComponent<PopUpSpawner>().SpawnPopUp(Bark);
             }
             else
             {
-                Player.Instance.GetComponent<PopUpSpawner>().SpawnPopUp(_noTargetString);
+                Player.Instance.GetComponent<PopUpSpawner>().SpawnPopUp(NO_TARGET_PARAM);
             }
         }
 

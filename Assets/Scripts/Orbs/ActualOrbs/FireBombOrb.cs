@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PeggleWars.Attacks;
+using PeggleWars.Spheres;
 
 namespace PeggleWars.Orbs
 {
@@ -10,18 +11,11 @@ namespace PeggleWars.Orbs
     {
         [SerializeField] private Attack _fireBomb;
         [SerializeField] private GameObject _bombRadiusObject;
-        private string TARGET_PARAM = "AOE_Target";
-
-        protected override void SetReferences()
-        {
-            base.SetReferences();
-            GameObject aoeTargetObject = GameObject.FindGameObjectWithTag(TARGET_PARAM);
-            _fireBomb.SetAttackInstantiatePosition(aoeTargetObject.transform);
-        }
+        private readonly string TARGET_PARAM = "AOE_Target";
 
         protected override void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.name.Contains("Shot"))
+            if (collision.gameObject.TryGetComponent<IAmSphere>(out _))
             {
                 GetComponent<Collider2D>().enabled = false;
                 AdditionalEffectsOnCollision();
@@ -50,7 +44,8 @@ namespace PeggleWars.Orbs
 
         internal override IEnumerator OrbEffect()
         {
-            _fireBomb.ShootAttack();
+            GameObject aoeTargetObject = GameObject.FindGameObjectWithTag(TARGET_PARAM);
+            _fireBomb.ShootAttack(aoeTargetObject.transform.position);
             yield return new WaitForSeconds(0.2f);
         }
 

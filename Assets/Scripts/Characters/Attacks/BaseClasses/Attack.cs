@@ -12,14 +12,15 @@ namespace PeggleWars.Attacks
     {
         #region Fields and Properties
 
-        protected Vector2 _instantiatePosition;
         protected PlayerAttackManager _playerAttackManager;
         protected Collider2D _collision;
-        protected string _noTargetString = "There's no enemy!";
 
         [SerializeField] protected AttackOrigin _attackOrigin;
         [SerializeField] protected int _damage;
-       
+
+        protected readonly string NO_TARGET_PARAM = "No enemy!";
+        protected readonly string ATTACK_ANIMATION = "Attack";
+
         internal int Damage
         {
             get { return _damage; }
@@ -38,14 +39,13 @@ namespace PeggleWars.Attacks
             if (_attackOrigin == AttackOrigin.Player)
             {
                 _damage = Mathf.RoundToInt(_damage * _playerAttackManager.DamageModifierTurn);
+                Player.Instance.GetComponentInChildren<Animator>().SetTrigger(ATTACK_ANIMATION);
             }
         }
 
         protected virtual void OnTriggerEnter2D(Collider2D collision)
         {
             _collision = collision;
-            Debug.Log(_attackOrigin);
-            Debug.Log(collision.gameObject);
 
             if ((_attackOrigin == AttackOrigin.Player && collision.gameObject.GetComponent<Enemy>() != null)
                 || _attackOrigin == AttackOrigin.Enemy && collision.gameObject.GetComponent<Player>() != null)
@@ -59,12 +59,7 @@ namespace PeggleWars.Attacks
             }
         }
 
-        internal abstract void ShootAttack();
-
-        internal virtual void SetAttackInstantiatePosition(Transform originTransform)
-        {
-            _instantiatePosition = originTransform.position;
-        }
+        internal abstract void ShootAttack(Vector3 instantiatePosition);
 
         protected abstract void AdditionalEffectsOnImpact();
 
