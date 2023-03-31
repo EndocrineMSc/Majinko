@@ -15,6 +15,13 @@ namespace PeggleWars.Enemies
 
         #region Functions
 
+        protected override void SetReferences()
+        {
+            base.SetReferences();
+            _deathDelayForAnimation = 1.5f;
+        }
+
+
         protected override void OnEndEnemyTurn()
         {
             base.OnEndEnemyTurn();
@@ -27,14 +34,10 @@ namespace PeggleWars.Enemies
         {            
             int orbsToBeSwitched = _amountIntangibleOrbs;
 
-            foreach (Orb orb  in OrbManager.Instance.SceneOrbList)
+            for (int i = 0; i < orbsToBeSwitched; i++)
             {
-                if (orbsToBeSwitched > 0)
-                {
-                    OrbManager.Instance.ReplaceOrbOfType(OrbType.IntangibleEnemyOrb);
-                    orbsToBeSwitched--;
-                }
-            }            
+                OrbManager.Instance.ReplaceOrbOfType(OrbType.IntangibleEnemyOrb);
+            }           
         }
 
         public override void SetDisplayDescription()
@@ -90,31 +93,31 @@ namespace PeggleWars.Enemies
 
         protected override void TriggerSpawnAnimation()
         {
-            //ToDo;
+            //Not necessary
         }
 
         protected override void TriggerHurtAnimation()
         {
-            //ToDo;
+            _animator.SetTrigger(HURT_PARAM);
         }
 
         protected override void TriggerDeathAnimation()
         {
-            //ToDo;
+            _animator.SetTrigger(DEATH_PARAM);
         }
         protected override void StartMovementAnimation()
         {
-            //ToDo
+            //same as idle
         }
 
         protected override void StopMovementAnimation()
         {
-            //ToDo
+            //same as idle
         }
 
         protected override void TriggerAttackAnimation()
         {
-            //ToDo
+            _animator.SetTrigger(ATTACK_PARAM);
         }
 
         #endregion
