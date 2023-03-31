@@ -233,7 +233,7 @@ MonoBehaviour:
   _health: 20
   _isFlying: 0
   _isInAttackPosition: 1
-  _enemyAttack: {fileID: 7851541917722694840, guid: 54d899e6433c32b49a05d418819e3a6d, type: 3}
+  _enemyAttack: {fileID: 7622386237211500515, guid: 54d899e6433c32b49a05d418819e3a6d, type: 3}
 --- !u!1 &4187442264628728802
 GameObject:
   m_ObjectHideFlags: 0
