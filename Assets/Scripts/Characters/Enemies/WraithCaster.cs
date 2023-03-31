@@ -11,7 +11,7 @@ namespace PeggleWars.Enemies
     internal class WraithCaster : RangedEnemy, ICanBeIntangible
     {
         public int IntangibleStacks { get; private set; } = 0;
-        private List<Orb> _intangibleOrbs = new();
+        private int _amountIntangibleOrbs = 0;
 
         #region Functions
 
@@ -19,12 +19,13 @@ namespace PeggleWars.Enemies
         {
             base.OnEndEnemyTurn();
             OrbManager.Instance.SwitchOrbs(OrbType.IntangibleEnemyOrb);
+            _amountIntangibleOrbs += 1;
             HandleIntangibleStacks();
         }
 
         protected override void OnDeathEffect()
         {            
-            int orbsToBeSwitched = _intangibleOrbs.Count;
+            int orbsToBeSwitched = _amountIntangibleOrbs;
 
             foreach (Orb orb  in OrbManager.Instance.SceneOrbList)
             {

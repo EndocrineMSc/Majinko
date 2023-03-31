@@ -25,6 +25,9 @@ namespace PeggleWars.Enemies
         private readonly int _amountOfCharacterPositionsOnXAxis = 6;
         private readonly int _amountOfEnemyRows = 2;
         private bool _isFirstInit = true;
+
+        protected string ENEMY_FOLDER_PARAM = "EnemyPrefabs";
+
         #endregion
 
         #region Functions
@@ -41,7 +44,7 @@ namespace PeggleWars.Enemies
             }
             if (_isFirstInit)
             {
-                _enemyLibrary = Resources.LoadAll<Enemy>("EnemyPrefabs");
+                _enemyLibrary = Resources.LoadAll<Enemy>(ENEMY_FOLDER_PARAM);
             }
         }
 
