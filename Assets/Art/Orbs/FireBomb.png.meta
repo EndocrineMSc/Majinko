@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2552316de1f153441a696fa865962bb5
-      internalID: 432517527
+      spriteID: 11aca7b0fedd6c54b8865cd3aa86510f
+      internalID: -2050386521
       vertices: []
       indices: 
       edges: []
@@ -152,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 244a29375ff408041bcb270af7dd0647
-      internalID: -1592849195
+      spriteID: c0f6c150cf94a1c4cb58fa926552a8ef
+      internalID: 92539642
       vertices: []
       indices: 
       edges: []
@@ -173,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 658f769861988054d91396d783164e33
-      internalID: -26653431
+      spriteID: a32d6c34048a9384fbf8dbd0ade55496
+      internalID: -497669525
       vertices: []
       indices: 
       edges: []
@@ -194,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0dd4d322283c7584ca64c28179c57db9
-      internalID: 1966575897
+      spriteID: be56707313e25dd458e6e479f2937cb3
+      internalID: -1319002936
       vertices: []
       indices: 
       edges: []
@@ -215,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 754b84e383d1fbd47825878b91756c59
-      internalID: 1086523369
+      spriteID: 036eabaa6e832bb42a740e827d30bff7
+      internalID: 1782711259
       vertices: []
       indices: 
       edges: []
@@ -236,8 +236,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1123b73332544b54780b95db45335da4
-      internalID: -1087868999
+      spriteID: 020b5f5051a34bd4a991bf6fe8cd2dee
+      internalID: -1363508191
       vertices: []
       indices: 
       edges: []
@@ -253,12 +253,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      FireBomb_5: -1087868999
-      FireBomb_4: 1086523369
-      FireBomb_0: 432517527
-      FireBomb_2: -26653431
-      FireBomb_1: -1592849195
-      FireBomb_3: 1966575897
+      FireBomb_5: -1363508191
+      FireBomb_4: 1782711259
+      FireBomb_0: -2050386521
+      FireBomb_2: -497669525
+      FireBomb_1: 92539642
+      FireBomb_3: -1319002936
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
