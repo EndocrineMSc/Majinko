@@ -26,6 +26,8 @@ namespace PeggleWars.Enemies
         protected readonly string DEATH_PARAM = "Death";
         protected readonly string SPAWN_PARAM = "Spawn";
         protected readonly string SPEED_PARAM = "Speed";
+        protected readonly string WALK_PARAM = "Walk";
+        protected readonly string IDLE_PARAM = "Idle";
         protected float _deathDelayForAnimation = 1f;
         protected float _enemySpeed = 2;
         [SerializeField] protected int _attackFrequency;

@@ -69,8 +69,6 @@ namespace PeggleWars.ManaManagement
 
         private IEnumerator SpawnMana(ManaType manaType, int amount)
         {
-            Debug.Log(manaType);
-            Debug.Log(amount);
             var spawnPointPosition = manaType switch
             {
                 ManaType.BasicMana => _baseManaSpawn.transform.position,

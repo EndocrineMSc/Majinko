@@ -43,12 +43,12 @@ namespace PeggleWars.Enemies
 
         protected override void StartMovementAnimation()
         {
-            _animator.SetFloat(SPEED_PARAM, 1);
+            _animator.SetTrigger(WALK_PARAM);
         }
 
         protected override void StopMovementAnimation()
         {
-            _animator.SetFloat(SPEED_PARAM, 0);
+            _animator.SetTrigger(IDLE_PARAM);
         }
 
         protected override void TriggerAttackAnimation()
@@ -58,7 +58,7 @@ namespace PeggleWars.Enemies
 
         protected override void TriggerSpawnAnimation()
         {
-            _animator.SetTrigger(SPAWN_PARAM);
+            //_animator.SetTrigger(SPAWN_PARAM);
         }
 
         protected override void TriggerHurtAnimation()

@@ -20,7 +20,6 @@ namespace PeggleWars.Attacks
 
         internal override void ShootAttack(Vector3 instantiatePosition)
         {
-            Debug.Log(instantiatePosition.x);
             if (_attackOrigin == AttackOrigin.Player)
             {
                 instantiatePosition = new Vector3((instantiatePosition.x + _xInstantiateOffSet), instantiatePosition.y, instantiatePosition.z);
@@ -29,7 +28,6 @@ namespace PeggleWars.Attacks
             {
                 instantiatePosition = new Vector3((instantiatePosition.x - _xInstantiateOffSet), instantiatePosition.y, instantiatePosition.z);
             }
-            Debug.Log(instantiatePosition.x);
 
             if (EnemyManager.Instance.EnemiesInScene.Count > 0)
             {
