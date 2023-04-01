@@ -3,8 +3,10 @@ using PeggleWars.Orbs;
 
 namespace PeggleWars.Cards
 {
-    internal class IceManaOrbCard : Card
+    internal class IceManaOrbCard : Card, IShiftOrbs
     {
+        public int AmountOrbs { get; set; } = 1;
+
         protected override void CardEffect()
         {
             GlobalOrbManager.Instance.AddGlobalOrb(GlobalOrbManager.Instance.AllOrbsList[(int)OrbType.IceManaOrb]);

@@ -28,13 +28,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _cardElement
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _iceManaCost
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _cardEffectType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _cardDescription
-      value: 'Orbshifter 1 \n Orb: Deal ice damage, apply freezing, minor chance
-        to apply frozen'
+      value: 'Orb: Deal ice damage, apply freezing, minor chance to apply frozen'
       objectReference: {fileID: 0}
     - target: {fileID: 4812993297873364277, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Pivot.x

@@ -25,7 +25,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 12f4458270985cc47bf676630bb0704a, type: 2}
     - target: {fileID: -4550278420783687888, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: _cardDescription
-      value: Instant \n Increases the range and bounces of the shot prediction
+      value: Increases the range and bounces of the shot prediction
       objectReference: {fileID: 0}
     - target: {fileID: 1937299199467523748, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_Enabled

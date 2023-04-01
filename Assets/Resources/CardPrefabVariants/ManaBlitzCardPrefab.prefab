@@ -36,7 +36,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3457891280226941752}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _cardRarity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _basicManaCost
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _cardEffectType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
@@ -45,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 564fdc8e098457445ad54f777e77d2d2, type: 2}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _cardDescription
-      value: 'Orbshifter 1 \n Orb: Deal 10 damage'
+      value: 'Orb: Deal 10 damage'
       objectReference: {fileID: 0}
     - target: {fileID: 4812993297873364277, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Pivot.x

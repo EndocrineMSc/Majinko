@@ -6,8 +6,10 @@ using EnumCollection;
 
 namespace PeggleWars.Cards
 {
-    internal class FireManaOrbCard : Card
-    { 
+    internal class FireManaOrbCard : Card, IShiftOrbs
+    {
+        public int AmountOrbs { get; set; } = 1;
+
         protected override void CardEffect()
         {
             GlobalOrbManager.Instance.AddGlobalOrb(GlobalOrbManager.Instance.AllOrbsList[(int)OrbType.FireManaOrb]);

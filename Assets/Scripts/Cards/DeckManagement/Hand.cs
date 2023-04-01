@@ -141,7 +141,7 @@ namespace PeggleWars.Cards
             {
                 RectTransform rectTransform = _instantiatedCards[i].GetComponent<RectTransform>();
                 float cardHeight = rectTransform.rect.height;
-                rectTransform.anchoredPosition = new Vector2(startX + (rectTransform.rect.width / 2f) + (i * _spacing), (-canvasHeight/2 + cardHeight/4));
+                rectTransform.anchoredPosition = new Vector2((startX + (rectTransform.rect.width / 2f) + (i * _spacing)), (-canvasHeight/2 + cardHeight/2));
             }
         }
 

@@ -32,7 +32,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4867353525356318280}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _cardRarity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _basicManaCost
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _cardEffectType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
@@ -41,7 +49,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: c9a2211082f5a29458ac4c7b0d262caa, type: 2}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _cardDescription
-      value: Orbshifter 1 \n Gain 10 shield
+      value: 'Orb: Gain 10 shield'
       objectReference: {fileID: 0}
     - target: {fileID: 2663367635832773738, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_text

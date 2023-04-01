@@ -186,13 +186,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardName: Fire Orb
-  _cardDescription: 'Orbshifter 1, persitent \n Orb: Gain fire mana and apply burning
-    \n Single use'
+  _cardDescription: "Persitent Orb: Gain fire mana and apply burning\n \nSingle use"
   _basicManaCost: 1
   _fireManaCost: 0
   _iceManaCost: 0
   _cardType: 4
   _exhaustCard: 1
   _cardRarity: 1
+  _cardElement: 1
+  _cardEffectType: 1
   _orbType: 7
   _amountOrbs: 2

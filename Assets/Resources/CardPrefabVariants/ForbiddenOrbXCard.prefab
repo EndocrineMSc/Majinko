@@ -116,13 +116,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardName: Forbidden X
-  _cardDescription: Orbshifter 1, persitent \n A mysterious dark power lies within
-    this card \n Single-use
+  _cardDescription: 'Persitent Orb: A mysterious dark power lies within this card
+
+
+    Single-use'
   _basicManaCost: 1
   _fireManaCost: 0
   _iceManaCost: 0
   _cardType: 10
   _exhaustCard: 1
   _cardRarity: 4
+  _cardElement: 0
+  _cardEffectType: 1
   _orbType: 13
   _amountOrbs: 1

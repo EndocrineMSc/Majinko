@@ -167,11 +167,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7670523144989857751, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_fontSize
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7670523144989857751, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_fontSizeBase
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8696175136549785397, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_text
@@ -198,13 +198,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardName: Ice Orb
-  _cardDescription: 'Orbshifter 1, persitent \n Orb: Gain ice mana and apply freezing
-    \n Single use'
+  _cardDescription: 'Persistent Orb: Gain ice mana and apply freezing
+
+
+    Single
+    use'
   _basicManaCost: 1
   _fireManaCost: 0
   _iceManaCost: 0
   _cardType: 12
   _exhaustCard: 1
   _cardRarity: 1
+  _cardElement: 2
+  _cardEffectType: 1
   _orbType: 16
   _amountOrbs: 2

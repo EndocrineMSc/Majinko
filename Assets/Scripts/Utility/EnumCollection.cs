@@ -135,5 +135,20 @@ namespace EnumCollection
         Epic,
         Legendary,
     }
+
+    internal enum CardElement
+    {
+        None,
+        Fire,
+        Ice,
+        Lightning,
+    }
+
+    internal enum CardEffectType
+    {
+        Instant,
+        Orbshifter,
+        Sphereshifter,        
+    }
 }
 

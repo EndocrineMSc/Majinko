@@ -14,13 +14,15 @@ namespace PeggleWars.Cards
         #region Fields and Properties
 
         [SerializeField] protected string _cardName;
-        [SerializeField] protected string _cardDescription;
+        [SerializeField, TextArea] protected string _cardDescription;
         [SerializeField] protected int _basicManaCost;
         [SerializeField] protected int _fireManaCost;
         [SerializeField] protected int _iceManaCost;
         [SerializeField] protected CardType _cardType;
         [SerializeField] protected bool _exhaustCard;
         [SerializeField] protected CardRarity _cardRarity;
+        [SerializeField] protected CardElement _cardElement;
+        [SerializeField] protected CardEffectType _cardEffectType;
         protected Sprite _cardImage;
 
         protected int _adjustedBasicManaAmount;
@@ -43,6 +45,9 @@ namespace PeggleWars.Cards
         internal bool ExhaustCard { get => _exhaustCard;}
         internal Sprite CardImage { get => _cardImage; }
         internal CardRarity Rarity { get => _cardRarity;}
+        internal CardElement Element { get => _cardElement;}
+        internal CardEffectType EffectType { get => _cardEffectType;}
+
 
         #endregion
 

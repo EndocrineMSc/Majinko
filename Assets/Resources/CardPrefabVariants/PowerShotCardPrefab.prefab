@@ -32,6 +32,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -5102782085163616900, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: _cardElement
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -5102782085163616900, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: _iceManaCost
       value: 1
       objectReference: {fileID: 0}
@@ -44,13 +48,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -5102782085163616900, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: _cardEffectType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5102782085163616900, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: _scriptableCard
       value: 
       objectReference: {fileID: 11400000, guid: e9d10fad820f69f48af2ef4b8b7e0991, type: 2}
     - target: {fileID: -5102782085163616900, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: _cardDescription
-      value: 'Sphereshifter \n A high-speed sphere unaffected by gravity \n Stackable:
-        Ignore the portal once'
+      value: 'A high-speed sphere unaffected by gravity
+
+
+        Stackable: Ignore
+        the portal once'
       objectReference: {fileID: 0}
     - target: {fileID: 1002801183830465219, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: m_text
