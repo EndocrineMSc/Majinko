@@ -9,7 +9,7 @@ namespace PeggleWars.Enemies
         #region Fields and Properties
 
         private EnemyManager _enemyManager;
-        private Vector2[,] _enemyPositions;
+        private Vector3[,] _enemyPositions;
 
         private int _rightMostEnemyPosition;
         readonly int _enemyBottomRow = 0;
@@ -96,6 +96,7 @@ namespace PeggleWars.Enemies
                 Enemy instantiatedEnemy = Instantiate(tempEnemy, spawnPosition, Quaternion.identity); ;
                 _enemyManager.EnemiesInScene.Add(instantiatedEnemy);
                 _enemySpawnCounter++;
+                instantiatedEnemy.transform.position = new Vector3(instantiatedEnemy.transform.position.x, instantiatedEnemy.transform.position.y, -1); //quick fix for display scroll
             }
         }
 

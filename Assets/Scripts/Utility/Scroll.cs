@@ -34,9 +34,14 @@ namespace PeggleWars.ScrollDisplay
         private void DisplayOnScroll(GameObject displayObject)
         {
             _scrollRenderer.enabled = true;
-
             Animator gameobjectAnimator = displayObject.GetComponent<Animator>();
+            if (gameobjectAnimator == null)
+            {
+                gameobjectAnimator = displayObject.GetComponentInChildren<Animator>();
+            }
+
             string displayText = displayObject.GetComponentInChildren<IDisplayOnScroll>()?.DisplayDescription;
+            int scrollDisplayScale = displayObject.GetComponentInChildren<IDisplayOnScroll>().DisplayScale;
 
             if(gameobjectAnimator != null)
             {
@@ -61,7 +66,7 @@ namespace PeggleWars.ScrollDisplay
                 
             }
 
-            _scrollDisplay.transform.localScale = displayObject.transform.localScale * 4;
+            _scrollDisplay.transform.localScale = displayObject.transform.localScale * scrollDisplayScale;
             _scrollDescriptionBox.enabled = true;
             _scrollDescriptionBox.text = displayText;
         }

@@ -1394,8 +1394,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473061168}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.4272, y: 2.06, z: 0.013885666}
-  m_LocalScale: {x: 6.8205523, y: 4, z: 4}
+  m_LocalPosition: {x: 11.21, y: 2.2215, z: 0.013885666}
+  m_LocalScale: {x: 6.8205523, y: 2.7361355, z: 4}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 874953860}
@@ -1712,8 +1712,8 @@ MonoBehaviour:
     New Text New Text New Text New Text New Text New Text New Text New Text New Text
     New Text New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 309b5f01e0839d8489d575fe1a92fdd2, type: 2}
+  m_sharedMaterial: {fileID: -139843783784504290, guid: 309b5f01e0839d8489d575fe1a92fdd2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1737,8 +1737,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3408,7 +3408,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560389175}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.1644, y: 8.4251, z: 0}
+  m_LocalPosition: {x: 5.1644, y: 8.4251, z: 1}
   m_LocalScale: {x: 25.1689, y: 3.1098, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5833,6 +5833,10 @@ PrefabInstance:
     - target: {fileID: 4429131251993524971, guid: 6392a0f262a14bb4eb26e6f3d698a222, type: 3}
       propertyPath: m_Name
       value: CardShop
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429131251993524971, guid: 6392a0f262a14bb4eb26e6f3d698a222, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4429131251993524972, guid: 6392a0f262a14bb4eb26e6f3d698a222, type: 3}
       propertyPath: m_Pivot.x

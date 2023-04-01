@@ -122,6 +122,12 @@ namespace PeggleWars.Enemies
             TurnManager.Instance.EndEnemyTurn?.AddListener(OnEndEnemyTurn);
             TurnManager.Instance.StartEnemyTurn?.AddListener(OnStartEnemyTurn);
             TurnsTillNextAttack = _attackFrequency;
+            SetDisplayScale();
+        }
+
+        protected void SetDisplayScale()
+        {
+            GetComponent<ScrollDisplayer>().DisplayScale = 2;
         }
 
         protected virtual void OnEndEnemyTurn()

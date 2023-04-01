@@ -18,8 +18,8 @@ namespace PeggleWars.Enemies
         private List<Enemy> _enemiesInScene = new();
         internal List<Enemy> EnemiesInScene { get => _enemiesInScene; set => _enemiesInScene = value; }
 
-        private Vector2[,] _enemyPositions;
-        internal Vector2[,] EnemyPositions { get => _enemyPositions; private set => _enemyPositions = value; }
+        private Vector3[,] _enemyPositions;
+        internal Vector3[,] EnemyPositions { get => _enemyPositions; private set => _enemyPositions = value; }
 
         private readonly int _amountOfXScreenDivisions = 10;
         private readonly int _amountOfCharacterPositionsOnXAxis = 6;
@@ -52,7 +52,7 @@ namespace PeggleWars.Enemies
         {
             if (_isFirstInit)
             {
-                _enemyPositions = new Vector2[_amountOfEnemyRows, _amountOfCharacterPositionsOnXAxis];
+                _enemyPositions = new Vector3[_amountOfEnemyRows, _amountOfCharacterPositionsOnXAxis];
                 SetEnemyPositions();
                 _isFirstInit = false;
             }
@@ -75,13 +75,13 @@ namespace PeggleWars.Enemies
                     {
                         Vector2 possibleCharacterPositionOnScreen = new((x + xPositionOffset) * cellWidth, yLowerRow);
                         Vector2 possibleCharacterPositionAsWorldPoint = camera.ScreenToWorldPoint(possibleCharacterPositionOnScreen);
-                        _enemyPositions[y, x] = possibleCharacterPositionAsWorldPoint;
+                        _enemyPositions[y, x] = new Vector3(possibleCharacterPositionAsWorldPoint.x, possibleCharacterPositionAsWorldPoint.y, -1);
                     }
                     else
                     {
                         Vector2 possibleCharacterPositionOnScreen = new((x + xPositionOffset) * cellWidth, yUpperRow);
                         Vector2 possibleCharacterPositionAsWorldPoint = camera.ScreenToWorldPoint(possibleCharacterPositionOnScreen);
-                        _enemyPositions[y, x] = possibleCharacterPositionAsWorldPoint;
+                        _enemyPositions[y, x] = new Vector3(possibleCharacterPositionAsWorldPoint.x, possibleCharacterPositionAsWorldPoint.y, -1);
                     }
                 }
             }

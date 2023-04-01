@@ -15,7 +15,7 @@ namespace PeggleWars.Orbs
         {
             ScrollDisplayer scrollDisplayer = GetComponent<ScrollDisplayer>();
             scrollDisplayer.DisplayDescription = "Curse Orb. \n Will turn all enemies with the ability to do so intangible upon being hit." +
-                "\n \n You feel the remnants of a sould trapped in this orb.";
+                "\n \nYou feel the remnants of a soul trapped in this orb.";
         }
 
         protected override void AdditionalEffectsOnCollision()

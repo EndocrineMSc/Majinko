@@ -11,6 +11,7 @@ namespace PeggleWars.Enemies
     internal class WraithCaster : RangedEnemy, ICanBeIntangible
     {
         public int IntangibleStacks { get; private set; } = 0;
+
         private int _amountIntangibleOrbs = 0;
 
         #region Functions
@@ -138,6 +139,16 @@ namespace PeggleWars.Enemies
         protected override void PlayHurtSound()
         {
             //ToDo
+        }
+
+        public void DisplayOnScroll()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void StopDisplayOnScroll()
+        {
+            throw new System.NotImplementedException();
         }
 
         #endregion

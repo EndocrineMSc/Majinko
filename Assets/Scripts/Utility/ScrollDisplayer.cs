@@ -9,6 +9,7 @@ namespace PeggleWars.ScrollDisplay
     internal class ScrollDisplayer : MonoBehaviour, IDisplayOnScroll
     {
         public string DisplayDescription { get; set; } = "Not implemented";
+        public int DisplayScale { get; set; }
 
         private void OnMouseEnter()
         {

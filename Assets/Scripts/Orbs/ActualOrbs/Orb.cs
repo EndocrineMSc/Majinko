@@ -40,7 +40,6 @@ namespace PeggleWars.Orbs
 
         #region Functions
 
-
         //Delays the "despawn" so that the size increase can be visible
         internal IEnumerator SetInactive()
         {
@@ -54,6 +53,12 @@ namespace PeggleWars.Orbs
             SetReferences();
             SetDisplayDescription();
             StartCoroutine(EnableCollider());
+            SetScrollDisplayScale();
+        }
+
+        protected void SetScrollDisplayScale()
+        {
+            GetComponent<ScrollDisplayer>().DisplayScale = 4;
         }
 
         protected virtual IEnumerator EnableCollider()
