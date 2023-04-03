@@ -113,12 +113,13 @@ namespace PeggleWars.Cards
             foreach (Card card in _handCards)
             {
                 Card cardObject = Instantiate(card, _parentTransform);
+                cardObject.gameObject.SetActive(false);
                 _instantiatedCards.Add(cardObject);
             }
-            AlignCards();
+            AlignCards(true);
         }
 
-        internal void AlignCards()
+        internal void AlignCards(bool isStartTurnDealing = false)
         {
             if(_instantiatedCards.Count > 0)
             {
@@ -142,8 +143,6 @@ namespace PeggleWars.Cards
                             offsetCounter++;
                             offsetCounterHelper = 0;
                         }
-                        
-                        
 
                         if (i == 0)
                         {
@@ -177,7 +176,7 @@ namespace PeggleWars.Cards
                         }
                     }
                     List<Vector2> sortedCardPositions = newCardPositions.OrderBy(vector => vector.x).ToList<Vector2>();
-                    FadeInCards(sortedCardPositions);
+                    StartCoroutine(FadeInCards(sortedCardPositions, isStartTurnDealing));
                 }
                 else //if the number of cards is uneven
                 {
@@ -213,19 +212,25 @@ namespace PeggleWars.Cards
                         }
                     }
                     List<Vector2> sortedCardPositions = newCardPositions.OrderBy(vector => vector.x).ToList<Vector2>();
-                    FadeInCards(sortedCardPositions);
+                    StartCoroutine(FadeInCards(sortedCardPositions, isStartTurnDealing));
                 }
                 SetCardAngles();
             }
         }
 
-        private void FadeInCards(List<Vector2> newCards)
+        private IEnumerator FadeInCards(List<Vector2> newCards, bool hasVisualDelay)
         {           
             for (int i = 0; i < _instantiatedCards.Count; i++)
-            {
+            {               
+                _instantiatedCards[i].gameObject.SetActive(true);
                 RectTransform rectTransform = _instantiatedCards[i].GetComponent<RectTransform>();
                 rectTransform.anchoredPosition = newCards[i];
+                if (hasVisualDelay)
+                {
+                    yield return new WaitForSeconds(0.05f);
+                }
             }
+            yield return null;
         }
 
         private void OnCardDestructionWrap()
@@ -235,7 +240,6 @@ namespace PeggleWars.Cards
 
         private IEnumerator OnCardDestruction()
         {
-            Debug.Log("Display new Hand!");
             yield return new WaitForSeconds(0.1f);
             AlignCards();
         }
