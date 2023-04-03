@@ -14,7 +14,7 @@ namespace PeggleWars.Cards
 
         private RectTransform _rectTransform;
         private Vector3 _startPosition;
-        private readonly float _cardEffectBorderY = -270; //Y above which the game will try to use the card
+        private readonly float _cardEffectBorderY = -150; //Y above which the game will try to use the card
 
         #endregion
 

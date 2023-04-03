@@ -7,6 +7,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 808972950667333918, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 78
+      objectReference: {fileID: 0}
+    - target: {fileID: 808972950667333918, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 808972950667333918, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 808972950667333918, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 808972950667333918, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 808972950667333918, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4812993297873364277, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -91,6 +115,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5275418852295311527, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 94b8174d73e132f4794d3b0d1381bb6b, type: 3}
     - target: {fileID: 6398440697363082782, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_Name
       value: RefreshCardPrefab

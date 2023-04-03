@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _orbMana: {fileID: 7005893637801753577, guid: b5b564ea0235c694f8c7d3853a796c29, type: 3}
   _spawnManaType: 2
-  _manaAmount: 10
+  _manaAmount: 2
   _defaultOrb: {fileID: 2549565476461289553, guid: c837957ee74bdcc44a31943daaafc0a8, type: 3}
   _orbType: 17
   _icicle: {fileID: 8361171627463059092, guid: 0447ba5c05b7b274caf9854c144a39ed, type: 3}

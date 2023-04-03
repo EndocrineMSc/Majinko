@@ -83,6 +83,7 @@ namespace PeggleWars.Cards
 
         private void ActivateRarityBackground()
         {
+            DeactivateRarityBackgrounds();
             switch (_card.Rarity)
             {
                 case CardRarity.Basic:
@@ -143,6 +144,14 @@ namespace PeggleWars.Cards
             _fireCardBackground.SetActive(false);
             _iceCardBackground.SetActive(false);
             _lightningCardBackground.SetActive(false);
+        }
+
+        private void DeactivateRarityBackgrounds()
+        {
+            _commonBackground.SetActive(false);
+            _rareBackground.SetActive(false);
+            _epicBackground.SetActive(false);
+            _legendaryBackground.SetActive(false);
         }
 
         #endregion
