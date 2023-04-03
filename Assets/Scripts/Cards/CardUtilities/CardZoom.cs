@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using EnumCollection;
 
 namespace PeggleWars.Cards
 {
@@ -9,6 +10,7 @@ namespace PeggleWars.Cards
 
         private Vector3 _normalScale;
         private readonly float _zoomOffset = 90;
+        private readonly float _shopZoomOffset = 0;
         private readonly float _zoomSize = 1.5f;
         private int _index;
         private Vector3 _startPosition;
@@ -32,28 +34,43 @@ namespace PeggleWars.Cards
 
         void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
         {
-            _initialEulerAngles = transform.eulerAngles;
-            transform.localScale = new Vector3(_zoomSize,_zoomSize,_zoomSize);
-            transform.position = new Vector3(transform.position.x, transform.position.y + _zoomOffset, transform.position.z);
-            transform.eulerAngles = new Vector3(0,0,0);
-            
-            _otherCardsMovement.InvokeCardZoomIn(transform.position);
-            
-            //the last sibling will be in front of the other cards
-            transform.SetAsLastSibling();
+            if (GameManager.Instance.GameState != GameState.LevelWon)
+            {
+                _initialEulerAngles = transform.eulerAngles;
+                transform.localScale = new Vector3(_zoomSize, _zoomSize, _zoomSize);
+                transform.position = new Vector3(transform.position.x, transform.position.y + _zoomOffset, transform.position.z);
+                transform.eulerAngles = new Vector3(0, 0, 0);
+
+                _otherCardsMovement.InvokeCardZoomIn(transform.position);
+
+                //the last sibling will be in front of the other cards
+                transform.SetAsLastSibling();
+            }
+            else
+            {
+                transform.localScale = new Vector3(_zoomSize, _zoomSize, _zoomSize); 
+                transform.SetAsLastSibling();
+            }
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            transform.localScale = _normalScale;
-            transform.SetSiblingIndex(_index);
-            transform.eulerAngles = _initialEulerAngles;
-
-            _otherCardsMovement.InvokeCardZoomOut(_startPosition);
-
-            if (transform.position != _startPosition)
+            if (GameManager.Instance.GameState != GameState.LevelWon)
             {
-                transform.position = new Vector3(transform.position.x, transform.position.y - _zoomOffset, transform.position.z);
+                transform.localScale = _normalScale;
+                transform.SetSiblingIndex(_index);
+                transform.eulerAngles = _initialEulerAngles;
+
+                _otherCardsMovement.InvokeCardZoomOut(_startPosition);
+
+                if (transform.position != _startPosition)
+                {
+                    transform.position = new Vector3(transform.position.x, transform.position.y - _zoomOffset, transform.position.z);
+                }
+            }
+            else
+            {
+                transform.localScale = _normalScale;
             }
         }
 

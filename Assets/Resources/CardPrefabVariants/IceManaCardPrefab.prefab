@@ -233,11 +233,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardName: Ice Orb
-  _cardDescription: 'Persistent Orb: Gain ice mana and apply freezing
-
-
-    Single
-    use'
+  _cardDescription: "Persistent Orb: \nGain 1 Ice Mana\nApply 1 freezing\nSingle
+    use"
   _basicManaCost: 0
   _fireManaCost: 0
   _iceManaCost: 1

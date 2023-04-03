@@ -17,7 +17,7 @@ namespace PeggleWars
         private AudioManager _audioManager;
         private TurnManager _turnManager;
 
-        private GameState _gameState;
+        [SerializeField] private GameState _gameState;
 
         internal GameState GameState
         {

@@ -247,13 +247,12 @@ namespace PeggleWars.Cards
         private void SetCardAngles()
         {
             List<int> cardAngles = new();
-           
+            int angleStepSize = 5;
+            int minimumAngle = (_instantiatedCards.Count / 2) * angleStepSize;
 
             //uneven amount cards
             if (_instantiatedCards.Count % 2 != 0)
             {
-                int angleStepSize = 5;
-                int minimumAngle = (_instantiatedCards.Count / 2) * angleStepSize;
                 for (int i = 0; i < _instantiatedCards.Count; i++)
                 {
                     cardAngles.Add(minimumAngle - (i * angleStepSize));
@@ -261,8 +260,6 @@ namespace PeggleWars.Cards
             }
             else
             {
-                int angleStepSize = 5;
-                int minimumAngle = (_instantiatedCards.Count / 2) * angleStepSize;
                 //no center card -> no 0 angle, we need to skip at this index
                 int doubleStepIndex = _instantiatedCards.Count / 2;
                 for (int i = 0; i < _instantiatedCards.Count; i++)
@@ -286,11 +283,6 @@ namespace PeggleWars.Cards
                 card.GetComponent<RectTransform>().eulerAngles = newAngle;
             }
         }
-
-
-
-
-
 
         #endregion
     }

@@ -116,10 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardName: Forbidden X
-  _cardDescription: 'Persitent Orb: A mysterious dark power lies within this card
-
-
-    Single-use'
+  _cardDescription: "Persistent Orb: \nA dark power lies within this card\nSingle-use"
   _basicManaCost: 1
   _fireManaCost: 0
   _iceManaCost: 0

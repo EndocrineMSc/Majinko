@@ -56,6 +56,7 @@ namespace PeggleWars.Utilities
 
         private void OnLevelVictory()
         {
+            StartCoroutine(GameManager.Instance.SwitchState(GameState.LevelWon));
             _shopCanvas.enabled = true;
             List<Card> shopCards = SetRandomShopCards();
             List<Card> cardObjects = InstantiateShopCards(shopCards);
@@ -129,7 +130,7 @@ namespace PeggleWars.Utilities
             foreach (Card cardObject in cardObjects)
             {
                 cardObject.GetComponent<CardDragDrop>().enabled = false;
-                cardObject.GetComponent<CardZoom>().enabled = false;
+                cardObject.GetComponent<CardZoomEventMovement>().enabled = false;
             }
         }
 
@@ -137,14 +138,13 @@ namespace PeggleWars.Utilities
         {
             List<Card> instantiatedCards = new();
 
-
-            foreach (Card card in cards)
+            for (int i = 0; i < cards.Count; i++)
             {
-                Card cardObject = Instantiate(card, Vector2.zero, Quaternion.identity);
-                cardObject.GetComponent<RectTransform>().SetParent(_shopCardLayout.transform, false);             
+                Vector2 instantiatePosition = new(-350 + (i * 350), 50);
+                Card cardObject = Instantiate(cards[i], _shopCanvas.transform);
+                cardObject.GetComponent<RectTransform>().anchoredPosition = instantiatePosition;
                 instantiatedCards.Add(cardObject);
             }
-
             return instantiatedCards;
         }
 
@@ -168,7 +168,7 @@ namespace PeggleWars.Utilities
             
             Button buyButton = Instantiate (_buyButtonPrefab, instantiatePosition, Quaternion.identity);
 
-            buyButton.transform.SetParent(gameObject.transform, true);
+            buyButton.transform.SetParent(_shopCanvas.transform, true);
             buyButton.onClick.AddListener(delegate { BuyCard(cardIndex); });
             buyButton.onClick.AddListener(delegate { ChangeGameState(); });
         }
@@ -189,6 +189,11 @@ namespace PeggleWars.Utilities
         private void ChangeGameState()
         {
             StartCoroutine(GameManager.Instance.SwitchState(GameState.NewLevel));
+        }
+
+        public void SkipCardButton()
+        {
+            ChangeGameState();
         }
 
         #endregion

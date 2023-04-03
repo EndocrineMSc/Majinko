@@ -41,8 +41,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _cardDescription
-      value: "Orb: Explodes, activating nearby orbs aswell. \nDeals area of effect
-        damage and applies burning"
+      value: 'Orb: Activates nearby orbs
+
+        Deals AOE damage and applies burning'
       objectReference: {fileID: 0}
     - target: {fileID: 4812993297873364277, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Pivot.x

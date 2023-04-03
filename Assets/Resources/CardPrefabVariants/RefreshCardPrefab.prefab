@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardName: Refresh Orb
-  _cardDescription: "Persistent Orb: Refreshes the arena \n\nSingle-use"
+  _cardDescription: "Persistent Orb: \nRefreshes the arena \nSingle-use"
   _basicManaCost: 1
   _fireManaCost: 0
   _iceManaCost: 0

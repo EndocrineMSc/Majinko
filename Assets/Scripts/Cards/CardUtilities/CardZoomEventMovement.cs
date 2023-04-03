@@ -4,7 +4,7 @@ namespace PeggleWars.Cards
 {
     internal class CardZoomEventMovement : MonoBehaviour
     {
-        private float _moveDistance = 50f;
+        private readonly float _moveDistance = 75f;
         private readonly string _leftOfZoomCard = "Left";
         private readonly string _rightOfZoomCard = "Right";
         private string _leftOrRightOfZoomCard;

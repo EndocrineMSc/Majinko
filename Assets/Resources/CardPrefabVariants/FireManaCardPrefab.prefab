@@ -171,11 +171,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7670523144989857751, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_fontSize
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7670523144989857751, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_fontSizeBase
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8696175136549785397, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_text
@@ -202,7 +202,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardName: Fire Orb
-  _cardDescription: "Persitent Orb: Gain fire mana and apply burning\n \nSingle use"
+  _cardDescription: "Persitent Orb: \nGain 1 Fire Mana \nApply 1 burning\nSingle
+    use"
   _basicManaCost: 0
   _fireManaCost: 1
   _iceManaCost: 0
