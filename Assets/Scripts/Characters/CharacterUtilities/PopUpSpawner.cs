@@ -27,7 +27,7 @@ namespace PeggleAttacks.AttackVisuals.PopUps
 
         internal void SpawnPopUp(string bark)
         {
-            Transform spawnTransform = transform.GetChild(1).gameObject.transform;
+            Transform spawnTransform = transform.GetChild(0).gameObject.transform;
             float xOffset = spawnTransform.position.x + UnityEngine.Random.Range(-0.1f, 0.1f);
             float yOffset = spawnTransform.position.y + UnityEngine.Random.Range(-0.1f, 0.1f);
 

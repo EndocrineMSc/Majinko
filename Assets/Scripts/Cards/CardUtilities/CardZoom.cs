@@ -10,7 +10,6 @@ namespace PeggleWars.Cards
 
         private Vector3 _normalScale;
         private readonly float _zoomOffset = 90;
-        private readonly float _shopZoomOffset = 0;
         private readonly float _zoomSize = 1.5f;
         private int _index;
         private Vector3 _startPosition;
