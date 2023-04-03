@@ -13,6 +13,7 @@ namespace PeggleWars.Cards
         private int _index;
         private Vector3 _startPosition;
         private CardZoomEventHandler _otherCardsMovement;
+        private Vector3 _initialEulerAngles;
 
         #endregion
 
@@ -22,6 +23,7 @@ namespace PeggleWars.Cards
         {
             _normalScale = transform.localScale;
             _startPosition = transform.position;
+            _initialEulerAngles = transform.eulerAngles;
 
             //index in hierarchy determines which UI element is in front, so _index is the default state of the card
             _index = transform.GetSiblingIndex();
@@ -30,8 +32,10 @@ namespace PeggleWars.Cards
 
         void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
         {
+            _initialEulerAngles = transform.eulerAngles;
             transform.localScale = new Vector3(_zoomSize,_zoomSize,_zoomSize);
             transform.position = new Vector3(transform.position.x, transform.position.y + _zoomOffset, transform.position.z);
+            transform.eulerAngles = new Vector3(0,0,0);
             
             _otherCardsMovement.InvokeCardZoomIn(transform.position);
             
@@ -43,6 +47,7 @@ namespace PeggleWars.Cards
         {
             transform.localScale = _normalScale;
             transform.SetSiblingIndex(_index);
+            transform.eulerAngles = _initialEulerAngles;
 
             _otherCardsMovement.InvokeCardZoomOut(_startPosition);
 

@@ -97,11 +97,11 @@ namespace PeggleWars.Cards
             }
 
             AudioManager.Instance.PlaySoundEffectOnce(SFX._0012_DrawHand);
-            DisplayHand();
+            DisplayHand(true);
         }
 
         //basically makes a new set of displayed instantiated cards for each card in the _handCards list
-        internal void DisplayHand()
+        internal void DisplayHand(bool isStartTurnDealing = false)
         {
             foreach (Card card in _instantiatedCards)
             {
@@ -116,7 +116,7 @@ namespace PeggleWars.Cards
                 cardObject.gameObject.SetActive(false);
                 _instantiatedCards.Add(cardObject);
             }
-            AlignCards(true);
+            AlignCards(isStartTurnDealing);
         }
 
         internal void AlignCards(bool isStartTurnDealing = false)
