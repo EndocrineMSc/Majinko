@@ -82,13 +82,11 @@ namespace PeggleWars.Cards
             if (CheckIfEnoughMana())
             {
                 CardEffect();
-
                 _manaPool.SpendMana(_adjustedBasicManaAmount, _adjustedFireManaAmount, _adjustedIceManaAmount);
                 _orbManager.CheckForRefreshOrbs(); //Checks if RefreshOrb was overwritten and makes a new one if so
                 HandleDiscard();
                 _hand.InstantiatedCards.Remove(this); //list of instantiated cards in hand
-                _hand.AlignCards();
-
+                CardEvents.Instance.CardDestructionEvent?.Invoke();
                 Destroy(gameObject);
                 return true;
             }

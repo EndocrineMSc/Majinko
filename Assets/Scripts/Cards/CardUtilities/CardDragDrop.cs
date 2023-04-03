@@ -67,7 +67,6 @@ namespace PeggleWars.Cards
         private void HandleNotEnoughMana()
         {
             AudioManager.Instance.PlaySoundEffectOnce(SFX._0007_CardDragReturn);
-            transform.position = _startPosition;
             Hand.Instance.AlignCards();
         }
 

@@ -5,6 +5,7 @@ using PeggleWars.Audio;
 using System.Collections;
 using EnumCollection;
 using PeggleWars.Utilities;
+using System.Linq;
 
 namespace PeggleWars.Cards
 {
@@ -25,7 +26,6 @@ namespace PeggleWars.Cards
         private Deck _deck;
 
         private Transform _parentTransform;
-        private readonly float _spacing = 150f;
 
         private Canvas _cardCanvas; //The Card Canvas will be a child of the Hand and contain the UI of instantiated Cards
         #endregion
@@ -53,6 +53,7 @@ namespace PeggleWars.Cards
             TurnManager.Instance.EndCardTurn?.AddListener(OnCardTurnEnd);
             TurnManager.Instance.StartCardTurn?.AddListener(OnCardTurnStart);
             WinLoseConditionManager.Instance.LevelVictory?.AddListener(OnLevelVictory);
+            CardEvents.Instance.CardDestructionEvent?.AddListener(OnCardDestructionWrap);
         }
 
         internal void OnLevelVictory()
@@ -79,7 +80,7 @@ namespace PeggleWars.Cards
             }
 
             _handCards.Clear();
-            StartCoroutine(DisplayHand());
+            DisplayHand();
 
             DrawAmount = 5;
         }
@@ -96,11 +97,11 @@ namespace PeggleWars.Cards
             }
 
             AudioManager.Instance.PlaySoundEffectOnce(SFX._0012_DrawHand);
-            StartCoroutine(DisplayHand());
+            DisplayHand();
         }
 
         //basically makes a new set of displayed instantiated cards for each card in the _handCards list
-        internal IEnumerator DisplayHand()
+        internal void DisplayHand()
         {
             foreach (Card card in _instantiatedCards)
             {
@@ -113,37 +114,179 @@ namespace PeggleWars.Cards
             {
                 Card cardObject = Instantiate(card, _parentTransform);
                 _instantiatedCards.Add(cardObject);
-                AlignCards();
-                yield return new WaitForSeconds(0.2f);
             }
+            AlignCards();
         }
 
         internal void AlignCards()
         {
-            // Get the width of the canvas in pixels
-            float canvasWidth = _cardCanvas.GetComponent<RectTransform>().rect.width;
-            float canvasHeight = _cardCanvas.GetComponent<RectTransform>().rect.height;
-            float cardWidth = 0;
-
-            if (_instantiatedCards.Count > 0)
+            if(_instantiatedCards.Count > 0)
             {
-                cardWidth = _instantiatedCards[0].GetComponent<RectTransform>().rect.width;
+                float canvasHeight = _cardCanvas.GetComponent<RectTransform>().rect.height;
+                float cardHeight = _instantiatedCards[0].GetComponent<RectTransform>().rect.height;
+                float xOffset = 100;
+                float yOffset = 10;
+                float yPosition = ((-canvasHeight / 2) + (cardHeight / 3));
+
+                //if the number of cards is even
+                if (_instantiatedCards.Count % 2 == 0)
+                {
+                    int offsetCounterHelper = 0;
+                    float offsetCounter = 1.5f;
+                    List<Vector2> newCardPositions = new();
+
+                    for (int i = 0; i < _instantiatedCards.Count; i++)
+                    {
+                        if (offsetCounterHelper >= 2)
+                        {
+                            offsetCounter++;
+                            offsetCounterHelper = 0;
+                        }
+                        
+                        
+
+                        if (i == 0)
+                        {
+                            float angleOffsetCounter = offsetCounter - 0.5f;
+                            float angleAdjustedYOffset = angleOffsetCounter * (yOffset + ((angleOffsetCounter - 1) * (yOffset / 2)));
+                            Vector2 cardPosition = new((xOffset / 2), yPosition - angleAdjustedYOffset);
+                            newCardPositions.Add(cardPosition);
+                        }
+                        else if (i == 1)
+                        {
+                            float angleOffsetCounter = offsetCounter - 0.5f;
+                            float angleAdjustedYOffset = angleOffsetCounter * (yOffset + ((angleOffsetCounter - 1) * (yOffset / 2)));
+                            Vector2 cardPosition = new((-xOffset / 2), yPosition - angleAdjustedYOffset);
+                            newCardPositions.Add(cardPosition);
+                        }
+                        else if (i % 2 == 0)
+                        {
+                            float angleOffsetCounter = offsetCounter + 0.5f;
+                            float angleAdjustedYOffset = angleOffsetCounter * (yOffset + ((angleOffsetCounter - 1) * (yOffset / 2)));
+                            Vector2 cardPosition = new((offsetCounter * xOffset), yPosition - angleAdjustedYOffset);
+                            newCardPositions.Add(cardPosition);
+                            offsetCounterHelper += 1;
+                        }
+                        else
+                        {
+                            float angleOffsetCounter = offsetCounter + 0.5f;
+                            float angleAdjustedYOffset = angleOffsetCounter * (yOffset + ((angleOffsetCounter - 1) * (yOffset / 2)));
+                            Vector2 cardPosition = new((-offsetCounter * xOffset), yPosition - angleAdjustedYOffset);
+                            newCardPositions.Add(cardPosition);
+                            offsetCounterHelper += 1;
+                        }
+                    }
+                    List<Vector2> sortedCardPositions = newCardPositions.OrderBy(vector => vector.x).ToList<Vector2>();
+                    FadeInCards(sortedCardPositions);
+                }
+                else //if the number of cards is uneven
+                {
+                    int offsetCounterHelper = 0;
+                    float offsetCounter = 1;
+                    List<Vector2> newCardPositions = new();
+
+                    for (int i = 0; i < _instantiatedCards.Count; i++)
+                    {
+                        if (offsetCounterHelper >= 2)
+                        {
+                            offsetCounter++;
+                            offsetCounterHelper = 0;
+                        }
+                        float angleAdjustedYOffset = offsetCounter * (yOffset + ((offsetCounter - 1) * (yOffset / 2)));
+
+                        if (i == 0)
+                        {
+                            Vector2 cardPosition = new(0, yPosition);
+                            newCardPositions.Add(cardPosition);
+                        }
+                        else if (i % 2 == 0)
+                        {
+                            Vector2 cardPosition = new((offsetCounter * xOffset), yPosition - angleAdjustedYOffset);
+                            newCardPositions.Add(cardPosition);
+                            offsetCounterHelper += 1;
+                        }
+                        else
+                        {
+                            Vector2 cardPosition = new((-offsetCounter * xOffset), yPosition - angleAdjustedYOffset);
+                            newCardPositions.Add(cardPosition);
+                            offsetCounterHelper += 1;
+                        }
+                    }
+                    List<Vector2> sortedCardPositions = newCardPositions.OrderBy(vector => vector.x).ToList<Vector2>();
+                    FadeInCards(sortedCardPositions);
+                }
+                SetCardAngles();
             }
+        }
 
-            // Calculate the total width of all Card GameObjects including spacing
-            float totalWidth = (_instantiatedCards.Count) * (_spacing + cardWidth);
-
-            // Calculate the starting x position of the game objects
-            float startX = -(totalWidth / 4);
-
-            // Set the position of each game object
+        private void FadeInCards(List<Vector2> newCards)
+        {           
             for (int i = 0; i < _instantiatedCards.Count; i++)
             {
                 RectTransform rectTransform = _instantiatedCards[i].GetComponent<RectTransform>();
-                float cardHeight = rectTransform.rect.height;
-                rectTransform.anchoredPosition = new Vector2((startX + (rectTransform.rect.width / 2f) + (i * _spacing)), (-canvasHeight/2 + cardHeight/4));
+                rectTransform.anchoredPosition = newCards[i];
             }
         }
+
+        private void OnCardDestructionWrap()
+        {
+            StartCoroutine(OnCardDestruction());
+        }
+
+        private IEnumerator OnCardDestruction()
+        {
+            Debug.Log("Display new Hand!");
+            yield return new WaitForSeconds(0.1f);
+            AlignCards();
+        }
+
+        private void SetCardAngles()
+        {
+            List<int> cardAngles = new();
+           
+
+            //uneven amount cards
+            if (_instantiatedCards.Count % 2 != 0)
+            {
+                int angleStepSize = 5;
+                int minimumAngle = (_instantiatedCards.Count / 2) * angleStepSize;
+                for (int i = 0; i < _instantiatedCards.Count; i++)
+                {
+                    cardAngles.Add(minimumAngle - (i * angleStepSize));
+                }
+            }
+            else
+            {
+                int angleStepSize = 5;
+                int minimumAngle = (_instantiatedCards.Count / 2) * angleStepSize;
+                //no center card -> no 0 angle, we need to skip at this index
+                int doubleStepIndex = _instantiatedCards.Count / 2;
+                for (int i = 0; i < _instantiatedCards.Count; i++)
+                {
+                    if (i >= doubleStepIndex)
+                    {
+                        cardAngles.Add(minimumAngle - ((i + 1) * angleStepSize));
+                    }
+                    else
+                    {
+                        cardAngles.Add(minimumAngle - (i * angleStepSize));
+                    }
+                }
+            }
+
+            for (int i = 0; i < _instantiatedCards.Count; i++)
+            {
+                Card card = _instantiatedCards[i];
+                int zAngleOffset = cardAngles[i];
+                Vector3 newAngle = new(0, 0, zAngleOffset);
+                card.GetComponent<RectTransform>().eulerAngles = newAngle;
+            }
+        }
+
+
+
+
+
 
         #endregion
     }
