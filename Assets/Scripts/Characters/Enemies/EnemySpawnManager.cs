@@ -23,28 +23,29 @@ namespace PeggleWars.Enemies
         private readonly string WORLD_ONE_PARAM = "ScriptableEnemySets/World 1 Levels";
         private int _amountOfEnemiesInLevel;
         internal int AmountOfEnemiesInLevel { get { return _amountOfEnemiesInLevel; } } 
-        private int _enemySpawnCounter;
+        private int _enemySpawnCounter = 0;
         internal int EnemySpawnCounter { get { return _enemySpawnCounter; } }
 
         #endregion
 
         #region Functions
 
+        private void Awake()
+        {
+            _enemiesForLevel = GetEnemyArrayByWorld();
+            _amountOfEnemiesInLevel = _enemiesForLevel.Length;
+        }
+
         private void Start()
         {
             _enemyManager = EnemyManager.Instance;
             _enemyPositions = _enemyManager.EnemyPositions;
-
             _rightMostEnemyPosition = _enemyPositions.GetLength(1) - 1;
             _flyingEnemySpawnPosition = _enemyPositions[_enemyTopRow, _rightMostEnemyPosition];
             _walkingEnemySpawnPosition = _enemyPositions[_enemyBottomRow, _rightMostEnemyPosition];
-
-            _enemiesForLevel = GetEnemyArrayByWorld();
-            _amountOfEnemiesInLevel = _enemiesForLevel.Length;
-            EnemyEvents.Instance.EnemyMoveEndEvent?.AddListener(OnEndOfEnemyMovement);
-
             SpawnEnemy(_enemiesForLevel[0]);
-            _enemySpawnCounter++;
+
+            EnemyEvents.Instance.EnemyMoveEndEvent?.AddListener(OnEndOfEnemyMovement);
         }
 
         private void OnDisable()

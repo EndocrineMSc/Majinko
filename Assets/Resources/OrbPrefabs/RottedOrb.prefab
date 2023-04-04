@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 2549565476461289555}
   - component: {fileID: 2549565476461289554}
   - component: {fileID: 5099420647275916350}
-  - component: {fileID: 7479998709122375947}
   - component: {fileID: 4872170773538441819}
+  - component: {fileID: -8351544071746093262}
   m_Layer: 0
   m_Name: RottedOrb
   m_TagString: Orb
@@ -124,23 +124,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.07
---- !u!114 &7479998709122375947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2549565476461289553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41016e44d23c36148904c35888f4e051, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _orbMana: {fileID: 9019434043406141556, guid: d8f306cd12b86c548a87c0403c007a89, type: 3}
-  _spawnManaType: 0
-  _manaAmount: 2
-  _defaultOrb: {fileID: 2549565476461289553, guid: c837957ee74bdcc44a31943daaafc0a8, type: 3}
-  _orbType: 24
 --- !u!114 &4872170773538441819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,3 +136,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ed9cf162afe23d4ba1396e99745a321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8351544071746093262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549565476461289553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88f1ef102fa3afe4f823aba413e0d57c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _orbMana: {fileID: 9019434043406141556, guid: d8f306cd12b86c548a87c0403c007a89, type: 3}
+  _spawnManaType: 3
+  _manaAmount: 2
+  _defaultOrb: {fileID: 2549565476461289553, guid: c837957ee74bdcc44a31943daaafc0a8, type: 3}
+  _orbType: 24

@@ -10,7 +10,7 @@ namespace PeggleWars.Orbs
         public override void SetDisplayDescription()
         {
             IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
-            displayOnScroll.DisplayDescription = "Upon being hit, this orb spawns \"Rotted Mana\". When consumed to cast spells, lower player damage that turn.";
+            displayOnScroll.DisplayDescription = "Upon being hit, this orb spawns \"Rotted Mana\". \nWhen consumed to play cards, player damage is lowered that turn.";
         }
 
         protected override void AdditionalEffectsOnCollision()

@@ -42,6 +42,7 @@ namespace EnumCollection
         BasicMana,
         FireMana,
         IceMana,
+        RottedMana,
     }
 
     //This enum needs to be in alphabetical order!

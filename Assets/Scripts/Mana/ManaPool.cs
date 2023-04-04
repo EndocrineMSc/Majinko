@@ -22,6 +22,7 @@ namespace PeggleWars.ManaManagement
         [SerializeField] private GameObject _basicManaPrefab;
         [SerializeField] private GameObject _fireManaPrefab;
         [SerializeField] private GameObject _iceManaPrefab;
+        [SerializeField] private GameObject _rottedManaPrefab;
 
         private readonly string BASEMANASPAWN_PARAM = "BaseManaSpawn";
         private readonly string FIREMANASPAWN_PARAM = "FireManaSpawn";
@@ -74,6 +75,7 @@ namespace PeggleWars.ManaManagement
                 ManaType.BasicMana => _baseManaSpawn.transform.position,
                 ManaType.FireMana => _fireManaSpawn.transform.position,
                 ManaType.IceMana => _iceManaSpawn.transform.position,
+                ManaType.RottedMana => _baseManaSpawn.transform.position, //intended as base mana spawn, no typo
                 _ => _baseManaSpawn.transform.position,
             };
             for (int i = 0; i < amount; i++)
@@ -105,6 +107,13 @@ namespace PeggleWars.ManaManagement
                         tempManaObject = Instantiate(_iceManaPrefab, _spawnPosition, Quaternion.identity);
                         tempMana = tempManaObject.GetComponent<Mana>();
                         IceMana.Add(tempMana);
+                        yield return new WaitForSeconds(0.75f);
+                        break;
+
+                    case ManaType.RottedMana:
+                        tempManaObject = Instantiate(_rottedManaPrefab, _spawnPosition, Quaternion.identity);
+                        tempMana = tempManaObject.GetComponent<Mana>();
+                        BasicMana.Add(tempMana);
                         yield return new WaitForSeconds(0.75f);
                         break;
                 }
