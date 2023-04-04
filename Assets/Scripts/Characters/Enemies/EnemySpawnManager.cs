@@ -42,6 +42,9 @@ namespace PeggleWars.Enemies
             _enemiesForLevel = GetEnemyArrayByWorld();
             _amountOfEnemiesInLevel = _enemiesForLevel.Length;
             EnemyEvents.Instance.EnemyMoveEndEvent?.AddListener(OnEndOfEnemyMovement);
+
+            SpawnEnemy(_enemiesForLevel[0]);
+            _enemySpawnCounter++;
         }
 
         private void OnDisable()
