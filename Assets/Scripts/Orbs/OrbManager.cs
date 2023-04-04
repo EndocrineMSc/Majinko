@@ -21,7 +21,8 @@ namespace PeggleWars.Orbs
 
         [SerializeField] private ScriptableOrbLayout _layout;
 
-
+        private List<ScriptableOrbLayout> _orbLayoutList = new();
+        private readonly string ORB_LAYOUT_PATH = "LevelOrbLayouts";
         
         private GlobalOrbManager _globalOrbManager;
 
@@ -38,32 +39,38 @@ namespace PeggleWars.Orbs
             {
                 Instance = this;                
             }
+            _orbLayoutList = Resources.LoadAll<ScriptableOrbLayout>(ORB_LAYOUT_PATH).ToList();
         }
 
         private void Start()
         {
             _globalOrbManager = GlobalOrbManager.Instance;          
 
-            OrbGridPositions test = new();
+            OrbGridPositions orbGrid = new();
             _allOrbsList = _globalOrbManager.AllOrbsList;
-
-            bool[,] orbLayout = _layout.InitializeOrbLayout();
-
+            ScriptableOrbLayout scriptableOrbLayout = GetRandomLevelLayout();
+            bool[,] orbLayout = scriptableOrbLayout.InitializeOrbLayout();
             for (int x = 0; x < orbLayout.GetLength(0); x++)
             {
                 for (int y = 0; y < orbLayout.GetLength(1); y++)
                 {
                     if (orbLayout[x, y])
                     {
-                        Vector2 instantiatePosition = test.GridArray[x, y];
+                        Vector2 instantiatePosition = orbGrid.GridArray[x, y];
                         Instantiate(_allOrbsList[0], instantiatePosition, Quaternion.identity);
                     }
                     
                 }
-            }
-            
+            }           
             SceneOrbList = GameObject.FindObjectsOfType<Orb>().ToList();
             InsertLevelLoadOrbs();
+        }
+
+        private ScriptableOrbLayout GetRandomLevelLayout()
+        {
+            int randomLayoutIndex = UnityEngine.Random.Range(0, _orbLayoutList.Count);
+            ScriptableOrbLayout orbLayout = _orbLayoutList[randomLayoutIndex];
+            return orbLayout;
         }
 
         private void InsertLevelLoadOrbs()
