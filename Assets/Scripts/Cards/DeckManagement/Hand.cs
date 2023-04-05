@@ -6,6 +6,7 @@ using System.Collections;
 using EnumCollection;
 using PeggleWars.Utilities;
 using System.Linq;
+using DG.Tweening;
 
 namespace PeggleWars.Cards
 {
@@ -23,11 +24,15 @@ namespace PeggleWars.Cards
         private List<Card> _instantiatedCards = new();
         internal List<Card> InstantiatedCards { get => _instantiatedCards; set => _instantiatedCards = value; }
 
+        private Transform _cardSpawnTransform;
         private Deck _deck;
-
         private Transform _parentTransform;
-
         private Canvas _cardCanvas; //The Card Canvas will be a child of the Hand and contain the UI of instantiated Cards
+
+        //Tweening
+        private readonly float _moveDuration = 0.15f;
+        private readonly float _startScale = 0.05f;
+        private readonly float _endScale = 0.75f;
         #endregion
 
         #region Functions
@@ -47,8 +52,9 @@ namespace PeggleWars.Cards
         private void Start()
         {
             _deck = Deck.Instance;
-            _cardCanvas = GetComponentInChildren<Canvas>();
+            _cardCanvas = transform.GetChild(0).GetComponent<Canvas>();
             _parentTransform = _cardCanvas.transform;
+            _cardSpawnTransform = transform.GetChild(0).GetChild(0);
 
             TurnManager.Instance.EndCardTurn?.AddListener(OnCardTurnEnd);
             TurnManager.Instance.StartCardTurn?.AddListener(OnCardTurnStart);
@@ -113,6 +119,8 @@ namespace PeggleWars.Cards
             foreach (Card card in _handCards)
             {
                 Card cardObject = Instantiate(card, _parentTransform);
+                cardObject.GetComponent<RectTransform>().localPosition = _cardSpawnTransform.localPosition;
+                cardObject.transform.localScale = new Vector3(_startScale, _startScale, _startScale);
                 cardObject.gameObject.SetActive(false);
                 _instantiatedCards.Add(cardObject);
             }
@@ -218,16 +226,21 @@ namespace PeggleWars.Cards
             }
         }
 
-        private IEnumerator FadeInCards(List<Vector2> newCards, bool hasVisualDelay)
+        private IEnumerator FadeInCards(List<Vector2> newCards, bool isStartTurnDealing)
         {           
             for (int i = 0; i < _instantiatedCards.Count; i++)
             {               
-                _instantiatedCards[i].gameObject.SetActive(true);
-                RectTransform rectTransform = _instantiatedCards[i].GetComponent<RectTransform>();
-                rectTransform.anchoredPosition = newCards[i];
-                if (hasVisualDelay)
+                if (isStartTurnDealing)
                 {
-                    yield return new WaitForSeconds(0.05f);
+                    _instantiatedCards[i].gameObject.SetActive(true);
+                    RectTransform rectTransform = _instantiatedCards[i].GetComponent<RectTransform>();
+                    yield return StartCoroutine(TweenCardSpawn(newCards[i], rectTransform));                
+                }
+                else
+                {
+                    _instantiatedCards[i].gameObject.SetActive(true);
+                    RectTransform rectTransform = _instantiatedCards[i].GetComponent<RectTransform>();
+                    rectTransform.anchoredPosition = newCards[i];
                 }
             }
             yield return null;
@@ -282,6 +295,13 @@ namespace PeggleWars.Cards
                 Vector3 newAngle = new(0, 0, zAngleOffset);
                 card.GetComponent<RectTransform>().eulerAngles = newAngle;
             }
+        }
+
+        private IEnumerator TweenCardSpawn(Vector2 targetPosition, RectTransform cardTransform)
+        {
+            cardTransform.DOLocalMove(targetPosition, _moveDuration);
+            cardTransform.DOScale(_endScale, _moveDuration);
+            yield return new WaitForSeconds((_moveDuration*0.33f));
         }
 
         #endregion

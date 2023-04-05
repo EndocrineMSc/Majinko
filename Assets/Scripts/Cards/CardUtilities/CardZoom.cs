@@ -22,7 +22,7 @@ namespace PeggleWars.Cards
 
         private void Start()
         {
-            _normalScale = transform.localScale;
+            _normalScale = new Vector3(0.75f, 0.75f, 0.75f);
             _startPosition = transform.position;
             _initialEulerAngles = transform.eulerAngles;
 
