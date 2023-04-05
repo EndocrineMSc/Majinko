@@ -13,7 +13,6 @@ namespace PeggleWars.Cards
         private Card _card;
 
         private RectTransform _rectTransform;
-        private Vector3 _startPosition;
         private readonly float _cardEffectBorderY = -150; //Y above which the game will try to use the card
 
         #endregion
@@ -30,7 +29,6 @@ namespace PeggleWars.Cards
            GameObject cardCanvas = GameObject.FindGameObjectWithTag("CardCanvas");
            _canvas = cardCanvas.GetComponent<Canvas>();
            _card = GetComponent<Card>();
-           _startPosition = transform.position;
         }
 
         #endregion
@@ -39,7 +37,6 @@ namespace PeggleWars.Cards
 
         public void OnBeginDrag(PointerEventData eventData)
         {
-            _startPosition = transform.position;
             AudioManager.Instance.PlaySoundEffectOnce(SFX._0006_CardDrag);
         }
 
@@ -67,7 +64,7 @@ namespace PeggleWars.Cards
         private void HandleNotEnoughMana()
         {
             AudioManager.Instance.PlaySoundEffectOnce(SFX._0007_CardDragReturn);
-            Hand.Instance.DisplayHand();
+            Hand.Instance.AlignCards();
         }
 
         #endregion

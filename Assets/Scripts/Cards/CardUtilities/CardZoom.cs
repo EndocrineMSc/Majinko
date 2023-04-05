@@ -15,6 +15,7 @@ namespace PeggleWars.Cards
         private Vector3 _startPosition;
         private CardZoomEventHandler _otherCardsMovement;
         private Vector3 _initialEulerAngles;
+        private Card _card;
 
         #endregion
 
@@ -22,6 +23,7 @@ namespace PeggleWars.Cards
 
         private void Start()
         {
+            _card = GetComponent<Card>();
             _normalScale = new Vector3(0.75f, 0.75f, 0.75f);
             _startPosition = transform.position;
             _initialEulerAngles = transform.eulerAngles;
@@ -33,7 +35,7 @@ namespace PeggleWars.Cards
 
         void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
         {
-            if (GameManager.Instance.GameState != GameState.LevelWon)
+            if (GameManager.Instance.GameState != GameState.LevelWon && !_card.IsBeingDealt)
             {
                 _initialEulerAngles = transform.eulerAngles;
                 transform.localScale = new Vector3(_zoomSize, _zoomSize, _zoomSize);
@@ -56,16 +58,13 @@ namespace PeggleWars.Cards
         {
             if (GameManager.Instance.GameState != GameState.LevelWon)
             {
+                
                 transform.localScale = _normalScale;
                 transform.SetSiblingIndex(_index);
                 transform.eulerAngles = _initialEulerAngles;
 
-                _otherCardsMovement.InvokeCardZoomOut(_startPosition);
-
-                if (transform.position != _startPosition)
-                {
-                    transform.position = new Vector3(transform.position.x, transform.position.y - _zoomOffset, transform.position.z);
-                }
+                _otherCardsMovement.InvokeCardZoomOut(_startPosition);               
+                Hand.Instance.AlignCards();
             }
             else
             {

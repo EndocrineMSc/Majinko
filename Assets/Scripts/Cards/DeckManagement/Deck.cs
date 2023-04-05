@@ -1,6 +1,7 @@
 using PeggleWars.Utilities;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 namespace PeggleWars.Cards
 {
@@ -21,6 +22,10 @@ namespace PeggleWars.Cards
         private Hand _hand;
         private bool _deckIsBuilt;
 
+        //For tweening
+        internal Vector3 DiscardPosition { get; private set; }
+        internal Vector3 ExhaustPosition { get; private set; }
+
         #endregion
 
         #region Functions
@@ -40,6 +45,8 @@ namespace PeggleWars.Cards
         private void Start()
         {
             _hand = Hand.Instance;
+            DiscardPosition = Hand.Instance.transform.GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition;
+            ExhaustPosition = Hand.Instance.transform.GetChild(0).GetChild(2).GetComponent<RectTransform>().localPosition;
             WinLoseConditionManager.Instance.LevelVictory?.AddListener(OnLevelVictory);
         }
 
@@ -95,7 +102,7 @@ namespace PeggleWars.Cards
         }
 
         internal void DiscardCard(Card card)
-        {
+        {            
             _discardPile.Add(card);
             _hand.HandCards.Remove(card);
         }

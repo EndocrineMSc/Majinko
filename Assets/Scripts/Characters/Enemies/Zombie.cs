@@ -22,7 +22,7 @@ namespace PeggleWars.Enemies
 
         protected override void OnDeathEffect()
         {
-            OrbManager.Instance.SwitchOrbs(OrbType.RottedOrb, 2);          
+            OrbManager.Instance.SwitchOrbs(OrbType.RottedOrb, transform.position, 2);          
         }
 
         protected override void PlayHurtSound()

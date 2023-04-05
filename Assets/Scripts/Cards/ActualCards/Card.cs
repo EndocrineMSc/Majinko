@@ -2,6 +2,8 @@ using UnityEngine;
 using PeggleWars.Orbs;
 using PeggleWars.ManaManagement;
 using EnumCollection;
+using System.Collections;
+using DG.Tweening;
 
 namespace PeggleWars.Cards
 {
@@ -36,6 +38,9 @@ namespace PeggleWars.Cards
         protected Deck _deck;
         protected GlobalDeckManager _globalDeckManager;
 
+        protected float _tweenDiscardDuration = 0.5f;
+        protected Vector3 _tweenEndScale = new(0.25f, 0.25f, 0.25f);
+
         internal string CardName { get => _cardName;}
         internal string CardDescription { get => _cardDescription;}
         internal int BasicManaCost { get => _basicManaCost;}
@@ -47,6 +52,7 @@ namespace PeggleWars.Cards
         internal CardRarity Rarity { get => _cardRarity;}
         internal CardElement Element { get => _cardElement;}
         internal CardEffectType EffectType { get => _cardEffectType;}
+        internal bool IsBeingDealt { get; set; } = true;
 
 
         #endregion
@@ -87,7 +93,7 @@ namespace PeggleWars.Cards
                 HandleDiscard();
                 _hand.InstantiatedCards.Remove(this); //list of instantiated cards in hand
                 CardEvents.Instance.CardDestructionEvent?.Invoke();
-                Destroy(gameObject);
+                StartCoroutine(DestroyCardAfterAnimation());
                 return true;
             }
             else
@@ -115,6 +121,15 @@ namespace PeggleWars.Cards
             {
                 _deck.DiscardCard(GlobalCardManager.Instance.AllCards[(int)_cardType]);
             }
+        }
+
+        protected IEnumerator DestroyCardAfterAnimation()
+        {
+            Vector3 targetPosition = (_exhaustCard) ? Deck.Instance.ExhaustPosition : Deck.Instance.DiscardPosition;
+            GetComponent<RectTransform>().DOLocalMove(targetPosition, _tweenDiscardDuration).SetEase(Ease.OutExpo);
+            GetComponent<RectTransform>().DOScale(_tweenEndScale, _tweenDiscardDuration).SetEase(Ease.OutCubic);
+            yield return new WaitForSeconds(_tweenDiscardDuration);
+            Destroy(gameObject);
         }
 
         #endregion

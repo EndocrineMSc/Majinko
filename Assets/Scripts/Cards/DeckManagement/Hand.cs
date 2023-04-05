@@ -30,8 +30,8 @@ namespace PeggleWars.Cards
         private Canvas _cardCanvas; //The Card Canvas will be a child of the Hand and contain the UI of instantiated Cards
 
         //Tweening
-        private readonly float _moveDuration = 0.15f;
-        private readonly float _startScale = 0.05f;
+        private readonly float _moveDuration = 0.35f;
+        private readonly float _startScale = 0.25f;
         private readonly float _endScale = 0.75f;
         #endregion
 
@@ -80,9 +80,13 @@ namespace PeggleWars.Cards
 
         internal void OnCardTurnEnd()
         {
-            foreach (Card card in _handCards)
+            int counter = _handCards.Count;
+            for (int i = 0; i < counter; i++)
             {
-                _deck.DiscardPile.Add(card);
+                if (_handCards.Count > 0)
+                {
+                    _deck.DiscardCard(_handCards[0]);
+                }
             }
 
             _handCards.Clear();
@@ -238,9 +242,12 @@ namespace PeggleWars.Cards
                 }
                 else
                 {
-                    _instantiatedCards[i].gameObject.SetActive(true);
-                    RectTransform rectTransform = _instantiatedCards[i].GetComponent<RectTransform>();
+                    Card currentCard = _instantiatedCards[i];
+                    currentCard.IsBeingDealt = true;
+                    currentCard.gameObject.SetActive(true);
+                    RectTransform rectTransform = currentCard.GetComponent<RectTransform>();
                     rectTransform.anchoredPosition = newCards[i];
+                    currentCard.IsBeingDealt = false;
                 }
             }
             yield return null;
@@ -299,9 +306,10 @@ namespace PeggleWars.Cards
 
         private IEnumerator TweenCardSpawn(Vector2 targetPosition, RectTransform cardTransform)
         {
-            cardTransform.DOLocalMove(targetPosition, _moveDuration);
-            cardTransform.DOScale(_endScale, _moveDuration);
-            yield return new WaitForSeconds((_moveDuration*0.33f));
+            cardTransform.DOLocalMove(targetPosition, _moveDuration).SetEase(Ease.OutExpo);
+            cardTransform.DOScale(_endScale, _moveDuration * 1.5f).SetEase(Ease.OutCubic);
+            yield return new WaitForSeconds((_moveDuration * 0.5f));
+            cardTransform.GetComponent<Card>().IsBeingDealt = false;
         }
 
         #endregion

@@ -13,7 +13,8 @@ namespace PeggleWars.Cards
 
         protected override void CardEffect()
         {
-            OrbManager.Instance.SwitchOrbs(_orbType, _amountOrbs);
+            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(GetComponent<RectTransform>().transform.position);            
+            OrbManager.Instance.SwitchOrbs(_orbType, worldPosition, _amountOrbs);
         }
     }
 }

@@ -26,7 +26,7 @@ namespace PeggleWars.Enemies
         protected override void OnEndEnemyTurn()
         {
             base.OnEndEnemyTurn();
-            OrbManager.Instance.SwitchOrbs(OrbType.IntangibleEnemyOrb);
+            OrbManager.Instance.SwitchOrbs(OrbType.IntangibleEnemyOrb, transform.position);
             _amountIntangibleOrbs += 1;
             HandleIntangibleStacks();
         }
