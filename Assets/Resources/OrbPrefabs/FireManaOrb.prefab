@@ -115,7 +115,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2549565476461289553}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -136,7 +136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6742a78ca1134340b25829d57308559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _orbMana: {fileID: 3159823683685098634, guid: 6332fb61d8db02643a35f651f55ff389, type: 3}
   _spawnManaType: 1
   _manaAmount: 10
   _defaultOrb: {fileID: 2549565476461289553}

@@ -3,7 +3,6 @@ using System.Linq;
 using UnityEngine;
 using EnumCollection;
 using System;
-using PeggleWars.ManaManagement;
 using DG.Tweening;
 using System.Collections;
 
@@ -14,18 +13,18 @@ namespace PeggleWars.Orbs
     {
         #region Fields and Properties
 
-        [SerializeField] private List<Orb> _sceneOrbList = new();
         internal static OrbManager Instance { get; private set; }
-        internal List<Orb> SceneOrbList { get => _sceneOrbList; set => _sceneOrbList = value; }
-        //List of all orb prefabs, made in start() in alphabetical order from resources
         private List<Orb> _allOrbsList = new();
-
         private List<ScriptableOrbLayout> _orbLayoutList = new();
+
+        [SerializeField] private List<Orb> _sceneOrbList = new();
+        internal List<Orb> SceneOrbList { get => _sceneOrbList; set => _sceneOrbList = value; }
+       
         private readonly string ORB_LAYOUT_PATH = "LevelOrbLayouts";
-        
-        private GlobalOrbManager _globalOrbManager;
         private readonly float _tweenDuration = 0.5f;
         private readonly float _tweenScaleZoom = 8f;
+
+        private bool _isCheckingForRefreshOrbs;
 
         #endregion
 
@@ -34,7 +33,7 @@ namespace PeggleWars.Orbs
         {         
             if (Instance != null && Instance != this)
             {
-                Destroy(this);
+                Destroy(gameObject);
             }
             else
             {
@@ -45,10 +44,14 @@ namespace PeggleWars.Orbs
 
         private void Start()
         {
-            _globalOrbManager = GlobalOrbManager.Instance;          
+            SetUpOrbArena();          
+            StartCoroutine(InsertLevelLoadOrbs());
+        }
 
+        private void SetUpOrbArena()
+        {
             OrbGridPositions orbGrid = new();
-            _allOrbsList = _globalOrbManager.AllOrbsList;
+            _allOrbsList = GlobalOrbManager.Instance.AllOrbsList;
             ScriptableOrbLayout scriptableOrbLayout = GetRandomLevelLayout();
             bool[,] orbLayout = scriptableOrbLayout.InitializeOrbLayout();
             for (int x = 0; x < orbLayout.GetLength(0); x++)
@@ -58,13 +61,12 @@ namespace PeggleWars.Orbs
                     if (orbLayout[x, y])
                     {
                         Vector2 instantiatePosition = orbGrid.GridArray[x, y];
-                        Instantiate(_allOrbsList[0], instantiatePosition, Quaternion.identity);
+                        Orb orb = Instantiate(_allOrbsList[0], instantiatePosition, Quaternion.identity);
+                        SceneOrbList.Add(orb);
                     }
-                    
+
                 }
-            }           
-            SceneOrbList = GameObject.FindObjectsOfType<Orb>().ToList();
-            StartCoroutine(InsertLevelLoadOrbs());
+            }
         }
 
         private ScriptableOrbLayout GetRandomLevelLayout()
@@ -76,7 +78,7 @@ namespace PeggleWars.Orbs
 
         private IEnumerator InsertLevelLoadOrbs()
         {
-            foreach (Orb orb in _globalOrbManager.LevelLoadOrbs)
+            foreach (Orb orb in GlobalOrbManager.Instance.LevelLoadOrbs)
             {
                 SwitchOrbs(orb.OrbType, transform.position);
                 yield return new WaitForSeconds(_tweenDuration);
@@ -84,78 +86,76 @@ namespace PeggleWars.Orbs
             yield return null;
         }
 
-        internal List<Orb> SwitchOrbs(OrbType orbType, Vector3 startPosition, int switchAmount = 1)
+        internal void SwitchOrbs(OrbType orbType, Vector3 instantiatePosition, int switchAmount = 1)
         {
-            List<Orb> newOrbs = new();
             List<Orb> baseOrbs = FindOrbs(SceneOrbList, SearchTag.BaseOrbs);          
             List<Orb> activeBaseOrbs = FindOrbs(baseOrbs, SearchTag.IsActive);
+            Debug.Log("Amount orbs: " + SceneOrbList.Count);
            
-            Orb orbToBeInserted = _allOrbsList[(int)orbType];
+            Orb instantiateOrb = _allOrbsList[(int)orbType];
 
             //Case 1: enough active base orbs present, so switch some of those
             if (activeBaseOrbs.Count >= switchAmount)
             {
-                newOrbs.AddRange(ReplaceOrbsInList(activeBaseOrbs, switchAmount, orbToBeInserted, startPosition));
+                StartCoroutine(ReplaceOrbsInList(activeBaseOrbs, switchAmount, instantiateOrb, instantiatePosition));
             }
             //Case 2: enough base orbs are present, but some of them are inactive, so switch the active ones first, then the inactive ones
             else if (baseOrbs.Count >= switchAmount)
             {
-                List<Orb> inactiveBaseOrbs = FindOrbs(baseOrbs, SearchTag.IsInactive);
-
                 int availableOrbs = activeBaseOrbs.Count;
-                newOrbs.AddRange(ReplaceOrbsInList(activeBaseOrbs, availableOrbs, orbToBeInserted, startPosition));
-
                 int missingOrbs = switchAmount - activeBaseOrbs.Count;
-                newOrbs.AddRange(ReplaceOrbsInList(inactiveBaseOrbs, missingOrbs, orbToBeInserted, startPosition));
+
+                if (availableOrbs != 0)
+                {
+                    StartCoroutine(ReplaceOrbsInList(activeBaseOrbs, availableOrbs, instantiateOrb, instantiatePosition)    );
+                    baseOrbs = FindOrbs(SceneOrbList, SearchTag.BaseOrbs);
+                }
+                StartCoroutine(ReplaceOrbsInList(baseOrbs, missingOrbs, instantiateOrb, instantiatePosition));
             }
             //Case 3: there are only non-base orbs left (unlikely) so switch active ones first then inactive ones second
             else
             {
                 List<Orb> activeOrbs = FindOrbs(SceneOrbList, SearchTag.IsActive);
                 List<Orb> inactiveOrbs = FindOrbs(SceneOrbList, SearchTag.IsInactive);
-
                 int availableOrbs = activeOrbs.Count;
-                newOrbs.AddRange(ReplaceOrbsInList(activeOrbs, availableOrbs, orbToBeInserted, startPosition));
-
+                StartCoroutine(ReplaceOrbsInList(activeOrbs, availableOrbs, instantiateOrb, instantiatePosition));
                 int missingOrbs = switchAmount - activeOrbs.Count;
-                newOrbs.AddRange(ReplaceOrbsInList(inactiveOrbs, missingOrbs, orbToBeInserted, startPosition));
-            }
-            return newOrbs;
-        }
-
-        internal void SetAllOrbsActive()
-        {
-            foreach (Orb orb in SceneOrbList)
-            {
-                orb.gameObject.SetActive(true);
+                StartCoroutine(ReplaceOrbsInList(inactiveOrbs, missingOrbs, instantiateOrb, instantiatePosition));
             }
         }
 
         internal void CheckForRefreshOrbs()
         {
-            int refreshOrbsInScene = 0;
-
-            foreach (Orb orb in SceneOrbList)
+            //bool wrapper to prevent double instantiation of orb due to multiple triggering of function
+            //not sure why this is happening, but this is a quick fix
+            if (!_isCheckingForRefreshOrbs)
             {
-                if (orb.OrbType == OrbType.RefreshOrb)
+                _isCheckingForRefreshOrbs = true;
+                int refreshOrbsInScene = 0;
+                foreach (Orb orb in SceneOrbList)
                 {
-                    refreshOrbsInScene++;
+                    if (orb.OrbType == OrbType.RefreshOrb)
+                    {
+                        refreshOrbsInScene++;
+                    }
                 }
-            }
-
-            if (refreshOrbsInScene < GlobalOrbManager.Instance.AmountOfRefreshOrbs)
-            {
-                int refreshOrbDelta = GlobalOrbManager.Instance.AmountOfRefreshOrbs - refreshOrbsInScene;
-                SwitchOrbs(OrbType.RefreshOrb, transform.position, refreshOrbDelta);
-            }
+                if (refreshOrbsInScene < GlobalOrbManager.Instance.AmountOfRefreshOrbs)
+                {
+                    int refreshOrbDelta = GlobalOrbManager.Instance.AmountOfRefreshOrbs - refreshOrbsInScene;
+                    SwitchOrbs(OrbType.RefreshOrb, transform.position, refreshOrbDelta);
+                }
+                _isCheckingForRefreshOrbs = false;
+            }           
         }
 
         private Orb FindRandomOrbInList(List<Orb> orbs)
         {
-            int randomOrbIndex = UnityEngine.Random.Range(0, orbs.Count - 1);
-
+            if (orbs.Count == 0)
+            {
+                return null;
+            }
+            int randomOrbIndex = UnityEngine.Random.Range(0, orbs.Count);
             Orb randomOrb = orbs[randomOrbIndex];
-
             return randomOrb;
         }
 
@@ -175,7 +175,7 @@ namespace PeggleWars.Orbs
                         break;
 
                     case SearchTag.IsActive:
-                        if (tempOrb.isActiveAndEnabled)
+                        if (tempOrb.IsOrbActive)
                         {
                             resultOrbs.Add(tempOrb);
                         }
@@ -192,27 +192,37 @@ namespace PeggleWars.Orbs
             return resultOrbs;
         }
         
-        private List<Orb> ReplaceOrbsInList(List<Orb> orbs, int amount, Orb orb, Vector3 startPosition)
+        private IEnumerator ReplaceOrbsInList(List<Orb> orbs, int amount, Orb orb, Vector3 startPosition)
         {
-            List<Orb> newOrbs = new();
+            int safetyCounter = 0;
             for (int i = 0; i < amount; i++)
             {
                 Orb randomOrb = FindRandomOrbInList(orbs);
-                Vector3 randomOrbPosition = randomOrb.transform.position;
-                Orb tempOrb = Instantiate(orb, startPosition, Quaternion.identity);
+                if (randomOrb != null)
+                {
+                    Vector3 randomOrbPosition = randomOrb.transform.position;
+                    Orb tempOrb = Instantiate(orb, startPosition, Quaternion.identity);
 
-                SceneOrbList.Remove(randomOrb);
-                Destroy(randomOrb.gameObject);                            
-                               
-                Vector3 endScale = tempOrb.transform.localScale;
-                tempOrb.transform.localScale = new Vector3((endScale.x + _tweenScaleZoom), (endScale.y + _tweenScaleZoom), (endScale.z + _tweenScaleZoom));
-                tempOrb.transform.DOLocalMove(randomOrbPosition, _tweenDuration).SetEase(Ease.InOutExpo);
-                tempOrb.transform.DOScale(endScale, _tweenDuration);
+                    SceneOrbList.Remove(randomOrb);
+                    Destroy(randomOrb.gameObject);
 
-                SceneOrbList.Add(tempOrb);
-                newOrbs.Add(tempOrb);             
+                    Vector3 endScale = tempOrb.transform.localScale;
+                    tempOrb.transform.localScale = new Vector3((endScale.x + _tweenScaleZoom), (endScale.y + _tweenScaleZoom), (endScale.z + _tweenScaleZoom));
+                    tempOrb.transform.DOLocalMove(randomOrbPosition, _tweenDuration).SetEase(Ease.InOutExpo);
+                    tempOrb.transform.DOScale(endScale, _tweenDuration);
+                    SceneOrbList.Add(tempOrb);
+                    yield return new WaitForSeconds(_tweenDuration);
+                }
+                else
+                {
+                    i--;
+                    safetyCounter++;
+                    if (safetyCounter >= 30)
+                    {
+                        break;
+                    }
+                }
             }
-            return newOrbs;
         }
 
         internal void ReplaceOrbOfType(OrbType typeToBeReplaced, OrbType typeToReplaceItWith = OrbType.BaseManaOrb)

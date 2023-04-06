@@ -17,6 +17,7 @@ namespace PeggleWars.Spheres
         protected bool _isNotShotYet = true;
         protected bool _isInShootingTurn;
         protected float _shotSpeed = 10.5f;
+        protected Collider2D _collider;
 
         //fields for indicators
         [SerializeField] protected GameObject _shotIndicatorPrefab;
@@ -53,6 +54,7 @@ namespace PeggleWars.Spheres
         protected virtual void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
+            _collider = GetComponent<Collider2D>();
 
             //holds the ball in place until shot per mouseclick
             _rigidbody.gravityScale = 0;

@@ -83,17 +83,9 @@ namespace PeggleWars.Orbs
         internal void AddOrbToActionList(Orb orb)
         {
             Orb tempOrb = Instantiate(orb, new Vector2(_actionOrbSpawn.x + (_xOrbOffset * _orbActions.Count), _actionOrbSpawn.y), Quaternion.identity);
-            tempOrb.GetComponent<Collider2D>().enabled = false;
-            StartCoroutine(DisableOrbCollider(tempOrb));
+            tempOrb.SetActionOrbInactive();
             _orbActions.Add(tempOrb);
         }
-
-        private IEnumerator DisableOrbCollider(Orb orb)
-        {
-            yield return new WaitForSeconds(0.2f);
-            orb.gameObject.GetComponent<Collider2D>().enabled = false;
-        }
-
         #endregion
     }
 }

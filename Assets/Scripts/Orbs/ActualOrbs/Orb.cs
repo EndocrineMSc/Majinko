@@ -5,28 +5,27 @@ using PeggleWars.ManaManagement;
 using PeggleWars.Audio;
 using PeggleWars.ScrollDisplay;
 using PeggleWars.Spheres;
+using DG.Tweening;
 
 namespace PeggleWars.Orbs
 {
     [RequireComponent(typeof(ScrollDisplayer))]
     internal abstract class Orb : MonoBehaviour, IHaveDisplayDescription
     {
-        #region Fields
+        #region Fields and Properties
 
-        [SerializeField] protected Mana _orbMana;
         [SerializeField] protected ManaType _spawnManaType;
         [SerializeField] protected int _manaAmount = 10;
         [SerializeField] protected GameObject _defaultOrb;
+        protected Collider2D _collider;
 
         protected ManaPool _manaPool;
         protected OrbManager _orbManager;
         protected AudioManager _audioManager;
 
         protected Vector3 _position;
-
-        #endregion
-
-        #region Properties
+        protected Vector3 _onHitTweenScale = new(5, 5, 5);
+        protected float _tweenDuration = 0.2f;
 
         [SerializeField] protected OrbType _orbType;
 
@@ -36,35 +35,22 @@ namespace PeggleWars.Orbs
             private set { _orbType = value; }
         }
 
+        internal bool IsOrbActive { get; private set; } = true;
+
         #endregion
 
         #region Functions
 
-        //Delays the "despawn" so that the size increase can be visible
-        internal IEnumerator SetInactive()
+        private void Awake()
         {
-            yield return new WaitForSeconds(0.15f);
-            gameObject.GetComponent<SpriteRenderer>().size -= new Vector2(0.02f, 0.02f);
-            gameObject.SetActive(false);
+            _collider = GetComponent<Collider2D>();
         }
 
         private void Start()
         {
             SetReferences();
             SetDisplayDescription();
-            StartCoroutine(EnableCollider());
             SetScrollDisplayScale();
-        }
-
-        protected void SetScrollDisplayScale()
-        {
-            GetComponent<ScrollDisplayer>().DisplayScale = 4;
-        }
-
-        protected virtual IEnumerator EnableCollider()
-        {
-            yield return new WaitForSeconds(0.1f);
-            GetComponent<Collider2D>().enabled = true;
         }
 
         protected virtual void SetReferences()
@@ -72,21 +58,36 @@ namespace PeggleWars.Orbs
             _manaPool = ManaPool.Instance;
             _orbManager = OrbManager.Instance;
             _audioManager = AudioManager.Instance;
+            _collider = GetComponent<Collider2D>();
+            OrbEvents.Instance.SetOrbsActive?.AddListener(OnSetOrbActive);
+        }
+
+        public abstract void SetDisplayDescription();
+
+        protected void SetScrollDisplayScale()
+        {
+            GetComponent<ScrollDisplayer>().DisplayScale = 4;
         }
 
         protected virtual void OnCollisionEnter2D(Collision2D collision)
         {
+            _collider.enabled = false;
             if (collision.gameObject.TryGetComponent<IAmSphere>(out _))
             {
-                GetComponent<Collider2D>().enabled = false;
                 AdditionalEffectsOnCollision();
+                ReplaceHitOrb();               
                 PlayOrbOnHitSound();
                 OnCollisionVisualPolish();
                 SpawnMana();
-                ReplaceHitOrb();               
                 StartCoroutine(DestroyOrb());
             }
+            else
+            {
+                _collider.enabled = true;
+            }
         }
+
+        protected abstract void AdditionalEffectsOnCollision();
 
         protected virtual void PlayOrbOnHitSound()
         {
@@ -95,7 +96,7 @@ namespace PeggleWars.Orbs
 
         protected virtual void OnCollisionVisualPolish()
         {
-            gameObject.GetComponent<SpriteRenderer>().size += new Vector2(0.03f, 0.03f);
+            transform.DOScale(_onHitTweenScale, _tweenDuration).SetEase(Ease.OutBack);
         }
 
         protected virtual void SpawnMana()
@@ -105,21 +106,38 @@ namespace PeggleWars.Orbs
 
         protected virtual void ReplaceHitOrb()
         {
-            GameObject orb = Instantiate(_defaultOrb, transform.position, Quaternion.identity);
-            orb.SetActive(false);
+            GameObject orbObject = Instantiate(_defaultOrb, transform.position, Quaternion.identity);
+            Orb orb = orbObject.GetComponent<Orb>();
+            orb.SetOrbInactive();
             _orbManager.SceneOrbList.Remove(this);
-            _orbManager.SceneOrbList.Add(orb.GetComponent<Orb>());
+            _orbManager.SceneOrbList.Add(orb);
         }
 
         protected virtual IEnumerator DestroyOrb()
         {
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(_tweenDuration * 1.05f);
             Destroy(gameObject);
         }
 
-        protected abstract void AdditionalEffectsOnCollision();
+        protected void SetOrbInactive()
+        {
+            _collider.enabled = false;
+            GetComponent<SpriteRenderer>().enabled = false;
+            IsOrbActive = false;
+        }
+   
+        protected void OnSetOrbActive()
+        {
+            IsOrbActive = true;
+            _collider.enabled = true;
+            GetComponent<SpriteRenderer>().enabled = true;
+        }
 
-        public abstract void SetDisplayDescription();
+        internal void SetActionOrbInactive()
+        {
+            IsOrbActive = false;
+            _collider.enabled = false;
+        }
 
         internal abstract IEnumerator OrbEffect();
 

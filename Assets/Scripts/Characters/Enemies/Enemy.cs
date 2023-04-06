@@ -209,7 +209,7 @@ namespace PeggleWars.Enemies
 
         protected abstract void TriggerAttackAnimation();
 
-        private void HandleDeath()
+        protected void HandleDeath()
         {
             EnemyManager.Instance.EnemiesInScene.Remove(this);
             EnemyEvents.Instance.EnemyDeathEvent?.Invoke();

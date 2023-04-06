@@ -14,6 +14,7 @@ namespace PeggleWars.Orbs
 
         public UnityEvent OrbEffectEnd;
         public ManaSpawnEvent ManaSpawnTrigger;
+        public UnityEvent SetOrbsActive;
 
         #endregion
 
