@@ -25,6 +25,8 @@ namespace PeggleWars.Orbs
         private readonly float _tweenScaleZoom = 8f;
 
         private bool _isCheckingForRefreshOrbs;
+        private GameObject _levelOrbSpawn;
+        private readonly string LEVEL_ORB_PARAM = "LevelOrbSpawn";
 
         #endregion
 
@@ -44,6 +46,7 @@ namespace PeggleWars.Orbs
 
         private void Start()
         {
+            _levelOrbSpawn = GameObject.FindGameObjectWithTag(LEVEL_ORB_PARAM);
             SetUpOrbArena();          
             StartCoroutine(InsertLevelLoadOrbs());
         }
@@ -78,9 +81,10 @@ namespace PeggleWars.Orbs
 
         private IEnumerator InsertLevelLoadOrbs()
         {
+            yield return new WaitForSeconds(1); //so that player can see first animations, too
             foreach (Orb orb in GlobalOrbManager.Instance.LevelLoadOrbs)
             {
-                SwitchOrbs(orb.OrbType, transform.position);
+                SwitchOrbs(orb.OrbType, _levelOrbSpawn.transform.position);
                 yield return new WaitForSeconds(_tweenDuration);
             }
             yield return null;
@@ -89,9 +93,7 @@ namespace PeggleWars.Orbs
         internal void SwitchOrbs(OrbType orbType, Vector3 instantiatePosition, int switchAmount = 1)
         {
             List<Orb> baseOrbs = FindOrbs(SceneOrbList, SearchTag.BaseOrbs);          
-            List<Orb> activeBaseOrbs = FindOrbs(baseOrbs, SearchTag.IsActive);
-            Debug.Log("Amount orbs: " + SceneOrbList.Count);
-           
+            List<Orb> activeBaseOrbs = FindOrbs(baseOrbs, SearchTag.IsActive);           
             Orb instantiateOrb = _allOrbsList[(int)orbType];
 
             //Case 1: enough active base orbs present, so switch some of those

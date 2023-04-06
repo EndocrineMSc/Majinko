@@ -21,6 +21,7 @@ TagManager:
   - ForbiddenI
   - ForbiddenA
   - AOE_Target
+  - LevelOrbSpawn
   layers:
   - Default
   - TransparentFX
