@@ -78,19 +78,29 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _GradientNoiseScale: 50
     - _Metallic: 0
     - _Mode: 3
     - _OcclusionStrength: 1
+    - _Outline1Size: 0.1
+    - _Outline2Size: 0.1
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Thickness: 0.3
     - _UVSec: 0
+    - _VoronoiAngle: 200
+    - _VoronoiDensity: 50
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 0.735849, g: 0, b: 0.030011833, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Layer1Color: {r: 0.50196075, g: 0.007884201, b: 0, a: 0}
+    - _Layer1Speed: {r: 0, g: -0.005, b: 0, a: 0}
+    - _Layer2Color: {r: 0.2382353, g: 0.003921569, b: 0.0009803922, a: 0}
+    - _Layer2Speed: {r: 0, g: 0.004, b: 0, a: 0}
+    - _OutLineColor: {r: 2, g: 0.015686275, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5831150159668427509
 MonoBehaviour:

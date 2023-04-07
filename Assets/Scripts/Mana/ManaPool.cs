@@ -53,7 +53,7 @@ namespace PeggleWars.ManaManagement
         {
             FindSpawnPoints();
             OrbEvents.Instance.ManaSpawnTrigger?.AddListener(SpawnManaWrap);
-            OrbEvents.Instance.ManaSpawnTrigger?.Invoke(ManaType.BasicMana, 30);
+            OrbEvents.Instance.ManaSpawnTrigger?.Invoke(ManaType.BasicMana, 30); 
         }
 
         private void FindSpawnPoints()

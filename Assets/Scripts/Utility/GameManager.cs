@@ -54,7 +54,7 @@ namespace PeggleWars
         {
             _audioManager = AudioManager.Instance;
             _turnManager = TurnManager.Instance;
-            StartCoroutine(WaitThenChangeState(GameState.MainMenu));
+            //StartCoroutine(WaitThenChangeState(GameState.MainMenu));
             TurnManager.Instance.EndEnemyTurn?.AddListener(OnEndEnemyTurn);
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
@@ -68,6 +68,9 @@ namespace PeggleWars
                 case (GameState.MainMenu):
                     yield return new WaitForSeconds(1);
                     StartCoroutine(SwitchState(GameState.CardHandling));
+                    break;
+
+                case (GameState.LevelSetup):
                     break;
 
                 case (GameState.CardHandling):
@@ -109,7 +112,7 @@ namespace PeggleWars
         {
             if (scene.name.Contains("Level"))
             {
-                StartCoroutine(WaitThenChangeState(GameState.CardHandling));
+                StartCoroutine(WaitThenChangeState(GameState.LevelSetup));
             }
         }
         

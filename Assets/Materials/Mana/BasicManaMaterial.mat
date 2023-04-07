@@ -8,16 +8,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: BasicManaMaterial
-  m_Shader: {fileID: -6465566751694194690, guid: f3b51303239a11d419d28d38ed61cadf, type: 3}
-  m_ValidKeywords:
-  - _BUILTIN_SURFACE_TYPE_TRANSPARENT
+  m_Shader: {fileID: -6465566751694194690, guid: 520a240832cd3c84a848b98dfaf0038a, type: 3}
+  m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap:
-    RenderType: Transparent
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -78,19 +76,29 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _GradientNoiseScale: 3
     - _Metallic: 0
     - _Mode: 3
     - _OcclusionStrength: 1
+    - _Outline1Size: 0.2
+    - _Outline2Size: 0.1
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Thickness: 0.3
     - _UVSec: 0
+    - _VoronoiAngle: 100
+    - _VoronoiDensity: 3
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 0, g: 0.048728526, b: 0.6901961, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Layer1Color: {r: 2.007843, g: 0.03137255, b: 0, a: 0}
+    - _Layer1Speed: {r: 0.1, g: 0, b: 0, a: 0}
+    - _Layer2Color: {r: 0.9529412, g: 0.253621, b: 0.003921567, a: 0}
+    - _Layer2Speed: {r: 0.2, g: 0, b: 0, a: 0}
+    - _OutLineColor: {r: 1, g: 0.8049691, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5831150159668427509
 MonoBehaviour:

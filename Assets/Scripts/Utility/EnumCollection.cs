@@ -15,6 +15,7 @@ namespace EnumCollection
     internal enum GameState
     {
         MainMenu,
+        LevelSetup,
         CardHandling,
         Shooting,
         PlayerActions,

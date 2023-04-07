@@ -87,7 +87,7 @@ namespace PeggleWars.Orbs
                 SwitchOrbs(orb.OrbType, _levelOrbSpawn.transform.position);
                 yield return new WaitForSeconds(_tweenDuration);
             }
-            yield return null;
+            StartCoroutine(GameManager.Instance.SwitchState(GameState.CardHandling));
         }
 
         internal void SwitchOrbs(OrbType orbType, Vector3 instantiatePosition, int switchAmount = 1)
@@ -204,6 +204,7 @@ namespace PeggleWars.Orbs
                 {
                     Vector3 randomOrbPosition = randomOrb.transform.position;
                     Orb tempOrb = Instantiate(orb, startPosition, Quaternion.identity);
+                    tempOrb.gameObject.GetComponent<Collider2D>().enabled = false;
 
                     SceneOrbList.Remove(randomOrb);
                     Destroy(randomOrb.gameObject);
@@ -214,6 +215,7 @@ namespace PeggleWars.Orbs
                     tempOrb.transform.DOScale(endScale, _tweenDuration);
                     SceneOrbList.Add(tempOrb);
                     yield return new WaitForSeconds(_tweenDuration);
+                    tempOrb.gameObject.GetComponent<Collider2D>().enabled = true;
                 }
                 else
                 {
