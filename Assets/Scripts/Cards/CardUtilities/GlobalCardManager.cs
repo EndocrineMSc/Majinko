@@ -33,8 +33,6 @@ namespace PeggleWars.Cards
 
         #region Functions
 
-
-
         private void Update()
         {            
             //Test
@@ -72,7 +70,7 @@ namespace PeggleWars.Cards
             }
             if (_isFirstInit)
             {
-                _allCards = Resources.LoadAll<Card>(RESOURCE_LOAD_PARAM).OrderBy(x => x.CardName).ToList();
+                _allCards = Resources.LoadAll<Card>(RESOURCE_LOAD_PARAM).ToList();
             }
         }
 

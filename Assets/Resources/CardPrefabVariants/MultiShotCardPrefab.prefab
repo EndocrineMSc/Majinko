@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -5102782085163616900, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: _cardName
-      value: Multi Sphere
+      value: Clone Sphere
       objectReference: {fileID: 0}
     - target: {fileID: -5102782085163616900, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: _cardType
@@ -48,6 +48,10 @@ PrefabInstance:
       value: "Splits into 3 on first orb contact \nStack: \nAdditional sphere on
         split"
       objectReference: {fileID: 0}
+    - target: {fileID: 626517267595753840, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1002801183830465219, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: m_text
       value: 'The shot will split into 3 separate shot upon first orb contact.
@@ -68,6 +72,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1847219591767049647, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 41337de281975324bb5718d3676b4cce, type: 3}
     - target: {fileID: 1927759514122625326, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.5
@@ -240,9 +248,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3676382217642739598, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3721408344032324706, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4094666111534247424, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -121
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472304416329932110, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4562803509149082378, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: m_Name
@@ -252,6 +272,26 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: d6c03b01dc950f5488162e32a35892b6, type: 3}
+    - target: {fileID: 4741699386518945363, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 78
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741699386518945363, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741699386518945363, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741699386518945363, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741699386518945363, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4859288017830121854, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: m_text
       value: Utility
@@ -264,6 +304,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7089003023557787097, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7102321236157100018, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.5
@@ -311,6 +355,10 @@ PrefabInstance:
     - target: {fileID: 7584302159904148484, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -121
+      objectReference: {fileID: 0}
+    - target: {fileID: 8587373516521054961, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9205060987138852272, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -336,7 +384,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 36
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3394184956888642612, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
 --- !u!1 &8724472451740141697 stripped
 GameObject:

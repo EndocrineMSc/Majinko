@@ -47,6 +47,10 @@ PrefabInstance:
       propertyPath: _cardDescription
       value: 'Orb: Applies freezing, moderate chance to apply frozen'
       objectReference: {fileID: 0}
+    - target: {fileID: 3717780021009078597, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9e45f63e6421f644ab2050a91a5ed10a, type: 3}
     - target: {fileID: 4812993297873364277, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

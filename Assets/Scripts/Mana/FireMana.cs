@@ -29,7 +29,6 @@ namespace PeggleWars.ManaManagement
 
             if (collision.gameObject.TryGetComponent<IBoiler>(out _))
             {
-                Debug.Log("I boil!");
                 _isBoiling = true;
                 _hasRested = true;
                 _rigidbody.gravityScale = 0;
@@ -53,7 +52,6 @@ namespace PeggleWars.ManaManagement
 
             if (_isBoiling && _currentTime >= _boilCooldown)
             {
-                Debug.Log("I've stopped boiling.");
                 _isBoiling = false;
                 _rigidbody.gravityScale = 1;
                 _rigidbody.mass = 5;

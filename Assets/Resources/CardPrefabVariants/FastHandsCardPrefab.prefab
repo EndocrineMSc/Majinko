@@ -43,6 +43,10 @@ PrefabInstance:
       propertyPath: _cardDescription
       value: 'Orb: Draw an additional card'
       objectReference: {fileID: 0}
+    - target: {fileID: 3717780021009078597, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4fad2fe44db9dc741b7d32c1c0c1a17d, type: 3}
     - target: {fileID: 4527447652403349703, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Enabled
       value: 1

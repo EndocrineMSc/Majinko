@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33d4f1300a4d164ba862c03877caff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardName: Fire Orb
+  _cardName: Fire Mana
   _cardDescription: "Persitent Orb: \nGain 1 Fire Mana \nApply 1 burning\nSingle
     use"
   _basicManaCost: 0
