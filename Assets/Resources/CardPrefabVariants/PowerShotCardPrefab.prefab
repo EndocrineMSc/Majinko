@@ -77,6 +77,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1847219591767049647, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8e1b3c46312396a4ab33461c58994c84, type: 3}
     - target: {fileID: 2249129384661500449, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: m_text
       value: Power Shot
