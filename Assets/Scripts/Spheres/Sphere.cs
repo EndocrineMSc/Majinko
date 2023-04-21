@@ -1,9 +1,11 @@
+using PeggleWars.Audio;
 using PeggleWars.ScrollDisplay;
 using PeggleWars.TurnManagement;
 using PeggleWars.Utilities;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EnumCollection;
 
 
 namespace PeggleWars.Spheres
@@ -33,6 +35,7 @@ namespace PeggleWars.Spheres
         protected float _rotationZ;
 
         protected readonly string PORTAL_PARAM = "Portal";
+        protected readonly string ARENA_PARAM = "Arena";
 
         internal float ShotSpeed
         {
@@ -182,6 +185,7 @@ namespace PeggleWars.Spheres
         {
             if (Input.GetMouseButtonDown(0))
             {
+                AudioManager.Instance.PlaySoundEffectWithoutLimit(EnumCollection.SFX._0770_Orb_Spawn_Whoosh);
                 DestroyAllIndicators();
                 SetGravityAndVelocity(_rigidbody);
                 _isNotShotYet = false;
@@ -210,6 +214,7 @@ namespace PeggleWars.Spheres
         {
             if (collision.gameObject.name.Contains(PORTAL_PARAM))
             {
+                AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0760_Sphere_In_Portal);
                 StartCoroutine(GameManager.Instance.SwitchState(EnumCollection.GameState.PlayerActions));
                 Destroy(gameObject);
             }
@@ -217,12 +222,36 @@ namespace PeggleWars.Spheres
 
         protected virtual void OnCollisionEnter2D(Collision2D collision)
         {
-            OnWallHitSoundEffect();
+            if (collision.gameObject.name.Contains(ARENA_PARAM))
+            {
+                OnWallHitSoundEffect();
+            }
         }
 
         protected virtual void OnWallHitSoundEffect()
         {
-            //ToDo: implement SoundEffect;
+            AudioManager audioManager = AudioManager.Instance;
+            int randomIndex = Random.Range(0, 8);
+            switch (randomIndex)
+            {
+                case 0:
+                    audioManager.PlaySoundEffectWithoutLimit(SFX._0762_Sphere_On_Wood_01);
+                    break;
+                case 1:
+                    audioManager.PlaySoundEffectWithoutLimit(SFX._0763_Sphere_On_Wood_02); break;
+                case 2:
+                    audioManager.PlaySoundEffectWithoutLimit(SFX._0764_Sphere_On_Wood_03); break;
+                case 3:
+                    audioManager.PlaySoundEffectWithoutLimit(SFX._0765_Sphere_On_Wood_04); break;
+                case 4:
+                    audioManager.PlaySoundEffectWithoutLimit(SFX._0766_Sphere_On_Wood_05); break;
+                case 5:
+                    audioManager.PlaySoundEffectWithoutLimit(SFX._0767_Sphere_On_Wood_06); break;
+                case 6:
+                    audioManager.PlaySoundEffectWithoutLimit(SFX._0768_Sphere_On_Wood_07); break;
+                case 7:
+                    audioManager.PlaySoundEffectWithoutLimit(SFX._0769_Sphere_On_Wood_08); break;
+            }
         }
 
         internal abstract void ShotStackEffect();

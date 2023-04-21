@@ -5,6 +5,7 @@ using EnumCollection;
 using System;
 using DG.Tweening;
 using System.Collections;
+using PeggleWars.Audio;
 
 namespace PeggleWars.Orbs
 {
@@ -196,6 +197,7 @@ namespace PeggleWars.Orbs
         
         private IEnumerator ReplaceOrbsInList(List<Orb> orbs, int amount, Orb orb, Vector3 startPosition)
         {
+            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0770_Orb_Spawn_Whoosh);
             int safetyCounter = 0;
             for (int i = 0; i < amount; i++)
             {

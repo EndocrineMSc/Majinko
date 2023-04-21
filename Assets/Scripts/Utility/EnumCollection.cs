@@ -144,14 +144,15 @@ namespace EnumCollection
         _0759_Orb_Impact_09,
         _0760_Sphere_In_Portal,
         _0761_Sphere_Shot_01,
-        _0762_Orb_On_Wood_01,
-        _0763_Orb_On_Wood_02,
-        _0764_Orb_On_Wood_03,
-        _0765_Orb_On_Wood_04,
-        _0766_Orb_On_Wood_05,
-        _0767_Orb_On_Wood_06,
-        _0768_Orb_On_Wood_07,
-        _0769_Orb_On_Wood_08,
+        _0762_Sphere_On_Wood_01,
+        _0763_Sphere_On_Wood_02,
+        _0764_Sphere_On_Wood_03,
+        _0765_Sphere_On_Wood_04,
+        _0766_Sphere_On_Wood_05,
+        _0767_Sphere_On_Wood_06,
+        _0768_Sphere_On_Wood_07,
+        _0769_Sphere_On_Wood_08,
+        _0770_Orb_Spawn_Whoosh,
 
         #endregion
     }
