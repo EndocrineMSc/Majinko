@@ -43,7 +43,7 @@ namespace PeggleWars.Menus
 
         void OpenAndCloseCanvas()
         {
-            if (!PauseControl.Instance.GameIsPaused)
+            if (_settingsCanvas.isActiveAndEnabled)
             {
                 _settingsCanvas.enabled = false;
             }
@@ -51,6 +51,11 @@ namespace PeggleWars.Menus
             {
                 _settingsCanvas.enabled = true;
             }
+        }
+
+        private void OnDisable()
+        {
+            PauseControl.Instance.PauseAndUnpauseGame?.RemoveListener(OpenAndCloseCanvas);
         }
     }
 }

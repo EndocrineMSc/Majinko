@@ -40,7 +40,7 @@ namespace PeggleWars.Audio.Options
             _audioMixer.SetFloat("SFX", volume > 0 ? Mathf.Log(volume) * 20f : -80f);
             
             //Play an exemplary SFX to give the play an auditory volume feedback
-            AudioManager.Instance.PlaySoundEffectOnce(SFX._0002_BasicPeggleHit);
+            AudioManager.Instance.PlaySoundEffectOnce(SFX._0102_ManaBlitz_Spawn);
         }
 
         #endregion

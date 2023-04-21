@@ -37,7 +37,7 @@ namespace PeggleWars.Cards
 
         public void OnBeginDrag(PointerEventData eventData)
         {
-            AudioManager.Instance.PlaySoundEffectOnce(SFX._0006_CardDrag);
+            AudioManager.Instance.PlaySoundEffectOnce(SFX._0004_CardDrag);
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -63,7 +63,7 @@ namespace PeggleWars.Cards
 
         private void HandleNotEnoughMana()
         {
-            AudioManager.Instance.PlaySoundEffectOnce(SFX._0007_CardDragReturn);
+            AudioManager.Instance.PlaySoundEffectOnce(SFX._0005_CardDragReturn);
             Hand.Instance.AlignCards();
         }
 

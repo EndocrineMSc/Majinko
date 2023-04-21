@@ -10,12 +10,12 @@ namespace PeggleWars.Attacks
         //Do special stuff in here
         private void Awake()
         {
-            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0003_ManaBlitz);
+            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0101_ManaBlitz_Shot);
         }
 
         protected override void OnHitPolish()
         {
-            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0010_BluntSpellImpact);
+            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0103_Blunt_Spell_Impact);
         }
 
         protected override void AdditionalEffectsOnImpact()

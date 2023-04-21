@@ -100,18 +100,60 @@ namespace EnumCollection
 
     internal enum SFX
     {
+        #region 0 - 100 UI-SFX
+
         _0001_ButtonClick,
-        _0002_BasicPeggleHit,
-        _0003_ManaBlitz,
-        _0004_MouseOverCard,
-        _0005_EndTurnClick,
-        _0006_CardDrag,
-        _0007_CardDragReturn,
-        _0008_ManaBlitzSpawn,
-        _0009_ZombieSpawn,
-        _0010_BluntSpellImpact,
-        _0011_ZombieDeath,
-        _0012_DrawHand,
+        _0002_MouseOverCard,
+        _0003_EndTurnClick,
+        _0004_CardDrag,
+        _0005_CardDragReturn,
+        _0006_DrawHand,
+        _0007_ShopCard_Picked,
+        _0008_Mouse_Over_Button,
+
+        #endregion
+
+        #region 101 - 500 Attack-SFX
+
+        _0101_ManaBlitz_Shot,
+        _0102_ManaBlitz_Spawn,
+        _0103_Blunt_Spell_Impact,
+        _0104_Player_Takes_Damage,
+
+        #endregion
+
+        #region 501 - 750 Monster-SFX
+
+        _0501_Zombie_Spawn,
+        _0502_Zombie_Death,
+        _0503_Wraith_Spawn,
+        _0504_Wraith_Death,
+
+        #endregion
+
+        #region 751 - 1000 Arena-SFX
+
+        _0751_Orb_Impact_01,
+        _0752_Orb_Impact_02,
+        _0753_Orb_Impact_03,
+        _0754_Orb_Impact_04,
+        _0755_Orb_Impact_05,
+        _0756_Orb_Impact_06,
+        _0757_Orb_Impact_07,
+        _0758_Orb_Impact_08,
+        _0759_Orb_Impact_09,
+        _0760_Sphere_In_Portal,
+        _0761_Sphere_Shot_01,
+        _0762_Orb_On_Wood_01,
+        _0763_Orb_On_Wood_02,
+        _0764_Orb_On_Wood_03,
+        _0765_Orb_On_Wood_04,
+        _0766_Orb_On_Wood_05,
+        _0767_Orb_On_Wood_06,
+        _0768_Orb_On_Wood_07,
+        _0769_Orb_On_Wood_08,
+
+        #endregion
     }
 
     internal enum StartDeck

@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using PeggleWars.TurnManagement;
 using PeggleWars.Characters.Interfaces;
+using PeggleWars.Audio;
 
 namespace PeggleWars
 {
@@ -69,6 +70,7 @@ namespace PeggleWars
 
         public void TakeDamage(int damage)
         {
+            AudioManager.Instance.PlaySoundEffectOnce(EnumCollection.SFX._0104_Player_Takes_Damage);
             int calcDamage = damage;
             if (_shield > calcDamage)
             {

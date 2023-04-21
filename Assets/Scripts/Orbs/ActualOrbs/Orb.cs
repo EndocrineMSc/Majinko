@@ -91,7 +91,7 @@ namespace PeggleWars.Orbs
 
         protected virtual void PlayOrbOnHitSound()
         {
-            _audioManager.PlaySoundEffectWithoutLimit(SFX._0002_BasicPeggleHit);
+            PlayOrbImpactSound();
         }
 
         protected virtual void OnCollisionVisualPolish()
@@ -141,6 +141,41 @@ namespace PeggleWars.Orbs
 
         internal abstract IEnumerator OrbEffect();
 
+        private void PlayOrbImpactSound()
+        {
+            int randomSoundIndex = UnityEngine.Random.Range(0, 9);
+            AudioManager audioManager = AudioManager.Instance;
+            switch (randomSoundIndex)
+            {
+                case 0:
+                    audioManager.PlaySoundEffectWithoutLimit(SFX._0751_Orb_Impact_01);
+                    break;                      
+                case 1:                        
+                    audioManager.PlaySoundEffectWithoutLimit(SFX._0752_Orb_Impact_02);
+                    break;                     
+                case 2:                         
+                    audioManager.PlaySoundEffectWithoutLimit(SFX._0753_Orb_Impact_03);
+                    break;                      
+                case 3:                         
+                    audioManager.PlaySoundEffectWithoutLimit(SFX._0754_Orb_Impact_04);
+                    break;                      
+                case 4:                         
+                    audioManager.PlaySoundEffectWithoutLimit(SFX._0755_Orb_Impact_05);
+                    break;                      
+                case 5:                         
+                    audioManager.PlaySoundEffectWithoutLimit(SFX._0756_Orb_Impact_06);
+                    break;                      
+                case 6:                         
+                    audioManager.PlaySoundEffectWithoutLimit(SFX._0757_Orb_Impact_07);
+                    break;                      
+                case 7:                         
+                    audioManager.PlaySoundEffectWithoutLimit(SFX._0758_Orb_Impact_08);
+                    break;                      
+                case 8:                         
+                    audioManager.PlaySoundEffectWithoutLimit(SFX._0759_Orb_Impact_09);
+                    break;
+            }
+        }
         #endregion
     }
 }

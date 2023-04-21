@@ -12,12 +12,12 @@ namespace PeggleWars.Enemies
 
         protected override void PlaySpawnSound()
         {
-            //AudioManager.Instance.PlaySoundEffectOnce(SFX._0009_ZombieSpawn);
+            AudioManager.Instance.PlaySoundEffectOnce(SFX._0501_Zombie_Spawn);
         }
 
         protected override void PlayDeathSound()
         {
-            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0011_ZombieDeath);
+            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0502_Zombie_Death);
         }
 
         protected override void OnDeathEffect()

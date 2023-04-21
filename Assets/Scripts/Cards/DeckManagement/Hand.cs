@@ -106,7 +106,7 @@ namespace PeggleWars.Cards
                 }
             }
 
-            AudioManager.Instance.PlaySoundEffectOnce(SFX._0012_DrawHand);
+            AudioManager.Instance.PlaySoundEffectOnce(SFX._0006_DrawHand);
             DisplayHand(true);
         }
 

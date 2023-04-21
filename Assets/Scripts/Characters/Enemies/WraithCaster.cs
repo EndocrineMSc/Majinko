@@ -3,7 +3,6 @@ using PeggleWars.Audio;
 using PeggleWars.Characters;
 using PeggleWars.Orbs;
 using PeggleWars.ScrollDisplay;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace PeggleWars.Enemies
@@ -127,12 +126,12 @@ namespace PeggleWars.Enemies
 
         protected override void PlaySpawnSound()
         {
-            //AudioManager.Instance.PlaySoundEffectOnce(SFX._0009_ZombieSpawn);
+            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0503_Wraith_Spawn);
         }
 
         protected override void PlayDeathSound()
         {
-            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0011_ZombieDeath);
+            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0504_Wraith_Death);
         }
 
 

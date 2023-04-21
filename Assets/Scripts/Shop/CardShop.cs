@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using EnumCollection;
 using System.Collections;
+using PeggleWars.Audio;
+using Unity.VisualScripting;
 
 namespace PeggleWars.Utilities
 {
@@ -60,7 +62,7 @@ namespace PeggleWars.Utilities
             _shopCanvas.enabled = true;
             List<Card> shopCards = SetRandomShopCards();
             List<Card> cardObjects = InstantiateShopCards(shopCards);
-            DisableCardComponents(cardObjects);
+            ManageCardComponents(cardObjects);
             BuildBuyButtons(cardObjects);
         }
 
@@ -125,12 +127,13 @@ namespace PeggleWars.Utilities
             return randomCard;
         }
 
-        private void DisableCardComponents(List<Card> cardObjects)
+        private void ManageCardComponents(List<Card> cardObjects)
         {
             foreach (Card cardObject in cardObjects)
             {
                 cardObject.GetComponent<CardDragDrop>().enabled = false;
                 cardObject.GetComponent<CardZoomEventMovement>().enabled = false;
+                cardObject.AddComponent<ShopMouseOverSound>();
             }
         }
 
@@ -175,6 +178,8 @@ namespace PeggleWars.Utilities
 
         private void BuyCard(int cardIndex)
         {
+            AudioManager.Instance.PlaySoundEffectOnce(SFX._0001_ButtonClick);
+            AudioManager.Instance.PlaySoundEffectOnce(SFX._0007_ShopCard_Picked);
             Card cardToBeAddedToDeck = GlobalCardManager.Instance.AllCards[cardIndex];
 
             if (cardToBeAddedToDeck.name.Contains("Forbidden"))
@@ -193,6 +198,7 @@ namespace PeggleWars.Utilities
 
         public void SkipCardButton()
         {
+            AudioManager.Instance.PlaySoundEffectOnce(SFX._0001_ButtonClick);
             ChangeGameState();
         }
 
