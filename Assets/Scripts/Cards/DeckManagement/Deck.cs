@@ -2,6 +2,7 @@ using PeggleWars.Utilities;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System.Collections;
 
 namespace PeggleWars.Cards
 {
@@ -25,6 +26,8 @@ namespace PeggleWars.Cards
         //For tweening
         internal Vector3 DiscardPosition { get; private set; }
         internal Vector3 ExhaustPosition { get; private set; }
+        [SerializeField] private GameObject DiscardPileObject;
+        [SerializeField] private GameObject ExhaustPileObject;
 
         #endregion
 
@@ -111,6 +114,18 @@ namespace PeggleWars.Cards
         {
             ExhaustPile.Add(card);
             _hand.HandCards.Remove(card);
+        }
+
+        internal void StartDiscardPileAnimation()
+        {
+            Vector3 startScale = DiscardPileObject.transform.localScale;
+            DiscardPileObject.transform.DOPunchScale(startScale * 0.25f, 0.1f,1,0.1f);
+        }
+
+        internal void StartExhaustPileAnimation()
+        {
+            Vector3 startScale = ExhaustPileObject.transform.localScale;
+            ExhaustPileObject.transform.DOPunchScale(startScale * 0.25f, 0.1f, 1, 0.1f);
         }
 
         //Shuffles the deck using the Fisher-Yates shuffle algortihm

@@ -9,7 +9,7 @@ namespace PeggleWars.Audio.Options
     /// Provides functions for master, music and sound effect volume sliders.
     /// The AudioManager set the respective AudioGroups of the AudioSources automatically, depending on the folder the clips were in.
     /// </summary>
-    public class AudioOptionManager : MonoBehaviour
+    internal class AudioOptionManager : MonoBehaviour
     {
         #region Fields and Properties
 

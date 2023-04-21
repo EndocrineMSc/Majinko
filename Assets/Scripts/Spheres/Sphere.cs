@@ -1,5 +1,6 @@
 using PeggleWars.ScrollDisplay;
 using PeggleWars.TurnManagement;
+using PeggleWars.Utilities;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -92,7 +93,7 @@ namespace PeggleWars.Spheres
 
         protected virtual void Update()
         {
-            if (_isNotShotYet && _isInShootingTurn)
+            if (_isNotShotYet && _isInShootingTurn && !PauseControl.Instance.GameIsPaused)
             {
                 GetDirectionAndRotation();
                 RotateShot();

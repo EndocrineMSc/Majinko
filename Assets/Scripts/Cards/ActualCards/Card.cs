@@ -39,7 +39,7 @@ namespace PeggleWars.Cards
         protected GlobalDeckManager _globalDeckManager;
 
         protected float _tweenDiscardDuration = 0.5f;
-        protected Vector3 _tweenEndScale = new(0.25f, 0.25f, 0.25f);
+        protected Vector3 _tweenEndScale = new(0.05f, 0.05f, 0.05f);
 
         internal string CardName { get => _cardName;}
         internal string CardDescription { get => _cardDescription;}
@@ -92,7 +92,6 @@ namespace PeggleWars.Cards
                 _orbManager.CheckForRefreshOrbs(); //Checks if RefreshOrb was overwritten and makes a new one if so
                 HandleDiscard();
                 _hand.InstantiatedCards.Remove(this); //list of instantiated cards in hand
-                CardEvents.Instance.CardDestructionEvent?.Invoke();
                 StartCoroutine(DestroyCardAfterAnimation());
                 return true;
             }
@@ -128,7 +127,17 @@ namespace PeggleWars.Cards
             Vector3 targetPosition = (_exhaustCard) ? Deck.Instance.ExhaustPosition : Deck.Instance.DiscardPosition;
             GetComponent<RectTransform>().DOLocalMove(targetPosition, _tweenDiscardDuration).SetEase(Ease.OutExpo);
             GetComponent<RectTransform>().DOScale(_tweenEndScale, _tweenDiscardDuration).SetEase(Ease.OutCubic);
-            yield return new WaitForSeconds(_tweenDiscardDuration);
+            yield return new WaitForSeconds(_tweenDiscardDuration * 5/10);
+            CardEvents.Instance.CardDestructionEvent?.Invoke();
+            if(_exhaustCard)
+            {
+                Deck.Instance.StartExhaustPileAnimation();
+            }
+            else
+            {
+                Deck.Instance.StartDiscardPileAnimation();
+            }
+            yield return new WaitForSeconds(_tweenDiscardDuration * 5 / 10);
             Destroy(gameObject);
         }
 
