@@ -32,7 +32,7 @@ namespace PeggleWars.Enemies
         protected float _enemySpeed = 2;
         [SerializeField] protected int _attackFrequency;
 
-        protected int _frozenForTurns = 0;
+        internal int FrozenForTurns { get; private protected set; } = 0;
         protected Color _baseColor;
 
         internal bool IsFrozen { get; private set; }
@@ -53,6 +53,8 @@ namespace PeggleWars.Enemies
             get { return _damage; }
             set { _damage = value; }
         }
+
+        internal int MaxHealth { get; private protected set; }
 
         [SerializeField] protected int _health = 20;
         internal int Health
@@ -103,6 +105,7 @@ namespace PeggleWars.Enemies
         {
             SetReferences();
             PlaySpawnSound();
+            MaxHealth = Health;
         }
 
         protected virtual void OnDisable()
@@ -148,12 +151,12 @@ namespace PeggleWars.Enemies
         {
             if(IsFrozen)
             {
-                _frozenForTurns--;
+                FrozenForTurns--;
 
-                if(_frozenForTurns < 0)
+                if(FrozenForTurns < 0)
                 {
                     IsFrozen = false;
-                    _frozenForTurns = 0;
+                    FrozenForTurns = 0;
                     GetComponentInChildren<SpriteRenderer>().color = _baseColor;
                 }
             }
@@ -172,7 +175,7 @@ namespace PeggleWars.Enemies
         internal void ApplyFrozen(int frozenStacks = 1)
         {
             IsFrozen = true;
-            _frozenForTurns += frozenStacks;
+            FrozenForTurns += frozenStacks;
             GetComponentInChildren<SpriteRenderer>().color = Color.blue; //ToDo: Polish this
         }
 
