@@ -6,6 +6,7 @@ using PeggleWars.Characters.Interfaces;
 using PeggleWars.TurnManagement;
 using System;
 using PeggleWars.ScrollDisplay;
+using DG.Tweening;
 
 namespace PeggleWars.Enemies
 {
@@ -29,7 +30,7 @@ namespace PeggleWars.Enemies
         protected readonly string WALK_PARAM = "Walk";
         protected readonly string IDLE_PARAM = "Idle";
         protected float _deathDelayForAnimation = 1f;
-        protected float _enemySpeed = 2;
+        protected float _enemyWalkDuration = 1.5f;
         [SerializeField] protected int _attackFrequency;
 
         internal int FrozenForTurns { get; private protected set; } = 0;
@@ -214,6 +215,7 @@ namespace PeggleWars.Enemies
 
         protected void HandleDeath()
         {
+            transform.DOKill(); //stop all tweens
             EnemyManager.Instance.EnemiesInScene.Remove(this);
             EnemyEvents.Instance.EnemyDeathEvent?.Invoke();
             TriggerDeathAnimation();
@@ -235,25 +237,7 @@ namespace PeggleWars.Enemies
             _iceStacks += iceStacks;
         }
 
-        #region SoundEffectTriggers
 
-        protected abstract void PlaySpawnSound();
-
-        protected abstract void PlayHurtSound();
-
-        protected abstract void PlayDeathSound();
-
-        #endregion
-
-        #region Animation
-
-        protected abstract void TriggerSpawnAnimation();
-        protected abstract void StartMovementAnimation();
-        protected abstract void StopMovementAnimation();
-        protected abstract void TriggerHurtAnimation();
-        protected abstract void TriggerDeathAnimation();
-
-        #endregion
 
         protected abstract void OnDeathEffect();
 
@@ -276,9 +260,7 @@ namespace PeggleWars.Enemies
         internal IEnumerator Move()
         {
             int xIndexOfEnemy = GetEnemyPositionIndex(this);
-            Vector2 startPosition = transform.position;
             Vector2 endPosition;
-            Vector2 currentPosition = startPosition;
             if (IsFlying)
             {
                 endPosition = _enemyManager.EnemyPositions[1, xIndexOfEnemy - 1];
@@ -288,16 +270,9 @@ namespace PeggleWars.Enemies
                 endPosition = _enemyManager.EnemyPositions[0, xIndexOfEnemy - 1];
             }
             StartMovementAnimation();
-            Rigidbody2D _rigidbody = GetComponent<Rigidbody2D>();
-            while (endPosition.x < currentPosition.x)
-            {
-                _rigidbody.velocity = Vector2.left * _enemySpeed;
-                yield return new WaitForSeconds(0.2f);
-                currentPosition = transform.position;
-            }
+            transform.DOMoveX(endPosition.x, _enemyWalkDuration).SetEase(Ease.Linear);
+            yield return new WaitForSeconds(_enemyWalkDuration);
             StopMovementAnimation();
-            _rigidbody.velocity = Vector2.zero;
-            transform.position = endPosition;
             CurrentPosition = endPosition;
         }
 
@@ -330,6 +305,26 @@ namespace PeggleWars.Enemies
 
             return -1;
         }
+
+        #region Animation
+
+        protected abstract void TriggerSpawnAnimation();
+        protected abstract void StartMovementAnimation();
+        protected abstract void StopMovementAnimation();
+        protected abstract void TriggerHurtAnimation();
+        protected abstract void TriggerDeathAnimation();
+
+        #endregion
+
+        #region SoundEffectTriggers
+
+        protected abstract void PlaySpawnSound();
+
+        protected abstract void PlayHurtSound();
+
+        protected abstract void PlayDeathSound();
+
+        #endregion
 
         #endregion
     }

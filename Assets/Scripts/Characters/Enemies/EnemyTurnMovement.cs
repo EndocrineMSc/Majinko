@@ -172,14 +172,7 @@ namespace PeggleWars.Enemies
                 float leftEnemyXPosition = _walkingEnemiesInScene[enemyIndex - 1].transform.position.x;
                 float deltaEnemyXPositions = enemyXPosition - leftEnemyXPosition;
 
-                if (deltaEnemyXPositions > _gapSpace)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return (deltaEnemyXPositions > _gapSpace);
             }
         }
 
@@ -189,15 +182,7 @@ namespace PeggleWars.Enemies
             Vector2 walkerMeleeAttackPosition = _enemyManager.EnemyPositions[0, 0];
             Vector3 flyerMeleeAttackPosition = _enemyManager.EnemyPositions[1, 0];
 
-            if (enemyPosition.Equals(walkerMeleeAttackPosition)
-                || enemyPosition.Equals(flyerMeleeAttackPosition))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return (enemyPosition.Equals(walkerMeleeAttackPosition) || enemyPosition.Equals(flyerMeleeAttackPosition));
         }
 
         private bool CheckIfIsLeftMostEnemy(Enemy enemy)
