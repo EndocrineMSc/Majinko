@@ -13,7 +13,7 @@ namespace PeggleWars.Spheres
         {
             base.Awake();
             _gravity = 0.01f;
-            _shotSpeed *= 3f;
+            _shotSpeed *= 2f;
         }
 
         internal override void ShotStackEffect()

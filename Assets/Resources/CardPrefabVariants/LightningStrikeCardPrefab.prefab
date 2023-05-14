@@ -49,7 +49,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _cardDescription
-      value: 'Orb: Deal 20 damage to the last enemy'
+      value: 'Orb: Deal 40 damage to the last enemy'
       objectReference: {fileID: 0}
     - target: {fileID: 3717780021009078597, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Sprite
