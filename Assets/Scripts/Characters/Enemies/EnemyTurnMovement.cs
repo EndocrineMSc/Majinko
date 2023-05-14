@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace PeggleWars.Enemies
 {
-    public class EnemyTurnMovement : MonoBehaviour
+    internal class EnemyTurnMovement : MonoBehaviour
     {
         #region Fields and Properties
 
@@ -157,14 +157,7 @@ namespace PeggleWars.Enemies
                 float leftEnemyXPosition = _flyingEnemiesInScene[enemyIndex - 1].transform.position.x;
                 float deltaEnemyXPositions = enemyXPosition - leftEnemyXPosition;
 
-                if (deltaEnemyXPositions > _gapSpace)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return (deltaEnemyXPositions > _gapSpace);
             }
             else
             {

@@ -46,17 +46,20 @@ namespace PeggleWars.Enemies
 
         private IEnumerator HandleEnemyAttacks()
         {
-            foreach(Enemy enemy in EnemyManager.Instance.EnemiesInScene)
+            foreach (Enemy enemy in EnemyManager.Instance.EnemiesInScene)
             {
-                if(enemy.TurnsTillNextAttack > 0)
+                if (enemy != null)
                 {
-                    enemy.TurnsTillNextAttack--;
-                }
-                else if(enemy.AttackType == EnemyAttackType.Ranged || enemy.IsInAttackPosition)
-                {
-                    enemy.Attack();
-                    yield return new WaitForSeconds(_attackGapSeconds);
-                    enemy.ResetTurnsTillNextAttack();
+                    if (enemy.TurnsTillNextAttack > 0)
+                    {
+                        enemy.TurnsTillNextAttack--;
+                    }
+                    else if (enemy.AttackType == EnemyAttackType.Ranged || enemy.IsInAttackPosition)
+                    {
+                        enemy.Attack();
+                        yield return new WaitForSeconds(_attackGapSeconds);
+                        enemy.ResetTurnsTillNextAttack();
+                    }
                 }
             }
             EnemyEvents.Instance.EnemyAttacksEndEvent?.Invoke();
