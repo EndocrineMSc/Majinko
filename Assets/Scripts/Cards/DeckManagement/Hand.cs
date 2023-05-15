@@ -58,7 +58,7 @@ namespace Cards
             TurnManager.Instance.EndCardTurn?.AddListener(OnCardTurnEnd);
             TurnManager.Instance.StartCardTurn?.AddListener(OnCardTurnStart);
             WinLoseConditionManager.Instance.LevelVictory?.AddListener(OnLevelVictory);
-            CardEvents.Instance.CardDestructionEvent?.AddListener(OnCardDestructionWrap);
+            Card.CardDestruction?.AddListener(OnCardDestructionWrap);
         }
 
         internal void OnLevelVictory()
@@ -70,6 +70,7 @@ namespace Cards
         private void OnDisable()
         {
             WinLoseConditionManager.Instance.LevelVictory?.RemoveListener(OnLevelVictory);
+            Card.CardDestruction?.RemoveListener(OnCardDestructionWrap);
         }
 
         internal void OnCardTurnStart()

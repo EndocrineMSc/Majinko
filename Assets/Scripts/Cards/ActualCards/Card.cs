@@ -4,6 +4,7 @@ using PeggleWars.ManaManagement;
 using EnumCollection;
 using System.Collections;
 using DG.Tweening;
+using UnityEngine.Events;
 
 namespace Cards
 {
@@ -57,6 +58,9 @@ namespace Cards
         internal CardElement Element { get => _cardElement;}
         internal CardEffectType EffectType { get => _cardEffectType;}
         internal bool IsBeingDealt { get; set; } = true;
+
+        //Events
+        internal static UnityEvent CardDestruction { get; private protected set; }
 
         #endregion
 
@@ -128,17 +132,20 @@ namespace Cards
             GetComponent<RectTransform>().DOLocalMove(targetPosition, _tweenDiscardDuration).SetEase(Ease.OutExpo);
             GetComponent<RectTransform>().DOScale(_tweenEndScale, _tweenDiscardDuration).SetEase(Ease.OutCubic);
 
-            yield return new WaitForSeconds(_tweenDiscardDuration * 5/10);
-
-            CardEvents.Instance.CardDestructionEvent?.Invoke();
+            yield return new WaitForSeconds(_tweenDiscardDuration / 2);
 
             if(_exhaustCard)
                 Deck.Instance.StartExhaustPileAnimation();
             else
                 Deck.Instance.StartDiscardPileAnimation();
 
-            yield return new WaitForSeconds(_tweenDiscardDuration * 5 / 10);
+            yield return new WaitForSeconds(_tweenDiscardDuration / 2);
             Destroy(gameObject);
+        }
+
+        protected void OnDestroy()
+        {
+                CardDestruction?.Invoke();
         }
 
         #endregion
