@@ -1,5 +1,5 @@
 using EnumCollection;
-using PeggleWars.Audio;
+using Audio;
 
 namespace PeggleWars.Attacks
 {

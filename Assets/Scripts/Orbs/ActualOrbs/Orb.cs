@@ -2,7 +2,7 @@ using EnumCollection;
 using System.Collections;
 using UnityEngine;
 using PeggleWars.ManaManagement;
-using PeggleWars.Audio;
+using Audio;
 using PeggleWars.ScrollDisplay;
 using PeggleWars.Spheres;
 using DG.Tweening;

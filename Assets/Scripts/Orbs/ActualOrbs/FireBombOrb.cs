@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using PeggleWars.Attacks;
 using PeggleWars.Spheres;
+using UnityEditor.Animations;
 
 namespace PeggleWars.Orbs
 {
-    internal class FireBombOrb : Orb
+    internal class FireBombOrb : Orb, IAmSphere
     {
         [SerializeField] private Attack _fireBomb;
         [SerializeField] private GameObject _bombRadiusObject;
+        [SerializeField] private AnimatorController _orb_Explosion;
         private readonly string TARGET_PARAM = "AOE_Target";
 
         protected override void OnCollisionEnter2D(Collision2D collision)
@@ -30,9 +32,8 @@ namespace PeggleWars.Orbs
         protected override void AdditionalEffectsOnCollision()
         {
             OrbActionManager.Instance.AddOrbToActionList(this);
-            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<Animator>().runtimeAnimatorController = _orb_Explosion;
             _bombRadiusObject.SetActive(true);
-            StartCoroutine(DisableBombCollider());
         }
 
         public override void SetDisplayDescription()
@@ -47,12 +48,6 @@ namespace PeggleWars.Orbs
             GameObject aoeTargetObject = GameObject.FindGameObjectWithTag(TARGET_PARAM);
             _fireBomb.ShootAttack(aoeTargetObject.transform.position);
             yield return new WaitForSeconds(0.2f);
-        }
-
-        private IEnumerator DisableBombCollider()
-        {
-            yield return new WaitForSeconds(0.2f);
-            _bombRadiusObject.GetComponent<Collider2D>().enabled = false;
         }
 
         protected override IEnumerator DestroyOrb()

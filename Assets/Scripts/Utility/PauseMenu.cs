@@ -1,5 +1,4 @@
-using PeggleWars.Audio;
-using PeggleWars.Audio.Options;
+using Audio;
 using PeggleWars.Utilities;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,15 +18,16 @@ namespace PeggleWars.Menus
         [SerializeField] private Slider _volumeSlider;
 
         #endregion
+
         // Start is called before the first frame update
         void Start()
         {
             _settingsCanvas = GetComponent<Canvas>();
             _settingsCanvas.enabled = false;
-            AudioOptionManager _audioOptionManager = AudioManager.Instance.GetComponent<AudioOptionManager>();
-            _masterSlider.onValueChanged.AddListener(_audioOptionManager.SetMasterVolume);
-            _musicSlilder.onValueChanged.AddListener(_audioOptionManager.SetMusicVolume);
-            _volumeSlider.onValueChanged.AddListener(_audioOptionManager.SetEffectsVolume);
+            AudioManager audioManager = AudioManager.Instance;
+            _masterSlider.onValueChanged.AddListener(audioManager.SetMasterVolume);
+            _musicSlilder.onValueChanged.AddListener(audioManager.SetMusicVolume);
+            _volumeSlider.onValueChanged.AddListener(audioManager.SetEffectsVolume);
 
             PauseControl.Instance.PauseAndUnpauseGame?.AddListener(OpenAndCloseCanvas);
         }

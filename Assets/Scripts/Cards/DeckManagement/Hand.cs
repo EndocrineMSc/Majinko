@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using PeggleWars.TurnManagement;
-using PeggleWars.Audio;
+using Audio;
 using System.Collections;
 using EnumCollection;
 using PeggleWars.Utilities;

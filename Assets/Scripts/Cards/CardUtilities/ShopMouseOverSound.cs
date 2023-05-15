@@ -1,4 +1,4 @@
-using PeggleWars.Audio;
+using Audio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +10,7 @@ namespace PeggleWars.Cards
     {
         public void OnPointerEnter(PointerEventData eventData)
         {
-            AudioManager.Instance.PlaySoundEffectWithoutLimit(EnumCollection.SFX._0002_MouseOverCard);
+            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0002_MouseOverCard);
         }
     }
 }

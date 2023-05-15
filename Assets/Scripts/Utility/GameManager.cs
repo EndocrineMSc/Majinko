@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using EnumCollection;
-using PeggleWars.Audio;
+using Audio;
 using PeggleWars.TurnManagement;
 using UnityEngine.Events;
 using PeggleWars.Orbs;
@@ -76,7 +76,7 @@ namespace PeggleWars
                 case (GameState.CardHandling):
                     TurnManager.Instance.StartCardTurn?.Invoke();
                     _audioManager.PlayGameTrack(Track._0001_LevelOne);
-                    _audioManager.FadeGameTrack(Track._0001_LevelOne, Fade.In);
+                    _audioManager.FadeInGameTrack(Track._0001_LevelOne);
                     break;
 
                 case (GameState.Shooting):

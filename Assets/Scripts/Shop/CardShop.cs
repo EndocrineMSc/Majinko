@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using EnumCollection;
 using System.Collections;
-using PeggleWars.Audio;
+using Audio;
 using Unity.VisualScripting;
 
 namespace PeggleWars.Utilities
@@ -184,7 +184,6 @@ namespace PeggleWars.Utilities
 
             if (cardToBeAddedToDeck.name.Contains("Forbidden"))
             {
-                Debug.Log(cardToBeAddedToDeck.name);
                 GlobalCardManager.Instance.BoughtExodiaCard(cardToBeAddedToDeck);
             }
             _globalDeckManager.GlobalDeck.Add(cardToBeAddedToDeck);

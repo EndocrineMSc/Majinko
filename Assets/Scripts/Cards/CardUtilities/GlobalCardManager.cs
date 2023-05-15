@@ -162,7 +162,6 @@ namespace PeggleWars.Cards
 
         private void SortExodiaCardsIntoNewShopList()
         {
-            Debug.Log(_remainingAmountExodiaCards);
             if (_remainingAmountExodiaCards == 1)
             {
                 List<Card> newRareCards = new();

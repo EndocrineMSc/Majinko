@@ -1,5 +1,5 @@
 using EnumCollection;
-using PeggleWars.Audio;
+using Audio;
 using PeggleWars.Characters.Interfaces;
 using PeggleWars.Enemies;
 using System.Collections;

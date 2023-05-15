@@ -1,6 +1,6 @@
 using UnityEngine;
 using EnumCollection;
-using PeggleWars.Audio;
+using Audio;
 
 namespace PeggleWars.Buttons
 {

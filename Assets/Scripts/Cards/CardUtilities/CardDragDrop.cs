@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using EnumCollection;
-using PeggleWars.Audio;
+using Audio;
 
 namespace PeggleWars.Cards
 {

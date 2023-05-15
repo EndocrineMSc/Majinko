@@ -1,4 +1,4 @@
-using PeggleWars.Audio;
+using Audio;
 using PeggleWars.ScrollDisplay;
 using PeggleWars.TurnManagement;
 using PeggleWars.Utilities;
@@ -185,7 +185,7 @@ namespace PeggleWars.Spheres
         {
             if (Input.GetMouseButtonDown(0))
             {
-                AudioManager.Instance.PlaySoundEffectWithoutLimit(EnumCollection.SFX._0770_Orb_Spawn_Whoosh);
+                AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0770_Orb_Spawn_Whoosh);
                 DestroyAllIndicators();
                 SetGravityAndVelocity(_rigidbody);
                 _isNotShotYet = false;

@@ -5,7 +5,7 @@ using EnumCollection;
 using System;
 using DG.Tweening;
 using System.Collections;
-using PeggleWars.Audio;
+using Audio;
 
 namespace PeggleWars.Orbs
 {

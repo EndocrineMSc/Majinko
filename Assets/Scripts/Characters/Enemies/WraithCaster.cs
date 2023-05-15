@@ -1,5 +1,5 @@
 using EnumCollection;
-using PeggleWars.Audio;
+using Audio;
 using PeggleWars.Characters;
 using PeggleWars.Orbs;
 using PeggleWars.ScrollDisplay;
