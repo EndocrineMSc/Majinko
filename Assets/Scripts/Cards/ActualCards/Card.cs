@@ -5,7 +5,7 @@ using EnumCollection;
 using System.Collections;
 using DG.Tweening;
 
-namespace PeggleWars.Cards
+namespace Cards
 {
     [RequireComponent(typeof(CardDragDrop))]
     [RequireComponent(typeof(CardZoom))]
@@ -15,6 +15,7 @@ namespace PeggleWars.Cards
     {
         #region Fields and Properties
 
+        [Header("Card Data")]
         [SerializeField] protected string _cardName;
         [SerializeField, TextArea] protected string _cardDescription;
         [SerializeField] protected int _basicManaCost;
@@ -27,6 +28,7 @@ namespace PeggleWars.Cards
         [SerializeField] protected CardEffectType _cardEffectType;
         protected Sprite _cardImage;
 
+        //Adjusted mana amounts
         protected int _adjustedBasicManaAmount;
         protected int _adjustedFireManaAmount;
         protected int _adjustedIceManaAmount;
@@ -38,9 +40,11 @@ namespace PeggleWars.Cards
         protected Deck _deck;
         protected GlobalDeckManager _globalDeckManager;
 
+        //Animations
         protected float _tweenDiscardDuration = 0.5f;
         protected Vector3 _tweenEndScale = new(0.05f, 0.05f, 0.05f);
 
+        //Properties
         internal string CardName { get => _cardName;}
         internal string CardDescription { get => _cardDescription;}
         internal int BasicManaCost { get => _basicManaCost;}
@@ -53,7 +57,6 @@ namespace PeggleWars.Cards
         internal CardElement Element { get => _cardElement;}
         internal CardEffectType EffectType { get => _cardEffectType;}
         internal bool IsBeingDealt { get; set; } = true;
-
 
         #endregion
 
@@ -112,31 +115,28 @@ namespace PeggleWars.Cards
 
         protected virtual void HandleDiscard()
         {
-            if (_exhaustCard)
-            {              
+            if (_exhaustCard)             
                 _deck.ExhaustCard(GlobalCardManager.Instance.AllCards[(int)_cardType]);
-            }
             else
-            {
                 _deck.DiscardCard(GlobalCardManager.Instance.AllCards[(int)_cardType]);
-            }
         }
 
         protected IEnumerator DestroyCardAfterAnimation()
         {
             Vector3 targetPosition = (_exhaustCard) ? Deck.Instance.ExhaustPosition : Deck.Instance.DiscardPosition;
+
             GetComponent<RectTransform>().DOLocalMove(targetPosition, _tweenDiscardDuration).SetEase(Ease.OutExpo);
             GetComponent<RectTransform>().DOScale(_tweenEndScale, _tweenDiscardDuration).SetEase(Ease.OutCubic);
+
             yield return new WaitForSeconds(_tweenDiscardDuration * 5/10);
+
             CardEvents.Instance.CardDestructionEvent?.Invoke();
+
             if(_exhaustCard)
-            {
                 Deck.Instance.StartExhaustPileAnimation();
-            }
             else
-            {
                 Deck.Instance.StartDiscardPileAnimation();
-            }
+
             yield return new WaitForSeconds(_tweenDiscardDuration * 5 / 10);
             Destroy(gameObject);
         }

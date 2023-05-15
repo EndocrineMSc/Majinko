@@ -1,9 +1,8 @@
-using PeggleWars.Cards;
+using Cards;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using EnumCollection;
-using System.Collections;
 using Audio;
 using Unity.VisualScripting;
 

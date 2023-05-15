@@ -2,9 +2,8 @@ using PeggleWars.Utilities;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using System.Collections;
 
-namespace PeggleWars.Cards
+namespace Cards
 {
     [RequireComponent(typeof(DisplayDeck))]
     internal class Deck : MonoBehaviour

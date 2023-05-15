@@ -1,12 +1,8 @@
-using System;
-
 using EnumCollection;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
-using UnityEngine.Events;
 
-namespace PeggleWars.Cards
+namespace Cards
 {
     internal class GlobalDeckManager : MonoBehaviour
     {

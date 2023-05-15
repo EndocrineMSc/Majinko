@@ -1,4 +1,4 @@
-using PeggleWars.Cards;
+using Cards;
 using PeggleWars.ScrollDisplay;
 using System.Collections;
 

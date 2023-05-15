@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using EnumCollection;
 using UnityEngine.UI;
 
-namespace PeggleWars.Cards
+namespace Cards
 {
     internal class CardUIDisplayer : MonoBehaviour
     {

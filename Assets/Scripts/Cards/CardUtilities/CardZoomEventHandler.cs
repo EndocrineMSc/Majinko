@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace PeggleWars.Cards
+namespace Cards
 {
     internal class CardZoomEventHandler : MonoBehaviour
     {

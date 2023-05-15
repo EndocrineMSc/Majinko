@@ -2,7 +2,7 @@ using UnityEngine;
 using EnumCollection;
 using PeggleWars.Spheres;
 
-namespace PeggleWars.Cards
+namespace Cards
 {
     internal class ShotChangerCard : Card
     {

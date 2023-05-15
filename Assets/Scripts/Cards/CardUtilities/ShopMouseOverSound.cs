@@ -1,10 +1,8 @@
 using Audio;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace PeggleWars.Cards
+namespace Cards
 {
     internal class ShopMouseOverSound : MonoBehaviour, IPointerEnterHandler
     {

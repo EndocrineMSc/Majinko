@@ -1,13 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using PeggleWars.Cards;
 using EnumCollection;
 using System.Linq;
-using System;
-using Unity.VisualScripting;
 
-namespace PeggleWars.Cards
+namespace Cards
 {
     internal class GlobalCardManager : MonoBehaviour
     {

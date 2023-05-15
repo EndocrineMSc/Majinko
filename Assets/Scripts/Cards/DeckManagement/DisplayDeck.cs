@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace PeggleWars.Cards
+namespace Cards
 {
     internal class DisplayDeck : MonoBehaviour
     {

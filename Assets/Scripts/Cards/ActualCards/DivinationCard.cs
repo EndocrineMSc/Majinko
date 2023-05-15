@@ -1,6 +1,6 @@
 using PeggleWars.Spheres;
 
-namespace PeggleWars.Cards
+namespace Cards
 {
     internal class DivinationCard : Card
     {

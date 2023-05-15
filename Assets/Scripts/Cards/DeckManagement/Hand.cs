@@ -3,12 +3,11 @@ using UnityEngine;
 using PeggleWars.TurnManagement;
 using Audio;
 using System.Collections;
-using EnumCollection;
 using PeggleWars.Utilities;
 using System.Linq;
 using DG.Tweening;
 
-namespace PeggleWars.Cards
+namespace Cards
 {
     internal class Hand : MonoBehaviour
     {

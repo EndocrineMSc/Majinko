@@ -1,8 +1,9 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using EnumCollection;
+using PeggleWars;
 
-namespace PeggleWars.Cards
+namespace Cards
 {
     internal class CardZoom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {

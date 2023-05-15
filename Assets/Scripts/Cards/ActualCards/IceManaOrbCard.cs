@@ -1,7 +1,7 @@
 using EnumCollection;
 using PeggleWars.Orbs;
 
-namespace PeggleWars.Cards
+namespace Cards
 {
     internal class IceManaOrbCard : Card, IShiftOrbs
     {

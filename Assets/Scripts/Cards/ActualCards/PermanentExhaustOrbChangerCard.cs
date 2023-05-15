@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using PeggleWars.Orbs;
-using EnumCollection;
 
-namespace PeggleWars.Cards
+namespace Cards
 {
     internal class PermanentExhaustOrbChangerCard : OrbChangerCard
     { 

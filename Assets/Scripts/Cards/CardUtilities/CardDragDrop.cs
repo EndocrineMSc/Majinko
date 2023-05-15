@@ -1,9 +1,8 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using EnumCollection;
 using Audio;
 
-namespace PeggleWars.Cards
+namespace Cards
 {
     internal class CardDragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
     {

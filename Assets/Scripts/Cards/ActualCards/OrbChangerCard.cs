@@ -2,7 +2,7 @@ using UnityEngine;
 using EnumCollection;
 using PeggleWars.Orbs;
 
-namespace PeggleWars.Cards
+namespace Cards
 {
     internal class OrbChangerCard : Card, IShiftOrbs
     {
