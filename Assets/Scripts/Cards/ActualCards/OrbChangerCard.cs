@@ -4,9 +4,9 @@ using PeggleWars.Orbs;
 
 namespace Cards
 {
-    internal class OrbChangerCard : Card, IShiftOrbs
+    internal class OrbChangerCard : Card
     {
-        //will be set in the inspector of the respective Card
+        //will be set in the inspector of the respective Card Prefab
         [SerializeField] protected OrbType _orbType;
         [SerializeField] protected int _amountOrbs;
         public int AmountOrbs { get => _amountOrbs; set { _amountOrbs = value; } }

@@ -4,35 +4,31 @@ using Audio;
 
 namespace Cards
 {
+    /// <summary>
+    /// This class is a required component of the class Card.
+    /// </summary>
     internal class CardDragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
     {
-        #region Fields
+        #region Fields and Properties
 
-        private Canvas _canvas;
+        private Canvas _cardCanvas;
         private Card _card;
 
         private RectTransform _rectTransform;
         private readonly float _cardEffectBorderY = -150; //Y above which the game will try to use the card
 
-        #endregion
-
-        #region Private Functions
-
-        private void Awake()
-        {
-            _rectTransform = GetComponent<RectTransform>();
-        }
-
-        private void Start()
-        {
-           GameObject cardCanvas = GameObject.FindGameObjectWithTag("CardCanvas");
-           _canvas = cardCanvas.GetComponent<Canvas>();
-           _card = GetComponent<Card>();
-        }
+        private const string CARDCANVAS_OBJECT = "CardCanvas";
 
         #endregion
 
         #region Functions
+
+        private void Start()
+        {
+            _rectTransform = GetComponent<RectTransform>();
+            _cardCanvas = GameObject.FindGameObjectWithTag(CARDCANVAS_OBJECT).GetComponent<Canvas>();
+            _card = GetComponent<Card>();
+        }
 
         public void OnBeginDrag(PointerEventData eventData)
         {
@@ -41,7 +37,7 @@ namespace Cards
 
         public void OnDrag(PointerEventData eventData)
         {
-            _rectTransform.anchoredPosition += eventData.delta / _canvas.scaleFactor;
+            _rectTransform.anchoredPosition += eventData.delta / _cardCanvas.scaleFactor;
         }
 
         public void OnEndDrag(PointerEventData eventData)
@@ -49,18 +45,17 @@ namespace Cards
             if (_rectTransform.anchoredPosition.y >= _cardEffectBorderY)
             {
                 bool enoughMana = _card.CardEndDragEffect();
+                
                 if (!enoughMana)
-                {
-                    HandleNotEnoughMana();
-                }
+                    ReturnCardToHand();
             }
             else
             {
-                HandleNotEnoughMana();
+                ReturnCardToHand();
             }
         }
 
-        private void HandleNotEnoughMana()
+        private void ReturnCardToHand()
         {
             AudioManager.Instance.PlaySoundEffectOnce(SFX._0005_CardDragReturn);
             Hand.Instance.AlignCards();

@@ -3,7 +3,7 @@ using PeggleWars.Orbs;
 
 namespace Cards
 {
-    internal class IceManaOrbCard : Card, IShiftOrbs
+    internal class IceManaOrbCard : Card
     {
         public int AmountOrbs { get; set; } = 1;
 

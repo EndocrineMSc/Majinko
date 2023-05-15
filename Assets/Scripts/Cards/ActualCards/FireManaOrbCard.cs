@@ -3,7 +3,7 @@ using EnumCollection;
 
 namespace Cards
 {
-    internal class FireManaOrbCard : Card, IShiftOrbs
+    internal class FireManaOrbCard : Card
     {
         public int AmountOrbs { get; set; } = 1;
 

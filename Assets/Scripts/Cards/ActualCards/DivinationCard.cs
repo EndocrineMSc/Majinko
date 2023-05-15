@@ -4,18 +4,18 @@ namespace Cards
 {
     internal class DivinationCard : Card
     {
-        private SphereManager _shotManager;
+        private SphereManager _sphereManager;
 
         protected override void SetReferencesToLevelComponents()
         {
             base.SetReferencesToLevelComponents();
-            _shotManager = SphereManager.Instance;
+            _sphereManager = SphereManager.Instance;
         }
 
         protected override void CardEffect()
         {
-            _shotManager.NumberOfIndicators += 2;
-            _shotManager.MaxIndicatorCollisions++;
+            _sphereManager.NumberOfIndicators += 2;
+            _sphereManager.MaxIndicatorCollisions++;
         }
     }
 }

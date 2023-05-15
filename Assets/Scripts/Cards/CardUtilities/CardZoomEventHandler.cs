@@ -5,17 +5,23 @@ namespace Cards
 {
     internal class CardZoomEventHandler : MonoBehaviour
     {
-        public UnityEvent<Vector3> CardZoomIn;
-        public UnityEvent<Vector3> CardZoomOut;
+        public static UnityEvent<Vector3> CardZoomIn { get; private set; }
+        public static UnityEvent CardZoomOut { get; private set; }
 
-        public void InvokeCardZoomIn(Vector3 position)
+        public void Awake()
+        {
+            CardZoomIn ??= new UnityEvent<Vector3>();
+            CardZoomOut ??= new UnityEvent();
+        }
+
+        public static void InvokeCardZoomIn(Vector3 position)
         {
             CardZoomIn?.Invoke(position);
         }
 
-        public void InvokeCardZoomOut(Vector3 position)
+        public static void InvokeCardZoomOut()
         {
-            CardZoomOut?.Invoke(position);
+            CardZoomOut?.Invoke();
         }
     }
 }

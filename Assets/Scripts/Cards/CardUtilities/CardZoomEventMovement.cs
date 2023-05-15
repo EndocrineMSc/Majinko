@@ -1,90 +1,51 @@
+using DG.Tweening;
 using UnityEngine;
 
 namespace Cards
 {
     internal class CardZoomEventMovement : MonoBehaviour
     {
-        private readonly float _moveDistance = 75f;
-        private readonly string _leftOfZoomCard = "Left";
-        private readonly string _rightOfZoomCard = "Right";
-        private string _leftOrRightOfZoomCard;
-        private CardZoomEventHandler _otherCardIsBeingZoomed;
+        private readonly float _moveDistance = 125f;
+        private float _startZoomXPosition;
 
         private void Start()
         {
-            _otherCardIsBeingZoomed = Hand.Instance.GetComponent<CardZoomEventHandler>();
-            _otherCardIsBeingZoomed.CardZoomIn.AddListener(OnOtherCardZoomIn);
-            _otherCardIsBeingZoomed.CardZoomOut.AddListener(OnOtherCardZoomOut);            
+            CardZoomEventHandler.CardZoomIn.AddListener(OnOtherCardZoomIn);
+            CardZoomEventHandler.CardZoomOut.AddListener(OnOtherCardZoomOut);            
         }
 
         private void OnDisable()
         {
-            Hand.Instance.GetComponent<CardZoomEventHandler>().CardZoomIn?.RemoveListener(OnOtherCardZoomIn);
-            Hand.Instance.GetComponent<CardZoomEventHandler>().CardZoomOut?.RemoveListener(OnOtherCardZoomOut);
+            CardZoomEventHandler.CardZoomIn?.RemoveListener(OnOtherCardZoomIn);
+            CardZoomEventHandler.CardZoomOut?.RemoveListener(OnOtherCardZoomOut);
         }
 
         private void OnOtherCardZoomIn(Vector3 otherCardPosition)
-        {            
-            DetermineMovementDirection(otherCardPosition);
-
-            if (_leftOrRightOfZoomCard == _leftOfZoomCard)
-            {
-                MoveLeft();
-            }
-            else if (_leftOrRightOfZoomCard == _rightOfZoomCard)
-            {
-                MoveRight();
-            }
-            else
-            {
-                //Don't move you're being zoomed
-            }
-        }
-        
-        private void OnOtherCardZoomOut(Vector3 otherCardPosition)
-        {
-            if (_leftOrRightOfZoomCard == _leftOfZoomCard)
-            {
-                MoveRight();
-            }
-            else if (_leftOrRightOfZoomCard == _rightOfZoomCard)
-            {
-                MoveLeft();
-            }
-            else
-            {
-                //Don't move you're being zoomed
-            }
-            _leftOrRightOfZoomCard = "";
-        }
-
-        private void DetermineMovementDirection(Vector3 otherCardPosition)
         {
             float deltaXTransform = otherCardPosition.x - transform.position.x;
+            _startZoomXPosition = transform.position.x;
 
-            if (deltaXTransform > 0f)
+            if (deltaXTransform > 0)
             {
-                _leftOrRightOfZoomCard = _leftOfZoomCard;
+                float targetXPosition = transform.position.x - _moveDistance;
+                MoveCard(targetXPosition);
             }
-            else if (deltaXTransform == 0)
+            else if (deltaXTransform < 0)
             {
-                //this card is the one being zoomed!
-            }
-            else
-            {
-                _leftOrRightOfZoomCard = _rightOfZoomCard;
+                float targetXPosition = transform.position.x + _moveDistance;
+                MoveCard(targetXPosition);
             }
         }
 
-        private void MoveLeft()
+        private void OnOtherCardZoomOut()
         {
-            transform.position = new Vector3(transform.position.x - _moveDistance, transform.position.y, transform.position.z);
+            MoveCard(_startZoomXPosition);
         }
 
-        private void MoveRight()
+        private void MoveCard(float targetXPosition)
         {
-            transform.position = new Vector3(transform.position.x + _moveDistance, transform.position.y, transform.position.z);
+            transform.DOKill();
+            transform.DOMoveX(targetXPosition, 0.1f);
         }
-
     }
 }
