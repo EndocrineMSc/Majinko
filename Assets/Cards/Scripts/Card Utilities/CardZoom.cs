@@ -37,7 +37,7 @@ namespace Cards
             if (GameManager.Instance.GameState != GameState.LevelWon && !_card.IsBeingDealt)
             {
                 ZoomInCard();
-                CardZoomEventHandler.InvokeCardZoomIn(transform.position);
+                CardEvents.RaiseCardZoomIn(transform.position);
             }
             else
                 transform.localScale = new Vector3(_zoomSize, _zoomSize, _zoomSize); // Zoom in card shop
@@ -51,7 +51,7 @@ namespace Cards
             if (GameManager.Instance.GameState != GameState.LevelWon)
             {
                 ZoomOutCard();
-                CardZoomEventHandler.InvokeCardZoomOut();               
+                CardEvents.InvokeCardZoomOut();               
                 Hand.Instance.AlignCards();
             }
             else

@@ -6,11 +6,11 @@ namespace Cards
 {
     internal class GlobalDeckManager : MonoBehaviour
     {
-        #region Fields/Properties
+        #region Fields andProperties
 
         internal static GlobalDeckManager Instance { get; private set; }
 
-        private int[] _apprenticeDeck = new int[] { (int) CardType.Divination, (int) CardType.Divination, (int) CardType.ManaBlitz,
+        private readonly int[] _apprenticeDeck = new int[] { (int) CardType.Divination, (int) CardType.Divination, (int) CardType.ManaBlitz,
             (int) CardType.ManaBlitz, (int) CardType.ManaBlitz, (int) CardType.ManaBlitz, (int) CardType.ManaShield,(int) CardType.ManaShield,
             (int) CardType.ManaShield, (int) CardType.ManaShield };
 
@@ -30,15 +30,13 @@ namespace Cards
 
         private void Awake()
         {
-            if (Instance != null && Instance != this)
-            {
-                Destroy(gameObject);
-            }
-            else
+            if (Instance == null)
             {
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
             }
+            else
+                Destroy(gameObject);
         }
 
         private void Start()

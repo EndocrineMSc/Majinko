@@ -3,21 +3,21 @@ using UnityEngine;
 
 namespace Cards
 {
-    internal class CardZoomEventMovement : MonoBehaviour
+    internal class CardZoomMovement : MonoBehaviour
     {
         private readonly float _moveDistance = 125f;
         private float _startZoomXPosition;
 
-        private void Start()
+        private void OnEnable()
         {
-            CardZoomEventHandler.CardZoomIn.AddListener(OnOtherCardZoomIn);
-            CardZoomEventHandler.CardZoomOut.AddListener(OnOtherCardZoomOut);            
+            CardEvents.OnCardZoomIn += OnOtherCardZoomIn;
+            CardEvents.OnCardZoomOut += OnOtherCardZoomOut;            
         }
 
         private void OnDisable()
         {
-            CardZoomEventHandler.CardZoomIn?.RemoveListener(OnOtherCardZoomIn);
-            CardZoomEventHandler.CardZoomOut?.RemoveListener(OnOtherCardZoomOut);
+            CardEvents.OnCardZoomIn -= OnOtherCardZoomIn;
+            CardEvents.OnCardZoomOut -= OnOtherCardZoomOut;
         }
 
         private void OnOtherCardZoomIn(Vector3 otherCardPosition)

@@ -20,7 +20,8 @@ namespace Cards
         internal List<Card> EpicCards { get; private set; } = new();
         internal List<Card> LegendaryCards { get; private set; } = new();
        
-        private string RESOURCE_LOAD_PARAM = "CardPrefabVariants";
+        private const string CARDPREFAB_FOLDER = "CardPrefabVariants";
+        private const string EXODIA_CHECK = "Forbidden";
 
         private int _remainingAmountExodiaCards = 6;
         private bool _isFirstInit = true;
@@ -29,51 +30,19 @@ namespace Cards
 
         #region Functions
 
-        private void Update()
-        {            
-            //Test
-            if(Input.GetKeyDown(KeyCode.Space))
-            {
-                foreach(Card card in CommonCards)
-                {
-                    Debug.Log("Common Card: " + card.name);
-                }
-                foreach(Card card in RareCards)
-                {
-                    Debug.Log("Rare Card: "+ card.name);
-                }
-                foreach(Card card in EpicCards)
-                {
-                    Debug.Log("Epic Card: " + card.name);
-                }
-                foreach(Card card in LegendaryCards)
-                {
-                    Debug.Log("Legendary Card: "+ card.name);
-                }
-            }
-        }
-
         private void Awake()
         {
-            if (Instance != null && Instance != this)
-            {
-                Destroy(gameObject);
-            }
-            else
+            if (Instance == null)
             {
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
             }
-            if (_isFirstInit)
-            {
-                _allCards = Resources.LoadAll<Card>(RESOURCE_LOAD_PARAM).ToList();
-            }
-        }
+            else
+                Destroy(gameObject);
 
-        private void Start()
-        {
             if (_isFirstInit)
             {
+                _allCards = Resources.LoadAll<Card>(CARDPREFAB_FOLDER).ToList();
                 SetRarityThresholds();
                 BuildRarityLists();
                 _isFirstInit = false;
@@ -163,7 +132,7 @@ namespace Cards
                 List<Card> newRareCards = new();
                 foreach (Card card in RareCards)
                 {
-                    if (card.name.Contains("Forbidden"))
+                    if (card.name.Contains(EXODIA_CHECK))
                     {
                         CommonCards.Add(AllCards[(int)card.CardType]);
                     }
@@ -179,7 +148,7 @@ namespace Cards
                 List<Card> newEpicCards = new();
                 foreach (Card card in EpicCards)
                 {
-                    if (card.name.Contains("Forbidden"))
+                    if (card.name.Contains(EXODIA_CHECK))
                     {
                         RareCards.Add(AllCards[(int)card.CardType]);
                     }
@@ -196,7 +165,7 @@ namespace Cards
                 foreach (Card card in LegendaryCards)
                 {
                     Debug.Log(card.name);
-                    if (card.name.Contains("Forbidden"))
+                    if (card.name.Contains(EXODIA_CHECK))
                     {
                         EpicCards.Add(AllCards[(int)card.CardType]);
                     }

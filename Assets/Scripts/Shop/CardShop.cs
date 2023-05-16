@@ -131,7 +131,7 @@ namespace PeggleWars.Utilities
             foreach (Card cardObject in cardObjects)
             {
                 cardObject.GetComponent<CardDragDrop>().enabled = false;
-                cardObject.GetComponent<CardZoomEventMovement>().enabled = false;
+                cardObject.GetComponent<CardZoomMovement>().enabled = false;
                 cardObject.AddComponent<ShopMouseOverSound>();
             }
         }

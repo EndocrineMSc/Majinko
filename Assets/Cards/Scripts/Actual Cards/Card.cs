@@ -10,7 +10,7 @@ namespace Cards
 {
     [RequireComponent(typeof(CardDragDrop))]
     [RequireComponent(typeof(CardZoom))]
-    [RequireComponent(typeof(CardZoomEventMovement))]
+    [RequireComponent(typeof(CardZoomMovement))]
     [RequireComponent(typeof(CardUIDisplayer))]
     internal abstract class Card : MonoBehaviour
     {
@@ -58,9 +58,6 @@ namespace Cards
         internal CardElement Element { get => _cardElement;}
         internal CardEffectType EffectType { get => _cardEffectType;}
         internal bool IsBeingDealt { get; set; } = true;
-
-        //Events
-        internal static UnityEvent CardDestruction { get; private protected set; }
 
         #endregion
 
@@ -145,7 +142,7 @@ namespace Cards
 
         protected void OnDestroy()
         {
-                CardDestruction?.Invoke();
+            CardEvents.RaiseCardDestruction();
         }
 
         #endregion

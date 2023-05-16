@@ -11,18 +11,22 @@ namespace Cards
         private TextMeshProUGUI _remainingCardsInDiscardPile;
         private TextMeshProUGUI _remainingCardsInExhaustPile;
 
+        private const string DECKNUMBER_TAG = "DeckNumber";
+        private const string DISCARDNUMBER_TAG = "DiscardNumber";
+        private const string EXHAUSTNUMBER_TAG = "ExhaustNumber";
+
         private Deck _deckManager;
 
         #endregion
 
-        #region Private Functions
+        #region Functions
 
         private void Start()
         {
             _deckManager = Deck.Instance;
-            _remainingCardsInDeck = GameObject.FindGameObjectWithTag("DeckNumber").GetComponent<TextMeshProUGUI>();
-            _remainingCardsInDiscardPile = GameObject.FindGameObjectWithTag("DiscardNumber").GetComponent<TextMeshProUGUI>();
-            _remainingCardsInExhaustPile = GameObject.FindGameObjectWithTag("ExhaustNumber").GetComponent <TextMeshProUGUI>();
+            _remainingCardsInDeck = GameObject.FindGameObjectWithTag(DECKNUMBER_TAG).GetComponent<TextMeshProUGUI>();
+            _remainingCardsInDiscardPile = GameObject.FindGameObjectWithTag(DISCARDNUMBER_TAG).GetComponent<TextMeshProUGUI>();
+            _remainingCardsInExhaustPile = GameObject.FindGameObjectWithTag(EXHAUSTNUMBER_TAG).GetComponent <TextMeshProUGUI>();
         }
 
         private void Update()

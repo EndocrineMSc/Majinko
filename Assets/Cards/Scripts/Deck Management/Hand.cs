@@ -15,13 +15,11 @@ namespace Cards
 
         internal static Hand Instance { get; private set; }
 
-        [SerializeField] private List<Card> _handCards = new();
-        internal List<Card> HandCards { get => _handCards; set => _handCards = value; }
+        internal List<Card> HandCards { get; set; }
 
         internal int DrawAmount { get; set; } = 5;
 
-        private List<Card> _instantiatedCards = new();
-        internal List<Card> InstantiatedCards { get => _instantiatedCards; set => _instantiatedCards = value; }
+        internal List<Card> InstantiatedCards { get; set; }
 
         private Transform _cardSpawnTransform;
         private Deck _deck;
@@ -32,33 +30,46 @@ namespace Cards
         private readonly float _moveDuration = 0.35f;
         private readonly float _startScale = 0.25f;
         private readonly float _endScale = 0.75f;
+
         #endregion
 
         #region Functions
 
         private void Awake()
         {
-            if (Instance != null && Instance != this)
-            {
-                Destroy(gameObject);
-            }
-            else
-            {
+            if (Instance == null)
                 Instance = this;
-            }
+            else
+                Destroy(gameObject);
+        }
+
+        private void OnEnable()
+        {
+            CardEvents.OnCardDestruction += OnCardDestructionWrap;           
         }
 
         private void Start()
+        {
+            InitializeHandLists();
+            SetReferences();
+
+            TurnManager.Instance.EndCardTurn?.AddListener(OnCardTurnEnd);
+            TurnManager.Instance.StartCardTurn?.AddListener(OnCardTurnStart);
+            WinLoseConditionManager.Instance.LevelVictory?.AddListener(OnLevelVictory);
+        }
+
+        private void InitializeHandLists()
+        {
+            HandCards = new();
+            InstantiatedCards = new();
+        }
+
+        private void SetReferences()
         {
             _deck = Deck.Instance;
             _cardCanvas = transform.GetChild(0).GetComponent<Canvas>();
             _parentTransform = _cardCanvas.transform;
             _cardSpawnTransform = transform.GetChild(0).GetChild(0);
-
-            TurnManager.Instance.EndCardTurn?.AddListener(OnCardTurnEnd);
-            TurnManager.Instance.StartCardTurn?.AddListener(OnCardTurnStart);
-            WinLoseConditionManager.Instance.LevelVictory?.AddListener(OnLevelVictory);
-            Card.CardDestruction?.AddListener(OnCardDestructionWrap);
         }
 
         internal void OnLevelVictory()
@@ -70,7 +81,7 @@ namespace Cards
         private void OnDisable()
         {
             WinLoseConditionManager.Instance.LevelVictory?.RemoveListener(OnLevelVictory);
-            Card.CardDestruction?.RemoveListener(OnCardDestructionWrap);
+            CardEvents.OnCardDestruction -= OnCardDestructionWrap;
         }
 
         internal void OnCardTurnStart()
@@ -80,16 +91,15 @@ namespace Cards
 
         internal void OnCardTurnEnd()
         {
-            int counter = _handCards.Count;
+            int counter = HandCards.Count;
             for (int i = 0; i < counter; i++)
             {
-                if (_handCards.Count > 0)
+                if (HandCards.Count > 0)
                 {
-                    _deck.DiscardCard(_handCards[0]);
+                    _deck.DiscardCard(HandCards[0]);
                 }
             }
-
-            _handCards.Clear();
+            HandCards.Clear();
             DisplayHand();
 
             DrawAmount = 5;
@@ -110,45 +120,45 @@ namespace Cards
             DisplayHand(true);
         }
 
-        //basically makes a new set of displayed instantiated cards for each card in the _handCards list
+        //makes a new set of displayed instantiated cards for each card in the _handCards list
         internal void DisplayHand(bool isStartTurnDealing = false)
         {
-            foreach (Card card in _instantiatedCards)
+            foreach (Card card in InstantiatedCards)
             {
                 Destroy(card.gameObject);
             }
 
-            _instantiatedCards.Clear();
+            InstantiatedCards.Clear();
 
-            foreach (Card card in _handCards)
+            foreach (Card card in HandCards)
             {
                 Card cardObject = Instantiate(card, _parentTransform);
                 cardObject.GetComponent<RectTransform>().localPosition = _cardSpawnTransform.localPosition;
                 cardObject.transform.localScale = new Vector3(_startScale, _startScale, _startScale);
                 cardObject.gameObject.SetActive(false);
-                _instantiatedCards.Add(cardObject);
+                InstantiatedCards.Add(cardObject);
             }
             AlignCards(isStartTurnDealing);
         }
 
         internal void AlignCards(bool isStartTurnDealing = false)
         {
-            if(_instantiatedCards.Count > 0)
+            if (InstantiatedCards.Count > 0)
             {
                 float canvasHeight = _cardCanvas.GetComponent<RectTransform>().rect.height;
-                float cardHeight = _instantiatedCards[0].GetComponent<RectTransform>().rect.height;
+                float cardHeight = InstantiatedCards[0].GetComponent<RectTransform>().rect.height;
                 float xOffset = 100;
                 float yOffset = 10;
                 float yPosition = ((-canvasHeight / 2) + (cardHeight / 3));
 
                 //if the number of cards is even
-                if (_instantiatedCards.Count % 2 == 0)
+                if (InstantiatedCards.Count % 2 == 0)
                 {
                     int offsetCounterHelper = 0;
                     float offsetCounter = 1.5f;
                     List<Vector2> newCardPositions = new();
 
-                    for (int i = 0; i < _instantiatedCards.Count; i++)
+                    for (int i = 0; i < InstantiatedCards.Count; i++)
                     {
                         if (offsetCounterHelper >= 2)
                         {
@@ -196,7 +206,7 @@ namespace Cards
                     float offsetCounter = 1;
                     List<Vector2> newCardPositions = new();
 
-                    for (int i = 0; i < _instantiatedCards.Count; i++)
+                    for (int i = 0; i < InstantiatedCards.Count; i++)
                     {
                         if (offsetCounterHelper >= 2)
                         {
@@ -232,17 +242,17 @@ namespace Cards
 
         private IEnumerator FadeInCards(List<Vector2> newCards, bool isStartTurnDealing)
         {           
-            for (int i = 0; i < _instantiatedCards.Count; i++)
+            for (int i = 0; i < InstantiatedCards.Count; i++)
             {               
                 if (isStartTurnDealing)
                 {
-                    _instantiatedCards[i].gameObject.SetActive(true);
-                    RectTransform rectTransform = _instantiatedCards[i].GetComponent<RectTransform>();
+                    InstantiatedCards[i].gameObject.SetActive(true);
+                    RectTransform rectTransform = InstantiatedCards[i].GetComponent<RectTransform>();
                     yield return StartCoroutine(TweenCardSpawn(newCards[i], rectTransform));                
                 }
                 else
                 {
-                    Card currentCard = _instantiatedCards[i];
+                    Card currentCard = InstantiatedCards[i];
                     currentCard.IsBeingDealt = true;
                     currentCard.gameObject.SetActive(true);
                     RectTransform rectTransform = currentCard.GetComponent<RectTransform>();
@@ -268,12 +278,12 @@ namespace Cards
         {
             List<int> cardAngles = new();
             int angleStepSize = 5;
-            int minimumAngle = (_instantiatedCards.Count / 2) * angleStepSize;
+            int minimumAngle = (InstantiatedCards.Count / 2) * angleStepSize;
 
             //uneven amount cards
-            if (_instantiatedCards.Count % 2 != 0)
+            if (InstantiatedCards.Count % 2 != 0)
             {
-                for (int i = 0; i < _instantiatedCards.Count; i++)
+                for (int i = 0; i < InstantiatedCards.Count; i++)
                 {
                     cardAngles.Add(minimumAngle - (i * angleStepSize));
                 }
@@ -281,8 +291,8 @@ namespace Cards
             else
             {
                 //no center card -> no 0 angle, we need to skip at this index
-                int doubleStepIndex = _instantiatedCards.Count / 2;
-                for (int i = 0; i < _instantiatedCards.Count; i++)
+                int doubleStepIndex = InstantiatedCards.Count / 2;
+                for (int i = 0; i < InstantiatedCards.Count; i++)
                 {
                     if (i >= doubleStepIndex)
                     {
@@ -295,9 +305,9 @@ namespace Cards
                 }
             }
 
-            for (int i = 0; i < _instantiatedCards.Count; i++)
+            for (int i = 0; i < InstantiatedCards.Count; i++)
             {
-                Card card = _instantiatedCards[i];
+                Card card = InstantiatedCards[i];
                 int zAngleOffset = cardAngles[i];
                 Vector3 newAngle = new(0, 0, zAngleOffset);
                 card.GetComponent<RectTransform>().eulerAngles = newAngle;

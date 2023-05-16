@@ -12,17 +12,13 @@ namespace Cards
 
         internal static Deck Instance { get; private set; }
 
-        [SerializeField] private List<Card> _localDeck = new();
-        [SerializeField] private List<Card> _discardPile = new();
-
-        internal List<Card> DiscardPile { get => _discardPile; set => _discardPile = value; }
-        internal List<Card> LocalDeck { get => _localDeck; set => _localDeck = value; }
+        internal List<Card> DiscardPile { get; set; } = new();
+        internal List<Card> LocalDeck { get; set; } = new();
         internal List<Card> ExhaustPile { get; set; } = new();
 
         private Hand _hand;
-        private bool _deckIsBuilt;
 
-        //For tweening
+        //Tweening
         internal Vector3 DiscardPosition { get; private set; }
         internal Vector3 ExhaustPosition { get; private set; }
         [SerializeField] private GameObject DiscardPileObject;
@@ -31,17 +27,13 @@ namespace Cards
         #endregion
 
         #region Functions
-       
+
         private void Awake()
         {
-            if (Instance != null && Instance != this)
-            {
-                Destroy(gameObject);
-            }
-            else
-            {
+            if (Instance == null)
                 Instance = this;
-            }
+            else
+                Destroy(gameObject);
         }
 
         private void Start()
@@ -50,14 +42,7 @@ namespace Cards
             DiscardPosition = Hand.Instance.transform.GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition;
             ExhaustPosition = Hand.Instance.transform.GetChild(0).GetChild(2).GetComponent<RectTransform>().localPosition;
             WinLoseConditionManager.Instance.LevelVictory?.AddListener(OnLevelVictory);
-        }
-
-        private void Update()
-        {
-            if(!_deckIsBuilt)
-            {
-                BuildLevelDeck();
-            }
+            BuildLevelDeck();
         }
 
         private void OnDisable()
@@ -67,7 +52,6 @@ namespace Cards
 
         private void BuildLevelDeck()
         {
-            _deckIsBuilt = true;
             BuildDeckFromGlobalDeck(GlobalDeckManager.Instance.GlobalDeck);
             ShuffleDeck();
         }
@@ -76,7 +60,7 @@ namespace Cards
         {
             foreach (Card card in globalDeck)
             {
-                _localDeck.Add(card);
+                LocalDeck.Add(card);
             }
         }
 
@@ -87,17 +71,17 @@ namespace Cards
 
         internal Card DrawCard()
         {
-            if (_localDeck.Count == 0 && _discardPile.Count != 0)
+            if (LocalDeck.Count == 0 && DiscardPile.Count != 0)
             {
-                _localDeck.AddRange(_discardPile);
-                _discardPile.Clear();
+                LocalDeck.AddRange(DiscardPile);
+                DiscardPile.Clear();
                 ShuffleDeck();
             }
 
-            if (_localDeck.Count > 0)
+            if (LocalDeck.Count > 0)
             {
-                Card card = _localDeck[0];
-                _localDeck.RemoveAt(0);
+                Card card = LocalDeck[0];
+                LocalDeck.RemoveAt(0);
                 return card;
             }
             else { return null; }
@@ -105,7 +89,7 @@ namespace Cards
 
         internal void DiscardCard(Card card)
         {            
-            _discardPile.Add(card);
+            DiscardPile.Add(card);
             _hand.HandCards.Remove(card);
         }
 
@@ -130,12 +114,12 @@ namespace Cards
         //Shuffles the deck using the Fisher-Yates shuffle algortihm
         internal void ShuffleDeck()
         {
-            for (int i = _localDeck.Count - 1; i > 0; i--)
+            for (int i = LocalDeck.Count - 1; i > 0; i--)
             {
                 int j = Random.Range(0, i + 1);
-                Card temp = _localDeck[i];
-                _localDeck[i] = _localDeck[j];
-                _localDeck[j] = temp;
+                Card temp = LocalDeck[i];
+                LocalDeck[i] = LocalDeck[j];
+                LocalDeck[j] = temp;
             }
         }
 
