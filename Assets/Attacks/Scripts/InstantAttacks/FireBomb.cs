@@ -1,17 +1,17 @@
 using EnumCollection;
 using Audio;
 using PeggleWars.Characters.Interfaces;
-using PeggleWars.Enemies;
+using Enemies;
+using System.Collections;
 using UnityEngine;
 
 namespace PeggleWars.Attacks
 {
-    internal class HailStorm : InstantAttack, IAmAOE
+    internal class FireBomb : InstantAttack, IAmAOE
     {
-        [SerializeField] protected int _freezingStacks = 5;
-        [SerializeField] protected int _frozenThreshold = 30;
+        [SerializeField] protected int _burningStacks = 5;
 
-        public override string Bark { get; } = "Hail Storm!";
+        public override string Bark { get; } = "Fire Bomb!";
 
         //Do special stuff in here
         private void Awake()
@@ -31,13 +31,7 @@ namespace PeggleWars.Attacks
             {
                 enemy.TakeDamage(_damage);
                 enemy.TakeIceDamage();
-                enemy.ApplyFreezing(_freezingStacks);
-
-                int randomChance = UnityEngine.Random.Range(0, 101);
-                if (randomChance < _frozenThreshold)
-                {
-                    enemy.ApplyFrozen();
-                }
+                enemy.ApplyBurning(_burningStacks);
             }
             DestroyGameObject();
         }

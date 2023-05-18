@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace PeggleWars.Enemies
+namespace Enemies
 {
     internal class EnemyAttackManager : MonoBehaviour
     {
@@ -62,7 +62,7 @@ namespace PeggleWars.Enemies
                     }
                 }
             }
-            EnemyEvents.Instance.EnemyAttacksEndEvent?.Invoke();
+            EnemyEvents.RaiseOnEnemiesFinishedAttacking();
         }
 
         #endregion

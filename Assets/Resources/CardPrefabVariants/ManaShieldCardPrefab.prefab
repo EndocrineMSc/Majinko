@@ -55,6 +55,22 @@ PrefabInstance:
       propertyPath: _cardDescription
       value: 'Orb: Gain 10 shield'
       objectReference: {fileID: 0}
+    - target: {fileID: 1811972980392909961, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _cardName
+      value: Mana Shield
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811972980392909961, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _cardType
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811972980392909961, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _basicManaCost
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811972980392909961, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _cardDescription
+      value: Mana Shield
+      objectReference: {fileID: 0}
     - target: {fileID: 2663367635832773738, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_text
       value: Defense

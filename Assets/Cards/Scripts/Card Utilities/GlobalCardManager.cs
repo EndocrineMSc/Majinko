@@ -13,8 +13,7 @@ namespace Cards
 
         internal Dictionary<CardRarity, float> CardRarityThreshold { get; private set; } = new();
 
-        [SerializeField] private List<Card> _allCards; //List of all Cards, built from Resources Folder
-        internal List<Card> AllCards { get { return _allCards; } }
+        internal List<Card> AllCards { get; private set; } = new();
         internal List<Card> CommonCards { get; private set; } = new();
         internal List<Card> RareCards { get; private set; } = new();
         internal List<Card> EpicCards { get; private set; } = new();
@@ -42,7 +41,7 @@ namespace Cards
 
             if (_isFirstInit)
             {
-                _allCards = Resources.LoadAll<Card>(CARDPREFAB_FOLDER).ToList();
+                AllCards = Resources.LoadAll<Card>(CARDPREFAB_FOLDER).ToList();
                 SetRarityThresholds();
                 BuildRarityLists();
                 _isFirstInit = false;
@@ -59,7 +58,7 @@ namespace Cards
 
         private void BuildRarityLists()
         {
-            foreach (Card card in _allCards)
+            foreach (Card card in AllCards)
             {
                 switch (card.Rarity)
                 {

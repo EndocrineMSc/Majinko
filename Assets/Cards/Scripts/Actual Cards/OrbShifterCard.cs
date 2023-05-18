@@ -4,7 +4,7 @@ using PeggleWars.Orbs;
 
 namespace Cards
 {
-    internal class OrbChangerCard : Card
+    internal class OrbShifterCard : Card
     {
         //will be set in the inspector of the respective Card Prefab
         [SerializeField] protected OrbType _orbType;

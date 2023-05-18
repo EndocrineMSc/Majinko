@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace PeggleWars.Enemies
+namespace Enemies
 {
     [RequireComponent(typeof(EnemySpawnManager))]
     [RequireComponent(typeof(EnemyTurnMovement))]

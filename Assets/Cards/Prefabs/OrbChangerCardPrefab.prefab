@@ -2087,8 +2087,8 @@ GameObject:
   - component: {fileID: 4812993297873364277}
   - component: {fileID: 8377016387183099597}
   - component: {fileID: 8104484355595315346}
-  - component: {fileID: -8017670538569771397}
   - component: {fileID: 3846219188565483949}
+  - component: {fileID: -8017670538569771397}
   - component: {fileID: 1811972980392909961}
   - component: {fileID: 3944652752494330375}
   - component: {fileID: 4527447652403349703}
@@ -2157,30 +2157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156792d4500c8be45980ecd7ec09d180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-8017670538569771397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6398440697363082782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5589ff41520da734099b393c1c6d213b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cardName: Fire Arrow
-  _cardDescription: 'Orb: Deals fire damage and applies burning'
-  _basicManaCost: 0
-  _fireManaCost: 1
-  _iceManaCost: 0
-  _cardType: 2
-  _exhaustCard: 0
-  _cardRarity: 1
-  _cardElement: 0
-  _cardEffectType: 0
-  _orbType: 5
-  _amountOrbs: 1
 --- !u!114 &3846219188565483949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2193,6 +2169,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dcf49ad36f36a04dbff3777fe9e5431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8017670538569771397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6398440697363082782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55e997fe90874ae428ee5b643b51c247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1811972980392909961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2202,9 +2190,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 6398440697363082782}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7b078bd6c735114d893f94e99b73664, type: 3}
+  m_Script: {fileID: 11500000, guid: 8140e34c46cbe2140a66251987cc64e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cardName: 
+  _cardDescription: 
+  _basicManaCost: 0
+  _fireManaCost: 0
+  _iceManaCost: 0
+  _cardType: 0
+  _exhaustCard: 0
+  _cardRarity: 0
+  _cardElement: 0
+  _cardEffectType: 0
+  _orbType: 0
+  _amountOrbs: 0
 --- !u!114 &3944652752494330375
 MonoBehaviour:
   m_ObjectHideFlags: 0

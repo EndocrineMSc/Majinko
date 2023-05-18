@@ -1,36 +1,37 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 
-namespace PeggleWars.Enemies
+namespace Enemies
 {
-    internal class EnemyEvents : MonoBehaviour
+    internal class EnemyEvents
     {
         #region Fields and Properties
-
-        internal static EnemyEvents Instance { get; private set; }
         
-        public UnityEvent EnemyDeathEvent;
-        public UnityEvent EnemyMoveEndEvent;
-        public UnityEvent EnemyAttacksEndEvent;
+        internal static event Action OnEnemyDied;
+        internal static event Action OnEnemyFinishedMoving;
+        internal static event Action OnEnemiesFinishedAttacking;
 
         #endregion
 
         #region Functions
-
-        private void Awake()
+        
+        internal static void RaiseOnEnemyDeath()
         {
-            if (Instance != null && Instance != this)
-            {
-                Destroy(gameObject);
-            }
-            else
-            {
-                Instance = this;
-                DontDestroyOnLoad(gameObject);
-            }
+            OnEnemyDied?.Invoke();
+        }
+
+        internal static void RaiseOnEnemyFinishedMoving()
+        {
+            OnEnemyFinishedMoving?.Invoke();
+        }
+
+        internal static void RaiseOnEnemiesFinishedAttacking()
+        {
+            OnEnemiesFinishedAttacking?.Invoke();
         }
 
         #endregion

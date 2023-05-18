@@ -7,8 +7,9 @@ using PeggleWars.TurnManagement;
 using System;
 using PeggleWars.ScrollDisplay;
 using DG.Tweening;
+using PeggleWars;
 
-namespace PeggleWars.Enemies
+namespace Enemies
 {
     [RequireComponent(typeof(PopUpSpawner))]
     [RequireComponent(typeof(ScrollDisplayer))]
@@ -217,7 +218,7 @@ namespace PeggleWars.Enemies
         {
             transform.DOKill(); //stop all tweens
             EnemyManager.Instance.EnemiesInScene.Remove(this);
-            EnemyEvents.Instance.EnemyDeathEvent?.Invoke();
+            EnemyEvents.RaiseOnEnemyDeath();
             TriggerDeathAnimation();
 
             Collider2D collider = GetComponent<Collider2D>();

@@ -16,10 +16,9 @@ namespace Cards
         internal static Hand Instance { get; private set; }
 
         internal List<Card> HandCards { get; set; }
+        internal List<Card> InstantiatedCards { get; set; }
 
         internal int DrawAmount { get; set; } = 5;
-
-        internal List<Card> InstantiatedCards { get; set; }
 
         private Transform _cardSpawnTransform;
         private Deck _deck;

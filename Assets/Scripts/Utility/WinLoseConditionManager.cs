@@ -1,4 +1,4 @@
-using PeggleWars.Enemies;
+using Enemies;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -40,14 +40,18 @@ namespace PeggleWars.Utilities
         {
             if (_isFirstStart)
             {
-                EnemyEvents.Instance.EnemyDeathEvent?.AddListener(OnEnemyDeath);
                 _isFirstStart = false;
             }
         }
 
+        private void OnEnable()
+        {
+            EnemyEvents.OnEnemyDied += OnEnemyDeath;
+        }
+
         private void OnDisable()
         {
-            EnemyEvents.Instance.EnemyDeathEvent?.RemoveListener(OnEnemyDeath);
+            EnemyEvents.OnEnemyDied -= OnEnemyDeath;
         }
 
         private void OnEnemyDeath()

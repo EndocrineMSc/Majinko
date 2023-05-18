@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using PeggleWars.Attacks;
 
-namespace PeggleWars.Enemies
+namespace Enemies
 {
     internal abstract class RangedEnemy : Enemy
     {

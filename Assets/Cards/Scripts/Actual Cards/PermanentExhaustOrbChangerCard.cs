@@ -2,7 +2,7 @@ using PeggleWars.Orbs;
 
 namespace Cards
 {
-    internal class PermanentExhaustOrbChangerCard : OrbChangerCard
+    internal class PermanentExhaustOrbChangerCard : OrbShifterCard
     { 
         protected override void CardEffect()
         {

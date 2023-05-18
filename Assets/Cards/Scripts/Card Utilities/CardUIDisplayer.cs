@@ -69,7 +69,7 @@ namespace Cards
                     _cardType.text = (INSTANT_EFFECT_TYPE);
                     break;
                 case CardEffectType.Orbshifter:
-                    OrbChangerCard card = (OrbChangerCard)_card;
+                    OrbShifterCard card = (OrbShifterCard)_card;
                     _cardType.text = (ORBSHIFTER_EFFECT_TYPE + " - " + card.AmountOrbs); 
                     break;
                 case CardEffectType.Sphereshifter:

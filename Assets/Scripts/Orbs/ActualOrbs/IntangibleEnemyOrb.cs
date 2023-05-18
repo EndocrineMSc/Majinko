@@ -1,5 +1,5 @@
 using PeggleWars.Characters;
-using PeggleWars.Enemies;
+using Enemies;
 using PeggleWars.ScrollDisplay;
 using PeggleWars.Spheres;
 using System.Collections;
