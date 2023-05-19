@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace PeggleWars.Utilities
+namespace Utility.TurnManagement
 {
     internal class EndTurnButton : MonoBehaviour
     {
@@ -16,7 +14,7 @@ namespace PeggleWars.Utilities
 
         private void Start()
         {
-            _endTurnButton.onClick.AddListener(GameManager.Instance.EndCardTurnButton);
+            _endTurnButton.onClick.AddListener(PhaseManager.Instance.EndCardTurnButton);
         }
     }
 }

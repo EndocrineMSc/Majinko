@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using PeggleWars.Orbs;
 using PeggleWars.ScrollDisplay;
+using Utility.TurnManagement;
 
 namespace PeggleWars.Spheres
 {
@@ -56,7 +57,7 @@ namespace PeggleWars.Spheres
             {
                 if (_ballsInScene <= 0)
                 {
-                    StartCoroutine(GameManager.Instance.SwitchState(EnumCollection.GameState.PlayerActions));
+                    PhaseManager.Instance.StartPlayerAttackPhase();
                 }
                 Destroy(gameObject);
             }

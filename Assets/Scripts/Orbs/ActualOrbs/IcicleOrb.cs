@@ -1,7 +1,8 @@
 using System.Collections;
 using UnityEngine;
-using PeggleWars.Attacks;
+using Attacks;
 using PeggleWars.ScrollDisplay;
+using Characters;
 
 namespace PeggleWars.Orbs
 {

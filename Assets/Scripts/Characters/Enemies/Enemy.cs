@@ -3,11 +3,11 @@ using System.Collections;
 using UnityEngine;
 using PeggleAttacks.AttackVisuals.PopUps;
 using PeggleWars.Characters.Interfaces;
-using PeggleWars.TurnManagement;
+using Utility.TurnManagement;
 using System;
 using PeggleWars.ScrollDisplay;
 using DG.Tweening;
-using PeggleWars;
+using Characters;
 
 namespace Enemies
 {
@@ -20,7 +20,7 @@ namespace Enemies
         protected Animator _animator;
         protected PopUpSpawner _popUpSpawner;
         protected Player _player;
-        protected TurnManager _turnManager;
+        protected PhaseManager _turnManager;
         protected EnemyManager _enemyManager;
 
         protected readonly string ATTACK_PARAM = "Attack";
@@ -110,12 +110,6 @@ namespace Enemies
             MaxHealth = Health;
         }
 
-        protected virtual void OnDisable()
-        {
-            TurnManager.Instance.EndEnemyTurn?.RemoveListener(OnEndEnemyTurn);
-            TurnManager.Instance.StartEnemyTurn?.RemoveListener(OnStartEnemyTurn);
-        }
-
         protected virtual void SetReferences()
         {
             _animator = GetComponentInChildren<Animator>();
@@ -124,38 +118,33 @@ namespace Enemies
             _enemyManager = EnemyManager.Instance;
             SetDisplayDescription();
             _baseColor = GetComponentInChildren<SpriteRenderer>().color;
-            TurnManager.Instance.EndEnemyTurn?.AddListener(OnEndEnemyTurn);
-            TurnManager.Instance.StartEnemyTurn?.AddListener(OnStartEnemyTurn);
             TurnsTillNextAttack = _attackFrequency;
             SetDisplayScale();
         }
 
-        protected void SetDisplayScale()
+        protected abstract void PlaySpawnSound();
+        protected abstract void TriggerSpawnAnimation();
+        public abstract void SetDisplayDescription();
+
+        protected virtual void OnEnable()
         {
-            GetComponent<ScrollDisplayer>().DisplayScale = 2;
+            LevelPhaseEvents.OnStartEnemyPhase += OnStartEnemyPhase;
+            LevelPhaseEvents.OnEndEnemyPhase += OnEndEnemyPhase;
         }
 
-        protected virtual void OnEndEnemyTurn()
-        {            
-            if (_enemyAttackType == EnemyAttackType.Ranged)
-            {
-                _isInAttackPosition = true;
-            }
-            else
-            {
-                Vector2 walkerMeleeAttackPosition = _enemyManager.EnemyPositions[0, 0];
-                Vector2 flyerMeleeAttackPosition = _enemyManager.EnemyPositions[1, 0];
-                _isInAttackPosition = transform.position.Equals(walkerMeleeAttackPosition) || transform.position.Equals(flyerMeleeAttackPosition);
-            }
+        protected virtual void OnDisable()
+        {
+            LevelPhaseEvents.OnStartEnemyPhase -= OnStartEnemyPhase;
+            LevelPhaseEvents.OnEndEnemyPhase -= OnEndEnemyPhase;
         }
 
-        protected void OnStartEnemyTurn()
+        protected void OnStartEnemyPhase()
         {
-            if(IsFrozen)
+            if (IsFrozen)
             {
                 FrozenForTurns--;
 
-                if(FrozenForTurns < 0)
+                if (FrozenForTurns < 0)
                 {
                     IsFrozen = false;
                     FrozenForTurns = 0;
@@ -169,16 +158,18 @@ namespace Enemies
             }
         }
 
-        internal void ResetTurnsTillNextAttack()
+        protected virtual void OnEndEnemyPhase()
         {
-            TurnsTillNextAttack = _attackFrequency;
-        }
-
-        internal void ApplyFrozen(int frozenStacks = 1)
-        {
-            IsFrozen = true;
-            FrozenForTurns += frozenStacks;
-            GetComponentInChildren<SpriteRenderer>().color = Color.blue; //ToDo: Polish this
+            if (_enemyAttackType == EnemyAttackType.Ranged)
+            {
+                _isInAttackPosition = true;
+            }
+            else
+            {
+                Vector2 walkerMeleeAttackPosition = _enemyManager.EnemyPositions[0, 0];
+                Vector2 flyerMeleeAttackPosition = _enemyManager.EnemyPositions[1, 0];
+                _isInAttackPosition = transform.position.Equals(walkerMeleeAttackPosition) || transform.position.Equals(flyerMeleeAttackPosition);
+            }
         }
 
         public void TakeDamage(int damage)
@@ -190,14 +181,7 @@ namespace Enemies
                 _popUpSpawner.SpawnPopUp(damage);
             }
             TriggerHurtAnimation();
-            try
-            {
-                PlayHurtSound();
-            }
-            catch (NotImplementedException)
-            {
-                //ToDo: Implement Sound
-            }
+            PlayHurtSound();
 
             if (_health <= 0)
             {
@@ -206,13 +190,9 @@ namespace Enemies
             }
         }
 
-        internal virtual void Attack()
-        {
-            TriggerAttackAnimation();           
-            AdditionalAttackEffects();
-        }
+        protected abstract void TriggerHurtAnimation();
 
-        protected abstract void TriggerAttackAnimation();
+        protected abstract void PlayHurtSound();
 
         protected void HandleDeath()
         {
@@ -228,9 +208,41 @@ namespace Enemies
             OnDeathEffect();
         }
 
+        protected virtual IEnumerator DestroyThisEnemyWithDelay()
+        {
+            yield return new WaitForSeconds(_deathDelayForAnimation);
+            Destroy(gameObject);
+        }
+
+        protected abstract void TriggerDeathAnimation();
+
+        protected abstract void PlayDeathSound();
+
+        protected abstract void OnDeathEffect();
+
+        internal virtual void Attack()
+        {
+            TriggerAttackAnimation();
+            AdditionalAttackEffects();
+        }
+
+        protected abstract void TriggerAttackAnimation();
+
+        protected abstract void AdditionalAttackEffects();
+
+        internal void ResetTurnsTillNextAttack()
+        {
+            TurnsTillNextAttack = _attackFrequency;
+        }
+
         internal void ApplyBurning(int fireStacks)
         {
             _fireStacks += fireStacks;
+        }
+
+        protected void SetDisplayScale()
+        {
+            GetComponent<ScrollDisplayer>().DisplayScale = 2;
         }
 
         internal void ApplyFreezing(int iceStacks)
@@ -238,23 +250,11 @@ namespace Enemies
             _iceStacks += iceStacks;
         }
 
-
-
-        protected abstract void OnDeathEffect();
-
-        protected abstract void AdditionalAttackEffects();
-
-        protected virtual IEnumerator DestroyThisEnemyWithDelay()
+        internal void ApplyFrozen(int frozenStacks = 1)
         {
-            yield return new WaitForSeconds(_deathDelayForAnimation);
-            Destroy(gameObject);
-        }
-
-        public abstract void SetDisplayDescription();
-
-        public void TakeIceDamage()
-        {
-            TakeDamage(_iceStacks);
+            IsFrozen = true;
+            FrozenForTurns += frozenStacks;
+            GetComponentInChildren<SpriteRenderer>().color = Color.blue; //ToDo: Polish this
         }
 
         //Moves the enemy one "space" to the left
@@ -307,25 +307,8 @@ namespace Enemies
             return -1;
         }
 
-        #region Animation
-
-        protected abstract void TriggerSpawnAnimation();
         protected abstract void StartMovementAnimation();
         protected abstract void StopMovementAnimation();
-        protected abstract void TriggerHurtAnimation();
-        protected abstract void TriggerDeathAnimation();
-
-        #endregion
-
-        #region SoundEffectTriggers
-
-        protected abstract void PlaySpawnSound();
-
-        protected abstract void PlayHurtSound();
-
-        protected abstract void PlayDeathSound();
-
-        #endregion
 
         #endregion
     }

@@ -40,7 +40,7 @@ namespace Cards
             }
             else
             {
-                _shotManager.SetShotToBeSpawned(_sphere);
+                _shotManager.SetSphereToBeSpawned(_sphere);
             }
         }
 

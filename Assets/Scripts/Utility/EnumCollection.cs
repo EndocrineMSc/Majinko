@@ -1,31 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 namespace EnumCollection
 {
-    internal enum SpawnNumber
-    {
-        One,
-        Two,
-        Three,
-        Four,
-    }
-
-    internal enum GameState
-    {
-        MainMenu,
-        LevelSetup,
-        CardHandling,
-        Shooting,
-        PlayerActions,
-        EnemyTurn,
-        LevelWon,
-        NewLevel,
-        GameOver,
-        Quit,
-    }
-
     internal enum EnemyAttackType
     {
         Melee,

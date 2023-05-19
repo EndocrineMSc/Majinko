@@ -1,11 +1,9 @@
 using PeggleAttacks.AttackVisuals.PopUps;
 using Enemies;
-using PeggleWars.Orbs;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Characters;
 
-namespace PeggleWars.Attacks
+namespace Attacks
 {
     internal abstract class ProjectileAttack : Attack
     {

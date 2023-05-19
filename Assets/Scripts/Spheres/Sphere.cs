@@ -1,6 +1,6 @@
 using Audio;
 using PeggleWars.ScrollDisplay;
-using PeggleWars.TurnManagement;
+using Utility.TurnManagement;
 using PeggleWars.Utilities;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,7 +18,7 @@ namespace PeggleWars.Spheres
         //fields for physicality
         protected Rigidbody2D _rigidbody;
         protected bool _isNotShotYet = true;
-        protected bool _isInShootingTurn;
+        protected bool _isInShootingPhase;
         protected float _shotSpeed = 10.5f;
         protected Collider2D _collider;
 
@@ -68,13 +68,13 @@ namespace PeggleWars.Spheres
 
         protected virtual void OnEnable()
         {
-            TurnManager.Instance.EndCardTurn?.AddListener(OnCardTurnEnd);
+            LevelPhaseEvents.OnEndCardPhase += OnCardPhaseEnd;
             ShotEvents.Instance.ShotStackedEvent?.AddListener(ShotStackEffect);           
         }
 
         protected virtual void OnDisable()
         {
-            TurnManager.Instance.EndCardTurn?.RemoveListener(OnCardTurnEnd);
+            LevelPhaseEvents.OnEndCardPhase -= OnCardPhaseEnd;
             ShotEvents.Instance.ShotStackedEvent?.RemoveListener(ShotStackEffect);
         }
 
@@ -83,20 +83,20 @@ namespace PeggleWars.Spheres
             SetDisplayDescription();
         }
 
-        private void OnCardTurnEnd()
+        private void OnCardPhaseEnd()
         {
-            StartCoroutine(SetShotAsActive());
+            StartCoroutine(SetSphereActive());
         }
 
-        private IEnumerator SetShotAsActive()
+        private IEnumerator SetSphereActive()
         {
             yield return new WaitForSeconds(0.2f);
-            _isInShootingTurn = true;
+            _isInShootingPhase = true;
         }
 
         protected virtual void Update()
         {
-            if (_isNotShotYet && _isInShootingTurn && !PauseControl.Instance.GameIsPaused)
+            if (_isNotShotYet && _isInShootingPhase && !PauseControl.Instance.GameIsPaused)
             {
                 GetDirectionAndRotation();
                 RotateShot();
@@ -215,7 +215,7 @@ namespace PeggleWars.Spheres
             if (collision.gameObject.name.Contains(PORTAL_PARAM))
             {
                 AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0760_Sphere_In_Portal);
-                StartCoroutine(GameManager.Instance.SwitchState(EnumCollection.GameState.PlayerActions));
+                PhaseManager.Instance.StartPlayerAttackPhase();
                 Destroy(gameObject);
             }
         }
@@ -235,8 +235,7 @@ namespace PeggleWars.Spheres
             switch (randomIndex)
             {
                 case 0:
-                    audioManager.PlaySoundEffectWithoutLimit(SFX._0762_Sphere_On_Wood_01);
-                    break;
+                    audioManager.PlaySoundEffectWithoutLimit(SFX._0762_Sphere_On_Wood_01); break;
                 case 1:
                     audioManager.PlaySoundEffectWithoutLimit(SFX._0763_Sphere_On_Wood_02); break;
                 case 2:

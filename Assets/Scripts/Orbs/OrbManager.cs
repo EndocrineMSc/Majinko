@@ -6,6 +6,7 @@ using System;
 using DG.Tweening;
 using System.Collections;
 using Audio;
+using Utility.TurnManagement;
 
 namespace PeggleWars.Orbs
 {
@@ -88,7 +89,7 @@ namespace PeggleWars.Orbs
                 SwitchOrbs(orb.OrbType, _levelOrbSpawn.transform.position);
                 yield return new WaitForSeconds(_tweenDuration);
             }
-            StartCoroutine(GameManager.Instance.SwitchState(GameState.CardHandling));
+            PhaseManager.Instance.StartCardPhase();
         }
 
         internal void SwitchOrbs(OrbType orbType, Vector3 instantiatePosition, int switchAmount = 1)

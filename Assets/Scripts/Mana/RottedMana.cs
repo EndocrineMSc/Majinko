@@ -1,5 +1,4 @@
-using UnityEngine;
-using PeggleAttacks.AttackManager;
+using Attacks;
 
 namespace PeggleWars.ManaManagement
 {
@@ -7,7 +6,7 @@ namespace PeggleWars.ManaManagement
     {
         #region Fields
 
-        private PlayerAttackManager _playerAttackManager;
+        private PlayerAttackDamageManager _playerAttackManager;
         private readonly float _attackModifier = 0.894f;
 
         #endregion
@@ -16,12 +15,12 @@ namespace PeggleWars.ManaManagement
 
         private void Start()
         {
-            _playerAttackManager = PlayerAttackManager.Instance;
+            _playerAttackManager = PlayerAttackDamageManager.Instance;
         }
 
         private void OnDestroy()
         {
-            _playerAttackManager.ModifiyDamage(_attackModifier);
+            _playerAttackManager.ModifyDamage(_attackModifier);
         }
 
         #endregion

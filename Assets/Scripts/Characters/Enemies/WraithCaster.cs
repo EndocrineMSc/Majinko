@@ -22,9 +22,9 @@ namespace Enemies
         }
 
 
-        protected override void OnEndEnemyTurn()
+        protected override void OnEndEnemyPhase()
         {
-            base.OnEndEnemyTurn();
+            base.OnEndEnemyPhase();
             OrbManager.Instance.SwitchOrbs(OrbType.IntangibleEnemyOrb, transform.position);
             _amountIntangibleOrbs += 1;
             HandleIntangibleStacks();

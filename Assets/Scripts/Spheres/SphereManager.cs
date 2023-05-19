@@ -1,6 +1,6 @@
 using UnityEngine;
 using EnumCollection;
-using PeggleWars.TurnManagement;
+using Utility.TurnManagement;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.Events;
@@ -50,39 +50,35 @@ namespace PeggleWars.Spheres
 
         private void Awake()
         {
-            if (Instance != null && Instance != this)
-            {
-                Destroy(this);
-            }
-            else
-            {
+            if (Instance == null)
                 Instance = this;
-            }
+            else
+                Destroy(gameObject);
 
             _allShots = Resources.LoadAll<Sphere>(RESOURCE_LOAD_PARAM).ToList();
             _spawnShot = _allShots[(int)SphereType.BasicSphere];
             ResetIndicatorNumbers();
         }
 
-        private void Start()
+        private void OnEnable()
         {
-            TurnManager.Instance.StartCardTurn?.AddListener(OnStartCardTurn);           
+            LevelPhaseEvents.OnStartCardPhase += OnStartCardPhase;
         }
 
         private void OnDisable()
         {
-            TurnManager.Instance.StartCardTurn?.RemoveListener(OnStartCardTurn);
+            LevelPhaseEvents.OnStartCardPhase -= OnStartCardPhase;
         }
 
         //Reset all temporary modifications to the shot
-        private void OnStartCardTurn()
+        private void OnStartCardPhase()
         {
             ResetIndicatorNumbers();
             _spawnShot = _allShots[(int)SphereType.BasicSphere];
-            SpawnShot();
+            SpawnSphere();
         }
 
-        private void SpawnShot()
+        private void SpawnSphere()
         {
             Vector2 spawnScreenPosition = new(Screen.width / 2 , Screen.height - (Screen.height / 4));
             Vector2 spawnWorldPosition = Camera.main.ScreenToWorldPoint(spawnScreenPosition);
@@ -90,19 +86,19 @@ namespace PeggleWars.Spheres
             _currentShot = Instantiate(_spawnShot, spawnWorldPosition, Quaternion.identity);
         }
 
-        internal void SetShotToBeSpawned(Sphere shot)
+        internal void SetSphereToBeSpawned(Sphere shot)
         {
             _spawnShot = shot;
-            ReplaceShot();
+            ReplaceSphere();
         }
 
-        private void ReplaceShot()
+        private void ReplaceSphere()
         {
             if(_currentShot != null)
             {
                 Destroy(_currentShot.gameObject);
             }
-            SpawnShot();
+            SpawnSphere();
         }
 
         private void ResetIndicatorNumbers()

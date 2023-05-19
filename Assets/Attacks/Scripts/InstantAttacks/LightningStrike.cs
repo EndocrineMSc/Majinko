@@ -1,11 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Enemies;
-using EnumCollection;
-using PeggleWars.Orbs;
-
-namespace PeggleWars.Attacks
+namespace Attacks
 {
     internal class LightningStrike : InstantAttack
     {

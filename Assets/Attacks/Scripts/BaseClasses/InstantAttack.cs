@@ -1,13 +1,10 @@
 using PeggleAttacks.AttackVisuals.PopUps;
 using Enemies;
-using PeggleWars.Orbs;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static PeggleWars.Attacks.Attack;
+using Characters;
 
-
-namespace PeggleWars.Attacks
+namespace Attacks
 {
     internal abstract class InstantAttack : Attack
     {

@@ -1,5 +1,5 @@
 using EnumCollection;
-using PeggleWars.TurnManagement;
+using Utility.TurnManagement;
 using UnityEngine;
 
 namespace Enemies
@@ -84,7 +84,7 @@ namespace Enemies
                 EnemyType tempEnemy = _enemiesForLevel[_enemySpawnCounter];
                 SpawnEnemy(tempEnemy);
             }
-            TurnManager.Instance.EndEnemyTurn?.Invoke();
+            PhaseManager.Instance.EndEnemyPhase();
         }
 
         internal void SpawnEnemy(EnemyType enemyType)

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-using PeggleWars.TurnManagement;
+using Utility.TurnManagement;
 using Audio;
 using System.Collections;
 using PeggleWars.Utilities;
@@ -44,7 +44,9 @@ namespace Cards
 
         private void OnEnable()
         {
-            CardEvents.OnCardDestruction += OnCardDestructionWrap;           
+            CardEvents.OnCardDestruction += OnCardDestructionWrap;   
+            LevelPhaseEvents.OnStartCardPhase += OnCardPhaseStart;
+            LevelPhaseEvents.OnEndCardPhase += OnCardPhaseEnd;
         }
 
         private void Start()
@@ -52,8 +54,6 @@ namespace Cards
             InitializeHandLists();
             SetReferences();
 
-            TurnManager.Instance.EndCardTurn?.AddListener(OnCardTurnEnd);
-            TurnManager.Instance.StartCardTurn?.AddListener(OnCardTurnStart);
             WinLoseConditionManager.Instance.LevelVictory?.AddListener(OnLevelVictory);
         }
 
@@ -73,22 +73,23 @@ namespace Cards
 
         internal void OnLevelVictory()
         {
-            TurnManager.Instance.StartCardTurn?.RemoveListener(OnCardTurnStart);
-            TurnManager.Instance.EndCardTurn?.RemoveListener(OnCardTurnEnd);
+            this.enabled = false;
         }
 
         private void OnDisable()
         {
             WinLoseConditionManager.Instance.LevelVictory?.RemoveListener(OnLevelVictory);
             CardEvents.OnCardDestruction -= OnCardDestructionWrap;
+            LevelPhaseEvents.OnStartCardPhase -= OnCardPhaseStart;
+            LevelPhaseEvents.OnEndCardPhase -= OnCardPhaseEnd;
         }
 
-        internal void OnCardTurnStart()
+        internal void OnCardPhaseStart()
         {
             DrawHand(DrawAmount);
         }
 
-        internal void OnCardTurnEnd()
+        internal void OnCardPhaseEnd()
         {
             int counter = HandCards.Count;
             for (int i = 0; i < counter; i++)

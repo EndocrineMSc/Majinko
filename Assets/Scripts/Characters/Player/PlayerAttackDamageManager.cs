@@ -1,16 +1,14 @@
-using PeggleWars.TurnManagement;
-using PeggleWars;
-using System.Collections;
+using Utility.TurnManagement;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace PeggleAttacks.AttackManager
+namespace Attacks
 {
-    internal class PlayerAttackManager : MonoBehaviour
+    internal class PlayerAttackDamageManager : MonoBehaviour
     {
         #region Fields and Properties
 
-        internal static PlayerAttackManager Instance { get; private set; }
+        internal static PlayerAttackDamageManager Instance { get; private set; }
 
         private List<float> _damageModificationsForTurn = new();
 
@@ -28,24 +26,20 @@ namespace PeggleAttacks.AttackManager
 
         private void Awake()
         {
-            if (Instance != null && Instance != this)
-            {
-                Destroy(this);
-            }
-            else
-            {
+            if (Instance == null)
                 Instance = this;
-            }
+            else
+                Destroy(gameObject);
         }
 
         private void Start()
         {
-            TurnManager.Instance.StartCardTurn?.AddListener(OnCardTurnStart);
+            LevelPhaseEvents.OnStartCardPhase += OnCardPhaseStart;
         }
 
         private void OnDisable()
         {
-            TurnManager.Instance.StartCardTurn?.RemoveListener(OnCardTurnStart);
+            LevelPhaseEvents.OnStartCardPhase -= OnCardPhaseStart;
         }
 
         internal float CalculateModifier()
@@ -64,13 +58,13 @@ namespace PeggleAttacks.AttackManager
             return finalDamageModifier;
         }
 
-        internal void ModifiyDamage(float modifier)
+        internal void ModifyDamage(float modifier)
         {
             _damageModificationsForTurn.Add(modifier);
             _damageModifierTurn = CalculateModifier();
         }
 
-        private void OnCardTurnStart()
+        private void OnCardPhaseStart()
         {
             _damageModificationsForTurn.Clear();
             _damageModifierTurn = 1;

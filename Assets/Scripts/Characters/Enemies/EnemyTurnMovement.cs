@@ -1,4 +1,4 @@
-using PeggleWars.TurnManagement;
+using Utility.TurnManagement;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -25,7 +25,6 @@ namespace Enemies
             SetReferences();
             _gapSpace = (_enemyManager.EnemyPositions[0, 3].x - _enemyManager.EnemyPositions[0, 2].x) * 1.2f;
 
-            TurnManager.Instance.EndEnemyTurn?.AddListener(OnEndEnemyTurn);
             InitializeLists();
             SetLocalEnemyLists();
         }
@@ -33,13 +32,13 @@ namespace Enemies
         private void OnEnable()
         {
             EnemyEvents.OnEnemiesFinishedAttacking += OnEnemyAttacksFinished;
+            LevelPhaseEvents.OnEndEnemyPhase += OnEndEnemyPhase;
         }
 
         private void OnDisable()
         {
             EnemyEvents.OnEnemiesFinishedAttacking -= OnEnemyAttacksFinished;
-            TurnManager.Instance.StartEnemyTurn?.RemoveListener(OnEnemyAttacksFinished);
-            TurnManager.Instance.EndEnemyTurn?.RemoveListener(OnEndEnemyTurn);
+            LevelPhaseEvents.OnEndEnemyPhase -= OnEndEnemyPhase;
         }
 
         private void SetReferences()
@@ -84,10 +83,11 @@ namespace Enemies
             EnemyEvents.RaiseOnEnemyFinishedMoving();
         }
 
-        private void OnEndEnemyTurn()
+        private void OnEndEnemyPhase()
         {
             _flyingEnemiesInScene.Clear();
             _walkingEnemiesInScene.Clear();
+            PhaseManager.Instance.StartCardPhase();
         }
 
         private void SortLocalEnemyLists()

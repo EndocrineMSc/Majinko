@@ -121,7 +121,6 @@ GameObject:
   m_Component:
   - component: {fileID: 44029837}
   - component: {fileID: 44029838}
-  - component: {fileID: 44029839}
   m_Layer: 0
   m_Name: ForbiddenI
   m_TagString: ForbiddenI
@@ -196,18 +195,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &44029839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 44029836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28fcfac228567bd45a61b3e8229806a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &101977557
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,7 +682,6 @@ GameObject:
   m_Component:
   - component: {fileID: 278904242}
   - component: {fileID: 278904243}
-  - component: {fileID: 278904244}
   m_Layer: 0
   m_Name: ForbiddenD
   m_TagString: ForbiddenD
@@ -770,18 +756,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &278904244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 278904241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28fcfac228567bd45a61b3e8229806a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &346760597
 GameObject:
   m_ObjectHideFlags: 0
@@ -2022,7 +1996,6 @@ GameObject:
   m_Component:
   - component: {fileID: 940684528}
   - component: {fileID: 940684530}
-  - component: {fileID: 940684529}
   m_Layer: 0
   m_Name: ForbiddenE
   m_TagString: ForbiddenE
@@ -2097,18 +2070,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &940684529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 940684527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28fcfac228567bd45a61b3e8229806a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &954108415
 GameObject:
   m_ObjectHideFlags: 0
@@ -2489,7 +2450,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1145972830}
   - component: {fileID: 1145972831}
-  - component: {fileID: 1145972832}
   m_Layer: 0
   m_Name: ForbiddenX
   m_TagString: ForbiddenX
@@ -2564,18 +2524,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1145972832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1145972829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28fcfac228567bd45a61b3e8229806a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1220197973
 GameObject:
   m_ObjectHideFlags: 0
@@ -3477,7 +3425,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1608158953}
   - component: {fileID: 1608158954}
-  - component: {fileID: 1608158955}
   m_Layer: 0
   m_Name: ForbiddenO
   m_TagString: ForbiddenO
@@ -3552,18 +3499,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1608158955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1608158952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28fcfac228567bd45a61b3e8229806a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1653932087
 GameObject:
   m_ObjectHideFlags: 0
@@ -4026,8 +3961,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3092c44c0abc13f4cb2e414aa0005119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _localDeck: []
-  _discardPile: []
   DiscardPileObject: {fileID: 2896366453714765372}
   ExhaustPileObject: {fileID: 826774115766465780}
 --- !u!114 &1619995357
@@ -4404,7 +4337,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2040283757}
   - component: {fileID: 2040283758}
-  - component: {fileID: 2040283759}
   m_Layer: 0
   m_Name: ForbiddenA
   m_TagString: ForbiddenA
@@ -4479,18 +4411,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2040283759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2040283756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28fcfac228567bd45a61b3e8229806a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2090105683
 GameObject:
   m_ObjectHideFlags: 0
@@ -5443,7 +5363,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9009976784701639187}
   - component: {fileID: 2697852061426158664}
-  - component: {fileID: 386805631}
   m_Layer: 0
   m_Name: Hand
   m_TagString: Untagged
@@ -5484,25 +5403,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbc99ffa63a456941ad5b6e4d7d17dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _handCards: []
---- !u!114 &386805631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1765758937400561808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3ebf1eb215908249934713dff15a636, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CardZoomIn:
-    m_PersistentCalls:
-      m_Calls: []
-  CardZoomOut:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1841129033930783984
 GameObject:
   m_ObjectHideFlags: 0
@@ -6183,7 +6083,7 @@ GameObject:
   - component: {fileID: 7113281498723041657}
   - component: {fileID: 914940207974583964}
   m_Layer: 0
-  m_Name: PlayerAttackManager
+  m_Name: PlayerAttackDamageManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6213,7 +6113,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3478357083050585488}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61894e709c20698449d5c3ae301c669c, type: 3}
+  m_Script: {fileID: 11500000, guid: c8545f0907922cc4ca29997ef45c301d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3485833962231491252

@@ -1,3 +1,4 @@
+using Characters;
 using PeggleWars.ScrollDisplay;
 using System.Collections;
 using UnityEngine;

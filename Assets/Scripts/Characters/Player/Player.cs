@@ -1,10 +1,10 @@
 using System.Collections;
 using UnityEngine;
-using PeggleWars.TurnManagement;
+using Utility.TurnManagement;
 using PeggleWars.Characters.Interfaces;
 using Audio;
 
-namespace PeggleWars
+namespace Characters
 {
     internal class Player : MonoBehaviour, IDamagable
     {
@@ -15,7 +15,7 @@ namespace PeggleWars
 
         internal static Player Instance { get; private set; }
         private Animator _animator;
-        private TurnManager _turnManager;
+        private PhaseManager _turnManager;
         private string HURT_ANIMATION = "Hurt";
 
         [SerializeField] private int _health;
@@ -63,9 +63,17 @@ namespace PeggleWars
         {
             _animator = GetComponentInChildren<Animator>();
             _color = _spriteRenderer.color;
-            _turnManager = TurnManager.Instance;
+            _turnManager = PhaseManager.Instance;    
+        }
 
-            TurnManager.Instance.StartCardTurn?.AddListener(OnCardTurnStart);         
+        private void OnEnable()
+        {
+            LevelPhaseEvents.OnStartCardPhase += OnCardTurnStart;
+        }
+
+        private void OnDisable()
+        {
+            LevelPhaseEvents.OnStartCardPhase -= OnCardTurnStart;
         }
 
         public void TakeDamage(int damage)
@@ -92,10 +100,6 @@ namespace PeggleWars
             }
         }
 
-        private void OnDisable()
-        {
-            TurnManager.Instance.StartCardTurn?.RemoveListener(OnCardTurnStart);
-        }
 
         private void OnCardTurnStart()
         {

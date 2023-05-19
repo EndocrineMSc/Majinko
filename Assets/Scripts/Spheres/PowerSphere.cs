@@ -1,6 +1,7 @@
 using PeggleWars.ScrollDisplay;
 using System.Collections;
 using UnityEngine;
+using Utility.TurnManagement;
 
 namespace PeggleWars.Spheres
 {
@@ -32,7 +33,7 @@ namespace PeggleWars.Spheres
             {
                 if (_allowedPortalCollisions <= 0) 
                 {
-                    StartCoroutine(GameManager.Instance.SwitchState(EnumCollection.GameState.PlayerActions));
+                    PhaseManager.Instance.StartPlayerAttackPhase();
                     Destroy(gameObject);
                 }
                 else

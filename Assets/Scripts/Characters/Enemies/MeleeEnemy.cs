@@ -1,4 +1,4 @@
-using PeggleWars;
+using Characters;
 
 namespace Enemies
 {

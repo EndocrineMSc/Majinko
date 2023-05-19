@@ -1,10 +1,8 @@
-using EnumCollection;
 using Audio;
-using PeggleWars.Characters.Interfaces;
 using Enemies;
 using UnityEngine;
 
-namespace PeggleWars.Attacks
+namespace Attacks
 {
     internal class FireArrow : ProjectileAttack
     {

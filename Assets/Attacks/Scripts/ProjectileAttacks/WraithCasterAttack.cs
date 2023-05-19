@@ -1,7 +1,7 @@
 using EnumCollection;
 using Audio;
 
-namespace PeggleWars.Attacks
+namespace Attacks
 {
     internal class WraithCasterAttack : ProjectileAttack
     {

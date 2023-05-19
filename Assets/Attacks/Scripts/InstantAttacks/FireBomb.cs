@@ -4,8 +4,9 @@ using PeggleWars.Characters.Interfaces;
 using Enemies;
 using System.Collections;
 using UnityEngine;
+using PeggleWars.Attacks;
 
-namespace PeggleWars.Attacks
+namespace Attacks
 {
     internal class FireBomb : InstantAttack, IAmAOE
     {
@@ -30,7 +31,6 @@ namespace PeggleWars.Attacks
             foreach (Enemy enemy in EnemyManager.Instance.EnemiesInScene)
             {
                 enemy.TakeDamage(_damage);
-                enemy.TakeIceDamage();
                 enemy.ApplyBurning(_burningStacks);
             }
             DestroyGameObject();

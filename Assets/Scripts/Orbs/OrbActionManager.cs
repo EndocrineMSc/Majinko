@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using EnumCollection;
 using UnityEngine.Events;
-using PeggleWars.TurnManagement;
+using Utility.TurnManagement;
 
 namespace PeggleWars.Orbs
 {
@@ -38,13 +38,17 @@ namespace PeggleWars.Orbs
         private void Start()
         {
             _actionOrbSpawn = SetActionOrbSpawn();
-            _xOrbOffset = GetXOrbOffsSet();
-            TurnManager.Instance.StartPlayerAttackTurn?.AddListener(OnPlayerTurnStart);            
+            _xOrbOffset = GetXOrbOffsSet();           
+        }
+
+        private void OnEnable()
+        {
+            LevelPhaseEvents.OnStartPlayerAttackPhase += OnPlayerPhaseStart;
         }
 
         private void OnDisable()
         {
-            TurnManager.Instance.StartPlayerAttackTurn?.RemoveListener(OnPlayerTurnStart);
+            LevelPhaseEvents.OnStartPlayerAttackPhase -= OnPlayerPhaseStart;
         }
 
         private Vector2 SetActionOrbSpawn()
@@ -62,7 +66,7 @@ namespace PeggleWars.Orbs
             return xOffSet;
         }
 
-        private void OnPlayerTurnStart()
+        private void OnPlayerPhaseStart()
         {
             StartCoroutine(CheckOrbActions());
         }
@@ -77,7 +81,7 @@ namespace PeggleWars.Orbs
             }
             _orbActions.Clear();
             yield return new WaitForSeconds(2f);
-            StartCoroutine(GameManager.Instance.SwitchState(GameState.EnemyTurn));
+            PhaseManager.Instance.StartEnemyPhase();
         }
 
         internal void AddOrbToActionList(Orb orb)

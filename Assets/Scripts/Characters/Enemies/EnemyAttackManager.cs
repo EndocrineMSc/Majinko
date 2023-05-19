@@ -1,5 +1,5 @@
 using EnumCollection;
-using PeggleWars.TurnManagement;
+using Utility.TurnManagement;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,27 +19,23 @@ namespace Enemies
 
         private void Awake()
         {
-            if (Instance != null && Instance != this)
-            {
-                Destroy(gameObject);
-            }
-            else
-            {
+            if (Instance == null)
                 Instance = this;
-            }
+            else
+                Destroy(gameObject);
         }
 
-        private void Start()
+        private void OnEnable()
         {
-            TurnManager.Instance.StartEnemyTurn?.AddListener(OnStartEnemyTurn);
+            LevelPhaseEvents.OnStartEnemyPhase += OnStartEnemyPhase;
         }
 
         private void OnDisable()
         {
-            TurnManager.Instance.StartEnemyTurn?.RemoveListener(OnStartEnemyTurn);
+            LevelPhaseEvents.OnStartEnemyPhase -= OnStartEnemyPhase;
         }
 
-        private void OnStartEnemyTurn()
+        private void OnStartEnemyPhase()
         {
             StartCoroutine(HandleEnemyAttacks());
         }

@@ -1,10 +1,9 @@
-using EnumCollection;
 using Audio;
-using PeggleWars.Characters.Interfaces;
 using Enemies;
 using UnityEngine;
+using PeggleWars.Attacks;
 
-namespace PeggleWars.Attacks
+namespace Attacks
 {
     internal class HailStorm : InstantAttack, IAmAOE
     {
@@ -30,7 +29,6 @@ namespace PeggleWars.Attacks
             foreach (Enemy enemy in EnemyManager.Instance.EnemiesInScene)
             {
                 enemy.TakeDamage(_damage);
-                enemy.TakeIceDamage();
                 enemy.ApplyFreezing(_freezingStacks);
 
                 int randomChance = UnityEngine.Random.Range(0, 101);

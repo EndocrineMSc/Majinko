@@ -1,10 +1,8 @@
-using EnumCollection;
 using Audio;
-using PeggleWars.Characters.Interfaces;
 using Enemies;
 using UnityEngine;
 
-namespace PeggleWars.Attacks
+namespace Attacks
 {
     internal class Icicle : ProjectileAttack
     {
@@ -27,7 +25,6 @@ namespace PeggleWars.Attacks
         protected override void AdditionalEffectsOnImpact()
         {
             Enemy enemy = _collider.GetComponent<Enemy>();
-            enemy.TakeIceDamage();
             enemy.ApplyFreezing(_freezingStacks);
 
             int randomChance = UnityEngine.Random.Range(0, 101);

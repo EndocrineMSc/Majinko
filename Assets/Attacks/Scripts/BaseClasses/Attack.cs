@@ -1,18 +1,17 @@
 using UnityEngine;
-using EnumCollection;
-using PeggleAttacks.AttackManager;
 using Enemies;
 using PeggleWars.Orbs;
 using PeggleWars.Characters.Interfaces;
 using PeggleWars.Utilities;
+using Characters;
 
-namespace PeggleWars.Attacks
+namespace Attacks
 {
     internal abstract class Attack : MonoBehaviour, IHaveBark
     {
         #region Fields and Properties
 
-        protected PlayerAttackManager _playerAttackManager;
+        protected PlayerAttackDamageManager _playerAttackManager;
         protected Collider2D _collider;
 
         [SerializeField] protected AttackOrigin _attackOrigin;
@@ -31,7 +30,7 @@ namespace PeggleWars.Attacks
 
         protected virtual void Start()
         {
-            _playerAttackManager = PlayerAttackManager.Instance;
+            _playerAttackManager = PlayerAttackDamageManager.Instance;
             
             if (_attackOrigin == AttackOrigin.Player)
             {

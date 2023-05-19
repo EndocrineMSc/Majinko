@@ -8,7 +8,7 @@ namespace Enemies
     [RequireComponent(typeof(EnemyTurnMovement))]
     internal class EnemyManager : MonoBehaviour
     {
-        #region Fields
+        #region Fields and Properties
 
         internal static EnemyManager Instance { get; private set; }
 

@@ -1,8 +1,7 @@
 using PeggleWars.ScrollDisplay;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using PeggleWars.Attacks;
+using Attacks;
 using PeggleWars.Spheres;
 using UnityEditor.Animations;
 
