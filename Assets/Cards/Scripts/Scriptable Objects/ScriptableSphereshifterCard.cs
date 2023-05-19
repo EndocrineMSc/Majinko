@@ -8,7 +8,7 @@ namespace Cards
     [CreateAssetMenu]
     internal class ScriptableSphereshifterCard : ScriptableCard
     {
-        internal new CardEffectType EffectType = CardEffectType.Sphereshifter;
-        [SerializeField] internal ShotType ShotType;
+        internal override CardEffectType EffectType { get; } = CardEffectType.Sphereshifter;
+        [SerializeField] internal SphereType SphereType;
     }
 }

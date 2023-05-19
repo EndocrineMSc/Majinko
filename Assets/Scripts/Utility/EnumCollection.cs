@@ -100,11 +100,11 @@ namespace EnumCollection
         Alchemist
     }
 
-    internal enum ShotType
+    internal enum SphereType
     {
-        BasicShot,
-        MultiShot,
-        PowerShot,
+        BasicSphere,
+        CloneSphere,
+        PowerSphere,
     }
 
     internal enum CardRarity

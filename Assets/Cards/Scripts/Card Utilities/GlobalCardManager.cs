@@ -20,7 +20,6 @@ namespace Cards
 
         [SerializeField] private AllCardsCollection _allCardsCollection;
        
-        private const string CARDPREFAB_FOLDER = "CardPrefabVariants";
         private const string EXODIA_CHECK = "Forbidden";
 
         private int _remainingAmountExodiaCards = 6;

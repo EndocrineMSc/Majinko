@@ -60,7 +60,7 @@ namespace PeggleWars.Spheres
             }
 
             _allShots = Resources.LoadAll<Sphere>(RESOURCE_LOAD_PARAM).ToList();
-            _spawnShot = _allShots[(int)ShotType.BasicShot];
+            _spawnShot = _allShots[(int)SphereType.BasicSphere];
             ResetIndicatorNumbers();
         }
 
@@ -78,7 +78,7 @@ namespace PeggleWars.Spheres
         private void OnStartCardTurn()
         {
             ResetIndicatorNumbers();
-            _spawnShot = _allShots[(int)ShotType.BasicShot];
+            _spawnShot = _allShots[(int)SphereType.BasicSphere];
             SpawnShot();
         }
 

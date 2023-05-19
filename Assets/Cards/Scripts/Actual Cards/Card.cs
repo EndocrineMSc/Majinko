@@ -16,18 +16,7 @@ namespace Cards
     {
         #region Fields and Properties
 
-        [Header("Card Data")]
-        [SerializeField] protected string _cardName;
-        [SerializeField, TextArea] protected string _cardDescription;
-        [SerializeField] protected int _basicManaCost;
-        [SerializeField] protected int _fireManaCost;
-        [SerializeField] protected int _iceManaCost;
-        [SerializeField] protected CardType _cardType;
-        [SerializeField] protected bool _exhaustCard;
-        [SerializeField] protected CardRarity _cardRarity;
-        [SerializeField] protected CardElement _cardElement;
-        [SerializeField] protected CardEffectType _cardEffectType;
-        protected Sprite _cardImage;
+        [SerializeField] protected ScriptableCard _scriptableCard;
 
         //Adjusted mana amounts
         protected int _adjustedBasicManaAmount;
@@ -46,17 +35,17 @@ namespace Cards
         protected Vector3 _tweenEndScale = new(0.05f, 0.05f, 0.05f);
 
         //Properties
-        internal string CardName { get => _cardName;}
-        internal string CardDescription { get => _cardDescription;}
-        internal int BasicManaCost { get => _basicManaCost;}
-        internal int FireManaCost { get => _fireManaCost;}
-        internal int IceManaCost { get => _iceManaCost;}
-        internal CardType CardType { get => _cardType;}
-        internal bool ExhaustCard { get => _exhaustCard;}
-        internal Sprite CardImage { get => _cardImage; }
-        internal CardRarity Rarity { get => _cardRarity;}
-        internal CardElement Element { get => _cardElement;}
-        internal CardEffectType EffectType { get => _cardEffectType;}
+        internal string CardName { get; private protected set; }
+        internal string CardDescription { get; private protected set; }
+        internal int BasicManaCost { get; private protected set; }
+        internal int FireManaCost { get; private protected set; }
+        internal int IceManaCost { get; private protected set; }
+        internal CardType CardType { get; private protected set; }
+        internal bool IsExhaustCard { get; private protected set; }
+        internal Sprite CardImage { get; private protected set; }
+        internal CardRarity Rarity { get; private protected set; }
+        internal CardElement Element { get; private protected set; }
+        internal CardEffectType EffectType { get; private protected set; }
         internal bool IsBeingDealt { get; set; } = true;
 
         #endregion
@@ -66,6 +55,7 @@ namespace Cards
         protected void Start()
         {
             SetReferencesToLevelComponents();
+            SetCardFields();
             CalculateManaAmounts();
         }
 
@@ -76,15 +66,30 @@ namespace Cards
             _orbManager = OrbManager.Instance;
             _deck = Deck.Instance;
             _globalDeckManager = GlobalDeckManager.Instance;
-        } 
+        }
+        
+        protected virtual void SetCardFields()
+        {
+            CardName = _scriptableCard.CardName;
+            CardDescription = _scriptableCard.CardDescription;
+            BasicManaCost = _scriptableCard.BasicManaCost;
+            FireManaCost = _scriptableCard.FireManaCost;
+            IceManaCost = _scriptableCard.IceManaCost;
+            CardType = _scriptableCard.Type;
+            IsExhaustCard = _scriptableCard.IsExhaustCard;
+            CardImage = _scriptableCard.Image;
+            Rarity = _scriptableCard.Rarity;
+            Element = _scriptableCard.Element;
+            EffectType = _scriptableCard.EffectType;
+        }
         
         protected virtual void CalculateManaAmounts()
         {
             int modifier = _manaPool.ManaCostMultiplier;
 
-            _adjustedBasicManaAmount = _basicManaCost * modifier;
-            _adjustedFireManaAmount = _fireManaCost * modifier;
-            _adjustedIceManaAmount = _iceManaCost * modifier;
+            _adjustedBasicManaAmount = BasicManaCost * modifier;
+            _adjustedFireManaAmount = FireManaCost * modifier;
+            _adjustedIceManaAmount = IceManaCost * modifier;
         }
 
         internal virtual bool CardEndDragEffect()
@@ -116,22 +121,22 @@ namespace Cards
 
         protected virtual void HandleDiscard()
         {
-            if (_exhaustCard)             
-                _deck.ExhaustCard(GlobalCardManager.Instance.AllCards[(int)_cardType]);
+            if (IsExhaustCard)             
+                _deck.ExhaustCard(GlobalCardManager.Instance.AllCards[(int)CardType]);
             else
-                _deck.DiscardCard(GlobalCardManager.Instance.AllCards[(int)_cardType]);
+                _deck.DiscardCard(GlobalCardManager.Instance.AllCards[(int)CardType]);
         }
 
         protected IEnumerator DestroyCardAfterAnimation()
         {
-            Vector3 targetPosition = (_exhaustCard) ? Deck.Instance.ExhaustPosition : Deck.Instance.DiscardPosition;
+            Vector3 targetPosition = (IsExhaustCard) ? Deck.Instance.ExhaustPosition : Deck.Instance.DiscardPosition;
 
             GetComponent<RectTransform>().DOLocalMove(targetPosition, _tweenDiscardDuration).SetEase(Ease.OutExpo);
             GetComponent<RectTransform>().DOScale(_tweenEndScale, _tweenDiscardDuration).SetEase(Ease.OutCubic);
 
             yield return new WaitForSeconds(_tweenDiscardDuration / 2);
 
-            if(_exhaustCard)
+            if(IsExhaustCard)
                 Deck.Instance.StartExhaustPileAnimation();
             else
                 Deck.Instance.StartDiscardPileAnimation();

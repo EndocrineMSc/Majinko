@@ -6,15 +6,21 @@ namespace Cards
 {
     internal class OrbShifterCard : Card
     {
-        //will be set in the inspector of the respective Card Prefab
-        [SerializeField] protected OrbType _orbType;
-        [SerializeField] protected int _amountOrbs;
-        public int AmountOrbs { get => _amountOrbs; set { _amountOrbs = value; } }
+        internal int OrbAmount { get; private set; }
+        internal OrbType OrbType { get; private set; }
 
         protected override void CardEffect()
         {
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(GetComponent<RectTransform>().transform.position);            
-            OrbManager.Instance.SwitchOrbs(_orbType, worldPosition, _amountOrbs);
+            OrbManager.Instance.SwitchOrbs(OrbType, worldPosition, OrbAmount);
+        }
+
+        protected override void SetCardFields()
+        {
+            base.SetCardFields();
+            ScriptableOrbshifterCard scriptableOrbshifterCard = (ScriptableOrbshifterCard)_scriptableCard;
+            OrbType = scriptableOrbshifterCard.OrbType;
+            OrbAmount = scriptableOrbshifterCard.OrbAmount;
         }
     }
 }

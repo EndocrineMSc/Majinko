@@ -1,0 +1,235 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8462999066439808561
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -4550278420783687888, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: _cardName
+      value: Ice Orb
+      objectReference: {fileID: 0}
+    - target: {fileID: -4550278420783687888, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: _cardType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -4550278420783687888, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: _manaCost
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4550278420783687888, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: _cardPrefab
+      value: 
+      objectReference: {fileID: 3294751627346565167}
+    - target: {fileID: -4550278420783687888, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: _exhaustCard
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4550278420783687888, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: _basicManaCost
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4550278420783687888, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: _cardDescription
+      value: Permanently adds an Ice Orb to the playing field.   This card is removed
+        from the deck completely after playing it once.
+      objectReference: {fileID: 0}
+    - target: {fileID: 808972950667333918, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 78
+      objectReference: {fileID: 0}
+    - target: {fileID: 808972950667333918, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 808972950667333918, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 808972950667333918, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 808972950667333918, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 808972950667333918, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1670203746692134775, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1999973675477444807, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1999973675477444807, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1999973675477444807, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1999973675477444807, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 2663367635832773738, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_text
+      value: Orbshifter - 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812993297873364277, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812993297873364277, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812993297873364277, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812993297873364277, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812993297873364277, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812993297873364277, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812993297873364277, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812993297873364277, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 201
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812993297873364277, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812993297873364277, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812993297873364277, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812993297873364277, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812993297873364277, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812993297873364277, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812993297873364277, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812993297873364277, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812993297873364277, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812993297873364277, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812993297873364277, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812993297873364277, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812993297873364277, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5062165782696631732, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275418852295311527, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9d94bae8770851543ae894f2cacd2ace, type: 3}
+    - target: {fileID: 5275418852295311527, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275418852295311527, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275418852295311527, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437267143115510094, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398440697363082782, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_Name
+      value: IceManaCardPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 7670523144989857751, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_text
+      value: "Persistent Orb: \nGain 1 Ice Mana\nSingle-use"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7670523144989857751, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_fontSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7670523144989857751, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696175136549785397, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_text
+      value: Ice Orb
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -4550278420783687888, guid: 92b44770394774247acee543b7baee9f, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 92b44770394774247acee543b7baee9f, type: 3}
+--- !u!1 &3294751627346565167 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6398440697363082782, guid: 92b44770394774247acee543b7baee9f, type: 3}
+  m_PrefabInstance: {fileID: 8462999066439808561}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-8754984369484845316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3294751627346565167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e33d4f1300a4d164ba862c03877caff3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scriptableCard: {fileID: 11400000, guid: 7300cc828d890124a850160be5567bbd, type: 2}

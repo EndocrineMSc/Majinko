@@ -6,7 +6,7 @@ namespace Cards
     [CreateAssetMenu]
     internal class ScriptableOrbshifterCard : ScriptableCard
     {
-        internal new CardEffectType EffectType = CardEffectType.Orbshifter;
+        internal override CardEffectType EffectType { get; } = CardEffectType.Orbshifter;
         [SerializeField] internal OrbType OrbType;
         [SerializeField] internal int OrbAmount;
     }

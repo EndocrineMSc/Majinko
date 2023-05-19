@@ -2,6 +2,7 @@ namespace Cards
 {
     public enum CardType
     {
+        CloneSphere,
         Divination,
         FastHands,
         FireArrow,
@@ -19,8 +20,7 @@ namespace Cards
         LightningStrike,
         ManaBlitz,
         ManaShield,
-        MultiShot,
-        PowerShot,
+        PowerSphere,
         RefreshOrb,
     }
 }

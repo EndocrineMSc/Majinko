@@ -39,7 +39,7 @@ namespace Cards
                 ZoomInCard();
                 CardEvents.RaiseCardZoomIn(transform.position);
             }
-            else
+            else if (!_card.IsBeingDealt)
                 transform.localScale = new Vector3(_zoomSize, _zoomSize, _zoomSize); // Zoom in card shop
 
             //the last sibling will be in front of the other cards
@@ -48,13 +48,13 @@ namespace Cards
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            if (GameManager.Instance.GameState != GameState.LevelWon)
+            if (GameManager.Instance.GameState != GameState.LevelWon && !_card.IsBeingDealt)
             {
                 ZoomOutCard();
                 CardEvents.InvokeCardZoomOut();               
                 Hand.Instance.AlignCards();
             }
-            else
+            else if (!_card.IsBeingDealt)
                 transform.localScale = _normalScale; // Zoom out card shop
         }
 

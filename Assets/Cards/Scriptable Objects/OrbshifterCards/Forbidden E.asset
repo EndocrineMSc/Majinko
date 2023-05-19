@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Forbidden E
   m_EditorClassIdentifier: 
   CardName: Forbidden E
-  CardDescription: 'Persistent Orb:'
+  CardDescription: 'Persistent Orb: You sense a dark power in this orb.'
   BasicManaCost: 1
   FireManaCost: 0
   IceManaCost: 0
@@ -22,8 +22,9 @@ MonoBehaviour:
   Shield: 0
   BurningStacks: 0
   IceStacks: 0
-  Type: 7
+  Type: 8
   Rarity: 4
   Element: 0
+  Image: {fileID: 21300000, guid: 9b35059b2ad7ea043aeec474f7ae428e, type: 3}
   OrbType: 10
   OrbAmount: 1

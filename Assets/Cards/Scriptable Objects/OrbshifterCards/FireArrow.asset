@@ -22,8 +22,9 @@ MonoBehaviour:
   Shield: 0
   BurningStacks: 5
   IceStacks: 0
-  Type: 2
+  Type: 3
   Rarity: 2
   Element: 1
+  Image: {fileID: 21300000, guid: ec08c13b80b0eae4b99ce3aef02941cb, type: 3}
   OrbType: 5
   OrbAmount: 1

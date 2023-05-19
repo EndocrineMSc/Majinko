@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: FireMana
   m_EditorClassIdentifier: 
   CardName: Fire Mana
-  CardDescription: 'Persistent Orb: Gain 1 Fire Mana
-
-    Apply 1 burning'
+  CardDescription: "Persistent Orb: \nGain 1 Fire Mana\nApply 1 burning"
   BasicManaCost: 0
   FireManaCost: 1
   IceManaCost: 0
@@ -24,8 +22,9 @@ MonoBehaviour:
   Shield: 0
   BurningStacks: 1
   IceStacks: 0
-  Type: 4
+  Type: 5
   Rarity: 1
   Element: 1
+  Image: {fileID: 21300000, guid: d095b01b5b130484c902db18f1b364e5, type: 3}
   OrbType: 7
   OrbAmount: 1

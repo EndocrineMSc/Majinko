@@ -22,6 +22,7 @@ namespace Cards
         [SerializeField] internal CardType Type;
         [SerializeField] internal CardRarity Rarity;
         [SerializeField] internal CardElement Element;
-        internal CardEffectType EffectType = CardEffectType.Instant;
+        [SerializeField] internal Sprite Image;
+        virtual internal CardEffectType EffectType { get; } = CardEffectType.Instant;
     }
 }

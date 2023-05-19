@@ -6,10 +6,10 @@ namespace Cards
     { 
         protected override void CardEffect()
         {
-            GlobalOrbManager.Instance.AddGlobalOrb(GlobalOrbManager.Instance.AllOrbsList[(int)_orbType]);
-            OrbManager.Instance.SwitchOrbs(_orbType, transform.position);
+            GlobalOrbManager.Instance.AddGlobalOrb(GlobalOrbManager.Instance.AllOrbsList[(int)OrbType]);
+            OrbManager.Instance.SwitchOrbs(OrbType, transform.position);
 
-            _globalDeckManager.RemoveCardFromGlobalDeck(GlobalCardManager.Instance.AllCards[(int)_cardType]);
+            _globalDeckManager.RemoveCardFromGlobalDeck(GlobalCardManager.Instance.AllCards[(int)CardType]);
         }
     }
 }
