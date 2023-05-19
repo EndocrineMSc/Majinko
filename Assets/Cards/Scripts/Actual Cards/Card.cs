@@ -33,6 +33,7 @@ namespace Cards
         //Animations
         protected float _tweenDiscardDuration = 0.5f;
         protected Vector3 _tweenEndScale = new(0.05f, 0.05f, 0.05f);
+        protected RectTransform _rectTransform;
 
         //Properties
         internal string CardName { get; private protected set; }
@@ -66,6 +67,7 @@ namespace Cards
             _orbManager = OrbManager.Instance;
             _deck = Deck.Instance;
             _globalDeckManager = GlobalDeckManager.Instance;
+            _rectTransform = GetComponent<RectTransform>();
         }
         
         protected virtual void SetCardFields()
@@ -101,6 +103,8 @@ namespace Cards
                 _orbManager.CheckForRefreshOrbs(); //Checks if RefreshOrb was overwritten and makes a new one if so
                 HandleDiscard();
                 _hand.InstantiatedCards.Remove(this); //list of instantiated cards in hand
+                GetComponent<CardZoom>().enabled = false;
+                GetComponent<CardZoomMovement>().enabled = false;
                 StartCoroutine(DestroyCardAfterAnimation());
                 return true;
             }
@@ -131,12 +135,12 @@ namespace Cards
         {
             Vector3 targetPosition = (IsExhaustCard) ? Deck.Instance.ExhaustPosition : Deck.Instance.DiscardPosition;
 
-            GetComponent<RectTransform>().DOLocalMove(targetPosition, _tweenDiscardDuration).SetEase(Ease.OutExpo);
-            GetComponent<RectTransform>().DOScale(_tweenEndScale, _tweenDiscardDuration).SetEase(Ease.OutCubic);
+            _rectTransform.DOMove(targetPosition, _tweenDiscardDuration).SetEase(Ease.OutExpo);
+            _rectTransform.DOScale(_tweenEndScale, _tweenDiscardDuration).SetEase(Ease.OutCubic);
 
             yield return new WaitForSeconds(_tweenDiscardDuration / 2);
 
-            if(IsExhaustCard)
+            if (IsExhaustCard)
                 Deck.Instance.StartExhaustPileAnimation();
             else
                 Deck.Instance.StartDiscardPileAnimation();

@@ -3961,8 +3961,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3092c44c0abc13f4cb2e414aa0005119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DiscardPileObject: {fileID: 2896366453714765372}
-  ExhaustPileObject: {fileID: 826774115766465780}
+  _discardPileObject: {fileID: 2896366453714765372}
+  _exhaustPileObject: {fileID: 826774115766465780}
 --- !u!114 &1619995357
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -23,8 +23,8 @@ namespace Cards
         //Tweening
         internal Vector3 DiscardPosition { get; private set; }
         internal Vector3 ExhaustPosition { get; private set; }
-        [SerializeField] private GameObject DiscardPileObject;
-        [SerializeField] private GameObject ExhaustPileObject;
+        [SerializeField] private GameObject _discardPileObject;
+        [SerializeField] private GameObject _exhaustPileObject;
 
         #endregion
 
@@ -41,8 +41,8 @@ namespace Cards
         private void Start()
         {
             _hand = Hand.Instance;
-            DiscardPosition = Hand.Instance.transform.GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition;
-            ExhaustPosition = Hand.Instance.transform.GetChild(0).GetChild(2).GetComponent<RectTransform>().localPosition;
+            DiscardPosition = Camera.main.WorldToScreenPoint(_discardPileObject.transform.position);
+            ExhaustPosition = Camera.main.WorldToScreenPoint(_exhaustPileObject.transform.position);
             WinLoseConditionManager.Instance.LevelVictory?.AddListener(OnLevelVictory);
             BuildLevelDeck();
         }
@@ -112,14 +112,14 @@ namespace Cards
 
         internal void StartDiscardPileAnimation()
         {
-            Vector3 startScale = DiscardPileObject.transform.localScale;
-            DiscardPileObject.transform.DOPunchScale(startScale * 0.25f, 0.1f,1,0.1f);
+            Vector3 startScale = _discardPileObject.transform.localScale;
+            _discardPileObject.transform.DOPunchScale(startScale * 0.25f, 0.1f,1,0.1f);
         }
 
         internal void StartExhaustPileAnimation()
         {
-            Vector3 startScale = ExhaustPileObject.transform.localScale;
-            ExhaustPileObject.transform.DOPunchScale(startScale * 0.25f, 0.1f, 1, 0.1f);
+            Vector3 startScale = _exhaustPileObject.transform.localScale;
+            _exhaustPileObject.transform.DOPunchScale(startScale * 0.25f, 0.1f, 1, 0.1f);
         }
 
         //Shuffles the deck using the Fisher-Yates shuffle algortihm
