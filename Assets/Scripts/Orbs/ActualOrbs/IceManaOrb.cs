@@ -1,4 +1,4 @@
-using PeggleWars.Enemies;
+using Enemies;
 using PeggleWars.ScrollDisplay;
 using System.Collections;
 using System.Net.NetworkInformation;

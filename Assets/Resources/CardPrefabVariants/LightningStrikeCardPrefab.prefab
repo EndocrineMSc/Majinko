@@ -51,6 +51,26 @@ PrefabInstance:
       propertyPath: _cardDescription
       value: 'Orb: Deal 40 damage to the last enemy'
       objectReference: {fileID: 0}
+    - target: {fileID: 1811972980392909961, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _cardName
+      value: Lightning Strike
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811972980392909961, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _cardType
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811972980392909961, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _iceManaCost
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811972980392909961, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _fireManaCost
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811972980392909961, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _cardDescription
+      value: Lightning Strike
+      objectReference: {fileID: 0}
     - target: {fileID: 3717780021009078597, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Sprite
       value: 

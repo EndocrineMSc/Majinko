@@ -1,5 +1,5 @@
 using PeggleAttacks.AttackVisuals.PopUps;
-using PeggleWars.Enemies;
+using Enemies;
 using PeggleWars.Orbs;
 using System.Collections;
 using System.Collections.Generic;
@@ -47,7 +47,7 @@ namespace PeggleWars.Attacks
             }
             else
             {
-                Player.Instance.GetComponent<PopUpSpawner>().SpawnPopUp(NO_TARGET_PARAM);
+                Player.Instance.GetComponent<PopUpSpawner>().SpawnPopUp(NOTARGET_BARK);
             }
         }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using PeggleWars.Attacks;
 using PeggleWars.ScrollDisplay;
-using PeggleWars.Enemies;
+using Enemies;
 
 namespace PeggleWars.Orbs
 {

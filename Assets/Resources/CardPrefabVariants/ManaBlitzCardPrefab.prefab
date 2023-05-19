@@ -59,6 +59,22 @@ PrefabInstance:
       propertyPath: _cardDescription
       value: 'Orb: Deal 10 damage'
       objectReference: {fileID: 0}
+    - target: {fileID: 1811972980392909961, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _cardName
+      value: Mana Blitz
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811972980392909961, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _cardType
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811972980392909961, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _basicManaCost
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811972980392909961, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _cardDescription
+      value: Mana Blitz
+      objectReference: {fileID: 0}
     - target: {fileID: 3717780021009078597, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Sprite
       value: 

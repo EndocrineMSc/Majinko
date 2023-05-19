@@ -2,7 +2,7 @@ using EnumCollection;
 using PeggleWars.TurnManagement;
 using UnityEngine;
 
-namespace PeggleWars.Enemies
+namespace Enemies
 {
     internal class EnemySpawnManager : MonoBehaviour
     {
@@ -38,19 +38,27 @@ namespace PeggleWars.Enemies
 
         private void Start()
         {
+            SetReferences();
+            SpawnEnemy(_enemiesForLevel[0]);
+        }
+
+        private void OnEnable()
+        {
+            EnemyEvents.OnEnemyFinishedMoving += OnEndOfEnemyMovement;           
+        }
+
+        private void OnDisable()
+        {
+            EnemyEvents.OnEnemyFinishedMoving -= OnEndOfEnemyMovement;
+        }
+
+        private void SetReferences()
+        {
             _enemyManager = EnemyManager.Instance;
             _enemyPositions = _enemyManager.EnemyPositions;
             _rightMostEnemyPosition = _enemyPositions.GetLength(1) - 1;
             _flyingEnemySpawnPosition = _enemyPositions[_enemyTopRow, _rightMostEnemyPosition];
             _walkingEnemySpawnPosition = _enemyPositions[_enemyBottomRow, _rightMostEnemyPosition];
-            SpawnEnemy(_enemiesForLevel[0]);
-
-            EnemyEvents.Instance.EnemyMoveEndEvent?.AddListener(OnEndOfEnemyMovement);
-        }
-
-        private void OnDisable()
-        {
-            EnemyEvents.Instance.EnemyMoveEndEvent?.RemoveListener(OnEndOfEnemyMovement);
         }
 
         private EnemyType[] GetEnemyArrayByWorld()

@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using PeggleWars;
 
-
-namespace PeggleWars.Enemies
+namespace Enemies
 {
     internal abstract class MeleeEnemy : Enemy
     {

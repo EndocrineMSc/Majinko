@@ -5,7 +5,7 @@ using PeggleWars.Orbs;
 using PeggleWars.ScrollDisplay;
 using UnityEngine;
 
-namespace PeggleWars.Enemies
+namespace Enemies
 {
     internal class WraithCaster : RangedEnemy, ICanBeIntangible
     {

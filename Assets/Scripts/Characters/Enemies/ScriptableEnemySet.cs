@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using EnumCollection;
 
-namespace PeggleWars.Enemies
+namespace Enemies
 {
     [CreateAssetMenu]
     internal class ScriptableEnemySet : ScriptableObject

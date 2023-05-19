@@ -2,6 +2,7 @@ using PeggleWars.Utilities;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEditorInternal;
 
 namespace Cards
 {
@@ -17,6 +18,7 @@ namespace Cards
         internal List<Card> ExhaustPile { get; set; } = new();
 
         private Hand _hand;
+        private bool _isDeckBuilt = false;
 
         //Tweening
         internal Vector3 DiscardPosition { get; private set; }
@@ -43,6 +45,15 @@ namespace Cards
             ExhaustPosition = Hand.Instance.transform.GetChild(0).GetChild(2).GetComponent<RectTransform>().localPosition;
             WinLoseConditionManager.Instance.LevelVictory?.AddListener(OnLevelVictory);
             BuildLevelDeck();
+        }
+
+        private void Update()
+        {
+            if (!_isDeckBuilt)
+            {
+                _isDeckBuilt = true;
+                BuildLevelDeck();
+            }
         }
 
         private void OnDisable()

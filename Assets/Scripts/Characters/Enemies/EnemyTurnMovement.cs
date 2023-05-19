@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace PeggleWars.Enemies
+namespace Enemies
 {
     internal class EnemyTurnMovement : MonoBehaviour
     {
@@ -13,8 +13,8 @@ namespace PeggleWars.Enemies
 
         private float _gapSpace; //space necessary to show that there is a gap between enemies
 
-        private List<Enemy> _flyingEnemiesInScene = new();
-        private List<Enemy> _walkingEnemiesInScene = new();
+        private List<Enemy> _flyingEnemiesInScene;
+        private List<Enemy> _walkingEnemiesInScene;
 
         #endregion
 
@@ -22,28 +22,55 @@ namespace PeggleWars.Enemies
 
         private void Start()
         {
-            _enemyManager = EnemyManager.Instance;
+            SetReferences();
             _gapSpace = (_enemyManager.EnemyPositions[0, 3].x - _enemyManager.EnemyPositions[0, 2].x) * 1.2f;
 
-            EnemyEvents.Instance.EnemyAttacksEndEvent?.AddListener(OnEndAttacks);
             TurnManager.Instance.EndEnemyTurn?.AddListener(OnEndEnemyTurn);
-
+            InitializeLists();
             SetLocalEnemyLists();
+        }
+
+        private void OnEnable()
+        {
+            EnemyEvents.OnEnemiesFinishedAttacking += OnEnemyAttacksFinished;
         }
 
         private void OnDisable()
         {
-            TurnManager.Instance.StartEnemyTurn?.RemoveListener(OnEndAttacks);
+            EnemyEvents.OnEnemiesFinishedAttacking -= OnEnemyAttacksFinished;
+            TurnManager.Instance.StartEnemyTurn?.RemoveListener(OnEnemyAttacksFinished);
             TurnManager.Instance.EndEnemyTurn?.RemoveListener(OnEndEnemyTurn);
         }
 
-        private void OnEndAttacks()
+        private void SetReferences()
+        {
+            _enemyManager = EnemyManager.Instance;
+        }
+
+        private void InitializeLists()
+        {
+            _flyingEnemiesInScene = new();
+            _walkingEnemiesInScene = new();
+        }
+
+        private void SetLocalEnemyLists()
+        {
+            foreach (Enemy enemy in _enemyManager.EnemiesInScene)
+            {
+                if (enemy.IsFlying)
+                    _flyingEnemiesInScene.Add(enemy);
+                else
+                    _walkingEnemiesInScene.Add(enemy);
+            }
+        }
+
+        private void OnEnemyAttacksFinished()
         {
             SetLocalEnemyLists();
+
             if (_enemyManager.EnemiesInScene.Count > 0)
-            {
                 SortLocalEnemyLists();
-            }
+
             StartCoroutine(HandleEnemyMovement());
         }
 
@@ -52,33 +79,15 @@ namespace PeggleWars.Enemies
             for (int i = 0; i < _enemyManager.EnemiesInScene.Count; i++)
             {
                 if (CheckForMoveNecessity(_enemyManager.EnemiesInScene[i]))
-                {
                     yield return StartCoroutine(_enemyManager.EnemiesInScene[i].Move());
-                }
             }
-            EnemyEvents.Instance.EnemyMoveEndEvent?.Invoke();
+            EnemyEvents.RaiseOnEnemyFinishedMoving();
         }
-
 
         private void OnEndEnemyTurn()
         {
             _flyingEnemiesInScene.Clear();
             _walkingEnemiesInScene.Clear();
-        }
-
-        private void SetLocalEnemyLists()
-        {
-            foreach (Enemy enemy in _enemyManager.EnemiesInScene)
-            {
-                if (enemy.IsFlying)
-                {
-                    _flyingEnemiesInScene.Add(enemy);
-                }
-                else
-                {
-                    _walkingEnemiesInScene.Add(enemy);
-                }
-            }
         }
 
         private void SortLocalEnemyLists()

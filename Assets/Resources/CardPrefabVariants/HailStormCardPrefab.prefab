@@ -47,6 +47,22 @@ PrefabInstance:
       propertyPath: _cardDescription
       value: 'Orb: Applies freezing, moderate chance to apply frozen'
       objectReference: {fileID: 0}
+    - target: {fileID: 1811972980392909961, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _cardName
+      value: Hail Storm
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811972980392909961, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _cardType
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811972980392909961, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _iceManaCost
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811972980392909961, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: _cardDescription
+      value: Hail Storm
+      objectReference: {fileID: 0}
     - target: {fileID: 3717780021009078597, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Sprite
       value: 

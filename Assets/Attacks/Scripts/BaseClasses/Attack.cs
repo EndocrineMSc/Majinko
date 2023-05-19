@@ -1,7 +1,7 @@
 using UnityEngine;
 using EnumCollection;
 using PeggleAttacks.AttackManager;
-using PeggleWars.Enemies;
+using Enemies;
 using PeggleWars.Orbs;
 using PeggleWars.Characters.Interfaces;
 using PeggleWars.Utilities;
@@ -13,19 +13,15 @@ namespace PeggleWars.Attacks
         #region Fields and Properties
 
         protected PlayerAttackManager _playerAttackManager;
-        protected Collider2D _collision;
+        protected Collider2D _collider;
 
         [SerializeField] protected AttackOrigin _attackOrigin;
         [SerializeField] protected int _damage;
 
-        protected readonly string NO_TARGET_PARAM = "No enemy!";
+        protected readonly string NOTARGET_BARK = "No enemy!";
         protected readonly string ATTACK_ANIMATION = "Attack";
 
-        internal int Damage
-        {
-            get { return _damage; }
-            private set { _damage = value; }
-        }
+        internal int Damage { get; private protected set; }
 
         public abstract string Bark { get; }
 
@@ -36,6 +32,7 @@ namespace PeggleWars.Attacks
         protected virtual void Start()
         {
             _playerAttackManager = PlayerAttackManager.Instance;
+            
             if (_attackOrigin == AttackOrigin.Player)
             {
                 _damage = Mathf.RoundToInt(_damage * _playerAttackManager.DamageModifierTurn);
@@ -45,7 +42,7 @@ namespace PeggleWars.Attacks
 
         protected virtual void OnTriggerEnter2D(Collider2D collision)
         {
-            _collision = collision;
+            _collider = collision;
 
             if ((_attackOrigin == AttackOrigin.Player && collision.gameObject.GetComponent<Enemy>() != null)
                 || _attackOrigin == AttackOrigin.Enemy && collision.gameObject.GetComponent<Player>() != null)

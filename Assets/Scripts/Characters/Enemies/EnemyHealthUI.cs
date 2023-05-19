@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 using PeggleWars.Characters;
 
-namespace PeggleWars.Enemies
+namespace Enemies
 {
     internal class EnemyHealthUI : MonoBehaviour
     {
