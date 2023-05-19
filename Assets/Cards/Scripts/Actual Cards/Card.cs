@@ -16,7 +16,7 @@ namespace Cards
     {
         #region Fields and Properties
 
-        [SerializeField] protected ScriptableCard _scriptableCard;
+        [SerializeField] internal ScriptableCard ScriptableCard;
 
         //Adjusted mana amounts
         protected int _adjustedBasicManaAmount;
@@ -53,10 +53,14 @@ namespace Cards
 
         #region Functions
 
+        protected void Awake()
+        {
+            SetCardFields();           
+        }
+
         protected void Start()
         {
             SetReferencesToLevelComponents();
-            SetCardFields();
             CalculateManaAmounts();
         }
 
@@ -72,17 +76,17 @@ namespace Cards
         
         protected virtual void SetCardFields()
         {
-            CardName = _scriptableCard.CardName;
-            CardDescription = _scriptableCard.CardDescription;
-            BasicManaCost = _scriptableCard.BasicManaCost;
-            FireManaCost = _scriptableCard.FireManaCost;
-            IceManaCost = _scriptableCard.IceManaCost;
-            CardType = _scriptableCard.Type;
-            IsExhaustCard = _scriptableCard.IsExhaustCard;
-            CardImage = _scriptableCard.Image;
-            Rarity = _scriptableCard.Rarity;
-            Element = _scriptableCard.Element;
-            EffectType = _scriptableCard.EffectType;
+            CardName = ScriptableCard.CardName;
+            CardDescription = ScriptableCard.CardDescription;
+            BasicManaCost = ScriptableCard.BasicManaCost;
+            FireManaCost = ScriptableCard.FireManaCost;
+            IceManaCost = ScriptableCard.IceManaCost;
+            CardType = ScriptableCard.Type;
+            IsExhaustCard = ScriptableCard.IsExhaustCard;
+            CardImage = ScriptableCard.Image;
+            Rarity = ScriptableCard.Rarity;
+            Element = ScriptableCard.Element;
+            EffectType = ScriptableCard.EffectType;
         }
         
         protected virtual void CalculateManaAmounts()
@@ -103,6 +107,7 @@ namespace Cards
                 _orbManager.CheckForRefreshOrbs(); //Checks if RefreshOrb was overwritten and makes a new one if so
                 HandleDiscard();
                 _hand.InstantiatedCards.Remove(this); //list of instantiated cards in hand
+                _hand.AlignCards();
                 GetComponent<CardZoom>().enabled = false;
                 GetComponent<CardZoomMovement>().enabled = false;
                 StartCoroutine(DestroyCardAfterAnimation());
@@ -146,12 +151,8 @@ namespace Cards
                 Deck.Instance.StartDiscardPileAnimation();
 
             yield return new WaitForSeconds(_tweenDiscardDuration / 2);
-            Destroy(gameObject);
-        }
-
-        protected void OnDestroy()
-        {
             CardEvents.RaiseCardDestruction();
+            Destroy(gameObject);
         }
 
         #endregion

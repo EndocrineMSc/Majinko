@@ -52,6 +52,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1811972980392909961, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: ScriptableCard
+      value: 
+      objectReference: {fileID: 11400000, guid: 5e15c5f2764bc1b4aa94bdde2bd7ec15, type: 2}
+    - target: {fileID: 1811972980392909961, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _basicManaCost
       value: 1
       objectReference: {fileID: 0}

@@ -31,15 +31,12 @@ namespace Cards
             }
             else
                 Destroy(gameObject);
-        }
 
-        private void Start()
-        {
-            if(GlobalDeck.Count == 0)
+            if (GlobalDeck.Count == 0)
             {
                 BuildStartDeck(StartDeck.Apprentice);
             }
-        }      
+        }     
 
         internal void BuildStartDeck(StartDeck startDeck)
         {
@@ -58,7 +55,6 @@ namespace Cards
         {
             GlobalDeck.Remove(card);
         }
-
         #endregion
     }
 }

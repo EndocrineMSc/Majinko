@@ -7,7 +7,7 @@ namespace Enemies
         internal override void Attack()
         {
             base.Attack();
-            Player.Instance.TakeDamage(_damage);
+            Player.Instance.TakeDamage(Damage);
         }
     }
 }

@@ -51,7 +51,7 @@ namespace Enemies
         private void Start()
         {
             _lastUpdateHealth = _parentEnemy.Health;
-            _lastUpdateFireStacks = _parentEnemy.FireStacks;
+            _lastUpdateFireStacks = _parentEnemy.BurningStacks;
             GetComponent<Canvas>().worldCamera = Camera.main;
             _enemyCanBeIntangible = _parentEnemy.TryGetComponent<ICanBeIntangible>(out _);
            
@@ -89,11 +89,11 @@ namespace Enemies
 
         private void UpdateBurning()
         {
-            if (_parentEnemy.FireStacks > 0)
+            if (_parentEnemy.BurningStacks > 0)
             {
                 if (_isBurning)
                 {
-                    if (_lastUpdateFireStacks != _parentEnemy.FireStacks)
+                    if (_lastUpdateFireStacks != _parentEnemy.BurningStacks)
                     {
                         UpdateFireStacks();
                     }
@@ -107,7 +107,7 @@ namespace Enemies
                 }
             }
 
-            if (_parentEnemy.FireStacks <= 0 && _isBurning)
+            if (_parentEnemy.BurningStacks <= 0 && _isBurning)
             {
                 _isBurning = false;
                 Destroy(_burningStatus.gameObject);
@@ -116,11 +116,11 @@ namespace Enemies
 
         private void UpdateFreezing()
         {
-            if (_parentEnemy.IceStacks > 0)
+            if (_parentEnemy.FreezingStacks > 0)
             {
                 if (_isFreezing)
                 {
-                    if (_lastUpdateIceStacks != _parentEnemy.IceStacks)
+                    if (_lastUpdateIceStacks != _parentEnemy.FreezingStacks)
                     {
                         UpdateIceStacks();
                     }
@@ -134,7 +134,7 @@ namespace Enemies
                 }
             }
 
-            if (_parentEnemy.IceStacks <= 0 && _isFreezing)
+            if (_parentEnemy.FreezingStacks <= 0 && _isFreezing)
             {
                 _isFreezing = false;
                 Destroy(_freezingStatus.gameObject);
@@ -198,15 +198,15 @@ namespace Enemies
         private void UpdateFireStacks()
         {
             _burningStatus.rectTransform.DOPunchScale(_burningStatus.rectTransform.localScale * 1.1f, 0.2f, 1, 1);
-            _burningStatus.GetComponentInChildren<TextMeshProUGUI>().text = _parentEnemy.FireStacks.ToString();
-            _lastUpdateFireStacks = _parentEnemy.FireStacks;
+            _burningStatus.GetComponentInChildren<TextMeshProUGUI>().text = _parentEnemy.BurningStacks.ToString();
+            _lastUpdateFireStacks = _parentEnemy.BurningStacks;
         }
 
         private void UpdateIceStacks()
         {
             _freezingStatus.rectTransform.DOPunchScale(_freezingStatus.rectTransform.localScale * 1.1f, 0.2f, 1, 1);
-            _freezingStatus.GetComponentInChildren<TextMeshProUGUI>().text = _parentEnemy.IceStacks.ToString();
-            _lastUpdateIceStacks = _parentEnemy.IceStacks;
+            _freezingStatus.GetComponentInChildren<TextMeshProUGUI>().text = _parentEnemy.FreezingStacks.ToString();
+            _lastUpdateIceStacks = _parentEnemy.FreezingStacks;
         }
 
         private void UpdateFrozenStacks()

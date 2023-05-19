@@ -2,6 +2,7 @@ using Utility.TurnManagement;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 
 namespace Enemies
 {
@@ -15,6 +16,7 @@ namespace Enemies
 
         private List<Enemy> _flyingEnemiesInScene;
         private List<Enemy> _walkingEnemiesInScene;
+        private float _enemyWalkDuration = 1.5f;
 
         #endregion
 
@@ -78,10 +80,61 @@ namespace Enemies
             for (int i = 0; i < _enemyManager.EnemiesInScene.Count; i++)
             {
                 if (CheckForMoveNecessity(_enemyManager.EnemiesInScene[i]))
-                    yield return StartCoroutine(_enemyManager.EnemiesInScene[i].Move());
+                    yield return StartCoroutine(Move(_enemyManager.EnemiesInScene[i]));
             }
             EnemyEvents.RaiseOnEnemyFinishedMoving();
         }
+
+        //Moves the enemy one "space" to the left
+        internal IEnumerator Move(Enemy enemy)
+        {
+            int xIndexOfEnemy = GetEnemyPositionIndex(enemy);
+            Vector2 endPosition;
+            if (enemy.IsFlying)
+            {
+                endPosition = _enemyManager.EnemyPositions[1, xIndexOfEnemy - 1];
+            }
+            else
+            {
+                endPosition = _enemyManager.EnemyPositions[0, xIndexOfEnemy - 1];
+            }
+            enemy.StartMovementAnimation();
+            enemy.transform.DOMoveX(endPosition.x, _enemyWalkDuration).SetEase(Ease.Linear);
+            yield return new WaitForSeconds(_enemyWalkDuration);
+            enemy.StopMovementAnimation();
+        }
+
+        private int GetEnemyPositionIndex(Enemy enemy)
+        {
+            Vector2 enemyPosition = enemy.transform.position;
+
+            if (enemy.IsFlying)
+            {
+                for (int i = 0; i < _enemyManager.EnemyPositions.Length; i++)
+                {
+                    Vector2 indexPosition = _enemyManager.EnemyPositions[1, i];
+                    if (indexPosition.Equals(enemyPosition))
+                    {
+                        return i;
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < _enemyManager.EnemyPositions.Length; i++)
+                {
+                    Vector2 indexPosition = _enemyManager.EnemyPositions[0, i];
+                    if (indexPosition.Equals(enemyPosition))
+                    {
+                        return i;
+                    }
+                }
+            }
+            Debug.Log("Enemy Position not found");
+            return -1;
+        }
+
+
 
         private void OnEndEnemyPhase()
         {

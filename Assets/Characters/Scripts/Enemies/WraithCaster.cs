@@ -21,7 +21,6 @@ namespace Enemies
             _deathDelayForAnimation = 1.5f;
         }
 
-
         protected override void OnEndEnemyPhase()
         {
             base.OnEndEnemyPhase();
@@ -98,26 +97,29 @@ namespace Enemies
 
         protected override void TriggerHurtAnimation()
         {
-            _animator.SetTrigger(HURT_PARAM);
+            if (_animator != null)
+                _animator.SetTrigger(HURT_TRIGGER);
         }
 
         protected override void TriggerDeathAnimation()
         {
-            _animator.SetTrigger(DEATH_PARAM);
+            if (_animator != null)
+                _animator.SetTrigger(DEATH_TRIGGER);
         }
-        protected override void StartMovementAnimation()
+        internal override void StartMovementAnimation()
         {
             //same as idle
         }
 
-        protected override void StopMovementAnimation()
+        internal override void StopMovementAnimation()
         {
             //same as idle
         }
 
         protected override void TriggerAttackAnimation()
         {
-            _animator.SetTrigger(ATTACK_PARAM);
+            if (_animator != null)
+                _animator.SetTrigger(ATTACK_TRIGGER);
         }
 
         #endregion
@@ -142,12 +144,12 @@ namespace Enemies
 
         public void DisplayOnScroll()
         {
-            throw new System.NotImplementedException();
+            //ToDo
         }
 
         public void StopDisplayOnScroll()
         {
-            throw new System.NotImplementedException();
+            //ToDo
         }
 
         #endregion

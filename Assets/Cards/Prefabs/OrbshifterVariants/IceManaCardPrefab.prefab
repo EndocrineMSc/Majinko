@@ -232,4 +232,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33d4f1300a4d164ba862c03877caff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scriptableCard: {fileID: 11400000, guid: 7300cc828d890124a850160be5567bbd, type: 2}
+  ScriptableCard: {fileID: 11400000, guid: 7300cc828d890124a850160be5567bbd, type: 2}

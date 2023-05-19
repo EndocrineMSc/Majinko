@@ -25,8 +25,8 @@ MonoBehaviour:
   Shield: 0
   BurningStacks: 0
   IceStacks: 0
-  Type: 17
+  Type: 0
   Rarity: 2
   Element: 0
   Image: {fileID: 21300000, guid: 41337de281975324bb5718d3676b4cce, type: 3}
-  SphereType: 0
+  SphereType: 1

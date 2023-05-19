@@ -18,7 +18,7 @@ namespace Cards
         protected override void SetCardFields()
         {
             base.SetCardFields();
-            ScriptableOrbshifterCard scriptableOrbshifterCard = (ScriptableOrbshifterCard)_scriptableCard;
+            ScriptableOrbshifterCard scriptableOrbshifterCard = (ScriptableOrbshifterCard)ScriptableCard;
             OrbType = scriptableOrbshifterCard.OrbType;
             OrbAmount = scriptableOrbshifterCard.OrbAmount;
         }

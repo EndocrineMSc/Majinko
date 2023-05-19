@@ -15,18 +15,17 @@ namespace Cards
         #endregion
 
         #region Functions
+        protected override void SetCardFields()
+        {
+            base.SetCardFields();
+            ScriptableSphereshifterCard sphereShifter = (ScriptableSphereshifterCard)ScriptableCard;
+            SphereType = sphereShifter.SphereType;
+        }
 
         protected override void SetReferencesToLevelComponents()
         {
             base.SetReferencesToLevelComponents();
             _shotManager = SphereManager.Instance;
-        }
-
-        protected override void SetCardFields()
-        {
-            base.SetCardFields();
-            ScriptableSphereshifterCard sphereShifter = (ScriptableSphereshifterCard)_scriptableCard;
-            SphereType = sphereShifter.SphereType;
             _sphere = _shotManager.AllShots[(int)SphereType];
         }
 

@@ -143,4 +143,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7af4654b678abaf4d8c11944cab3e5cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scriptableCard: {fileID: 11400000, guid: c848dd55da91e48479facc709c61d639, type: 2}
+  ScriptableCard: {fileID: 11400000, guid: c848dd55da91e48479facc709c61d639, type: 2}

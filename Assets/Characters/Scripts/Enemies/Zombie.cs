@@ -41,19 +41,22 @@ namespace Enemies
             displayOnScroll.DisplayDescription = "A regular old zombie. Will spawn two Rotten Mana orbs on death.";
         }
 
-        protected override void StartMovementAnimation()
+        internal override void StartMovementAnimation()
         {
-            _animator.SetTrigger(WALK_PARAM);
+            if (_animator != null)
+                _animator.SetTrigger(WALK_TRIGGER);
         }
 
-        protected override void StopMovementAnimation()
+        internal override void StopMovementAnimation()
         {
-            _animator.SetTrigger(IDLE_PARAM);
+            if (_animator != null)
+                _animator.SetTrigger(IDLE_TRIGGER);
         }
 
         protected override void TriggerAttackAnimation()
         {
-            _animator.SetTrigger(ATTACK_PARAM);
+            if (_animator != null)
+                _animator.SetTrigger(ATTACK_TRIGGER);
         }
 
         protected override void TriggerSpawnAnimation()
@@ -63,12 +66,14 @@ namespace Enemies
 
         protected override void TriggerHurtAnimation()
         {
-            _animator.SetTrigger(HURT_PARAM);
+            if (_animator != null)
+                _animator.SetTrigger(HURT_TRIGGER);
         }
 
         protected override void TriggerDeathAnimation()
         {
-            _animator.SetTrigger(DEATH_PARAM);
+            if (_animator != null)
+                _animator.SetTrigger(DEATH_TRIGGER);
         }
 
         #endregion

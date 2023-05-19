@@ -73,8 +73,6 @@ namespace PeggleWars.Utilities
         private List<Card> SetRandomShopCards(int amountCardChoices = 3)
         {
             List<Card> shopCardList = new();
-            int cardPoolSize = GlobalCardManager.Instance.AllCards.Count;
-
             var retries = 0;
 
             while (shopCardList.Count < amountCardChoices)
@@ -83,15 +81,23 @@ namespace PeggleWars.Utilities
                     break;
 
                 List<Card> rarityList = DetermineCardRarityList();
-                Card card = GetRandomCardFromList(rarityList);
-                
-                if (shopCardList.Contains(card))
+                if (rarityList.Count == 0)
                 {
                     retries++;
                     continue;
                 }
+                else
+                {
+                    Card card = GetRandomCardFromList(rarityList);
 
-                shopCardList.Add(card);
+                    if (shopCardList.Contains(card))
+                    {
+                        retries++;
+                        continue;
+                    }
+
+                    shopCardList.Add(card);
+                }               
             }
     
             return shopCardList;
@@ -164,7 +170,7 @@ namespace PeggleWars.Utilities
             float ySpawnPosition = gameObject.transform.position.y - (rectTransform.rect.height * 0.75f);
             float xSpawnPosition = gameObject.transform.position.x;
             Card buyableCard = gameObject.GetComponent<Card>();
-            int cardIndex = (int)buyableCard.CardType;
+            int cardIndex = (int)buyableCard.ScriptableCard.Type;
 
             Vector2 instantiatePosition = new(xSpawnPosition, ySpawnPosition);
             

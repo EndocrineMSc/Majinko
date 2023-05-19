@@ -42,7 +42,7 @@ namespace Cards
             if (_isFirstInit)
             {
                 AllCards = _allCardsCollection.AllCards.ToList();
-                AllCards = AllCards.OrderBy(card => card.name).ToList();
+                AllCards = AllCards.OrderBy(card => card.ScriptableCard.CardName).ToList();
                 SetRarityThresholds();
                 BuildRarityLists();
                 _isFirstInit = false;
@@ -61,7 +61,8 @@ namespace Cards
         {
             foreach (Card card in AllCards)
             {
-                switch (card.Rarity)
+                ScriptableCard scriptCard = card.ScriptableCard;
+                switch (scriptCard.Rarity)
                 {
                     case CardRarity.Common:
                         CommonCards.Add(card);

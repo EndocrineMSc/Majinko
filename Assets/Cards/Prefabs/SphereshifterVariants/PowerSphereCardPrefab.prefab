@@ -44,6 +44,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -5102782085163616900, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: ScriptableCard
+      value: 
+      objectReference: {fileID: 11400000, guid: 77a4e3c923eded74588b2619424a1ad0, type: 2}
+    - target: {fileID: -5102782085163616900, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: _basicManaCost
       value: 1
       objectReference: {fileID: 0}
@@ -235,7 +239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4562803509149082378, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: m_Name
-      value: PowerShotCardPrefab
+      value: PowerSphereCardPrefab
       objectReference: {fileID: 0}
     - target: {fileID: 4859288017830121854, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: m_text

@@ -54,7 +54,6 @@ namespace Enemies
                     {
                         enemy.Attack();
                         yield return new WaitForSeconds(_attackGapSeconds);
-                        enemy.ResetTurnsTillNextAttack();
                     }
                 }
             }

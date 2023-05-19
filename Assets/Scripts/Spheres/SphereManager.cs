@@ -86,9 +86,9 @@ namespace PeggleWars.Spheres
             _currentShot = Instantiate(_spawnShot, spawnWorldPosition, Quaternion.identity);
         }
 
-        internal void SetSphereToBeSpawned(Sphere shot)
+        internal void SetSphereToBeSpawned(Sphere sphere)
         {
-            _spawnShot = shot;
+            _spawnShot = sphere;
             ReplaceSphere();
         }
 

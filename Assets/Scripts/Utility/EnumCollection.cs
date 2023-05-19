@@ -1,11 +1,5 @@
 namespace EnumCollection
 {
-    internal enum EnemyAttackType
-    {
-        Melee,
-        Ranged,
-    }
-
     internal enum EnemyType
     {
         CloakedZombie,

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -24,38 +25,27 @@ namespace Enemies
         private readonly int _amountOfXScreenDivisions = 10;
         private readonly int _amountOfCharacterPositionsOnXAxis = 6;
         private readonly int _amountOfEnemyRows = 2;
-        private bool _isFirstInit = true;
 
-        protected string ENEMY_FOLDER_PARAM = "EnemyPrefabs";
+        [SerializeField] private AllEnemiesCollection _allEnemiesCollection;
 
         #endregion
 
         #region Functions
 
         private void Awake()
-        {           
-            if (Instance != null && Instance != this)
-            {
-                Destroy(this);
-            }
-            else
-            {
+        {       
+            if (Instance == null)
                 Instance = this;
-            }
-            if (_isFirstInit)
-            {
-                _enemyLibrary = Resources.LoadAll<Enemy>(ENEMY_FOLDER_PARAM);
-            }
+            else
+                Destroy(gameObject);
         }
 
         private void Start()
         {
-            if (_isFirstInit)
-            {
-                _enemyPositions = new Vector3[_amountOfEnemyRows, _amountOfCharacterPositionsOnXAxis];
-                SetEnemyPositions();
-                _isFirstInit = false;
-            }
+            EnemyLibrary = _allEnemiesCollection.AllEnemies;
+            EnemyLibrary = EnemyLibrary.OrderBy(enemy => enemy.name).ToArray();
+            _enemyPositions = new Vector3[_amountOfEnemyRows, _amountOfCharacterPositionsOnXAxis];
+            SetEnemyPositions();
         }
 
         private void SetEnemyPositions()
@@ -64,7 +54,7 @@ namespace Enemies
             int cellHeight = Screen.height / 10;
             float yLowerRow = Screen.height - cellHeight;
             float yUpperRow = Screen.height - cellHeight / 2;
-            float cellWidth = Screen.width / _amountOfXScreenDivisions;
+            float cellWidth = (float)Screen.width / _amountOfXScreenDivisions;
             float xPositionOffset = 3;
 
             for (int x = 0; x < _amountOfCharacterPositionsOnXAxis; x++)
@@ -88,5 +78,11 @@ namespace Enemies
         }
 
         #endregion
+    }
+
+    internal enum EnemyAttackType
+    {
+        Melee,
+        Ranged,
     }
 }

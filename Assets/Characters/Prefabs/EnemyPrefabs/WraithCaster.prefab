@@ -124,12 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 573eb4141d19bc34693b58736616e0ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackFrequency: 1
-  _enemyAttackType: 1
-  _damage: 0
-  _health: 20
-  _isFlying: 0
-  _isInAttackPosition: 1
+  _scriptableEnemy: {fileID: 11400000, guid: 2200bd9b08a9437478746a7caba6d315, type: 2}
   _enemyAttack: {fileID: 7622386237211500515, guid: 54d899e6433c32b49a05d418819e3a6d, type: 3}
 --- !u!212 &2934328531088558246
 SpriteRenderer:

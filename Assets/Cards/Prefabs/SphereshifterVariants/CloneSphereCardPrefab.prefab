@@ -32,6 +32,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -5102782085163616900, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: ScriptableCard
+      value: 
+      objectReference: {fileID: 11400000, guid: 7755c6b0289e6fc49b4946cd0bd50b72, type: 2}
+    - target: {fileID: -5102782085163616900, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: _basicManaCost
       value: 2
       objectReference: {fileID: 0}
@@ -266,7 +270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4562803509149082378, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: m_Name
-      value: MultiShotCardPrefab
+      value: CloneSphereCardPrefab
       objectReference: {fileID: 0}
     - target: {fileID: 4614385548377667741, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: m_Sprite
