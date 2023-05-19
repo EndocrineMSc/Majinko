@@ -14,13 +14,7 @@ namespace Cards
             (int) CardType.ManaBlitz, (int) CardType.ManaBlitz, (int) CardType.ManaBlitz, (int) CardType.ManaShield,(int) CardType.ManaShield,
             (int) CardType.ManaShield, (int) CardType.ManaShield };
 
-        
-        [SerializeField] private List<Card> _globalDeck = new(); //List of all cards in the player deck, will store any modifications (added or removed cards) during a run
-        internal List<Card> GlobalDeck
-        {
-            get { return _globalDeck; }
-            set { _globalDeck = value; }
-        }
+        internal List<Card> GlobalDeck { get; set; } = new(); //List of all cards in the player deck, will store any modifications (added or removed cards) during a run
 
         internal StartDeck StartDeck { get; private set; } // enum for choice of startdecks
 
@@ -41,7 +35,7 @@ namespace Cards
 
         private void Start()
         {
-            if(_globalDeck.Count == 0)
+            if(GlobalDeck.Count == 0)
             {
                 BuildStartDeck(StartDeck.Apprentice);
             }
@@ -54,7 +48,7 @@ namespace Cards
                 case StartDeck.Apprentice:
                     for (int i = 0; i < _apprenticeDeck.Length; i++)
                     {
-                        _globalDeck.Add(GlobalCardManager.Instance.AllCards[_apprenticeDeck[i]]);
+                        GlobalDeck.Add(GlobalCardManager.Instance.AllCards[_apprenticeDeck[i]]);
                     }
                     break;
             }
@@ -62,7 +56,7 @@ namespace Cards
 
         internal void RemoveCardFromGlobalDeck(Card card)
         {
-            _globalDeck.Remove(card);
+            GlobalDeck.Remove(card);
         }
 
         #endregion

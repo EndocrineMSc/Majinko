@@ -12,13 +12,13 @@ namespace Cards
         internal static GlobalCardManager Instance {  get; private set; }
 
         internal Dictionary<CardRarity, float> CardRarityThreshold { get; private set; } = new();
-
-        [SerializeField] private List<Card> _allCards; //List of all Cards, built from Resources Folder
-        internal List<Card> AllCards { get { return _allCards; } }
+        internal List<Card> AllCards { get; private set; } = new();
         internal List<Card> CommonCards { get; private set; } = new();
         internal List<Card> RareCards { get; private set; } = new();
         internal List<Card> EpicCards { get; private set; } = new();
         internal List<Card> LegendaryCards { get; private set; } = new();
+
+        [SerializeField] private AllCardsCollection _allCardsCollection;
        
         private const string CARDPREFAB_FOLDER = "CardPrefabVariants";
         private const string EXODIA_CHECK = "Forbidden";
@@ -39,10 +39,11 @@ namespace Cards
             }
             else
                 Destroy(gameObject);
-
+            
             if (_isFirstInit)
             {
-                _allCards = Resources.LoadAll<Card>(CARDPREFAB_FOLDER).ToList();
+                AllCards = _allCardsCollection.AllCards.ToList();
+                AllCards = AllCards.OrderBy(card => card.name).ToList();
                 SetRarityThresholds();
                 BuildRarityLists();
                 _isFirstInit = false;
@@ -59,7 +60,7 @@ namespace Cards
 
         private void BuildRarityLists()
         {
-            foreach (Card card in _allCards)
+            foreach (Card card in AllCards)
             {
                 switch (card.Rarity)
                 {

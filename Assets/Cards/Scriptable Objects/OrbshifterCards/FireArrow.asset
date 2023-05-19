@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d8682f958061ed4d84819b3f0aaed4d, type: 3}
+  m_Name: FireArrow
+  m_EditorClassIdentifier: 
+  CardName: Fire Arrow
+  CardDescription: 'Orb: Deals 10 damage and applies 5 burning'
+  BasicManaCost: 0
+  FireManaCost: 1
+  IceManaCost: 0
+  IsExhaustCard: 0
+  Damage: 10
+  Shield: 0
+  BurningStacks: 5
+  IceStacks: 0
+  Type: 2
+  Rarity: 2
+  Element: 1
+  OrbType: 5
+  OrbAmount: 1
