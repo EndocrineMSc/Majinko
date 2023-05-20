@@ -1,14 +1,12 @@
-using EnumCollection;
 using System.Collections;
 using UnityEngine;
-using PeggleAttacks.AttackVisuals.PopUps;
 using PeggleWars.Characters.Interfaces;
 using Utility.TurnManagement;
 using PeggleWars.ScrollDisplay;
 using DG.Tweening;
-using Characters;
+using Characters.UI;
 
-namespace Enemies
+namespace Characters.Enemies
 {
     [RequireComponent(typeof(PopUpSpawner))]
     [RequireComponent(typeof(ScrollDisplayer))]

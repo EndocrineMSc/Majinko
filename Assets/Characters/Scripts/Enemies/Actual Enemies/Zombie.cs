@@ -2,9 +2,8 @@ using EnumCollection;
 using Audio;
 using PeggleWars.Orbs;
 using PeggleWars.ScrollDisplay;
-using UnityEngine;
 
-namespace Enemies
+namespace Characters.Enemies
 {
     internal class Zombie : MeleeEnemy
     {

@@ -1,5 +1,5 @@
 using Audio;
-using Enemies;
+using Characters.Enemies;
 using UnityEngine;
 using PeggleWars.Attacks;
 

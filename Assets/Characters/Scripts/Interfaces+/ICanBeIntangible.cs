@@ -1,12 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace PeggleWars.Characters
+namespace Characters
 {
     public interface ICanBeIntangible
     {
-        int IntangibleStacks { get; }
+        int IntangibleStacks { get; set; }
         void SetIntangible(int intangibleStacks = 1);
         void RemoveIntangible();
         void HandleIntangibleStacks();

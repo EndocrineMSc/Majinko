@@ -1,7 +1,7 @@
-using PeggleAttacks.AttackVisuals.PopUps;
-using Enemies;
-using UnityEngine;
 using Characters;
+using Characters.UI;
+using Characters.Enemies;
+using UnityEngine;
 
 namespace Attacks
 {

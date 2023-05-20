@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using EnumCollection;
 
-namespace Enemies
+namespace Characters.Enemies
 {
     [CreateAssetMenu]
     internal class ScriptableEnemySet : ScriptableObject

@@ -1,17 +1,16 @@
-using EnumCollection;
 using Utility.TurnManagement;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Enemies
+namespace Characters.Enemies
 {
     internal class EnemyAttackManager : MonoBehaviour
     {
         #region Fields and Properties
 
         internal static EnemyAttackManager Instance { get; private set; }
-        [SerializeField] private float _attackGapSeconds = 0.5f;
+
+        private readonly float _attackGapSeconds = 1f;
 
         #endregion
 

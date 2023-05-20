@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace PeggleAttacks.AttackVisuals.PopUps
+namespace Characters.UI
 {
     internal class PopUpSpawner : MonoBehaviour
     {

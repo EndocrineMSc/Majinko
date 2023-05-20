@@ -1,6 +1,4 @@
-using Characters;
-
-namespace Enemies
+namespace Characters.Enemies
 {
     internal abstract class MeleeEnemy : Enemy
     {

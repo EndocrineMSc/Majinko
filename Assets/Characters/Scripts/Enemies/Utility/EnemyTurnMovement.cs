@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 
-namespace Enemies
+namespace Characters.Enemies
 {
     internal class EnemyTurnMovement : MonoBehaviour
     {

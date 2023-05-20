@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _overworldIndex: 1
+  _worldOneSets: {fileID: 11400000, guid: 8748fa504f27a874c86e49bbefbb9a02, type: 2}
 --- !u!114 &5347611971990534468
 MonoBehaviour:
   m_ObjectHideFlags: 0

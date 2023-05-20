@@ -2,7 +2,7 @@ using EnumCollection;
 using Utility.TurnManagement;
 using UnityEngine;
 
-namespace Enemies
+namespace Characters.Enemies
 {
     internal class EnemySpawnManager : MonoBehaviour
     {
@@ -10,21 +10,20 @@ namespace Enemies
 
         private EnemyManager _enemyManager;
         private Vector3[,] _enemyPositions;
+        private EnemyType[] _enemiesForLevel;
 
-        private int _rightMostEnemyPosition;
-        readonly int _enemyBottomRow = 0;
-        readonly int _enemyTopRow = 1;
+        private readonly int _enemyBottomRow = 0;
+        private readonly int _enemyTopRow = 1;
 
         Vector2 _flyingEnemySpawnPosition;
         Vector2 _walkingEnemySpawnPosition;
 
+        internal int AmountOfEnemiesInLevel { get; private set; } 
+        internal int EnemySpawnCounter { get; private set; }
+
+
         [SerializeField] private int _overworldIndex = 1;
-        private EnemyType[] _enemiesForLevel;
-        private readonly string WORLD_ONE_PARAM = "ScriptableEnemySets/World 1 Levels";
-        private int _amountOfEnemiesInLevel;
-        internal int AmountOfEnemiesInLevel { get { return _amountOfEnemiesInLevel; } } 
-        private int _enemySpawnCounter = 0;
-        internal int EnemySpawnCounter { get { return _enemySpawnCounter; } }
+        [SerializeField] private OverworldSetOfSets _worldOneSets;
 
         #endregion
 
@@ -33,12 +32,13 @@ namespace Enemies
         private void Awake()
         {
             _enemiesForLevel = GetEnemyArrayByWorld();
-            _amountOfEnemiesInLevel = _enemiesForLevel.Length;
+            AmountOfEnemiesInLevel = _enemiesForLevel.Length;
         }
 
         private void Start()
         {
             SetReferences();
+            SetSpawnPositions();
             SpawnEnemy(_enemiesForLevel[0]);
         }
 
@@ -55,10 +55,14 @@ namespace Enemies
         private void SetReferences()
         {
             _enemyManager = EnemyManager.Instance;
-            _enemyPositions = _enemyManager.EnemyPositions;
-            _rightMostEnemyPosition = _enemyPositions.GetLength(1) - 1;
-            _flyingEnemySpawnPosition = _enemyPositions[_enemyTopRow, _rightMostEnemyPosition];
-            _walkingEnemySpawnPosition = _enemyPositions[_enemyBottomRow, _rightMostEnemyPosition];
+            _enemyPositions = _enemyManager.EnemyPositions;            
+        }
+
+        private void SetSpawnPositions()
+        {
+            int rightMostEnemyPosition = _enemyPositions.GetLength(1) - 1;
+            _flyingEnemySpawnPosition = _enemyPositions[_enemyTopRow, rightMostEnemyPosition];
+            _walkingEnemySpawnPosition = _enemyPositions[_enemyBottomRow, rightMostEnemyPosition];
         }
 
         private EnemyType[] GetEnemyArrayByWorld()
@@ -68,7 +72,7 @@ namespace Enemies
             switch (_overworldIndex)
             {
                 case 1:
-                    ScriptableEnemySet[] tempAllEnemySets = Resources.LoadAll<ScriptableEnemySet>(WORLD_ONE_PARAM);
+                    ScriptableEnemySet[] tempAllEnemySets = _worldOneSets.ViableEnemySets;
                     int randomSet = UnityEngine.Random.Range(0, tempAllEnemySets.Length);
                     ScriptableEnemySet tempEnemySet = tempAllEnemySets[randomSet];
                     tempArray = tempEnemySet.EnemyArray;
@@ -79,9 +83,9 @@ namespace Enemies
 
         private void OnEndOfEnemyMovement()
         {
-            if (_enemySpawnCounter < _amountOfEnemiesInLevel)
+            if (EnemySpawnCounter < AmountOfEnemiesInLevel)
             {
-                EnemyType tempEnemy = _enemiesForLevel[_enemySpawnCounter];
+                EnemyType tempEnemy = _enemiesForLevel[EnemySpawnCounter];
                 SpawnEnemy(tempEnemy);
             }
             PhaseManager.Instance.EndEnemyPhase();
@@ -89,56 +93,39 @@ namespace Enemies
 
         internal void SpawnEnemy(EnemyType enemyType)
         {
-            Enemy tempEnemy = _enemyManager.EnemyLibrary[(int)enemyType];
-            Vector2 spawnPosition;
-            
-            bool spawnPositionIsOccupied = CheckIfPositionOccupied(tempEnemy);
+            Enemy spawnEnemy = _enemyManager.EnemyLibrary[(int)enemyType];
+            Vector2 spawnPosition;            
                      
-            if (tempEnemy.IsFlying)
-            {
+            if (spawnEnemy.IsFlying)
                 spawnPosition = _flyingEnemySpawnPosition;
-            }
             else
-            {
                 spawnPosition = _walkingEnemySpawnPosition;
-            }
 
-            if (!spawnPositionIsOccupied)
+            if (!CheckIfSpawnPositionOccupied())
             {
-                Enemy instantiatedEnemy = Instantiate(tempEnemy, spawnPosition, Quaternion.identity); ;
+                Enemy instantiatedEnemy = Instantiate(spawnEnemy, spawnPosition, Quaternion.identity); ;
                 _enemyManager.EnemiesInScene.Add(instantiatedEnemy);
-                _enemySpawnCounter++;
+                EnemySpawnCounter++;
                 instantiatedEnemy.transform.position = new Vector3(instantiatedEnemy.transform.position.x, instantiatedEnemy.transform.position.y, -1); //quick fix for display scroll
             }
         }
 
-        private bool CheckIfPositionOccupied(Enemy enemy)
+        private bool CheckIfSpawnPositionOccupied()
         {
-            bool flyPositionIsOccupied = false;
-            bool landPositionIsOccupied = false;
-
             foreach (Enemy sceneEnemy in _enemyManager.EnemiesInScene)
             {
                 Vector2 enemyPosition = sceneEnemy.transform.position;
 
                 if (enemyPosition == _flyingEnemySpawnPosition)
                 {
-                    flyPositionIsOccupied = true;
+                    return true;
                 }
                 else if (enemyPosition == _walkingEnemySpawnPosition)
                 {
-                    landPositionIsOccupied = true;
+                    return true;
                 }
             }
-
-            if (enemy.IsFlying)
-            {
-                return flyPositionIsOccupied;
-            }
-            else
-            {
-                return landPositionIsOccupied;
-            }
+            return false;
         }
         #endregion
     }

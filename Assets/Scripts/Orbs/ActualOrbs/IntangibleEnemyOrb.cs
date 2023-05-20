@@ -1,9 +1,8 @@
-using PeggleWars.Characters;
-using Enemies;
+using Characters;
+using Characters.Enemies;
 using PeggleWars.ScrollDisplay;
 using PeggleWars.Spheres;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 

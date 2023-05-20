@@ -1,9 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Events;
 
-namespace Enemies
+namespace Characters.Enemies
 {
     [RequireComponent(typeof(EnemySpawnManager))]
     [RequireComponent(typeof(EnemyTurnMovement))]
@@ -13,15 +12,11 @@ namespace Enemies
 
         internal static EnemyManager Instance { get; private set; }
 
-        private Enemy[] _enemyLibrary;
-        internal Enemy[] EnemyLibrary { get { return _enemyLibrary; } private set { _enemyLibrary = value; } }
+        internal Enemy[] EnemyLibrary { get; private set; }
+        internal List<Enemy> EnemiesInScene { get; set; } = new();
+        internal Vector3[,] EnemyPositions { get; private set; }
 
-        private List<Enemy> _enemiesInScene = new();
-        internal List<Enemy> EnemiesInScene { get => _enemiesInScene; set => _enemiesInScene = value; }
-
-        private Vector3[,] _enemyPositions;
-        internal Vector3[,] EnemyPositions { get => _enemyPositions; private set => _enemyPositions = value; }
-
+        //Fields to calculate EnemyPositions regardless of screen size
         private readonly int _amountOfXScreenDivisions = 10;
         private readonly int _amountOfCharacterPositionsOnXAxis = 6;
         private readonly int _amountOfEnemyRows = 2;
@@ -38,13 +33,11 @@ namespace Enemies
                 Instance = this;
             else
                 Destroy(gameObject);
-        }
 
-        private void Start()
-        {
+            //needs to be in Awake for timing issues
             EnemyLibrary = _allEnemiesCollection.AllEnemies;
             EnemyLibrary = EnemyLibrary.OrderBy(enemy => enemy.name).ToArray();
-            _enemyPositions = new Vector3[_amountOfEnemyRows, _amountOfCharacterPositionsOnXAxis];
+            EnemyPositions = new Vector3[_amountOfEnemyRows, _amountOfCharacterPositionsOnXAxis];
             SetEnemyPositions();
         }
 
@@ -65,13 +58,13 @@ namespace Enemies
                     {
                         Vector2 possibleCharacterPositionOnScreen = new((x + xPositionOffset) * cellWidth, yLowerRow);
                         Vector2 possibleCharacterPositionAsWorldPoint = camera.ScreenToWorldPoint(possibleCharacterPositionOnScreen);
-                        _enemyPositions[y, x] = new Vector3(possibleCharacterPositionAsWorldPoint.x, possibleCharacterPositionAsWorldPoint.y, -1);
+                        EnemyPositions[y, x] = new Vector3(possibleCharacterPositionAsWorldPoint.x, possibleCharacterPositionAsWorldPoint.y, -1);
                     }
                     else
                     {
                         Vector2 possibleCharacterPositionOnScreen = new((x + xPositionOffset) * cellWidth, yUpperRow);
                         Vector2 possibleCharacterPositionAsWorldPoint = camera.ScreenToWorldPoint(possibleCharacterPositionOnScreen);
-                        _enemyPositions[y, x] = new Vector3(possibleCharacterPositionAsWorldPoint.x, possibleCharacterPositionAsWorldPoint.y, -1);
+                        EnemyPositions[y, x] = new Vector3(possibleCharacterPositionAsWorldPoint.x, possibleCharacterPositionAsWorldPoint.y, -1);
                     }
                 }
             }

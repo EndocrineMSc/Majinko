@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using PeggleWars.Characters;
 
-namespace Enemies
+namespace Characters.Enemies
 {
     internal class EnemyHealthUI : MonoBehaviour
     {
@@ -224,6 +222,5 @@ namespace Enemies
         }
 
         #endregion
-
     }
 }

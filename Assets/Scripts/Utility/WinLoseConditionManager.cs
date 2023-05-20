@@ -1,9 +1,6 @@
-using Enemies;
-using System.Collections;
-using System.Collections.Generic;
+using Characters.Enemies;
 using UnityEngine;
 using UnityEngine.Events;
-using EnumCollection;
 
 
 namespace PeggleWars.Utilities

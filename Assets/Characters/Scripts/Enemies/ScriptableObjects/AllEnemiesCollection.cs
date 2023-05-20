@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Enemies
+namespace Characters.Enemies
 {
     [CreateAssetMenu(menuName = "Enemies/AllEnemiesCollection")]
     internal class AllEnemiesCollection : ScriptableObject

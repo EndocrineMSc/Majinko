@@ -1,17 +1,17 @@
 using EnumCollection;
 using Audio;
-using PeggleWars.Characters;
 using PeggleWars.Orbs;
 using PeggleWars.ScrollDisplay;
-using UnityEngine;
 
-namespace Enemies
+namespace Characters.Enemies
 {
     internal class WraithCaster : RangedEnemy, ICanBeIntangible
     {
-        public int IntangibleStacks { get; private set; } = 0;
+        public int IntangibleStacks { get; set; } = 0;
 
         private int _amountIntangibleOrbs = 0;
+
+        IntangibleController _intangibleController;
 
         #region Functions
 
@@ -19,6 +19,7 @@ namespace Enemies
         {
             base.SetReferences();
             _deathDelayForAnimation = 1.5f;
+            _intangibleController = new(this);
         }
 
         protected override void OnEndEnemyPhase()
@@ -46,44 +47,21 @@ namespace Enemies
                 "Will attack every other turn. Spawns intangible orbs in the arena granting them intagible when the orbs are hit.";
         }
 
-
         #region Intangible
 
         public void SetIntangible(int intangibleStacks = 1)
         {
-            IntangibleStacks += intangibleStacks;
-
-            SpriteRenderer spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-            Color alpha = spriteRenderer.color;
-            alpha.a = 0.5f;
-            spriteRenderer.color = alpha;
-
-            Collider2D collider = GetComponent<Collider2D>();
-            collider.enabled = false;
+            _intangibleController.SetIntangible(intangibleStacks);
         }
 
         public void RemoveIntangible()
         {
-            SpriteRenderer spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-            Color alpha = spriteRenderer.color;
-            alpha.a = 1f;
-            spriteRenderer.color = alpha;
-
-            Collider2D collider = GetComponent<Collider2D>();
-            collider.enabled = true;
+            _intangibleController.RemoveIntangible();
         }
 
         public void HandleIntangibleStacks()
         {
-            if (IntangibleStacks > 0)
-            {
-                IntangibleStacks--;
-            }
-            if (IntangibleStacks <= 0)
-            {
-                IntangibleStacks = 0;
-                RemoveIntangible();
-            }
+            _intangibleController.HandleIntangibleStacks();
         }
 
         #endregion

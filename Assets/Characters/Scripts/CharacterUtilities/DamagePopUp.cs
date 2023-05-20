@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
-namespace PeggleAttacks.AttackVisuals.PopUps
+namespace Characters.UI
 {
-    public class DamagePopUp : MonoBehaviour
+    internal class DamagePopUp : MonoBehaviour
     {
         #region Fields and Properties
 
@@ -21,6 +18,11 @@ namespace PeggleAttacks.AttackVisuals.PopUps
         #endregion
 
         #region Functions
+
+        private void Awake()
+        {
+            _textMesh = GetComponent<TextMeshPro>();
+        }
 
         internal void Setup(int damageAmount)
         {
@@ -41,11 +43,6 @@ namespace PeggleAttacks.AttackVisuals.PopUps
             _moveVector = new Vector3(1, 1);
         }
 
-        private void Awake()
-        {
-            _textMesh = GetComponent<TextMeshPro>();
-        }
-
         private void Update()
         {
             transform.position += _moveVector * Time.deltaTime;
@@ -54,15 +51,11 @@ namespace PeggleAttacks.AttackVisuals.PopUps
             _disappearTimer -= Time.deltaTime;
 
             if (_disappearTimer > _disappearTimerMax * 0.5f) 
-            {
                 //First half of the popup lifetime
                 transform.localScale += _damageScale * Time.deltaTime * Vector3.one;
-            }
             else
-            {
                 //Second half of the popup lifetime
                 transform.localScale -= + _damageScale * Time.deltaTime * Vector3.one;
-            }
 
             if (_disappearTimer < 0)
             {
@@ -72,13 +65,10 @@ namespace PeggleAttacks.AttackVisuals.PopUps
                 _textMesh.color = _textColor;
 
                 if (_textColor.a < 0)
-                {
                     Destroy(gameObject);
-                }
             }
         }
 
         #endregion
-
     }
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 using Attacks;
 
-namespace Enemies
+namespace Characters.Enemies
 {
     internal abstract class RangedEnemy : Enemy
     {

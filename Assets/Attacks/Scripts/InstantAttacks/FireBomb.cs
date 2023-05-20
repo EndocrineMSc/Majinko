@@ -1,8 +1,5 @@
-using EnumCollection;
 using Audio;
-using PeggleWars.Characters.Interfaces;
-using Enemies;
-using System.Collections;
+using Characters.Enemies;
 using UnityEngine;
 using PeggleWars.Attacks;
 

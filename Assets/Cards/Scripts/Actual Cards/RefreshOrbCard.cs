@@ -3,10 +3,8 @@ using EnumCollection;
 
 namespace Cards
 {
-    internal class RefreshOrbCard : Card
+    internal class RefreshOrbCard : OrbShifterCard
     {
-        public int AmountOrbs { get; set; } = 1;
-
         protected override void CardEffect()
         {
             GlobalOrbManager.Instance.AddGlobalOrb(GlobalOrbManager.Instance.AllOrbsList[(int)OrbType.RefreshOrb]);

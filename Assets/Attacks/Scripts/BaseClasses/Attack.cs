@@ -1,5 +1,5 @@
 using UnityEngine;
-using Enemies;
+using Characters.Enemies;
 using PeggleWars.Orbs;
 using PeggleWars.Characters.Interfaces;
 using PeggleWars.Utilities;
