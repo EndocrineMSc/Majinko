@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e8a4d1699db8b4a9caa22a62944c02, type: 3}
+  m_Name: AllSpheresCollection
+  m_EditorClassIdentifier: 
+  AllSpheres:
+  - {fileID: 3788764008735259943, guid: 74b9d0bd4ae7f5349a2385ddbd610a14, type: 3}
+  - {fileID: 25157044019572709, guid: ca384d359405d924b8f3b7e816007835, type: 3}
+  - {fileID: 1610338880124931751, guid: 8cb89b998179e0343b0fd6736ff6c13a, type: 3}

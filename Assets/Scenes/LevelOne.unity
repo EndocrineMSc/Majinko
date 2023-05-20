@@ -230,12 +230,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23111ba5ba30a484bb545999150eb136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShotStackedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  ShotDestructionEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!4 &171527206
 Transform:
   m_ObjectHideFlags: 0
@@ -862,6 +856,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1273466090510372790, guid: 7322e6d325387694291c5af48619034c, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2979216601743588876, guid: 7322e6d325387694291c5af48619034c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2979216601743588876, guid: 7322e6d325387694291c5af48619034c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2979216601743588876, guid: 7322e6d325387694291c5af48619034c, type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5589124014020282928, guid: 7322e6d325387694291c5af48619034c, type: 3}
