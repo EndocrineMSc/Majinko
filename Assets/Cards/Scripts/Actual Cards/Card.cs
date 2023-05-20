@@ -1,5 +1,5 @@
 using UnityEngine;
-using PeggleWars.Orbs;
+using Orbs;
 using PeggleWars.ManaManagement;
 using EnumCollection;
 using System.Collections;

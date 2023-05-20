@@ -1,4 +1,4 @@
-using PeggleWars.Orbs;
+using Orbs;
 using EnumCollection;
 
 namespace Cards

@@ -1,6 +1,6 @@
 using UnityEngine;
 using EnumCollection;
-using PeggleWars.Orbs;
+using Orbs;
 
 namespace Cards
 {

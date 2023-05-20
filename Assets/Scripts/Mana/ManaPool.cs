@@ -1,8 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using EnumCollection;
-using PeggleWars.Orbs;
-using System.Runtime.InteropServices.WindowsRuntime;
+using Orbs;
 using System.Collections;
 
 namespace PeggleWars.ManaManagement
@@ -39,21 +38,22 @@ namespace PeggleWars.ManaManagement
 
         private void Awake()
         {
-            if (Instance != null && Instance != this)
-            {
-                Destroy(this);
-            }
-            else
-            {
+            if (Instance == null)
                 Instance = this;
-            }
+            else
+                Destroy(gameObject);
         }
 
-        private void Start()
+        private void OnEnable()
         {
             FindSpawnPoints();
-            OrbEvents.Instance.ManaSpawnTrigger?.AddListener(SpawnManaWrap);
-            OrbEvents.Instance.ManaSpawnTrigger?.Invoke(ManaType.BasicMana, 30); 
+            OrbEvents.SpawnMana += SpawnManaWrap;
+            OrbEvents.RaiseSpawnMana(ManaType.BasicMana, 30);
+        }
+
+        private void OnDisable()
+        {
+            OrbEvents.SpawnMana -= SpawnManaWrap;
         }
 
         private void FindSpawnPoints()

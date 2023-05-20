@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Cards
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Cards/SphereshifterCard")]
     internal class ScriptableSphereshifterCard : ScriptableCard
     {
         internal override CardEffectType EffectType { get; } = CardEffectType.Sphereshifter;

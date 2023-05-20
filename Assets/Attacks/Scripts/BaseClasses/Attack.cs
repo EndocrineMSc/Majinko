@@ -1,6 +1,6 @@
 using UnityEngine;
 using Characters.Enemies;
-using PeggleWars.Orbs;
+using Orbs;
 using PeggleWars.Characters.Interfaces;
 using PeggleWars.Utilities;
 using Characters;
@@ -50,7 +50,7 @@ namespace Attacks
                 target?.TakeDamage(_damage);
                 OnHitPolish();
                 AdditionalEffectsOnImpact();
-                if (_attackOrigin == AttackOrigin.Player) { OrbEvents.Instance.OrbEffectEnd?.Invoke(); }
+                if (_attackOrigin == AttackOrigin.Player) { OrbEvents.RaiseEffectEnd(); }
                 DestroyGameObject();
             }
         }

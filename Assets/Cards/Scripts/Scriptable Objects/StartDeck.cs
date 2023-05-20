@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Cards.StartDecks
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Cards/StartDeck")]
     public class StartDeck : ScriptableObject
     {
         [SerializeField] private int[] _startDeck = new int[10];

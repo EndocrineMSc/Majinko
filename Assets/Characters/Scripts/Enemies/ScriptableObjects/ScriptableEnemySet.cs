@@ -3,7 +3,7 @@ using EnumCollection;
 
 namespace Characters.Enemies
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Enemies/EnemySet")]
     internal class ScriptableEnemySet : ScriptableObject
     {
         [SerializeField] private EnemyType[] _enemyArray;

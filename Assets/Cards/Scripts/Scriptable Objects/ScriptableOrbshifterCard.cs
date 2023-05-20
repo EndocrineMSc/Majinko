@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Cards
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Cards/OrbshifterCard")]
     internal class ScriptableOrbshifterCard : ScriptableCard
     {
         internal override CardEffectType EffectType { get; } = CardEffectType.Orbshifter;

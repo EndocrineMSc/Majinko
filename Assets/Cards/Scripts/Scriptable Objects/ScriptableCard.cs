@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Cards
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Cards/InstantCard")]
     internal class ScriptableCard : ScriptableObject
     {
         [SerializeField] internal string CardName;

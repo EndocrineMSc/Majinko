@@ -1,6 +1,6 @@
 using EnumCollection;
 using Audio;
-using PeggleWars.Orbs;
+using Orbs;
 using PeggleWars.ScrollDisplay;
 
 namespace Characters.Enemies
