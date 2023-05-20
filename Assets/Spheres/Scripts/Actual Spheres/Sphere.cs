@@ -5,10 +5,9 @@ using PeggleWars.Utilities;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using EnumCollection;
+using PeggleWars.Spheres;
 
-
-namespace PeggleWars.Spheres
+namespace Spheres
 {
     [RequireComponent(typeof(ScrollDisplayer))]
     internal abstract class Sphere : MonoBehaviour, IHaveDisplayDescription, IAmSphere
@@ -69,13 +68,13 @@ namespace PeggleWars.Spheres
         protected virtual void OnEnable()
         {
             LevelPhaseEvents.OnEndCardPhase += OnCardPhaseEnd;
-            ShotEvents.Instance.ShotStackedEvent?.AddListener(ShotStackEffect);           
+            SphereEvents.OnSphereStacked += SphereStackEffect;        
         }
 
         protected virtual void OnDisable()
         {
             LevelPhaseEvents.OnEndCardPhase -= OnCardPhaseEnd;
-            ShotEvents.Instance.ShotStackedEvent?.RemoveListener(ShotStackEffect);
+            SphereEvents.OnSphereStacked -= SphereStackEffect;
         }
 
         private void Start()
@@ -253,7 +252,7 @@ namespace PeggleWars.Spheres
             }
         }
 
-        internal abstract void ShotStackEffect();
+        internal abstract void SphereStackEffect();
 
         public abstract void SetDisplayDescription();
 

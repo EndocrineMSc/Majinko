@@ -1,4 +1,4 @@
-using PeggleWars.Spheres;
+using Spheres;
 
 namespace Cards
 {

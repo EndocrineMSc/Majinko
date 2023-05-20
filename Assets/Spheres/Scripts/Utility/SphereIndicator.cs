@@ -1,14 +1,14 @@
 using UnityEngine;
+using Orbs;
 
-
-namespace PeggleWars.Spheres.Indicators
+namespace Spheres
 {
     /// <summary>
-    /// This class mainly tracks how many collisions with a orb a ShotIndicator already had.
+    /// This class mainly tracks how many collisions with a orb a SphereIndicator already had.
     /// </summary>
-    public class ShotIndicator : MonoBehaviour
+    internal class SphereIndicator : MonoBehaviour
     {
-        private SphereManager _shotManager;
+        private SphereManager _sphereManager;
         private int _currentNumberOfCollisions;
 
         //ignore collisions with shots and shotindicators
@@ -20,17 +20,17 @@ namespace PeggleWars.Spheres.Indicators
 
         private void Start()
         {
-            _shotManager = SphereManager.Instance;
+            _sphereManager = SphereManager.Instance;
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.name.Contains("Orb"))
+            if (collision.gameObject.TryGetComponent<Orb>(out _))
             {
                 _currentNumberOfCollisions++;
             }
 
-            if (_currentNumberOfCollisions >= _shotManager.MaxIndicatorCollisions)
+            if (_currentNumberOfCollisions >= _sphereManager.MaxIndicatorCollisions)
             {
                 Destroy(gameObject);
             }

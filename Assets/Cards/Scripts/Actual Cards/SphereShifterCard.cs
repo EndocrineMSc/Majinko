@@ -1,6 +1,6 @@
-using UnityEngine;
 using EnumCollection;
 using PeggleWars.Spheres;
+using Spheres;
 
 namespace Cards
 {
@@ -34,8 +34,8 @@ namespace Cards
             Sphere _shotInScene = _shotManager.ShotToBeSpawned;
 
             if (_shotInScene == _sphere) //maybe won't work as intended, check first for bugfixes
-            {          
-                ShotEvents.Instance.ShotStackedEvent?.Invoke();
+            {
+                SphereEvents.RaiseSphereStacked();
             }
             else
             {

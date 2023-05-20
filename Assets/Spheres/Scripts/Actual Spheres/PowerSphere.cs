@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using Utility.TurnManagement;
 
-namespace PeggleWars.Spheres
+namespace Spheres
 {
     internal class PowerSphere : Sphere
     {
@@ -17,7 +17,7 @@ namespace PeggleWars.Spheres
             _shotSpeed *= 2f;
         }
 
-        internal override void ShotStackEffect()
+        internal override void SphereStackEffect()
         {
             _allowedPortalCollisions++;
         }

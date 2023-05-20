@@ -3,9 +3,8 @@ using EnumCollection;
 using Utility.TurnManagement;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine.Events;
 
-namespace PeggleWars.Spheres
+namespace Spheres
 {
     internal class SphereManager : MonoBehaviour
     {

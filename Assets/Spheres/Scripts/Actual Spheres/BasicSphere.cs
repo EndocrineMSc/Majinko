@@ -1,11 +1,10 @@
-
 using PeggleWars.ScrollDisplay;
 
-namespace PeggleWars.Spheres
+namespace Spheres
 {
     internal class BasicSphere : Sphere
     {
-        internal override void ShotStackEffect()
+        internal override void SphereStackEffect()
         {
             //do nothing
         }
