@@ -100,10 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ef968a9f9eba424085d42fdd38959df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _attackValues: {fileID: 11400000, guid: 47541e41be20ad744b67e8d825edc47a, type: 2}
   _attackOrigin: 0
-  _damage: 10
-  _attackFlySpeed: 20
-  _xInstantiateOffSet: 5
 --- !u!61 &439088292685987980
 BoxCollider2D:
   m_ObjectHideFlags: 0

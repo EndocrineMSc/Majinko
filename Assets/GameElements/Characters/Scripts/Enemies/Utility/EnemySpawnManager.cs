@@ -103,7 +103,7 @@ namespace Characters.Enemies
 
             if (!CheckIfSpawnPositionOccupied())
             {
-                Enemy instantiatedEnemy = Instantiate(spawnEnemy, spawnPosition, Quaternion.identity); ;
+                Enemy instantiatedEnemy = Instantiate(spawnEnemy, spawnPosition, Quaternion.identity);
                 _enemyManager.EnemiesInScene.Add(instantiatedEnemy);
                 EnemySpawnCounter++;
                 instantiatedEnemy.transform.position = new Vector3(instantiatedEnemy.transform.position.x, instantiatedEnemy.transform.position.y, -1); //quick fix for display scroll

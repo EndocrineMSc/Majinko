@@ -4,6 +4,7 @@ using Orbs;
 using PeggleWars.Characters.Interfaces;
 using PeggleWars.Utilities;
 using Characters;
+using Utility;
 
 namespace Attacks
 {
@@ -14,13 +15,13 @@ namespace Attacks
         protected PlayerAttackDamageManager _playerAttackManager;
         protected Collider2D _collider;
 
+        [SerializeField] protected EffectValueCollection _attackValues;
         [SerializeField] protected AttackOrigin _attackOrigin;
-        [SerializeField] protected int _damage;
 
         protected readonly string NOTARGET_BARK = "No enemy!";
         protected readonly string ATTACK_ANIMATION = "Attack";
 
-        internal int Damage { get; private protected set; }
+        internal int ModifiedDamage { get; private protected set; }
 
         public abstract string Bark { get; }
 
@@ -34,7 +35,7 @@ namespace Attacks
             
             if (_attackOrigin == AttackOrigin.Player)
             {
-                _damage = Mathf.RoundToInt(_damage * _playerAttackManager.DamageModifierTurn);
+                ModifiedDamage = Mathf.RoundToInt(_attackValues.Damage * _playerAttackManager.DamageModifierTurn);
                 Player.Instance.GetComponentInChildren<Animator>().SetTrigger(ATTACK_ANIMATION);
             }
         }
@@ -47,7 +48,7 @@ namespace Attacks
                 || _attackOrigin == AttackOrigin.Enemy && collision.gameObject.GetComponent<Player>() != null)
             {
                 IDamagable target = collision.GetComponent<IDamagable>();
-                target?.TakeDamage(_damage);
+                target?.TakeDamage(ModifiedDamage);
                 OnHitPolish();
                 AdditionalEffectsOnImpact();
                 if (_attackOrigin == AttackOrigin.Player) { OrbEvents.RaiseEffectEnd(); }

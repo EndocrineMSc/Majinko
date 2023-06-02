@@ -37,10 +37,5 @@ namespace PeggleWars.Orbs
 
             _collider.enabled = false;
         }
-
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            Debug.Log(collision.gameObject.name);
-        }
     }
 }

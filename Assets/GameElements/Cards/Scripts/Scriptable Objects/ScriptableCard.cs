@@ -15,10 +15,6 @@ namespace Cards
         [SerializeField] internal int FireManaCost;
         [SerializeField] internal int IceManaCost;
         [SerializeField] internal bool IsExhaustCard;
-        [SerializeField] internal int Damage;
-        [SerializeField] internal int Shield;
-        [SerializeField] internal int BurningStacks;
-        [SerializeField] internal int IceStacks;
         [SerializeField] internal CardType Type;
         [SerializeField] internal CardRarity Rarity;
         [SerializeField] internal CardElement Element;

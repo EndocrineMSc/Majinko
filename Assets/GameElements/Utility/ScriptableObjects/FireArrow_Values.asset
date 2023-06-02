@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24936920a8708ce4e82bf5f6f4852e8f, type: 3}
+  m_Name: FireArrow_Values
+  m_EditorClassIdentifier: 
+  Damage: 10
+  ShieldStacks: 0
+  BurningStacks: 5
+  FreezingStacks: 0
+  PercentToFreeze: 0

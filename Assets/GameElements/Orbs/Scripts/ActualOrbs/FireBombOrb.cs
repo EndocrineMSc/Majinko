@@ -4,6 +4,7 @@ using UnityEngine;
 using Attacks;
 using PeggleWars.Spheres;
 using UnityEditor.Animations;
+using Characters.Enemies;
 
 namespace Orbs
 {
@@ -12,7 +13,6 @@ namespace Orbs
         [SerializeField] private Attack _fireBomb;
         [SerializeField] private GameObject _bombRadiusObject;
         [SerializeField] private AnimatorController _orb_Explosion;
-        private readonly string TARGET_PARAM = "AOE_Target";
 
         protected override void OnCollisionEnter2D(Collision2D collision)
         {
@@ -44,8 +44,7 @@ namespace Orbs
 
         internal override IEnumerator OrbEffect()
         {
-            GameObject aoeTargetObject = GameObject.FindGameObjectWithTag(TARGET_PARAM);
-            _fireBomb.ShootAttack(aoeTargetObject.transform.position);
+            _fireBomb.ShootAttack(EnemyManager.Instance.EnemyPositions[0, 0]);
             yield return new WaitForSeconds(0.2f);
         }
 

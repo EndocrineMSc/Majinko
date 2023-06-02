@@ -167,6 +167,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71b790fe3605cfb458bf3a33acdb7e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _attackValues: {fileID: 11400000, guid: fe132dffc8a3ae44eafe35b4a7e2278f, type: 2}
   _attackOrigin: 1
-  _damage: 5
-  _attackFlySpeed: 20

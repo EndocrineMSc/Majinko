@@ -20,7 +20,7 @@ namespace Attacks
 
         protected override void AdditionalEffectsOnImpact()
         {
-            //empty
+            //none
         }
     }
 }

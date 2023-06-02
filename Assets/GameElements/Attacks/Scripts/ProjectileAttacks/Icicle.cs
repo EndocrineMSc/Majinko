@@ -6,9 +6,6 @@ namespace Attacks
 {
     internal class Icicle : ProjectileAttack
     {
-        [SerializeField] protected int _freezingStacks = 5;
-        [SerializeField] protected int _frozenThreshold = 20;
-
         public override string Bark { get; } = "Icicle!";
 
         //Do special stuff in here
@@ -25,10 +22,10 @@ namespace Attacks
         protected override void AdditionalEffectsOnImpact()
         {
             Enemy enemy = _collider.GetComponent<Enemy>();
-            enemy.ApplyFreezing(_freezingStacks);
+            enemy.ApplyFreezing(_attackValues.FreezingStacks);
 
             int randomChance = UnityEngine.Random.Range(0, 101);
-            if (randomChance < _frozenThreshold)
+            if (randomChance < _attackValues.PercentToFreeze)
             {
                 enemy.ApplyFrozen();
             }

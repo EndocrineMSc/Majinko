@@ -41,20 +41,27 @@ namespace Characters.Enemies
 
         private IEnumerator HandleEnemyAttacks()
         {
-            foreach (Enemy enemy in EnemyManager.Instance.EnemiesInScene)
+            int amountOfEnemies = EnemyManager.Instance.EnemiesInScene.Count;
+
+            for (int i = 0; i < amountOfEnemies; i++)
             {
-                if (enemy != null)
+                if (i < EnemyManager.Instance.EnemiesInScene.Count)
                 {
-                    if (enemy.TurnsTillNextAttack > 0)
+                    Enemy enemy = EnemyManager.Instance.EnemiesInScene[i];
+
+                    if (enemy != null)
                     {
-                        enemy.TurnsTillNextAttack--;
+                        if (enemy.TurnsTillNextAttack > 0)
+                        {
+                            enemy.TurnsTillNextAttack--;
+                        }
+                        else if (enemy.AttackType == EnemyAttackType.Ranged || enemy.IsInAttackPosition)
+                        {
+                            enemy.Attack();
+                            yield return new WaitForSeconds(_attackGapSeconds);
+                        }
                     }
-                    else if (enemy.AttackType == EnemyAttackType.Ranged || enemy.IsInAttackPosition)
-                    {
-                        enemy.Attack();
-                        yield return new WaitForSeconds(_attackGapSeconds);
-                    }
-                }
+                }    
             }
             EnemyEvents.RaiseOnEnemiesFinishedAttacking();
         }

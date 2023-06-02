@@ -147,12 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cded338f9fd708c4c806ed91b046ad25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _attackValues: {fileID: 11400000, guid: 63940aa8826e3864a80841c865eb0bc3, type: 2}
   _attackOrigin: 0
-  _damage: 0
-  _attackFlySpeed: 20
-  _xInstantiateOffSet: 5
-  _freezingStacks: 5
-  _frozenThreshold: 20
 --- !u!95 &9156543639479363895
 Animator:
   serializedVersion: 4

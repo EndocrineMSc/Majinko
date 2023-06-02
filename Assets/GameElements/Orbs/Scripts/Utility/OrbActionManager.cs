@@ -73,9 +73,12 @@ namespace Orbs
         {
             foreach (Orb orb in _orbActions)
             {
-                yield return StartCoroutine(orb.OrbEffect());
-                Destroy(orb.gameObject);
-                yield return new WaitForSeconds(0.2f);
+                if (orb != null)
+                {
+                    yield return StartCoroutine(orb.OrbEffect());
+                    Destroy(orb.gameObject);
+                    yield return new WaitForSeconds(0.2f);
+                }
             }
             _orbActions.Clear();
             yield return new WaitForSeconds(2f);

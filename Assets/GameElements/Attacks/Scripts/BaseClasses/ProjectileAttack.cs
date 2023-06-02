@@ -9,7 +9,7 @@ namespace Attacks
     {
         #region Fields and Properties
 
-        [SerializeField] protected float _attackFlySpeed = 10;
+        protected float _attackFlySpeed = 10;
         protected float _xInstantiateOffSet = 0.4f;
 
         #endregion

@@ -100,10 +100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beca88a4899de61428b978e250cbd583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: 3
-  _attackFlySpeed: 0
-  _damage: 20
-  _animationDuration: 0.5
+  _attackValues: {fileID: 11400000, guid: bd6b5bf58da541746a95d11e61bdca83, type: 2}
+  _attackOrigin: 0
+  _timeOfExistance: 0
 --- !u!95 &8675071620142715176
 Animator:
   serializedVersion: 4

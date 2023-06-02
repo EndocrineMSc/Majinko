@@ -7,9 +7,6 @@ namespace Attacks
 {
     internal class HailStorm : InstantAttack, IAmAOE
     {
-        [SerializeField] protected int _freezingStacks = 5;
-        [SerializeField] protected int _frozenThreshold = 30;
-
         public override string Bark { get; } = "Hail Storm!";
 
         //Do special stuff in here
@@ -28,11 +25,11 @@ namespace Attacks
         {
             foreach (Enemy enemy in EnemyManager.Instance.EnemiesInScene)
             {
-                enemy.TakeDamage(_damage);
-                enemy.ApplyFreezing(_freezingStacks);
+                enemy.TakeDamage(ModifiedDamage);
+                enemy.ApplyFreezing(_attackValues.FreezingStacks);
 
                 int randomChance = UnityEngine.Random.Range(0, 101);
-                if (randomChance < _frozenThreshold)
+                if (randomChance < _attackValues.PercentToFreeze)
                 {
                     enemy.ApplyFrozen();
                 }

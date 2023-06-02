@@ -24,9 +24,7 @@ namespace Attacks
                 Player.Instance.GetComponent<PopUpSpawner>().SpawnPopUp(Bark);
             }
             else
-            {
                 Player.Instance.GetComponent<PopUpSpawner>().SpawnPopUp(NOTARGET_BARK);
-            }
         }
 
         protected override void DestroyGameObject()

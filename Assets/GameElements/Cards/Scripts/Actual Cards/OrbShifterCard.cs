@@ -1,6 +1,7 @@
 using UnityEngine;
 using EnumCollection;
 using Orbs;
+using Utility;
 
 namespace Cards
 {
@@ -8,6 +9,8 @@ namespace Cards
     {
         internal int OrbAmount { get; private set; }
         internal OrbType OrbType { get; private set; }
+
+        protected EffectValueCollection EffectValues { get; private set; }
 
         protected override void CardEffect()
         {

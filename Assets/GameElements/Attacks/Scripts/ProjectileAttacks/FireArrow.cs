@@ -6,8 +6,6 @@ namespace Attacks
 {
     internal class FireArrow : ProjectileAttack
     {
-        [SerializeField] protected int _burningStacks = 5;
-
         public override string Bark { get; } = "Fire Arrow!";
 
         //Do special stuff in here
@@ -24,8 +22,11 @@ namespace Attacks
         protected override void AdditionalEffectsOnImpact()
         {
             Enemy enemy = _collider.GetComponent<Enemy>();
-            enemy.TakeDamage(_damage);
-            enemy.ApplyBurning(_burningStacks);
+            if (enemy != null )
+            {
+                enemy.TakeDamage(ModifiedDamage);
+                enemy.ApplyBurning(_attackValues.BurningStacks);
+            }
         }
     }
 }
