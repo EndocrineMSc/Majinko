@@ -37,6 +37,9 @@ namespace Characters.Enemies
         internal int FrozenForTurns { get; private protected set; } = 0;
         internal int BurningStacks { get; private set; } = 0;
         internal int FreezingStacks { get; private set; } = 0;
+        internal int TemperatureSicknessStacks { get; private protected set; } = 0;
+        protected float _damageModifier = 1f;
+        protected float _temperatureSicknessModifier = 0.05f;
 
         //Stats
         [SerializeField] ScriptableEnemy _scriptableEnemy;
@@ -116,7 +119,7 @@ namespace Characters.Enemies
 
             if (BurningStacks > 0)
             {
-                TakeDamage(BurningStacks);
+                TakeDamage(BurningStacks, false);
             }
         }
 
@@ -134,14 +137,24 @@ namespace Characters.Enemies
             }
         }
 
-        public void TakeDamage(int damage)
+        public void TakeDamage(int damage, bool sourceIsAttack = true)
         {
-            Health -= damage;
+            if (TemperatureSicknessStacks > 0)
+                _damageModifier += (TemperatureSicknessStacks * _temperatureSicknessModifier);
+
+            if (sourceIsAttack)
+            {
+                damage = Mathf.CeilToInt(damage * _damageModifier); //round to the next higher int in players favor
+                Health -= damage;
+                TemperatureSicknessStacks = 0;
+                _damageModifier = 1; //reset to default after using it once
+            }
+            else
+                Health -= damage;
 
             if (damage > 0)
-            {
                 _popUpSpawner.SpawnPopUp(damage);
-            }
+
             TriggerHurtAnimation();
             PlayHurtSound();
 
@@ -203,12 +216,47 @@ namespace Characters.Enemies
 
         internal void ApplyBurning(int burningStacks)
         {
-            BurningStacks += burningStacks;
+            if (FreezingStacks > 0)
+            {
+                if (FreezingStacks >= burningStacks)
+                {
+                    FreezingStacks -= burningStacks;
+                    TemperatureSicknessStacks += burningStacks;
+                }
+                else
+                {
+                    int sicknessStacks = burningStacks - FreezingStacks;
+                    TemperatureSicknessStacks += sicknessStacks;
+
+                    int remainingBurningStacks = burningStacks - sicknessStacks;
+                    BurningStacks += remainingBurningStacks;
+                }
+            }
+            else
+                BurningStacks += burningStacks;            
         }
 
         internal void ApplyFreezing(int freezingStacks)
         {
-            FreezingStacks += freezingStacks;
+            if (BurningStacks > 0)
+            {
+                if (BurningStacks >= freezingStacks)
+                {
+                    BurningStacks -= freezingStacks;
+                    TemperatureSicknessStacks += freezingStacks;
+                }
+                else
+                {
+                    int sicknessStacks = freezingStacks - BurningStacks;
+                    TemperatureSicknessStacks += sicknessStacks;
+
+                    int remainingFreezingStacks = freezingStacks - sicknessStacks;
+                    BurningStacks += remainingFreezingStacks;
+                }
+            }
+            else
+                FreezingStacks += freezingStacks;
+
             CheckForFreezingKill();
         }
 

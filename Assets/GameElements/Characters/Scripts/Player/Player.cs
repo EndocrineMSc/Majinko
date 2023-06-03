@@ -76,7 +76,7 @@ namespace Characters
             LevelPhaseEvents.OnStartCardPhase -= OnCardTurnStart;
         }
 
-        public void TakeDamage(int damage)
+        public void TakeDamage(int damage, bool sourceIsAttack = true)
         {
             AudioManager.Instance.PlaySoundEffectOnce(SFX._0104_Player_Takes_Damage);
             int calcDamage = damage;
