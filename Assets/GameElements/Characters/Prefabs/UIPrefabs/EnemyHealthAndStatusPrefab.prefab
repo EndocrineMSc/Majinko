@@ -164,6 +164,7 @@ MonoBehaviour:
   _freezingPrefab: {fileID: 3598385073291101113, guid: bbb433212e64dba44ab0e480a1d7c709, type: 3}
   _frozenPrefab: {fileID: 3598385073291101113, guid: 951f5f8a7c779bf439216adddaff3cff, type: 3}
   _intangiblePrefab: {fileID: 3598385073291101113, guid: 29c038db85454ef48828c573b262a292, type: 3}
+  _temperatureSicknessPrefab: {fileID: 3598385073291101113, guid: 86136336bd2bded448ab877e66901899, type: 3}
   _layoutGroup: {fileID: 7340136634182811612}
 --- !u!1001 &2322609645436632339
 PrefabInstance:

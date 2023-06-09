@@ -18,21 +18,25 @@ namespace Characters.Enemies
         private Image _freezingStatus;
         private Image _frozenStatus;
         private Image _intangibleStatus;
+        private Image _temperatureSicknessStatus;
         private int _lastUpdateHealth;
         private int _lastUpdateFireStacks;
         private int _lastUpdateIceStacks;
         private int _lastUpdateFrozenStacks;
         private int _lastUpdateIntangibleStacks;
+        private int _lastUpdateTemperatureSicknessStacks;
         private bool _isBurning;
         private bool _isFreezing;
         private bool _isFrozen;
         private bool _enemyCanBeIntangible;
         private bool _isIntangible;
+        private bool _isTemperatureSick;
 
         [SerializeField] private GameObject _burningPrefab;
         [SerializeField] private GameObject _freezingPrefab;
         [SerializeField] private GameObject _frozenPrefab;
         [SerializeField] private GameObject _intangiblePrefab;
+        [SerializeField] private GameObject _temperatureSicknessPrefab;
         [SerializeField] private GameObject _layoutGroup;
 
         #endregion
@@ -63,6 +67,7 @@ namespace Characters.Enemies
             UpdateBurning();
             UpdateFreezing();
             UpdateFrozen();
+            UpdateTemperatureSickness();
 
             if (_enemyCanBeIntangible)
                 UpdateIntangible();
@@ -192,6 +197,33 @@ namespace Characters.Enemies
                 Destroy(_intangibleStatus.gameObject);
             }
         }
+
+        private void UpdateTemperatureSickness()
+        {
+            if (_parentEnemy.TemperatureSicknessStacks > 0)
+            {
+                if (_isTemperatureSick)
+                {
+                    if (_lastUpdateTemperatureSicknessStacks != _parentEnemy.TemperatureSicknessStacks)
+                    {
+                        UpdateTemperatureSicknessStacks();
+                    }
+                }
+                else
+                {
+                    _isTemperatureSick = true;
+                    _temperatureSicknessStatus = Instantiate(_temperatureSicknessPrefab, _layoutGroup.transform).GetComponent<Image>();
+                    _temperatureSicknessStatus.rectTransform.SetParent(_layoutGroup.GetComponent<RectTransform>());
+                    UpdateTemperatureSicknessStacks();
+                }
+            }
+
+            if (_parentEnemy.TemperatureSicknessStacks <= 0 && _isTemperatureSick)
+            {
+                _isTemperatureSick = false;
+                Destroy(_temperatureSicknessStatus.gameObject);
+            }
+        }
         
         private void UpdateFireStacks()
         {
@@ -219,6 +251,13 @@ namespace Characters.Enemies
             _intangibleStatus.rectTransform.DOPunchScale(_intangibleStatus.rectTransform.localScale * 1.1f, 0.2f, 1, 1);
             _intangibleStatus.GetComponentInChildren<TextMeshProUGUI>().text = _intangibleEnemy.IntangibleStacks.ToString();
             _lastUpdateIntangibleStacks = _intangibleEnemy.IntangibleStacks;
+        }
+
+        private void UpdateTemperatureSicknessStacks()
+        {
+            _temperatureSicknessStatus.rectTransform.DOPunchScale(_temperatureSicknessStatus.rectTransform.localScale * 1.1f, 0.2f, 1, 1);
+            _temperatureSicknessStatus.GetComponentInChildren<TextMeshProUGUI>().text = _parentEnemy.TemperatureSicknessStacks.ToString();
+            _lastUpdateTemperatureSicknessStacks = _parentEnemy.TemperatureSicknessStacks;
         }
 
         #endregion
