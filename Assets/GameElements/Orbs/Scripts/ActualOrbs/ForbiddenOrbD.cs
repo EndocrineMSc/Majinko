@@ -1,6 +1,7 @@
 using PeggleWars.ScrollDisplay;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Orbs
 {
@@ -18,11 +19,15 @@ namespace Orbs
             SpriteRenderer spriteRenderer = _forbiddenD.GetComponent<SpriteRenderer>();
 
             if(!spriteRenderer.enabled)
-            {
                 spriteRenderer.enabled = true;
-            }
-            //ToDo: obscure board next turn
+
+            FadeImage();
             yield return null;
+        }
+
+        private void FadeImage()
+        {
+            ObscuringImageHandler.RaiseObscuringImageFade();
         }
     }
 }
