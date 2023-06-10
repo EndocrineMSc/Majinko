@@ -25,7 +25,7 @@ namespace Orbs
         [SerializeField] protected int _manaAmount = 10;
         [SerializeField] protected GameObject _defaultOrb;
         [SerializeField] internal OrbType OrbType;
-        internal bool IsOrbActive { get; private set; } = true;
+        internal bool orbIsActive { get; private set; } = true;
 
         //Tweening
         protected Vector3 _position;
@@ -127,11 +127,11 @@ namespace Orbs
             Destroy(gameObject);
         }
 
-        protected void SetOrbInactive()
+        internal void SetOrbInactive()
         {
             _collider.enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
-            IsOrbActive = false;
+            orbIsActive = false;
         }
 
         #endregion
@@ -140,14 +140,14 @@ namespace Orbs
 
         protected void OnSetOrbActive()
         {
-            IsOrbActive = true;
+            orbIsActive = true;
             _collider.enabled = true;
             GetComponent<SpriteRenderer>().enabled = true;
         }
 
         internal void SetActionOrbInactive()
         {
-            IsOrbActive = false;
+            orbIsActive = false;
             _collider.enabled = false;
         }
 
