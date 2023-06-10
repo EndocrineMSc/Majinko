@@ -1,3 +1,4 @@
+using Attacks;
 using PeggleWars.ScrollDisplay;
 using System.Collections;
 using UnityEngine;
@@ -18,10 +19,10 @@ namespace Orbs
             SpriteRenderer spriteRenderer = _forbiddenI.GetComponent<SpriteRenderer>();
 
             if(!spriteRenderer.enabled)
-            {
                 spriteRenderer.enabled = true;
-            }
-            //ToDo: reduce PlayerDamage for a turn;
+
+            PlayerAttackDamageManager.Instance.ModifyDamage(0.75f);
+
             yield return null;
         }
     }

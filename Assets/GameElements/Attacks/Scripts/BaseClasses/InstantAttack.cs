@@ -21,13 +21,21 @@ namespace Attacks
             if (EnemyManager.Instance.EnemiesInScene.Count > 0)
             {
                 InstantAttack attack = Instantiate(this, instantiatePosition, Quaternion.identity);               
-                attack.Damage = Mathf.CeilToInt(Damage * damageModifier);
 
                 if (_attackOrigin == AttackOrigin.Player)
+                {
                     Player.Instance.GetComponent<PopUpSpawner>().SpawnPopUp(Bark);
+                    attack.Damage = Mathf.FloorToInt(Damage * PlayerAttackDamageManager.Instance.DamageModifierTurn);
+                }
+                else
+                {
+                    attack.Damage = Mathf.CeilToInt(Damage * damageModifier);
+                }
             }
             else
+            {
                 Player.Instance.GetComponent<PopUpSpawner>().SpawnPopUp(NOTARGET_BARK);
+            }
         }
 
         protected override void DestroyGameObject()

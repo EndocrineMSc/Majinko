@@ -23,8 +23,7 @@ namespace Orbs
                 spriteRenderer.enabled = true;
             }
 
-            Player player = Player.Instance;
-            player.TakeDamage(1);
+            Player.Instance.TakeDamage(1);
             yield return null;
         }
     }

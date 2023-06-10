@@ -29,6 +29,7 @@ namespace Attacks
                     Rigidbody2D rigidbody = attack.GetComponent<Rigidbody2D>();
                     rigidbody.velocity = Vector3.right * _attackFlySpeed;
                     Player.Instance.GetComponent<PopUpSpawner>().SpawnPopUp(Bark);
+                    attack.Damage = Mathf.FloorToInt(_attackValues.Damage * PlayerAttackDamageManager.Instance.DamageModifierTurn);
                 }
                 else
                 {
@@ -37,9 +38,8 @@ namespace Attacks
                     Rigidbody2D rigidbody = attack.GetComponent<Rigidbody2D>();
                     rigidbody.velocity = Vector3.left * _attackFlySpeed;
                     GetComponent<SpriteRenderer>().flipX = true;
-                }
-
-                attack.Damage = Mathf.CeilToInt(_attackValues.Damage * damageModifier);
+                    attack.Damage = Mathf.CeilToInt(_attackValues.Damage * damageModifier);
+                }               
             }
             else
             {
