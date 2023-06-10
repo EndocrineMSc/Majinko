@@ -1,6 +1,7 @@
 using EnumCollection;
 using Utility.TurnManagement;
 using UnityEngine;
+using Utility;
 
 namespace Characters.Enemies
 {
@@ -21,8 +22,7 @@ namespace Characters.Enemies
         internal int AmountOfEnemiesInLevel { get; private set; } 
         internal int EnemySpawnCounter { get; private set; }
 
-
-        [SerializeField] private int _overworldIndex = 1;
+        private int _overworldIndex = 1;
         [SerializeField] private OverworldSetOfSets _worldOneSets;
 
         #endregion
@@ -55,7 +55,8 @@ namespace Characters.Enemies
         private void SetReferences()
         {
             _enemyManager = EnemyManager.Instance;
-            _enemyPositions = _enemyManager.EnemyPositions;            
+            _enemyPositions = _enemyManager.EnemyPositions;
+            _overworldIndex = GlobalWorldManager.Instance.WorldIndex;
         }
 
         private void SetSpawnPositions()

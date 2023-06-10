@@ -15,7 +15,7 @@ namespace PeggleWars.Utilities
         private IEnumerator WaitForLoadingScreen()
         {
             yield return new WaitForSeconds(2f);
-            SceneManager.LoadScene("LevelOne");
+            SceneManager.LoadScene("WorldOne");
         }
     }
 }
