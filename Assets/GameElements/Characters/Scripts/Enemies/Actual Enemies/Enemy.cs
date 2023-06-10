@@ -38,8 +38,12 @@ namespace Characters.Enemies
         internal int BurningStacks { get; private set; } = 0;
         internal int FreezingStacks { get; private set; } = 0;
         internal int TemperatureSicknessStacks { get; private protected set; } = 0;
-        protected float _damageModifier = 1f;
+        internal int EnragedStacks { get; private protected set;} = 0;
+
+        protected float _takenDamageModifier = 1f;
+        protected float _dealingDamageModifier = 1f;
         protected float _temperatureSicknessModifier = 0.05f;
+        protected float _enragedModifier = 0.05f;
 
         //Stats
         [SerializeField] ScriptableEnemy _scriptableEnemy;
@@ -118,36 +122,39 @@ namespace Characters.Enemies
             }
 
             if (BurningStacks > 0)
-            {
                 TakeDamage(BurningStacks, false);
-            }
         }
 
         protected virtual void OnEndEnemyPhase()
         {
             if (AttackType == EnemyAttackType.Ranged)
-            {
                 IsInAttackPosition = true;
-            }
             else
             {
                 Vector2 walkerMeleeAttackPosition = _enemyManager.EnemyPositions[0, 0];
                 Vector2 flyerMeleeAttackPosition = _enemyManager.EnemyPositions[1, 0];
                 IsInAttackPosition = transform.position.Equals(walkerMeleeAttackPosition) || transform.position.Equals(flyerMeleeAttackPosition);
             }
+
+            if (EnragedStacks > 0)
+            {
+                EnragedStacks--;
+                _dealingDamageModifier = 1 + (EnragedStacks * _enragedModifier);
+                Damage = Mathf.CeilToInt(_scriptableEnemy.Damage * _dealingDamageModifier);
+            }
         }
 
         public void TakeDamage(int damage, bool sourceIsAttack = true)
         {
             if (TemperatureSicknessStacks > 0)
-                _damageModifier += (TemperatureSicknessStacks * _temperatureSicknessModifier);
+                _takenDamageModifier += (TemperatureSicknessStacks * _temperatureSicknessModifier);
 
             if (sourceIsAttack)
             {
-                damage = Mathf.CeilToInt(damage * _damageModifier); //round to the next higher int in players favor
+                damage = Mathf.CeilToInt(damage * _takenDamageModifier); //round to the next higher int in players favor
                 Health -= damage;
                 TemperatureSicknessStacks = 0;
-                _damageModifier = 1; //reset to default after using it once
+                _takenDamageModifier = 1; //reset to default after using it once
             }
             else
                 Health -= damage;
@@ -202,6 +209,7 @@ namespace Characters.Enemies
             TriggerAttackAnimation();
             AdditionalAttackEffects();
             TurnsTillNextAttack = _attackFrequency;
+            
         }
 
         protected abstract void TriggerAttackAnimation();
@@ -258,6 +266,13 @@ namespace Characters.Enemies
                 FreezingStacks += freezingStacks;
 
             CheckForFreezingKill();
+        }
+
+        internal void ApplyEnraged(int enragedStacks = 1)
+        {
+            EnragedStacks += enragedStacks;
+            _dealingDamageModifier = 1 + (EnragedStacks * _enragedModifier);
+            Damage = Mathf.CeilToInt(_scriptableEnemy.Damage * _dealingDamageModifier);
         }
 
         protected void CheckForFreezingKill()

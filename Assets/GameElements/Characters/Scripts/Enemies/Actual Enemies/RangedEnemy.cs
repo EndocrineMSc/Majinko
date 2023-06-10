@@ -15,7 +15,7 @@ namespace Characters.Enemies
 
         protected override void AdditionalAttackEffects()
         {
-            _enemyAttack.ShootAttack(gameObject.transform.position);
+            _enemyAttack.ShootAttack(gameObject.transform.position, _dealingDamageModifier);
         }
 
         #endregion

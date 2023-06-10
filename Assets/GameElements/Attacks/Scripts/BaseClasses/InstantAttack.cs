@@ -16,12 +16,15 @@ namespace Attacks
 
         #region Functions
 
-        internal override void ShootAttack(Vector3 instantiatePosition)
+        internal override void ShootAttack(Vector3 instantiatePosition, float damageModifier = 1)
         {
             if (EnemyManager.Instance.EnemiesInScene.Count > 0)
             {
-                Instantiate(this, instantiatePosition, Quaternion.identity);
-                Player.Instance.GetComponent<PopUpSpawner>().SpawnPopUp(Bark);
+                InstantAttack attack = Instantiate(this, instantiatePosition, Quaternion.identity);               
+                attack.Damage = Mathf.CeilToInt(Damage * damageModifier);
+
+                if (_attackOrigin == AttackOrigin.Player)
+                    Player.Instance.GetComponent<PopUpSpawner>().SpawnPopUp(Bark);
             }
             else
                 Player.Instance.GetComponent<PopUpSpawner>().SpawnPopUp(NOTARGET_BARK);

@@ -16,32 +16,30 @@ namespace Attacks
 
         #region Functions
 
-        internal override void ShootAttack(Vector3 instantiatePosition)
+        internal override void ShootAttack(Vector3 instantiatePosition, float damageModifier = 1)
         {
-            if (_attackOrigin == AttackOrigin.Player)
-            {
-                instantiatePosition = new Vector3((instantiatePosition.x + _xInstantiateOffSet), instantiatePosition.y, instantiatePosition.z);
-            }
-            else
-            {
-                instantiatePosition = new Vector3((instantiatePosition.x - _xInstantiateOffSet), instantiatePosition.y, instantiatePosition.z);
-            }
-
             if (EnemyManager.Instance.EnemiesInScene.Count > 0)
             {
-                Attack attack = Instantiate(this, instantiatePosition, Quaternion.identity);
-                Rigidbody2D rigidbody = attack.GetComponent<Rigidbody2D>();
+                ProjectileAttack attack;
 
                 if (_attackOrigin == AttackOrigin.Player)
                 {
+                    instantiatePosition = new Vector3((instantiatePosition.x + _xInstantiateOffSet), instantiatePosition.y, instantiatePosition.z);
+                    attack = Instantiate(this, instantiatePosition, Quaternion.identity);
+                    Rigidbody2D rigidbody = attack.GetComponent<Rigidbody2D>();
                     rigidbody.velocity = Vector3.right * _attackFlySpeed;
                     Player.Instance.GetComponent<PopUpSpawner>().SpawnPopUp(Bark);
                 }
                 else
                 {
-                    GetComponent<SpriteRenderer>().flipX = true;
+                    instantiatePosition = new Vector3((instantiatePosition.x - _xInstantiateOffSet), instantiatePosition.y, instantiatePosition.z);
+                    attack = Instantiate(this, instantiatePosition, Quaternion.identity);
+                    Rigidbody2D rigidbody = attack.GetComponent<Rigidbody2D>();
                     rigidbody.velocity = Vector3.left * _attackFlySpeed;
+                    GetComponent<SpriteRenderer>().flipX = true;
                 }
+
+                attack.Damage = Mathf.CeilToInt(_attackValues.Damage * damageModifier);
             }
             else
             {

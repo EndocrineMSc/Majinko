@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace Attacks
 {
-    internal class FireBomb : InstantAttack, IAmAOE
+    internal class FireBomb : InstantAttack
     {
         public override string Bark { get; } = "Fire Bomb!";
 
@@ -19,10 +19,10 @@ namespace Attacks
             DestroyGameObject();
         }
 
-        internal override void ShootAttack(Vector3 instantiatePosition)
+        internal override void ShootAttack(Vector3 instantiatePosition, float damageModifier = 1)
         {
             FireBomb currentBomb = Instantiate(this, instantiatePosition, Quaternion.identity);
-            currentBomb.HandleAOE();
+            currentBomb.HandleAOE(damageModifier);
         }
 
         protected override void OnHitPolish()
@@ -30,9 +30,9 @@ namespace Attacks
             AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0103_Blunt_Spell_Impact);
         }
 
-        public void HandleAOE()
+        public void HandleAOE(float damageModifier)
         {
-            StartCoroutine(InstantiateExplosions());
+            StartCoroutine(InstantiateExplosions(damageModifier));
         }
 
         protected override void AdditionalEffectsOnImpact()
@@ -40,7 +40,7 @@ namespace Attacks
             //empty
         }
 
-        protected IEnumerator InstantiateExplosions()
+        protected IEnumerator InstantiateExplosions(float damageModifier)
         {
             int xIndexInEnemyPositions = GetEnemyPositionIndex();
             int rightMostEnemyPosition = EnemyManager.Instance.EnemyPositions.GetLength(1) - 1;
@@ -53,14 +53,15 @@ namespace Attacks
             }
             else
             {
-                DealExplosionDamage();
+                DealExplosionDamage(damageModifier);
             }
         }
 
-        protected void DealExplosionDamage()
+        protected void DealExplosionDamage(float damageModifier)
         {
             int amountEnemies = EnemyManager.Instance.EnemiesInScene.Count;
             List<Enemy> enemyList = EnemyManager.Instance.EnemiesInScene;
+            Damage = Mathf.CeilToInt(Damage * damageModifier);
 
             for (int i = 0; i < amountEnemies; i++)
             {
@@ -78,7 +79,7 @@ namespace Attacks
 
                         if (!isIntangible)
                         {
-                            currentEnemy.TakeDamage(ModifiedDamage);
+                            currentEnemy.TakeDamage(Damage);
                             currentEnemy.ApplyBurning(_attackValues.BurningStacks);
                         }
                     }

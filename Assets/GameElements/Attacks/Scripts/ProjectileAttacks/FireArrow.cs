@@ -24,7 +24,7 @@ namespace Attacks
             Enemy enemy = _collider.GetComponent<Enemy>();
             if (enemy != null )
             {
-                enemy.TakeDamage(ModifiedDamage);
+                enemy.TakeDamage(Damage);
                 enemy.ApplyBurning(_attackValues.BurningStacks);
             }
         }

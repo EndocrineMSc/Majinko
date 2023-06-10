@@ -1,3 +1,4 @@
+using Characters.Enemies;
 using PeggleWars.ManaManagement;
 using PeggleWars.ScrollDisplay;
 using PeggleWars.Utilities;
@@ -21,10 +22,11 @@ namespace Orbs
             SpriteRenderer spriteRenderer = _forbiddenA.GetComponent<SpriteRenderer>();
 
             if(!spriteRenderer.enabled)
-            {
                 spriteRenderer.enabled = true;
-            }
-            //ToDo: enrage first enemy
+
+            if (EnemyManager.Instance.EnemiesInScene.Count > 0)
+                EnemyManager.Instance.EnemiesInScene[0].ApplyEnraged();
+
             yield return null;
         }
     }

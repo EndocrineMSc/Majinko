@@ -5,7 +5,7 @@ using PeggleWars.Attacks;
 
 namespace Attacks
 {
-    internal class HailStorm : InstantAttack, IAmAOE
+    internal class HailStorm : InstantAttack
     {
         public override string Bark { get; } = "Hail Storm!";
 
@@ -25,7 +25,7 @@ namespace Attacks
         {
             foreach (Enemy enemy in EnemyManager.Instance.EnemiesInScene)
             {
-                enemy.TakeDamage(ModifiedDamage);
+                enemy.TakeDamage(Damage);
                 enemy.ApplyFreezing(_attackValues.FreezingStacks);
 
                 int randomChance = UnityEngine.Random.Range(0, 101);

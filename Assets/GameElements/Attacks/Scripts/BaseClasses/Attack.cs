@@ -21,7 +21,7 @@ namespace Attacks
         protected readonly string NOTARGET_BARK = "No enemy!";
         protected readonly string ATTACK_ANIMATION = "Attack";
 
-        internal int ModifiedDamage { get; private protected set; }
+        internal int Damage { get; private protected set; }
 
         public abstract string Bark { get; }
 
@@ -32,12 +32,6 @@ namespace Attacks
         protected virtual void Start()
         {
             _playerAttackManager = PlayerAttackDamageManager.Instance;
-            
-            if (_attackOrigin == AttackOrigin.Player)
-            {
-                ModifiedDamage = Mathf.RoundToInt(_attackValues.Damage * _playerAttackManager.DamageModifierTurn);
-                Player.Instance.GetComponentInChildren<Animator>().SetTrigger(ATTACK_ANIMATION);
-            }
         }
 
         protected virtual void OnTriggerEnter2D(Collider2D collision)
@@ -48,7 +42,7 @@ namespace Attacks
                 || _attackOrigin == AttackOrigin.Enemy && collision.gameObject.GetComponent<Player>() != null)
             {
                 IDamagable target = collision.GetComponent<IDamagable>();
-                target?.TakeDamage(ModifiedDamage);
+                target?.TakeDamage(Damage);
                 OnHitPolish();
                 AdditionalEffectsOnImpact();
                 if (_attackOrigin == AttackOrigin.Player) { OrbEvents.RaiseEffectEnd(); }
@@ -56,7 +50,7 @@ namespace Attacks
             }
         }
 
-        internal abstract void ShootAttack(Vector3 instantiatePosition);
+        internal abstract void ShootAttack(Vector3 instantiatePosition, float damageModifier = 1);
 
         protected abstract void AdditionalEffectsOnImpact();
 

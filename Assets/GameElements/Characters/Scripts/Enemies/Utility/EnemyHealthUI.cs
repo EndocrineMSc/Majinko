@@ -19,24 +19,28 @@ namespace Characters.Enemies
         private Image _frozenStatus;
         private Image _intangibleStatus;
         private Image _temperatureSicknessStatus;
+        private Image _enragedStatus;
         private int _lastUpdateHealth;
         private int _lastUpdateFireStacks;
         private int _lastUpdateIceStacks;
         private int _lastUpdateFrozenStacks;
         private int _lastUpdateIntangibleStacks;
         private int _lastUpdateTemperatureSicknessStacks;
+        private int _lastUpdateEnragedStacks;
         private bool _isBurning;
         private bool _isFreezing;
         private bool _isFrozen;
         private bool _enemyCanBeIntangible;
         private bool _isIntangible;
         private bool _isTemperatureSick;
+        private bool _isEnraged;
 
         [SerializeField] private GameObject _burningPrefab;
         [SerializeField] private GameObject _freezingPrefab;
         [SerializeField] private GameObject _frozenPrefab;
         [SerializeField] private GameObject _intangiblePrefab;
         [SerializeField] private GameObject _temperatureSicknessPrefab;
+        [SerializeField] private GameObject _enragedPrefab;
         [SerializeField] private GameObject _layoutGroup;
 
         #endregion
@@ -68,6 +72,7 @@ namespace Characters.Enemies
             UpdateFreezing();
             UpdateFrozen();
             UpdateTemperatureSickness();
+            UpdateEnraged();
 
             if (_enemyCanBeIntangible)
                 UpdateIntangible();
@@ -224,7 +229,34 @@ namespace Characters.Enemies
                 Destroy(_temperatureSicknessStatus.gameObject);
             }
         }
-        
+
+        private void UpdateEnraged()
+        {
+            if (_parentEnemy.EnragedStacks > 0)
+            {
+                if (_isEnraged)
+                {
+                    if (_lastUpdateEnragedStacks != _parentEnemy.EnragedStacks)
+                    {
+                        UpdateEnragedStacks();
+                    }
+                }
+                else
+                {
+                    _isEnraged = true;
+                    _enragedStatus = Instantiate(_enragedPrefab, _layoutGroup.transform).GetComponent<Image>();
+                    _enragedStatus.rectTransform.SetParent(_layoutGroup.GetComponent<RectTransform>());
+                    UpdateEnragedStacks();
+                }
+            }
+
+            if (_parentEnemy.EnragedStacks <= 0 && _isEnraged)
+            {
+                _isEnraged = false;
+                Destroy(_enragedStatus.gameObject);
+            }
+        }
+
         private void UpdateFireStacks()
         {
             _burningStatus.rectTransform.DOPunchScale(_burningStatus.rectTransform.localScale * 1.1f, 0.2f, 1, 1);
@@ -258,6 +290,13 @@ namespace Characters.Enemies
             _temperatureSicknessStatus.rectTransform.DOPunchScale(_temperatureSicknessStatus.rectTransform.localScale * 1.1f, 0.2f, 1, 1);
             _temperatureSicknessStatus.GetComponentInChildren<TextMeshProUGUI>().text = _parentEnemy.TemperatureSicknessStacks.ToString();
             _lastUpdateTemperatureSicknessStacks = _parentEnemy.TemperatureSicknessStacks;
+        }
+
+        private void UpdateEnragedStacks()
+        {
+            _enragedStatus.rectTransform.DOPunchScale(_enragedStatus.rectTransform.localScale * 1.1f, 0.2f, 1, 1);
+            _enragedStatus.GetComponentInChildren<TextMeshProUGUI>().text = _parentEnemy.EnragedStacks.ToString();
+            _lastUpdateEnragedStacks = _parentEnemy.EnragedStacks;
         }
 
         #endregion
