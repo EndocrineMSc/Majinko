@@ -128,12 +128,16 @@ namespace Characters.Enemies
         protected virtual void OnEndEnemyPhase()
         {
             if (AttackType == EnemyAttackType.Ranged)
+            {
+                Debug.Log(gameObject.name + " is a ranged enemy!");
                 IsInAttackPosition = true;
+            }
             else
             {
                 Vector2 walkerMeleeAttackPosition = _enemyManager.EnemyPositions[0, 0];
                 Vector2 flyerMeleeAttackPosition = _enemyManager.EnemyPositions[1, 0];
-                IsInAttackPosition = transform.position.Equals(walkerMeleeAttackPosition) || transform.position.Equals(flyerMeleeAttackPosition);
+                IsInAttackPosition = (Vector2)transform.position == walkerMeleeAttackPosition || (Vector2)transform.position == flyerMeleeAttackPosition;
+                Debug.Log("Melee enemy " + gameObject.name + " is in attack position: " + IsInAttackPosition.ToString());
             }
 
             if (EnragedStacks > 0)
@@ -208,8 +212,7 @@ namespace Characters.Enemies
         {
             TriggerAttackAnimation();
             AdditionalAttackEffects();
-            TurnsTillNextAttack = _attackFrequency;
-            
+            TurnsTillNextAttack = _attackFrequency;           
         }
 
         protected abstract void TriggerAttackAnimation();

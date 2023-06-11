@@ -89,15 +89,8 @@ namespace Characters.Enemies
         internal IEnumerator Move(Enemy enemy)
         {
             int xIndexOfEnemy = GetEnemyPositionIndex(enemy);
-            Vector2 endPosition;
-            if (enemy.IsFlying)
-            {
-                endPosition = _enemyManager.EnemyPositions[1, xIndexOfEnemy - 1];
-            }
-            else
-            {
-                endPosition = _enemyManager.EnemyPositions[0, xIndexOfEnemy - 1];
-            }
+            Vector2 endPosition = enemy.IsFlying ? _enemyManager.EnemyPositions[1, xIndexOfEnemy - 1] : _enemyManager.EnemyPositions[0, xIndexOfEnemy - 1]; 
+          
             enemy.StartMovementAnimation();
             enemy.transform.DOMoveX(endPosition.x, _enemyWalkDuration).SetEase(Ease.Linear);
             yield return new WaitForSeconds(_enemyWalkDuration);
@@ -133,8 +126,6 @@ namespace Characters.Enemies
             Debug.Log("Enemy Position not found");
             return -1;
         }
-
-
 
         private void OnEndEnemyPhase()
         {

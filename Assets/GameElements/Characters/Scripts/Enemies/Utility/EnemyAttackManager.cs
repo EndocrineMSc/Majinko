@@ -49,17 +49,14 @@ namespace Characters.Enemies
                 {
                     Enemy enemy = EnemyManager.Instance.EnemiesInScene[i];
 
-                    if (enemy != null)
+                    if (enemy != null && enemy.TurnsTillNextAttack > 0)
                     {
-                        if (enemy.TurnsTillNextAttack > 0)
-                        {
-                            enemy.TurnsTillNextAttack--;
-                        }
-                        else if (enemy.AttackType == EnemyAttackType.Ranged || enemy.IsInAttackPosition)
-                        {
-                            enemy.Attack();
-                            yield return new WaitForSeconds(_attackGapSeconds);
-                        }
+                        enemy.TurnsTillNextAttack--;
+                    }
+                    else if (enemy != null && (enemy.AttackType == EnemyAttackType.Ranged || enemy.IsInAttackPosition))
+                    {
+                        enemy.Attack();
+                        yield return new WaitForSeconds(_attackGapSeconds);
                     }
                 }    
             }
