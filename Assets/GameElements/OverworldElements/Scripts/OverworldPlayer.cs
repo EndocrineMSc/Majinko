@@ -46,6 +46,11 @@ namespace Overworld
             _sortedButtons = overworldElementButtons.OrderBy(button => button.GetComponent<RectTransform>().anchoredPosition.x).ToList();
 
             CurrentOverworldElementPosition = _sortedButtons[CurrentPlayerWorldPosition.OverworldPlayerButtonIndex];
+
+            //Temporary world repeat during development. This needs to be implemented differently as soon as multiple worlds exist.
+            if (CurrentOverworldElementPosition.TryGetComponent<BossCombatElement>(out _))
+                CurrentOverworldElementPosition = _sortedButtons[0];
+
             _playerTransform = GetComponent<RectTransform>();
             _playerTransform.anchoredPosition = CurrentOverworldElementPosition.GetComponent<RectTransform>().anchoredPosition;
         }

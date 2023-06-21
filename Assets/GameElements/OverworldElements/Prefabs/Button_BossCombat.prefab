@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6254335787091240311}
   - component: {fileID: 2635492732050493063}
   - component: {fileID: 3303292158541595623}
+  - component: {fileID: 4239848811238340571}
   m_Layer: 5
   m_Name: Button_BossCombat
   m_TagString: Untagged
@@ -121,3 +122,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4239848811238340571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549969260224169722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32cc031a767086e46bf4826fa4474771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _validEntryPositions: []
