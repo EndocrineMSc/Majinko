@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace PeggleWars.Utilities
+namespace Utility
 {
     internal class LoadingScreen : MonoBehaviour
     {

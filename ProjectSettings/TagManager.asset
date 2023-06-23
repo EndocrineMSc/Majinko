@@ -22,6 +22,11 @@ TagManager:
   - ForbiddenA
   - AOE_Target
   - LevelOrbSpawn
+  - StartButton
+  - SettingsButton
+  - CreditsButton
+  - TutorialButton
+  - GameTitle
   layers:
   - Default
   - TransparentFX
