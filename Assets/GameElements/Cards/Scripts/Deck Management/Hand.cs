@@ -244,9 +244,12 @@ namespace Cards
             {               
                 if (isStartTurnDealing)
                 {
+                    Card currentCard = InstantiatedCards[i];
+                    currentCard.IsBeingDealt = true;
                     InstantiatedCards[i].gameObject.SetActive(true);
                     RectTransform rectTransform = InstantiatedCards[i].GetComponent<RectTransform>();
-                    yield return StartCoroutine(TweenCardSpawn(newCards[i], rectTransform));                
+                    yield return StartCoroutine(TweenCardSpawn(newCards[i], rectTransform));
+                    currentCard.IsBeingDealt = false;
                 }
                 else
                 {
