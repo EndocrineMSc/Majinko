@@ -215,6 +215,7 @@ namespace Spheres
             {
                 AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0760_Sphere_In_Portal);
                 PhaseManager.Instance.StartPlayerAttackPhase();
+                SphereEvents.RaiseSphereDestruction();
                 Destroy(gameObject);
             }
         }
