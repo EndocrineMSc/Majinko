@@ -6,7 +6,7 @@ using EnumCollection;
 using Audio;
 using Unity.VisualScripting;
 
-namespace PeggleWars.Utilities
+namespace Utility
 {
     internal class CardShop : MonoBehaviour
     {

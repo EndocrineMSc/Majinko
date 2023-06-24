@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Utility
 {
-    internal class MenuEvents : MonoBehaviour
+    internal class MenuEvents
     {
         internal static event Action OnMainMenuOpened;
         internal static event Action OnSettingsMenuOpened;

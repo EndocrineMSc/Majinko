@@ -1,13 +1,10 @@
 using System.Collections;
 using UnityEngine;
-using EnumCollection;
 using Audio;
 using Utility.TurnManagement;
-using UnityEngine.Events;
-using PeggleWars.Orbs;
 using UnityEngine.SceneManagement;
 
-namespace PeggleWars
+namespace Utility
 {
     internal class GameManager : MonoBehaviour
     {

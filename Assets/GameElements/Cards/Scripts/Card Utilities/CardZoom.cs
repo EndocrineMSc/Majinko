@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using EnumCollection;
-using PeggleWars;
+using Utility;
 using DG.Tweening;
 
 namespace Cards

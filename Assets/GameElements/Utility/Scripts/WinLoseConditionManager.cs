@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 
-namespace PeggleWars.Utilities
+namespace Utility
 {
     internal class WinLoseConditionManager : MonoBehaviour
     {

@@ -1,12 +1,8 @@
 using Audio;
-using PeggleWars.Utilities;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
 using UnityEngine.UI;
 
-namespace PeggleWars.Menus
+namespace Utility
 {
     internal class PauseMenu : MonoBehaviour
     {
