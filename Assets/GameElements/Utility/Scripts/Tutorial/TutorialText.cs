@@ -13,6 +13,8 @@ namespace Utility
         private TextMeshProUGUI _textField;
         [SerializeField, TextArea] private string[] _tutorialTexts;
 
+        private int _testIndex = 0;
+
         #endregion
 
         #region Functions
@@ -37,6 +39,15 @@ namespace Utility
         {
             if (index < _tutorialTexts.Length)
                 _textField.text = _tutorialTexts[index];
+        }
+
+        private void Update()
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                _testIndex++;
+                DisplayNextText(_testIndex);
+            }
         }
 
         #endregion
