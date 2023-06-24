@@ -1,9 +1,6 @@
-using PeggleWars;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Utility;
 
 internal class TestButton : MonoBehaviour
 {
@@ -21,6 +18,6 @@ internal class TestButton : MonoBehaviour
 
     private void TestFunction()
     {
-        SceneManager.LoadScene("LevelOne");
+        LoadHelper.LoadSceneWithLoadingScreen(SceneName.LevelOne);
     }
 }

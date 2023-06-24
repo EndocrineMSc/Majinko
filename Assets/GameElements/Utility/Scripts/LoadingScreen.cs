@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,7 +14,7 @@ namespace Utility
         private IEnumerator WaitForLoadingScreen()
         {
             yield return new WaitForSeconds(2f);
-            SceneManager.LoadScene("WorldOne");
+            SceneManager.LoadScene(LoadHelper.SceneToBeLoaded.ToString());
         }
     }
 }

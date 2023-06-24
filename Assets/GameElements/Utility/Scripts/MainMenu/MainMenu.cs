@@ -79,7 +79,7 @@ namespace Utility
         private void OpenTutorial()
         {
             PlayButtonClick();
-            SceneManager.LoadSceneAsync(TUTORIAL_SCENE_PARAM);
+            LoadHelper.LoadSceneWithLoadingScreen(SceneName.Tutorial);
         }
 
 
@@ -131,6 +131,7 @@ namespace Utility
         public void StartGame()
         {
             PlayButtonClick();
+            LoadHelper.LoadSceneWithLoadingScreen(SceneName.WorldOne);
             SceneManager.LoadSceneAsync(FIRSTWORLD_SCENE_PARAM);
         }
 

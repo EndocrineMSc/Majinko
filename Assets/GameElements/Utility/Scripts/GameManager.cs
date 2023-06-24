@@ -76,7 +76,7 @@ namespace Utility
                     break;
 
                 case (GameState.NewLevel):
-                    SceneManager.LoadScene("LoadingScreen");
+                    LoadHelper.LoadSceneWithLoadingScreen(SceneName.WorldOne);
                     break;
 
                 case (GameState.GameOver):
