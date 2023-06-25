@@ -14,8 +14,6 @@ namespace Utility
         public UnityEvent LevelVictory;
         public UnityEvent GameOver;
 
-        private bool _isFirstStart = true;
-
         #endregion
 
         #region Functions
@@ -30,14 +28,6 @@ namespace Utility
             {
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
-            }
-        }
-
-        private void Start()
-        {
-            if (_isFirstStart)
-            {
-                _isFirstStart = false;
             }
         }
 
@@ -74,7 +64,7 @@ namespace Utility
 
         public void CheatButton()
         {
-            LevelVictory.Invoke();
+            LevelVictory?.Invoke();
         }
 
         #endregion

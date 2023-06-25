@@ -13,6 +13,7 @@ namespace Utility
         private void LoadWrap()
         {
             PauseControl.Instance.PauseAndUnpauseGame?.Invoke();
+            UtilityEvents.RaiseGameReset();
             LoadHelper.LoadSceneWithLoadingScreen(SceneName.MainMenu);
         }
     }

@@ -1,13 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Utility;
 
-internal class CurrentPlayerWorldPosition
+namespace Overworld
 {
-    internal static int OverworldPlayerButtonIndex { get; private set; } = 0;
-
-    internal static void SetPlayerButtonIndex(int index)
+    internal class CurrentPlayerWorldPosition
     {
-        OverworldPlayerButtonIndex = index;
+        internal static int OverworldPlayerButtonIndex { get; private set; } = 0;
+
+        internal static void SetPlayerButtonIndex(int index)
+        {
+            OverworldPlayerButtonIndex = index;
+        }
     }
 }

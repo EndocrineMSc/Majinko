@@ -2,10 +2,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using EnumCollection;
 using System.Linq;
+using Utility;
 
 namespace Orbs
 {
-    internal class GlobalOrbManager : MonoBehaviour
+    internal class GlobalOrbManager : MonoBehaviour, IResetOnQuit
     {
 
         #region Fields and Properties
@@ -32,6 +33,21 @@ namespace Orbs
             else
                 Destroy(gameObject);
 
+            InitializeManager();
+        }
+
+        private void OnEnable()
+        {
+            UtilityEvents.OnGameReset += OnGameReset;
+        }
+
+        private void OnDisable()
+        {
+            UtilityEvents.OnGameReset -= OnGameReset;
+        }
+
+        private void InitializeManager()
+        {
             InitializeLists();
             AllOrbsList = _allOrbsCollection.AllOrbs.ToList();
             AllOrbsList = AllOrbsList.OrderBy(x => x.OrbType).ToList();
@@ -66,6 +82,11 @@ namespace Orbs
             if (orb.OrbType == OrbType.RefreshOrb) {AmountOfRefreshOrbs--;}
         }
 
+        public void OnGameReset()
+        {
+            LevelLoadOrbs.Clear();
+            InitializeManager();
+        }
         #endregion
     }
 }
