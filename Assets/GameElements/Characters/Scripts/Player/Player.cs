@@ -3,6 +3,8 @@ using UnityEngine;
 using Utility.TurnManagement;
 using PeggleWars.Characters.Interfaces;
 using Audio;
+using System.Diagnostics.CodeAnalysis;
+using Utility;
 
 namespace Characters
 {
@@ -18,29 +20,9 @@ namespace Characters
         private PhaseManager _turnManager;
         private string HURT_ANIMATION = "Hurt";
 
-        [SerializeField] private int _health;
-
-        internal int Health
-        {
-            get { return _health; }
-            set { _health = value; }
-        }
-
-        private int _shield;
-
-        internal int Shield
-        {
-            get { return _shield; }
-            set { _shield = value; }
-        }
-
-        private int _maxHealth;
-
-        internal int MaxHealth
-        {
-            get { return _maxHealth; }
-            set { _maxHealth = value; }
-        }
+        internal int Health { get; set; }
+        internal int Shield { get; set; }
+        internal int MaxHealth { get; set; }
 
         #endregion
 
@@ -48,15 +30,13 @@ namespace Characters
 
         private void Awake()
         {
-            if (Instance != null && Instance != this)
-            {
-                Destroy(this);
-            }
-            else
-            {
+            if (Instance == null)
                 Instance = this;
-            }
-            _maxHealth = _health;
+            else
+                Destroy(gameObject);
+
+            MaxHealth = PlayerConditionTracker.MaxPlayerHealth;
+            Health = PlayerConditionTracker.PlayerHealth;
         }
 
         private void Start()
@@ -80,26 +60,30 @@ namespace Characters
         {
             AudioManager.Instance.PlaySoundEffectOnce(SFX._0104_Player_Takes_Damage);
             int calcDamage = damage;
-            if (_shield > calcDamage)
+            if (Shield > calcDamage)
             {
-                _shield -= damage;
+                Shield -= damage;
             }
-            else if (_shield > 0)
+            else if (Shield > 0)
             {
-                calcDamage = damage - _shield;
-                _shield = 0;
-                _health -= calcDamage;
+                calcDamage = damage - Shield;
+                Shield = 0;
+                Health -= calcDamage;
                 StartCoroutine(nameof(ColorShiftDamage));
                 _animator.SetTrigger(HURT_ANIMATION);
             }
             else
             {
-                _health -= damage;
+                Health -= damage;
                 StartCoroutine(nameof(ColorShiftDamage));
                 _animator.SetTrigger(HURT_ANIMATION);
             }
-        }
 
+            PlayerConditionTracker.SetPlayerHealth(Health);
+            
+            if (Health <= 0)
+                UtilityEvents.RaisePlayerDeath();         
+        }
 
         private void OnCardTurnStart()
         {
@@ -108,7 +92,7 @@ namespace Characters
 
         private IEnumerator ColorShiftDamage()
         {
-            _spriteRenderer.color = Color.white;
+            _spriteRenderer.color = Color.red;
             yield return new WaitForSeconds(0.2f);
             _spriteRenderer.color = _color;
         }

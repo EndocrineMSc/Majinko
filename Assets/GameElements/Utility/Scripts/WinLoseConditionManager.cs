@@ -34,11 +34,13 @@ namespace Utility
         private void OnEnable()
         {
             EnemyEvents.OnEnemyDied += OnEnemyDeath;
+            UtilityEvents.OnPlayerDeath += OnPlayerDeath;
         }
 
         private void OnDisable()
         {
             EnemyEvents.OnEnemyDied -= OnEnemyDeath;
+            UtilityEvents.OnPlayerDeath -= OnPlayerDeath;
         }
 
         private void OnEnemyDeath()

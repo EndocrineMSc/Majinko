@@ -23,5 +23,6 @@ namespace Utility
         Tutorial,
         WorldOne,
         LoadingScreen,
+        GameOver,
     }
 }

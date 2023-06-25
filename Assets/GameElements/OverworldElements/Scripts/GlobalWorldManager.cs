@@ -1,3 +1,4 @@
+using Characters;
 using Overworld;
 using UnityEngine;
 
@@ -44,6 +45,7 @@ namespace Utility
         {
             WorldIndex = 1;
             CurrentPlayerWorldPosition.SetPlayerButtonIndex(0);
+            PlayerConditionTracker.OnGameReset();
         }
 
         #endregion
