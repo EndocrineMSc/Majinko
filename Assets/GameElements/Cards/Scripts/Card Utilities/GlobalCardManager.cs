@@ -2,10 +2,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using EnumCollection;
 using System.Linq;
+using Utility;
 
 namespace Cards
 {
-    internal class GlobalCardManager : MonoBehaviour
+    internal class GlobalCardManager : MonoBehaviour, IResetOnQuit
     {
         #region Fields and Properties
 
@@ -40,13 +41,29 @@ namespace Cards
                 Destroy(gameObject);
             
             if (_isFirstInit)
-            {
-                AllCards = _allCardsCollection.AllCards.ToList();
-                AllCards = AllCards.OrderBy(card => card.ScriptableCard.CardName).ToList();
+                InitializeManager();
+        }
+
+        private void OnEnable()
+        {
+            UtilityEvents.OnGameReset += OnGameReset;
+        }
+
+        private void OnDisable()
+        {
+            UtilityEvents.OnGameReset -= OnGameReset;
+        }
+
+        private void InitializeManager()
+        {
+            AllCards = _allCardsCollection.AllCards.ToList();
+            AllCards = AllCards.OrderBy(card => card.ScriptableCard.CardName).ToList();
+            
+            if (CardRarityThreshold.Count == 0)
                 SetRarityThresholds();
-                BuildRarityLists();
-                _isFirstInit = false;
-            }
+            
+            BuildRarityLists();
+            _isFirstInit = false;
         }
 
         private void SetRarityThresholds()
@@ -59,6 +76,11 @@ namespace Cards
 
         private void BuildRarityLists()
         {
+            CommonCards = new();
+            RareCards = new();
+            EpicCards = new();
+            LegendaryCards = new();
+
             foreach (Card card in AllCards)
             {
                 ScriptableCard scriptCard = card.ScriptableCard;
@@ -179,6 +201,11 @@ namespace Cards
             }
         }
 
+        public void OnGameReset()
+        {
+            _isFirstInit = true;
+            InitializeManager();
+        }
         #endregion
     }
 }

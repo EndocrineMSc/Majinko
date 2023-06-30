@@ -1,12 +1,13 @@
 using EnumCollection;
 using System.Collections.Generic;
 using UnityEngine;
+using Utility;
 
 namespace Cards
 {
-    internal class GlobalDeckManager : MonoBehaviour
+    internal class GlobalDeckManager : MonoBehaviour, IResetOnQuit
     {
-        #region Fields andProperties
+        #region Fields and Properties
 
         internal static GlobalDeckManager Instance { get; private set; }
 
@@ -33,10 +34,18 @@ namespace Cards
                 Destroy(gameObject);
 
             if (GlobalDeck.Count == 0)
-            {
                 BuildStartDeck(StartDeck.Apprentice);
-            }
-        }     
+        }
+
+        private void OnEnable()
+        {
+            UtilityEvents.OnGameReset += OnGameReset;
+        }
+
+        private void OnDisable()
+        {
+            UtilityEvents.OnGameReset -= OnGameReset;
+        }
 
         internal void BuildStartDeck(StartDeck startDeck)
         {
@@ -54,6 +63,12 @@ namespace Cards
         internal void RemoveCardFromGlobalDeck(Card card)
         {
             GlobalDeck.Remove(card);
+        }
+
+        public void OnGameReset()
+        {
+            GlobalDeck.Clear();
+            BuildStartDeck(StartDeck.Apprentice);
         }
         #endregion
     }

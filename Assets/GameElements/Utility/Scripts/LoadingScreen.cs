@@ -13,6 +13,7 @@ namespace Utility
 
         private IEnumerator WaitForLoadingScreen()
         {
+            Debug.Log("Loading scene: " + LoadHelper.SceneToBeLoaded.ToString());
             yield return new WaitForSeconds(2f);
             SceneManager.LoadScene(LoadHelper.SceneToBeLoaded.ToString());
         }

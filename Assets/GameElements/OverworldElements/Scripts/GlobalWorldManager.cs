@@ -1,10 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
+using Characters;
+using Overworld;
 using UnityEngine;
 
 namespace Utility
 {
-    internal class GlobalWorldManager : MonoBehaviour
+    internal class GlobalWorldManager : MonoBehaviour, IResetOnQuit
     {
         #region Fields and Properties
 
@@ -26,9 +26,26 @@ namespace Utility
                 Destroy(gameObject);
         }
 
+        private void OnEnable()
+        {
+            UtilityEvents.OnGameReset += OnGameReset;
+        }
+
+        private void OnDisable()
+        {
+            UtilityEvents.OnGameReset -= OnGameReset;
+        }
+
         internal void ChangeWorldIndex()
         {
             WorldIndex += 1;
+        }
+
+        public void OnGameReset()
+        {
+            WorldIndex = 1;
+            CurrentPlayerWorldPosition.SetPlayerButtonIndex(0);
+            PlayerConditionTracker.OnGameReset();
         }
 
         #endregion

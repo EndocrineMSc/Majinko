@@ -14,8 +14,6 @@ namespace Utility
         public UnityEvent LevelVictory;
         public UnityEvent GameOver;
 
-        private bool _isFirstStart = true;
-
         #endregion
 
         #region Functions
@@ -33,22 +31,16 @@ namespace Utility
             }
         }
 
-        private void Start()
-        {
-            if (_isFirstStart)
-            {
-                _isFirstStart = false;
-            }
-        }
-
         private void OnEnable()
         {
             EnemyEvents.OnEnemyDied += OnEnemyDeath;
+            UtilityEvents.OnPlayerDeath += OnPlayerDeath;
         }
 
         private void OnDisable()
         {
             EnemyEvents.OnEnemyDied -= OnEnemyDeath;
+            UtilityEvents.OnPlayerDeath -= OnPlayerDeath;
         }
 
         private void OnEnemyDeath()
@@ -74,7 +66,7 @@ namespace Utility
 
         public void CheatButton()
         {
-            LevelVictory.Invoke();
+            LevelVictory?.Invoke();
         }
 
         #endregion

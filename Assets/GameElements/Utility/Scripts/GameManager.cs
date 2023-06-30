@@ -53,7 +53,7 @@ namespace Utility
 
         private void OnEnable()
         {
-            SceneManager.sceneLoaded += OnSceneLoaded;           
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
 
         internal IEnumerator SwitchState(GameState state)
@@ -80,6 +80,8 @@ namespace Utility
                     break;
 
                 case (GameState.GameOver):
+                    UtilityEvents.RaiseGameReset();
+                    LoadHelper.LoadSceneWithLoadingScreen(SceneName.GameOver);
                     break;
 
                 case (GameState.Quit):
