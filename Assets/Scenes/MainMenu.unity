@@ -2042,7 +2042,7 @@ GameObject:
   - component: {fileID: 1017992535}
   m_Layer: 5
   m_Name: QuitButton
-  m_TagString: SettingsButton
+  m_TagString: QuitButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
