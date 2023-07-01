@@ -27,6 +27,7 @@ TagManager:
   - CreditsButton
   - TutorialButton
   - GameTitle
+  - QuitButton
   layers:
   - Default
   - TransparentFX
