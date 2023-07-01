@@ -6,6 +6,7 @@ using Audio;
 using System;
 using PeggleWars;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 namespace Utility
 {
@@ -19,13 +20,14 @@ namespace Utility
         private readonly string START_BUTTON_PARAM = "StartButton";
         private readonly string SETTINGS_BUTTON_PARAM = "SettingsButton";
         private readonly string CREDITS_BUTTON_PARAM = "CreditsButton";
+        private readonly string QUIT_BUTTON_PARAM = "QuitButton";
         private readonly string TUTORIAL_BUTTON_PARAM = "TutorialButton";
-        private readonly string FIRSTWORLD_SCENE_PARAM = "LoadingScreen";
 
         private GameObject _startButton;
         private GameObject _settingsButton;
         private GameObject _creditsButton;
         private GameObject _tutorialButton;
+        private GameObject _quitButton;
 
         #endregion
 
@@ -49,11 +51,13 @@ namespace Utility
             _settingsButton = GameObject.FindGameObjectWithTag(SETTINGS_BUTTON_PARAM);
             _creditsButton = GameObject.FindGameObjectWithTag(CREDITS_BUTTON_PARAM);
             _tutorialButton = GameObject.FindGameObjectWithTag(TUTORIAL_BUTTON_PARAM);
+            _quitButton = GameObject.FindGameObjectWithTag(QUIT_BUTTON_PARAM);
 
             _startButton.GetComponent<Button>().onClick.AddListener(StartGame);
             _settingsButton.GetComponent<Button>().onClick.AddListener(OpenSettings);
             _creditsButton.GetComponent<Button>().onClick.AddListener(OpenCredits);
             _tutorialButton.GetComponent<Button>().onClick.AddListener(OpenTutorial);
+            _quitButton.GetComponent<Button>().onClick.AddListener(QuitGame);
         }
 
         private void OnDisable()
@@ -95,7 +99,11 @@ namespace Utility
         {
             PlayButtonClick();
             LoadHelper.LoadSceneWithLoadingScreen(SceneName.WorldOne);
-            SceneManager.LoadSceneAsync(FIRSTWORLD_SCENE_PARAM);
+        }
+
+        public void QuitGame()
+        {
+            Application.Quit();
         }
 
         private void PlayButtonClick()
