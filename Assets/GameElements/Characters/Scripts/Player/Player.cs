@@ -18,7 +18,8 @@ namespace Characters
         internal static Player Instance { get; private set; }
         private Animator _animator;
         private PhaseManager _turnManager;
-        private string HURT_ANIMATION = "Hurt";
+        private readonly string HURT_ANIMATION_PARAM = "Hurt";
+        private readonly string ATTACK_ANIMATION_PARAM = "Attack";
 
         internal int Health { get; set; }
         internal int Shield { get; set; }
@@ -70,13 +71,13 @@ namespace Characters
                 Shield = 0;
                 Health -= calcDamage;
                 StartCoroutine(nameof(ColorShiftDamage));
-                _animator.SetTrigger(HURT_ANIMATION);
+                _animator.SetTrigger(HURT_ANIMATION_PARAM);
             }
             else
             {
                 Health -= damage;
                 StartCoroutine(nameof(ColorShiftDamage));
-                _animator.SetTrigger(HURT_ANIMATION);
+                _animator.SetTrigger(HURT_ANIMATION_PARAM);
             }
 
             PlayerConditionTracker.SetPlayerHealth(Health);
@@ -100,6 +101,11 @@ namespace Characters
         public void TakeIceDamage()
         {
             throw new System.NotImplementedException();
+        }
+
+        internal void StartAttackAnimation()
+        {
+            _animator.SetTrigger(ATTACK_ANIMATION_PARAM);
         }
 
         #endregion
