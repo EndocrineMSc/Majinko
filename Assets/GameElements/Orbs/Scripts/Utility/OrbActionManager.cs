@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Utility.TurnManagement;
+using Characters;
 
 namespace Orbs
 {
@@ -75,6 +76,7 @@ namespace Orbs
             {
                 if (orb != null)
                 {
+                    Player.Instance.StartAttackAnimation();
                     yield return StartCoroutine(orb.OrbEffect());
                     Destroy(orb.gameObject);
                     yield return new WaitForSeconds(0.2f);

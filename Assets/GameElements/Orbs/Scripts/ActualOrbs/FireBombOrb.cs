@@ -3,7 +3,6 @@ using System.Collections;
 using UnityEngine;
 using Attacks;
 using PeggleWars.Spheres;
-using UnityEditor.Animations;
 using Characters.Enemies;
 
 namespace Orbs
@@ -12,7 +11,6 @@ namespace Orbs
     {
         [SerializeField] private Attack _fireBomb;
         [SerializeField] private GameObject _bombRadiusObject;
-        [SerializeField] private AnimatorController _orb_Explosion;
 
         protected override void OnCollisionEnter2D(Collision2D collision)
         {
@@ -31,7 +29,6 @@ namespace Orbs
         protected override void AdditionalEffectsOnCollision()
         {
             OrbActionManager.Instance.AddOrbToActionList(this);
-            GetComponent<Animator>().runtimeAnimatorController = _orb_Explosion;
             _bombRadiusObject.SetActive(true);
         }
 
