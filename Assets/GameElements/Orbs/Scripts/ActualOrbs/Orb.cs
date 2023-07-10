@@ -1,7 +1,7 @@
 using EnumCollection;
 using System.Collections;
 using UnityEngine;
-using PeggleWars.ManaManagement;
+using ManaManagement;
 using Audio;
 using PeggleWars.ScrollDisplay;
 using PeggleWars.Spheres;

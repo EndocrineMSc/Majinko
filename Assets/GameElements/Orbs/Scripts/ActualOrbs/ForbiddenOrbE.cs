@@ -1,4 +1,4 @@
-using PeggleWars.ManaManagement;
+using ManaManagement;
 using PeggleWars.ScrollDisplay;
 using System.Collections;
 using UnityEngine;

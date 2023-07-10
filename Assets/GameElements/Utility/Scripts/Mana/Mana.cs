@@ -1,7 +1,7 @@
 using UnityEngine;
 using EnumCollection;
 
-namespace PeggleWars.ManaManagement
+namespace ManaManagement
 {
     internal class Mana : MonoBehaviour
     {

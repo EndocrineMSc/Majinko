@@ -1,10 +1,9 @@
 using UnityEngine;
 using Orbs;
-using PeggleWars.ManaManagement;
+using ManaManagement;
 using EnumCollection;
 using System.Collections;
 using DG.Tweening;
-using UnityEngine.Events;
 
 namespace Cards
 {

@@ -129,7 +129,6 @@ namespace Characters.Enemies
         {
             if (AttackType == EnemyAttackType.Ranged)
             {
-                Debug.Log(gameObject.name + " is a ranged enemy!");
                 IsInAttackPosition = true;
             }
             else
@@ -137,7 +136,6 @@ namespace Characters.Enemies
                 Vector2 walkerMeleeAttackPosition = _enemyManager.EnemyPositions[0, 0];
                 Vector2 flyerMeleeAttackPosition = _enemyManager.EnemyPositions[1, 0];
                 IsInAttackPosition = (Vector2)transform.position == walkerMeleeAttackPosition || (Vector2)transform.position == flyerMeleeAttackPosition;
-                Debug.Log("Melee enemy " + gameObject.name + " is in attack position: " + IsInAttackPosition.ToString());
             }
 
             if (EnragedStacks > 0)

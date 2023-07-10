@@ -1,6 +1,6 @@
 using Attacks;
 
-namespace PeggleWars.ManaManagement
+namespace ManaManagement
 {
     internal class RottedMana : Mana
     {

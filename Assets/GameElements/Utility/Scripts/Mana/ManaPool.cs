@@ -4,7 +4,7 @@ using EnumCollection;
 using Orbs;
 using System.Collections;
 
-namespace PeggleWars.ManaManagement
+namespace ManaManagement
 {
     internal class ManaPool : MonoBehaviour
     {
