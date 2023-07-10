@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 6, y: 6}
+  m_SizeDelta: {x: 8, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &1144988722377645358
 MeshRenderer:
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 3,2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 309b5f01e0839d8489d575fe1a92fdd2, type: 2}
   m_sharedMaterial: {fileID: -139843783784504290, guid: 309b5f01e0839d8489d575fe1a92fdd2, type: 2}
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4291933288
   m_fontColor: {r: 0.40784317, g: 0.7058824, b: 0.8196079, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3

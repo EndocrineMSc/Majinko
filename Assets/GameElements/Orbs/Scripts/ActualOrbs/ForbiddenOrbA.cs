@@ -1,9 +1,6 @@
 using Characters.Enemies;
-using PeggleWars.ManaManagement;
 using PeggleWars.ScrollDisplay;
-using PeggleWars.Utilities;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Orbs

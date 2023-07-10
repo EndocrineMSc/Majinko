@@ -2,6 +2,7 @@ using UnityEngine;
 using EnumCollection;
 using Spheres;
 using ManaManagement;
+using Utility.TurnManagement;
 
 namespace Orbs
 {
@@ -12,27 +13,42 @@ namespace Orbs
         [SerializeField] private GameObject _orbPopUpPrefab;
         private Color _popUpColor;
         private Orb _orb;
+        private float _currentManaPopUpAmount = 0;
+        private ManaType _orbManaType;
 
         #endregion
 
         #region Functions
 
+        private void OnEnable()
+        {
+            OrbEvents.SpawnMana += OnManaSpawn;
+            LevelPhaseEvents.OnStartEnemyPhase += OnStartEnemyPhase;
+        }
+
+        private void OnDisable()
+        {
+            OrbEvents.SpawnMana -= OnManaSpawn;
+            LevelPhaseEvents.OnStartEnemyPhase -= OnStartEnemyPhase;
+        }
+
         private void Start()
         {
             _orb = GetComponent<Orb>();
+            _orbManaType = _orb.SpawnManaType;
 
-            switch (_orb.SpawnManaType)
+            switch (_orbManaType)
             {
                 case ManaType.BasicMana:
-                    ColorUtility.TryParseHtmlString("#688AD1", out Color basicColor);
+                    ColorUtility.TryParseHtmlString("#56689F", out Color basicColor);
                     _popUpColor = basicColor;
                     break;
                 case ManaType.FireMana:
-                    ColorUtility.TryParseHtmlString("#DE4C52", out Color fireColor);
+                    ColorUtility.TryParseHtmlString("#BE1C23", out Color fireColor);
                     _popUpColor = fireColor;
                     break;
                 case ManaType.IceMana:
-                    ColorUtility.TryParseHtmlString("#DE4C52", out Color iceColor);
+                    ColorUtility.TryParseHtmlString("#258EB6", out Color iceColor);
                     _popUpColor = iceColor; 
                     break;
             }
@@ -44,8 +60,19 @@ namespace Orbs
             {
                 OrbManaPopUp popUp = Instantiate(_orbPopUpPrefab, transform.position, Quaternion.identity).GetComponent<OrbManaPopUp>();
                 popUp.SetPopUpColor(_popUpColor);
-                popUp.SetPopUpValue((float)_orb.ManaAmount / ManaPool.Instance.ManaCostMultiplier);
+                popUp.SetPopUpValue(_currentManaPopUpAmount);
             }
+        }
+
+        private void OnManaSpawn(ManaType manaType, int amount)
+        {
+            if (amount != 0 && _orbManaType == manaType)
+                _currentManaPopUpAmount += (float)amount / ManaPool.Instance.ManaCostMultiplier;
+        }
+
+        private void OnStartEnemyPhase()
+        {
+            _currentManaPopUpAmount = 0;
         }
 
         #endregion

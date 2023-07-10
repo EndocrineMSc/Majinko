@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -18,6 +16,7 @@ namespace ManaManagement
         #endregion
 
         #region Functions
+
 
         // Start is called before the first frame update
         void Start()
