@@ -7,8 +7,8 @@ namespace Characters.UI
     {
         #region Fields and Properties
 
-        private float _disappearTimer = 1f;
-        private readonly float _disappearTimerMax = 1f;
+        private float _disappearTimer = 2f;
+        private readonly float _disappearTimerMax = 2f;
         private TextMeshPro _textMesh;
         private Color _textColor;
         private Color _red = Color.red;
@@ -39,8 +39,7 @@ namespace Characters.UI
         internal void Setup(string barkText)
         {
             _textMesh.text = barkText;
-            _textMesh.fontSize = 26;
-            _moveVector = new Vector3(1, 1);
+            _moveVector = new Vector3(2, 2);
         }
 
         private void Update()
