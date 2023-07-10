@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2292887328089433129}
   - component: {fileID: 1713432300222160366}
   - component: {fileID: 8511080046945398949}
+  - component: {fileID: 7334844750743767959}
   m_Layer: 0
   m_Name: IceManaOrb
   m_TagString: Untagged
@@ -152,3 +153,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ed9cf162afe23d4ba1396e99745a321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7334844750743767959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150168502249141089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dddfed535f40694993f59eb1b3cd024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _orbPopUpPrefab: {fileID: 5326807715267368304, guid: e2b6d36c4219c2243b948ce91b89f7af, type: 3}

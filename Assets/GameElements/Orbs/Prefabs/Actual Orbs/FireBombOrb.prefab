@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 5099420647275916350}
   - component: {fileID: 4872170773538441819}
   - component: {fileID: 8286908707364634663}
+  - component: {fileID: 8606283219829596650}
   m_Layer: 7
   m_Name: FireBombOrb
   m_TagString: Orb
@@ -238,4 +239,16 @@ MonoBehaviour:
   OrbType: 6
   _fireBomb: {fileID: 2397672783851444180, guid: db760c4e0d4be0e4f89c830a4f61f649, type: 3}
   _bombRadiusObject: {fileID: 935497585}
-  _orb_Explosion: {fileID: 9100000, guid: a17afa372c509dd4d8a4b60168fdbd8a, type: 2}
+--- !u!114 &8606283219829596650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549565476461289553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dddfed535f40694993f59eb1b3cd024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _orbPopUpPrefab: {fileID: 5326807715267368304, guid: e2b6d36c4219c2243b948ce91b89f7af, type: 3}

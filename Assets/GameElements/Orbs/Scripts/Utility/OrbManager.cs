@@ -183,7 +183,7 @@ namespace Orbs
                         break;
 
                     case SearchTag.IsActive:
-                        if (tempOrb.orbIsActive)
+                        if (tempOrb.OrbIsActive)
                         {
                             resultOrbs.Add(tempOrb);
                         }

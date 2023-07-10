@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 753921620}
   - component: {fileID: 5312366155302050126}
   - component: {fileID: 8357979144538713252}
+  - component: {fileID: 6350423044175922349}
   m_Layer: 7
   m_Name: ManaBlitzOrb
   m_TagString: Orb
@@ -120,8 +121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6daf3c40ae152e4382f4da994e3f8e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnManaType: 0
-  _manaAmount: 0
   _defaultOrb: {fileID: 2549565476461289553, guid: c837957ee74bdcc44a31943daaafc0a8, type: 3}
   OrbType: 20
   _manaBlitz: {fileID: 7851541917722694840, guid: be414bdde914e2645b2665e47eabe525, type: 3}
@@ -153,3 +152,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ed9cf162afe23d4ba1396e99745a321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6350423044175922349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332382418538354072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dddfed535f40694993f59eb1b3cd024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _orbPopUpPrefab: {fileID: 5326807715267368304, guid: e2b6d36c4219c2243b948ce91b89f7af, type: 3}

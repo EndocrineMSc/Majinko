@@ -36,7 +36,7 @@ namespace Orbs
                 int orbIndex = UnityEngine.Random.Range(0, OrbManager.Instance.SceneOrbList.Count);
                 Orb orb = OrbManager.Instance.SceneOrbList[orbIndex];
                 
-                if (orb != null && orb.orbIsActive)
+                if (orb != null && orb.OrbIsActive)
                 {
                     StartCoroutine(TweenThenSetOrbInactive(orb));
                     orbIsSetInactive = true;

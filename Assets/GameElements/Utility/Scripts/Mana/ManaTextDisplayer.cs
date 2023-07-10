@@ -43,7 +43,7 @@ namespace ManaManagement
             {
                 int basicManaAmount = _manaPool.BasicMana.Count / _manaPool.ManaCostMultiplier;
                 int fireManaAmount = _manaPool.FireMana.Count / _manaPool.ManaCostMultiplier;
-                int iceManaAmount = _manaPool.FireMana.Count / _manaPool.ManaCostMultiplier;
+                int iceManaAmount = _manaPool.IceMana.Count / _manaPool.ManaCostMultiplier;
 
                 if (_isBasicMana)
                     _manaTextField.text = basicManaAmount.ToString();

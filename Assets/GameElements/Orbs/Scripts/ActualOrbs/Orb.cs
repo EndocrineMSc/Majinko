@@ -9,7 +9,7 @@ using DG.Tweening;
 
 namespace Orbs
 {
-    [RequireComponent(typeof(ScrollDisplayer))]
+    [RequireComponent(typeof(ScrollDisplayer)), RequireComponent(typeof(OrbManaPopUpDisplayer))]
     internal abstract class Orb : MonoBehaviour, IHaveDisplayDescription
     {
         #region Fields and Properties
@@ -23,9 +23,12 @@ namespace Orbs
         //Stats
         [SerializeField] protected ManaType _spawnManaType;
         [SerializeField] protected int _manaAmount = 10;
+
+        internal ManaType SpawnManaType { get { return _spawnManaType; } private protected set { _spawnManaType = value; } }
+        internal int ManaAmount { get { return _manaAmount; } private protected set { _manaAmount = value; }}
         [SerializeField] protected GameObject _defaultOrb;
         [SerializeField] internal OrbType OrbType;
-        internal bool orbIsActive { get; private set; } = true;
+        internal bool OrbIsActive { get; private set; } = true;
 
         //Tweening
         protected Vector3 _position;
@@ -117,8 +120,8 @@ namespace Orbs
 
         protected virtual void SpawnMana()
         {
-            if (_manaAmount != 0)
-                OrbEvents.RaiseSpawnMana(_spawnManaType, _manaAmount);
+            if (ManaAmount != 0)
+                OrbEvents.RaiseSpawnMana(SpawnManaType, ManaAmount);
         }
 
         protected virtual IEnumerator DestroyOrbWithDelay()
@@ -131,7 +134,7 @@ namespace Orbs
         {
             _collider.enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
-            orbIsActive = false;
+            OrbIsActive = false;
         }
 
         #endregion
@@ -140,14 +143,14 @@ namespace Orbs
 
         protected void OnSetOrbActive()
         {
-            orbIsActive = true;
+            OrbIsActive = true;
             _collider.enabled = true;
             GetComponent<SpriteRenderer>().enabled = true;
         }
 
         internal void SetActionOrbInactive()
         {
-            orbIsActive = false;
+            OrbIsActive = false;
             _collider.enabled = false;
         }
 

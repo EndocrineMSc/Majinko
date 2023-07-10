@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5099420647275916350}
   - component: {fileID: 4872170773538441819}
   - component: {fileID: 3210177949432129465}
+  - component: {fileID: 8606283219829596650}
   m_Layer: 0
   m_Name: ForbiddenOrbA
   m_TagString: Orb
@@ -148,7 +149,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8952a5816a501142991eb65aceff30d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnManaType: 0
-  _manaAmount: 0
   _defaultOrb: {fileID: 2549565476461289553}
   OrbType: 8
+--- !u!114 &8606283219829596650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549565476461289553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dddfed535f40694993f59eb1b3cd024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _orbPopUpPrefab: {fileID: 5326807715267368304, guid: e2b6d36c4219c2243b948ce91b89f7af, type: 3}
