@@ -60,7 +60,7 @@ namespace Orbs
             {
                 OrbManaPopUp popUp = Instantiate(_orbPopUpPrefab, transform.position, Quaternion.identity).GetComponent<OrbManaPopUp>();
                 popUp.SetPopUpColor(_popUpColor);
-                popUp.SetPopUpValue(_currentManaPopUpAmount);
+                popUp.SetPopUpValue((float)System.Math.Round(_currentManaPopUpAmount, 1));
             }
         }
 
