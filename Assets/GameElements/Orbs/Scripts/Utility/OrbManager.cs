@@ -6,6 +6,7 @@ using DG.Tweening;
 using System.Collections;
 using Audio;
 using Utility.TurnManagement;
+using ManaManagement;
 
 namespace Orbs
 {
@@ -30,9 +31,25 @@ namespace Orbs
         private bool _isCheckingForRefreshOrbs;
         [SerializeField] private OrbLayoutSet _wordOneLayouts;
 
+        internal float GatheredBasicManaAmountTurn { get; private set; } = 0;
+        internal float GatheredFireManaAmountTurn { get; private set; } = 0;
+        internal float GatheredIceManaAmountTurn { get; private set; } = 0;
         #endregion
 
         #region Functions
+
+        private void OnEnable()
+        {
+            OrbEvents.SpawnMana += OnManaSpawn;
+            LevelPhaseEvents.OnStartEnemyPhase += OnStartEnemyPhase;
+        }
+
+        private void OnDisable()
+        {
+            OrbEvents.SpawnMana -= OnManaSpawn;
+            LevelPhaseEvents.OnStartEnemyPhase -= OnStartEnemyPhase;
+        }
+
         private void Awake()
         {
             if (Instance == null)
@@ -256,6 +273,39 @@ namespace Orbs
                 Destroy(orbToBeReplaced.gameObject);
             }
         }
+
+        private void OnManaSpawn(ManaType manaType, int amount)
+        {
+            int modifier = ManaPool.Instance.ManaCostMultiplier;
+
+            if (amount != 0)
+            {
+                switch (manaType)
+                {
+                    case ManaType.BasicMana:
+                        GatheredBasicManaAmountTurn += (float)amount / modifier;
+                        break;
+                    case ManaType.FireMana:
+                        GatheredFireManaAmountTurn += (float)amount / modifier;
+                        break;
+                    case ManaType.IceMana:
+                        GatheredIceManaAmountTurn += (float)amount / modifier;
+                        break;
+                    case ManaType.RottedMana:
+                        GatheredBasicManaAmountTurn += (float)amount / modifier;  
+                        break;
+                }
+            }
+        }
+
+        private void OnStartEnemyPhase()
+        {
+            GatheredBasicManaAmountTurn = 0;
+            GatheredFireManaAmountTurn = 0;
+            GatheredIceManaAmountTurn = 0;
+        }
+
+
         #endregion
 
         private enum SearchTag

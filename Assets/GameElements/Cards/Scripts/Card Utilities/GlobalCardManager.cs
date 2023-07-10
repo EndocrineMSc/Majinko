@@ -156,13 +156,10 @@ namespace Cards
                 foreach (Card card in RareCards)
                 {
                     if (card.name.Contains(EXODIA_CHECK))
-                    {
                         CommonCards.Add(AllCards[(int)card.CardType]);
-                    }
                     else
-                    {
                         newRareCards.Add(card);
-                    }
+
                     RareCards = newRareCards;
                 }
             }
@@ -172,13 +169,9 @@ namespace Cards
                 foreach (Card card in EpicCards)
                 {
                     if (card.name.Contains(EXODIA_CHECK))
-                    {
                         RareCards.Add(AllCards[(int)card.CardType]);
-                    }
                     else
-                    {
                         newEpicCards.Add(card);
-                    }
                 }
                 EpicCards = newEpicCards;
             }
@@ -187,15 +180,10 @@ namespace Cards
                 List<Card> newLegendaryList = new();
                 foreach (Card card in LegendaryCards)
                 {
-                    Debug.Log(card.name);
                     if (card.name.Contains(EXODIA_CHECK))
-                    {
                         EpicCards.Add(AllCards[(int)card.CardType]);
-                    }
                     else
-                    {
                         newLegendaryList.Add(card);
-                    }
                 }
                 LegendaryCards = newLegendaryList;
             }

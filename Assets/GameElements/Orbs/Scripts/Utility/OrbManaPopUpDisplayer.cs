@@ -12,30 +12,16 @@ namespace Orbs
 
         [SerializeField] private GameObject _orbPopUpPrefab;
         private Color _popUpColor;
-        private Orb _orb;
-        private float _currentManaPopUpAmount = 0;
         private ManaType _orbManaType;
 
         #endregion
 
         #region Functions
 
-        private void OnEnable()
-        {
-            OrbEvents.SpawnMana += OnManaSpawn;
-            LevelPhaseEvents.OnStartEnemyPhase += OnStartEnemyPhase;
-        }
-
-        private void OnDisable()
-        {
-            OrbEvents.SpawnMana -= OnManaSpawn;
-            LevelPhaseEvents.OnStartEnemyPhase -= OnStartEnemyPhase;
-        }
-
         private void Start()
         {
-            _orb = GetComponent<Orb>();
-            _orbManaType = _orb.SpawnManaType;
+            Orb orb = GetComponent<Orb>();
+            _orbManaType = orb.SpawnManaType;
 
             switch (_orbManaType)
             {
@@ -60,19 +46,23 @@ namespace Orbs
             {
                 OrbManaPopUp popUp = Instantiate(_orbPopUpPrefab, transform.position, Quaternion.identity).GetComponent<OrbManaPopUp>();
                 popUp.SetPopUpColor(_popUpColor);
-                popUp.SetPopUpValue((float)System.Math.Round(_currentManaPopUpAmount, 1));
+
+                switch(_orbManaType)
+                {
+                    case ManaType.BasicMana:
+                        popUp.SetPopUpValue((float)System.Math.Round(OrbManager.Instance.GatheredBasicManaAmountTurn, 1));
+                        break;
+                    case ManaType.FireMana:
+                        popUp.SetPopUpValue((float)System.Math.Round(OrbManager.Instance.GatheredFireManaAmountTurn, 1));
+                        break;
+                    case ManaType.IceMana:
+                        popUp.SetPopUpValue((float)System.Math.Round(OrbManager.Instance.GatheredIceManaAmountTurn, 1));
+                        break;
+                    case ManaType.RottedMana:
+                        popUp.SetPopUpValue((float)System.Math.Round(OrbManager.Instance.GatheredBasicManaAmountTurn, 1));
+                        break;
+                }
             }
-        }
-
-        private void OnManaSpawn(ManaType manaType, int amount)
-        {
-            if (amount != 0 && _orbManaType == manaType)
-                _currentManaPopUpAmount += (float)amount / ManaPool.Instance.ManaCostMultiplier;
-        }
-
-        private void OnStartEnemyPhase()
-        {
-            _currentManaPopUpAmount = 0;
         }
 
         #endregion
