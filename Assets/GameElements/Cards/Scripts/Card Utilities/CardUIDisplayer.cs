@@ -2,6 +2,8 @@ using UnityEngine;
 using TMPro;
 using EnumCollection;
 using UnityEngine.UI;
+using DG.Tweening;
+using ManaManagement;
 
 namespace Cards
 {
@@ -10,6 +12,7 @@ namespace Cards
         #region Fields
 
         private Card _card;
+        [SerializeField] private Image _highlight;
         [SerializeField] private Image _cardImage;
         [SerializeField] private GameObject _basicCardBackground;
         [SerializeField] private GameObject _iceCardBackground;
@@ -75,8 +78,7 @@ namespace Cards
                 case CardEffectType.Sphereshifter:
                     _cardType.text = (SPHERESHIFTER_EFFECT_TYPE);
                     break;
-            }
-
+            }      
         }
 
         private void ActivateRarityBackground()
@@ -105,6 +107,7 @@ namespace Cards
         {
             DeactivateCardFrames();
             DeactivateCostBubbles();
+            DeactivateHighlight();
             switch (_card.Element)
             {               
                 case CardElement.None:
@@ -125,6 +128,20 @@ namespace Cards
                     _fireBubbleLower.SetActive(true);
                     break;
             }
+        }
+
+        private void Update()
+        {
+            bool enoughBasicMana = _card.BasicManaCost <= ManaPool.Instance.BasicMana.Count / ManaPool.Instance.ManaCostMultiplier;
+            bool enoughFireMana = _card.FireManaCost <= ManaPool.Instance.FireMana.Count / ManaPool.Instance.ManaCostMultiplier;
+            bool enoughIceMana = _card.IceManaCost <= ManaPool.Instance.IceMana.Count / ManaPool.Instance.ManaCostMultiplier;
+
+            bool highlightActive = enoughBasicMana && enoughFireMana && enoughIceMana;
+
+            if (highlightActive)
+                ActivateHighlight();
+            else
+                DeactivateHighlight();
         }
 
         private void DeactivateCostBubbles()
@@ -150,6 +167,18 @@ namespace Cards
             _rareBackground.SetActive(false);
             _epicBackground.SetActive(false);
             _legendaryBackground.SetActive(false);
+        }
+
+        private void DeactivateHighlight()
+        {
+            if (_highlight != null)
+                _highlight.DOFade(0, 0.01f);
+        }
+
+        private void ActivateHighlight()
+        {
+            if (_highlight != null)
+                _highlight.DOFade(1, 0.01f);
         }
 
         #endregion
