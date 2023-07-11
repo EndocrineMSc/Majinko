@@ -28,6 +28,7 @@ TagManager:
   - TutorialButton
   - GameTitle
   - QuitButton
+  - ContinueButton
   layers:
   - Default
   - TransparentFX

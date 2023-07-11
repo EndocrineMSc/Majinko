@@ -26,6 +26,12 @@ namespace Cards
         private int _remainingAmountExodiaCards = 6;
         private bool _isFirstInit = true;
 
+        private readonly string COMMON_CARDS_PATH = "CommonCards";
+        private readonly string RARE_CARDS_PATH = "RareCards";
+        private readonly string EPIC_CARDS_PATH = "EpicCards";
+        private readonly string LEGENDARY_CARDS_PATH = "LegendaryCards";
+        private readonly string CARDRARITY_PATH = "RarityDictionary";
+
         #endregion
 
         #region Functions
@@ -52,6 +58,29 @@ namespace Cards
         private void OnDisable()
         {
             UtilityEvents.OnGameReset -= OnGameReset;
+        }
+
+        private void Start()
+        {
+            if (ES3.KeyExists(CARDRARITY_PATH))
+                GlobalCardManager.Instance.CardRarityThreshold = ES3.Load<Dictionary<CardRarity, float>>(CARDRARITY_PATH);
+
+            if (ES3.KeyExists(COMMON_CARDS_PATH))
+            {
+                GlobalCardManager.Instance.CommonCards = ES3.Load<List<Card>>(COMMON_CARDS_PATH);
+                GlobalCardManager.Instance.RareCards = ES3.Load<List<Card>>(RARE_CARDS_PATH);
+                GlobalCardManager.Instance.EpicCards = ES3.Load<List<Card>>(EPIC_CARDS_PATH);
+                GlobalCardManager.Instance.LegendaryCards = ES3.Load<List<Card>>(LEGENDARY_CARDS_PATH);
+            }
+        }
+
+        private void OnApplicationQuit()
+        {
+            ES3.Save(CARDRARITY_PATH, CardRarityThreshold);
+            ES3.Save(COMMON_CARDS_PATH, CommonCards);
+            ES3.Save(RARE_CARDS_PATH, RareCards);
+            ES3.Save(EPIC_CARDS_PATH, EpicCards);
+            ES3.Save(LEGENDARY_CARDS_PATH, LegendaryCards);
         }
 
         private void InitializeManager()
@@ -192,6 +221,13 @@ namespace Cards
         public void OnGameReset()
         {
             _isFirstInit = true;
+
+            ES3.DeleteKey(CARDRARITY_PATH);
+            ES3.DeleteKey(COMMON_CARDS_PATH);
+            ES3.DeleteKey(RARE_CARDS_PATH);
+            ES3.DeleteKey(EPIC_CARDS_PATH);
+            ES3.DeleteKey(LEGENDARY_CARDS_PATH);
+
             InitializeManager();
         }
         #endregion

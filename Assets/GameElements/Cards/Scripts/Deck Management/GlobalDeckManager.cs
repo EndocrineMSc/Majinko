@@ -11,6 +11,8 @@ namespace Cards
 
         internal static GlobalDeckManager Instance { get; private set; }
 
+        private readonly string SAVE_PATH = "GlobalDeck";
+
         private readonly int[] _apprenticeDeck = new int[] { (int) CardType.Divination, (int) CardType.Divination, (int) CardType.ManaBlitz,
             (int) CardType.ManaBlitz, (int) CardType.ManaBlitz, (int) CardType.ManaBlitz, (int) CardType.ManaShield,(int) CardType.ManaShield,
             (int) CardType.ManaShield, (int) CardType.ManaShield };
@@ -36,6 +38,9 @@ namespace Cards
 
         private void Start()
         {
+            if(ES3.KeyExists(SAVE_PATH))
+                GlobalDeckManager.Instance.GlobalDeck = ES3.Load(SAVE_PATH, new List<Card>());
+            
             if (GlobalDeck.Count == 0)
                 BuildStartDeck(StartDeck.Apprentice);
         }
@@ -48,6 +53,11 @@ namespace Cards
         private void OnDisable()
         {
             UtilityEvents.OnGameReset -= OnGameReset;
+        }
+
+        private void OnApplicationQuit()
+        {
+            ES3.Save(SAVE_PATH, GlobalDeckManager.Instance.GlobalDeck);
         }
 
         internal void BuildStartDeck(StartDeck startDeck)
@@ -71,6 +81,7 @@ namespace Cards
         public void OnGameReset()
         {
             GlobalDeck.Clear();
+            ES3.DeleteKey(SAVE_PATH);
             BuildStartDeck(StartDeck.Apprentice);
         }
         #endregion

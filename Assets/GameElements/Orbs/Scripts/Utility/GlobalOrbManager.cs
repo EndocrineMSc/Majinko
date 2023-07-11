@@ -19,6 +19,9 @@ namespace Orbs
 
         [SerializeField] private AllOrbsCollection _allOrbsCollection;
 
+        private readonly string LEVELLOADORBS_PATH = "LevelLoadOrbs";
+        private readonly string REFRESHORBS_PATH = "RefreshOrbs";
+
         #endregion
 
         #region Functions
@@ -46,14 +49,36 @@ namespace Orbs
             UtilityEvents.OnGameReset -= OnGameReset;
         }
 
+        private void Start()
+        {
+            if (ES3.KeyExists(LEVELLOADORBS_PATH))
+            {           
+                foreach (Orb orb in (ES3.Load(LEVELLOADORBS_PATH) as List<Orb>))
+                    LevelLoadOrbs.Add(AllOrbsList[(int)orb.OrbType]);
+            }
+
+            if (ES3.KeyExists(REFRESHORBS_PATH))
+                GlobalOrbManager.Instance.AmountOfRefreshOrbs = ES3.Load<int>(REFRESHORBS_PATH);
+        }
+
+        private void OnApplicationQuit()
+        {
+            ES3.Save(LEVELLOADORBS_PATH, LevelLoadOrbs);
+            ES3.Save(REFRESHORBS_PATH, AmountOfRefreshOrbs);
+        }
+
         private void InitializeManager()
         {
             InitializeLists();
             AllOrbsList = _allOrbsCollection.AllOrbs.ToList();
             AllOrbsList = AllOrbsList.OrderBy(x => x.OrbType).ToList();
-            LevelLoadOrbs.Add(AllOrbsList[(int)OrbType.RefreshOrb]);
-            LevelLoadOrbs.Add(AllOrbsList[(int)OrbType.FireManaOrb]);
-            LevelLoadOrbs.Add(AllOrbsList[(int)OrbType.IceManaOrb]);
+
+            if (LevelLoadOrbs.Count == 0 && !ES3.KeyExists(LEVELLOADORBS_PATH))
+            {
+                LevelLoadOrbs.Add(AllOrbsList[(int)OrbType.RefreshOrb]);
+                LevelLoadOrbs.Add(AllOrbsList[(int)OrbType.FireManaOrb]);
+                LevelLoadOrbs.Add(AllOrbsList[(int)OrbType.IceManaOrb]);
+            }
         }
 
         private void InitializeLists()
@@ -79,12 +104,16 @@ namespace Orbs
         {
             LevelLoadOrbs.Remove(orb);
 
-            if (orb.OrbType == OrbType.RefreshOrb) {AmountOfRefreshOrbs--;}
+            if (orb.OrbType == OrbType.RefreshOrb) 
+                AmountOfRefreshOrbs--;
         }
 
         public void OnGameReset()
         {
             LevelLoadOrbs.Clear();
+            AmountOfRefreshOrbs = 1;
+            ES3.DeleteKey(LEVELLOADORBS_PATH);
+            ES3.DeleteKey(REFRESHORBS_PATH);
             InitializeManager();
         }
         #endregion

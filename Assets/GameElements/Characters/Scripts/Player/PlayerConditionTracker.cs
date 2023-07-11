@@ -13,6 +13,14 @@ namespace Characters
             PlayerHealth = health;
         }
 
+        internal static void SetMaxHealth(int amount)
+        {
+            MaxPlayerHealth = amount;
+
+            if (PlayerHealth > MaxPlayerHealth)
+                PlayerHealth = MaxPlayerHealth;
+        }
+
         internal static void DecreaseMaxHealth(int amount)
         {
             MaxPlayerHealth -= amount;

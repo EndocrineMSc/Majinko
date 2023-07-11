@@ -132,16 +132,19 @@ namespace Cards
 
         private void Update()
         {
-            bool enoughBasicMana = _card.BasicManaCost <= ManaPool.Instance.BasicMana.Count / ManaPool.Instance.ManaCostMultiplier;
-            bool enoughFireMana = _card.FireManaCost <= ManaPool.Instance.FireMana.Count / ManaPool.Instance.ManaCostMultiplier;
-            bool enoughIceMana = _card.IceManaCost <= ManaPool.Instance.IceMana.Count / ManaPool.Instance.ManaCostMultiplier;
+            if (ManaPool.Instance != null)
+            {
+                bool enoughBasicMana = _card.BasicManaCost <= ManaPool.Instance.BasicMana.Count / ManaPool.Instance.ManaCostMultiplier;
+                bool enoughFireMana = _card.FireManaCost <= ManaPool.Instance.FireMana.Count / ManaPool.Instance.ManaCostMultiplier;
+                bool enoughIceMana = _card.IceManaCost <= ManaPool.Instance.IceMana.Count / ManaPool.Instance.ManaCostMultiplier;
 
-            bool highlightActive = enoughBasicMana && enoughFireMana && enoughIceMana;
+                bool highlightActive = enoughBasicMana && enoughFireMana && enoughIceMana;
 
-            if (highlightActive)
-                ActivateHighlight();
-            else
-                DeactivateHighlight();
+                if (highlightActive)
+                    ActivateHighlight();
+                else
+                    DeactivateHighlight();
+            }
         }
 
         private void DeactivateCostBubbles()

@@ -22,12 +22,14 @@ namespace Utility
         private readonly string CREDITS_BUTTON_PARAM = "CreditsButton";
         private readonly string QUIT_BUTTON_PARAM = "QuitButton";
         private readonly string TUTORIAL_BUTTON_PARAM = "TutorialButton";
+        private readonly string CONTINUE_BUTTON_PARAM = "ContinueButton";
 
         private GameObject _startButton;
         private GameObject _settingsButton;
         private GameObject _creditsButton;
         private GameObject _tutorialButton;
         private GameObject _quitButton;
+        private GameObject _continueButton;
 
         #endregion
 
@@ -52,12 +54,17 @@ namespace Utility
             _creditsButton = GameObject.FindGameObjectWithTag(CREDITS_BUTTON_PARAM);
             _tutorialButton = GameObject.FindGameObjectWithTag(TUTORIAL_BUTTON_PARAM);
             _quitButton = GameObject.FindGameObjectWithTag(QUIT_BUTTON_PARAM);
+            _continueButton = GameObject.FindGameObjectWithTag(CONTINUE_BUTTON_PARAM);
 
-            _startButton.GetComponent<Button>().onClick.AddListener(StartGame);
+            _continueButton.GetComponent<Button>().onClick.AddListener(ContinueGame);
+            _startButton.GetComponent<Button>().onClick.AddListener(NewGame);
             _settingsButton.GetComponent<Button>().onClick.AddListener(OpenSettings);
             _creditsButton.GetComponent<Button>().onClick.AddListener(OpenCredits);
             _tutorialButton.GetComponent<Button>().onClick.AddListener(OpenTutorial);
             _quitButton.GetComponent<Button>().onClick.AddListener(QuitGame);
+
+            if (!ES3.KeyExists("GlobalDeck"))
+                _continueButton.SetActive(false);
         }
 
         private void OnDisable()
@@ -95,9 +102,16 @@ namespace Utility
             MenuEvents.RaiseCreditsOpened();
         }
 
-        public void StartGame()
+        public void ContinueGame()
         {
             PlayButtonClick();
+            LoadHelper.LoadSceneWithLoadingScreen(SceneName.WorldOne);
+        }
+
+        public void NewGame()
+        {
+            PlayButtonClick();
+            UtilityEvents.RaiseGameReset();
             LoadHelper.LoadSceneWithLoadingScreen(SceneName.WorldOne);
         }
 
