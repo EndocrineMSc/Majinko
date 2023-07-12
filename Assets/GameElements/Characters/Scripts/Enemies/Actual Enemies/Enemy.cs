@@ -56,6 +56,9 @@ namespace Characters.Enemies
         internal bool IsInAttackPosition { get; private set; }
         internal int TurnsTillNextAttack { get; set; }
 
+        //Other
+        protected bool _isDead;
+
         #endregion
 
         #region Functions
@@ -182,16 +185,20 @@ namespace Characters.Enemies
 
         protected void HandleDeath()
         {
-            transform.DOKill(); //stop all tweens
-            EnemyManager.Instance.EnemiesInScene.Remove(this);
-            EnemyEvents.RaiseOnEnemyDeath();
+            if(!_isDead)
+            {
+                _isDead = true;
+                transform.DOKill(); //stop all tweens
+                EnemyManager.Instance.EnemiesInScene.Remove(this);
+                EnemyEvents.RaiseOnEnemyDeath();
 
-            Collider2D collider = GetComponent<Collider2D>();
-            collider.enabled = false;
+                Collider2D collider = GetComponent<Collider2D>();
+                collider.enabled = false;
 
-            TriggerDeathAnimation();
-            PlayDeathSound();
-            OnDeathEffect();
+                TriggerDeathAnimation();
+                PlayDeathSound();
+                OnDeathEffect();
+            }
         }
 
         protected virtual IEnumerator DestroyThisEnemyWithDelay()
