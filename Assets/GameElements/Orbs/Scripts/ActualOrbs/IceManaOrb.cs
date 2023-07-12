@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Orbs
 {
-    internal class IceManaOrb : Orb
+    internal class IceManaOrb : Orb, IAmPersistent
     {
         private EnemyManager _enemyManager;
 

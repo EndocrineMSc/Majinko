@@ -7,7 +7,7 @@ namespace Cards
     {
         protected override void CardEffect()
         {
-            GlobalOrbManager.Instance.AddGlobalOrb(GlobalOrbManager.Instance.AllOrbsList[(int)OrbType.RefreshOrb]);
+            GlobalOrbManager.Instance.AddLevelLoadOrb(OrbType.RefreshOrb);
             OrbManager.Instance.SwitchOrbs(OrbType.RefreshOrb, transform.position);
 
             _globalDeckManager.RemoveCardFromGlobalDeck(GlobalCardManager.Instance.AllCards[(int)CardType]);

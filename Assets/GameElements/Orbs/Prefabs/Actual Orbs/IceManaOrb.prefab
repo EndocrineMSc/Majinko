@@ -141,6 +141,7 @@ MonoBehaviour:
   _manaAmount: 10
   _defaultOrb: {fileID: 150168502249141089}
   OrbType: 16
+  _isPersistentOrb: 1
 --- !u!114 &8511080046945398949
 MonoBehaviour:
   m_ObjectHideFlags: 0

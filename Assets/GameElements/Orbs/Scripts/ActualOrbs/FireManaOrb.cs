@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Orbs
 {
-    internal class FireManaOrb : Orb
+    internal class FireManaOrb : Orb, IAmPersistent
     {
         private EnemyManager _enemyManager;
 

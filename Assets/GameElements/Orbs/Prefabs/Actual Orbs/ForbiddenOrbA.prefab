@@ -149,8 +149,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8952a5816a501142991eb65aceff30d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spawnManaType: 0
+  _manaAmount: 10
   _defaultOrb: {fileID: 2549565476461289553}
   OrbType: 8
+  _isPersistentOrb: 1
 --- !u!114 &8606283219829596650
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Orbs
 {
-    internal class RefreshOrb : Orb
+    internal class RefreshOrb : Orb, IAmPersistent
     {
         private bool _effectIsTriggered;
 

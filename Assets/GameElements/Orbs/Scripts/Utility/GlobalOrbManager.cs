@@ -87,13 +87,13 @@ namespace Orbs
             LevelLoadOrbs ??= new();
         }
 
-        internal void AddGlobalOrb(Orb orb, int amount = 1)
+        internal void AddLevelLoadOrb(OrbType orbType, int amount = 1)
         {           
             for (int i = 0; i < amount; i++)
             {
-                LevelLoadOrbs.Add(orb);
+                LevelLoadOrbs.Add(AllOrbsList[(int)orbType]);
 
-                if (orb.OrbType == OrbType.RefreshOrb)
+                if (orbType == OrbType.RefreshOrb)
                 {
                     AmountOfRefreshOrbs++;
                 }
