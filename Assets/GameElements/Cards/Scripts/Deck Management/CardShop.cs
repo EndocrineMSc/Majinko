@@ -78,7 +78,10 @@ namespace Utility
             while (shopCardList.Count < amountCardChoices)
             {
                 if (retries > 50)
+                {
+                    Debug.Log("Shop Building Failed");
                     break;
+                }
 
                 List<Card> rarityList = DetermineCardRarityList();
                 if (rarityList.Count == 0)

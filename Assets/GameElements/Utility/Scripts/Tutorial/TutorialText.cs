@@ -21,6 +21,7 @@ namespace Utility
 
         private int _index = 0;
         private bool _isStopped;
+        private bool _tutorialIsOver;
         
         internal bool NextTextIsBlocked { get; set; }
 
@@ -59,10 +60,18 @@ namespace Utility
                 HandleMouseClick();          
                 DisplayNextText(_index);
             }
+
+            if (_index >= _tutorialTexts.Length-1 && !_tutorialIsOver)
+            {
+                _tutorialIsOver = true;
+                TutorialEvents.RaiseTutorialFinished();
+                Debug.Log("Tutorial Over");
+            }
         }
 
         private void HandleMouseClick()
         {
+            Debug.Log(_index);
             switch (_index)
             {
                 case 2:

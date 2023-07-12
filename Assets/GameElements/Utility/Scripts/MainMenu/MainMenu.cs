@@ -1,12 +1,6 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
 using Audio;
-using System;
-using PeggleWars;
-using UnityEngine.SceneManagement;
-using UnityEditor;
 
 namespace Utility
 {
@@ -77,6 +71,7 @@ namespace Utility
         private void OpenTutorial()
         {
             PlayButtonClick();
+            UtilityEvents.RaiseGameReset();
             LoadHelper.LoadSceneWithLoadingScreen(SceneName.Tutorial);
         }
 
