@@ -10,6 +10,7 @@ namespace Characters.Enemies
 {
     [RequireComponent(typeof(PopUpSpawner))]
     [RequireComponent(typeof(ScrollDisplayer))]
+    [RequireComponent(typeof(StatusTooltipSpawner))]
     internal abstract class Enemy : MonoBehaviour, IDamagable, IHaveDisplayDescription
     {
         #region Fields and Properties

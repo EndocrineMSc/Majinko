@@ -1,3 +1,5 @@
+using Characters;
+using Characters.Enemies;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -35,10 +37,9 @@ namespace PeggleWars.ScrollDisplay
         {
             _scrollRenderer.enabled = true;
             Animator gameobjectAnimator = displayObject.GetComponent<Animator>();
+            
             if (gameobjectAnimator == null)
-            {
                 gameobjectAnimator = displayObject.GetComponentInChildren<Animator>();
-            }
 
             string displayText = displayObject.GetComponentInChildren<IDisplayOnScroll>()?.DisplayDescription;
             int scrollDisplayScale = displayObject.GetComponentInChildren<IDisplayOnScroll>().DisplayScale;
@@ -58,12 +59,10 @@ namespace PeggleWars.ScrollDisplay
                 else
                 {
                     GameObject displayObjectChild = displayObject.transform.GetChild(0).gameObject;
+                    
                     if(displayObjectChild.TryGetComponent<SpriteRenderer>(out SpriteRenderer childSpriteRenderer))
-                    {
                         _scrollRenderer.sprite = childSpriteRenderer.sprite;
-                    }
-                }
-                
+                }               
             }
 
             _scrollDisplay.transform.localScale = displayObject.transform.localScale * scrollDisplayScale;
@@ -76,9 +75,6 @@ namespace PeggleWars.ScrollDisplay
             _scrollRenderer.GetComponent<SpriteRenderer>().enabled = false;
             _scrollDescriptionBox.enabled = false;
         }
-
-
-
         #endregion
 
     }

@@ -11,6 +11,7 @@ namespace Characters.Enemies
         #region Fields and Properties
 
         private Enemy _parentEnemy;
+        private Canvas _canvas;
         private ICanBeIntangible _intangibleEnemy;
         private TextMeshProUGUI _healthPoints;
         private Image _heart;
@@ -52,6 +53,17 @@ namespace Characters.Enemies
             _parentEnemy = GetComponentInParent<Enemy>();
             _healthPoints = GetComponentInChildren<TextMeshProUGUI>();
             _heart = GetComponentInChildren<Image>();
+            _canvas = GetComponent<Canvas>();
+        }
+
+        private void OnEnable()
+        {
+            EnemyEvents.OnEnemyFinishedMoving += UpdateCanvasLayerOrder;
+        }
+
+        private void OnDisable()
+        {
+            EnemyEvents.OnEnemyFinishedMoving -= UpdateCanvasLayerOrder;
         }
 
         private void Start()
@@ -297,6 +309,11 @@ namespace Characters.Enemies
             _enragedStatus.rectTransform.DOPunchScale(_enragedStatus.rectTransform.localScale * 1.1f, 0.2f, 1, 1);
             _enragedStatus.GetComponentInChildren<TextMeshProUGUI>().text = _parentEnemy.EnragedStacks.ToString();
             _lastUpdateEnragedStacks = _parentEnemy.EnragedStacks;
+        }
+
+        private void UpdateCanvasLayerOrder()
+        {
+            _canvas.sortingOrder++;
         }
 
         #endregion
