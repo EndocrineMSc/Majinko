@@ -15,7 +15,7 @@ namespace Orbs
 
         internal List<Orb> LevelLoadOrbs { get; private set; }
         internal List<Orb> AllOrbsList { get; private set; }
-        internal int AmountOfRefreshOrbs { get; private set; } = 1;
+        internal int AmountOfRefreshOrbs { get; private set; } = 0;
 
         [SerializeField] private AllOrbsCollection _allOrbsCollection;
 
@@ -52,13 +52,12 @@ namespace Orbs
         private void Start()
         {
             if (ES3.KeyExists(LEVELLOADORBS_PATH))
-            {           
+            {
+                AmountOfRefreshOrbs = 0;
+                LevelLoadOrbs.Clear();
                 foreach (Orb orb in (ES3.Load(LEVELLOADORBS_PATH) as List<Orb>))
-                    LevelLoadOrbs.Add(AllOrbsList[(int)orb.OrbType]);
+                    AddLevelLoadOrb(orb.OrbType);
             }
-
-            if (ES3.KeyExists(REFRESHORBS_PATH))
-                GlobalOrbManager.Instance.AmountOfRefreshOrbs = ES3.Load<int>(REFRESHORBS_PATH);
         }
 
         private void OnApplicationQuit()
@@ -75,10 +74,11 @@ namespace Orbs
 
             if (LevelLoadOrbs.Count == 0 && !ES3.KeyExists(LEVELLOADORBS_PATH))
             {
-                LevelLoadOrbs.Add(AllOrbsList[(int)OrbType.RefreshOrb]);
-                LevelLoadOrbs.Add(AllOrbsList[(int)OrbType.FireManaOrb]);
-                LevelLoadOrbs.Add(AllOrbsList[(int)OrbType.IceManaOrb]);
+                AddLevelLoadOrb(OrbType.IceManaOrb);
+                AddLevelLoadOrb(OrbType.FireManaOrb);
+                AddLevelLoadOrb(OrbType.RefreshOrb);
             }
+            Debug.Log(AmountOfRefreshOrbs);
         }
 
         private void InitializeLists()
@@ -111,7 +111,7 @@ namespace Orbs
         public void OnGameReset()
         {
             LevelLoadOrbs.Clear();
-            AmountOfRefreshOrbs = 1;
+            AmountOfRefreshOrbs = 0;
             ES3.DeleteKey(LEVELLOADORBS_PATH);
             ES3.DeleteKey(REFRESHORBS_PATH);
             InitializeManager();
