@@ -1,3 +1,5 @@
+using DG.Tweening;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -7,13 +9,8 @@ namespace Characters.UI
     {
         #region Fields and Properties
 
-        private float _disappearTimer = 2f;
         private readonly float _disappearTimerMax = 2f;
         private TextMeshPro _textMesh;
-        private Color _textColor;
-        private Color _red = Color.red;
-        private float _damageScale;
-        private Vector3 _moveVector;
 
         #endregion
 
@@ -24,48 +21,39 @@ namespace Characters.UI
             _textMesh = GetComponent<TextMeshPro>();
         }
 
-        internal void Setup(int damageAmount)
+        internal void Setup(int amount, string hexColor = "#FF0A01")
         {
-            _textMesh.text = damageAmount.ToString();
-            _textMesh.fontSize = 26 + damageAmount;
+            _textMesh.text = amount.ToString();
+            _textMesh.fontSize = 26 + amount;
 
-            _damageScale = Mathf.Clamp01(damageAmount / 100f);
+            var sizeScale = Mathf.Clamp01(amount / 50f);
+            var colorScale = Mathf.Clamp01(amount / 10f);
 
-            _textColor = Color.Lerp(_textMesh.color, _red, _damageScale);
+            ColorUtility.TryParseHtmlString(hexColor, out Color basicColor);
+            _textMesh.color = Color.Lerp(_textMesh.color, basicColor, colorScale);
 
-            _moveVector = new Vector3(1, 1);
+            transform.DOMove(transform.position + Vector3.one, _disappearTimerMax);
+            transform.DOScale(sizeScale * Vector3.one, _disappearTimerMax);
+            _textMesh.DOFade(0, _disappearTimerMax);
+            StartCoroutine(DestroyAfterDelay());
         }
 
-        internal void Setup(string barkText)
+        internal void Setup(string barkText, string hexColor = "#FF0A01")
         {
             _textMesh.text = barkText;
-            _moveVector = new Vector3(2, 2);
+
+            ColorUtility.TryParseHtmlString(hexColor, out Color basicColor);
+            _textMesh.color = basicColor;
+
+            transform.DOJump(transform.position + new Vector3(1, 0.5f, 0), 1, 1, _disappearTimerMax);
+            _textMesh.DOFade(0, _disappearTimerMax);
+            StartCoroutine(DestroyAfterDelay());
         }
-
-        private void Update()
+        
+        private IEnumerator DestroyAfterDelay()
         {
-            transform.position += _moveVector * Time.deltaTime;
-            _moveVector -= 8f * Time.deltaTime * _moveVector;
-
-            _disappearTimer -= Time.deltaTime;
-
-            if (_disappearTimer > _disappearTimerMax * 0.5f) 
-                //First half of the popup lifetime
-                transform.localScale += _damageScale * Time.deltaTime * Vector3.one;
-            else
-                //Second half of the popup lifetime
-                transform.localScale -= + _damageScale * Time.deltaTime * Vector3.one;
-
-            if (_disappearTimer < 0)
-            {
-                //Start disappearing
-                float disappearSpeed = 3f;
-                _textColor.a -= disappearSpeed * Time.deltaTime;
-                _textMesh.color = _textColor;
-
-                if (_textColor.a < 0)
-                    Destroy(gameObject);
-            }
+            yield return new WaitForSeconds(_disappearTimerMax * 1.2f);
+            Destroy(gameObject);
         }
 
         #endregion

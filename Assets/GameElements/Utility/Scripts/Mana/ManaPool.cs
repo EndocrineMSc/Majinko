@@ -3,6 +3,7 @@ using UnityEngine;
 using EnumCollection;
 using Orbs;
 using System.Collections;
+using Characters;
 
 namespace ManaManagement
 {
@@ -49,6 +50,12 @@ namespace ManaManagement
             FindSpawnPoints();
             OrbEvents.SpawnMana += SpawnManaWrap;
             OrbEvents.RaiseSpawnMana(ManaType.BasicMana, 30);
+
+            if (PlayerConditionTracker.TemporaryBasicMana > 0)
+            {
+                OrbEvents.RaiseSpawnMana(ManaType.BasicMana, PlayerConditionTracker.TemporaryBasicMana * ManaCostMultiplier);
+                PlayerConditionTracker.ResetTemporaryBasicMana();
+            }
         }
 
         private void OnDisable()

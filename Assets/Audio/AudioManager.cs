@@ -161,6 +161,7 @@ namespace Audio
     internal enum Track
     {
         _0001_LevelOne,
+        _0002_MainMenu,
         GameTrackOne,
     }
 

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 69d126f4e8e78e3469dcf685e1d0e144
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _healButton: {instanceID: 0}
+  - _manaButton: {instanceID: 0}
+  - _leaveButton: {instanceID: 0}
+  - _basicMana: {fileID: 3911397808331039307, guid: dd17e86c997b09b4bb96bc9f5e5292d8, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -14,7 +14,7 @@ namespace Utility
         private readonly string PLAYER_SAVE_PATH = "PlayerIndex";
         private readonly string MAXHEALTH_SAVE_PATH = "PlayerMaxHealth";
         private readonly string HEALTH_SAVE_PATH = "PlayerHealth";
-
+        private readonly string TEMPBASICMANA_SAVE_PATH = "PlayerTemporaryBasicMana";
 
         #endregion
 
@@ -54,6 +54,9 @@ namespace Utility
 
             if (ES3.KeyExists(MAXHEALTH_SAVE_PATH))
                 PlayerConditionTracker.SetMaxHealth(ES3.Load<int>(MAXHEALTH_SAVE_PATH));
+
+            if (ES3.KeyExists(TEMPBASICMANA_SAVE_PATH))
+                PlayerConditionTracker.AddTemporaryBasicMana(ES3.Load<int>(TEMPBASICMANA_SAVE_PATH));
         }
 
         private void OnApplicationQuit()
@@ -62,6 +65,7 @@ namespace Utility
             ES3.Save(PLAYER_SAVE_PATH, CurrentPlayerWorldPosition.OverworldPlayerButtonIndex);
             ES3.Save(MAXHEALTH_SAVE_PATH, PlayerConditionTracker.MaxPlayerHealth);
             ES3.Save(HEALTH_SAVE_PATH, PlayerConditionTracker.PlayerHealth);
+            ES3.Save(TEMPBASICMANA_SAVE_PATH, PlayerConditionTracker.TemporaryBasicMana);
         }
 
         internal void ChangeWorldIndex()
@@ -76,6 +80,9 @@ namespace Utility
             PlayerConditionTracker.OnGameReset();
             ES3.DeleteKey(WORLD_SAVE_PATH);
             ES3.DeleteKey(PLAYER_SAVE_PATH);
+            ES3.DeleteKey(HEALTH_SAVE_PATH);
+            ES3.DeleteKey(MAXHEALTH_SAVE_PATH);
+            ES3.DeleteKey(TEMPBASICMANA_SAVE_PATH);
         }
 
         #endregion

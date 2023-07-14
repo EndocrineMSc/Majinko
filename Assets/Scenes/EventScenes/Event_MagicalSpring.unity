@@ -459,6 +459,82 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &248751373
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 248751374}
+  - component: {fileID: 248751376}
+  - component: {fileID: 248751375}
+  m_Layer: 5
+  m_Name: BlackScreen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &248751374
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248751373}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 513074413}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &248751375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248751373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &248751376
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248751373}
+  m_CullTransparentMesh: 1
 --- !u!1 &267603408
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,7 +941,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &513074409
 GameObject:
@@ -879,8 +955,9 @@ GameObject:
   - component: {fileID: 513074412}
   - component: {fileID: 513074411}
   - component: {fileID: 513074410}
+  - component: {fileID: 513074414}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: MagicalSpringCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -915,10 +992,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -963,14 +1040,32 @@ RectTransform:
   - {fileID: 1314527238}
   - {fileID: 922305388}
   - {fileID: 888678162}
+  - {fileID: 248751374}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &513074414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513074409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69d126f4e8e78e3469dcf685e1d0e144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healButton: {fileID: 1314527239}
+  _manaButton: {fileID: 922305389}
+  _leaveButton: {fileID: 888678163}
+  _basicMana: {fileID: 3911397808331039307, guid: dd17e86c997b09b4bb96bc9f5e5292d8, type: 3}
+  _blackScreen: {fileID: 248751375}
 --- !u!1 &636532439
 GameObject:
   m_ObjectHideFlags: 0
@@ -1021,7 +1116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8722768749525290218, guid: cef341aa7d34dc045998e49e1074c32c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8722768749525290218, guid: cef341aa7d34dc045998e49e1074c32c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1114,7 +1209,7 @@ GameObject:
   - component: {fileID: 667726812}
   - component: {fileID: 667726811}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Scroll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1612,7 +1707,7 @@ GameObject:
   - component: {fileID: 888678164}
   - component: {fileID: 888678163}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: LeaveButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1734,7 +1829,7 @@ GameObject:
   - component: {fileID: 922305390}
   - component: {fileID: 922305389}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: GatherWaterButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2667,7 +2762,7 @@ GameObject:
   - component: {fileID: 1314527240}
   - component: {fileID: 1314527239}
   m_Layer: 5
-  m_Name: Button
+  m_Name: DrinkWaterButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3028,6 +3123,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1442940533
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5376737055699061520, guid: 87f03553f3e5b5747b910ac6b53e45ad, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5376737055699061533, guid: 87f03553f3e5b5747b910ac6b53e45ad, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5376737055699061533, guid: 87f03553f3e5b5747b910ac6b53e45ad, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.423828
+      objectReference: {fileID: 0}
+    - target: {fileID: 5376737055699061533, guid: 87f03553f3e5b5747b910ac6b53e45ad, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.423441
+      objectReference: {fileID: 0}
+    - target: {fileID: 5376737055699061533, guid: 87f03553f3e5b5747b910ac6b53e45ad, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.8861439
+      objectReference: {fileID: 0}
+    - target: {fileID: 5376737055699061533, guid: 87f03553f3e5b5747b910ac6b53e45ad, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5376737055699061533, guid: 87f03553f3e5b5747b910ac6b53e45ad, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5376737055699061533, guid: 87f03553f3e5b5747b910ac6b53e45ad, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5376737055699061533, guid: 87f03553f3e5b5747b910ac6b53e45ad, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5376737055699061533, guid: 87f03553f3e5b5747b910ac6b53e45ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5376737055699061533, guid: 87f03553f3e5b5747b910ac6b53e45ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5376737055699061533, guid: 87f03553f3e5b5747b910ac6b53e45ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 87f03553f3e5b5747b910ac6b53e45ad, type: 3}
 --- !u!1 &1540506067
 GameObject:
   m_ObjectHideFlags: 0
@@ -3040,7 +3192,7 @@ GameObject:
   - component: {fileID: 1540506070}
   - component: {fileID: 1540506069}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: EventText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3086,20 +3238,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Deep in the forest you find a clearing with a sunny spring. In it, blue
-    water is brightly shimmering. You feel a pleasant magic eminating from it. What
-    do you do?
-
-
-    - Drink some of the water (heal 20% of your maximum life)
-
-
-    -
-    Fill your vial with water (start next combat with two additional basic mana)
-
-
-    -
-    Leave without doing anything'
+  m_text: "Deep in the forest you find a clearing with a sunny spring. In it, blue
+    water is sparkling brightly. You feel a pleasant magic eminating from it. \nWhat
+    do you do?\n\n- Drink some of the water (heal 20% of your maximum life)\n\n-
+    Fill your vial with water (start next combat with two additional basic mana)\n\n-
+    Leave without doing anything"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 309b5f01e0839d8489d575fe1a92fdd2, type: 2}
   m_sharedMaterial: {fileID: -139843783784504290, guid: 309b5f01e0839d8489d575fe1a92fdd2, type: 2}
@@ -3715,7 +3858,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1746769593
 GameObject:
@@ -4088,7 +4231,7 @@ Transform:
   - {fileID: 1091495262}
   - {fileID: 662018459}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2013681275
 GameObject:

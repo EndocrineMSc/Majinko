@@ -48,7 +48,6 @@ namespace Utility
         private void Start()
         {
             _audioManager = AudioManager.Instance;
-            //StartCoroutine(WaitThenChangeState(GameState.MainMenu));
         }
 
         private void OnEnable()
@@ -63,13 +62,15 @@ namespace Utility
             switch (state)
             {
                 case (GameState.MainMenu):
-                    yield return new WaitForSeconds(1);
-                    StartCoroutine(SwitchState(GameState.StartLevel));
+                    AudioManager.Instance.PlayGameTrack(Track._0002_MainMenu);
+                    AudioManager.Instance.FadeInGameTrack(Track._0002_MainMenu);
+                    AudioManager.Instance.FadeOutGameTrack(Track._0001_LevelOne);
                     break;
 
                 case (GameState.StartLevel):
                     _audioManager.PlayGameTrack(Track._0001_LevelOne);
                     _audioManager.FadeInGameTrack(Track._0001_LevelOne);
+                    _audioManager.FadeOutGameTrack(Track._0002_MainMenu);
                     break;
 
                 case (GameState.LevelWon):
@@ -88,19 +89,22 @@ namespace Utility
                     break;
 
             }
+
+            yield return null;
         }
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
             if (scene.name.Contains("Level"))
-            {
                 StartCoroutine(WaitThenChangeState(GameState.StartLevel));
-            }
+
+            if (scene.name.Contains(SceneName.MainMenu.ToString()))
+                StartCoroutine(SwitchState(GameState.MainMenu));
         }
 
         private IEnumerator WaitThenChangeState(GameState state)
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(0.5f);
             StartCoroutine(Instance.SwitchState(state));
         }
 
