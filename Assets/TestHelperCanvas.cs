@@ -9,6 +9,7 @@ namespace Utility
     {
         [SerializeField] private Button _resetSavesButton;
         [SerializeField] private Button _leyLinesButton;
+        [SerializeField] private Button _forestFireButton;
 
 
 
@@ -16,6 +17,7 @@ namespace Utility
         {
             _resetSavesButton.onClick.AddListener(ResetSaves);
             _leyLinesButton.onClick.AddListener(LoadLeyLines);
+            _forestFireButton.onClick.AddListener(LoadForestFire);
         }
 
 
@@ -29,6 +31,11 @@ namespace Utility
         internal void LoadLeyLines()
         {
             LoadHelper.LoadSceneWithLoadingScreen(SceneName.Event_LeyLines);
+        }
+
+        internal void LoadForestFire()
+        {
+            LoadHelper.LoadSceneWithLoadingScreen(SceneName.Event_ForestFire);
         }
     }
 }

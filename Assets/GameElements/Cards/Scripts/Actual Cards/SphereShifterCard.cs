@@ -18,8 +18,11 @@ namespace Cards
         protected override void SetCardFields()
         {
             base.SetCardFields();
-            ScriptableSphereshifterCard sphereShifter = (ScriptableSphereshifterCard)ScriptableCard;
-            SphereType = sphereShifter.SphereType;
+            if (ScriptableCard != null)
+            {
+                ScriptableSphereshifterCard sphereShifter = (ScriptableSphereshifterCard)ScriptableCard;
+                SphereType = sphereShifter.SphereType;
+            }
         }
 
         protected override void SetReferencesToLevelComponents()

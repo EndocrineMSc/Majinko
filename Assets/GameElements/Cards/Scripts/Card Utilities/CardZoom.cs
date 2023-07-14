@@ -50,8 +50,10 @@ namespace Cards
             if (GameManager.Instance.GameState != GameState.LevelWon && !_card.IsBeingDealt)
             {
                 ZoomOutCard();
-                CardEvents.InvokeCardZoomOut();               
-                Hand.Instance.AlignCards();
+                CardEvents.InvokeCardZoomOut();
+                
+                if (Hand.Instance != null)                
+                    Hand.Instance.AlignCards();                
             }
             else if (!_card.IsBeingDealt)
                 transform.localScale = _normalScale; // Zoom out card shop

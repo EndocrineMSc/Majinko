@@ -30,7 +30,7 @@ namespace Utility
 
         private void Start()
         {
-              SetReferences();
+            SetReferences();
         }
 
         private void SetReferences()
@@ -63,6 +63,15 @@ namespace Utility
             List<Card> cardObjects = InstantiateShopCards(shopCards);
             ManageCardComponents(cardObjects);
             BuildBuyButtons(cardObjects);
+        }
+
+        internal void PresentCardChoiceByElement(CardElement element)
+        {
+            _shopCanvas.enabled = true;
+            List<Card> shopCards = SetRandomShopCardsByElement(element);
+            List<Card> cardObjects = InstantiateShopCards(shopCards);
+            ManageCardComponents(cardObjects);
+            BuildBuyButtons(cardObjects);           
         }
 
         private void OnDisable()
@@ -103,6 +112,49 @@ namespace Utility
                 }               
             }
     
+            return shopCardList;
+        }
+
+        private List<Card> SetRandomShopCardsByElement(CardElement element, int amountCardChoices = 3)
+        {
+            List<Card> shopCardList = new();
+            var retries = 0;
+
+            while (shopCardList.Count < amountCardChoices)
+            {
+                if (retries > 150)
+                {
+                    Debug.Log("Shop Building Failed");
+                    break;
+                }
+
+                List<Card> rarityList = DetermineCardRarityList();
+                List<Card> cardsWithElement = new();
+
+                foreach (Card card in rarityList)
+                {
+                    if (card.Element == element)
+                        cardsWithElement.Add(card);
+                }
+
+                if (cardsWithElement.Count == 0)
+                {
+                    retries++;
+                    continue;
+                }
+                else
+                {
+                    Card card = GetRandomCardFromList(cardsWithElement);
+
+                    if (shopCardList.Contains(card))
+                    {
+                        retries++;
+                        continue;
+                    }
+                    shopCardList.Add(card);
+                }
+            }
+
             return shopCardList;
         }
 

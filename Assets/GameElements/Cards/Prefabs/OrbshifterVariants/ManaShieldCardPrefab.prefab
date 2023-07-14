@@ -24,6 +24,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8017670538569771397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _amountOrbs
       value: 1
       objectReference: {fileID: 0}
@@ -91,6 +95,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 09e03d808ffb103409cf4d794a839819, type: 3}
+    - target: {fileID: 3846219188565483949, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3985323061667333035, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4812993297873364277, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -217,6 +229,10 @@ PrefabInstance:
 
         On hit, the orb shields the player
         for 10 damage.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8104484355595315346, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8696175136549785397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_text

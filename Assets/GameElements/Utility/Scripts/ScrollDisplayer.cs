@@ -29,7 +29,8 @@ namespace PeggleWars.ScrollDisplay
         public void StopDisplayOnScroll()
         {
             StopAllCoroutines();
-            ScrollEvents.Instance.StopDisplayingEvent?.Invoke();
+            if (ScrollEvents.Instance != null)
+                ScrollEvents.Instance.StopDisplayingEvent?.Invoke();
         }
 
         private IEnumerator PolishDisplayTimer()

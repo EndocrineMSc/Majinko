@@ -25,5 +25,7 @@ namespace Utility
         LoadingScreen,
         GameOver,
         Event_LeyLines,
+        Event_ForestFire,
+        Event_MagicalSpring,
     }
 }
