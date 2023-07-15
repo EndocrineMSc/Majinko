@@ -25,7 +25,7 @@ namespace Overworld
             _sceneToLoad = eventScenes[randomIndex];
         }
 
-        internal override void TriggerSceneTransition()
+        protected override void LoadScene()
         {
             LoadHelper.LoadSceneWithLoadingScreen(_sceneToLoad);
         }

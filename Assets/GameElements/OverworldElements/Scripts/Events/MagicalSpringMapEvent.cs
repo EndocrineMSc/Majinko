@@ -17,7 +17,6 @@ namespace Overworld
         [SerializeField] private Button _manaButton;
         [SerializeField] private Button _leaveButton;
         [SerializeField] private GameObject _basicMana;
-        [SerializeField] private Image _blackScreen;
 
         #endregion
 
@@ -73,14 +72,11 @@ namespace Overworld
 
         private IEnumerator LoadSceneAfterDelay()
         {
-            StartScreenFade();
-            yield return new WaitForSeconds(3);
-            LoadHelper.LoadSceneWithLoadingScreen(SceneName.WorldOne);
-        }
+            if (FadeCanvas.Instance != null)
+                FadeCanvas.Instance.FadeImage.DOFade(1, LoadHelper.LoadDuration);
 
-        private void StartScreenFade()
-        {
-            _blackScreen.DOFade(0.8f, 3);
+            yield return new WaitForSeconds(LoadHelper.LoadDuration);
+            LoadHelper.LoadSceneWithLoadingScreen(SceneName.WorldOne);
         }
     }
 }

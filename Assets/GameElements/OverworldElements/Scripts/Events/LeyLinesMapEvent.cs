@@ -55,7 +55,10 @@ namespace Overworld
         
         private IEnumerator LoadNextScene()
         {
-            yield return new WaitForSeconds(2.2f);
+            if (FadeCanvas.Instance != null)
+                FadeCanvas.Instance.FadeImage.DOFade(1, LoadHelper.LoadDuration);
+
+            yield return new WaitForSeconds(LoadHelper.LoadDuration);
             LoadHelper.LoadSceneWithLoadingScreen(SceneName.WorldOne);
         }
     }

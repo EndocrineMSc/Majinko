@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -43,7 +44,10 @@ namespace Overworld
                 StartCoroutine(OverworldPlayer.Instance.MoveToNextElement(_elementButton));          
         }
 
-        internal abstract void TriggerSceneTransition();
+        internal virtual void TriggerSceneTransition()
+        {
+            StartCoroutine(LoadWithFade());
+        }
 
         protected bool CheckIfPlayerInViablePosition()
         {
@@ -59,6 +63,17 @@ namespace Overworld
         {
             GetComponent<Button>().interactable = CheckIfPlayerInViablePosition();
         }
+
+        protected IEnumerator LoadWithFade()
+        {
+            if (FadeCanvas.Instance != null)
+                FadeCanvas.Instance.FadeImage.DOFade(1, LoadHelper.LoadDuration);
+
+            yield return new WaitForSeconds(LoadHelper.LoadDuration);
+            LoadScene();
+        }
+
+        protected abstract void LoadScene();
 
         #endregion
     }

@@ -8,6 +8,7 @@ using Unity.VisualScripting;
 using Audio;
 using Utility;
 using DG.Tweening;
+using Overworld;
 
 namespace Cards
 {
@@ -211,7 +212,10 @@ namespace Cards
 
         private IEnumerator LoadNextScene()
         {
-            yield return new WaitForSeconds(2);
+            if (FadeCanvas.Instance != null)
+                FadeCanvas.Instance.FadeImage.DOFade(1, LoadHelper.LoadDuration);
+
+            yield return new WaitForSeconds(LoadHelper.LoadDuration);
             LoadHelper.LoadSceneWithLoadingScreen(SceneName.WorldOne);
         }
 
