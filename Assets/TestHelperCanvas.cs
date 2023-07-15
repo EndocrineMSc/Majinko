@@ -10,18 +10,17 @@ namespace Utility
         [SerializeField] private Button _resetSavesButton;
         [SerializeField] private Button _leyLinesButton;
         [SerializeField] private Button _forestFireButton;
-
-
+        [SerializeField] private Button _mirrorTreeButton;
+        [SerializeField] private Button _mysteriousStrangerButton;
 
         private void Start()
         {
             _resetSavesButton.onClick.AddListener(ResetSaves);
             _leyLinesButton.onClick.AddListener(LoadLeyLines);
             _forestFireButton.onClick.AddListener(LoadForestFire);
+            _mirrorTreeButton.onClick.AddListener(LoadMirrorTree);
+            _mysteriousStrangerButton.onClick.AddListener(LoadMysteriousStranger);
         }
-
-
-
 
         internal void ResetSaves()
         {
@@ -36,6 +35,16 @@ namespace Utility
         internal void LoadForestFire()
         {
             LoadHelper.LoadSceneWithLoadingScreen(SceneName.Event_ForestFire);
+        }
+
+        internal void LoadMirrorTree()
+        {
+            LoadHelper.LoadSceneWithLoadingScreen(SceneName.Event_MirrorTree);
+        }
+
+        internal void LoadMysteriousStranger()
+        {
+            LoadHelper.LoadSceneWithLoadingScreen(SceneName.Event_MysteriousStranger);
         }
     }
 }

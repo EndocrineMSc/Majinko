@@ -45,7 +45,7 @@ namespace Characters.Enemies
         {
             Camera camera = Camera.main;
             int cellHeight = Screen.height / 10;
-            float yLowerRow = Screen.height - cellHeight;
+            float yLowerRow = Screen.height - cellHeight - 15;
             float yUpperRow = Screen.height - cellHeight / 2;
             float cellWidth = (float)Screen.width / _amountOfXScreenDivisions;
             float xPositionOffset = 3;

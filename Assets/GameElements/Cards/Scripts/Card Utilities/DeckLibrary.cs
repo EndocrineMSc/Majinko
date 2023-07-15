@@ -142,10 +142,10 @@ namespace Cards
         private void ExchangeCard(Button button)
         {
             var card = button.GetComponent<Card>();
-            ExchangeRandomCard(card);
+            ExchangeRandomCard(button, card);
         }
 
-        private void ExchangeRandomCard(Card cardToRemove)
+        private void ExchangeRandomCard(Button button, Card cardToRemove)
         {
             RemoveCardFromGlobalDeck(cardToRemove);
             var tries = 0;
@@ -158,6 +158,7 @@ namespace Cards
                 if (cardCandidate.CardType != cardToRemove.CardType)
                 {
                     GlobalDeckManager.Instance.GlobalDeck.Add(cardCandidate);
+                    ShowExchangedCard(button, cardCandidate);
                     break;
                 }
 
@@ -210,8 +211,24 @@ namespace Cards
 
         private IEnumerator LoadNextScene()
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(2);
             LoadHelper.LoadSceneWithLoadingScreen(SceneName.WorldOne);
+        }
+
+        private void ShowExchangedCard(Button button, Card card)
+        {
+            GameObject cardObject = Instantiate(card, button.transform.position, Quaternion.identity).gameObject;
+            cardObject.transform.SetParent(_libraryCanvas.transform);
+            cardObject.transform.DOJump(transform.position + Vector3.one, 1, 1, 0.5f);
+            cardObject.GetComponent<RectTransform>().localScale = _cardScale;
+            cardObject.GetComponent<Image>().raycastTarget = false;
+            StartCoroutine(DestroyObjectWithDelay(cardObject));
+        }
+
+        private IEnumerator DestroyObjectWithDelay(GameObject gobject)
+        {
+            yield return new WaitForSeconds(2f);
+            Destroy(gobject);
         }
 
         #endregion

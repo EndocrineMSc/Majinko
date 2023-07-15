@@ -27,5 +27,7 @@ namespace Utility
         Event_LeyLines,
         Event_ForestFire,
         Event_MagicalSpring,
+        Event_MirrorTree,
+        Event_MysteriousStranger,
     }
 }

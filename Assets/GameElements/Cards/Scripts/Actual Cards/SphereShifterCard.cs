@@ -28,8 +28,11 @@ namespace Cards
         protected override void SetReferencesToLevelComponents()
         {
             base.SetReferencesToLevelComponents();
-            _shotManager = SphereManager.Instance;
-            _sphere = _shotManager.AllSpheres[(int)SphereType];
+            if (SphereManager.Instance != null)
+            {
+                _shotManager = SphereManager.Instance;
+                _sphere = _shotManager.AllSpheres[(int)SphereType];
+            }
         }
 
         protected override void CardEffect()
