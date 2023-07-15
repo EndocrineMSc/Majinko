@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
+using Utility;
 
 namespace Overworld
 {
@@ -53,6 +54,7 @@ namespace Overworld
 
             _playerTransform = GetComponent<RectTransform>();
             _playerTransform.anchoredPosition = CurrentOverworldElementPosition.GetComponent<RectTransform>().anchoredPosition;
+            UtilityEvents.RaiseOverWorldPlayerPositionChange();
         }
 
         internal IEnumerator MoveToNextElement(Button overworldButton)
@@ -61,6 +63,7 @@ namespace Overworld
             _playerTransform.DOMove(targetPosition, _tweenDuration).SetEase(Ease.InBack);
 
             SetNewOverworldPosition(overworldButton);
+            UtilityEvents.RaiseOverWorldPlayerPositionChange();
             yield return new WaitForSeconds(_tweenDuration);
 
             OverworldElement newElement = overworldButton.GetComponent<OverworldElement>();

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Utility;
 
 namespace Overworld
 {
@@ -19,7 +20,17 @@ namespace Overworld
 
         #region Functions
 
-        protected void Start()
+        protected void OnEnable()
+        {
+            UtilityEvents.OnOverworldPlayerPositionChange += DisableLocationIfNotViable;
+        }
+
+        protected void OnDisable()
+        {
+            UtilityEvents.OnOverworldPlayerPositionChange -= DisableLocationIfNotViable;
+        }
+
+        protected virtual void Start()
         {
             _elementButton = GetComponent<Button>();
             _elementButton.onClick.AddListener(OnButtonClick);
@@ -28,17 +39,26 @@ namespace Overworld
 
         private void OnButtonClick()
         {
-            foreach (Button button in _validEntryPositions)
-            {
-                if (button == _player.CurrentOverworldElementPosition)
-                {
-                    StartCoroutine(OverworldPlayer.Instance.MoveToNextElement(_elementButton));
-                    return;
-                }
-            }
+            if (CheckIfPlayerInViablePosition())
+                StartCoroutine(OverworldPlayer.Instance.MoveToNextElement(_elementButton));          
         }
 
         internal abstract void TriggerSceneTransition();
+
+        protected bool CheckIfPlayerInViablePosition()
+        {
+            foreach (Button button in _validEntryPositions)
+            {
+                if (OverworldPlayer.Instance.CurrentOverworldElementPosition == button)
+                    return true;
+            }
+            return false;
+        }
+
+        protected void DisableLocationIfNotViable()
+        {
+            GetComponent<Button>().interactable = CheckIfPlayerInViablePosition();
+        }
 
         #endregion
     }
