@@ -10,7 +10,6 @@ namespace Overworld
         internal static FadeCanvas Instance { get; private set; }
 
         [SerializeField] private Image _fadeImage;
-        internal Image FadeImage { get { return _fadeImage; } }
 
         private void Awake()
         {
@@ -24,6 +23,11 @@ namespace Overworld
         {
             _fadeImage.enabled = true;
             _fadeImage.DOFade(0, LoadHelper.LoadDuration);
+        }
+
+        internal void FadeToBlack()
+        {
+            _fadeImage.DOFade(1, LoadHelper.LoadDuration);
         }
     }
 }

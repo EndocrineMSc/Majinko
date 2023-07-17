@@ -73,7 +73,7 @@ namespace Overworld
         private IEnumerator LoadSceneAfterDelay()
         {
             if (FadeCanvas.Instance != null)
-                FadeCanvas.Instance.FadeImage.DOFade(1, LoadHelper.LoadDuration);
+                FadeCanvas.Instance.FadeToBlack();
 
             yield return new WaitForSeconds(LoadHelper.LoadDuration);
             LoadHelper.LoadSceneWithLoadingScreen(SceneName.WorldOne);

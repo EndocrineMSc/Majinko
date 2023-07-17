@@ -65,7 +65,7 @@ namespace Overworld
         protected IEnumerator LoadWithFade()
         {
             if (FadeCanvas.Instance != null)
-                FadeCanvas.Instance.FadeImage.DOFade(1, LoadHelper.LoadDuration);
+                FadeCanvas.Instance.FadeToBlack();
 
             yield return new WaitForSeconds(LoadHelper.LoadDuration);
             LoadScene();
