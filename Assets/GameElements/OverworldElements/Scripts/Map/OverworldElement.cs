@@ -12,7 +12,6 @@ namespace Overworld
         #region Fields and Properties
 
         private Button _elementButton;
-        private OverworldPlayer _player;
 
         [Header("Valid Entry Positions (Buttons)")]
         [SerializeField] private Button[] _validEntryPositions;
@@ -35,7 +34,7 @@ namespace Overworld
         {
             _elementButton = GetComponent<Button>();
             _elementButton.onClick.AddListener(OnButtonClick);
-            _player = OverworldPlayer.Instance;
+            transform.SetAsLastSibling();
         }
 
         private void OnButtonClick()
