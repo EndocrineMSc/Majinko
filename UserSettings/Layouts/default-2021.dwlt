@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1368
     height: 830
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Inspector
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 371}
   m_MaxSize: {x: 10000, y: 10000}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 128
+  controlID: 19
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 68
+  controlID: 85
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 22
+  controlID: 151
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -427,9 +427,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ca900000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 66a6ffff00a9ffffd4a9ffff1cabffff5cb0ffff56b7ffff32edffff28f8ffffdef8ffff2afbffff426c0000789f0000ce9f0000d6a00000c0b4000002ec00004eef0000e6f10000
+      m_SelectedIDs: 266d0000
+      m_LastClickedID: 27942
+      m_ExpandedIDs: 2afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -494,22 +494,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/GameElements/Utility/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/GameElements/Utility/Scripts
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\sebas\Documents\GitHub\PeggleWars
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 55.5}
-    m_SelectedIDs: 86900000
-    m_LastClickedID: 36998
-    m_ExpandedIDs: 0000000040900000429000004890000066bf000000ca9a3b
+    scrollPos: {x: 0, y: 102.5}
+    m_SelectedIDs: 46900000
+    m_LastClickedID: 36934
+    m_ExpandedIDs: 00000000409000004290000044900000469000005e9000009c900000a090000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -537,7 +537,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000040900000429000004490000046900000489000004a900000
+    m_ExpandedIDs: 0000000040900000429000004490000046900000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -568,18 +568,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: c6230000b66f0000866d000050ae000054ae000044ae00004cae000048ae0000cc6f0000526f000072e90000606b0000446b0000f25e0100e48700008a6c00006a6b000090860000ca6d0000b06d000026780000e4770000bea4000056c900006c900000ac770000acc600000a730000409f0000aad70000a26e0000fe6c01008a6d01001c1f0100a4000100dab1000050800000987a0000c86d000000000000ee690000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Event_MirrorTree
-      m_OriginalName: Event_MirrorTree
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 58238
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 8}
     m_CreateAssetUtility:
@@ -589,7 +589,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 40.75}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 154
