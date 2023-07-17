@@ -38,6 +38,8 @@ namespace Overworld
             List<Button> allButtons = GameObject.FindObjectsOfType<Button>().ToList();
             List<Button> overworldElementButtons = new();
 
+            transform.SetAsLastSibling();
+
             foreach (Button button in allButtons)
             {
                 if (button.TryGetComponent<OverworldElement>(out _))

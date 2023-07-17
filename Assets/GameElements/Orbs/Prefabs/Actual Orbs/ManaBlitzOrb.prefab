@@ -121,6 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6daf3c40ae152e4382f4da994e3f8e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spawnManaType: 0
+  _manaAmount: 0
   _defaultOrb: {fileID: 2549565476461289553, guid: c837957ee74bdcc44a31943daaafc0a8, type: 3}
   OrbType: 20
   _manaBlitz: {fileID: 7851541917722694840, guid: be414bdde914e2645b2665e47eabe525, type: 3}

@@ -34,7 +34,6 @@ namespace Overworld
         {
             _elementButton = GetComponent<Button>();
             _elementButton.onClick.AddListener(OnButtonClick);
-            transform.SetAsLastSibling();
         }
 
         private void OnButtonClick()

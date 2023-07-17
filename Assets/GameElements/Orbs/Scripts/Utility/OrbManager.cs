@@ -30,6 +30,8 @@ namespace Orbs
         //other
         private bool _isCheckingForRefreshOrbs;
         [SerializeField] private OrbLayoutSet _wordOneLayouts;
+        private int _recursionBreaker = 0;
+        private readonly Vector3 _impossibleOrbPosition = new(-15, 0, 0);
 
         internal float GatheredBasicManaAmountTurn { get; private set; } = 0;
         internal float GatheredFireManaAmountTurn { get; private set; } = 0;
@@ -147,6 +149,7 @@ namespace Orbs
                 int missingOrbs = switchAmount - activeOrbs.Count;
                 StartCoroutine(ReplaceOrbsInList(inactiveOrbs, missingOrbs, instantiateOrb, instantiatePosition));
             }
+            DeleteDoubleOrbs();
         }
 
         internal void CheckForRefreshOrbs()
@@ -303,6 +306,47 @@ namespace Orbs
             GatheredBasicManaAmountTurn = 0;
             GatheredFireManaAmountTurn = 0;
             GatheredIceManaAmountTurn = 0;
+        }
+
+        private void DeleteDoubleOrbs()
+        {
+            var doubleOrbPosition = CheckForDoubleOrbs();
+            _recursionBreaker++;
+
+            if (doubleOrbPosition != _impossibleOrbPosition) 
+            { 
+                foreach (Orb orb in SceneOrbList)
+                {
+                    if (orb.transform.position == doubleOrbPosition)
+                    {
+                        Destroy(orb.gameObject);
+                        Debug.Log("Double orb destroyed: " + orb);
+                        break;
+                    }
+                }
+
+                if (_recursionBreaker < 50)
+                    DeleteDoubleOrbs();
+                else
+                    Debug.Log("Recursion had to be stopped in OrbManager");
+            }
+            _recursionBreaker = 0;
+        }
+
+        private Vector3 CheckForDoubleOrbs()
+        {
+            var orbPositions = new List<Vector3>();
+
+            foreach (Orb orb in SceneOrbList)
+            {
+                var orbPosition = orb.transform.position;
+
+                if (orbPositions.Contains(orbPosition))
+                    return orbPosition;
+                else
+                    orbPositions.Add(orb.transform.position);
+            }
+            return _impossibleOrbPosition;
         }
 
 

@@ -35,11 +35,13 @@ namespace Attacks
         private void Start()
         {
             LevelPhaseEvents.OnStartCardPhase += OnCardPhaseStart;
+            LevelPhaseEvents.OnEndCardPhase += OnCardPhaseEnd;
         }
 
         private void OnDisable()
         {
             LevelPhaseEvents.OnStartCardPhase -= OnCardPhaseStart;
+            LevelPhaseEvents.OnEndCardPhase -= OnCardPhaseEnd;
         }
 
         internal float CalculateModifier()
@@ -47,27 +49,26 @@ namespace Attacks
             float finalDamageModifier = 1;
 
             if (_damageModificationsForTurn.Count > 0)
-            {
                 foreach (float modifier in _damageModificationsForTurn)
-                {
                     finalDamageModifier *= modifier;
-                }
 
-                
-            }
             return finalDamageModifier;
         }
 
         internal void ModifyDamage(float modifier)
         {
             _damageModificationsForTurn.Add(modifier);
-            _damageModifierTurn = CalculateModifier();
         }
 
         private void OnCardPhaseStart()
         {
             _damageModificationsForTurn.Clear();
             _damageModifierTurn = 1;
+        }
+
+        private void OnCardPhaseEnd()
+        {
+            _damageModifierTurn = CalculateModifier();
         }
 
         #endregion
