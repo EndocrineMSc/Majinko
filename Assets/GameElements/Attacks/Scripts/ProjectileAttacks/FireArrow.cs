@@ -22,11 +22,9 @@ namespace Attacks
         protected override void AdditionalEffectsOnImpact()
         {
             Enemy enemy = _collider.GetComponent<Enemy>();
+
             if (enemy != null )
-            {
-                enemy.TakeDamage(Damage);
                 enemy.ApplyBurning(_attackValues.BurningStacks);
-            }
         }
     }
 }
