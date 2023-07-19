@@ -6,6 +6,7 @@ namespace Utility
     internal class UtilityEvents : MonoBehaviour
     {
         internal static event Action OnGameReset;
+        internal static event Action OnLevelVictory;
         internal static event Action OnPlayerDeath;
         internal static event Action OnOverworldPlayerPositionChange;
 
@@ -22,6 +23,11 @@ namespace Utility
         internal static void RaiseOverWorldPlayerPositionChange()
         {
             OnOverworldPlayerPositionChange?.Invoke();
+        }
+
+        internal static void RaiseLevelVictory()
+        {
+            OnLevelVictory?.Invoke();
         }
     }
 }

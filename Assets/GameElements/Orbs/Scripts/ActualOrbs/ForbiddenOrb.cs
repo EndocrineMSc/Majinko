@@ -49,7 +49,7 @@ namespace Orbs
                 && _forbiddenI.GetComponent<SpriteRenderer>().enabled
                 && _forbiddenA.GetComponent<SpriteRenderer>().enabled)
             {
-                WinLoseConditionManager.Instance.LevelVictory?.Invoke();
+                UtilityEvents.RaiseLevelVictory();
             }
         }
     }

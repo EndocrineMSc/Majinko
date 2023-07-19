@@ -46,14 +46,20 @@ namespace Cards
         {
             LevelPhaseEvents.OnStartCardPhase += OnCardPhaseStart;
             LevelPhaseEvents.OnEndCardPhase += OnCardPhaseEnd;
+            UtilityEvents.OnLevelVictory += OnLevelVictory;
+        }
+
+        private void OnDisable()
+        {
+            LevelPhaseEvents.OnStartCardPhase -= OnCardPhaseStart;
+            LevelPhaseEvents.OnEndCardPhase -= OnCardPhaseEnd;
+            UtilityEvents.OnLevelVictory -= OnLevelVictory;
         }
 
         private void Start()
         {
             InitializeHandLists();
             SetReferences();
-
-            WinLoseConditionManager.Instance.LevelVictory?.AddListener(OnLevelVictory);
         }
 
         private void InitializeHandLists()
@@ -73,13 +79,6 @@ namespace Cards
         internal void OnLevelVictory()
         {
             this.enabled = false;
-        }
-
-        private void OnDisable()
-        {
-            WinLoseConditionManager.Instance.LevelVictory?.RemoveListener(OnLevelVictory);
-            LevelPhaseEvents.OnStartCardPhase -= OnCardPhaseStart;
-            LevelPhaseEvents.OnEndCardPhase -= OnCardPhaseEnd;
         }
 
         internal void OnCardPhaseStart()

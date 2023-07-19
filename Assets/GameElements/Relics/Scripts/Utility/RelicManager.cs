@@ -1,8 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Utility;
+using UnityEngine.UI;
 
 namespace Relics
 {
@@ -15,7 +14,12 @@ namespace Relics
         [SerializeField] private RelicCollection _relicCollection;
 
         private List<Relic> _activeRelics;
+        private List<Relic> _instantiatedRelics;
+        private List<GameObject> _instantiatedRelicObjects;
         private Dictionary<Relic, GameObject> _allRelics;
+
+        private HorizontalLayoutGroup _relicLayoutGroup;
+        private readonly string RELIC_SAVE_PATH = "ActiveRelics";
 
         #endregion
 
@@ -33,18 +37,29 @@ namespace Relics
                 Destroy(gameObject);
             }
 
-            _activeRelics ??= new();
+            _instantiatedRelics ??= new();
+            _instantiatedRelicObjects ??= new();
             _allRelics = _relicCollection.AllRelics;
+            _relicLayoutGroup = transform.GetComponentInChildren<HorizontalLayoutGroup>();
+
+            _activeRelics ??= ES3.KeyExists(RELIC_SAVE_PATH) ? ES3.Load<List<Relic>>(RELIC_SAVE_PATH) : new();
         }
 
         private void OnEnable()
         {
             SceneManager.sceneLoaded += OnSceneLoaded;
+            SceneManager.sceneUnloaded += OnSceneUnloaded;
         }
 
         private void OnDisable()
         {
             SceneManager.sceneLoaded -= OnSceneLoaded;
+            SceneManager.sceneUnloaded -= OnSceneUnloaded;
+        }
+
+        private void OnApplicationQuit()
+        {
+            ES3.Save<List<Relic>>(RELIC_SAVE_PATH, _activeRelics);
         }
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
@@ -57,20 +72,37 @@ namespace Relics
             }
         }
 
-        private void InstantiateRelics()
+        internal void InstantiateRelics()
         {
             foreach (var relic in _activeRelics)
-                if (_activeRelics.Contains(relic))
-                    Instantiate(_allRelics[relic], Vector3.zero, Quaternion.identity);
+            {
+                if (_allRelics[relic] != null && !_instantiatedRelics.Contains(relic))
+                {
+                    var relicObject = Instantiate(_allRelics[relic], Vector3.zero, Quaternion.identity);
+                    relicObject.transform.SetParent(_relicLayoutGroup.transform);
+                    _instantiatedRelics.Add(relic);
+                    _instantiatedRelicObjects.Add(relicObject);
+                }
+            }
         }
 
         internal void AddRelic(Relic relic)
         {
-            _activeRelics.Add(relic);
+            if (_allRelics.ContainsKey(relic))
+                _activeRelics.Add(relic);
+        }
+
+        private void OnSceneUnloaded(Scene scene)
+        {
+            for (int i = 0; i < _instantiatedRelicObjects.Count; i++)
+                if (_instantiatedRelicObjects[i] != null)
+                    Destroy(_instantiatedRelicObjects[i]);
+
+            _instantiatedRelics.Clear();
+            _instantiatedRelicObjects.Clear();
         }
 
         #endregion
-
     }
 
     internal enum Relic
@@ -79,6 +111,7 @@ namespace Relics
         ChillborneRing,
         GarnetFlower,
         IoliteFlower,
+        SacredHeartwood,
         SearingRune,
     }
 }

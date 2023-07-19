@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9f294350bae61b49ac25938e614a6b7, type: 3}
   m_Name: AllRelicsCollection
   m_EditorClassIdentifier: 
-  _sortedEnum: 0000000001000000020000000300000004000000
+  _sortedEnum: 000000000100000002000000030000000400000005000000
   _sortedObjects:
-  - {fileID: 0}
+  - {fileID: 3177322776346542126, guid: f94ca59b8f494224496424d528c9af42, type: 3}
+  - {fileID: 3177322776346542126, guid: 7e2b02a096c6052439312e375598735c, type: 3}
+  - {fileID: 3177322776346542126, guid: 9f0671c02aa61b44984f29afe37fba80, type: 3}
+  - {fileID: 3177322776346542126, guid: deb7d5206a06b7a4bba333ae12e81777, type: 3}

@@ -28,6 +28,16 @@ namespace Utility
 
         #region Functions
 
+        private void OnEnable()
+        {
+            UtilityEvents.OnLevelVictory += OnLevelVictory;
+        }
+
+        private void OnDisable()
+        {
+            UtilityEvents.OnLevelVictory -= OnLevelVictory;
+        }
+
         private void Start()
         {
             SetReferences();
@@ -40,8 +50,6 @@ namespace Utility
             _shopCanvas.enabled = false;
             _globalDeckManager = GlobalDeckManager.Instance;
             _shopCardLayout = _shopCanvas.GetComponentInChildren<HorizontalLayoutGroup>();
-            
-            WinLoseConditionManager.Instance.LevelVictory?.AddListener(OnLevelVictory);
         }
 
         private void Update()
@@ -72,11 +80,6 @@ namespace Utility
             List<Card> cardObjects = InstantiateShopCards(shopCards);
             ManageCardComponents(cardObjects);
             BuildBuyButtons(cardObjects);           
-        }
-
-        private void OnDisable()
-        {
-            WinLoseConditionManager.Instance.LevelVictory?.RemoveListener(OnLevelVictory);
         }
 
         private List<Card> SetRandomShopCards(int amountCardChoices = 3)

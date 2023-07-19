@@ -11,7 +11,6 @@ namespace Utility
 
         internal static WinLoseConditionManager Instance { get; private set; } 
 
-        public UnityEvent LevelVictory;
         public UnityEvent GameOver;
 
         #endregion
@@ -53,7 +52,7 @@ namespace Utility
 
                 if (currentEnemiesInScene == 0 && enemySpawnCounter >= totalAmountOfEnemiesInLevel)
                 {
-                    LevelVictory?.Invoke();
+                    UtilityEvents.RaiseLevelVictory();
                     StartCoroutine(GameManager.Instance.SwitchState(GameState.LevelWon));
                 }
             }
@@ -66,7 +65,7 @@ namespace Utility
 
         public void CheatButton()
         {
-            LevelVictory?.Invoke();
+            UtilityEvents.RaiseLevelVictory();
         }
 
         #endregion

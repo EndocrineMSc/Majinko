@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -29,11 +28,17 @@ namespace Relics
 
             _sortedEnum = Enum.GetValues(typeof(Relic)).Cast<Relic>().ToList();
             _sortedEnum.Sort();
-            _sortedObjects.Sort();
+            _sortedObjects = _sortedObjects.OrderBy(go => go.name).ToList();
 
+            int k = 0;
             for (int i = 0; i < _sortedEnum.Count; i++)
-                if (_sortedObjects.Count >= _sortedEnum.Count && _sortedObjects[i] != null)
-                    AllRelics.Add(_sortedEnum[i], _sortedObjects[i]);
+            {
+                if (k < _sortedObjects.Count && _sortedEnum[i] == _sortedObjects[k].GetComponent<IRelic>().RelicEnum)
+                {
+                    AllRelics.Add(_sortedEnum[i], _sortedObjects[k]);
+                    k++;
+                }
+            }
         }
 
         #endregion

@@ -16,6 +16,6 @@ internal class CheatButton : MonoBehaviour
 
     void CheatButtonClick()
     {
-        WinLoseConditionManager.Instance.LevelVictory?.Invoke();
+        UtilityEvents.RaiseLevelVictory();
     }
 }
