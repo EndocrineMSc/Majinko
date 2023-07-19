@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-namespace PeggleWars.ScrollDisplay
+namespace Utility
 {
     public interface IHaveDisplayDescription
     {

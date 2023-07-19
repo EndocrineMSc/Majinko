@@ -1,4 +1,4 @@
-using PeggleWars.ScrollDisplay;
+using Utility;
 
 namespace Spheres
 {

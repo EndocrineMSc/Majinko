@@ -1,7 +1,7 @@
 using EnumCollection;
 using Audio;
 using Orbs;
-using PeggleWars.ScrollDisplay;
+using Utility;
 
 namespace Characters.Enemies
 {

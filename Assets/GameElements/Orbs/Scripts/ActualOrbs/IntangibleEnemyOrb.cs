@@ -1,9 +1,9 @@
 using Characters;
 using Characters.Enemies;
-using PeggleWars.ScrollDisplay;
-using PeggleWars.Spheres;
+using Utility;
 using System.Collections;
 using UnityEngine;
+using Spheres;
 
 namespace Orbs
 {

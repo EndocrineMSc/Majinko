@@ -9,6 +9,9 @@ namespace Utility
         internal static event Action OnLevelVictory;
         internal static event Action OnPlayerDeath;
         internal static event Action OnOverworldPlayerPositionChange;
+        internal static event Action<GameObject> OnDisplayOnScrollTrigger;
+        internal static event Action OnStopScrollDisplayTrigger;
+
 
         internal static void RaiseGameReset()
         {
@@ -28,6 +31,16 @@ namespace Utility
         internal static void RaiseLevelVictory()
         {
             OnLevelVictory?.Invoke();
+        }
+
+        internal static void RaiseDisplayOnScroll (GameObject gameObject)
+        {
+            OnDisplayOnScrollTrigger?.Invoke(gameObject);
+        }
+
+        internal static void RaiseStopScrollDisplay()
+        {
+            OnStopScrollDisplayTrigger?.Invoke();
         }
     }
 }

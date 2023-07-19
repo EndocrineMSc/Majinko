@@ -1,5 +1,5 @@
 using EnumCollection;
-using PeggleWars.Spheres;
+using Utility;
 using Spheres;
 
 namespace Cards

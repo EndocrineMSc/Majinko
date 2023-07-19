@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using PeggleWars.Characters.Interfaces;
 using Utility.TurnManagement;
-using PeggleWars.ScrollDisplay;
+using Utility;
 using DG.Tweening;
 using Characters.UI;
 

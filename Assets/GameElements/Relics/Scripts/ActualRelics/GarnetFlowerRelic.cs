@@ -3,6 +3,7 @@ using Orbs;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Utility;
 
 namespace Relics
 {
@@ -13,6 +14,10 @@ namespace Relics
         internal static GarnetFlowerRelic Instance { get; private set; }
         public Relic RelicEnum { get; private set; } = Relic.GarnetFlower;
         private readonly int _additionalFireMana = 10;
+
+        //For displaying on scroll
+        [SerializeField, TextArea] private string _displayDescription;
+        private readonly int _displayScale = 2;
 
         #endregion
 
@@ -30,6 +35,10 @@ namespace Relics
         {
             Image image = GetComponent<Image>();
             image.enabled = (SceneManager.GetActiveScene().name.Contains("Level"));
+
+            ScrollDisplayer displayer = GetComponent<ScrollDisplayer>();
+            displayer.DisplayDescription = _displayDescription;
+            displayer.DisplayScale = ScrollDisplayScales.RelicDisplayScale;
 
             OrbEvents.RaiseSpawnMana(ManaType.FireMana, _additionalFireMana);
         }

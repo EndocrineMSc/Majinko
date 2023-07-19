@@ -1,11 +1,9 @@
 using Audio;
-using PeggleWars.ScrollDisplay;
 using Utility.TurnManagement;
 using Utility;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using PeggleWars.Spheres;
 
 namespace Spheres
 {

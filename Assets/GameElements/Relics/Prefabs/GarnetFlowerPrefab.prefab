@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8951325526013130042}
   - component: {fileID: 8450709572210810366}
   - component: {fileID: 5512364008296205379}
+  - component: {fileID: 8585789231970310781}
   m_Layer: 0
   m_Name: GarnetFlowerPrefab
   m_TagString: Untagged
@@ -87,5 +88,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 063ece89121b44b46a4400fd09abe95b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _displayDescription: 'Garnet Flower
+
+
+    This red jewel cut in the shape of an
+    intricate flower feels warm in your hand.
+
+
+    Start each level with an additional
+    fire mana.
+
+'
+--- !u!114 &8585789231970310781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3177322776346542126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ed9cf162afe23d4ba1396e99745a321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

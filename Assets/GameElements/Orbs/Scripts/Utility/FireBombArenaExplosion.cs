@@ -1,9 +1,8 @@
-using PeggleWars.Spheres;
 using System.Collections;
 using UnityEngine;
 
 
-namespace PeggleWars.Orbs
+namespace Spheres
 {
     internal class FireBombArenaExplosion : MonoBehaviour, IAmSphere
     {

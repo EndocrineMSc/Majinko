@@ -1,8 +1,7 @@
 using Characters;
 using Characters.UI;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Utility;
@@ -16,6 +15,9 @@ namespace Relics
         internal static SacredHeartwoodRelic Instance { get; private set; }
         public Relic RelicEnum { get; private set; } = Relic.SacredHeartwood;
         private readonly int _healAmount = 3;
+
+        //For displaying on scroll
+        [SerializeField, TextArea] private string _displayDescription;
 
         #endregion
 
@@ -40,9 +42,13 @@ namespace Relics
         }
 
         private void Start()
-        {
+        { 
             Image image = GetComponent<Image>();
             image.enabled = (SceneManager.GetActiveScene().name.Contains("Level"));
+
+            ScrollDisplayer displayer = GetComponent<ScrollDisplayer>();
+            displayer.DisplayDescription = _displayDescription;
+            displayer.DisplayScale = ScrollDisplayScales.RelicDisplayScale;
         }
 
         private void HealPlayer()

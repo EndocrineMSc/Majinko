@@ -1,9 +1,8 @@
 using System.Collections;
 using UnityEngine;
 using Orbs;
-using PeggleWars.ScrollDisplay;
+using Utility;
 using Utility.TurnManagement;
-using PeggleWars.Spheres;
 
 namespace Spheres
 {
