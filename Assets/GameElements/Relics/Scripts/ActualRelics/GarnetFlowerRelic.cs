@@ -1,6 +1,8 @@
 using EnumCollection;
 using Orbs;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Relics
 {
@@ -26,6 +28,9 @@ namespace Relics
 
         private void Start()
         {
+            Image image = GetComponent<Image>();
+            image.enabled = (SceneManager.GetActiveScene().name.Contains("Level"));
+
             OrbEvents.RaiseSpawnMana(ManaType.FireMana, _additionalFireMana);
         }
 

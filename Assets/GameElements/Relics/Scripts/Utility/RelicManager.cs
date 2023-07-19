@@ -18,7 +18,7 @@ namespace Relics
         private List<GameObject> _instantiatedRelicObjects;
         private Dictionary<Relic, GameObject> _allRelics;
 
-        private HorizontalLayoutGroup _relicLayoutGroup;
+        private GridLayoutGroup _relicLayoutGroup;
         private readonly string RELIC_SAVE_PATH = "ActiveRelics";
 
         #endregion
@@ -40,7 +40,7 @@ namespace Relics
             _instantiatedRelics ??= new();
             _instantiatedRelicObjects ??= new();
             _allRelics = _relicCollection.AllRelics;
-            _relicLayoutGroup = transform.GetComponentInChildren<HorizontalLayoutGroup>();
+            _relicLayoutGroup = transform.GetComponentInChildren<GridLayoutGroup>();
 
             _activeRelics ??= ES3.KeyExists(RELIC_SAVE_PATH) ? ES3.Load<List<Relic>>(RELIC_SAVE_PATH) : new();
         }

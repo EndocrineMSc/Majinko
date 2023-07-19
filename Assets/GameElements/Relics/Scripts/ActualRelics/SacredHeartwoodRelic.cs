@@ -3,6 +3,8 @@ using Characters.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Utility;
 
 namespace Relics
@@ -35,6 +37,12 @@ namespace Relics
         private void OnDisable()
         {
             UtilityEvents.OnLevelVictory -= HealPlayer;
+        }
+
+        private void Start()
+        {
+            Image image = GetComponent<Image>();
+            image.enabled = (SceneManager.GetActiveScene().name.Contains("Level"));
         }
 
         private void HealPlayer()
