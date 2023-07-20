@@ -65,7 +65,7 @@ namespace Cards
             transform.eulerAngles = new Vector3(0, 0, 0);
 
             float zoomOffset = _rectTransform.rect.height / 1.25f;
-            transform.DOMoveY(_targetYPosition + zoomOffset, 0.1f);
+            transform.DOMoveY(_targetYPosition + zoomOffset, 0.01f);
         }
 
         private void ZoomOutCard()
@@ -73,7 +73,7 @@ namespace Cards
             _isZoomed = false;
             transform.localScale = _normalScale;
             transform.SetSiblingIndex(_index);
-            transform.eulerAngles = _initialEulerAngles;
+            transform.eulerAngles = _initialEulerAngles;           
         }
 
         #endregion
