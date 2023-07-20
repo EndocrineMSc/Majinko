@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using EnumCollection;
 using Audio;
 using Unity.VisualScripting;
+using DG.Tweening;
+using System.Linq;
 
 namespace Utility
 {
@@ -23,6 +25,8 @@ namespace Utility
         private float _legendaryThreshold;
 
         private bool _isFirstUpdate = true;
+
+        internal int AmountCardsToChooseFrom { get; private set; } = 3;
 
         #endregion
 
@@ -67,7 +71,7 @@ namespace Utility
         {
             StartCoroutine(GameManager.Instance.SwitchState(GameState.LevelWon));
             _shopCanvas.enabled = true;
-            List<Card> shopCards = SetRandomShopCards();
+            List<Card> shopCards = SetRandomShopCards(AmountCardsToChooseFrom);
             List<Card> cardObjects = InstantiateShopCards(shopCards);
             ManageCardComponents(cardObjects);
             BuildBuyButtons(cardObjects);
@@ -76,7 +80,7 @@ namespace Utility
         internal void PresentCardChoiceByElement(CardElement element)
         {
             _shopCanvas.enabled = true;
-            List<Card> shopCards = SetRandomShopCardsByElement(element);
+            List<Card> shopCards = SetRandomShopCardsByElement(element, AmountCardsToChooseFrom);
             List<Card> cardObjects = InstantiateShopCards(shopCards);
             ManageCardComponents(cardObjects);
             BuildBuyButtons(cardObjects);           
@@ -114,7 +118,10 @@ namespace Utility
                     shopCardList.Add(card);
                 }               
             }
-    
+
+            if (shopCardList.Count > AmountCardsToChooseFrom)
+                shopCardList.RemoveAt((AmountCardsToChooseFrom - 1));
+                        
             return shopCardList;
         }
 
@@ -197,6 +204,7 @@ namespace Utility
                 cardObject.IsBeingDealt = false;
                 cardObject.GetComponent<CardDragDrop>().enabled = false;
                 cardObject.GetComponent<CardZoomMovement>().enabled = false;
+                cardObject.GetComponent<CardZoom>().enabled = false;
                 cardObject.AddComponent<ShopMouseOverSound>();
             }
         }
@@ -210,6 +218,7 @@ namespace Utility
                 Vector2 instantiatePosition = new(-350 + (i * 350), 50);
                 Card cardObject = Instantiate(cards[i], _shopCanvas.transform);
                 cardObject.GetComponent<RectTransform>().anchoredPosition = instantiatePosition;
+                cardObject.transform.DOScale(new Vector3(1.25f, 1.25f, 1), 0.1f);
                 instantiatedCards.Add(cardObject);
             }
             return instantiatedCards;
@@ -226,7 +235,7 @@ namespace Utility
         private void BuildBuyButtonUnderObject (GameObject gameObject)
         {
             RectTransform rectTransform = (RectTransform)gameObject.transform;
-            float ySpawnPosition = gameObject.transform.position.y - (rectTransform.rect.height * 0.75f);
+            float ySpawnPosition = gameObject.transform.position.y - (rectTransform.rect.height * 0.85f);
             float xSpawnPosition = gameObject.transform.position.x;
             Card buyableCard = gameObject.GetComponent<Card>();
             int cardIndex = (int)buyableCard.ScriptableCard.Type;

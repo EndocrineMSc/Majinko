@@ -5,7 +5,7 @@ namespace Cards
 {
     internal class CardZoomMovement : MonoBehaviour
     {
-        private readonly float _moveDistance = 125f;
+        private readonly float _moveDistance = 100f;
         private float _startZoomXPosition;
 
         private void OnEnable()

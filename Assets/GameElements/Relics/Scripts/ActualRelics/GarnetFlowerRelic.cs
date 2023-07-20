@@ -17,7 +17,6 @@ namespace Relics
 
         //For displaying on scroll
         [SerializeField, TextArea] private string _displayDescription;
-        private readonly int _displayScale = 2;
 
         #endregion
 

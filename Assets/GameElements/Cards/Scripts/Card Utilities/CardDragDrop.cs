@@ -62,7 +62,7 @@ namespace Cards
         private void ReturnCardToHand()
         {
             AudioManager.Instance.PlaySoundEffectOnce(SFX._0005_CardDragReturn);
-            Hand.Instance.AlignCards();
+            Hand.Instance.AlignCardsWrap();
         }
 
         #endregion

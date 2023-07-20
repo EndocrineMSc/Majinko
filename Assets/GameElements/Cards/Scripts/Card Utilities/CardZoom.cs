@@ -16,6 +16,7 @@ namespace Cards
         private Vector3 _initialEulerAngles;
         private Card _card;
         private RectTransform _rectTransform;
+        private bool _isZoomed;
 
         #endregion
 
@@ -33,34 +34,32 @@ namespace Cards
 
         void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
         {
-            if (GameManager.Instance.GameState != GameState.LevelWon && !_card.IsBeingDealt)
+            if (GameManager.Instance.GameState != GameState.LevelWon && !_card.IsBeingDealt && !_isZoomed)
             {
                 ZoomInCard();
                 CardEvents.RaiseCardZoomIn(transform.position);
             }
-            else if (!_card.IsBeingDealt)
-                transform.localScale = new Vector3(_zoomSize, _zoomSize, _zoomSize); // Zoom in card shop
 
             //the last sibling will be in front of the other cards
+            _index = transform.GetSiblingIndex();
             transform.SetAsLastSibling();
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            if (GameManager.Instance.GameState != GameState.LevelWon && !_card.IsBeingDealt)
+            if (GameManager.Instance.GameState != GameState.LevelWon && !_card.IsBeingDealt && _isZoomed)
             {
                 ZoomOutCard();
                 CardEvents.InvokeCardZoomOut();
                 
                 if (Hand.Instance != null)                
-                    Hand.Instance.AlignCards();                
+                    Hand.Instance.AlignCardsWrap();                
             }
-            else if (!_card.IsBeingDealt)
-                transform.localScale = _normalScale; // Zoom out card shop
         }
 
         private void ZoomInCard()
         {
+            _isZoomed = true;
             _initialEulerAngles = transform.eulerAngles;
             transform.localScale = new Vector3(_zoomSize, _zoomSize, _zoomSize);
             transform.eulerAngles = new Vector3(0, 0, 0);
@@ -71,6 +70,7 @@ namespace Cards
 
         private void ZoomOutCard()
         {
+            _isZoomed = false;
             transform.localScale = _normalScale;
             transform.SetSiblingIndex(_index);
             transform.eulerAngles = _initialEulerAngles;

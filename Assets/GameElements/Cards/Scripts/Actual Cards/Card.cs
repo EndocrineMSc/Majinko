@@ -118,7 +118,7 @@ namespace Cards
                 _orbManager.CheckForRefreshOrbs(); //Checks if RefreshOrb was overwritten and makes a new one if so
                 HandleDiscard();
                 _hand.InstantiatedCards.Remove(this); //list of instantiated cards in hand
-                _hand.AlignCards();
+                _hand.AlignCardsWrap();
                 GetComponent<CardZoom>().enabled = false;
                 GetComponent<CardZoomMovement>().enabled = false;
                 StartCoroutine(DestroyCardAfterAnimation());
