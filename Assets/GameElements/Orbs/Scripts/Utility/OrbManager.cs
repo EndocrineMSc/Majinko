@@ -43,12 +43,14 @@ namespace Orbs
         private void OnEnable()
         {
             OrbEvents.SpawnMana += OnManaSpawn;
+            LevelPhaseEvents.OnStartShootingPhase += OnStartShooting;
             LevelPhaseEvents.OnStartEnemyPhase += OnStartEnemyPhase;
         }
 
         private void OnDisable()
         {
             OrbEvents.SpawnMana -= OnManaSpawn;
+            LevelPhaseEvents.OnStartShootingPhase -= OnStartShooting;
             LevelPhaseEvents.OnStartEnemyPhase -= OnStartEnemyPhase;
         }
 
@@ -149,7 +151,6 @@ namespace Orbs
                 int missingOrbs = switchAmount - activeOrbs.Count;
                 StartCoroutine(ReplaceOrbsInList(inactiveOrbs, missingOrbs, instantiateOrb, instantiatePosition));
             }
-            DeleteDoubleOrbs();
         }
 
         internal void CheckForRefreshOrbs()
@@ -301,11 +302,18 @@ namespace Orbs
             }
         }
 
-        private void OnStartEnemyPhase()
+        private void OnStartShooting()
         {
             GatheredBasicManaAmountTurn = 0;
             GatheredFireManaAmountTurn = 0;
             GatheredIceManaAmountTurn = 0;
+
+            DeleteDoubleOrbs();
+        }
+
+        private void OnStartEnemyPhase()
+        {
+            DeleteDoubleOrbs();
         }
 
         private void DeleteDoubleOrbs()
