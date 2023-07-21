@@ -5,8 +5,7 @@ namespace Cards
 {
     internal class CardZoomMovement : MonoBehaviour
     {
-        private readonly float _moveDistance = 100f;
-        private float _startZoomXPosition;
+        private readonly float _moveDistance = 85f;
 
         private void OnEnable()
         {
@@ -20,8 +19,7 @@ namespace Cards
 
         private void OnCardZoomIn(Vector3 otherCardPosition)
         {
-            float deltaXTransform = otherCardPosition.x - transform.position.x;
-            _startZoomXPosition = transform.position.x;
+            var deltaXTransform = otherCardPosition.x - transform.position.x;
 
             if (deltaXTransform > 0)
                 transform.DOBlendableMoveBy(new(-_moveDistance, 0, 0), 0.1f);

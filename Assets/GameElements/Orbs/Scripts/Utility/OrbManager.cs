@@ -327,8 +327,8 @@ namespace Orbs
                 {
                     if (orb.transform.position == doubleOrbPosition)
                     {
-                        Destroy(orb.gameObject);
                         Debug.Log("Double orb destroyed: " + orb);
+                        Destroy(orb.gameObject);
                         break;
                     }
                 }
