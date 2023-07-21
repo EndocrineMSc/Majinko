@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using PeggleWars.Characters.Interfaces;
 using Utility.TurnManagement;
-using PeggleWars.ScrollDisplay;
+using Utility;
 using DG.Tweening;
 using Characters.UI;
 
@@ -231,7 +231,7 @@ namespace Characters.Enemies
             GetComponent<ScrollDisplayer>().DisplayScale = 2;
         }
 
-        internal void ApplyBurning(int burningStacks)
+        internal void ApplyBurning(int burningStacks, bool sourceIsRelic = false)
         {
             if (FreezingStacks > 0)
             {
@@ -250,10 +250,13 @@ namespace Characters.Enemies
                 }
             }
             else
-                BurningStacks += burningStacks;            
+                BurningStacks += burningStacks;
+
+            if (!sourceIsRelic)
+                EnemyEvents.RaiseAppliedBurning();
         }
 
-        internal void ApplyFreezing(int freezingStacks)
+        internal void ApplyFreezing(int freezingStacks, bool sourceIsRelic = false)
         {
             if (BurningStacks > 0)
             {
@@ -275,6 +278,9 @@ namespace Characters.Enemies
                 FreezingStacks += freezingStacks;
 
             CheckForFreezingKill();
+
+            if (!sourceIsRelic)
+                EnemyEvents.RaiseAppliedFreezing();
         }
 
         internal void ApplyEnraged(int enragedStacks = 1)
@@ -293,11 +299,14 @@ namespace Characters.Enemies
             }
         }
 
-        internal void ApplyFrozen(int frozenStacks = 1)
+        internal void ApplyFrozen(int frozenStacks = 1, bool sourceIsRelic = false)
         {
             IsFrozen = true;
             FrozenForTurns += frozenStacks;
             GetComponentInChildren<SpriteRenderer>().color = Color.blue;
+
+            if (!sourceIsRelic)
+                EnemyEvents.RaiseAppliedFrozen();
         }
 
         internal abstract void StartMovementAnimation();

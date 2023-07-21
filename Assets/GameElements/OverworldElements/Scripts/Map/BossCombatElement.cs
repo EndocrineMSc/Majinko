@@ -4,7 +4,7 @@ namespace Overworld
 {
     internal class BossCombatElement : OverworldElement
     {
-        internal override void TriggerSceneTransition()
+        protected override void LoadScene()
         {
             switch (GlobalWorldManager.Instance.WorldIndex)
             {

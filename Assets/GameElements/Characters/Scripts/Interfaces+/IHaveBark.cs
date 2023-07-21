@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-namespace PeggleWars.Utilities
+namespace Utility
 {
     public interface IHaveBark
     {

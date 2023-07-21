@@ -1,5 +1,5 @@
 using EnumCollection;
-using PeggleWars.Spheres;
+using Utility;
 using Spheres;
 
 namespace Cards
@@ -18,15 +18,21 @@ namespace Cards
         protected override void SetCardFields()
         {
             base.SetCardFields();
-            ScriptableSphereshifterCard sphereShifter = (ScriptableSphereshifterCard)ScriptableCard;
-            SphereType = sphereShifter.SphereType;
+            if (ScriptableCard != null)
+            {
+                ScriptableSphereshifterCard sphereShifter = (ScriptableSphereshifterCard)ScriptableCard;
+                SphereType = sphereShifter.SphereType;
+            }
         }
 
         protected override void SetReferencesToLevelComponents()
         {
             base.SetReferencesToLevelComponents();
-            _shotManager = SphereManager.Instance;
-            _sphere = _shotManager.AllSpheres[(int)SphereType];
+            if (SphereManager.Instance != null)
+            {
+                _shotManager = SphereManager.Instance;
+                _sphere = _shotManager.AllSpheres[(int)SphereType];
+            }
         }
 
         protected override void CardEffect()

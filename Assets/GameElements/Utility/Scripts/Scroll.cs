@@ -1,11 +1,9 @@
-using Characters;
-using Characters.Enemies;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Animations;
+using UnityEngine.UI;
 
-namespace PeggleWars.ScrollDisplay
+namespace Utility
 {
     internal class Scroll : MonoBehaviour
     {
@@ -20,6 +18,18 @@ namespace PeggleWars.ScrollDisplay
 
         #region Functions
 
+        private void OnEnable()
+        {
+            UtilityEvents.OnDisplayOnScrollTrigger += DisplayOnScroll;
+            UtilityEvents.OnStopScrollDisplayTrigger += StopDisplaying;
+        }
+
+        private void OnDisable()
+        {
+            UtilityEvents.OnDisplayOnScrollTrigger -= DisplayOnScroll;
+            UtilityEvents.OnStopScrollDisplayTrigger -= StopDisplaying;
+        }
+
         private void Start()
         {
             _scrollDisplay = transform.GetChild(0).gameObject;
@@ -28,52 +38,84 @@ namespace PeggleWars.ScrollDisplay
             _scrollAnimator = _scrollDisplay.GetComponent<Animator>();
             _scrollRenderer.enabled = false;
             _scrollDescriptionBox.enabled = false;
-
-            ScrollEvents.Instance.ScrollDisplayEvent?.AddListener(DisplayOnScroll);
-            ScrollEvents.Instance.StopDisplayingEvent?.AddListener(StopDisplaying);
         }
 
         private void DisplayOnScroll(GameObject displayObject)
         {
+            Animator animator = CheckIfObjectHasAnimator(displayObject);
+            SpriteRenderer spriteRenderer = CheckIfObjectHasSpriteRenderer(displayObject);
+            Image image = CheckIfObjectHasImage(displayObject);
+            IDisplayOnScroll display = GetScrollDisplayer(displayObject);
+
             _scrollRenderer.enabled = true;
-            Animator gameobjectAnimator = displayObject.GetComponent<Animator>();
-            
-            if (gameobjectAnimator == null)
-                gameobjectAnimator = displayObject.GetComponentInChildren<Animator>();
 
-            string displayText = displayObject.GetComponentInChildren<IDisplayOnScroll>()?.DisplayDescription;
-            int scrollDisplayScale = displayObject.GetComponentInChildren<IDisplayOnScroll>().DisplayScale;
+            var displayText = display.DisplayDescription;
+            var displayScale = display.DisplayScale;
 
-            if(gameobjectAnimator != null)
+            if (animator != null)
             {
                 _scrollAnimator.enabled = true;
-                _scrollAnimator.runtimeAnimatorController = gameobjectAnimator.runtimeAnimatorController;
+                _scrollAnimator.runtimeAnimatorController = animator.runtimeAnimatorController;
+            }
+            else if (spriteRenderer != null)
+            {
+                _scrollRenderer.sprite = spriteRenderer.sprite;
             }
             else
             {
-                _scrollAnimator.enabled = false;
-                if(displayObject.TryGetComponent<SpriteRenderer>(out SpriteRenderer spriteRenderer))
-                {
-                    _scrollRenderer.sprite = spriteRenderer.sprite;
-                }
-                else
-                {
-                    GameObject displayObjectChild = displayObject.transform.GetChild(0).gameObject;
-                    
-                    if(displayObjectChild.TryGetComponent<SpriteRenderer>(out SpriteRenderer childSpriteRenderer))
-                        _scrollRenderer.sprite = childSpriteRenderer.sprite;
-                }               
+                _scrollRenderer.sprite = image.sprite;
             }
 
-            _scrollDisplay.transform.localScale = displayObject.transform.localScale * scrollDisplayScale;
+            _scrollDisplay.transform.localScale = displayObject.transform.localScale * displayScale;
             _scrollDescriptionBox.enabled = true;
             _scrollDescriptionBox.text = displayText;
+        }
+
+        private Animator CheckIfObjectHasAnimator(GameObject displayObject)
+        {
+            Animator gameobjectAnimator = displayObject.GetComponent<Animator>();
+
+            if(gameobjectAnimator == null) 
+                gameobjectAnimator = displayObject.GetComponentInChildren<Animator>();
+
+            return gameobjectAnimator;
+        }
+
+        private SpriteRenderer CheckIfObjectHasSpriteRenderer(GameObject displayObject)
+        {
+            SpriteRenderer spriteRenderer = displayObject.GetComponent<SpriteRenderer>();
+
+            if (spriteRenderer == null)
+                spriteRenderer = displayObject.GetComponentInChildren<SpriteRenderer>();
+
+            return spriteRenderer;
+        }
+
+        private Image CheckIfObjectHasImage(GameObject displayObject)
+        {
+            Image image = displayObject.GetComponent<Image>();
+
+            if (image == null)
+                image = displayObject.GetComponentInChildren<Image>();
+
+            return image;
+        }
+
+        private IDisplayOnScroll GetScrollDisplayer(GameObject displayObject)
+        {
+            IDisplayOnScroll displayer = displayObject.GetComponent<IDisplayOnScroll>();
+
+            if (displayer == null)
+                displayer = displayObject.GetComponentInChildren<IDisplayOnScroll>();
+
+            return displayer;
         }
 
         private void StopDisplaying()
         {
             _scrollRenderer.GetComponent<SpriteRenderer>().enabled = false;
             _scrollDescriptionBox.enabled = false;
+            _scrollAnimator.enabled = false;
         }
         #endregion
 

@@ -150,10 +150,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnManaType: 0
-  _manaAmount: 10
+  _manaAmount: 0
   _defaultOrb: {fileID: 2549565476461289553}
   OrbType: 11
-  _isPersistentOrb: 1
 --- !u!114 &8606283219829596650
 MonoBehaviour:
   m_ObjectHideFlags: 0

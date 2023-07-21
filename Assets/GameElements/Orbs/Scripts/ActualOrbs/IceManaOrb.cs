@@ -1,5 +1,5 @@
 using Characters.Enemies;
-using PeggleWars.ScrollDisplay;
+using Utility;
 using System.Collections;
 using UnityEngine;
 
@@ -8,6 +8,7 @@ namespace Orbs
     internal class IceManaOrb : Orb, IAmPersistent
     {
         private EnemyManager _enemyManager;
+        private int _amountFreezing = 1;
 
         protected override void SetReferences()
         {
@@ -20,7 +21,7 @@ namespace Orbs
             if (_enemyManager.EnemiesInScene.Count > 0)
             {
                 Enemy enemy = _enemyManager.EnemiesInScene[0];
-                enemy.ApplyFreezing(1);
+                enemy.ApplyFreezing(_amountFreezing);
             }
             yield return new WaitForSeconds(0.1f);
             OrbEvents.RaiseEffectEnd();
@@ -34,7 +35,7 @@ namespace Orbs
         public override void SetDisplayDescription()
         {
             IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
-            displayOnScroll.DisplayDescription = "Upon being hit, this orb spawns Ice Mana and inflicts freezing on all enemies.";
+            displayOnScroll.DisplayDescription = "Upon being hit, this orb spawns Ice Mana and inflicts " + _amountFreezing + " freezing on the closest enemy.";
         }
     }
 }

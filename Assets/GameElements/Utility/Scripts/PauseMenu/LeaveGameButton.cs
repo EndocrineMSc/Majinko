@@ -7,17 +7,17 @@ namespace Utility
 {
     internal class LeaveGameButton : MonoBehaviour
     {
-        private GameObject _devVersionWarning;
+        private GameObject _goToMenuWarning;
 
         private void Awake()
         {
-            _devVersionWarning = transform.GetChild(0).gameObject;
+            _goToMenuWarning = transform.GetChild(0).gameObject;
             GetComponent<Button>().onClick.AddListener(ActivateWarning);
         }
 
         private void ActivateWarning()
         {
-            _devVersionWarning.SetActive(true);
+            _goToMenuWarning.SetActive(true);
         }
     }
 }

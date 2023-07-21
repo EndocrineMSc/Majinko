@@ -15,11 +15,6 @@ namespace Overworld
         [SerializeField] private Button _addOrbButton;
         [SerializeField] private Button _leaveButton;
 
-        private void Awake()
-        {
-            UtilityEvents.RaiseGameReset();          
-        }
-
         private void Start()
         {
             List<Orb> persistentOrbs = new();
@@ -55,7 +50,10 @@ namespace Overworld
         
         private IEnumerator LoadNextScene()
         {
-            yield return new WaitForSeconds(2.2f);
+            if (FadeCanvas.Instance != null)
+                FadeCanvas.Instance.FadeToBlack();
+
+            yield return new WaitForSeconds(LoadHelper.LoadDuration);
             LoadHelper.LoadSceneWithLoadingScreen(SceneName.WorldOne);
         }
     }

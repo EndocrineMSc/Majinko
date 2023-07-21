@@ -26,7 +26,11 @@ namespace Cards
         private void Start()
         {
             _rectTransform = GetComponent<RectTransform>();
-            _cardCanvas = GameObject.FindGameObjectWithTag(CARDCANVAS_OBJECT).GetComponent<Canvas>();
+
+            var canvasObject = GameObject.FindGameObjectWithTag(CARDCANVAS_OBJECT);
+            if(canvasObject != null )
+                _cardCanvas = canvasObject.GetComponent<Canvas>();
+
             _card = GetComponent<Card>();
         }
 
@@ -58,7 +62,7 @@ namespace Cards
         private void ReturnCardToHand()
         {
             AudioManager.Instance.PlaySoundEffectOnce(SFX._0005_CardDragReturn);
-            Hand.Instance.AlignCards();
+            Hand.Instance.AlignCardsWrap();
         }
 
         #endregion

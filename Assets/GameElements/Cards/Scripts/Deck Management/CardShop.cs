@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using EnumCollection;
 using Audio;
 using Unity.VisualScripting;
+using DG.Tweening;
+using System.Linq;
 
 namespace Utility
 {
@@ -24,13 +26,25 @@ namespace Utility
 
         private bool _isFirstUpdate = true;
 
+        internal int AmountCardsToChooseFrom { get; private set; } = 3;
+
         #endregion
 
         #region Functions
 
+        private void OnEnable()
+        {
+            UtilityEvents.OnLevelVictory += OnLevelVictory;
+        }
+
+        private void OnDisable()
+        {
+            UtilityEvents.OnLevelVictory -= OnLevelVictory;
+        }
+
         private void Start()
         {
-              SetReferences();
+            SetReferences();
         }
 
         private void SetReferences()
@@ -40,8 +54,6 @@ namespace Utility
             _shopCanvas.enabled = false;
             _globalDeckManager = GlobalDeckManager.Instance;
             _shopCardLayout = _shopCanvas.GetComponentInChildren<HorizontalLayoutGroup>();
-            
-            WinLoseConditionManager.Instance.LevelVictory?.AddListener(OnLevelVictory);
         }
 
         private void Update()
@@ -59,15 +71,19 @@ namespace Utility
         {
             StartCoroutine(GameManager.Instance.SwitchState(GameState.LevelWon));
             _shopCanvas.enabled = true;
-            List<Card> shopCards = SetRandomShopCards();
+            List<Card> shopCards = SetRandomShopCards(AmountCardsToChooseFrom);
             List<Card> cardObjects = InstantiateShopCards(shopCards);
             ManageCardComponents(cardObjects);
             BuildBuyButtons(cardObjects);
         }
 
-        private void OnDisable()
+        internal void PresentCardChoiceByElement(CardElement element)
         {
-            WinLoseConditionManager.Instance.LevelVictory?.RemoveListener(OnLevelVictory);
+            _shopCanvas.enabled = true;
+            List<Card> shopCards = SetRandomShopCardsByElement(element, AmountCardsToChooseFrom);
+            List<Card> cardObjects = InstantiateShopCards(shopCards);
+            ManageCardComponents(cardObjects);
+            BuildBuyButtons(cardObjects);           
         }
 
         private List<Card> SetRandomShopCards(int amountCardChoices = 3)
@@ -102,7 +118,53 @@ namespace Utility
                     shopCardList.Add(card);
                 }               
             }
-    
+
+            if (shopCardList.Count > AmountCardsToChooseFrom)
+                shopCardList.RemoveAt((AmountCardsToChooseFrom - 1));
+                        
+            return shopCardList;
+        }
+
+        private List<Card> SetRandomShopCardsByElement(CardElement element, int amountCardChoices = 3)
+        {
+            List<Card> shopCardList = new();
+            var retries = 0;
+
+            while (shopCardList.Count < amountCardChoices)
+            {
+                if (retries > 150)
+                {
+                    Debug.Log("Shop Building Failed");
+                    break;
+                }
+
+                List<Card> rarityList = DetermineCardRarityList();
+                List<Card> cardsWithElement = new();
+
+                foreach (Card card in rarityList)
+                {
+                    if (card.Element == element)
+                        cardsWithElement.Add(card);
+                }
+
+                if (cardsWithElement.Count == 0)
+                {
+                    retries++;
+                    continue;
+                }
+                else
+                {
+                    Card card = GetRandomCardFromList(cardsWithElement);
+
+                    if (shopCardList.Contains(card))
+                    {
+                        retries++;
+                        continue;
+                    }
+                    shopCardList.Add(card);
+                }
+            }
+
             return shopCardList;
         }
 
@@ -142,6 +204,7 @@ namespace Utility
                 cardObject.IsBeingDealt = false;
                 cardObject.GetComponent<CardDragDrop>().enabled = false;
                 cardObject.GetComponent<CardZoomMovement>().enabled = false;
+                cardObject.GetComponent<CardZoom>().enabled = false;
                 cardObject.AddComponent<ShopMouseOverSound>();
             }
         }
@@ -155,6 +218,7 @@ namespace Utility
                 Vector2 instantiatePosition = new(-350 + (i * 350), 50);
                 Card cardObject = Instantiate(cards[i], _shopCanvas.transform);
                 cardObject.GetComponent<RectTransform>().anchoredPosition = instantiatePosition;
+                cardObject.transform.DOScale(new Vector3(1.25f, 1.25f, 1), 0.1f);
                 instantiatedCards.Add(cardObject);
             }
             return instantiatedCards;
@@ -171,7 +235,7 @@ namespace Utility
         private void BuildBuyButtonUnderObject (GameObject gameObject)
         {
             RectTransform rectTransform = (RectTransform)gameObject.transform;
-            float ySpawnPosition = gameObject.transform.position.y - (rectTransform.rect.height * 0.75f);
+            float ySpawnPosition = gameObject.transform.position.y - (rectTransform.rect.height * 0.85f);
             float xSpawnPosition = gameObject.transform.position.x;
             Card buyableCard = gameObject.GetComponent<Card>();
             int cardIndex = (int)buyableCard.ScriptableCard.Type;

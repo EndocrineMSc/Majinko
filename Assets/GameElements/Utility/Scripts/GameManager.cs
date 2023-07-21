@@ -3,6 +3,8 @@ using UnityEngine;
 using Audio;
 using Utility.TurnManagement;
 using UnityEngine.SceneManagement;
+using Overworld;
+using DG.Tweening;
 
 namespace Utility
 {
@@ -12,7 +14,6 @@ namespace Utility
 
         internal static GameManager Instance { get; private set; }
         private AudioManager _audioManager;
-        private PhaseManager _turnManager;
 
         [SerializeField] private GameState _gameState;
 
@@ -53,6 +54,13 @@ namespace Utility
         private void OnEnable()
         {
             SceneManager.sceneLoaded += OnSceneLoaded;
+            UtilityEvents.OnGameReset += OnGameReset;
+        }
+
+        private void OnDisable()
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+            UtilityEvents.OnGameReset -= OnGameReset;
         }
 
         internal IEnumerator SwitchState(GameState state)
@@ -77,17 +85,16 @@ namespace Utility
                     break;
 
                 case (GameState.NewLevel):
-                    LoadHelper.LoadSceneWithLoadingScreen(SceneName.WorldOne);
+                    StartCoroutine(LoadWithFade(SceneName.WorldOne));
                     break;
 
                 case (GameState.GameOver):
                     UtilityEvents.RaiseGameReset();
-                    LoadHelper.LoadSceneWithLoadingScreen(SceneName.GameOver);
+                    StartCoroutine(LoadWithFade(SceneName.GameOver));
                     break;
 
                 case (GameState.Quit):
                     break;
-
             }
 
             yield return null;
@@ -106,6 +113,20 @@ namespace Utility
         {
             yield return new WaitForSeconds(0.5f);
             StartCoroutine(Instance.SwitchState(state));
+        }
+
+        private IEnumerator LoadWithFade(SceneName sceneName)
+        {
+            if (FadeCanvas.Instance != null)
+                FadeCanvas.Instance.FadeToBlack();
+
+            yield return new WaitForSeconds(LoadHelper.LoadDuration);
+            LoadHelper.LoadSceneWithLoadingScreen(sceneName);
+        }
+
+        private void OnGameReset()
+        {
+            LoadHelper.DeleteSceneKey();
         }
 
         #endregion

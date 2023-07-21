@@ -22,6 +22,11 @@ namespace Characters
                 PlayerHealth = MaxPlayerHealth;
         }
 
+        internal static void DamagePlayer(int amount)
+        {
+            PlayerHealth -= amount;
+        }
+
         internal static void SetMaxHealth(int amount)
         {
             MaxPlayerHealth = amount;

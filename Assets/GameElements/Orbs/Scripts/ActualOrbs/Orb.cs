@@ -3,9 +3,9 @@ using System.Collections;
 using UnityEngine;
 using ManaManagement;
 using Audio;
-using PeggleWars.ScrollDisplay;
-using PeggleWars.Spheres;
+using Utility;  
 using DG.Tweening;
+using Spheres;
 
 namespace Orbs
 {

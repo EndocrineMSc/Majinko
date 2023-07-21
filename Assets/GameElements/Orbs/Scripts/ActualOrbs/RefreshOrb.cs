@@ -1,4 +1,4 @@
-using PeggleWars.ScrollDisplay;
+using Utility;
 using System.Collections;
 using UnityEngine;
 
@@ -30,7 +30,7 @@ namespace Orbs
         public override void SetDisplayDescription()
         {
             IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
-            displayOnScroll.DisplayDescription = "Reactivates all orbs";
+            displayOnScroll.DisplayDescription = "Reactivates all orbs.";
         }
 
         #endregion

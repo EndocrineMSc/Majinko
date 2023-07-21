@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Audio;
+using DG.Tweening;
+using System.Collections;
 
 namespace Utility
 {
@@ -25,6 +27,8 @@ namespace Utility
         private GameObject _quitButton;
         private GameObject _continueButton;
 
+        [SerializeField] private Image _blackFadeImage;
+
         #endregion
 
         #region Functions
@@ -43,6 +47,8 @@ namespace Utility
 
         private void Start()
         {
+            _blackFadeImage.enabled = true;
+            _blackFadeImage.DOFade(0, LoadHelper.LoadDuration);
             _startButton = GameObject.FindGameObjectWithTag(START_BUTTON_PARAM);
             _settingsButton = GameObject.FindGameObjectWithTag(SETTINGS_BUTTON_PARAM);
             _creditsButton = GameObject.FindGameObjectWithTag(CREDITS_BUTTON_PARAM);
@@ -58,7 +64,7 @@ namespace Utility
             _quitButton.GetComponent<Button>().onClick.AddListener(QuitGame);
 
             if (!ES3.KeyExists("GlobalDeck"))
-                _continueButton.SetActive(false);
+                _continueButton.SetActive(false);    
         }
 
         private void OnDisable()
@@ -72,7 +78,7 @@ namespace Utility
         {
             PlayButtonClick();
             UtilityEvents.RaiseGameReset();
-            LoadHelper.LoadSceneWithLoadingScreen(SceneName.Tutorial);
+            StartCoroutine(LoadWithFade(SceneName.Tutorial));
         }
 
         private void OnMainMenuOpened()
@@ -100,14 +106,19 @@ namespace Utility
         public void ContinueGame()
         {
             PlayButtonClick();
-            LoadHelper.LoadSceneWithLoadingScreen(SceneName.WorldOne);
+            var sceneToLoad = SceneName.WorldOne;
+
+            if (ES3.KeyExists(LoadHelper.CURRENTSCENE_SAVE_PATH))
+                sceneToLoad = ES3.Load<SceneName>(LoadHelper.CURRENTSCENE_SAVE_PATH);
+
+            StartCoroutine(LoadWithFade(sceneToLoad));
         }
 
         public void NewGame()
         {
             PlayButtonClick();
             UtilityEvents.RaiseGameReset();
-            LoadHelper.LoadSceneWithLoadingScreen(SceneName.WorldOne);
+            StartCoroutine(LoadWithFade(SceneName.WorldOne));
         }
 
         public void QuitGame()
@@ -118,6 +129,13 @@ namespace Utility
         private void PlayButtonClick()
         {
             AudioManager.Instance.PlaySoundEffectOnce(SFX._0001_ButtonClick);
+        }
+
+        private IEnumerator LoadWithFade(SceneName sceneName)
+        {
+            _blackFadeImage.DOFade(1, LoadHelper.LoadDuration);
+            yield return new WaitForSeconds(LoadHelper.LoadDuration);
+            LoadHelper.LoadSceneWithLoadingScreen(sceneName);
         }
 
         #endregion

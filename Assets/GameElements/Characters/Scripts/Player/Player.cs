@@ -3,7 +3,6 @@ using UnityEngine;
 using Utility.TurnManagement;
 using PeggleWars.Characters.Interfaces;
 using Audio;
-using System.Diagnostics.CodeAnalysis;
 using Utility;
 
 namespace Characters

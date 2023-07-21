@@ -78,7 +78,6 @@ namespace Orbs
                 AddLevelLoadOrb(OrbType.FireManaOrb);
                 AddLevelLoadOrb(OrbType.RefreshOrb);
             }
-            Debug.Log(AmountOfRefreshOrbs);
         }
 
         private void InitializeLists()

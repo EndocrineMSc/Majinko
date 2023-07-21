@@ -36,18 +36,22 @@ namespace Cards
                 Destroy(gameObject);
         }
 
+        private void OnEnable()
+        {
+            UtilityEvents.OnLevelVictory += OnLevelVictory;
+        }
+
+        private void OnDisable()
+        {
+            UtilityEvents.OnLevelVictory -= OnLevelVictory;
+        }
+
         private void Start()
         {
             _hand = Hand.Instance;
             DiscardPosition = Camera.main.WorldToScreenPoint(_discardPileObject.transform.position);
             ExhaustPosition = Camera.main.WorldToScreenPoint(_exhaustPileObject.transform.position);
-            WinLoseConditionManager.Instance.LevelVictory?.AddListener(OnLevelVictory);
             BuildLevelDeck();
-        }
-
-        private void OnDisable()
-        {
-            WinLoseConditionManager.Instance.LevelVictory?.RemoveListener(OnLevelVictory);
         }
 
         private void BuildLevelDeck()

@@ -4,6 +4,7 @@ using ManaManagement;
 using EnumCollection;
 using System.Collections;
 using DG.Tweening;
+using UnityEngine.EventSystems;
 
 namespace Cards
 {
@@ -57,6 +58,11 @@ namespace Cards
             SetCardFields();           
         }
 
+        protected void OnValidate()
+        {
+            SetCardFields();
+        }
+
         protected void Start()
         {
             SetReferencesToLevelComponents();
@@ -75,26 +81,32 @@ namespace Cards
         
         protected virtual void SetCardFields()
         {
-            CardName = ScriptableCard.CardName;
-            CardDescription = ScriptableCard.CardDescription;
-            BasicManaCost = ScriptableCard.BasicManaCost;
-            FireManaCost = ScriptableCard.FireManaCost;
-            IceManaCost = ScriptableCard.IceManaCost;
-            CardType = ScriptableCard.Type;
-            IsExhaustCard = ScriptableCard.IsExhaustCard;
-            CardImage = ScriptableCard.Image;
-            Rarity = ScriptableCard.Rarity;
-            Element = ScriptableCard.Element;
-            EffectType = ScriptableCard.EffectType;
+            if (ScriptableCard != null)
+            {
+                CardName = ScriptableCard.CardName;
+                CardDescription = ScriptableCard.CardDescription;
+                BasicManaCost = ScriptableCard.BasicManaCost;
+                FireManaCost = ScriptableCard.FireManaCost;
+                IceManaCost = ScriptableCard.IceManaCost;
+                CardType = ScriptableCard.Type;
+                IsExhaustCard = ScriptableCard.IsExhaustCard;
+                CardImage = ScriptableCard.Image;
+                Rarity = ScriptableCard.Rarity;
+                Element = ScriptableCard.Element;
+                EffectType = ScriptableCard.EffectType;
+            }
         }
         
         protected virtual void CalculateManaAmounts()
         {
-            int modifier = _manaPool.ManaCostMultiplier;
+            if (ManaPool.Instance != null)
+            {
+                int modifier = _manaPool.ManaCostMultiplier;
 
-            _adjustedBasicManaAmount = BasicManaCost * modifier;
-            _adjustedFireManaAmount = FireManaCost * modifier;
-            _adjustedIceManaAmount = IceManaCost * modifier;
+                _adjustedBasicManaAmount = BasicManaCost * modifier;
+                _adjustedFireManaAmount = FireManaCost * modifier;
+                _adjustedIceManaAmount = IceManaCost * modifier;
+            }
         }
 
         internal virtual bool CardEndDragEffect()
@@ -106,7 +118,7 @@ namespace Cards
                 _orbManager.CheckForRefreshOrbs(); //Checks if RefreshOrb was overwritten and makes a new one if so
                 HandleDiscard();
                 _hand.InstantiatedCards.Remove(this); //list of instantiated cards in hand
-                _hand.AlignCards();
+                _hand.AlignCardsWrap();
                 GetComponent<CardZoom>().enabled = false;
                 GetComponent<CardZoomMovement>().enabled = false;
                 StartCoroutine(DestroyCardAfterAnimation());

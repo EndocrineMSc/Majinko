@@ -1,12 +1,10 @@
-using PeggleWars.ScrollDisplay;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace PeggleWars.ScrollDisplay
+namespace Utility
 {
-    internal class ScrollDisplayer : MonoBehaviour, IDisplayOnScroll
+    internal class ScrollDisplayer : MonoBehaviour, IDisplayOnScroll, IPointerEnterHandler, IPointerExitHandler
     {
         public string DisplayDescription { get; set; } = "Not implemented";
         public int DisplayScale { get; set; }
@@ -21,6 +19,17 @@ namespace PeggleWars.ScrollDisplay
             StopDisplayOnScroll();                    
         }
 
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            DisplayOnScroll();
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            StopDisplayOnScroll();
+        }
+
+
         public void DisplayOnScroll()
         {
             StartCoroutine(PolishDisplayTimer());
@@ -29,13 +38,13 @@ namespace PeggleWars.ScrollDisplay
         public void StopDisplayOnScroll()
         {
             StopAllCoroutines();
-            ScrollEvents.Instance.StopDisplayingEvent?.Invoke();
+            UtilityEvents.RaiseStopScrollDisplay();
         }
 
         private IEnumerator PolishDisplayTimer()
         {
             yield return new WaitForSeconds(0.2f);
-            ScrollEvents.Instance.ScrollDisplayEvent?.Invoke(gameObject);
+            UtilityEvents.RaiseDisplayOnScroll(gameObject);
         }
     }
 }
