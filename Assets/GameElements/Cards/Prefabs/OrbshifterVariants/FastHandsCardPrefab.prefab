@@ -43,6 +43,10 @@ PrefabInstance:
       propertyPath: _cardDescription
       value: 'Orb: Draw an additional card'
       objectReference: {fileID: 0}
+    - target: {fileID: 1027774866021534452, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1811972980392909961, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _cardName
       value: Fast Hands
@@ -159,6 +163,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5430120253573637861, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631585529099602687, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_text
+      value: 'Orb: Draw an additional card next turn.'
+      objectReference: {fileID: 0}
     - target: {fileID: 6398440697363082782, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Name
       value: FastHandsCardPrefab
@@ -167,9 +179,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6966083017548400910, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_text
+      value: Orbshifter - 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8377016387183099597, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_CullTransparentMesh
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731561545919723125, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_text
+      value: Fast Hands
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
