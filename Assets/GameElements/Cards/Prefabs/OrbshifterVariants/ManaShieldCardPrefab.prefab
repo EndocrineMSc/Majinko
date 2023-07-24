@@ -59,6 +59,10 @@ PrefabInstance:
       propertyPath: _cardDescription
       value: 'Orb: Gain 10 shield'
       objectReference: {fileID: 0}
+    - target: {fileID: 1027774866021534452, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1811972980392909961, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _cardName
       value: Mana Shield
@@ -195,6 +199,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5631585529099602687, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_text
+      value: 'Orb:
+
+        Gain 10 shield'
+      objectReference: {fileID: 0}
     - target: {fileID: 5676666454438765143, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_SizeDelta.x
       value: 78
@@ -223,6 +233,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ManaShieldCardPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 6966083017548400910, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_text
+      value: Orbshifter - 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7670523144989857751, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_text
       value: 'Spawns a Mana Shield Orb.
@@ -235,6 +249,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8696175136549785397, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_text
+      value: Mana Shield
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731561545919723125, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_text
       value: Mana Shield
       objectReference: {fileID: 0}

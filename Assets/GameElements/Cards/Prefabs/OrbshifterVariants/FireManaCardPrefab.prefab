@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2245462331172969983, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2466896706366069840, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -172,9 +176,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireManaCardPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 7063799747033915138, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7670523144989857751, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_text
-      value: 
+      value: "Persistent Orb: \nGain 1 Fire Mana\nApply 1 burning"
       objectReference: {fileID: 0}
     - target: {fileID: 7670523144989857751, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_fontSize
@@ -186,7 +194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8696175136549785397, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_text
-      value: 
+      value: Fire Mana
       objectReference: {fileID: 0}
     - target: {fileID: 9135118470376897469, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_IsActive

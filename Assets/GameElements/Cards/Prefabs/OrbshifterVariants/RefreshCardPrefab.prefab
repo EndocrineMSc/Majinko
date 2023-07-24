@@ -119,9 +119,25 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 94b8174d73e132f4794d3b0d1381bb6b, type: 3}
+    - target: {fileID: 5437267143115510094, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6398440697363082782, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_Name
       value: RefreshCardPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 6714046545218410943, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7670523144989857751, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_text
+      value: 'Persistent Orb: Refresh arena'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696175136549785397, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_text
+      value: Refresh
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -4550278420783687888, guid: 92b44770394774247acee543b7baee9f, type: 3}

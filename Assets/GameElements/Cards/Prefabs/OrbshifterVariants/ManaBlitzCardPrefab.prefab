@@ -63,6 +63,10 @@ PrefabInstance:
       propertyPath: _cardDescription
       value: 'Orb: Deal 10 damage'
       objectReference: {fileID: 0}
+    - target: {fileID: 1027774866021534452, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1811972980392909961, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _cardName
       value: Mana Blitz
@@ -187,13 +191,27 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5631585529099602687, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_text
+      value: 'Orb:
+
+        Deal 10 damage'
+      objectReference: {fileID: 0}
     - target: {fileID: 6398440697363082782, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Name
       value: ManaBlitzCardPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 6966083017548400910, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_text
+      value: Orbshifter - 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8104484355595315346, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731561545919723125, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_text
+      value: Mana Blitz
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5484072417001946136, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}

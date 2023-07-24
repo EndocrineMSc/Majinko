@@ -60,7 +60,7 @@ namespace Characters.Enemies
 
         protected override void TriggerSpawnAnimation()
         {
-            //_animator.SetTrigger(SPAWN_PARAM);
+            //not available
         }
 
         protected override void TriggerHurtAnimation()
@@ -71,8 +71,7 @@ namespace Characters.Enemies
 
         protected override void TriggerDeathAnimation()
         {
-            if (_animator != null)
-                _animator.SetTrigger(DEATH_TRIGGER);
+            //not available
         }
 
         #endregion

@@ -51,6 +51,14 @@ PrefabInstance:
       propertyPath: _cardDescription
       value: 'Orb: Deal 40 damage to the last enemy'
       objectReference: {fileID: 0}
+    - target: {fileID: 66298920512302555, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 961337254600276352, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1811972980392909961, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _cardName
       value: Lightning Strike
@@ -83,6 +91,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: d156cface5e07f343ac85a9b0c9d5970, type: 3}
+    - target: {fileID: 3757311439060390686, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4562639032885138839, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4812993297873364277, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -167,9 +183,47 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5631585529099602687, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_text
+      value: 'Orb:
+
+        Deal 40 lightning damage to  the furthest enemy'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5993524722849724809, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6398440697363082782, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Name
       value: LightningStrikeCardPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 6966083017548400910, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_text
+      value: Orbshifter - 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7381338832968130283, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586572924092285487, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648711437733863079, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180961831792627377, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397974088000421483, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731561545919723125, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_text
+      value: Lightning Strike
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}

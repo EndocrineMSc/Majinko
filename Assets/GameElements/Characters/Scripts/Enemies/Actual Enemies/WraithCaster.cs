@@ -81,17 +81,18 @@ namespace Characters.Enemies
 
         protected override void TriggerDeathAnimation()
         {
-            if (_animator != null)
-                _animator.SetTrigger(DEATH_TRIGGER);
+            //temp not available
         }
         internal override void StartMovementAnimation()
         {
-            //same as idle
+            if (_animator != null)
+                _animator.SetTrigger(WALK_TRIGGER);
         }
 
         internal override void StopMovementAnimation()
         {
-            //same as idle
+            if (_animator != null)
+                _animator.SetTrigger(IDLE_TRIGGER);
         }
 
         protected override void TriggerAttackAnimation()

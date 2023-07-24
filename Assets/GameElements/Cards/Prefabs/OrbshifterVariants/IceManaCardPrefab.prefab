@@ -62,6 +62,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1670203746692134775, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1999973675477444807, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_text
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1999973675477444807, guid: 92b44770394774247acee543b7baee9f, type: 3}
@@ -80,9 +84,21 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4278190080
       objectReference: {fileID: 0}
+    - target: {fileID: 2466896706366069840, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2663367635832773738, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_text
-      value: Orbshifter - 1
+      value: Instant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3535557773751755111, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746803301845425543, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4812993297873364277, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_Pivot.x
@@ -170,7 +186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5062165782696631732, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5275418852295311527, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_Sprite
@@ -190,7 +206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5437267143115510094, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_text
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6398440697363082782, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_Name
@@ -198,7 +214,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7670523144989857751, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_text
-      value: "Persistent Orb: \nGain 1 Ice Mana\nSingle-use"
+      value: "Persistent Orb: \nGain 1 Ice Mana\nApply 1 Freezing"
       objectReference: {fileID: 0}
     - target: {fileID: 7670523144989857751, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_fontSize
@@ -210,7 +226,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8696175136549785397, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_text
-      value: Ice Orb
+      value: Ice Mana
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -4550278420783687888, guid: 92b44770394774247acee543b7baee9f, type: 3}
