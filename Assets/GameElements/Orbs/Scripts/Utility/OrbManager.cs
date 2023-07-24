@@ -347,12 +347,15 @@ namespace Orbs
 
             foreach (Orb orb in SceneOrbList)
             {
-                var orbPosition = orb.transform.position;
+                if (orb != null)
+                {
+                    var orbPosition = orb.transform.position;
 
-                if (orbPositions.Contains(orbPosition))
-                    return orbPosition;
-                else
-                    orbPositions.Add(orb.transform.position);
+                    if (orbPositions.Contains(orbPosition))
+                        return orbPosition;
+                    else
+                        orbPositions.Add(orb.transform.position);
+                }
             }
             return _impossibleOrbPosition;
         }
