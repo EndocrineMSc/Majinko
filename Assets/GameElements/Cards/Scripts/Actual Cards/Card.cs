@@ -166,6 +166,11 @@ namespace Cards
             Destroy(gameObject);
         }
 
+        protected void OnDestroy()
+        {
+            transform.DOKill();
+        }
+
         #endregion
     }
 }

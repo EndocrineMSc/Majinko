@@ -8,8 +8,9 @@ namespace Attacks
         public override string Bark { get; } = "Whoh...";
 
         //Do special stuff in here
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0101_ManaBlitz_Shot);
         }
 

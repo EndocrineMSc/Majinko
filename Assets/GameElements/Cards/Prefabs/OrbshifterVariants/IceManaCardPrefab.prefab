@@ -36,6 +36,10 @@ PrefabInstance:
       value: Permanently adds an Ice Orb to the playing field.   This card is removed
         from the deck completely after playing it once.
       objectReference: {fileID: 0}
+    - target: {fileID: 73129920044111499, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 808972950667333918, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_SizeDelta.x
       value: 78

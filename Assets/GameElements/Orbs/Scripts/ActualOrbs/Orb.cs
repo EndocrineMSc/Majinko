@@ -192,6 +192,11 @@ namespace Orbs
             }
         }
 
+        protected void OnDestroy()
+        {
+            transform.DOKill();
+        }
+
         #endregion
 
         #endregion

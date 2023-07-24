@@ -348,6 +348,11 @@ namespace Characters.Enemies
             }
         }
 
+        private void OnDestroy()
+        {
+            transform.DOKill();
+        }
+
         #endregion
     }
 }
