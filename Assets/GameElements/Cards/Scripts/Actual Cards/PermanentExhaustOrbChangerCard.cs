@@ -1,4 +1,6 @@
+using Characters;
 using Orbs;
+using UnityEngine;
 
 namespace Cards
 {
@@ -7,7 +9,10 @@ namespace Cards
         protected override void CardEffect()
         {
             GlobalOrbManager.Instance.AddLevelLoadOrb(OrbType);
-            OrbManager.Instance.SwitchOrbs(OrbType, transform.position);
+
+            Vector3 playerPosition = Player.Instance.transform.position;
+            Vector3 startPosition = new(playerPosition.x + 2, playerPosition.y, playerPosition.z);
+            OrbManager.Instance.SwitchOrbs(OrbType, startPosition);
 
             _globalDeckManager.RemoveCardFromGlobalDeck(GlobalCardManager.Instance.AllCards[(int)CardType]);
         }

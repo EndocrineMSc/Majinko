@@ -18,6 +18,6 @@ internal class TestButton : MonoBehaviour
 
     private void TestFunction()
     {
-        LoadHelper.LoadSceneWithLoadingScreen(SceneName.LevelOne);
+        LoadHelper.LoadSceneWithLoadingScreen(SceneName.NormalCombat);
     }
 }

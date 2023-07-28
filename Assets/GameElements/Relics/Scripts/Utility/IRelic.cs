@@ -7,5 +7,7 @@ namespace Relics
     internal interface IRelic
     {
         Relic RelicEnum { get; }
+
+        string Description { get; }
     }
 }

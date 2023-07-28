@@ -94,8 +94,15 @@ namespace Orbs
                 SpawnMana();
                 StartCoroutine(DestroyOrbWithDelay());
             }
+            else if (collision.gameObject.TryGetComponent<Orb>(out _))
+            {
+                Debug.Log("Destroyed " + gameObject.name + " due to collision with orb");
+                Destroy(gameObject);
+            }
             else
+            {
                 _collider.enabled = true;
+            }
         }
 
         protected abstract void AdditionalEffectsOnCollision();

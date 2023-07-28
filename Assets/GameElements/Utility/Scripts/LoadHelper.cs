@@ -30,7 +30,7 @@ namespace Utility
 
     internal enum SceneName
     {
-        LevelOne,
+        NormalCombat,
         MainMenu,
         Tutorial,
         WorldOne,

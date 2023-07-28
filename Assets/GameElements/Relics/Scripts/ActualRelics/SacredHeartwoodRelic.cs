@@ -14,10 +14,12 @@ namespace Relics
 
         internal static SacredHeartwoodRelic Instance { get; private set; }
         public Relic RelicEnum { get; private set; } = Relic.SacredHeartwood;
-        private readonly int _healAmount = 3;
 
-        //For displaying on scroll
-        [SerializeField, TextArea] private string _displayDescription;
+        public string Description => "<size=100%>Sacred Heartwood<size=90%>\r\n\r\n" +
+            "This heart of a wooden, magical creature pulses with a dim, green light.\r\n\r\n" +
+            "Heal 3 hp after each level.";
+
+        private readonly int _healAmount = 3;
 
         #endregion
 
@@ -44,10 +46,10 @@ namespace Relics
         private void Start()
         { 
             Image image = GetComponent<Image>();
-            image.enabled = (SceneManager.GetActiveScene().name.Contains("Level"));
+            image.enabled = (SceneManager.GetActiveScene().name.Contains("Combat"));
 
             ScrollDisplayer displayer = GetComponent<ScrollDisplayer>();
-            displayer.DisplayDescription = _displayDescription;
+            displayer.DisplayDescription = Description;
             displayer.DisplayScale = ScrollDisplayScales.RelicDisplayScale;
         }
 

@@ -13,10 +13,12 @@ namespace Relics
 
         internal static GarnetFlowerRelic Instance { get; private set; }
         public Relic RelicEnum { get; private set; } = Relic.GarnetFlower;
-        private readonly int _additionalFireMana = 10;
 
-        //For displaying on scroll
-        [SerializeField, TextArea] private string _displayDescription;
+        public string Description => "<size=100%>Garnet Flower<size=90%>\r\n\r\n" +
+            "This red jewel cut in the shape of an intricate flower feels warm in your hand.\r\n\r\n" +
+            "Start each level with an additional fire mana.\r\n";
+
+        private readonly int _additionalFireMana = 10;
 
         #endregion
 
@@ -33,10 +35,10 @@ namespace Relics
         private void Start()
         {
             Image image = GetComponent<Image>();
-            image.enabled = (SceneManager.GetActiveScene().name.Contains("Level"));
+            image.enabled = (SceneManager.GetActiveScene().name.Contains("Combat"));
 
             ScrollDisplayer displayer = GetComponent<ScrollDisplayer>();
-            displayer.DisplayDescription = _displayDescription;
+            displayer.DisplayDescription = Description;
             displayer.DisplayScale = ScrollDisplayScales.RelicDisplayScale;
 
             OrbEvents.RaiseSpawnMana(ManaType.FireMana, _additionalFireMana);

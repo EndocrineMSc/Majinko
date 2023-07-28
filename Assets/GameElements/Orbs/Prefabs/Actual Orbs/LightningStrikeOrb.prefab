@@ -33,7 +33,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 8268779939704817169}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -137,6 +138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53defc170b8886c4ab83f645f326c6c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spawnManaType: 0
+  _manaAmount: 10
   _defaultOrb: {fileID: 2549565476461289553, guid: c837957ee74bdcc44a31943daaafc0a8, type: 3}
   OrbType: 19
   _lightningStrike: {fileID: 2323330228594297453, guid: 7219cded94d5af740bfcfb3769174845, type: 3}
@@ -165,3 +168,65 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _orbPopUpPrefab: {fileID: 5326807715267368304, guid: e2b6d36c4219c2243b948ce91b89f7af, type: 3}
+--- !u!1001 &3504452999811047834
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2549565476461289564}
+    m_Modifications:
+    - target: {fileID: 4783608835060361099, guid: 0911357b6f3034547b6b441c4668269c, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4783608835060361099, guid: 0911357b6f3034547b6b441c4668269c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4783608835060361099, guid: 0911357b6f3034547b6b441c4668269c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4783608835060361099, guid: 0911357b6f3034547b6b441c4668269c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4783608835060361099, guid: 0911357b6f3034547b6b441c4668269c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4783608835060361099, guid: 0911357b6f3034547b6b441c4668269c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4783608835060361099, guid: 0911357b6f3034547b6b441c4668269c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4783608835060361099, guid: 0911357b6f3034547b6b441c4668269c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4783608835060361099, guid: 0911357b6f3034547b6b441c4668269c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4783608835060361099, guid: 0911357b6f3034547b6b441c4668269c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4783608835060361099, guid: 0911357b6f3034547b6b441c4668269c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5793509300827226342, guid: 0911357b6f3034547b6b441c4668269c, type: 3}
+      propertyPath: m_Name
+      value: LightningManaParticleSystem
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0911357b6f3034547b6b441c4668269c, type: 3}
+--- !u!4 &8268779939704817169 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4783608835060361099, guid: 0911357b6f3034547b6b441c4668269c, type: 3}
+  m_PrefabInstance: {fileID: 3504452999811047834}
+  m_PrefabAsset: {fileID: 0}

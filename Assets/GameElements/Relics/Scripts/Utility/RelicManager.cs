@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Utility;
 
 namespace Relics
 {
@@ -13,10 +14,10 @@ namespace Relics
 
         [SerializeField] private RelicCollection _relicCollection;
 
-        private List<Relic> _activeRelics;
+        internal List<Relic> ActiveRelics { get; private set; }
         private List<Relic> _instantiatedRelics;
         private List<GameObject> _instantiatedRelicObjects;
-        private Dictionary<Relic, GameObject> _allRelics;
+        internal Dictionary<Relic, GameObject> AllRelics { get; private set; }
 
         private GridLayoutGroup _relicLayoutGroup;
         private readonly string RELIC_SAVE_PATH = "ActiveRelics";
@@ -39,27 +40,29 @@ namespace Relics
 
             _instantiatedRelics ??= new();
             _instantiatedRelicObjects ??= new();
-            _allRelics = _relicCollection.AllRelics;
+            AllRelics = _relicCollection.AllRelics;
             _relicLayoutGroup = transform.GetComponentInChildren<GridLayoutGroup>();
 
-            _activeRelics ??= ES3.KeyExists(RELIC_SAVE_PATH) ? ES3.Load<List<Relic>>(RELIC_SAVE_PATH) : new();
+            ActiveRelics ??= ES3.KeyExists(RELIC_SAVE_PATH) ? ES3.Load<List<Relic>>(RELIC_SAVE_PATH) : new();
         }
 
         private void OnEnable()
         {
             SceneManager.sceneLoaded += OnSceneLoaded;
             SceneManager.sceneUnloaded += OnSceneUnloaded;
+            UtilityEvents.OnGameReset += OnGameReset;
         }
 
         private void OnDisable()
         {
             SceneManager.sceneLoaded -= OnSceneLoaded;
             SceneManager.sceneUnloaded -= OnSceneUnloaded;
+            UtilityEvents.OnGameReset -= OnGameReset;
         }
 
         private void OnApplicationQuit()
         {
-            ES3.Save<List<Relic>>(RELIC_SAVE_PATH, _activeRelics);
+            ES3.Save<List<Relic>>(RELIC_SAVE_PATH, ActiveRelics);
         }
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
@@ -74,11 +77,11 @@ namespace Relics
 
         internal void InstantiateRelics()
         {
-            foreach (var relic in _activeRelics)
+            foreach (var relic in ActiveRelics)
             {
-                if (_allRelics[relic] != null && !_instantiatedRelics.Contains(relic))
+                if (AllRelics[relic] != null && !_instantiatedRelics.Contains(relic))
                 {
-                    var relicObject = Instantiate(_allRelics[relic], Vector3.zero, Quaternion.identity);
+                    var relicObject = Instantiate(AllRelics[relic], Vector3.zero, Quaternion.identity);
                     relicObject.transform.SetParent(_relicLayoutGroup.transform);
                     _instantiatedRelics.Add(relic);
                     _instantiatedRelicObjects.Add(relicObject);
@@ -88,8 +91,8 @@ namespace Relics
 
         internal void AddRelic(Relic relic)
         {
-            if (_allRelics.ContainsKey(relic))
-                _activeRelics.Add(relic);
+            if (AllRelics.ContainsKey(relic))
+                ActiveRelics.Add(relic);
         }
 
         private void OnSceneUnloaded(Scene scene)
@@ -102,11 +105,20 @@ namespace Relics
             _instantiatedRelicObjects.Clear();
         }
 
+        private void OnGameReset()
+        {
+            if (ES3.KeyExists(RELIC_SAVE_PATH))
+                ES3.DeleteKey(RELIC_SAVE_PATH);
+
+            ActiveRelics.Clear();
+        }
+
         #endregion
     }
 
     internal enum Relic
     {
+        None, //null replacement for shop functions
         BlueZirconFlower,
         ChillborneRing,
         GarnetFlower,

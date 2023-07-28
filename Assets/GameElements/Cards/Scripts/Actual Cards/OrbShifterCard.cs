@@ -2,6 +2,7 @@ using UnityEngine;
 using EnumCollection;
 using Orbs;
 using Utility;
+using Characters;
 
 namespace Cards
 {
@@ -14,8 +15,10 @@ namespace Cards
 
         protected override void CardEffect()
         {
-            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(GetComponent<RectTransform>().transform.position);            
-            OrbManager.Instance.SwitchOrbs(OrbType, worldPosition, OrbAmount);
+            Vector3 playerPosition = Player.Instance.transform.position;
+            Vector3 startPosition = new(playerPosition.x + 2, playerPosition.y, playerPosition.z);
+            OrbManager.Instance.SwitchOrbs(OrbType, startPosition, OrbAmount);
+            Player.Instance.GetComponentInChildren<Animator>().SetTrigger("Attack");
         }
 
         protected override void SetCardFields()
