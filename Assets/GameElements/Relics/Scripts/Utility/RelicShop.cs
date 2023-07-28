@@ -72,6 +72,8 @@ namespace Utility
                     return Relic.None;
                 }
                 rarityList = DetermineRelicRarityList();
+                foreach (Relic rarity in rarityList)
+                    Debug.Log(rarity.ToString());
                 retries++;
             }
 
@@ -108,13 +110,12 @@ namespace Utility
             {
                 int randomRelicIndex = UnityEngine.Random.Range(0, relicList.Count);
                 Relic randomRelic = relicList[randomRelicIndex];
-                
+
                 if (!_relicManager.ActiveRelics.Contains(randomRelic))
                     return randomRelic;
                 else 
                     whileBreaker++;
             }
-
             return Relic.None;
         }
 
@@ -127,27 +128,32 @@ namespace Utility
 
                 _relicDescription.text = relicSource.GetComponent<IRelic>().Description;
                 _shopRelicButton.GetComponent<Image>().sprite = relicImage.sprite;
-                _shopRelicButton.onClick.AddListener(delegate { ChooseRelic(chosenRelic); });
-                _shopRelicButton.onClick.AddListener(delegate { StartCoroutine(DisableShopWithDelay()); });
-                _shopRelicButton.onClick.AddListener(delegate { DisableAllButtons(_shopRelicButton); });
-                _shopRelicButton.onClick.AddListener(TweenButtonClick);
+                _shopRelicButton.onClick.AddListener(delegate { AddRelic(chosenRelic); });
+                _shopRelicButton.onClick.AddListener(DisableAllButtons);
             }
+            else
+            {
+                _shopRelicButton.GetComponent<Image>().DOFade(0, 0.1f);
+                _relicDescription.text = "No more relics available, or shop building failed";
+            }
+
+            _shopRelicButton.onClick.AddListener(DisableShop);
+            _shopRelicButton.onClick.AddListener(TweenButtonClick);
         }
 
-        private void ChooseRelic(Relic relic)
+        private void AddRelic(Relic relic)
         {
             _relicManager.AddRelic(relic);
         }
 
-        private IEnumerator DisableShopWithDelay()
+        private void DisableShop()
         {
-            yield return new WaitForSeconds(1);
             _shopCanvas.enabled = false;
         }
 
-        private void DisableAllButtons(Button button)
+        private void DisableAllButtons()
         {
-            button.interactable = false;
+            _shopRelicButton.interactable = false;
         }
 
         private void TweenButtonClick()

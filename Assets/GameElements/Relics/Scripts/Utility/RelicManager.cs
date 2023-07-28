@@ -107,10 +107,8 @@ namespace Relics
 
         private void OnGameReset()
         {
-            if (ES3.KeyExists(RELIC_SAVE_PATH))
-                ES3.DeleteKey(RELIC_SAVE_PATH);
-
             ActiveRelics.Clear();
+            ES3.Save<List<Relic>>(RELIC_SAVE_PATH, ActiveRelics);
         }
 
         #endregion
