@@ -2,11 +2,14 @@ using EnumCollection;
 using Audio;
 using Orbs;
 using Utility;
+using UnityEngine;
 
 namespace Characters.Enemies
 {
     internal class Zombie : MeleeEnemy
     {
+        [SerializeField] private ParticleSystem _particleSystem;
+
         #region Functions
 
         protected override void PlaySpawnSound()
@@ -56,6 +59,8 @@ namespace Characters.Enemies
         {
             if (_animator != null)
                 _animator.SetTrigger(ATTACK_TRIGGER);
+
+            _particleSystem.Play();
         }
 
         protected override void TriggerSpawnAnimation()

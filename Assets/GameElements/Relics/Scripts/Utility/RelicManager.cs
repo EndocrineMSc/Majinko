@@ -14,9 +14,9 @@ namespace Relics
 
         [SerializeField] private RelicCollection _relicCollection;
 
-        internal List<Relic> ActiveRelics { get; private set; }
-        private List<Relic> _instantiatedRelics;
-        private List<GameObject> _instantiatedRelicObjects;
+        public List<Relic> ActiveRelics;
+        [SerializeField] private List<Relic> _instantiatedRelics;
+        [SerializeField] private List<GameObject> _instantiatedRelicObjects;
         internal Dictionary<Relic, GameObject> AllRelics { get; private set; }
 
         private GridLayoutGroup _relicLayoutGroup;
@@ -67,7 +67,7 @@ namespace Relics
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
         {
-            if (scene.name.Contains("Level") 
+            if (scene.name.Contains("Combat") 
                 || scene.name.Contains("World")
                 || scene.name.Contains("Event"))
             {
@@ -79,7 +79,7 @@ namespace Relics
         {
             foreach (var relic in ActiveRelics)
             {
-                if (AllRelics[relic] != null && !_instantiatedRelics.Contains(relic))
+                if (/*AllRelics[relic] != null &&*/ !_instantiatedRelics.Contains(relic))
                 {
                     var relicObject = Instantiate(AllRelics[relic], Vector3.zero, Quaternion.identity);
                     relicObject.transform.SetParent(_relicLayoutGroup.transform);
