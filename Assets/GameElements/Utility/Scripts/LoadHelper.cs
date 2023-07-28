@@ -30,12 +30,14 @@ namespace Utility
 
     internal enum SceneName
     {
-        NormalCombat,
         MainMenu,
         Tutorial,
         WorldOne,
         LoadingScreen,
         GameOver,
+        NormalCombat,
+        EliteCombat,
+        BossCombat,
         Event_LeyLines,
         Event_ForestFire,
         Event_MagicalSpring,
