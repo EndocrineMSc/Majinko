@@ -309,6 +309,11 @@ namespace Characters.Enemies
                 EnemyEvents.RaiseAppliedFrozen();
         }
 
+        protected void OnDestroy()
+        {
+            transform.DOKill();
+        }
+
         internal abstract void StartMovementAnimation();
         internal abstract void StopMovementAnimation();
 

@@ -10,8 +10,9 @@ namespace Attacks
         public override string Bark { get; } = "Hail Storm!";
 
         //Do special stuff in here
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0101_ManaBlitz_Shot);
             HandleAOE();
         }
@@ -25,7 +26,7 @@ namespace Attacks
         {
             foreach (Enemy enemy in EnemyManager.Instance.EnemiesInScene)
             {
-                enemy.TakeDamage(Damage);
+                enemy.TakeDamage(_attackValues.Damage);
                 enemy.ApplyFreezing(_attackValues.FreezingStacks);
 
                 int randomChance = UnityEngine.Random.Range(0, 101);

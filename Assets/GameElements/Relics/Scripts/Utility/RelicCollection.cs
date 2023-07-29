@@ -25,20 +25,16 @@ namespace Relics
             _sortedEnum ??= new();
             _sortedObjects ??= new();
             AllRelics ??= new();
+            AllRelics.Clear();
 
-            _sortedEnum = Enum.GetValues(typeof(Relic)).Cast<Relic>().ToList();
-            _sortedEnum.Sort();
-            _sortedObjects = _sortedObjects.OrderBy(go => go.name).ToList();
-
-            int k = 0;
             for (int i = 0; i < _sortedEnum.Count; i++)
-            {
-                if (k < _sortedObjects.Count && _sortedEnum[i] == _sortedObjects[k].GetComponent<IRelic>().RelicEnum)
-                {
-                    AllRelics.Add(_sortedEnum[i], _sortedObjects[k]);
-                    k++;
-                }
-            }
+                AllRelics.Add(_sortedEnum[i], _sortedObjects[i]);
+        }
+
+        private void DebugLogDictionary()
+        {
+            foreach (var item in AllRelics)
+                Debug.Log("Key: " + item.Key.ToString() + "Value: " + item.Value.ToString());
         }
 
         #endregion

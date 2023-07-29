@@ -12,6 +12,7 @@ namespace Utility
         [SerializeField] private Button _forestFireButton;
         [SerializeField] private Button _mirrorTreeButton;
         [SerializeField] private Button _mysteriousStrangerButton;
+        [SerializeField] private Button _eliteCombatButton;
 
         private void Start()
         {
@@ -20,6 +21,7 @@ namespace Utility
             _forestFireButton.onClick.AddListener(LoadForestFire);
             _mirrorTreeButton.onClick.AddListener(LoadMirrorTree);
             _mysteriousStrangerButton.onClick.AddListener(LoadMysteriousStranger);
+            _eliteCombatButton.onClick.AddListener(LoadEliteCombat);
         }
 
         internal void ResetSaves()
@@ -45,6 +47,11 @@ namespace Utility
         internal void LoadMysteriousStranger()
         {
             LoadHelper.LoadSceneWithLoadingScreen(SceneName.Event_MysteriousStranger);
+        }
+
+        internal void LoadEliteCombat()
+        {
+            LoadHelper.LoadSceneWithLoadingScreen(SceneName.EliteCombat);
         }
     }
 }

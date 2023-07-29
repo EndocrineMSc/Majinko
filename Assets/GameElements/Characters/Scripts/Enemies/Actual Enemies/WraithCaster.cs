@@ -2,6 +2,9 @@ using EnumCollection;
 using Audio;
 using Orbs;
 using Utility;
+using UnityEngine;
+using DG.Tweening;
+using System.Collections;
 
 namespace Characters.Enemies
 {
@@ -10,6 +13,9 @@ namespace Characters.Enemies
         public int IntangibleStacks { get; set; } = 0;
 
         private int _amountIntangibleOrbs = 0;
+        private bool _abilityReady = true;
+
+        [SerializeField] private ParticleSystem _particleSystem;
 
         IntangibleController _intangibleController;
 
@@ -18,15 +24,23 @@ namespace Characters.Enemies
         protected override void SetReferences()
         {
             base.SetReferences();
-            _deathDelayForAnimation = 1.5f;
+            _deathDelayForAnimation = _particleSystem.main.startLifetimeMultiplier;
             _intangibleController = new(this);
         }
 
         protected override void OnEndEnemyPhase()
         {
             base.OnEndEnemyPhase();
-            OrbManager.Instance.SwitchOrbs(OrbType.IntangibleEnemyOrb, transform.position);
-            _amountIntangibleOrbs += 1;
+            if (_abilityReady) 
+            {
+                _abilityReady = false;
+                OrbManager.Instance.SwitchOrbs(OrbType.IntangibleEnemyOrb, transform.position);
+                _amountIntangibleOrbs += 1;
+            }
+            else
+            {
+                _abilityReady = true;
+            }
             HandleIntangibleStacks();
         }
 
@@ -35,9 +49,7 @@ namespace Characters.Enemies
             int orbsToBeSwitched = _amountIntangibleOrbs;
 
             for (int i = 0; i < orbsToBeSwitched; i++)
-            {
-                OrbManager.Instance.ReplaceOrbOfType(OrbType.IntangibleEnemyOrb);
-            }           
+                OrbManager.Instance.ReplaceOrbOfType(OrbType.IntangibleEnemyOrb);         
         }
 
         public override void SetDisplayDescription()
@@ -81,23 +93,36 @@ namespace Characters.Enemies
 
         protected override void TriggerDeathAnimation()
         {
-            if (_animator != null)
-                _animator.SetTrigger(DEATH_TRIGGER);
+            if (_animator != null) 
+                _animator.enabled = false;
+            StartCoroutine(FadeAndDisableSpriteRenderer());
+            _particleSystem.Play();
         }
+
         internal override void StartMovementAnimation()
         {
-            //same as idle
+            if (_animator != null)
+                _animator.SetTrigger(WALK_TRIGGER);
         }
 
         internal override void StopMovementAnimation()
         {
-            //same as idle
+            if (_animator != null)
+                _animator.SetTrigger(IDLE_TRIGGER);
         }
 
         protected override void TriggerAttackAnimation()
         {
             if (_animator != null)
                 _animator.SetTrigger(ATTACK_TRIGGER);
+        }
+
+        private IEnumerator FadeAndDisableSpriteRenderer()
+        {
+            var renderer = GetComponent<SpriteRenderer>();
+            renderer.DOFade(0, 0.1f);
+            yield return new WaitForSeconds(0.11f);
+            renderer.enabled = false;
         }
 
         #endregion

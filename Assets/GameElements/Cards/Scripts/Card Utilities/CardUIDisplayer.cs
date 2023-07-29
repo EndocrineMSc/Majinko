@@ -44,24 +44,37 @@ namespace Cards
 
         #region Functions
 
-        private void Start()
+        private void OnValidate()
         {
             _card = GetComponent<Card>();
-            SetCardTexts();
+            var scriptableCard = _card.ScriptableCard;
+            SetCardTexts(scriptableCard);
             ActivateRarityBackground();
             ActivateCardFrameAndCostBubbles();
         }
 
-        private void SetCardTexts()
+        private void Start()
         {
-            _cardName.text = _card.CardName;
-            SetCardEffectTypeText();
-            _basicCost.text = _card.BasicManaCost.ToString();
-            _fireCostUpper.text = _card.FireManaCost.ToString();
-            _fireCostLower.text = _card.FireManaCost.ToString();
-            _iceCostUpper.text = _card.IceManaCost.ToString();
-            _iceCostLower.text = _card.IceManaCost.ToString();
-            _cardText.text = _card.CardDescription;
+            _card = GetComponent<Card>();
+            var scriptableCard = _card.ScriptableCard;
+            SetCardTexts(scriptableCard);
+            ActivateRarityBackground();
+            ActivateCardFrameAndCostBubbles();
+        }
+
+        private void SetCardTexts(ScriptableCard scriptableCard)
+        {
+            if (scriptableCard != null)
+            {
+                _cardName.text = scriptableCard.CardName;
+                SetCardEffectTypeText();
+                _basicCost.text = scriptableCard.BasicManaCost.ToString();
+                _fireCostUpper.text = scriptableCard.FireManaCost.ToString();
+                _fireCostLower.text = scriptableCard.FireManaCost.ToString();
+                _iceCostUpper.text = scriptableCard.IceManaCost.ToString();
+                _iceCostLower.text = scriptableCard.IceManaCost.ToString();
+                _cardText.text = scriptableCard.CardDescription;
+            }
         }
 
         private void SetCardEffectTypeText()

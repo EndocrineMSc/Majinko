@@ -102,7 +102,7 @@ namespace Utility
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
-            if (scene.name.Contains("Level"))
+            if (scene.name.Contains("Combat"))
                 StartCoroutine(WaitThenChangeState(GameState.StartLevel));
 
             if (scene.name.Contains(SceneName.MainMenu.ToString()))

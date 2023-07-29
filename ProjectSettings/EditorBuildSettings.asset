@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 5a31442bec28ffa448ce7265c19a0f9c
   - enabled: 1
-    path: Assets/Scenes/LevelOne.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
     path: Assets/Scenes/LoadingScreen.unity
     guid: d6a1030372b2d3e47991e17e4b829a20
   - enabled: 1
@@ -23,6 +20,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: c29bddb086a35e741a66b25a3ddb998b
+  - enabled: 1
+    path: Assets/Scenes/NormalCombat.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/EliteCombat.unity
+    guid: 765babb5369723e46a2aafeb50aaaf7f
   - enabled: 1
     path: Assets/Scenes/EventScenes/Event_LeyLines.unity
     guid: f7a61458c3ec32c458055366b23508ef

@@ -22,16 +22,14 @@ namespace Orbs
         private List<ScriptableOrbLayout> _orbLayoutList;
        
         //Tweening
-        private readonly float _tweenDuration = 0.5f;
-        private readonly float _tweenScaleZoom = 8f;
+        private readonly float _tweenDuration = 0.75f;
+        private readonly float _tweenScaleZoom = 12f;
         private GameObject _levelOrbSpawn;
         private readonly string LEVEL_ORB_TAG = "LevelOrbSpawn";
 
         //other
         private bool _isCheckingForRefreshOrbs;
         [SerializeField] private OrbLayoutSet _wordOneLayouts;
-        private int _recursionBreaker = 0;
-        private readonly Vector3 _impossibleOrbPosition = new(-15, 0, 0);
 
         internal float GatheredBasicManaAmountTurn { get; private set; } = 0;
         internal float GatheredFireManaAmountTurn { get; private set; } = 0;
@@ -44,14 +42,12 @@ namespace Orbs
         {
             OrbEvents.SpawnMana += OnManaSpawn;
             LevelPhaseEvents.OnStartShootingPhase += OnStartShooting;
-            LevelPhaseEvents.OnStartEnemyPhase += OnStartEnemyPhase;
         }
 
         private void OnDisable()
         {
             OrbEvents.SpawnMana -= OnManaSpawn;
             LevelPhaseEvents.OnStartShootingPhase -= OnStartShooting;
-            LevelPhaseEvents.OnStartEnemyPhase -= OnStartEnemyPhase;
         }
 
         private void Awake()
@@ -232,18 +228,16 @@ namespace Orbs
                 {
                     Vector3 randomOrbPosition = randomOrb.transform.position;
                     Orb tempOrb = Instantiate(orb, startPosition, Quaternion.identity);
-                    tempOrb.gameObject.GetComponent<Collider2D>().enabled = false;
-
                     SceneOrbList.Remove(randomOrb);
-                    Destroy(randomOrb.gameObject);
-
-                    Vector3 endScale = tempOrb.transform.localScale;
-                    tempOrb.transform.localScale = new Vector3((endScale.x + _tweenScaleZoom), (endScale.y + _tweenScaleZoom), (endScale.z + _tweenScaleZoom));
-                    tempOrb.transform.DOLocalMove(randomOrbPosition, _tweenDuration).SetEase(Ease.InOutExpo);
-                    tempOrb.transform.DOScale(endScale, _tweenDuration);
                     SceneOrbList.Add(tempOrb);
-                    yield return new WaitForSeconds(_tweenDuration);
+                    tempOrb.gameObject.GetComponent<Collider2D>().enabled = false;
+                    randomOrb.gameObject.GetComponent<Collider2D>().enabled = false;
+
+                    yield return StartCoroutine(TweenOrb(tempOrb, randomOrbPosition));
+
+
                     tempOrb.gameObject.GetComponent<Collider2D>().enabled = true;
+                    Destroy(randomOrb.gameObject);
                 }
                 else
                 {
@@ -278,6 +272,18 @@ namespace Orbs
             }
         }
 
+        private IEnumerator TweenOrb(Orb orb, Vector3 targetPosition)
+        {
+            Vector3 endScale = orb.transform.localScale;
+            orb.transform.localScale = new Vector3((endScale.x + _tweenScaleZoom), (endScale.y + _tweenScaleZoom), (endScale.z + _tweenScaleZoom));
+            orb.transform.DOLocalMove(targetPosition, _tweenDuration).SetEase(Ease.InExpo);
+            orb.transform.DOScale(endScale, _tweenDuration).SetEase(Ease.InExpo);
+            yield return new WaitForSeconds(_tweenDuration);
+            if (orb.transform.childCount > 0)
+                orb.transform.GetComponentInChildren<ParticleSystem>().Play();
+            orb.transform.DOPunchScale(endScale * 1.05f, 0.2f, 1, 1);
+        }
+
         private void OnManaSpawn(ManaType manaType, int amount)
         {
             int modifier = ManaPool.Instance.ManaCostMultiplier;
@@ -307,56 +313,7 @@ namespace Orbs
             GatheredBasicManaAmountTurn = 0;
             GatheredFireManaAmountTurn = 0;
             GatheredIceManaAmountTurn = 0;
-
-            DeleteDoubleOrbs();
         }
-
-        private void OnStartEnemyPhase()
-        {
-            DeleteDoubleOrbs();
-        }
-
-        private void DeleteDoubleOrbs()
-        {
-            var doubleOrbPosition = CheckForDoubleOrbs();
-            _recursionBreaker++;
-
-            if (doubleOrbPosition != _impossibleOrbPosition) 
-            { 
-                foreach (Orb orb in SceneOrbList)
-                {
-                    if (orb.transform.position == doubleOrbPosition)
-                    {
-                        Debug.Log("Double orb destroyed: " + orb);
-                        Destroy(orb.gameObject);
-                        break;
-                    }
-                }
-
-                if (_recursionBreaker < 50)
-                    DeleteDoubleOrbs();
-                else
-                    Debug.Log("Recursion had to be stopped in OrbManager");
-            }
-            _recursionBreaker = 0;
-        }
-
-        private Vector3 CheckForDoubleOrbs()
-        {
-            var orbPositions = new List<Vector3>();
-
-            foreach (Orb orb in SceneOrbList)
-            {
-                var orbPosition = orb.transform.position;
-
-                if (orbPositions.Contains(orbPosition))
-                    return orbPosition;
-                else
-                    orbPositions.Add(orb.transform.position);
-            }
-            return _impossibleOrbPosition;
-        }
-
 
         #endregion
 

@@ -47,6 +47,10 @@ PrefabInstance:
       propertyPath: _cardDescription
       value: 'Orb: Deal ice damage, apply freezing, minor chance to apply frozen'
       objectReference: {fileID: 0}
+    - target: {fileID: 961337254600276352, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1811972980392909961, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: _cardName
       value: Icicle
@@ -71,10 +75,22 @@ PrefabInstance:
       propertyPath: _cardDescription
       value: Icicle
       objectReference: {fileID: 0}
+    - target: {fileID: 2879732687506022149, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3717780021009078597, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 355abc4849f40db4ebea52aa4591e81e, type: 3}
+    - target: {fileID: 3757311439060390686, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4562639032885138839, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4812993297873364277, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -159,9 +175,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5631585529099602687, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_text
+      value: 'Orb: Deal 10 ice damage
+
+        Apply 5 freezing
+
+        Small chance
+        to apply frozen'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5993524722849724809, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6398440697363082782, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Name
       value: IcicleOrbCardPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 6966083017548400910, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_text
+      value: Orbshifter - 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7648711437733863079, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397974088000421483, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731561545919723125, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_text
+      value: Icicle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}

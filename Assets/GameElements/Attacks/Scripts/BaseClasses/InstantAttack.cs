@@ -16,6 +16,12 @@ namespace Attacks
 
         #region Functions
 
+        protected override void Awake()
+        {
+            base.Awake();
+            StartCoroutine(WaitForAnimationEnd());
+        }
+
         internal override void ShootAttack(Vector3 instantiatePosition, float damageModifier = 1)
         {
             if (EnemyManager.Instance.EnemiesInScene.Count > 0)
@@ -25,11 +31,11 @@ namespace Attacks
                 if (_attackOrigin == AttackOrigin.Player)
                 {
                     Player.Instance.GetComponent<PopUpSpawner>().SpawnPopUp(Bark);
-                    attack.Damage = Mathf.FloorToInt(Damage * PlayerAttackDamageManager.Instance.DamageModifierTurn);
+                    attack.Damage = Mathf.FloorToInt(_attackValues.Damage * PlayerAttackDamageManager.Instance.DamageModifierTurn);
                 }
                 else
                 {
-                    attack.Damage = Mathf.CeilToInt(Damage * damageModifier);
+                    attack.Damage = Mathf.CeilToInt(_attackValues.Damage * damageModifier);
                 }
             }
             else
@@ -40,7 +46,7 @@ namespace Attacks
 
         protected override void DestroyGameObject()
         {
-            StartCoroutine(WaitForAnimationEnd());
+            //instant attack doesnt need to trigger collision to be destroyed
         }
 
         protected IEnumerator WaitForAnimationEnd()

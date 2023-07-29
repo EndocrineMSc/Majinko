@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using PeggleWars.Characters;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 
 namespace Characters.Enemies
 {
@@ -21,6 +23,7 @@ namespace Characters.Enemies
         private Image _intangibleStatus;
         private Image _temperatureSicknessStatus;
         private Image _enragedStatus;
+        private List<GameObject> _statusObjects;
         private int _lastUpdateHealth;
         private int _lastUpdateFireStacks;
         private int _lastUpdateIceStacks;
@@ -44,6 +47,7 @@ namespace Characters.Enemies
         [SerializeField] private GameObject _enragedPrefab;
         [SerializeField] private GameObject _layoutGroup;
 
+
         #endregion
 
         #region Functions
@@ -54,6 +58,7 @@ namespace Characters.Enemies
             _healthPoints = GetComponentInChildren<TextMeshProUGUI>();
             _heart = GetComponentInChildren<Image>();
             _canvas = GetComponent<Canvas>();
+            _statusObjects ??= new();
         }
 
         private void OnEnable()
@@ -64,6 +69,7 @@ namespace Characters.Enemies
         private void OnDisable()
         {
             EnemyEvents.OnEnemyFinishedMoving -= UpdateCanvasLayerOrder;
+            transform.DOKill();
         }
 
         private void Start()
@@ -88,6 +94,8 @@ namespace Characters.Enemies
 
             if (_enemyCanBeIntangible)
                 UpdateIntangible();
+
+            FadeOutStatusObjects(); //only fades if health <= 0
         }
 
         private void UpdateHealth()
@@ -123,6 +131,7 @@ namespace Characters.Enemies
                     _isBurning = true;
                     _burningStatus = Instantiate(_burningPrefab, _layoutGroup.transform).GetComponent<Image>();
                     _burningStatus.rectTransform.SetParent(_layoutGroup.GetComponent<RectTransform>());
+                    _statusObjects.Add(_burningStatus.gameObject);
                     UpdateFireStacks();
                 }
             }
@@ -130,6 +139,7 @@ namespace Characters.Enemies
             if (_parentEnemy.BurningStacks <= 0 && _isBurning)
             {
                 _isBurning = false;
+                _statusObjects.Remove(_burningStatus.gameObject);
                 Destroy(_burningStatus.gameObject);
             }
         }
@@ -150,6 +160,7 @@ namespace Characters.Enemies
                     _isFreezing = true;
                     _freezingStatus = Instantiate(_freezingPrefab, _layoutGroup.transform).GetComponent<Image>();
                     _freezingStatus.rectTransform.SetParent(_layoutGroup.GetComponent<RectTransform>());
+                    _statusObjects.Add(_freezingStatus.gameObject);
                     UpdateIceStacks();
                 }
             }
@@ -157,6 +168,7 @@ namespace Characters.Enemies
             if (_parentEnemy.FreezingStacks <= 0 && _isFreezing)
             {
                 _isFreezing = false;
+                _statusObjects.Remove(_freezingStatus.gameObject);
                 Destroy(_freezingStatus.gameObject);
             }
         }
@@ -177,6 +189,7 @@ namespace Characters.Enemies
                     _isFrozen = true;
                     _frozenStatus = Instantiate(_frozenPrefab, _layoutGroup.transform).GetComponent<Image>();
                     _frozenStatus.rectTransform.SetParent(_layoutGroup.GetComponent<RectTransform>());
+                    _statusObjects.Add(_frozenStatus.gameObject);
                     UpdateFrozenStacks();
                 }
             }
@@ -184,6 +197,7 @@ namespace Characters.Enemies
             if (_parentEnemy.FrozenForTurns <= 0 && _isFrozen)
             {
                 _isFrozen = false;
+                _statusObjects.Remove(_frozenStatus.gameObject);
                 Destroy(_frozenStatus.gameObject);
             }
         }
@@ -204,6 +218,7 @@ namespace Characters.Enemies
                     _isIntangible = true;
                     _intangibleStatus = Instantiate(_intangiblePrefab, _layoutGroup.transform).GetComponent<Image>();
                     _intangibleStatus.rectTransform.SetParent(_layoutGroup.GetComponent<RectTransform>());
+                    _statusObjects.Add(_intangibleStatus.gameObject);
                     UpdateIntangibleStacks();
                 }
             }
@@ -211,6 +226,7 @@ namespace Characters.Enemies
             if (_intangibleEnemy.IntangibleStacks <= 0 && _isIntangible)
             {
                 _isIntangible = false;
+                _statusObjects.Remove(_intangibleStatus.gameObject);
                 Destroy(_intangibleStatus.gameObject);
             }
         }
@@ -231,6 +247,7 @@ namespace Characters.Enemies
                     _isTemperatureSick = true;
                     _temperatureSicknessStatus = Instantiate(_temperatureSicknessPrefab, _layoutGroup.transform).GetComponent<Image>();
                     _temperatureSicknessStatus.rectTransform.SetParent(_layoutGroup.GetComponent<RectTransform>());
+                    _statusObjects.Add(_temperatureSicknessStatus.gameObject);
                     UpdateTemperatureSicknessStacks();
                 }
             }
@@ -238,6 +255,7 @@ namespace Characters.Enemies
             if (_parentEnemy.TemperatureSicknessStacks <= 0 && _isTemperatureSick)
             {
                 _isTemperatureSick = false;
+                _statusObjects.Remove(_temperatureSicknessStatus.gameObject);
                 Destroy(_temperatureSicknessStatus.gameObject);
             }
         }
@@ -258,6 +276,7 @@ namespace Characters.Enemies
                     _isEnraged = true;
                     _enragedStatus = Instantiate(_enragedPrefab, _layoutGroup.transform).GetComponent<Image>();
                     _enragedStatus.rectTransform.SetParent(_layoutGroup.GetComponent<RectTransform>());
+                    _statusObjects.Add(_enragedStatus.gameObject);
                     UpdateEnragedStacks();
                 }
             }
@@ -265,6 +284,7 @@ namespace Characters.Enemies
             if (_parentEnemy.EnragedStacks <= 0 && _isEnraged)
             {
                 _isEnraged = false;
+                _statusObjects.Remove(_enragedStatus.gameObject);
                 Destroy(_enragedStatus.gameObject);
             }
         }
@@ -314,6 +334,23 @@ namespace Characters.Enemies
         private void UpdateCanvasLayerOrder()
         {
             _canvas.sortingOrder++;
+        }
+
+        private void FadeOutStatusObjects()
+        {
+            if (_parentEnemy.Health <= 0)
+            {
+                foreach (var item in _statusObjects)
+                {
+                    item.GetComponent<Image>().DOFade(0, 0.5f);
+                    item.GetComponentInChildren<TextMeshProUGUI>().DOFade(0, 0.5f);
+                }
+            }
+        }
+
+        private void OnDestroy()
+        {
+            transform.DOKill();
         }
 
         #endregion

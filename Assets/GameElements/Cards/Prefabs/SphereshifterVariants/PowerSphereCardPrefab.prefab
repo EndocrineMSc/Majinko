@@ -64,6 +64,10 @@ PrefabInstance:
       value: "High-speed sphere unaffected by gravity\nStack: \nIgnore the portal
         once"
       objectReference: {fileID: 0}
+    - target: {fileID: 626517267595753840, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1002801183830465219, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: m_text
       value: "A high-power shot unaffected by gravity. \nPlaying multiple cards will
@@ -79,12 +83,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1106698015621532881, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1847219591767049647, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 8e1b3c46312396a4ab33461c58994c84, type: 3}
+    - target: {fileID: 2036460450565558032, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2249129384661500449, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: m_text
       value: Power Shot
@@ -233,7 +241,19 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3589819384034935298, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: m_text
+      value: Sphereshifter
+      objectReference: {fileID: 0}
     - target: {fileID: 3721408344032324706, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4104630386520072941, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4178339662809713839, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -245,6 +265,25 @@ PrefabInstance:
       propertyPath: m_text
       value: Utility
       objectReference: {fileID: 0}
+    - target: {fileID: 6400282074246568975, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6852096224322100701, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: m_text
+      value: Power Shot
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853490109048617127, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6953832653166478014, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: m_text
+      value: 'Travels in a straight line without losing speed
+
+        Stackable:
+        Ignore portal once for each stack'
+      objectReference: {fileID: 0}
     - target: {fileID: 7102321236157100018, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.5
@@ -292,6 +331,18 @@ PrefabInstance:
     - target: {fileID: 7584302159904148484, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -121
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589704640702947984, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8785971513895557510, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9054986049953020963, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9205060987138852272, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: m_AnchorMax.x

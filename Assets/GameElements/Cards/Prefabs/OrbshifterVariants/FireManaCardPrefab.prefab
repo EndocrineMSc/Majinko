@@ -36,6 +36,10 @@ PrefabInstance:
       value: Permanently adds a Fire Orb to the playing field. This card is removed
         from the deck completely after playing it once.
       objectReference: {fileID: 0}
+    - target: {fileID: 73129920044111499, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 808972950667333918, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_SizeDelta.x
       value: 78
@@ -56,17 +60,25 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2245462331172969983, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466896706366069840, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2663367635832773738, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_text
-      value: Orbshifter - 1
+      value: Instant
       objectReference: {fileID: 0}
     - target: {fileID: 4506381836654009946, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4746803301845425543, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4812993297873364277, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_Pivot.x
@@ -158,16 +170,19 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: d095b01b5b130484c902db18f1b364e5, type: 3}
     - target: {fileID: 5437267143115510094, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_text
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6398440697363082782, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_Name
       value: FireManaCardPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 7063799747033915138, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7670523144989857751, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_text
-      value: "Permanently adds a Fire Orb to the playing field. \n\nThis card is
-        removed from the deck completely after playing it once."
+      value: "Persistent Orb: \nGain 1 Fire Mana\nApply 1 burning"
       objectReference: {fileID: 0}
     - target: {fileID: 7670523144989857751, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_fontSize
@@ -179,7 +194,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8696175136549785397, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_text
-      value: Fire Orb
+      value: Fire Mana
+      objectReference: {fileID: 0}
+    - target: {fileID: 9135118470376897469, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -4550278420783687888, guid: 92b44770394774247acee543b7baee9f, type: 3}

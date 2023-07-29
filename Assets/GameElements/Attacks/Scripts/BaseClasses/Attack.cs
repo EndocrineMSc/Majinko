@@ -28,6 +28,11 @@ namespace Attacks
 
         #region Functions
 
+        protected virtual void Awake()
+        {
+            Damage = _attackValues.Damage;
+        }
+
         protected virtual void Start()
         {
             _playerAttackManager = PlayerAttackDamageManager.Instance;

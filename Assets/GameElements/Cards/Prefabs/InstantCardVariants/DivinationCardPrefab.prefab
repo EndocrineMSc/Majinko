@@ -69,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2663367635832773738, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_text
-      value: Utility
+      value: Instant
       objectReference: {fileID: 0}
     - target: {fileID: 4109679680946526439, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_Enabled
@@ -185,7 +185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7670523144989857751, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_text
-      value: Increases the range and possible bounces of the shot prediction.
+      value: Increases the range and bounces of the shot prediction.
       objectReference: {fileID: 0}
     - target: {fileID: 8104484355595315346, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_Enabled
