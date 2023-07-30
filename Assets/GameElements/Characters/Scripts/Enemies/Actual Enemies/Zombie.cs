@@ -40,7 +40,7 @@ namespace Characters.Enemies
         public override void SetDisplayDescription()
         {
             IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
-            displayOnScroll.DisplayDescription = "A regular old zombie. Will spawn two Rotten Mana orbs on death.";
+            displayOnScroll.DisplayDescription = "A corrupted Shroombie. Normally protectors of the forest, these corrupted sentinels now attack on sight. Will spawn two Rotten Mana orbs on death.";
         }
 
         internal override void StartMovementAnimation()
@@ -76,7 +76,8 @@ namespace Characters.Enemies
 
         protected override void TriggerDeathAnimation()
         {
-            //not available
+            if (_animator != null)
+                _animator.SetTrigger(DEATH_TRIGGER);
         }
 
         #endregion

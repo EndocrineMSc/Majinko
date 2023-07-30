@@ -235,9 +235,10 @@ namespace Orbs
 
                     yield return StartCoroutine(TweenOrb(tempOrb, randomOrbPosition));
 
-
                     tempOrb.gameObject.GetComponent<Collider2D>().enabled = true;
-                    Destroy(randomOrb.gameObject);
+
+                    if (randomOrb.gameObject != null)
+                        Destroy(randomOrb.gameObject);
                 }
                 else
                 {
