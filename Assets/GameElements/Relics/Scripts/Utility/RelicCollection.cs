@@ -22,6 +22,11 @@ namespace Relics
 
         private void OnValidate()
         {
+            BuildDictionary();
+        }
+
+        internal void BuildDictionary()
+        {
             _sortedEnum ??= new();
             _sortedObjects ??= new();
             AllRelics ??= new();
@@ -36,6 +41,7 @@ namespace Relics
             foreach (var item in AllRelics)
                 Debug.Log("Key: " + item.Key.ToString() + "Value: " + item.Value.ToString());
         }
+
 
         #endregion
     }

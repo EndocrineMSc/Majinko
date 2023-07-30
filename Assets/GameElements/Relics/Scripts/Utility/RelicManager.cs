@@ -40,6 +40,7 @@ namespace Relics
 
             _instantiatedRelics ??= new();
             _instantiatedRelicObjects ??= new();
+            _relicCollection.BuildDictionary();
             AllRelics = _relicCollection.AllRelics;
             _relicLayoutGroup = transform.GetComponentInChildren<GridLayoutGroup>();
 

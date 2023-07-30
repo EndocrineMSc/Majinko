@@ -63,8 +63,7 @@ namespace Utility
             _tutorialButton.GetComponent<Button>().onClick.AddListener(OpenTutorial);
             _quitButton.GetComponent<Button>().onClick.AddListener(QuitGame);
 
-            if (!ES3.KeyExists("GlobalDeck"))
-                _continueButton.SetActive(false);    
+            _continueButton.SetActive(!GameManager.Instance.NewRunOnly);    
         }
 
         private void OnDisable()
@@ -119,6 +118,7 @@ namespace Utility
             PlayButtonClick();
             UtilityEvents.RaiseGameReset();
             StartCoroutine(LoadWithFade(SceneName.WorldOne));
+            GameManager.Instance.SetRunAsToContinue();
         }
 
         public void QuitGame()

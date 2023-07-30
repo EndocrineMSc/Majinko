@@ -5034,71 +5034,67 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1030784497656907089, guid: b9c40a21344e4dc41b55a93c073a77f9, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1030784497656907089, guid: b9c40a21344e4dc41b55a93c073a77f9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1030784497656907089, guid: b9c40a21344e4dc41b55a93c073a77f9, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1589000473342920408, guid: b9c40a21344e4dc41b55a93c073a77f9, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1589000473342920408, guid: b9c40a21344e4dc41b55a93c073a77f9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1589000473342920408, guid: b9c40a21344e4dc41b55a93c073a77f9, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2340940929313487064, guid: b9c40a21344e4dc41b55a93c073a77f9, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2340940929313487064, guid: b9c40a21344e4dc41b55a93c073a77f9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3191927101950890053, guid: b9c40a21344e4dc41b55a93c073a77f9, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3191927101950890053, guid: b9c40a21344e4dc41b55a93c073a77f9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3191927101950890053, guid: b9c40a21344e4dc41b55a93c073a77f9, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3385360003006998198, guid: b9c40a21344e4dc41b55a93c073a77f9, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3385360003006998198, guid: b9c40a21344e4dc41b55a93c073a77f9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5346212042021847902, guid: b9c40a21344e4dc41b55a93c073a77f9, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5346212042021847902, guid: b9c40a21344e4dc41b55a93c073a77f9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5602035623837798891, guid: b9c40a21344e4dc41b55a93c073a77f9, type: 3}
       propertyPath: m_Name
       value: PauseCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 5602035623837798891, guid: b9c40a21344e4dc41b55a93c073a77f9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9029305518909504239, guid: b9c40a21344e4dc41b55a93c073a77f9, type: 3}
       propertyPath: m_Pivot.x
@@ -11189,7 +11185,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 3
-      m_TileSpriteIndex: 3
+      m_TileSpriteIndex: 4
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -11226,10 +11222,10 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 62f97be9c0091a149a314c37f3d91e87, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: 319c3e15941c52d43aead0d49ee0bda0, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: a6641f870e578194582605a9a1948bd3, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: a6641f870e578194582605a9a1948bd3, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: d580cb62d3378fa4198292cabf8aa386, type: 3}
   - m_RefCount: 4

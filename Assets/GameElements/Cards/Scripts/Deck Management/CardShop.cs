@@ -114,7 +114,6 @@ namespace Utility
                         retries++;
                         continue;
                     }
-
                     shopCardList.Add(card);
                 }               
             }
@@ -164,7 +163,6 @@ namespace Utility
                     shopCardList.Add(card);
                 }
             }
-
             return shopCardList;
         }
 
