@@ -35,7 +35,8 @@ namespace Orbs
         public override void SetDisplayDescription()
         {
             IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
-            displayOnScroll.DisplayDescription = "Upon being hit, this orb spawns Fire Mana and inflicts " + _amountBurning + " burning on the closest enemy.";
+            displayOnScroll.DisplayDescription = "<size=120%><b>Fire Mana Sphere</b><size=20%>\n\n<size=100%>Upon being hit, this orb spawns <b>1 Fire Mana</b> and inflicts " +
+                "<b>" + _amountBurning + " Burning</b> on the closest enemy.";
         }
     }
 }

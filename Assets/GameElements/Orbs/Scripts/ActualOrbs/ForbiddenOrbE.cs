@@ -10,7 +10,8 @@ namespace Orbs
         public override void SetDisplayDescription()
         {
             IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
-            displayOnScroll.DisplayDescription = "Upon being hit, the power of this dark spell orb will destroy 1 mana in each vial. " +
+            displayOnScroll.DisplayDescription = "<size=120%><b>Forbidden Sphere E</b><size=20%>\n\n<size=100%>Upon being hit, " +
+                "the power of this dark spell sphere will destroy <b>1 Mana</b> in each vial. " +
                 "However, you sense that there is more to its power...";
         }
 
@@ -18,12 +19,10 @@ namespace Orbs
         {
             SpriteRenderer spriteRenderer = _forbiddenE.GetComponent<SpriteRenderer>();
 
-            if (!spriteRenderer.enabled)
-            {
+            if (!spriteRenderer.enabled)           
                 spriteRenderer.enabled = true;
-            }
-            ManaPool manaPool = ManaPool.Instance;
-            manaPool.SpendMana(1, 1, 1);
+            
+            ManaPool.Instance.SpendMana(1, 1, 1);
             yield return null;
         }
     }

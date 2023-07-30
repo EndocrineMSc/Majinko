@@ -14,10 +14,10 @@ namespace Relics
         internal static IoliteFlowerRelic Instance { get; private set; }
         public Relic RelicEnum { get; private set; } = Relic.IoliteFlower;
 
-        public string Description => "<size=100%>Iolite Flower<size=90%>\r\n\r\n" +
+        public string Description => "<size=120%><b>Iolite Flower</b><size=20%>\n\n<size=100%>" +
             "This dark blue jewel cut in the shape of an intricate flower sparkles mysteriously" +
-            " in your hand.\r\n\r\n" +
-            "Start each level with an additional basic mana.";
+            " in your hand.<size=20%>\n\n<size=100%>" +
+            "Start each level with additional <b>1 Basic Mana</b>.";
 
         private readonly int _additionalBaseMana = 10;
 

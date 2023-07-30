@@ -15,8 +15,8 @@ namespace Relics
         internal static SacredHeartwoodRelic Instance { get; private set; }
         public Relic RelicEnum { get; private set; } = Relic.SacredHeartwood;
 
-        public string Description => "<size=100%>Sacred Heartwood<size=90%>\r\n\r\n" +
-            "This heart of a wooden, magical creature pulses with a dim, green light.\r\n\r\n" +
+        public string Description => "<size=120%><b>Sacred Heartwood</b><size=20%>\n\n<size=100%>" +
+            "This heart of a wooden, magical creature pulses with a dim, green light.<size=20%>\n\n<size=100%>" +
             "Heal 3 hp after each level.";
 
         private readonly int _healAmount = 3;

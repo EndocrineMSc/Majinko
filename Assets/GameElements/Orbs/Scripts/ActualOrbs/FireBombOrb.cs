@@ -35,8 +35,8 @@ namespace Orbs
         public override void SetDisplayDescription()
         {
             IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
-            displayOnScroll.DisplayDescription = "Will explode on impact, activating nearby orbs aswell. Enables the playes to cast a fire bomb, " +
-                "hitting all enemies and setting them on fire.";
+            displayOnScroll.DisplayDescription = "<size=120%><b>Fire Bomb Sphere</b><size=20%>\n\n<size=100%>Will explode on impact, activating nearby spheres aswell. " +
+                "Enables the playes to cast <b>Fire Bomb</b>, hitting all enemies for <b>20 damage</b> and applying <b>5 Burning</b>.";
         }
 
         internal override IEnumerator OrbEffect()

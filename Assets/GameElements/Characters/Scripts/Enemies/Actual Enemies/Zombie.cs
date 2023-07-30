@@ -40,7 +40,7 @@ namespace Characters.Enemies
         public override void SetDisplayDescription()
         {
             IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
-            displayOnScroll.DisplayDescription = "A corrupted Shroombie. Normally protectors of the forest, these corrupted sentinels now attack on sight. Will spawn two Rotten Mana orbs on death.";
+            displayOnScroll.DisplayDescription = "<size=120%><b>Corrupted Shroombie</b><size=20%>\n\n<size=100%>Normally protectors of the forest, these corrupted sentinels now attack on sight. Will spawn two <b>Rotten Mana Spheres</b> on death.";
         }
 
         internal override void StartMovementAnimation()

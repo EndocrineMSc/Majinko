@@ -32,8 +32,9 @@ namespace Orbs
         public override void SetDisplayDescription()
         {
             IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
-            displayOnScroll.DisplayDescription = "Hitting this orb will enable the player to cast a standard Mana Blitz on the closest enemy. " +
-                "One of the earliest spells taught to wizard apprentices.";
+            displayOnScroll.DisplayDescription = "<size=120%><b>Mana Blitz Sphere</b><size=20%>\n\n<size=100%>Hitting this orb will enable " +
+                "the player to cast a standard <b>Mana Blitz</b> on the closest enemy, dealing <b>10 damage</b>.\n" +
+                "One of the earliest spells taught to young witches.";
         }
 
         #endregion

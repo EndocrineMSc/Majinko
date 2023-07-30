@@ -14,9 +14,9 @@ namespace Relics
         internal static GarnetFlowerRelic Instance { get; private set; }
         public Relic RelicEnum { get; private set; } = Relic.GarnetFlower;
 
-        public string Description => "<size=100%>Garnet Flower<size=90%>\r\n\r\n" +
-            "This red jewel cut in the shape of an intricate flower feels warm in your hand.\r\n\r\n" +
-            "Start each level with an additional fire mana.\r\n";
+        public string Description => "<size=120%><b>Garnet Flower</b><size=20%>\n\n<size=100%>" +
+            "This red jewel cut in the shape of an intricate flower feels warm in your hand.<size=20%>\n\n<size=100%>" +
+            "Start each level with additional <b>1 Fire Mana</b>.";
 
         private readonly int _additionalFireMana = 10;
 

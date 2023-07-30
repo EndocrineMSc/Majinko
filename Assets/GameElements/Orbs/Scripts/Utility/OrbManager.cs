@@ -237,7 +237,7 @@ namespace Orbs
 
                     tempOrb.gameObject.GetComponent<Collider2D>().enabled = true;
 
-                    if (randomOrb.gameObject != null)
+                    if (randomOrb != null)
                         Destroy(randomOrb.gameObject);
                 }
                 else
