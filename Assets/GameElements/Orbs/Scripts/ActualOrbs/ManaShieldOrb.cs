@@ -44,7 +44,7 @@ namespace Orbs
         public override void SetDisplayDescription()
         {
             IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
-            displayOnScroll.DisplayDescription = "<size=120%><b>Mana Shield Sphere</b><size=20%>\n\n<size=100%>Hitting this orb will " +
+            displayOnScroll.DisplayDescription = "<size=120%><b>Mana Shield Orb</b><size=20%>\n\n<size=100%>Hitting this orb will " +
                 "cast <b>Mana Shield</b>, granting the player <b>10 shield</b>. \n" +
                 "One of the earliest spells taught to wizard apprentices.";
         }

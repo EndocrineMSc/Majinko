@@ -35,8 +35,8 @@ namespace Orbs
         public override void SetDisplayDescription()
         {
             IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
-            displayOnScroll.DisplayDescription = "<size=120%><b>Ice Mana Sphere</b><size=20%>\n\n<size=100%>Upon being hit, " +
-                "this sphere spawns <b>1 Ice Mana</b> and inflicts <b>" + _amountFreezing + " Freezing</b> on the closest enemy.";
+            displayOnScroll.DisplayDescription = "<size=120%><b>Ice Mana Orb</b><size=20%>\n\n<size=100%>Upon being hit, " +
+                "this orb spawns <b>1 Ice Mana</b> and inflicts <b>" + _amountFreezing + " Freezing</b> on the closest enemy.";
         }
     }
 }

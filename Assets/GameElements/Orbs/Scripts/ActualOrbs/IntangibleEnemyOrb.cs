@@ -12,7 +12,7 @@ namespace Orbs
         public override void SetDisplayDescription()
         {
             ScrollDisplayer scrollDisplayer = GetComponent<ScrollDisplayer>();
-            scrollDisplayer.DisplayDescription = "<size=120%><b>Intangible Sphere</b><size=20%>\n\n<size=100%>Will turn all enemies with the " +
+            scrollDisplayer.DisplayDescription = "<size=120%><b>Intangible Orb</b><size=20%>\n\n<size=100%>Will turn all enemies with the " +
                 "ability to do so <b>Intangible</b> upon being hit. This prevents them from being hit by most attacks.";
         }
 

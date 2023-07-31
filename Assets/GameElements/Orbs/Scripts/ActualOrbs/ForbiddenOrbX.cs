@@ -10,8 +10,8 @@ namespace Orbs
         public override void SetDisplayDescription()
         {
             IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
-            displayOnScroll.DisplayDescription = "<size=120%><b>Forbidden Sphere X</b><size=20%>\n\n<size=100%>Upon being hit, " +
-                "the power of this dark spell sphere will inactivate a random sphere in the <b>Arena</b>. " +
+            displayOnScroll.DisplayDescription = "<size=120%><b>Forbidden Orb X</b><size=20%>\n\n<size=100%>Upon being hit, " +
+                "the power of this dark spell orb will inactivate a random orb in the <b>Arena</b>. " +
                 "However, you sense that there is more to its power...";
         }
 

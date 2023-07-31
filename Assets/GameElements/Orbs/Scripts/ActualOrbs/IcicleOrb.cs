@@ -31,7 +31,7 @@ namespace Orbs
         public override void SetDisplayDescription()
         {
             IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
-            displayOnScroll.DisplayDescription = "<size=120%><b>Icicle Sphere</b><size=20%>\n\n<size=100%>Hitting this orb will cast an " +
+            displayOnScroll.DisplayDescription = "<size=120%><b>Icicle Orb</b><size=20%>\n\n<size=100%>Hitting this orb will cast an " +
                 "<b>Icicle</b> at the first enemy, dealing 10 damage and applying <b>10 Freezing</b>." +
                 " Has a chance to apply <b>Frozen</b>.";
         }

@@ -14,7 +14,7 @@ namespace Spheres
 
         internal int NumberOfIndicators { get; set; }       
         internal int MaxIndicatorCollisions { get; set; }
-        private readonly int _maxNumberOfIndicatorsBaseline = 3;
+        private readonly int _maxNumberOfIndicatorsBaseline = 1;
         private readonly int _maxIndicatorsCollisionsBaseline = 1;
 
         internal List<Sphere> AllSpheres { get; private set; }
