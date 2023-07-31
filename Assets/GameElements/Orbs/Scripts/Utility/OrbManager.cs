@@ -7,6 +7,7 @@ using System.Collections;
 using Audio;
 using Utility.TurnManagement;
 using ManaManagement;
+using Utility;
 
 namespace Orbs
 {
@@ -280,9 +281,14 @@ namespace Orbs
             orb.transform.DOLocalMove(targetPosition, _tweenDuration).SetEase(Ease.InExpo);
             orb.transform.DOScale(endScale, _tweenDuration).SetEase(Ease.InExpo);
             yield return new WaitForSeconds(_tweenDuration);
+            
             if (orb.transform.childCount > 0)
                 orb.transform.GetComponentInChildren<ParticleSystem>().Play();
+
             orb.transform.DOPunchScale(endScale * 1.05f, 0.2f, 1, 1);
+
+            if (ScreenShaker.Instance != null)
+                ScreenShaker.Instance.ShakeCamera(0.5f, 0.05f);
         }
 
         private void OnManaSpawn(ManaType manaType, int amount)

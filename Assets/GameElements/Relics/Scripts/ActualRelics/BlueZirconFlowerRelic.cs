@@ -17,7 +17,7 @@ namespace Relics
         public string Description { get; } = "<size=120%><b>Blue Zircon Flower</b><size=20%>\n\n<size=100%>" +
             "This light blue jewel cut in the shape " +
             "of an intricate flower feels cold in your hand.<size=20%>\n\n<size=100%>" +
-            "Start each level with additional <b>1 Ice Mana</n>.";
+            "Start each level with additional <b>1 Ice Mana</b>.";
 
         private readonly int _additionalIceMana = 10;
 

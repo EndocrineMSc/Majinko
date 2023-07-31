@@ -21,9 +21,6 @@ namespace Relics
 
         private readonly int _additionalBaseMana = 10;
 
-        //For displaying on scroll
-        [SerializeField, TextArea] private string _displayDescription;
-
         #endregion
 
         #region Functions
@@ -42,7 +39,7 @@ namespace Relics
             image.enabled = (SceneManager.GetActiveScene().name.Contains("Combat"));
 
             ScrollDisplayer displayer = GetComponent<ScrollDisplayer>();
-            displayer.DisplayDescription = _displayDescription;
+            displayer.DisplayDescription = Description;
             displayer.DisplayScale = ScrollDisplayScales.RelicDisplayScale;
 
             OrbEvents.RaiseSpawnMana(ManaType.BasicMana, _additionalBaseMana);
