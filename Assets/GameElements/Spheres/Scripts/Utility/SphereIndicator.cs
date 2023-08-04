@@ -35,5 +35,13 @@ namespace Spheres
                 Destroy(gameObject);
             }
         }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.name.Contains("Portal"))
+                Destroy(gameObject);
+
+            //ToDo: Disable for stacked power sphere
+        }
     }
 }

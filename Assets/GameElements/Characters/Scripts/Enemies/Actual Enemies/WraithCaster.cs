@@ -55,8 +55,8 @@ namespace Characters.Enemies
         public override void SetDisplayDescription()
         {
             IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
-            displayOnScroll.DisplayDescription = "A minor wraith. Most likely created out of one of your former apprentice compatriots." +
-                "Will attack every other turn. Spawns intangible orbs in the arena granting them intagible when the orbs are hit.";
+            displayOnScroll.DisplayDescription = "<size=120%><b>Leaf Mage</b><size=20%>\n\n<size=100%>These magical guardians of the forest rustle softly in the wind. While usually peaceful, something seems to have agitated them." +
+                " Will attack and spawn an <b>Intangible Sphere</b> every other turn. They will become intangible when these orbs are hit.";
         }
 
         #region Intangible

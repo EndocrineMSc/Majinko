@@ -22,7 +22,7 @@ namespace Spheres
         //fields for indicators
         [SerializeField] protected GameObject _shotIndicatorPrefab;
         protected List<GameObject> _indicators = new();
-        protected float _indicatorFrequency = 0.15f;
+        protected float _indicatorFrequency = 0.3f;
         protected bool _waitingForCoroutine;
 
         //fields for Rotation to mouse

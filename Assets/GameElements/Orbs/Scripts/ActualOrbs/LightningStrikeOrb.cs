@@ -31,7 +31,8 @@ namespace Orbs
         public override void SetDisplayDescription()
         {
             IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
-            displayOnScroll.DisplayDescription = "Hitting this orb will enable the player to cast a \"Lightning Strike\" on the farthest enemy.";
+            displayOnScroll.DisplayDescription = "<size=120%><b>Lightning Strike Orb</b><size=20%>\n\n<size=100%>Hitting this orb will enable " +
+                "the player to cast a <b>Lightning Strike</b> on the farthest enemy, dealing <b>40 damage</b>";
         }
 
         #endregion

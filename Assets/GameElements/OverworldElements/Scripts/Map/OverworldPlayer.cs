@@ -63,6 +63,7 @@ namespace Overworld
         {
             Vector3 targetPosition = overworldButton.GetComponent<RectTransform>().position;
             _playerTransform.DOMove(targetPosition, _tweenDuration).SetEase(Ease.InBack);
+            GetComponentInChildren<Animator>().SetTrigger("Walk");
 
             SetNewOverworldPosition(overworldButton);
             UtilityEvents.RaiseOverWorldPlayerPositionChange();

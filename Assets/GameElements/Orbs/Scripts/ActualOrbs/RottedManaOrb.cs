@@ -8,7 +8,8 @@ namespace Orbs
         public override void SetDisplayDescription()
         {
             IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
-            displayOnScroll.DisplayDescription = "Upon being hit, this orb spawns \"Rotted Mana\". \nWhen consumed to play cards, player damage is lowered that turn.";
+            displayOnScroll.DisplayDescription = "<size=120%><b>Rotten Mana Orbs</b><size=20%>\n\n<size=100%>Upon being hit, this orb spawns " +
+                "<b>1 Rotten Mana</b>. \nWhen consumed to play cards, player damage is lowered that turn depending on the amount <b>Rotten Mana</b> consumed.";
         }
 
         protected override void AdditionalEffectsOnCollision()

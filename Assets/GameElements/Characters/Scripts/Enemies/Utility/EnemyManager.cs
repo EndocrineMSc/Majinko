@@ -56,12 +56,15 @@ namespace Characters.Enemies
                 {
                     if (y == 0)
                     {
-                        Vector2 possibleCharacterPositionOnScreen = new((x + xPositionOffset) * cellWidth, yLowerRow);
-                        Vector2 possibleCharacterPositionAsWorldPoint = camera.ScreenToWorldPoint(possibleCharacterPositionOnScreen);
-                        EnemyPositions[y, x] = new Vector3(possibleCharacterPositionAsWorldPoint.x, possibleCharacterPositionAsWorldPoint.y, -1);
+                        Vector2 possiblePositionOnX = new((x + xPositionOffset) * cellWidth, 0);
+                        Vector2 possibleWorldPositionOnX = camera.ScreenToWorldPoint(possiblePositionOnX);
+                        Vector2 possibleWorldPosition = new(possibleWorldPositionOnX.x, 7.74f);
+                        EnemyPositions[y, x] = new Vector3(possibleWorldPosition.x, possibleWorldPosition.y, -1);
                     }
                     else
                     {
+                        //was supposed to be flying units - which I don't think I'll be doing
+                        //deprecated, if you want to use this set a static Y position instead of calculating it dynamically
                         Vector2 possibleCharacterPositionOnScreen = new((x + xPositionOffset) * cellWidth, yUpperRow);
                         Vector2 possibleCharacterPositionAsWorldPoint = camera.ScreenToWorldPoint(possibleCharacterPositionOnScreen);
                         EnemyPositions[y, x] = new Vector3(possibleCharacterPositionAsWorldPoint.x, possibleCharacterPositionAsWorldPoint.y, -1);

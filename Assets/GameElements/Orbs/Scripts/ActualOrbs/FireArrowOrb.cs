@@ -32,8 +32,8 @@ namespace Orbs
         public override void SetDisplayDescription()
         {
             IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
-            displayOnScroll.DisplayDescription = "Hitting this orb will enable the player to cast a fire arrow on the closest enemy. " +
-                "This will apply burning to the target.";
+            displayOnScroll.DisplayDescription = "<size=120%><b>Fire Arrow Orb</b><size=20%>\n\n<size=100%>Hitting this orb will enable the player to cast a fire arrow on the closest enemy. " +
+                "This will apply 5 stacks of <b>Burning</b> to the target.";
         }
 
         #endregion

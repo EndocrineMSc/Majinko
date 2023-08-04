@@ -28,6 +28,7 @@ namespace Attacks
 
         protected override void OnHitPolish()
         {
+            base.OnHitPolish();
             AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0103_Blunt_Spell_Impact);
         }
 
@@ -49,6 +50,7 @@ namespace Attacks
             if (xIndexInEnemyPositions < rightMostEnemyPosition)
             {
                 Vector2 nextPosition = EnemyManager.Instance.EnemyPositions[0, xIndexInEnemyPositions + 1];
+                OnHitPolish();
                 yield return new WaitForSeconds(_timeOfExistance / 3);
                 ShootAttack(nextPosition);
             }

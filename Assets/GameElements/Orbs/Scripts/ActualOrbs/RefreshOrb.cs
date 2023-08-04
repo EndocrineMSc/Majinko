@@ -30,7 +30,8 @@ namespace Orbs
         public override void SetDisplayDescription()
         {
             IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
-            displayOnScroll.DisplayDescription = "Reactivates all orbs.";
+            displayOnScroll.DisplayDescription = "<size=120%><b>Refresh Orb</b><size=20%>\n\n<size=100%>" +
+                "Reactivates all orbs in the <b>Arena</b> when hit.";
         }
 
         #endregion

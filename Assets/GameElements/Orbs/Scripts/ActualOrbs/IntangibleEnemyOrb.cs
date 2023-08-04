@@ -12,8 +12,8 @@ namespace Orbs
         public override void SetDisplayDescription()
         {
             ScrollDisplayer scrollDisplayer = GetComponent<ScrollDisplayer>();
-            scrollDisplayer.DisplayDescription = "Curse Orb. \n Will turn all enemies with the ability to do so intangible upon being hit." +
-                "\n \nYou feel the remnants of a soul trapped in this orb.";
+            scrollDisplayer.DisplayDescription = "<size=120%><b>Intangible Orb</b><size=20%>\n\n<size=100%>Will turn all enemies with the " +
+                "ability to do so <b>Intangible</b> upon being hit. This prevents them from being hit by most attacks.";
         }
 
         protected override void AdditionalEffectsOnCollision()
@@ -24,12 +24,9 @@ namespace Orbs
         internal override IEnumerator OrbEffect()
         {
             foreach(Enemy enemy in EnemyManager.Instance.EnemiesInScene)
-            {
                 if(enemy.TryGetComponent<ICanBeIntangible>(out ICanBeIntangible intangibleEnemy))
-                {
                     intangibleEnemy.SetIntangible();
-                }
-            }
+
             yield return null;
         }
 

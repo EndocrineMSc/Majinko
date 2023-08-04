@@ -8,7 +8,7 @@ namespace Orbs
         public override void SetDisplayDescription()
         {
             IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
-            displayOnScroll.DisplayDescription = "Upon being hit, this orb spawns \"Basic Mana\". The most basic form of all magic orbs.";
+            displayOnScroll.DisplayDescription = "<size=120%><b>Base Mana Orb</b><size=20%>\n\n<size=100%>Upon being hit, this orb spawns <b>Basic Mana</b>. The most basic form of all magic orbs.";
         }
 
         internal override IEnumerator OrbEffect()

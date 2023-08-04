@@ -58,7 +58,14 @@ namespace Attacks
 
         protected abstract void AdditionalEffectsOnImpact();
 
-        protected abstract void OnHitPolish();
+        protected virtual void OnHitPolish()
+        {
+            float amplitude = 1 + Damage / 10;
+            float shakeTime = (float)Damage / 100;
+            
+            if (ScreenShaker.Instance != null)
+                ScreenShaker.Instance.ShakeCamera(amplitude, shakeTime);
+        }
 
         protected virtual void DestroyGameObject()
         {

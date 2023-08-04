@@ -21,6 +21,8 @@ namespace Utility
             if (FadeCanvas.Instance != null)
                 FadeCanvas.Instance.FadeToBlack();
 
+            UtilityEvents.RaiseGameReset();
+
             StartCoroutine(LoadAfterDelay());
         }
 

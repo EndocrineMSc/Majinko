@@ -19,11 +19,13 @@ namespace Attacks
 
         protected override void OnHitPolish()
         {
+            base.OnHitPolish();
             AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0103_Blunt_Spell_Impact);
         }
 
         public void HandleAOE()
         {
+            OnHitPolish();
             foreach (Enemy enemy in EnemyManager.Instance.EnemiesInScene)
             {
                 enemy.TakeDamage(_attackValues.Damage);

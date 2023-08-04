@@ -14,6 +14,8 @@ namespace Utility
 
         internal static GameManager Instance { get; private set; }
         private AudioManager _audioManager;
+        internal bool NewRunOnly { get; private set; } = true;
+        private readonly string SAVE_PATH = "New Run Bool";
 
         [SerializeField] private GameState _gameState;
 
@@ -44,6 +46,9 @@ namespace Utility
             }
             else
                 Destroy(gameObject);
+
+            if (ES3.KeyExists(SAVE_PATH))
+                NewRunOnly = ES3.Load<bool>(SAVE_PATH);
         }
 
         private void Start()
@@ -127,6 +132,17 @@ namespace Utility
         private void OnGameReset()
         {
             LoadHelper.DeleteSceneKey();
+            NewRunOnly = true;
+        }
+
+        private void OnApplicationQuit()
+        {
+            ES3.Save<bool>(SAVE_PATH, NewRunOnly);
+        }
+
+        internal void SetRunAsToContinue()
+        {
+            NewRunOnly = false;
         }
 
         #endregion

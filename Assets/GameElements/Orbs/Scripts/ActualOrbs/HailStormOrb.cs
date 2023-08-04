@@ -32,7 +32,8 @@ namespace Orbs
         public override void SetDisplayDescription()
         {
             IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
-            displayOnScroll.DisplayDescription = "Will cast a hail storm, hitting all enemies and applying freezing on them. Has a moderate change to also apply frozen to each enemy.";
+            displayOnScroll.DisplayDescription = "<size=120%><b>Hail Storm Orb</b><size=20%>\n\n<size=100%>Will cast a <b>Hail Storm</b>, " +
+                "hitting all enemies for <b>10 damage</b> and applying <b>10 Freezing</b> on them. Has a moderate change to also apply <b>Frozen</b> to each enemy.";
         }
 
         #endregion
