@@ -8,21 +8,14 @@ namespace Attacks
     {
         public override string Bark { get; } = "Mana Blitz!";
 
-        protected override void AdditionalEffectsOnImpact(GameObject target)
+        protected override void AdditionalDamageEffects(GameObject target)
         {
             //none yet
         }
 
-        //Do special stuff in here
-        protected override void Awake()
-        {
-            base.Awake();
-            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0101_ManaBlitz_Shot);
-        }
-
         protected override void PlayAwakeSound()
         {
-            throw new System.NotImplementedException();
+            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0101_ManaBlitz_Shot);
         }
 
         protected override void PlayHitSound()

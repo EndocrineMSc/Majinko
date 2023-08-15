@@ -2,6 +2,7 @@ using Characters.Enemies;
 using Utility;
 using System.Collections;
 using UnityEngine;
+using Attacks;
 
 namespace Orbs
 {
@@ -24,7 +25,8 @@ namespace Orbs
                 enemy.ApplyBurning(_amountBurning);
             }
             yield return new WaitForSeconds(0.1f);
-            OrbEvents.RaiseEffectEnd();
+            AttackEvents.RaiseAttackFinished();
+            Destroy(gameObject);
         }
 
         protected override void AdditionalEffectsOnCollision()

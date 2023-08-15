@@ -42,7 +42,8 @@ namespace Orbs
         internal override IEnumerator OrbEffect()
         {
             _fireBomb.ShootAttack(EnemyManager.Instance.EnemyPositions[0, 0]);
-            yield return new WaitForSeconds(0.2f);
+            yield return null;
+            Destroy(gameObject);
         }
 
         protected override IEnumerator DestroyOrbWithDelay()

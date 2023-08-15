@@ -11,8 +11,9 @@ namespace Attacks
     {
         #region Fields and Properties
 
-        protected float _attackFlySpeed = 10;
+        protected float _attackFlySpeed = 50;
         protected float _xInstantiateOffSet = 0.4f;
+        protected readonly string BORDER_TAG = "ProjectileBorder";
 
         #endregion
 
@@ -30,17 +31,21 @@ namespace Attacks
             {
                 IDamagable damagableTarget = target.GetComponent<IDamagable>();
                 damagableTarget?.TakeDamage(Damage);
-                OnHitPolish();
-                AdditionalEffectsOnImpact(target);
+                OnHitPolish(Damage);
+                AdditionalDamageEffects(target);
 
-                if (_attackOrigin == AttackOrigin.Player)  
-                    OrbEvents.RaiseEffectEnd();
+                if (_attackOrigin == AttackOrigin.Player)
+                    RaiseAttackFinished();
 
                 Destroy(gameObject);
             }
-        }
 
-        protected abstract void AdditionalEffectsOnImpact(GameObject target);
+            if (target.CompareTag(BORDER_TAG))
+            {
+                RaiseAttackFinished();
+                Destroy(gameObject);
+            }
+        }
 
         internal override void ShootAttack(Vector3 instantiatePosition, float damageModifier = 1)
         {

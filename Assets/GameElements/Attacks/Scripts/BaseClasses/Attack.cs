@@ -43,10 +43,10 @@ namespace Attacks
 
         internal abstract void ShootAttack(Vector3 instantiatePosition, float damageModifier = 1);
 
-        protected virtual void OnHitPolish()
+        protected virtual void OnHitPolish(float damage)
         {
-            float amplitude = 1 + Damage / 10;
-            float shakeTime = (float)Damage / 100;
+            float amplitude = 1 + damage / 10;
+            float shakeTime = (float)damage / 100;
             
             if (ScreenShaker.Instance != null)
                 ScreenShaker.Instance.ShakeCamera(amplitude, shakeTime);
@@ -54,9 +54,16 @@ namespace Attacks
             PlayHitSound();
         }
 
+        protected abstract void AdditionalDamageEffects(GameObject target);
+
         protected abstract void PlayAwakeSound();
 
         protected abstract void PlayHitSound();
+
+        protected virtual void RaiseAttackFinished()
+        {
+            AttackEvents.RaiseAttackFinished();
+        }
 
         #endregion
     }

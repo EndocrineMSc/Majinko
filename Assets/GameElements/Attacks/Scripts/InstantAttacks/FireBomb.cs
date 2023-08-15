@@ -1,30 +1,15 @@
 using Audio;
 using Characters.Enemies;
 using UnityEngine;
-using Characters;
 using System.Collections;
-using System.Collections.Generic;
 
 namespace Attacks
 {
-    internal class FireBomb : InstantAttack
+    internal class FireBomb : AreaAttack
     {
         public override string Bark { get; } = "Fire Bomb!";
 
-        //Do special stuff in here
-        protected override void Awake()
-        {
-            base.Awake();
-            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0101_ManaBlitz_Shot);
-        }
-
-        internal override void ShootAttack(Vector3 instantiatePosition, float damageModifier = 1)
-        {
-            FireBomb currentBomb = Instantiate(this, instantiatePosition, Quaternion.identity);
-            currentBomb.HandleAOE(damageModifier);
-        }
-
-        public void HandleAOE(float damageModifier)
+        protected override void HandleAOE(float damageModifier)
         {
             StartCoroutine(InstantiateExplosions(damageModifier));
         }
@@ -37,41 +22,14 @@ namespace Attacks
             if (xIndexInEnemyPositions < rightMostEnemyPosition)
             {
                 Vector2 nextPosition = EnemyManager.Instance.EnemyPositions[0, xIndexInEnemyPositions + 1];
-                OnHitPolish();
+                OnHitPolish(damageModifier * _attackValues.Damage);
                 yield return new WaitForSeconds(_timeOfExistance / 3);
                 ShootAttack(nextPosition);
             }
             else
             {
-                DealExplosionDamage(damageModifier);
-            }
-        }
-
-        protected void DealExplosionDamage(float damageModifier)
-        {
-            int amountEnemies = EnemyManager.Instance.EnemiesInScene.Count;
-            List<Enemy> enemyList = EnemyManager.Instance.EnemiesInScene;
-            Damage = Mathf.CeilToInt(Damage * damageModifier);
-
-            for (int i = 0; i < amountEnemies; i++)
-            {
-                if (i < EnemyManager.Instance.EnemiesInScene.Count)
-                {
-                    Enemy currentEnemy = enemyList[i];
-                    if (currentEnemy != null)
-                    {
-                        bool isIntangible = false; 
-
-                        if (currentEnemy.TryGetComponent(out ICanBeIntangible intangibleEnemy))
-                            isIntangible = intangibleEnemy.IntangibleStacks > 0;
-
-                        if (!isIntangible)
-                        {
-                            currentEnemy.TakeDamage(Damage);
-                            currentEnemy.ApplyBurning(_attackValues.BurningStacks);
-                        }
-                    }
-                }
+                IterateEnemiesForDamage(damageModifier);
+                RaiseAttackFinished();
             }
         }
 
@@ -91,12 +49,26 @@ namespace Attacks
 
         protected override void PlayHitSound()
         {
-            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0103_Blunt_Spell_Impact);
+            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0111_FireBomb);
         }
 
         protected override void PlayAwakeSound()
         {
             //only one sound needed for this special attack (hit sound)
+        }
+
+        protected override void AdditionalDamageEffects(GameObject target)
+        {
+            if (target.TryGetComponent<Enemy>(out var enemy))
+                enemy.ApplyBurning(_attackValues.BurningStacks);
+        }
+
+        //Moved RaiseAttackFinished to Explosionhandling,
+        //only last explosion triggers the event now
+        protected override IEnumerator HandleLifeTime()
+        {
+            yield return new WaitForSeconds(_timeOfExistance);
+            Destroy(gameObject);
         }
     }
 }

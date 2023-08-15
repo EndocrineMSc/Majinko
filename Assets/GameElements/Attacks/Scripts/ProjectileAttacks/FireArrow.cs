@@ -8,7 +8,7 @@ namespace Attacks
     {
         public override string Bark { get; } = "Fire Arrow!";
 
-        protected override void AdditionalEffectsOnImpact(GameObject target)
+        protected override void AdditionalDamageEffects(GameObject target)
         { 
             if (target.TryGetComponent<Enemy>(out var enemy))
                 enemy.ApplyBurning(_attackValues.BurningStacks);
@@ -16,12 +16,12 @@ namespace Attacks
 
         protected override void PlayAwakeSound()
         {
-            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0101_ManaBlitz_Shot);
+            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0109_FireArrow_Shot);
         }
 
         protected override void PlayHitSound()
         {
-            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0103_Blunt_Spell_Impact);
+            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0105_FireArrow_Impact);
         }
     }
 }

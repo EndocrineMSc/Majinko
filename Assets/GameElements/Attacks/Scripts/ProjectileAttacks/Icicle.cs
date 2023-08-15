@@ -8,13 +8,7 @@ namespace Attacks
     {
         public override string Bark { get; } = "Icicle!";
 
-        protected override void OnHitPolish()
-        {
-            base.OnHitPolish();
-            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0103_Blunt_Spell_Impact);
-        }
-
-        protected override void AdditionalEffectsOnImpact(GameObject target)
+        protected override void AdditionalDamageEffects(GameObject target)
         {
             if (target.TryGetComponent<Enemy>(out var enemy))
             {
@@ -26,14 +20,15 @@ namespace Attacks
             }
         }
 
-        protected override void PlayHitSound()
-        {
-            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0103_Blunt_Spell_Impact);
-        }
-
         protected override void PlayAwakeSound()
         {
-            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0101_ManaBlitz_Shot);
+            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0106_Icicle_Shot);
         }
+
+        protected override void PlayHitSound()
+        {
+            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0107_Icicle_Impact);
+        }
+
     }
 }

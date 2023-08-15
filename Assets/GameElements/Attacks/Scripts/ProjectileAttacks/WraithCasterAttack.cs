@@ -7,9 +7,14 @@ namespace Attacks
     {
         public override string Bark { get; } = "Whoh...";
 
-        protected override void AdditionalEffectsOnImpact(GameObject target)
+        protected override void AdditionalDamageEffects(GameObject target)
         {
             //none
+        }
+
+        protected override void PlayAwakeSound()
+        {
+            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0108_WraithCaster_Shot);
         }
 
         protected override void PlayHitSound()
@@ -17,9 +22,5 @@ namespace Attacks
             AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0103_Blunt_Spell_Impact);
         }
 
-        protected override void PlayAwakeSound()
-        {
-            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0101_ManaBlitz_Shot);
-        }
     }
 }

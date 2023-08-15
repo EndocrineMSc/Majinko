@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Utility.TurnManagement;
 using Characters;
+using Attacks;
 
 namespace Orbs
 {
@@ -17,6 +18,7 @@ namespace Orbs
         private Vector2 _actionOrbSpawn;
         private float _xOrbOffset;
         private readonly string SPAWNPOINT_PARAM = "ActionOrbSpawn";
+        private bool _attacksFinished;
 
         #endregion
 
@@ -38,12 +40,35 @@ namespace Orbs
 
         private void OnEnable()
         {
-            LevelPhaseEvents.OnStartPlayerAttackPhase += OnPlayerPhaseStart;
+            LevelPhaseEvents.OnStartPlayerAttackPhase += HandleOrbAction;
+            AttackEvents.OnAttackFinished += HandleOrbAction;
         }
 
         private void OnDisable()
         {
-            LevelPhaseEvents.OnStartPlayerAttackPhase -= OnPlayerPhaseStart;
+            LevelPhaseEvents.OnStartPlayerAttackPhase -= HandleOrbAction;
+            AttackEvents.OnAttackFinished -= HandleOrbAction;
+        }
+
+        private void HandleOrbAction()
+        {
+            StartCoroutine(DelayedOrbEffect());
+        }
+
+        private IEnumerator DelayedOrbEffect()
+        {
+            yield return new WaitForSeconds(0.5f);
+            if (_orbActions.Count > 0)
+            {
+                var orb = _orbActions[0];
+                StartCoroutine(orb.OrbEffect());
+                _orbActions.RemoveAt(0);
+            }
+            else
+            {
+                if (!_attacksFinished)
+                    StartCoroutine(StartNextPhaseWithDelay());
+            }
         }
 
         private Vector2 SetActionOrbSpawn()
@@ -61,34 +86,21 @@ namespace Orbs
             return xOffSet;
         }
 
-        private void OnPlayerPhaseStart()
-        {
-            StartCoroutine(CheckOrbActions());
-        }
-
-        private IEnumerator CheckOrbActions()
-        {
-            foreach (Orb orb in _orbActions)
-            {
-                if (orb != null)
-                {
-                    Player.Instance.StartAttackAnimation();
-                    yield return StartCoroutine(orb.OrbEffect());
-                    Destroy(orb.gameObject);
-                    yield return new WaitForSeconds(0.2f);
-                }
-            }
-            _orbActions.Clear();
-            yield return new WaitForSeconds(2f);
-            PhaseManager.Instance.StartEnemyPhase();
-        }
-
         internal void AddOrbToActionList(Orb orb)
         {
             Orb tempOrb = Instantiate(orb, new Vector2(_actionOrbSpawn.x + (_xOrbOffset * _orbActions.Count), _actionOrbSpawn.y), Quaternion.identity);
             tempOrb.SetActionOrbInactive();
             _orbActions.Add(tempOrb);
         }
+
+        private IEnumerator StartNextPhaseWithDelay()
+        {
+            _attacksFinished = true;
+            yield return new WaitForSeconds(1);
+            PhaseManager.Instance.StartEnemyPhase();
+            _attacksFinished = false;
+        }
+
         #endregion
     }
 }

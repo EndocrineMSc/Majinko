@@ -29,6 +29,7 @@ TagManager:
   - GameTitle
   - QuitButton
   - ContinueButton
+  - ProjectileBorder
   layers:
   - Default
   - TransparentFX

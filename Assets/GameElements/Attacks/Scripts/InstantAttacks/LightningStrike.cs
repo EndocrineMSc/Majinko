@@ -1,4 +1,5 @@
 using Audio;
+using UnityEngine;
 
 namespace Attacks
 {
@@ -6,14 +7,19 @@ namespace Attacks
     {
         public override string Bark { get; } = "Lightning Strike!";
 
+        protected override void AdditionalDamageEffects(GameObject target)
+        {
+            //none
+        }
+
         protected override void PlayAwakeSound()
         {
-            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0101_ManaBlitz_Shot);
+            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0110_LightningStrike);
         }
 
         protected override void PlayHitSound()
         {
-            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0103_Blunt_Spell_Impact);
+            //none
         }
     }
 }
