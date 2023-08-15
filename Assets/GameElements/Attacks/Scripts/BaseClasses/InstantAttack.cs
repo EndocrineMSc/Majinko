@@ -44,11 +44,6 @@ namespace Attacks
             }
         }
 
-        protected override void DestroyGameObject()
-        {
-            //instant attack doesnt need to trigger collision to be destroyed
-        }
-
         protected IEnumerator WaitForAnimationEnd()
         {
             yield return new WaitForSeconds(_timeOfExistance);

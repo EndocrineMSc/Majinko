@@ -12,13 +12,7 @@ namespace Attacks
 
         private List<float> _damageModificationsForTurn = new();
 
-        private float _damageModifierTurn = 1;
-
-        internal float DamageModifierTurn
-        {
-            get { return _damageModifierTurn; }
-            private set { _damageModifierTurn = value; }
-        }
+        internal float DamageModifierTurn { get; private set; } = 1;
 
         #endregion
 
@@ -32,7 +26,7 @@ namespace Attacks
                 Destroy(gameObject);
         }
 
-        private void Start()
+        private void OnEnable()
         {
             LevelPhaseEvents.OnStartCardPhase += OnCardPhaseStart;
             LevelPhaseEvents.OnEndCardPhase += OnCardPhaseEnd;
@@ -55,7 +49,7 @@ namespace Attacks
             return finalDamageModifier;
         }
 
-        internal void ModifyDamage(float modifier)
+        internal void ModifyPlayerDamage(float modifier)
         {
             _damageModificationsForTurn.Add(modifier);
         }
@@ -63,12 +57,12 @@ namespace Attacks
         private void OnCardPhaseStart()
         {
             _damageModificationsForTurn.Clear();
-            _damageModifierTurn = 1;
+            DamageModifierTurn = 1;
         }
 
         private void OnCardPhaseEnd()
         {
-            _damageModifierTurn = CalculateModifier();
+            DamageModifierTurn = CalculateModifier();
         }
 
         #endregion

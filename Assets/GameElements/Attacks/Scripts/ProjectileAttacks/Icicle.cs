@@ -8,29 +8,32 @@ namespace Attacks
     {
         public override string Bark { get; } = "Icicle!";
 
-        //Do special stuff in here
-        protected override void Awake()
-        {
-            base.Awake();
-            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0101_ManaBlitz_Shot);
-        }
-
         protected override void OnHitPolish()
         {
             base.OnHitPolish();
             AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0103_Blunt_Spell_Impact);
         }
 
-        protected override void AdditionalEffectsOnImpact()
+        protected override void AdditionalEffectsOnImpact(GameObject target)
         {
-            Enemy enemy = _collider.GetComponent<Enemy>();
-            enemy.ApplyFreezing(_attackValues.FreezingStacks);
-
-            int randomChance = UnityEngine.Random.Range(0, 101);
-            if (randomChance < _attackValues.PercentToFreeze)
+            if (target.TryGetComponent<Enemy>(out var enemy))
             {
-                enemy.ApplyFrozen();
+                enemy.ApplyFreezing(_attackValues.FreezingStacks);
+
+                int randomChance = UnityEngine.Random.Range(0, 101);
+                if (randomChance < _attackValues.PercentToFreeze)
+                    enemy.ApplyFrozen();
             }
+        }
+
+        protected override void PlayHitSound()
+        {
+            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0103_Blunt_Spell_Impact);
+        }
+
+        protected override void PlayAwakeSound()
+        {
+            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0101_ManaBlitz_Shot);
         }
     }
 }

@@ -20,7 +20,7 @@ namespace ManaManagement
 
         private void OnDestroy()
         {
-            _playerAttackManager.ModifyDamage(_attackModifier);
+            _playerAttackManager.ModifyPlayerDamage(_attackModifier);
         }
 
         #endregion

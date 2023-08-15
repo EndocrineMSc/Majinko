@@ -22,7 +22,7 @@ namespace Orbs
             if(!spriteRenderer.enabled)
                 spriteRenderer.enabled = true;
 
-            PlayerAttackDamageManager.Instance.ModifyDamage(0.75f);
+            PlayerAttackDamageManager.Instance.ModifyPlayerDamage(0.75f);
 
             yield return null;
         }

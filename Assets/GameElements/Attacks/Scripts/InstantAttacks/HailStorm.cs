@@ -37,12 +37,17 @@ namespace Attacks
                     enemy.ApplyFrozen();
                 }
             }
-            DestroyGameObject();
+            Destroy(gameObject);
         }
 
-        protected override void AdditionalEffectsOnImpact()
+        protected override void PlayHitSound()
         {
-            //empty
+            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0103_Blunt_Spell_Impact);
+        }
+
+        protected override void PlayAwakeSound()
+        {
+            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0101_ManaBlitz_Shot);
         }
     }
 }

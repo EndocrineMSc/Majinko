@@ -1,7 +1,6 @@
 using Audio;
 using Characters.Enemies;
 using UnityEngine;
-using PeggleWars.Attacks;
 using Characters;
 using System.Collections;
 using System.Collections.Generic;
@@ -17,7 +16,6 @@ namespace Attacks
         {
             base.Awake();
             AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0101_ManaBlitz_Shot);
-            DestroyGameObject();
         }
 
         internal override void ShootAttack(Vector3 instantiatePosition, float damageModifier = 1)
@@ -26,20 +24,9 @@ namespace Attacks
             currentBomb.HandleAOE(damageModifier);
         }
 
-        protected override void OnHitPolish()
-        {
-            base.OnHitPolish();
-            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0103_Blunt_Spell_Impact);
-        }
-
         public void HandleAOE(float damageModifier)
         {
             StartCoroutine(InstantiateExplosions(damageModifier));
-        }
-
-        protected override void AdditionalEffectsOnImpact()
-        {
-            //empty
         }
 
         protected IEnumerator InstantiateExplosions(float damageModifier)
@@ -76,9 +63,7 @@ namespace Attacks
                         bool isIntangible = false; 
 
                         if (currentEnemy.TryGetComponent(out ICanBeIntangible intangibleEnemy))
-                        {
                             isIntangible = intangibleEnemy.IntangibleStacks > 0;
-                        }
 
                         if (!isIntangible)
                         {
@@ -96,13 +81,22 @@ namespace Attacks
             for (int i = 0; i < EnemyManager.Instance.EnemyPositions.Length; i++)
             {
                 Vector2 indexPosition = EnemyManager.Instance.EnemyPositions[0, i];
+                
                 if (indexPosition.Equals(currentPosition))
-                {
-                    return i;
-                }
+                    return i;               
             }
             Debug.Log("Enemy Position for Fire Bomb not found");
             return -1;
+        }
+
+        protected override void PlayHitSound()
+        {
+            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0103_Blunt_Spell_Impact);
+        }
+
+        protected override void PlayAwakeSound()
+        {
+            //only one sound needed for this special attack (hit sound)
         }
     }
 }
