@@ -20,7 +20,8 @@ namespace Orbs
         {
             Transform targetEnemy = EnemyManager.Instance.EnemiesInScene[EnemyManager.Instance.EnemiesInScene.Count - 1].transform;
             _lightningStrike.ShootAttack(targetEnemy.position);
-            yield return new WaitForSeconds(0.1f);
+            yield return null;
+            Destroy(gameObject);
         }
 
         protected override void AdditionalEffectsOnCollision()

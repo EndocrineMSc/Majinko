@@ -24,7 +24,7 @@ namespace Characters.Enemies
 
         protected override void OnDeathEffect()
         {
-            OrbManager.Instance.SwitchOrbs(OrbType.RottedOrb, transform.position, 2);          
+            StartCoroutine(OrbManager.Instance.SwitchOrbs(OrbType.RottedOrb, transform.position, 2));          
         }
 
         protected override void PlayHurtSound()

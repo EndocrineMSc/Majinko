@@ -19,7 +19,8 @@ namespace Orbs
         internal override IEnumerator OrbEffect()
         {
             _icicle.ShootAttack(Player.Instance.transform.position);
-            yield return new WaitForSeconds(0.2f);
+            yield return null;
+            Destroy(gameObject);
         }
 
         //will be called OnCollisionEnter2D from parent

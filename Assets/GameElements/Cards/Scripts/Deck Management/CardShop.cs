@@ -7,6 +7,7 @@ using Audio;
 using Unity.VisualScripting;
 using DG.Tweening;
 using System.Linq;
+using System.Collections;
 
 namespace Utility
 {
@@ -70,11 +71,7 @@ namespace Utility
         private void OnLevelVictory()
         {
             StartCoroutine(GameManager.Instance.SwitchState(GameState.LevelWon));
-            _shopCanvas.enabled = true;
-            List<Card> shopCards = SetRandomShopCards(AmountCardsToChooseFrom);
-            List<Card> cardObjects = InstantiateShopCards(shopCards);
-            ManageCardComponents(cardObjects);
-            BuildBuyButtons(cardObjects);
+            StartCoroutine(OpenShopWithDelay());
         }
 
         internal void PresentCardChoiceByElement(CardElement element)
@@ -84,6 +81,16 @@ namespace Utility
             List<Card> cardObjects = InstantiateShopCards(shopCards);
             ManageCardComponents(cardObjects);
             BuildBuyButtons(cardObjects);           
+        }
+
+        private IEnumerator OpenShopWithDelay()
+        {
+            yield return new WaitForSeconds(1);
+            _shopCanvas.enabled = true;
+            List<Card> shopCards = SetRandomShopCards(AmountCardsToChooseFrom);
+            List<Card> cardObjects = InstantiateShopCards(shopCards);
+            ManageCardComponents(cardObjects);
+            BuildBuyButtons(cardObjects);
         }
 
         private List<Card> SetRandomShopCards(int amountCardChoices = 3)

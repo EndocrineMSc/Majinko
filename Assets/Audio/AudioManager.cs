@@ -186,6 +186,13 @@ namespace Audio
         _0102_ManaBlitz_Spawn,
         _0103_Blunt_Spell_Impact,
         _0104_Player_Takes_Damage,
+        _0105_FireArrow_Impact,
+        _0106_Icicle_Shot,
+        _0107_Icicle_Impact,
+        _0108_WraithCaster_Shot,
+        _0109_FireArrow_Shot,
+        _0110_LightningStrike,
+        _0111_FireBomb,
 
         #endregion
 

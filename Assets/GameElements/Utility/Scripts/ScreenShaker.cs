@@ -53,12 +53,10 @@ namespace Utility
         private void Update()
         {
             if (_timer > 0)
-            {
                 _timer -= Time.deltaTime;
 
-                if (_timer <= 0)
-                    StopShake();
-            }
+            if (_timer < 0)
+                StopShake();
         }
 
         #endregion

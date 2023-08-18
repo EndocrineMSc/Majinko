@@ -108,13 +108,13 @@ namespace Orbs
             yield return new WaitForSeconds(1); //so that player can see first animations, too
             foreach (Orb orb in GlobalOrbManager.Instance.LevelLoadOrbs)
             {
-                SwitchOrbs(orb.OrbType, _levelOrbSpawn.transform.position);
+                StartCoroutine(SwitchOrbs(orb.OrbType, _levelOrbSpawn.transform.position));
                 yield return new WaitForSeconds(_tweenDuration);
             }
             PhaseManager.Instance.StartCardPhase();
         }
 
-        internal void SwitchOrbs(OrbType orbType, Vector3 instantiatePosition, int switchAmount = 1)
+        internal IEnumerator SwitchOrbs(OrbType orbType, Vector3 instantiatePosition, int switchAmount = 1)
         {
             List<Orb> baseOrbs = FindOrbs(SceneOrbList, SearchTag.BaseOrbs);          
             List<Orb> activeBaseOrbs = FindOrbs(baseOrbs, SearchTag.IsActive);           
@@ -123,7 +123,7 @@ namespace Orbs
             //Case 1: enough active base orbs present, so switch some of those
             if (activeBaseOrbs.Count >= switchAmount)
             {
-                StartCoroutine(ReplaceOrbsInList(activeBaseOrbs, switchAmount, instantiateOrb, instantiatePosition));
+                yield return ReplaceOrbsInList(activeBaseOrbs, switchAmount, instantiateOrb, instantiatePosition);
             }
             //Case 2: enough base orbs are present, but some of them are inactive, so switch the active ones first, then the inactive ones
             else if (baseOrbs.Count >= switchAmount)
@@ -133,10 +133,10 @@ namespace Orbs
 
                 if (availableOrbs != 0)
                 {
-                    StartCoroutine(ReplaceOrbsInList(activeBaseOrbs, availableOrbs, instantiateOrb, instantiatePosition)    );
+                    yield return ReplaceOrbsInList(activeBaseOrbs, availableOrbs, instantiateOrb, instantiatePosition);
                     baseOrbs = FindOrbs(SceneOrbList, SearchTag.BaseOrbs);
                 }
-                StartCoroutine(ReplaceOrbsInList(baseOrbs, missingOrbs, instantiateOrb, instantiatePosition));
+                yield return ReplaceOrbsInList(baseOrbs, missingOrbs, instantiateOrb, instantiatePosition);
             }
             //Case 3: there are only non-base orbs left (unlikely) so switch active ones first then inactive ones second
             else
@@ -144,9 +144,9 @@ namespace Orbs
                 List<Orb> activeOrbs = FindOrbs(SceneOrbList, SearchTag.IsActive);
                 List<Orb> inactiveOrbs = FindOrbs(SceneOrbList, SearchTag.IsInactive);
                 int availableOrbs = activeOrbs.Count;
-                StartCoroutine(ReplaceOrbsInList(activeOrbs, availableOrbs, instantiateOrb, instantiatePosition));
+                yield return ReplaceOrbsInList(activeOrbs, availableOrbs, instantiateOrb, instantiatePosition);
                 int missingOrbs = switchAmount - activeOrbs.Count;
-                StartCoroutine(ReplaceOrbsInList(inactiveOrbs, missingOrbs, instantiateOrb, instantiatePosition));
+                yield return ReplaceOrbsInList(inactiveOrbs, missingOrbs, instantiateOrb, instantiatePosition);
             }
         }
 
@@ -168,7 +168,7 @@ namespace Orbs
                 if (refreshOrbsInScene < GlobalOrbManager.Instance.AmountOfRefreshOrbs)
                 {
                     int refreshOrbDelta = GlobalOrbManager.Instance.AmountOfRefreshOrbs - refreshOrbsInScene;
-                    SwitchOrbs(OrbType.RefreshOrb, transform.position, refreshOrbDelta);
+                    StartCoroutine(SwitchOrbs(OrbType.RefreshOrb, transform.position, refreshOrbDelta));
                 }
                 _isCheckingForRefreshOrbs = false;
             }           
@@ -231,15 +231,11 @@ namespace Orbs
                     Orb tempOrb = Instantiate(orb, startPosition, Quaternion.identity);
                     SceneOrbList.Remove(randomOrb);
                     SceneOrbList.Add(tempOrb);
-                    tempOrb.gameObject.GetComponent<Collider2D>().enabled = false;
-                    randomOrb.gameObject.GetComponent<Collider2D>().enabled = false;
-
-                    yield return StartCoroutine(TweenOrb(tempOrb, randomOrbPosition));
-
-                    tempOrb.gameObject.GetComponent<Collider2D>().enabled = true;
-
-                    if (randomOrb != null)
-                        Destroy(randomOrb.gameObject);
+                    randomOrb.gameObject.GetComponent<Collider2D>().enabled = false;                   
+                    StartCoroutine(DisableColliderForTween(tempOrb));
+                    StartCoroutine(DestroyOrbWithTweenDelay(randomOrb));
+                    StartCoroutine(TweenOrb(tempOrb, randomOrbPosition));
+                    yield return null;
                 }
                 else
                 {
@@ -320,6 +316,21 @@ namespace Orbs
             GatheredBasicManaAmountTurn = 0;
             GatheredFireManaAmountTurn = 0;
             GatheredIceManaAmountTurn = 0;
+        }
+        
+        private IEnumerator DestroyOrbWithTweenDelay(Orb orb)
+        {
+            yield return new WaitForSeconds(_tweenDuration);
+            if(orb != null )
+                Destroy(orb.gameObject);
+        }
+
+        private IEnumerator DisableColliderForTween(Orb orb)
+        {
+            var collider = orb.gameObject.GetComponent<Collider2D>();
+            collider.enabled = false;
+            yield return new WaitForSeconds(_tweenDuration);
+            collider.enabled = true;
         }
 
         #endregion

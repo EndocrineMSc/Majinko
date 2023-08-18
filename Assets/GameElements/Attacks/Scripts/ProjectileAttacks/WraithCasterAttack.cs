@@ -1,5 +1,5 @@
-using EnumCollection;
 using Audio;
+using UnityEngine;
 
 namespace Attacks
 {
@@ -7,22 +7,20 @@ namespace Attacks
     {
         public override string Bark { get; } = "Whoh...";
 
-        //Do special stuff in here
-        protected override void Awake()
-        {
-            base.Awake();
-            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0101_ManaBlitz_Shot);
-        }
-
-        protected override void OnHitPolish()
-        {
-            base.OnHitPolish();
-            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0103_Blunt_Spell_Impact);
-        }
-
-        protected override void AdditionalEffectsOnImpact()
+        protected override void AdditionalDamageEffects(GameObject target)
         {
             //none
         }
+
+        protected override void PlayAwakeSound()
+        {
+            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0108_WraithCaster_Shot);
+        }
+
+        protected override void PlayHitSound()
+        {
+            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0103_Blunt_Spell_Impact);
+        }
+
     }
 }

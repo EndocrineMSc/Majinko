@@ -4,6 +4,7 @@ using Orbs;
 using PeggleWars.Characters.Interfaces;
 using Characters;
 using Utility;
+using Audio;
 
 namespace Attacks
 {
@@ -12,7 +13,6 @@ namespace Attacks
         #region Fields and Properties
 
         protected PlayerAttackDamageManager _playerAttackManager;
-        protected Collider2D _collider;
 
         [SerializeField] protected EffectValueCollection _attackValues;
         [SerializeField] protected AttackOrigin _attackOrigin;
@@ -31,6 +31,9 @@ namespace Attacks
         protected virtual void Awake()
         {
             Damage = _attackValues.Damage;
+            
+            if (AudioManager.Instance != null )
+                PlayAwakeSound();
         }
 
         protected virtual void Start()
@@ -38,46 +41,36 @@ namespace Attacks
             _playerAttackManager = PlayerAttackDamageManager.Instance;
         }
 
-        protected virtual void OnTriggerEnter2D(Collider2D collision)
-        {
-            _collider = collision;
-
-            if ((_attackOrigin == AttackOrigin.Player && collision.gameObject.GetComponent<Enemy>() != null)
-                || _attackOrigin == AttackOrigin.Enemy && collision.gameObject.GetComponent<Player>() != null)
-            {
-                IDamagable target = collision.GetComponent<IDamagable>();
-                target?.TakeDamage(Damage);
-                OnHitPolish();
-                AdditionalEffectsOnImpact();
-                if (_attackOrigin == AttackOrigin.Player) { OrbEvents.RaiseEffectEnd(); }
-                DestroyGameObject();
-            }
-        }
-
         internal abstract void ShootAttack(Vector3 instantiatePosition, float damageModifier = 1);
 
-        protected abstract void AdditionalEffectsOnImpact();
-
-        protected virtual void OnHitPolish()
+        protected virtual void OnHitPolish(float damage)
         {
-            float amplitude = 1 + Damage / 10;
-            float shakeTime = (float)Damage / 100;
+            float amplitude = 1 + damage / 10;
+            float shakeTime = (float)damage / 100;
             
             if (ScreenShaker.Instance != null)
                 ScreenShaker.Instance.ShakeCamera(amplitude, shakeTime);
+
+            PlayHitSound();
         }
 
-        protected virtual void DestroyGameObject()
+        protected abstract void AdditionalDamageEffects(GameObject target);
+
+        protected abstract void PlayAwakeSound();
+
+        protected abstract void PlayHitSound();
+
+        protected virtual void RaiseAttackFinished()
         {
-            Destroy(gameObject);
+            AttackEvents.RaiseAttackFinished();
         }
 
         #endregion
+    }
 
-        internal enum AttackOrigin
-        {
-            Player,
-            Enemy,
-        }
+    internal enum AttackOrigin
+    {
+        Player,
+        Enemy,
     }
 }

@@ -34,7 +34,7 @@ namespace Characters.Enemies
             if (_abilityReady) 
             {
                 _abilityReady = false;
-                OrbManager.Instance.SwitchOrbs(OrbType.IntangibleEnemyOrb, transform.position);
+                StartCoroutine(OrbManager.Instance.SwitchOrbs(OrbType.IntangibleEnemyOrb, transform.position));
                 _amountIntangibleOrbs += 1;
             }
             else

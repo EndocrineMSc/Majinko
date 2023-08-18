@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using Attacks;
 using Utility;
+using Unity.VisualScripting;
 
 namespace Orbs
 {
@@ -20,7 +21,8 @@ namespace Orbs
         {
             GameObject aoeTargetObject = GameObject.FindGameObjectWithTag(TARGET_PARAM);
             _hailStorm.ShootAttack(aoeTargetObject.transform.position);
-            yield return new WaitForSeconds(0.2f);
+            yield return null;
+            Destroy(gameObject);
         }
 
         //will be called OnCollisionEnter2D from parent
