@@ -6,6 +6,7 @@ using System.Collections;
 using Utility;
 using System.Linq;
 using DG.Tweening;
+using Characters;
 
 namespace Cards
 {
@@ -102,6 +103,8 @@ namespace Cards
 
         internal void OnCardPhaseStart()
         {
+            DrawAmount += PlayerConditionTracker.FastHandStacks;
+            PlayerConditionTracker.ResetFastHandsStacks();
             DrawHand(DrawAmount);
         }
 
@@ -109,12 +112,9 @@ namespace Cards
         {
             int counter = HandCards.Count;
             for (int i = 0; i < counter; i++)
-            {
                 if (HandCards.Count > 0)
-                {
                     _deck.DiscardCard(HandCards[0]);
-                }
-            }
+
             HandCards.Clear();
             DisplayHand();
 

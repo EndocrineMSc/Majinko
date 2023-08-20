@@ -75,6 +75,7 @@ namespace Characters.Enemies
         private void Start()
         {
             _lastUpdateHealth = _parentEnemy.Health;
+            _healthPoints.text = _parentEnemy.Health >= 0 ? _parentEnemy.Health.ToString() : "0";
             _lastUpdateFireStacks = _parentEnemy.BurningStacks;
             GetComponent<Canvas>().worldCamera = Camera.main;
             _enemyCanBeIntangible = _parentEnemy.TryGetComponent<ICanBeIntangible>(out _);

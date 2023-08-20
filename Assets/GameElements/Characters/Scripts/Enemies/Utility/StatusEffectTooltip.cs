@@ -18,13 +18,18 @@ namespace Characters
         [SerializeField] private Sprite _frozenSprite;
         [SerializeField] private Sprite _intangibleSprite;
         [SerializeField] private Sprite _temperatureSicknessSprite;
+        [SerializeField] private Sprite _fastHandsSprite;
+        [SerializeField] private Sprite _shieldBeetleSprite;
+        [SerializeField] private Sprite _sicknessSprite;
 
         private readonly string _burningDescription = "The enemy takes 1 point of damage for each stack at the start of its turn";
         private readonly string _freezingDescription = "If enemy health drops below the amount of stacks, it dies instantly";
         private readonly string _frozenDescription = "While frozen, the enemy cannot act";
         private readonly string _intangibleDescription = "While intangible, the enemy cannot be hit by attacks";
         private readonly string _temperatureSicknessDescription = "For each stack, the enemy will take an additional 5% damage from the next attack";
-
+        private readonly string _fastHandsDescription = "Draw an additional card for each stack during the next card phase";
+        private readonly string _shieldBeetleDescription = "Shield is conserved between turns";
+        private readonly string _sicknessDescription = "Deal 10% less damage for each stack, multiplicatively";
 
         #endregion
 
@@ -59,6 +64,18 @@ namespace Characters
                     _statusImage.sprite = _temperatureSicknessSprite;
                     _statusDescription.text = _temperatureSicknessDescription;
                     break;
+                case StatusEffects.FastHands:
+                    _statusImage.sprite = _fastHandsSprite;
+                    _statusDescription.text = _fastHandsDescription;
+                    break;
+                case StatusEffects.Sickness:
+                    _statusImage.sprite = _sicknessSprite;
+                    _statusDescription.text = _sicknessDescription;
+                    break;
+                case StatusEffects.ShieldBeetle:
+                    _statusImage.sprite = _shieldBeetleSprite;
+                    _statusDescription.text = _shieldBeetleDescription;
+                    break;
             }
         }
     }
@@ -70,5 +87,8 @@ namespace Characters
         Frozen,
         Intangible,
         TemperatureSickness,
+        FastHands,
+        Sickness,
+        ShieldBeetle,
     }
 }

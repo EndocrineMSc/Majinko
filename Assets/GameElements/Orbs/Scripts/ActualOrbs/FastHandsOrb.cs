@@ -1,6 +1,7 @@
 using Cards;
 using Utility;
 using System.Collections;
+using Characters;
 
 namespace Orbs
 {
@@ -8,7 +9,7 @@ namespace Orbs
     {
         internal override IEnumerator OrbEffect()
         {
-            Hand.Instance.DrawAmount += 1;
+            PlayerConditionTracker.AddFastHandsStacks();
             yield return null;
         }
 

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace Characters
 {
-    internal class StatusTooltipSpawner : MonoBehaviour
+    internal class EnemyStatusTooltipSpawner : MonoBehaviour
     {
         #region Fields and Properties
 

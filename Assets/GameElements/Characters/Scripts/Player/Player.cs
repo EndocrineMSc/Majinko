@@ -54,6 +54,7 @@ namespace Characters
         private void OnDisable()
         {
             LevelPhaseEvents.OnStartCardPhase -= OnCardTurnStart;
+            PlayerConditionTracker.ResetBuffsAndDebuffs();
         }
 
         public void TakeDamage(int damage, bool sourceIsAttack = true)
@@ -87,7 +88,8 @@ namespace Characters
 
         private void OnCardTurnStart()
         {
-            Shield = 0;
+            if(!PlayerConditionTracker.HasShieldBeetle)
+                Shield = 0;
         }
 
         private IEnumerator ColorShiftDamage()

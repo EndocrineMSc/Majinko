@@ -4,10 +4,31 @@ namespace Characters
 {
     internal class PlayerConditionTracker
     {
+        #region Fields and Properties
+
+        #region Health
+
         internal static int PlayerHealth { get; private set; } = 100;
         internal static int MaxPlayerHealth { get; private set; } = 100;
-        internal static int TemporaryBasicMana { get; private set; } = 0;
 
+        #endregion
+
+        #region Buffs and Debuffs
+        //All Buffs and Debuffs in here should be aimed for level scale and temporary (triggered by cards and overworld events)
+        //Permanent Buffs should be handled by relics
+
+        internal static int TemporaryBasicMana { get; private set; } = 0;
+        internal static int SicknessStacks { get; private set; } = 0;
+        internal static int FastHandStacks { get; private set; } = 0;
+        internal static bool HasShieldBeetle { get; private set; } = false;
+
+        #endregion
+
+        #endregion
+
+        #region Functions
+
+        #region Health
 
         internal static void SetPlayerHealth(int health)
         {
@@ -49,14 +70,55 @@ namespace Characters
             PlayerHealth += amount;
         }
 
+        #endregion
+
+        #region Buffs and Debuffs
+
         internal static void AddTemporaryBasicMana(int amount = 1)
         {
             TemporaryBasicMana += amount;
         }
 
         internal static void ResetTemporaryBasicMana()
-        { 
+        {
             TemporaryBasicMana = 0;
+        }
+
+        internal static void AddFastHandsStacks(int amount = 1)
+        {
+            FastHandStacks += amount;
+        }
+
+        internal static void ResetFastHandsStacks()
+        {
+            FastHandStacks = 0;
+        }
+
+        internal static void AddSicknessStacks(int amount = 1)
+        {
+            SicknessStacks += amount;
+        }
+
+        internal static void ResetSicknessStacks()
+        {
+            SicknessStacks = 0;
+        }
+
+        internal static void ActivateShieldBeetle()
+        {
+            HasShieldBeetle = true;
+        }
+
+        #endregion
+
+        #region Utility
+
+        internal static void ResetBuffsAndDebuffs()
+        {
+            TemporaryBasicMana = 0;
+            SicknessStacks = 0;
+            FastHandStacks = 0;
+            HasShieldBeetle = false;
         }
 
         internal static void OnGameReset()
@@ -65,5 +127,9 @@ namespace Characters
             MaxPlayerHealth = 100;
             ResetTemporaryBasicMana();
         }
+
+        #endregion
+
+        #endregion
     }
 }
