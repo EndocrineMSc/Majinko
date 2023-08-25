@@ -12,13 +12,13 @@ namespace Characters.Enemies
 
         private Player _player;
         private Canvas _canvas;
-        private TextMeshProUGUI _healthPoints;
         private Image _heart;
         private Image _fastHandsStatus;
         private Image _sicknessStatus;
         private Image _shieldBeetleBuff;
         private List<GameObject> _statusObjects;
         private int _lastUpdateHealth;
+        private int _lastUpdateShield;
         private int _lastUpdateFastHandsStacks;
         private int _lastUpdateSicknessStacks;
         private bool _hasFastHands;
@@ -27,6 +27,13 @@ namespace Characters.Enemies
         private readonly float _punchScale = 1.1f;
         private readonly float _punchTime = 0.2f;
 
+        //Shield and Health
+        [SerializeField] private TextMeshProUGUI _healthPoints;
+        [SerializeField] private TextMeshProUGUI _shieldPoints;
+        [SerializeField] private Animator _shieldAnimator;
+        [SerializeField] private Sprite _playerHeartSprite;
+
+        //Status Prefabs
         [SerializeField] private GameObject _fastHandsPrefab;
         [SerializeField] private GameObject _shieldBeetlePrefab;
         [SerializeField] private GameObject _sicknessPrefab;
@@ -40,7 +47,6 @@ namespace Characters.Enemies
         private void Awake()
         {
             _player = GetComponentInParent<Player>();
-            _healthPoints = GetComponentInChildren<TextMeshProUGUI>();
             _heart = GetComponentInChildren<Image>();
             _canvas = GetComponent<Canvas>();
             _statusObjects ??= new();
@@ -50,6 +56,7 @@ namespace Characters.Enemies
         void Update()
         {
             UpdateHealth();
+            UpdateShield();
             UpdateFastHands();
             UpdateSickness();
             UpdateShieldBeetle();
@@ -69,6 +76,30 @@ namespace Characters.Enemies
                 }
 
                 _lastUpdateHealth = _player.Health;
+            }
+        }
+
+        private void UpdateShield()
+        {
+            if (_player.Shield > 0 && !_shieldPoints.enabled)
+            {
+                _shieldPoints.enabled = true;
+                _shieldAnimator.enabled = true;
+            }
+
+            if (_lastUpdateShield != _player.Shield && _shieldPoints.enabled)
+            {
+                _heart.rectTransform.DOPunchScale(_heart.rectTransform.localScale * _punchScale, _punchTime, 1, 1);
+                _shieldPoints.text = _player.Shield >= 0 ? _player.Shield.ToString() : "0";
+
+                if (_player.Shield <= 0)
+                {
+                    _shieldAnimator.enabled = false;
+                    _shieldPoints.enabled = false;
+                    _heart.sprite = _playerHeartSprite;
+                }
+                
+                _lastUpdateShield = _player.Shield;
             }
         }
 
