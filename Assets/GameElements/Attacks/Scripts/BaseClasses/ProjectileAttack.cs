@@ -11,7 +11,7 @@ namespace Attacks
     {
         #region Fields and Properties
 
-        protected float _attackFlySpeed = 50;
+        protected float _attackFlySpeed = 25;
         protected float _xInstantiateOffSet = 0.4f;
         protected readonly string BORDER_TAG = "ProjectileBorder";
 

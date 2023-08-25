@@ -47,6 +47,7 @@ namespace Cards
         internal CardRarity Rarity { get; private protected set; }
         internal CardElement Element { get; private protected set; }
         internal CardEffectType EffectType { get; private protected set; }
+        internal bool IsBuff { get; private protected set; }
         internal bool IsBeingDealt { get; set; } = true;
 
         #endregion

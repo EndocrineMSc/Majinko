@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e6e1e0e03f2f23438d023750e819a6e, type: 3}
-  m_Name: Divination
+  m_Name: ShieldBeetle
   m_EditorClassIdentifier: 
-  CardName: Divination
-  CardDescription: Increases the range and bounces of the shot prediction.
-  BasicManaCost: 0
+  CardName: Shield Beetle
+  CardDescription: Shield stays between turns for the rest of combat.
+  BasicManaCost: 4
   FireManaCost: 0
   IceManaCost: 0
-  IsExhaustCard: 0
-  IsBuff: 0
-  Type: 1
-  Rarity: 0
+  IsExhaustCard: 1
+  IsBuff: 1
+  Type: 20
+  Rarity: 1
   Element: 0
-  Image: {fileID: 21300000, guid: b3053dd856e8801469a38b07d8d4510a, type: 3}
+  Image: {fileID: 21300000, guid: 7869f751423032049b540b8a845f91e3, type: 3}

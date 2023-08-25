@@ -22,5 +22,6 @@ namespace Cards
         ManaShield,
         PowerSphere,
         RefreshOrb,
+        ShieldBeetle,
     }
 }

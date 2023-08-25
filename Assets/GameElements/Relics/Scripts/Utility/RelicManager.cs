@@ -44,7 +44,8 @@ namespace Relics
             AllRelics = _relicCollection.AllRelics;
             _relicLayoutGroup = transform.GetComponentInChildren<GridLayoutGroup>();
 
-            ActiveRelics ??= ES3.KeyExists(RELIC_SAVE_PATH) ? ES3.Load<List<Relic>>(RELIC_SAVE_PATH) : new();
+            ActiveRelics = new();
+            ActiveRelics = ES3.KeyExists(RELIC_SAVE_PATH) ? ES3.Load<List<Relic>>(RELIC_SAVE_PATH) : new();
         }
 
         private void OnEnable()
@@ -80,7 +81,7 @@ namespace Relics
         {
             foreach (var relic in ActiveRelics)
             {
-                if (/*AllRelics[relic] != null &&*/ !_instantiatedRelics.Contains(relic))
+                if (!_instantiatedRelics.Contains(relic))
                 {
                     var relicObject = Instantiate(AllRelics[relic], Vector3.zero, Quaternion.identity);
                     relicObject.transform.SetParent(_relicLayoutGroup.transform);

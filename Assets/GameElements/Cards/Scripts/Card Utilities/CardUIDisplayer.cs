@@ -39,6 +39,7 @@ namespace Cards
         private readonly string INSTANT_EFFECT_TYPE = "Instant";
         private readonly string ORBSHIFTER_EFFECT_TYPE = "Orbshifter";
         private readonly string SPHERESHIFTER_EFFECT_TYPE = "Sphereshifter";
+        private readonly string BUFF_EFFECT_TYPE = "Buff";
 
         #endregion
 
@@ -47,34 +48,40 @@ namespace Cards
         private void OnValidate()
         {
             _card = GetComponent<Card>();
-            var scriptableCard = _card.ScriptableCard;
-            SetCardTexts(scriptableCard);
-            ActivateRarityBackground();
-            ActivateCardFrameAndCostBubbles();
+
+            if (_card != null && _card.ScriptableCard != null)
+            {               
+                SetCardTexts();
+                SetCardImage();
+                ActivateRarityBackground();
+                ActivateCardFrameAndCostBubbles();
+            }
         }
 
         private void Start()
         {
             _card = GetComponent<Card>();
-            var scriptableCard = _card.ScriptableCard;
-            SetCardTexts(scriptableCard);
-            ActivateRarityBackground();
-            ActivateCardFrameAndCostBubbles();
+
+            if (_card != null && _card.ScriptableCard != null)
+            {
+                SetCardTexts();
+                SetCardImage();
+                ActivateRarityBackground();
+                ActivateCardFrameAndCostBubbles();
+            }
         }
 
-        private void SetCardTexts(ScriptableCard scriptableCard)
+        private void SetCardTexts()
         {
-            if (scriptableCard != null)
-            {
-                _cardName.text = scriptableCard.CardName;
-                SetCardEffectTypeText();
-                _basicCost.text = scriptableCard.BasicManaCost.ToString();
-                _fireCostUpper.text = scriptableCard.FireManaCost.ToString();
-                _fireCostLower.text = scriptableCard.FireManaCost.ToString();
-                _iceCostUpper.text = scriptableCard.IceManaCost.ToString();
-                _iceCostLower.text = scriptableCard.IceManaCost.ToString();
-                _cardText.text = scriptableCard.CardDescription;
-            }
+            var scriptableCard = _card.ScriptableCard;
+            _cardName.text = scriptableCard.CardName;
+            SetCardEffectTypeText();
+            _basicCost.text = scriptableCard.BasicManaCost.ToString();
+            _fireCostUpper.text = scriptableCard.FireManaCost.ToString();
+            _fireCostLower.text = scriptableCard.FireManaCost.ToString();
+            _iceCostUpper.text = scriptableCard.IceManaCost.ToString();
+            _iceCostLower.text = scriptableCard.IceManaCost.ToString();
+            _cardText.text = scriptableCard.CardDescription;
         }
 
         private void SetCardEffectTypeText()
@@ -82,7 +89,10 @@ namespace Cards
             switch (_card.EffectType)
             {
                 case CardEffectType.Instant:
-                    _cardType.text = (INSTANT_EFFECT_TYPE);
+                    if (_card.ScriptableCard.IsBuff)
+                        _cardType.text = (BUFF_EFFECT_TYPE);
+                    else
+                        _cardType.text = (INSTANT_EFFECT_TYPE);
                     break;
                 case CardEffectType.Orbshifter:
                     OrbShifterCard card = (OrbShifterCard)_card;
@@ -142,6 +152,13 @@ namespace Cards
                     break;
             }
         }
+
+        private void SetCardImage()
+        {
+            if(_card.ScriptableCard != null)
+                _cardImage.sprite = _card.ScriptableCard.Image;
+        }
+
 
         private void Update()
         {
