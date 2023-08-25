@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 484b06c97058d504b9f6f65bc336401d, type: 3}
   m_Name: RareRelics
   m_EditorClassIdentifier: 
-  RelicList: 
+  RelicList: 050000000800000003000000

@@ -121,7 +121,9 @@ namespace Relics
         None, //null replacement for shop functions
         BlueZirconFlower,
         ChillborneRing,
+        FreezeDriedCauldronRelic,
         GarnetFlower,
+        HoarfrostDaggerRelic,
         IoliteFlower,
         SacredHeartwood,
         SearingRune,

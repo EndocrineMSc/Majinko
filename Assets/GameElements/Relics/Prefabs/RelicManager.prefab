@@ -46,6 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _relicCollection: {fileID: 11400000, guid: 69bdc581f2707db46a81a7819fb6030a, type: 2}
+  ActiveRelics: 
+  _instantiatedRelics: 
+  _instantiatedRelicObjects: []
 --- !u!1 &7406519015131428239
 GameObject:
   m_ObjectHideFlags: 0

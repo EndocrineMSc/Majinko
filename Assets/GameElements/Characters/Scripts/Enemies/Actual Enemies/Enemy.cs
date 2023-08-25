@@ -238,22 +238,21 @@ namespace Characters.Enemies
                 if (FreezingStacks >= burningStacks)
                 {
                     FreezingStacks -= burningStacks;
-                    TemperatureSicknessStacks += burningStacks;
+                    ApplyTemperatureSickness(burningStacks);
                 }
                 else
                 {
                     int sicknessStacks = burningStacks - FreezingStacks;
-                    TemperatureSicknessStacks += sicknessStacks;
-
                     int remainingBurningStacks = burningStacks - sicknessStacks;
                     BurningStacks += remainingBurningStacks;
+                    ApplyTemperatureSickness(sicknessStacks);
                 }
             }
             else
                 BurningStacks += burningStacks;
 
             if (!sourceIsRelic)
-                EnemyEvents.RaiseAppliedBurning();
+                EnemyEvents.RaiseAppliedBurning(this);
         }
 
         internal void ApplyFreezing(int freezingStacks, bool sourceIsRelic = false)
@@ -263,15 +262,14 @@ namespace Characters.Enemies
                 if (BurningStacks >= freezingStacks)
                 {
                     BurningStacks -= freezingStacks;
-                    TemperatureSicknessStacks += freezingStacks;
+                    ApplyTemperatureSickness(freezingStacks);
                 }
                 else
                 {
                     int sicknessStacks = freezingStacks - BurningStacks;
-                    TemperatureSicknessStacks += sicknessStacks;
-
                     int remainingFreezingStacks = freezingStacks - sicknessStacks;
                     BurningStacks += remainingFreezingStacks;
+                    ApplyTemperatureSickness(sicknessStacks);
                 }
             }
             else
@@ -280,7 +278,15 @@ namespace Characters.Enemies
             CheckForFreezingKill();
 
             if (!sourceIsRelic)
-                EnemyEvents.RaiseAppliedFreezing();
+                EnemyEvents.RaiseAppliedFreezing(this);
+        }
+
+        internal void ApplyTemperatureSickness(int temperatureSicknessStacks = 1, bool sourceIsRelic = false)
+        {
+            TemperatureSicknessStacks += temperatureSicknessStacks;
+
+            if (!sourceIsRelic)
+                EnemyEvents.RaiseAppliedTemperatureSickness(this);
         }
 
         internal void ApplyEnraged(int enragedStacks = 1)
@@ -306,7 +312,7 @@ namespace Characters.Enemies
             GetComponentInChildren<SpriteRenderer>().color = Color.blue;
 
             if (!sourceIsRelic)
-                EnemyEvents.RaiseAppliedFrozen();
+                EnemyEvents.RaiseAppliedFrozen(this);
         }
 
         protected void OnDestroy()

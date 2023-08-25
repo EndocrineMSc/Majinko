@@ -9,9 +9,10 @@ namespace Characters.Enemies
         internal static event Action OnEnemyDied;
         internal static event Action OnEnemyFinishedMoving;
         internal static event Action OnEnemiesFinishedAttacking;
-        internal static event Action OnAppliedBurning;
-        internal static event Action OnAppliedFreezing;
-        internal static event Action OnAppliedFrozen;
+        internal static event Action<Enemy> OnAppliedBurning;
+        internal static event Action<Enemy> OnAppliedFreezing;
+        internal static event Action<Enemy> OnAppliedFrozen;
+        internal static event Action<Enemy> OnAppliedTemperatureSickness;
 
         #endregion
 
@@ -32,19 +33,24 @@ namespace Characters.Enemies
             OnEnemiesFinishedAttacking?.Invoke();
         }
 
-        internal static void RaiseAppliedBurning()
+        internal static void RaiseAppliedBurning(Enemy enemy)
         {
-            OnAppliedBurning?.Invoke();
+            OnAppliedBurning?.Invoke(enemy);
         }
 
-        internal static void RaiseAppliedFreezing()
+        internal static void RaiseAppliedFreezing(Enemy enemy)
         {
-            OnAppliedFreezing?.Invoke();
+            OnAppliedFreezing?.Invoke(enemy);
         }
 
-        internal static void RaiseAppliedFrozen()
+        internal static void RaiseAppliedFrozen(Enemy enemy)
         {
-            OnAppliedFrozen?.Invoke();
+            OnAppliedFrozen?.Invoke(enemy);
+        }
+
+        internal static void RaiseAppliedTemperatureSickness(Enemy enemy)
+        {
+            OnAppliedTemperatureSickness?.Invoke(enemy);
         }
 
         #endregion
