@@ -87,6 +87,8 @@ namespace Orbs
             _collider.enabled = false;
             if (collision.gameObject.TryGetComponent<IAmSphere>(out _))
             {
+                ArenaConditionTracker.OrbWasHit();
+                OrbEvents.RaiseOrbHit();
                 AdditionalEffectsOnCollision();
                 ReplaceHitOrb();               
                 PlayOrbOnHitSound();

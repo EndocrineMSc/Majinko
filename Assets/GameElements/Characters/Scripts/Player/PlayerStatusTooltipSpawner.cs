@@ -43,6 +43,24 @@ namespace Characters
                 StatusEffectTooltip sickness = InstantiateTooltip(StatusEffects.Sickness);
                 _activeTooltips.Add(sickness);
             }
+
+            if (PlayerConditionTracker.HasBubbleWand)
+            {
+                StatusEffectTooltip bubbleWand = InstantiateTooltip(StatusEffects.BubbleWand);
+                _activeTooltips.Add(bubbleWand);
+            }
+
+            if (PlayerConditionTracker.HasOrbInlayedGauntlets)
+            {
+                StatusEffectTooltip orbInlayedGauntlet = InstantiateTooltip(StatusEffects.OrbInlayedGauntlet);
+                _activeTooltips.Add(orbInlayedGauntlet);
+            }
+
+            if (PlayerConditionTracker.HasWardingRune)
+            {
+                StatusEffectTooltip wardingRune = InstantiateTooltip(StatusEffects.WardingRune);
+                _activeTooltips.Add(wardingRune);
+            }
         }
 
         private void OnMouseExit()

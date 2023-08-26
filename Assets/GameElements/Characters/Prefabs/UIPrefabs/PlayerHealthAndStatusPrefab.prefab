@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 8, y: 0}
-  m_SizeDelta: {x: 9.2964, y: 2.7883}
+  m_AnchoredPosition: {x: 8, y: -2.3332}
+  m_SizeDelta: {x: 8.9096, y: 7.4548}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &4963765573579550699
 MonoBehaviour:
@@ -55,7 +55,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: -0.25
+  m_Spacing: -28.7
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &7404407756865566020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,9 +226,12 @@ MonoBehaviour:
   _shieldPoints: {fileID: 5864190000025437974}
   _shieldAnimator: {fileID: 6788291723559688159}
   _playerHeartSprite: {fileID: 21300000, guid: eef2d5b6b05967d48b82c93932119be1, type: 3}
+  _bubbleWandPrefab: {fileID: 3598385073291101113, guid: 4962cde222c0b0d4d9342b3c3c535756, type: 3}
   _fastHandsPrefab: {fileID: 3598385073291101113, guid: 1498cd687648b5747a05d23bbcc0fe16, type: 3}
+  _orbInlayedGauntletPrefab: {fileID: 3598385073291101113, guid: 457bbad561d66324d8508b050686a38d, type: 3}
   _shieldBeetlePrefab: {fileID: 3598385073291101113, guid: 6ce11ab1e1f5b864389eb0e743d71916, type: 3}
   _sicknessPrefab: {fileID: 3598385073291101113, guid: 4c2caef3c93826a438d052baf53d5a03, type: 3}
+  _wardingRunePrefab: {fileID: 3598385073291101113, guid: d7c661cc8cbcf5c4aa479c63c0b1d536, type: 3}
   _layoutGroup: {fileID: 7340136634182811612}
 --- !u!1001 &1079701484995061928
 PrefabInstance:
@@ -240,6 +243,10 @@ PrefabInstance:
     - target: {fileID: 3598385073291101113, guid: 0513504abfb34da41a328d04769fe005, type: 3}
       propertyPath: m_Name
       value: PlayerHeart
+      objectReference: {fileID: 0}
+    - target: {fileID: 6888844399254286270, guid: 0513504abfb34da41a328d04769fe005, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4292963931
       objectReference: {fileID: 0}
     - target: {fileID: 8008847241967357138, guid: 0513504abfb34da41a328d04769fe005, type: 3}
       propertyPath: m_Pivot.x

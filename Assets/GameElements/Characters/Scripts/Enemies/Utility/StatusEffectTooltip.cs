@@ -21,6 +21,9 @@ namespace Characters
         [SerializeField] private Sprite _fastHandsSprite;
         [SerializeField] private Sprite _shieldBeetleSprite;
         [SerializeField] private Sprite _sicknessSprite;
+        [SerializeField] private Sprite _bubbleWandSprite;
+        [SerializeField] private Sprite _wardingRuneSprite;
+        [SerializeField] private Sprite _orbInlayedGauntletSprite;
 
         private readonly string _burningDescription = "The enemy takes 1 point of damage for each stack at the start of its turn";
         private readonly string _freezingDescription = "If enemy health drops below the amount of stacks, it dies instantly";
@@ -30,6 +33,9 @@ namespace Characters
         private readonly string _fastHandsDescription = "Draw an additional card for each stack during the next card phase";
         private readonly string _shieldBeetleDescription = "Shield is conserved between turns";
         private readonly string _sicknessDescription = "Deal 10% less damage for each stack, multiplicatively";
+        private readonly string _bubbleWandDescription = "After hitting 20 orbs, deal 10 damage to the closest enemy";
+        private readonly string _wardingRuneDescription = "Whenever you gain shield from an orb, spawn a Mana Blitz Orb";
+        private readonly string _orbInlayedGauntletDescription = "Whenever an orb is hit by a sphere, gain 1 shield";
 
         #endregion
 
@@ -76,6 +82,18 @@ namespace Characters
                     _statusImage.sprite = _shieldBeetleSprite;
                     _statusDescription.text = _shieldBeetleDescription;
                     break;
+                case StatusEffects.BubbleWand:
+                    _statusImage.sprite = _bubbleWandSprite;
+                    _statusDescription.text = _bubbleWandDescription;
+                    break;
+                case StatusEffects.OrbInlayedGauntlet:
+                    _statusImage.sprite = _orbInlayedGauntletSprite;
+                    _statusDescription.text = _orbInlayedGauntletDescription;
+                    break;
+                case StatusEffects.WardingRune:
+                    _statusImage.sprite= _wardingRuneSprite;
+                    _statusDescription.text = _wardingRuneDescription;
+                    break;
             }
         }
     }
@@ -90,5 +108,8 @@ namespace Characters
         FastHands,
         Sickness,
         ShieldBeetle,
+        BubbleWand,
+        OrbInlayedGauntlet,
+        WardingRune,
     }
 }

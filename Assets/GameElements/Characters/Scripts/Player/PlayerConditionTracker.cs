@@ -22,6 +22,9 @@ namespace Characters
         internal static int SicknessStacks { get; private set; } = 0;
         internal static int FastHandStacks { get; private set; } = 0;
         internal static bool HasShieldBeetle { get; private set; } = false;
+        internal static bool HasBubbleWand { get; private set; } = false;
+        internal static bool HasOrbInlayedGauntlets { get; private set; } = false;
+        internal static bool HasWardingRune { get; private set; } = false;
 
         #endregion
 
@@ -110,6 +113,21 @@ namespace Characters
             HasShieldBeetle = true;
         }
 
+        internal static void ActivateBubbleWand()
+        {
+            HasBubbleWand = true;
+        }
+
+        internal static void ActivateOrbInlayedGauntlets()
+        {
+            HasOrbInlayedGauntlets = true;
+        }
+
+        internal static void ActivateWardingRune()
+        {
+            HasWardingRune = true;
+        }
+
         #endregion
 
         #region Utility
@@ -120,6 +138,9 @@ namespace Characters
             SicknessStacks = 0;
             FastHandStacks = 0;
             HasShieldBeetle = false;
+            HasOrbInlayedGauntlets = false;
+            HasBubbleWand = false;
+            HasWardingRune = false;
         }
 
         internal static void OnGameReset()

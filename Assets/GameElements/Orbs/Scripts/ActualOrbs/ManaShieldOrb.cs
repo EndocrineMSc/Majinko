@@ -25,7 +25,7 @@ namespace Orbs
 
         internal override IEnumerator OrbEffect()
         {
-            _player.Shield += _shieldValue;
+            _player.GainShield(_shieldValue);
             yield return new WaitForSeconds(0.2f);
         }
 

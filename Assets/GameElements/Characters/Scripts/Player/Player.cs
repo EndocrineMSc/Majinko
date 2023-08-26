@@ -20,9 +20,9 @@ namespace Characters
         private readonly string HURT_ANIMATION_PARAM = "Hurt";
         private readonly string ATTACK_ANIMATION_PARAM = "Attack";
 
-        internal int Health { get; set; }
-        internal int Shield { get; set; }
-        internal int MaxHealth { get; set; }
+        internal int Health { get; private set; }
+        internal int Shield { get; private set; }
+        internal int MaxHealth { get; private set; }
 
         #endregion
 
@@ -107,6 +107,14 @@ namespace Characters
         internal void StartAttackAnimation()
         {
             _animator.SetTrigger(ATTACK_ANIMATION_PARAM);
+        }
+
+        internal void GainShield(int amount = 1, bool sourceIsOrb = true)
+        {
+            Shield += amount;
+
+            if (sourceIsOrb)
+                PlayerEvents.RaiseGainedShield();
         }
 
         #endregion

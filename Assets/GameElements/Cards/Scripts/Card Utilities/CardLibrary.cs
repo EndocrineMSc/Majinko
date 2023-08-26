@@ -2,6 +2,7 @@ namespace Cards
 {
     public enum CardType
     {
+        BubbleWand,
         CloneSphere,
         Divination,
         FastHands,
@@ -20,8 +21,10 @@ namespace Cards
         LightningStrike,
         ManaBlitz,
         ManaShield,
+        OrbInlayedGauntlets,
         PowerSphere,
         RefreshOrb,
         ShieldBeetle,
+        WardingRune,
     }
 }

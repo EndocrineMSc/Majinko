@@ -345,6 +345,9 @@ MonoBehaviour:
   _fastHandsSprite: {fileID: 21300000, guid: f001a5759119ad74386acb1b18b7487a, type: 3}
   _shieldBeetleSprite: {fileID: 21300000, guid: 3a38ba95dd8e7f54a9a8b7a893dabd98, type: 3}
   _sicknessSprite: {fileID: 21300000, guid: f0b7efcc25591474d87e1dbf07abf744, type: 3}
+  _bubbleWandSprite: {fileID: 21300000, guid: 724136e714e53d3458ddf24870893f7e, type: 3}
+  _wardingRuneSprite: {fileID: 21300000, guid: 7ce6ee5501c4efd4e9055727e81b160f, type: 3}
+  _orbInlayedGauntletSprite: {fileID: 21300000, guid: 53a53cc7cee1d3f44887c441d9961201, type: 3}
 --- !u!1 &2262943692431667221
 GameObject:
   m_ObjectHideFlags: 0

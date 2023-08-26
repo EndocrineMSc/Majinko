@@ -18,11 +18,8 @@ MonoBehaviour:
   FireManaCost: 0
   IceManaCost: 0
   IsExhaustCard: 1
-  Damage: 0
-  Shield: 0
-  BurningStacks: 0
-  IceStacks: 0
-  Type: 11
+  IsBuff: 0
+  Type: 12
   Rarity: 4
   Element: 0
   Image: {fileID: 21300000, guid: 04b1699090df4ca459f2557e3340517a, type: 3}

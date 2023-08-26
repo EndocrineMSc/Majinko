@@ -316,6 +316,7 @@ namespace Orbs
             GatheredBasicManaAmountTurn = 0;
             GatheredFireManaAmountTurn = 0;
             GatheredIceManaAmountTurn = 0;
+            ArenaConditionTracker.ResetHitOrbsInTurn();
         }
         
         private IEnumerator DestroyOrbWithTweenDelay(Orb orb)

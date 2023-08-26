@@ -8,6 +8,7 @@ namespace Orbs
         internal static event Action OnEffectEnd;
         internal static event Action<ManaType, int> SpawnMana;
         internal static event Action OnSetOrbsActive;
+        internal static event Action OnOrbHit;
 
         internal static void RaiseEffectEnd()
         {
@@ -22,6 +23,11 @@ namespace Orbs
         internal static void RaiseSetOrbsActive()
         {
             OnSetOrbsActive?.Invoke();
+        }
+
+        internal static void RaiseOrbHit()
+        {
+            OnOrbHit?.Invoke();
         }
     }
 }

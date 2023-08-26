@@ -19,7 +19,7 @@ MonoBehaviour:
   IceManaCost: 0
   IsExhaustCard: 1
   IsBuff: 1
-  Type: 20
+  Type: 22
   Rarity: 1
   Element: 0
   Image: {fileID: 21300000, guid: 7869f751423032049b540b8a845f91e3, type: 3}

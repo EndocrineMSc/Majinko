@@ -204,6 +204,7 @@ GameObject:
   - component: {fileID: 664240588296104951}
   - component: {fileID: 2580491591936064414}
   - component: {fileID: 2507588652346415649}
+  - component: {fileID: 6104294151256990451}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -368,6 +369,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tooltipGroup: {fileID: 8989157609667511904}
   _tooltip: {fileID: 5788127224408779562, guid: 021265a5f20ca424f8880f338fcc53fb, type: 3}
+--- !u!114 &6104294151256990451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8722768749525290215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee0e94e5bcc0354399b88003d8d6766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4061456612919798155
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -375,6 +388,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8722768749525290218}
     m_Modifications:
+    - target: {fileID: 5864190000025437974, guid: ab873a6aca40c9240a0b1f3940dfc5d1, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4292963931
+      objectReference: {fileID: 0}
     - target: {fileID: 5995486620868256850, guid: ab873a6aca40c9240a0b1f3940dfc5d1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
