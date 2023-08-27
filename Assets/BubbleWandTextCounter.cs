@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using Orbs;
 using DG.Tweening;
+using Utility;
 
 namespace Characters
 {
@@ -11,13 +12,12 @@ namespace Characters
     {
         private TextMeshProUGUI _remainingHitsText;
         private int _remainingHits = 20;
-        private RectTransform _rectTransform;
+        [SerializeField] private RectTransform _rectTransform;
 
         private void Awake()
         {
             _remainingHitsText = GetComponent<TextMeshProUGUI>();
             _remainingHitsText.text = _remainingHits.ToString();
-            _rectTransform = GetComponentInParent<RectTransform>();
         }
 
         private void OnEnable()
@@ -37,7 +37,10 @@ namespace Characters
             if (_remainingHits == 0)
             {
                 _remainingHits = 20;
-                _rectTransform.DOPunchScale(new(1.1f, 1.1f), 0.2f, 1, 1);
+                _rectTransform.DOPunchScale(new(_rectTransform.localScale.x * 1.1f, _rectTransform.localScale.y * 1.1f), 0.2f, 1, 1);
+
+                if (ScreenShaker.Instance != null)
+                    ScreenShaker.Instance.ShakeCamera(2, 0.1f);
             }
 
             _remainingHitsText.text = _remainingHits.ToString();

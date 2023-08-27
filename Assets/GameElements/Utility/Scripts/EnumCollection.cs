@@ -2,8 +2,9 @@ namespace EnumCollection
 {
     internal enum EnemyType
     {
-        CloakedZombie,
-        WraithCaster,
+        Shroombie,
+        StoneGolem,
+        LeafMage,
     }
 
     internal enum ManaType
@@ -43,6 +44,7 @@ namespace EnumCollection
         MultiplierOrb,      //multiplies damage of next x hit orbs
         RefreshOrb,         //refreshes the board
         RottedOrb,          //spawns rotted mana (reduces player attack power when used)
+        StoneOrb,           //blocks orb position destroyed after mutliple hits
     }
 
     internal enum PlayerAttackTarget

@@ -5,6 +5,7 @@ using DG.Tweening;
 using PeggleWars.Characters;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using ES3Types;
 
 namespace Characters.Enemies
 {

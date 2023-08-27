@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42411fe6627f4a742bcf962964bdc0ce, type: 3}
-  m_Name: test_zombie_level
+  m_Name: zombie_leaf_zombie
   m_EditorClassIdentifier: 
   _enemyArray: 000000000100000000000000

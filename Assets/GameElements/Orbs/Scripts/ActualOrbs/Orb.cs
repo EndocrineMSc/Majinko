@@ -23,9 +23,10 @@ namespace Orbs
         //Stats
         [SerializeField] protected ManaType _spawnManaType;
         [SerializeField] protected int _manaAmount = 10;
+        [SerializeField] protected int _stalwartHits = 0;
 
         internal ManaType SpawnManaType { get { return _spawnManaType; } private protected set { _spawnManaType = value; } }
-        internal int ManaAmount { get { return _manaAmount; } private protected set { _manaAmount = value; }}
+        internal int ManaAmount { get { return _manaAmount; } private protected set { _manaAmount = value; } }
         [SerializeField] protected GameObject _defaultOrb;
         [SerializeField] internal OrbType OrbType;
         internal bool OrbIsActive { get; private set; } = true;
@@ -83,29 +84,34 @@ namespace Orbs
         #region Collision Handling
 
         protected virtual void OnCollisionEnter2D(Collision2D collision)
-        {
-            _collider.enabled = false;
+        {           
             if (collision.gameObject.TryGetComponent<IAmSphere>(out _))
-            {
+            {               
                 ArenaConditionTracker.OrbWasHit();
                 OrbEvents.RaiseOrbHit();
-                AdditionalEffectsOnCollision();
-                ReplaceHitOrb();               
-                PlayOrbOnHitSound();
-                OnCollisionVisualPolish();
-                SpawnMana();
-                StartCoroutine(DestroyOrbWithDelay());
+
+                if (_stalwartHits <= 0)
+                {
+                    _collider.enabled = false;
+                    AdditionalEffectsOnCollision();
+                    ReplaceHitOrb();
+                    PlayOrbOnHitSound();
+                    OnCollisionVisualPolish();
+                    SpawnMana();
+                    StartCoroutine(DestroyOrbWithDelay());
+                }
+                else
+                {
+                    _stalwartHits--;
+                }
             }
             else if (collision.gameObject.TryGetComponent<Orb>(out _))
             {
                 Debug.Log("Destroyed " + gameObject.name + " due to collision with orb");
                 Destroy(gameObject);
             }
-            else
-            {
-                _collider.enabled = true;
-            }
         }
+    
 
         protected abstract void AdditionalEffectsOnCollision();
 
