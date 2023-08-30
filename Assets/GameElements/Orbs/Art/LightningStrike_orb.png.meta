@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0db05763d09e3d744877e87d73c815cb
+guid: 0e7ae1346e93a57489813cfc0d1467d4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,7 +102,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -114,11 +114,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: iPhone
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,7 +129,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RottenManaOrb_0
+      name: LightningStrike_orb_0
       rect:
         serializedVersion: 2
         x: 0
@@ -143,14 +143,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 878644115405c764489b7e9ee3bd0588
-      internalID: 151197479
+      spriteID: eacfd0239ada8ed47b68abac7d51e2a1
+      internalID: 399223459
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RottenManaOrb_1
+      name: LightningStrike_orb_1
       rect:
         serializedVersion: 2
         x: 16
@@ -164,14 +164,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f129a5628bcdee4c8f9ddfd74da8127
-      internalID: 699924322
+      spriteID: 908c902cb941efb4bb8b366936d6b275
+      internalID: 130811306
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RottenManaOrb_2
+      name: LightningStrike_orb_2
       rect:
         serializedVersion: 2
         x: 32
@@ -185,14 +185,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c899fdfb8b14ef49abcb3d897e9f3b5
-      internalID: -1000770601
+      spriteID: 033a1e0495359b24cb7c6ac3e44c5da9
+      internalID: -263929381
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RottenManaOrb_3
+      name: LightningStrike_orb_3
       rect:
         serializedVersion: 2
         x: 48
@@ -206,14 +206,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b65cbc60f28a644688ff1939c8ac507
-      internalID: -1184185863
+      spriteID: 495fb6bd613f05240a8d3410b2639863
+      internalID: -1943359895
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RottenManaOrb_4
+      name: LightningStrike_orb_4
       rect:
         serializedVersion: 2
         x: 64
@@ -227,14 +227,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6891f389e9c8914c8810cd51e98a42c
-      internalID: -864511849
+      spriteID: 37aa39e860ce7e14ab4eb337f145440a
+      internalID: -928617116
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RottenManaOrb_5
+      name: LightningStrike_orb_5
       rect:
         serializedVersion: 2
         x: 80
@@ -248,14 +248,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e863c0b39ff32be42a9c1fa7a34932c6
-      internalID: 623705239
+      spriteID: c2545a4c99a775848b94a619612015f5
+      internalID: -530199789
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RottenManaOrb_6
+      name: LightningStrike_orb_6
       rect:
         serializedVersion: 2
         x: 96
@@ -269,8 +269,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0651dc7664ae1a49b24e5404da24a8d
-      internalID: -2125299418
+      spriteID: 1aed0d2d1b917d44f9e13a8954bfa614
+      internalID: -192108398
       vertices: []
       indices: 
       edges: []
@@ -286,13 +286,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      RottenManaOrb_1: 699924322
-      RottenManaOrb_3: -1184185863
-      RottenManaOrb_6: -2125299418
-      RottenManaOrb_4: -864511849
-      RottenManaOrb_5: 623705239
-      RottenManaOrb_0: 151197479
-      RottenManaOrb_2: -1000770601
+      LightningStrike_orb_0: 399223459
+      LightningStrike_orb_4: -928617116
+      LightningStrike_orb_1: 130811306
+      LightningStrike_orb_6: -192108398
+      LightningStrike_orb_3: -1943359895
+      LightningStrike_orb_5: -530199789
+      LightningStrike_orb_2: -263929381
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -72,8 +72,6 @@ namespace Utility
                     return Relic.None;
                 }
                 rarityList = DetermineRelicRarityList();
-                foreach (Relic rarity in rarityList)
-                    Debug.Log(rarity.ToString());
                 retries++;
             }
 

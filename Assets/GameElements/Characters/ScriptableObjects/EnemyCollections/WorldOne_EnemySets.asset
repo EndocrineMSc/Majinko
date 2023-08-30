@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: WorldOne_EnemySets
   m_EditorClassIdentifier: 
   ViableEnemySets:
+  - {fileID: 11400000, guid: 4a80179af8bcf6d45ae01993f6e75429, type: 2}
+  - {fileID: 11400000, guid: 541f3afb23f71a84bac6e538828f93e4, type: 2}
+  - {fileID: 11400000, guid: 5cf7c04cf5bd9824a825ebf23ea78d3d, type: 2}
   - {fileID: 11400000, guid: f1f7f7236a761f743b375322143a974e, type: 2}
+  - {fileID: 11400000, guid: de620edb89cf929489715e3b1e7b4663, type: 2}

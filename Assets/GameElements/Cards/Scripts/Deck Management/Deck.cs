@@ -62,9 +62,14 @@ namespace Cards
 
         private void BuildDeckFromGlobalDeck(List<Card> globalDeck)
         {
-            foreach (Card card in globalDeck)
+            for (int i = 0; i < globalDeck.Count; i++)
             {
-                LocalDeck.Add(card);
+                Card card = globalDeck[i];
+
+                if (card != null)
+                    LocalDeck.Add(card);
+                else
+                    Debug.Log("Card to add to Local Deck was null!");
             }
         }
 

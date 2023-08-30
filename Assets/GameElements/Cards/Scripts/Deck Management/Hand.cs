@@ -126,10 +126,9 @@ namespace Cards
             for (int i = 0; i < amount; i++)
             {
                 Card card = _deck.DrawCard();
+
                 if (card != null)
-                {
                     HandCards.Add(card);
-                }
 
                 if (i > _maxDrawAmount - 1)
                     break;
