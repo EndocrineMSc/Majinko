@@ -2,6 +2,8 @@ using Utility;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Audio;
+using System.Collections;
 
 namespace Cards
 {
@@ -12,17 +14,24 @@ namespace Cards
 
         internal static Deck Instance { get; private set; }
 
-        internal List<Card> DiscardPile { get; set; } = new();
-        internal List<Card> LocalDeck { get; set; } = new();
-        internal List<Card> ExhaustPile { get; set; } = new();
+        public List<GameObject> LocalDeck = new();
+        public List<GameObject> DeckPile = new();
+        public List<GameObject> DiscardPile = new();
+        public List<GameObject> ExhaustPile = new();
+        public List<GameObject> HandCards = new();
 
-        private Hand _hand;
+        private RectTransform _cardCanvasTransform;
 
         //Tweening
         internal Vector3 DiscardPosition { get; private set; }
         internal Vector3 ExhaustPosition { get; private set; }
         [SerializeField] private GameObject _discardPileObject;
         [SerializeField] private GameObject _exhaustPileObject;
+        private float _tweenDiscardDuration = 0.5f;
+        private Vector3 _tweenEndScale = new(0.05f, 0.05f, 0.05f);
+        private RectTransform _rectTransform;
+        private bool _discardPileIsTweening;
+        private bool _exhaustPileIsTweening;
 
         #endregion
 
@@ -48,7 +57,7 @@ namespace Cards
 
         private void Start()
         {
-            _hand = Hand.Instance;
+            _cardCanvasTransform = Hand.Instance.CardCanvas.GetComponent<RectTransform>();
             DiscardPosition = Camera.main.WorldToScreenPoint(_discardPileObject.transform.position);
             ExhaustPosition = Camera.main.WorldToScreenPoint(_exhaustPileObject.transform.position);
             BuildLevelDeck();
@@ -56,80 +65,123 @@ namespace Cards
 
         private void BuildLevelDeck()
         {
-            BuildDeckFromGlobalDeck(GlobalDeckManager.Instance.GlobalDeck);
+            InstantiateDeckCards();
             ShuffleDeck();
         }
 
-        private void BuildDeckFromGlobalDeck(List<Card> globalDeck)
+        private void InstantiateDeckCards()
         {
-            for (int i = 0; i < globalDeck.Count; i++)
+            foreach (Card card in GlobalDeckManager.Instance.GlobalDeck)
             {
-                Card card = globalDeck[i];
-
                 if (card != null)
-                    LocalDeck.Add(card);
-                else
-                    Debug.Log("Card to add to Local Deck was null!");
+                {
+                    var cardObject = Instantiate(card, _cardCanvasTransform).gameObject;
+                    LocalDeck.Add(cardObject);
+                    DeckPile.Add(cardObject);
+                    cardObject.SetActive(false);
+                }
             }
         }
 
         private void OnLevelVictory()
         {
-            this.enabled = false;
+            foreach (var cardObject in LocalDeck)
+                Destroy(cardObject);
         }
 
-        internal Card DrawCard()
+        internal void DrawCard()
         {
-            if (LocalDeck.Count == 0 && DiscardPile.Count != 0)
+            if (DeckPile.Count == 0 && DiscardPile.Count != 0)
             {
-                LocalDeck.AddRange(DiscardPile);
+                DeckPile.AddRange(DiscardPile);
                 DiscardPile.Clear();
                 ShuffleDeck();
             }
 
-            if (LocalDeck.Count > 0)
+            if (DeckPile.Count > 0)
             {
-                Card card = LocalDeck[0];
-                LocalDeck.RemoveAt(0);
-                return card;
+                var cardObject = DeckPile[0];
+                DeckPile.Remove(cardObject);
+                HandCards.Add(cardObject);
             }
-            else { return null; }
         }
 
-        internal void DiscardCard(Card card)
+        internal void DiscardHand()
+        {
+            while (HandCards.Count > 0)
+            {
+                DiscardCard(HandCards[0]);          
+            }
+        }
+
+        internal void DiscardCard(GameObject cardObject)
         {            
-            DiscardPile.Add(card);
-            _hand.HandCards.Remove(card);
+            DiscardPile.Add(cardObject);
+            HandCards.Remove(cardObject);
+            StartCoroutine(DisableCardAfterAnimation(true, cardObject));
         }
 
-        internal void ExhaustCard(Card card)
+        internal void ExhaustCard(GameObject cardObject)
         {
-            ExhaustPile.Add(card);
-            _hand.HandCards.Remove(card);
+            ExhaustPile.Add(cardObject);
+            HandCards.Remove(cardObject);
+            StartCoroutine(DisableCardAfterAnimation(false, cardObject));
         }
 
-        internal void StartDiscardPileAnimation()
+        internal IEnumerator StartDiscardPileAnimation()
         {
-            Vector3 startScale = _discardPileObject.transform.localScale;
-            _discardPileObject.transform.DOPunchScale(startScale * 0.25f, 0.1f,1,0.1f);
+            if (!_discardPileIsTweening)
+            {
+                _discardPileIsTweening = true;
+                Vector3 startScale = _discardPileObject.transform.localScale;
+                _discardPileObject.transform.DOPunchScale(startScale * 0.25f, 0.1f,1,0.1f);
+                yield return new WaitForSeconds(0.1f);
+                _discardPileIsTweening = false;
+            }
         }
 
-        internal void StartExhaustPileAnimation()
+        internal IEnumerator StartExhaustPileAnimation()
         {
-            Vector3 startScale = _exhaustPileObject.transform.localScale;
-            _exhaustPileObject.transform.DOPunchScale(startScale * 0.25f, 0.1f, 1, 0.1f);
+            if (!_exhaustPileIsTweening)
+            {
+                _exhaustPileIsTweening = true;
+                Vector3 startScale = _exhaustPileObject.transform.localScale;
+                _exhaustPileObject.transform.DOPunchScale(startScale * 0.25f, 0.1f, 1, 0.1f);
+                yield return new WaitForSeconds(0.1f);
+                _exhaustPileIsTweening = false;
+            }
         }
 
         //Shuffles the deck using the Fisher-Yates shuffle algortihm
         internal void ShuffleDeck()
         {
-            for (int i = LocalDeck.Count - 1; i > 0; i--)
+            for (int i = DeckPile.Count - 1; i > 0; i--)
             {
                 int j = Random.Range(0, i + 1);
-                Card temp = LocalDeck[i];
-                LocalDeck[i] = LocalDeck[j];
-                LocalDeck[j] = temp;
+                var temp = DeckPile[i];
+                DeckPile[i] = DeckPile[j];
+                DeckPile[j] = temp;
             }
+        }
+
+        protected IEnumerator DisableCardAfterAnimation(bool targetIsDiscardPile, GameObject cardObject)
+        {
+            Vector3 targetPosition = (targetIsDiscardPile) ? DiscardPosition : ExhaustPosition;
+            
+            var rectTransform = cardObject.GetComponent<RectTransform>();
+            rectTransform.DOMove(targetPosition, _tweenDiscardDuration).SetEase(Ease.OutExpo);
+            rectTransform.DOScale(_tweenEndScale, _tweenDiscardDuration).SetEase(Ease.OutCubic);
+
+            yield return new WaitForSeconds(_tweenDiscardDuration / 2);
+
+            if (targetIsDiscardPile)
+                StartCoroutine(StartDiscardPileAnimation());
+            else
+                StartExhaustPileAnimation();
+
+            yield return new WaitForSeconds(_tweenDiscardDuration / 2);
+            cardObject.SetActive(false);
+            CardEvents.RaiseCardDisabled();
         }
 
         #endregion

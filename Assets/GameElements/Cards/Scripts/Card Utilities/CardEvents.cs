@@ -7,7 +7,8 @@ namespace Cards
     {
         internal static event Action<Vector3> OnCardZoomIn;
         internal static event Action OnCardZoomOut;
-        internal static event Action OnCardDestruction;
+        internal static event Action OnCardDisabled;
+        internal static bool CardIsZoomed { get; set; }
 
         internal static void RaiseCardZoomIn(Vector3 position)
         {
@@ -19,9 +20,9 @@ namespace Cards
             OnCardZoomOut?.Invoke();
         }
 
-        internal static void RaiseCardDestruction()
+        internal static void RaiseCardDisabled()
         {
-            OnCardDestruction?.Invoke();
+            OnCardDisabled?.Invoke();
         }
     }
 }

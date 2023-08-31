@@ -10,7 +10,6 @@ namespace Cards
 {
     [RequireComponent(typeof(CardDragDrop))]
     [RequireComponent(typeof(CardZoom))]
-    [RequireComponent(typeof(CardZoomMovement))]
     [RequireComponent(typeof(CardUIDisplayer))]
     internal abstract class Card : MonoBehaviour
     {
@@ -34,6 +33,7 @@ namespace Cards
         protected float _tweenDiscardDuration = 0.5f;
         protected Vector3 _tweenEndScale = new(0.05f, 0.05f, 0.05f);
         protected RectTransform _rectTransform;
+        internal Vector2 PositionInHand = new();
 
         //Properties
         internal string CardName { get; private protected set; }
@@ -118,11 +118,9 @@ namespace Cards
                 _manaPool.SpendMana(_adjustedBasicManaAmount, _adjustedFireManaAmount, _adjustedIceManaAmount);
                 _orbManager.CheckForRefreshOrbs(); //Checks if RefreshOrb was overwritten and makes a new one if so
                 HandleDiscard();
-                _hand.InstantiatedCards.Remove(this); //list of instantiated cards in hand
                 _hand.AlignCardsWrap();
                 GetComponent<CardZoom>().enabled = false;
                 GetComponent<CardZoomMovement>().enabled = false;
-                StartCoroutine(DestroyCardAfterAnimation());
                 return true;
             }
             else
@@ -143,33 +141,19 @@ namespace Cards
         protected virtual void HandleDiscard()
         {
             if (IsExhaustCard)             
-                _deck.ExhaustCard(GlobalCardManager.Instance.AllCards[(int)CardType]);
+                _deck.ExhaustCard(this.gameObject);
             else
-                _deck.DiscardCard(GlobalCardManager.Instance.AllCards[(int)CardType]);
-        }
-
-        protected IEnumerator DestroyCardAfterAnimation()
-        {
-            Vector3 targetPosition = (IsExhaustCard) ? Deck.Instance.ExhaustPosition : Deck.Instance.DiscardPosition;
-
-            _rectTransform.DOMove(targetPosition, _tweenDiscardDuration).SetEase(Ease.OutExpo);
-            _rectTransform.DOScale(_tweenEndScale, _tweenDiscardDuration).SetEase(Ease.OutCubic);
-
-            yield return new WaitForSeconds(_tweenDiscardDuration / 2);
-
-            if (IsExhaustCard)
-                Deck.Instance.StartExhaustPileAnimation();
-            else
-                Deck.Instance.StartDiscardPileAnimation();
-
-            yield return new WaitForSeconds(_tweenDiscardDuration / 2);
-            CardEvents.RaiseCardDestruction();
-            Destroy(gameObject);
+                _deck.DiscardCard(this.gameObject);
         }
 
         protected void OnDestroy()
         {
             transform.DOKill();
+        }
+
+        internal void SetPositionInHand(Vector2 positionInHand)
+        {
+            PositionInHand = positionInHand;
         }
 
         #endregion
