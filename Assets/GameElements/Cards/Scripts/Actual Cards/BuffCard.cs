@@ -7,7 +7,13 @@ namespace Cards
 {
     internal class BuffCard : Card
     {
-        [SerializeField] CardBuff _buff;
+        CardBuff _buff;
+
+        protected override void SetCardFields()
+        {
+            base.SetCardFields();
+            _buff = ScriptableCard.Buff;
+        }
 
         protected override void CardEffect()
         {
@@ -31,6 +37,7 @@ namespace Cards
 
     internal enum CardBuff
     {
+        None,
         ShieldBeetle,
         BubbleWand,
         WardingRune,

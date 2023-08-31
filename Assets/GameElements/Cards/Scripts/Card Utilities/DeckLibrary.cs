@@ -70,7 +70,6 @@ namespace Cards
                 var card = cardObject.GetComponent<Card>();
                 card.GetComponent<CardDragDrop>().enabled = false;
                 card.GetComponent<CardZoom>().enabled = false;
-                card.GetComponent<CardZoomMovement>().enabled = false;
                 cardObject.AddComponent<DeckLibraryCardHighlight>();
             }
         }

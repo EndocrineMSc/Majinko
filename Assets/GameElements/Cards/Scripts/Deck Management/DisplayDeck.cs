@@ -31,7 +31,7 @@ namespace Cards
 
         private void Update()
         {
-            _remainingCardsInDeck.text = _deckManager.LocalDeck.Count.ToString();
+            _remainingCardsInDeck.text = _deckManager.DeckPile.Count.ToString();
             _remainingCardsInDiscardPile.text = _deckManager.DiscardPile.Count.ToString();
             _remainingCardsInExhaustPile.text = _deckManager.ExhaustPile.Count.ToString();
         }

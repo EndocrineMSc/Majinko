@@ -208,7 +208,6 @@ namespace Utility
             {
                 cardObject.IsBeingDealt = false;
                 cardObject.GetComponent<CardDragDrop>().enabled = false;
-                cardObject.GetComponent<CardZoomMovement>().enabled = false;
                 cardObject.GetComponent<CardZoom>().enabled = false;
                 cardObject.AddComponent<ShopMouseOverSound>();
             }

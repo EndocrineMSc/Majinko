@@ -120,7 +120,6 @@ namespace Cards
                 HandleDiscard();
                 _hand.AlignCardsWrap();
                 GetComponent<CardZoom>().enabled = false;
-                GetComponent<CardZoomMovement>().enabled = false;
                 return true;
             }
             else

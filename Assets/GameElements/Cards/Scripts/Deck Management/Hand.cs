@@ -208,14 +208,12 @@ namespace Cards
         private void DisableZoomComponents(Card card)
         {
             card.GetComponent<CardZoom>().enabled = false;
-            card.GetComponent<CardZoomMovement>().enabled = false;
             card.GetComponent<CardDragDrop>().enabled = false;
         }
 
         private void EnableZoomComponents(Card card)
         {
             card.GetComponent<CardZoom>().enabled = true;
-            card.GetComponent<CardZoomMovement>().enabled = true;
             card.GetComponent<CardDragDrop>().enabled = true;
         }
 

@@ -17,7 +17,7 @@ namespace Cards
             (int) CardType.ManaBlitz, (int) CardType.ManaBlitz, (int) CardType.ManaBlitz, (int) CardType.ManaShield,(int) CardType.ManaShield,
             (int) CardType.ManaShield, (int) CardType.ManaShield };
 
-        internal List<Card> GlobalDeck { get; set; } = new(); //List of all cards in the player deck, will store any modifications (added or removed cards) during a run
+        public List<Card> GlobalDeck = new(); //List of all cards in the player deck, will store any modifications (added or removed cards) during a run
 
         internal StartDeck StartDeck { get; private set; } // enum for choice of startdecks
 
@@ -39,8 +39,8 @@ namespace Cards
         private void Start()
         {
             if(ES3.KeyExists(SAVE_PATH))
-                GlobalDeckManager.Instance.GlobalDeck = ES3.Load(SAVE_PATH, new List<Card>());
-            
+                GlobalDeck = ES3.Load<List<Card>>(SAVE_PATH);
+
             if (GlobalDeck.Count == 0)
                 BuildStartDeck(StartDeck.Apprentice);
         }
@@ -57,7 +57,7 @@ namespace Cards
 
         private void OnApplicationQuit()
         {
-            ES3.Save(SAVE_PATH, GlobalDeckManager.Instance.GlobalDeck);
+            ES3.Save(SAVE_PATH, GlobalDeck);
         }
 
         internal void BuildStartDeck(StartDeck startDeck)

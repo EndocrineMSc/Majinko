@@ -55,7 +55,7 @@ namespace Orbs
             {
                 AmountOfRefreshOrbs = 0;
                 LevelLoadOrbs.Clear();
-                var tempList = ES3.Load(LEVELLOADORBS_PATH) as List<Orb>;
+                List<Orb> tempList = ES3.Load(LEVELLOADORBS_PATH) as List<Orb>;
                 foreach (Orb orb in tempList)
                     AddLevelLoadOrb(orb.OrbType);
             }
