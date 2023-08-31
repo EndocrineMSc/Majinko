@@ -160,4 +160,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScriptableCard: {fileID: 11400000, guid: 854bd6df0f27bd84fa654b4545737b4a, type: 2}
-  _buff: 3

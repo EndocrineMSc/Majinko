@@ -20,7 +20,7 @@ namespace Orbs
         internal override IEnumerator OrbEffect()
         {
             GameObject aoeTargetObject = GameObject.FindGameObjectWithTag(TARGET_PARAM);
-            _hailStorm.ShootAttack(aoeTargetObject.transform.position);
+            _hailStorm.ShootAttack(aoeTargetObject.transform.position + new Vector3(0, 1, 0));
             yield return null;
             Destroy(gameObject);
         }

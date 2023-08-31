@@ -2818,8 +2818,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560389175}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.03, y: 8.58, z: 1}
-  m_LocalScale: {x: 0.66859597, y: 0.65086687, z: 1}
+  m_LocalPosition: {x: 4.7, y: 8.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2215997998601550429}
@@ -3425,6 +3425,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3092c44c0abc13f4cb2e414aa0005119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LocalDeck: []
+  DeckPile: []
+  DiscardPile: []
+  ExhaustPile: []
+  HandCards: []
   _discardPileObject: {fileID: 2896366453714765372}
   _exhaustPileObject: {fileID: 826774115766465780}
 --- !u!114 &1619995357

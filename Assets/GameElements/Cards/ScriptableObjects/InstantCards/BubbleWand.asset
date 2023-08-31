@@ -23,3 +23,4 @@ MonoBehaviour:
   Rarity: 2
   Element: 0
   Image: {fileID: 21300000, guid: 32c3dfb0c4ab00d49b8c0ad2ce3398e0, type: 3}
+  Buff: 2

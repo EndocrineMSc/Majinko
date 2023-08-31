@@ -23,5 +23,6 @@ MonoBehaviour:
   Rarity: 3
   Element: 0
   Image: {fileID: 21300000, guid: 94b8174d73e132f4794d3b0d1381bb6b, type: 3}
+  Buff: 0
   OrbType: 23
   OrbAmount: 1

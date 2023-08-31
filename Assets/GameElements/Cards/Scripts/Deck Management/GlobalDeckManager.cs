@@ -15,7 +15,7 @@ namespace Cards
 
         private readonly int[] _apprenticeDeck = new int[] { (int) CardType.Divination, (int) CardType.Divination, (int) CardType.ManaBlitz,
             (int) CardType.ManaBlitz, (int) CardType.ManaBlitz, (int) CardType.ManaBlitz, (int) CardType.ManaShield,(int) CardType.ManaShield,
-            (int) CardType.ManaShield, (int) CardType.ManaShield };
+            (int) CardType.ManaShield, (int) CardType.ManaShield, (int) CardType.HailStorm, (int) CardType.LightningStrike };
 
         public List<Card> GlobalDeck = new(); //List of all cards in the player deck, will store any modifications (added or removed cards) during a run
 

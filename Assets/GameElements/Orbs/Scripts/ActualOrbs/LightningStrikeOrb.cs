@@ -19,7 +19,8 @@ namespace Orbs
         internal override IEnumerator OrbEffect()
         {
             Transform targetEnemy = EnemyManager.Instance.EnemiesInScene[EnemyManager.Instance.EnemiesInScene.Count - 1].transform;
-            _lightningStrike.ShootAttack(targetEnemy.position);
+            var targetPosition = new Vector3(targetEnemy.position.x, 8.675f, targetEnemy.position.z);
+            _lightningStrike.ShootAttack(targetPosition);
             yield return null;
             Destroy(gameObject);
         }
