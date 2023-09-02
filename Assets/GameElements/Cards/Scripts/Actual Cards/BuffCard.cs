@@ -12,7 +12,8 @@ namespace Cards
         protected override void SetCardFields()
         {
             base.SetCardFields();
-            _buff = ScriptableCard.Buff;
+            if (ScriptableCard != null)
+                _buff = ScriptableCard.Buff;
         }
 
         protected override void CardEffect()

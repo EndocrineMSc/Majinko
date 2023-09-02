@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace Utility
 {
-    internal class TestHelperCanvas : MonoBehaviour
+    public class TestHelperCanvas : MonoBehaviour
     {
         [SerializeField] private Button _resetSavesButton;
         [SerializeField] private Button _leyLinesButton;
@@ -13,6 +13,7 @@ namespace Utility
         [SerializeField] private Button _mirrorTreeButton;
         [SerializeField] private Button _mysteriousStrangerButton;
         [SerializeField] private Button _eliteCombatButton;
+        [SerializeField] private Button _bossCombatButton;
 
         private void Start()
         {
@@ -22,36 +23,42 @@ namespace Utility
             _mirrorTreeButton.onClick.AddListener(LoadMirrorTree);
             _mysteriousStrangerButton.onClick.AddListener(LoadMysteriousStranger);
             _eliteCombatButton.onClick.AddListener(LoadEliteCombat);
+            _bossCombatButton.onClick.AddListener(LoadBossCombat);
         }
 
-        internal void ResetSaves()
+        public void ResetSaves()
         {
             UtilityEvents.RaiseGameReset();
         }
 
-        internal void LoadLeyLines()
+        public void LoadLeyLines()
         {
             LoadHelper.LoadSceneWithLoadingScreen(SceneName.Event_LeyLines);
         }
 
-        internal void LoadForestFire()
+        public void LoadForestFire()
         {
             LoadHelper.LoadSceneWithLoadingScreen(SceneName.Event_ForestFire);
         }
 
-        internal void LoadMirrorTree()
+        public void LoadMirrorTree()
         {
             LoadHelper.LoadSceneWithLoadingScreen(SceneName.Event_MirrorTree);
         }
 
-        internal void LoadMysteriousStranger()
+        public void LoadMysteriousStranger()
         {
             LoadHelper.LoadSceneWithLoadingScreen(SceneName.Event_MysteriousStranger);
         }
 
-        internal void LoadEliteCombat()
+        public void LoadEliteCombat()
         {
             LoadHelper.LoadSceneWithLoadingScreen(SceneName.EliteCombat);
+        }
+
+        public void LoadBossCombat()
+        {
+            LoadHelper.LoadSceneWithLoadingScreen(SceneName.BossCombat);
         }
     }
 }

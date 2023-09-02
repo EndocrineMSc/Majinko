@@ -11,11 +11,22 @@ namespace Utility
         internal static SceneName SceneToBeLoaded { get; private set; } = SceneName.WorldOne;
         internal static float LoadDuration { get; private set; } = 1f;
         internal static string CURRENTSCENE_SAVE_PATH { get; } = "CurrentScene";
+        internal static bool CurrentlyBossCombat { get; private set; }
 
         internal static void LoadSceneWithLoadingScreen(SceneName sceneName)
         {
             if (sceneName != SceneName.MainMenu)
                 ES3.Save<SceneName>(CURRENTSCENE_SAVE_PATH, sceneName);
+
+            if (sceneName == SceneName.BossCombat)
+            {
+                CurrentlyBossCombat = true;
+                sceneName = SceneName.EliteCombat;
+            }
+            else
+            {
+                CurrentlyBossCombat = false;
+            }    
 
             SceneToBeLoaded = sceneName;
             SceneManager.LoadSceneAsync(SceneName.LoadingScreen.ToString());

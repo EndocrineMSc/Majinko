@@ -99,13 +99,13 @@ namespace Characters.Enemies
             _particleSystem.Play();
         }
 
-        internal override void StartMovementAnimation()
+        public override void StartMovementAnimation()
         {
             if (_animator != null)
                 _animator.SetTrigger(WALK_TRIGGER);
         }
 
-        internal override void StopMovementAnimation()
+        public override void StopMovementAnimation()
         {
             if (_animator != null)
                 _animator.SetTrigger(IDLE_TRIGGER);

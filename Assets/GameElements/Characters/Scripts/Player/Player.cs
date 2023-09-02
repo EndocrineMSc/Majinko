@@ -7,22 +7,22 @@ using Utility;
 
 namespace Characters
 {
-    internal class Player : MonoBehaviour, IDamagable
+    public class Player : MonoBehaviour, IDamagable
     {
         #region Fields and Properties
 
         [SerializeField] private SpriteRenderer _spriteRenderer;
         private Color _color;
 
-        internal static Player Instance { get; private set; }
+        public static Player Instance { get; private set; }
         private Animator _animator;
         private PhaseManager _turnManager;
         private readonly string HURT_ANIMATION_PARAM = "Hurt";
         private readonly string ATTACK_ANIMATION_PARAM = "Attack";
 
-        internal int Health { get; private set; }
-        internal int Shield { get; private set; }
-        internal int MaxHealth { get; private set; }
+        public int Health { get; private set; }
+        public int Shield { get; private set; }
+        public int MaxHealth { get; private set; }
 
         #endregion
 
@@ -104,12 +104,12 @@ namespace Characters
             throw new System.NotImplementedException();
         }
 
-        internal void StartAttackAnimation()
+        public void StartAttackAnimation()
         {
             _animator.SetTrigger(ATTACK_ANIMATION_PARAM);
         }
 
-        internal void GainShield(int amount = 1, bool sourceIsOrb = true)
+        public void GainShield(int amount = 1, bool sourceIsOrb = true)
         {
             Shield += amount;
 

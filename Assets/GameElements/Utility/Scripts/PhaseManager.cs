@@ -7,13 +7,13 @@ using UnityEngine.Events;
 
 namespace Utility.TurnManagement
 {
-    internal class PhaseManager : MonoBehaviour
+    public class PhaseManager : MonoBehaviour
     {
         #region Fields
 
-        internal static PhaseManager Instance { get; private set; }
+        public static PhaseManager Instance { get; private set; }
+        public Phase CurrentPhase { get; private set; }
 
-        internal Phase CurrentPhase { get; private set; }
         
         #endregion
 
@@ -27,31 +27,31 @@ namespace Utility.TurnManagement
                 Destroy(gameObject);
         }
 
-        internal void StartCardPhase()
+        public void StartCardPhase()
         {
             CurrentPhase = Phase.CardPhase;
             LevelPhaseEvents.RaiseStartCardPhase();
         }
 
-        internal void StartShootingPhase()
+        public void StartShootingPhase()
         {
             CurrentPhase = Phase.Shooting;
             LevelPhaseEvents.RaiseStartShootingPhase();
         }
 
-        internal void StartPlayerAttackPhase()
+        public void StartPlayerAttackPhase()
         {
             CurrentPhase = Phase.PlayerActions;
             LevelPhaseEvents.RaiseStartPlayerAttackPhase();
         }
 
-        internal void StartEnemyPhase()
+        public void StartEnemyPhase()
         {
             CurrentPhase = Phase.EnemyTurn;
             LevelPhaseEvents.RaiseStartEnemyPhase();
         }
 
-        internal void EndEnemyPhase()
+        public void EndEnemyPhase()
         {
             CurrentPhase = Phase.EnemyTurn;
             LevelPhaseEvents.RaiseEndEnemyPhase();
@@ -71,7 +71,7 @@ namespace Utility.TurnManagement
         #endregion
     }
 
-    internal enum Phase
+    public enum Phase
     {
         CardPhase,
         Shooting,

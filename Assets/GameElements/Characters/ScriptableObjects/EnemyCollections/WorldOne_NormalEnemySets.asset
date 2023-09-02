@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3962ccfd50b6cc4da0d0408ed7744c7, type: 3}
-  m_Name: WorldOne_EnemySets
+  m_Name: WorldOne_NormalEnemySets
   m_EditorClassIdentifier: 
   ViableEnemySets:
   - {fileID: 11400000, guid: 4a80179af8bcf6d45ae01993f6e75429, type: 2}

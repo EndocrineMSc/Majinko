@@ -43,13 +43,13 @@ namespace Characters.Enemies
             displayOnScroll.DisplayDescription = "<size=120%><b>Corrupted Shroombie</b><size=20%>\n\n<size=100%>Normally protectors of the forest, these corrupted sentinels now attack on sight. Will spawn two <b>Rotten Mana Orbs</b> on death.";
         }
 
-        internal override void StartMovementAnimation()
+        public override void StartMovementAnimation()
         {
             if (_animator != null)
                 _animator.SetTrigger(WALK_TRIGGER);
         }
 
-        internal override void StopMovementAnimation()
+        public override void StopMovementAnimation()
         {
             if (_animator != null)
                 _animator.SetTrigger(IDLE_TRIGGER);

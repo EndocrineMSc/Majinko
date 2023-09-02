@@ -1,10 +1,11 @@
 namespace EnumCollection
 {
-    internal enum EnemyType
+    public enum EnemyType
     {
+        Boss_ViciousBoar,
+        LeafMage,
         Shroombie,
         StoneGolem,
-        LeafMage,
     }
 
     internal enum ManaType
@@ -41,7 +42,8 @@ namespace EnumCollection
         LightningStrikeOrb, //Attack, strikes last enemy
         ManaBlitzOrb,       //shoots a ManaBlitz at the first enemy
         ManaShieldOrb,      //shields player from incoming damage
-        MultiplierOrb,      //multiplies damage of next x hit orbs
+        MultiplierOrb,      //multiplies damage of next x hit orb
+        PineConeOrb,        //Spawnes a pine cone enemy
         RefreshOrb,         //refreshes the board
         RottedOrb,          //spawns rotted mana (reduces player attack power when used)
         StoneOrb,           //blocks orb position destroyed after mutliple hits

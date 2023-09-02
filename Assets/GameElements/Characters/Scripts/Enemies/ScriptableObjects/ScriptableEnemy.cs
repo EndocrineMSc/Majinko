@@ -4,12 +4,13 @@ using UnityEngine;
 namespace Characters.Enemies
 {
     [CreateAssetMenu(menuName = "Enemies/Enemy")]
-    internal class ScriptableEnemy : ScriptableObject
+    public class ScriptableEnemy : ScriptableObject
     {
-        [SerializeField] internal int AttackFrequency;
-        [SerializeField] internal EnemyAttackType AttackType;
-        [SerializeField] internal int Damage;
-        [SerializeField] internal int MaxHealth;
-        [SerializeField] internal bool IsFlying;
+        public int AttackFrequency;
+        public EnemyAttackType AttackType;
+        public int Damage;
+        public int MaxHealth;
+        public bool IsFlying;
+        public bool IsStationary;
     }
 }
