@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Characters.UI
 {
-    internal class PopUpSpawner : MonoBehaviour
+    public class PopUpSpawner : MonoBehaviour
     {
         #region Fields and Properties
 
@@ -13,7 +13,7 @@ namespace Characters.UI
 
         #region Functions
 
-        internal void SpawnPopUp(int damageAmount, string hexColor = "#FF0A01")
+        public void SpawnPopUp(int damageAmount, string hexColor = "#FF0A01")
         {
             Transform spawnTransform = transform.GetChild(0).gameObject.transform;
             float xOffset = spawnTransform.position.x + UnityEngine.Random.Range(-0.1f, 0.1f);
@@ -24,7 +24,7 @@ namespace Characters.UI
             tempPopUp.Setup(damageAmount, hexColor);
         }
 
-        internal void SpawnPopUp(string bark)
+        public void SpawnPopUp(string bark)
         {
             Transform spawnTransform = transform.GetChild(0).gameObject.transform;
             float xOffset = spawnTransform.position.x + UnityEngine.Random.Range(-0.1f, 0.1f);

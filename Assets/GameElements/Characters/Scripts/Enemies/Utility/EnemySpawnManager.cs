@@ -2,10 +2,12 @@ using EnumCollection;
 using Utility.TurnManagement;
 using UnityEngine;
 using Utility;
+using UnityEngine.SceneManagement;
+using System;
 
 namespace Characters.Enemies
 {
-    internal class EnemySpawnManager : MonoBehaviour
+    public class EnemySpawnManager : MonoBehaviour
     {
         #region Fields and Properties
 
@@ -18,12 +20,16 @@ namespace Characters.Enemies
 
         Vector2 _flyingEnemySpawnPosition;
         Vector2 _walkingEnemySpawnPosition;
+        Vector2 _nullVector = Vector2.zero;
 
-        internal int AmountOfEnemiesInLevel { get; private set; } 
-        internal int EnemySpawnCounter { get; private set; }
+        public int AmountOfEnemiesInLevel { get; private set; } 
+        public int EnemySpawnCounter { get; private set; }
 
+        private readonly string NORMAL_COMBAT_SCENE_NAME = "NormalCombat";
         private int _overworldIndex = 1;
-        [SerializeField] private OverworldSetOfSets _worldOneSets;
+        [SerializeField] private OverworldSetOfSets _worldOneNormalCombatSets;
+        [SerializeField] private OverworldSetOfSets _worldOneEliteCombatSets;
+        [SerializeField] private OverworldSetOfSets _worldOneBossCombatSets;
 
         #endregion
 
@@ -69,15 +75,24 @@ namespace Characters.Enemies
         private EnemyType[] GetEnemyArrayByWorld()
         {
             EnemyType[] tempArray = null;
+            Scene currentScene = SceneManager.GetActiveScene();
+            ScriptableEnemySet[] tempAllEnemySets = null;
 
             switch (_overworldIndex)
             {
                 case 1:
-                    ScriptableEnemySet[] tempAllEnemySets = _worldOneSets.ViableEnemySets;
-                    int randomSet = UnityEngine.Random.Range(0, tempAllEnemySets.Length);
-                    ScriptableEnemySet tempEnemySet = tempAllEnemySets[randomSet];
-                    tempArray = tempEnemySet.EnemyArray;
+                    if (currentScene.name.Contains(NORMAL_COMBAT_SCENE_NAME))
+                        tempAllEnemySets = _worldOneNormalCombatSets.ViableEnemySets;
+                    else
+                        tempAllEnemySets = LoadHelper.CurrentlyBossCombat ? _worldOneBossCombatSets.ViableEnemySets : _worldOneEliteCombatSets.ViableEnemySets;
                     break;
+            }
+
+            if (tempAllEnemySets != null)
+            {
+                int randomSet = UnityEngine.Random.Range(0, tempAllEnemySets.Length);
+                ScriptableEnemySet tempEnemySet = tempAllEnemySets[randomSet];
+                tempArray = tempEnemySet.EnemyArray;
             }
             return tempArray;
         }
@@ -92,7 +107,7 @@ namespace Characters.Enemies
             PhaseManager.Instance.EndEnemyPhase();
         }
 
-        internal void SpawnEnemy(EnemyType enemyType)
+        public void SpawnEnemy(EnemyType enemyType)
         {
             Enemy spawnEnemy = _enemyManager.EnemyLibrary[(int)enemyType];
             Vector2 spawnPosition;            
@@ -102,7 +117,7 @@ namespace Characters.Enemies
             else
                 spawnPosition = _walkingEnemySpawnPosition;
 
-            if (!CheckIfSpawnPositionOccupied())
+            if (!CheckIfSpawnPositionOccupied(spawnPosition))
             {
                 Enemy instantiatedEnemy = Instantiate(spawnEnemy, spawnPosition, Quaternion.identity);
                 _enemyManager.EnemiesInScene.Add(instantiatedEnemy);
@@ -111,20 +126,29 @@ namespace Characters.Enemies
             }
         }
 
-        private bool CheckIfSpawnPositionOccupied()
+        public bool SpawnEnemy(EnemyType enemyType, Vector2 spawnPosition)
+        {
+            Enemy spawnEnemy = _enemyManager.EnemyLibrary[(int)enemyType];
+            bool spawnPossible = !CheckIfSpawnPositionOccupied(spawnPosition);
+
+            if (spawnPossible)
+            {
+                Enemy instantiatedEnemy = Instantiate(spawnEnemy, spawnPosition, Quaternion.identity);
+                _enemyManager.EnemiesInScene.Add(instantiatedEnemy);
+                EnemySpawnCounter++;
+                instantiatedEnemy.transform.position = new Vector3(instantiatedEnemy.transform.position.x, instantiatedEnemy.transform.position.y, -1); //quick fix for display scroll
+            }
+
+            return spawnPossible;
+        }
+
+        private bool CheckIfSpawnPositionOccupied(Vector2 spawnPosition)
         {
             foreach (Enemy sceneEnemy in _enemyManager.EnemiesInScene)
             {
                 Vector2 enemyPosition = sceneEnemy.transform.position;
-
-                if (enemyPosition == _flyingEnemySpawnPosition)
-                {
+                if (enemyPosition == spawnPosition)
                     return true;
-                }
-                else if (enemyPosition == _walkingEnemySpawnPosition)
-                {
-                    return true;
-                }
             }
             return false;
         }

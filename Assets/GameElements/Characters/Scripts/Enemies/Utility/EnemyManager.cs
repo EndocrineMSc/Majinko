@@ -6,15 +6,14 @@ namespace Characters.Enemies
 {
     [RequireComponent(typeof(EnemySpawnManager))]
     [RequireComponent(typeof(EnemyTurnMovement))]
-    internal class EnemyManager : MonoBehaviour
+    public class EnemyManager : MonoBehaviour
     {
         #region Fields and Properties
 
-        internal static EnemyManager Instance { get; private set; }
-
-        internal Enemy[] EnemyLibrary { get; private set; }
-        internal List<Enemy> EnemiesInScene { get; set; } = new();
-        internal Vector3[,] EnemyPositions { get; private set; }
+        public static EnemyManager Instance { get; private set; }
+        public Enemy[] EnemyLibrary { get; private set; }
+        public List<Enemy> EnemiesInScene { get; set; } = new();
+        public Vector3[,] EnemyPositions { get; private set; }
 
         //Fields to calculate EnemyPositions regardless of screen size
         private readonly int _amountOfXScreenDivisions = 10;
@@ -45,7 +44,6 @@ namespace Characters.Enemies
         {
             Camera camera = Camera.main;
             int cellHeight = Screen.height / 10;
-            float yLowerRow = Screen.height - cellHeight - 15;
             float yUpperRow = Screen.height - cellHeight / 2;
             float cellWidth = (float)Screen.width / _amountOfXScreenDivisions;
             float xPositionOffset = 3;
@@ -76,7 +74,7 @@ namespace Characters.Enemies
         #endregion
     }
 
-    internal enum EnemyAttackType
+    public enum EnemyAttackType
     {
         Melee,
         Ranged,

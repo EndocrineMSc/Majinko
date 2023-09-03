@@ -147,7 +147,7 @@ MonoBehaviour:
   _manaAmount: 0
   _stalwartHits: 1
   _defaultOrb: {fileID: 2549565476461289553, guid: c837957ee74bdcc44a31943daaafc0a8, type: 3}
-  OrbType: 25
+  OrbType: 26
   _crumblingOrb: {fileID: 21300000, guid: a4cdb9c403316dc46a21b467db6bd55c, type: 3}
   _crumbleSystem: {fileID: 1101103759730099356}
 --- !u!1 &8863616542387866657

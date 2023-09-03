@@ -46,8 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc52d21f5d1ae54689f546764f1f989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _overworldIndex: 1
-  _worldOneSets: {fileID: 11400000, guid: 8748fa504f27a874c86e49bbefbb9a02, type: 2}
+  _worldOneNormalCombatSets: {fileID: 11400000, guid: 8748fa504f27a874c86e49bbefbb9a02, type: 2}
+  _worldOneEliteCombatSets: {fileID: 11400000, guid: 8748fa504f27a874c86e49bbefbb9a02, type: 2}
+  _worldOneBossCombatSets: {fileID: 11400000, guid: 9814ba809419d8e4c8491412eb428a42, type: 2}
 --- !u!114 &5347611971990534468
 MonoBehaviour:
   m_ObjectHideFlags: 0

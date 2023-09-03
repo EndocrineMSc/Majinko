@@ -11,7 +11,7 @@ namespace Characters.Enemies
     [RequireComponent(typeof(PopUpSpawner))]
     [RequireComponent(typeof(ScrollDisplayer))]
     [RequireComponent(typeof(EnemyStatusTooltipSpawner))]
-    internal abstract class Enemy : MonoBehaviour, IDamagable, IHaveDisplayDescription
+    public abstract class Enemy : MonoBehaviour, IDamagable, IHaveDisplayDescription
     {
         #region Fields and Properties
 
@@ -34,12 +34,12 @@ namespace Characters.Enemies
         protected Color _baseColor;
 
         //Status Effects
-        internal bool IsFrozen { get; private set; }
-        internal int FrozenForTurns { get; private protected set; } = 0;
-        internal int BurningStacks { get; private set; } = 0;
-        internal int FreezingStacks { get; private set; } = 0;
-        internal int TemperatureSicknessStacks { get; private protected set; } = 0;
-        internal int EnragedStacks { get; private protected set;} = 0;
+        public bool IsFrozen { get; private set; }
+        public int FrozenForTurns { get; private protected set; } = 0;
+        public int BurningStacks { get; private set; } = 0;
+        public int FreezingStacks { get; private set; } = 0;
+        public int TemperatureSicknessStacks { get; private protected set; } = 0;
+        public int EnragedStacks { get; private protected set;} = 0;
 
         protected float _takenDamageModifier = 1f;
         protected float _dealingDamageModifier = 1f;
@@ -49,13 +49,14 @@ namespace Characters.Enemies
         //Stats
         [SerializeField] ScriptableEnemy _scriptableEnemy;
         protected int _attackFrequency;
-        internal EnemyAttackType AttackType { get; private set; }
-        internal int Damage { get; private set; }
-        internal int MaxHealth { get; private protected set; }
-        internal int Health { get; private set; } = 20;
-        internal bool IsFlying { get; private set; }
-        internal bool IsInAttackPosition { get; private set; }
-        internal int TurnsTillNextAttack { get; set; }
+        public EnemyAttackType AttackType { get; private set; }
+        public int Damage { get; private protected set; }
+        public int MaxHealth { get; private protected set; }
+        public int Health { get; private set; } = 20;
+        public bool IsFlying { get; private set; }
+        public bool IsInAttackPosition { get; private set; }
+        public int TurnsTillNextAttack { get; set; }
+        public bool IsStationary { get; private set; }
 
         //Other
         protected bool _isDead;
@@ -89,6 +90,7 @@ namespace Characters.Enemies
             MaxHealth = _scriptableEnemy.MaxHealth;
             Health = MaxHealth;
             TurnsTillNextAttack = _attackFrequency;
+            IsStationary = _scriptableEnemy.IsStationary;
         }
 
         protected abstract void PlaySpawnSound();
@@ -214,7 +216,7 @@ namespace Characters.Enemies
 
         protected abstract void OnDeathEffect();
 
-        internal virtual void Attack()
+        public virtual void Attack()
         {
             TriggerAttackAnimation();
             AdditionalAttackEffects();
@@ -231,7 +233,7 @@ namespace Characters.Enemies
             GetComponent<ScrollDisplayer>().DisplayScale = 2;
         }
 
-        internal void ApplyBurning(int burningStacks, bool sourceIsRelic = false)
+        public void ApplyBurning(int burningStacks, bool sourceIsRelic = false)
         {
             if (FreezingStacks > 0)
             {
@@ -255,7 +257,7 @@ namespace Characters.Enemies
                 EnemyEvents.RaiseAppliedBurning(this);
         }
 
-        internal void ApplyFreezing(int freezingStacks, bool sourceIsRelic = false)
+        public void ApplyFreezing(int freezingStacks, bool sourceIsRelic = false)
         {
             if (BurningStacks > 0)
             {
@@ -281,7 +283,7 @@ namespace Characters.Enemies
                 EnemyEvents.RaiseAppliedFreezing(this);
         }
 
-        internal void ApplyTemperatureSickness(int temperatureSicknessStacks = 1, bool sourceIsRelic = false)
+        public void ApplyTemperatureSickness(int temperatureSicknessStacks = 1, bool sourceIsRelic = false)
         {
             TemperatureSicknessStacks += temperatureSicknessStacks;
 
@@ -289,7 +291,7 @@ namespace Characters.Enemies
                 EnemyEvents.RaiseAppliedTemperatureSickness(this);
         }
 
-        internal void ApplyEnraged(int enragedStacks = 1)
+        public void ApplyEnraged(int enragedStacks = 1)
         {
             EnragedStacks += enragedStacks;
             _dealingDamageModifier = 1 + (EnragedStacks * _enragedModifier);
@@ -305,7 +307,7 @@ namespace Characters.Enemies
             }
         }
 
-        internal void ApplyFrozen(int frozenStacks = 1, bool sourceIsRelic = false)
+        public void ApplyFrozen(int frozenStacks = 1, bool sourceIsRelic = false)
         {
             IsFrozen = true;
             FrozenForTurns += frozenStacks;
@@ -320,8 +322,8 @@ namespace Characters.Enemies
             transform.DOKill();
         }
 
-        internal abstract void StartMovementAnimation();
-        internal abstract void StopMovementAnimation();
+        public abstract void StartMovementAnimation();
+        public abstract void StopMovementAnimation();
 
         #endregion
     }

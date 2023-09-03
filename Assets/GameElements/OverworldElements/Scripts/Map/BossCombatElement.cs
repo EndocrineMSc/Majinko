@@ -9,7 +9,7 @@ namespace Overworld
             switch (GlobalWorldManager.Instance.WorldIndex)
             {
                 case 1:
-                    LoadHelper.LoadSceneWithLoadingScreen(SceneName.NormalCombat);
+                    LoadHelper.LoadSceneWithLoadingScreen(SceneName.BossCombat);
                     break;
             }
         }

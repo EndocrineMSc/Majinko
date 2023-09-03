@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 6613930359425318797}
   - component: {fileID: 2988688997088212233}
   m_Layer: 10
-  m_Name: WraithCaster
+  m_Name: LeafMage
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

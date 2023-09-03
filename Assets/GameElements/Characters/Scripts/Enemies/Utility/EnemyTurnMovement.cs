@@ -6,7 +6,7 @@ using DG.Tweening;
 
 namespace Characters.Enemies
 {
-    internal class EnemyTurnMovement : MonoBehaviour
+    public class EnemyTurnMovement : MonoBehaviour
     {
         #region Fields and Properties
 
@@ -86,7 +86,7 @@ namespace Characters.Enemies
         }
 
         //Moves the enemy one "space" to the left
-        internal IEnumerator Move(Enemy enemy)
+        public IEnumerator Move(Enemy enemy)
         {
             int xIndexOfEnemy = GetEnemyPositionIndex(enemy);
             Vector2 endPosition = enemy.IsFlying ? _enemyManager.EnemyPositions[1, xIndexOfEnemy - 1] : _enemyManager.EnemyPositions[0, xIndexOfEnemy - 1]; 
@@ -171,9 +171,7 @@ namespace Characters.Enemies
                         }
 
                         if (k == (sortedEnemies - 1))
-                        {
                             tempList.Add(enemyList[i]);
-                        }
                     }
                 }
             }
@@ -187,6 +185,10 @@ namespace Characters.Enemies
                 return false;
             }
             else if(CheckIfInMeleeAttackPosition(enemy))
+            {
+                return false;
+            }
+            else if (enemy.IsStationary)
             {
                 return false;
             }

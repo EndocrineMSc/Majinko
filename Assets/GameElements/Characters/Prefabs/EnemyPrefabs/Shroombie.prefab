@@ -4888,7 +4888,7 @@ GameObject:
   - component: {fileID: 4455472555055034367}
   - component: {fileID: 2988688997088212233}
   m_Layer: 10
-  m_Name: ShroomZombie
+  m_Name: Shroombie
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

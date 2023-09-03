@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42411fe6627f4a742bcf962964bdc0ce, type: 3}
   m_Name: golem_zombie_leaf
   m_EditorClassIdentifier: 
-  _enemyArray: 010000000000000002000000
+  _enemyArray: 030000000200000003000000

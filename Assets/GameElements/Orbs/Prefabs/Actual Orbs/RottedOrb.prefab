@@ -151,8 +151,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnManaType: 3
   _manaAmount: 10
+  _stalwartHits: 0
   _defaultOrb: {fileID: 2549565476461289553, guid: c837957ee74bdcc44a31943daaafc0a8, type: 3}
-  OrbType: 24
+  OrbType: 25
 --- !u!114 &8606283219829596650
 MonoBehaviour:
   m_ObjectHideFlags: 0
