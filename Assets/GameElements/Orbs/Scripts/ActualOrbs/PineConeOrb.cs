@@ -41,7 +41,7 @@ namespace Orbs
                     Vector2 testPosition = enemyPositions[0, randomIndex];
 
                     if (_enemySpawnManager != null)
-                        spawnSuccessfull = _enemySpawnManager.SpawnEnemy(EnemyType.Shroombie, testPosition);
+                        spawnSuccessfull = _enemySpawnManager.SpawnEnemy(EnemyType.PineMouse, testPosition);
 
                     whileCounter++;
 

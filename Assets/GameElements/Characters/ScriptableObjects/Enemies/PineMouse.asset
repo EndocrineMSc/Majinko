@@ -9,7 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42411fe6627f4a742bcf962964bdc0ce, type: 3}
-  m_Name: golem_zombie_leaf
+  m_Script: {fileID: 11500000, guid: c1f6d0d51b85b3644b03b28e1ea625d5, type: 3}
+  m_Name: PineMouse
   m_EditorClassIdentifier: 
-  _enemyArray: 040000000300000001000000
+  AttackFrequency: 0
+  AttackType: 0
+  Damage: 1
+  MaxHealth: 10
+  IsFlying: 0
+  IsStationary: 0

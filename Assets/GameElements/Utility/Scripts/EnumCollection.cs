@@ -4,6 +4,7 @@ namespace EnumCollection
     {
         Boss_ViciousBoar,
         LeafMage,
+        PineMouse,
         Shroombie,
         StoneGolem,
     }
