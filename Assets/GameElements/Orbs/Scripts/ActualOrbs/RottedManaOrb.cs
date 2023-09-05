@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace Orbs
 {
-    internal class RottedManaOrb : Orb
+    public class RottedManaOrb : Orb
     {
         public override void SetDisplayDescription()
         {
@@ -17,7 +17,7 @@ namespace Orbs
             //not needed
         }
 
-        internal override IEnumerator OrbEffect()
+        public override IEnumerator OrbEffect()
         {
             //not needed
             yield return null;

@@ -7,7 +7,7 @@ using Spheres;
 
 namespace Orbs
 {
-    internal class IntangibleEnemyOrb : Orb
+    public class IntangibleEnemyOrb : Orb
     {
         public override void SetDisplayDescription()
         {
@@ -21,7 +21,7 @@ namespace Orbs
             StartCoroutine(OrbEffect());
         }
 
-        internal override IEnumerator OrbEffect()
+        public override IEnumerator OrbEffect()
         {
             foreach(Enemy enemy in EnemyManager.Instance.EnemiesInScene)
                 if(enemy.TryGetComponent<ICanBeIntangible>(out ICanBeIntangible intangibleEnemy))

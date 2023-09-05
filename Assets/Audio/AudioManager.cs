@@ -5,11 +5,11 @@ using UnityEngine.Audio;
 
 namespace Audio
 {
-    internal class AudioManager : MonoBehaviour
+    public class AudioManager : MonoBehaviour
     {
         #region Fields and Properties
 
-        internal static AudioManager Instance { get; private set; }
+        public static AudioManager Instance { get; private set; }
 
         //Auto-built lists on Awake
         private List<AudioSource> _soundEffects;
@@ -80,7 +80,7 @@ namespace Audio
         }
 
         // Start playing a GameTrack attached to the manager if it isn't playing already (for param see above)
-        internal void PlayGameTrack(Track track)
+        public void PlayGameTrack(Track track)
         {
             AudioSource audioSource = _gameTracks[(int)track];
 
@@ -90,20 +90,20 @@ namespace Audio
             }
         }
 
-        internal void FadeInGameTrack(Track track, float fadeDuration = 3f)
+        public void FadeInGameTrack(Track track, float fadeDuration = 3f)
         {
             AudioSource audioSource = _gameTracks[(int)track];   
             StartCoroutine(StartFade(audioSource, fadeDuration, 1f));
         }
 
-        internal void FadeOutGameTrack(Track track, float fadeDuration = 3f)
+        public void FadeOutGameTrack(Track track, float fadeDuration = 3f)
         {
             AudioSource audioSource = _gameTracks[(int)track];
             StartCoroutine(StartFade(audioSource, fadeDuration, 0f));
         }
 
         //Plays a Sound Effect if it isn't playing already
-        internal void PlaySoundEffectOnce(SFX sfx)
+        public void PlaySoundEffectOnce(SFX sfx)
         {
             AudioSource audioSource = _soundEffects[(int)sfx];
 
@@ -114,7 +114,7 @@ namespace Audio
         }
 
         //Plays a Sound Effect even if it is playing already
-        internal void PlaySoundEffectWithoutLimit(SFX sfx)
+        public void PlaySoundEffectWithoutLimit(SFX sfx)
         {
             AudioSource audioSource = _soundEffects[(int)sfx];
             audioSource.Play();
@@ -158,14 +158,14 @@ namespace Audio
 
     #region Enums
 
-    internal enum Track
+    public enum Track
     {
         _0001_LevelOne,
         _0002_MainMenu,
         GameTrackOne,
     }
 
-    internal enum SFX
+    public enum SFX
     {
         #region 0 - 100 UI-SFX
 

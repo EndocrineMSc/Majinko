@@ -7,13 +7,13 @@ using Characters;
 
 namespace ManaManagement
 {
-    internal class ManaPool : MonoBehaviour
+    public class ManaPool : MonoBehaviour
     {
         #region Fields and Properties
 
-        internal List<Mana> BasicMana = new();
-        internal List<Mana> FireMana = new();
-        internal List<Mana> IceMana = new();
+        public List<Mana> BasicMana = new();
+        public List<Mana> FireMana = new();
+        public List<Mana> IceMana = new();
 
         private GameObject _baseManaSpawn;
         private GameObject _fireManaSpawn;
@@ -28,10 +28,10 @@ namespace ManaManagement
         private readonly string FIREMANASPAWN_PARAM = "FireManaSpawn";
         private readonly string ICEMANASPAWN_PARAM = "IceManaSpawn";
 
-        internal static ManaPool Instance { get; private set; }
+        public static ManaPool Instance { get; private set; }
 
         private readonly int _manaCostMultiplier = 10;
-        internal int ManaCostMultiplier { get => _manaCostMultiplier; }
+        public int ManaCostMultiplier { get => _manaCostMultiplier; }
 
         #endregion
 
@@ -127,7 +127,7 @@ namespace ManaManagement
             }
         }
 
-        internal void SpendMana(int basicManaAmount, int fireManaAmount, int iceManaAmount)
+        public void SpendMana(int basicManaAmount, int fireManaAmount, int iceManaAmount)
         {
             SpendManaByList(BasicMana, basicManaAmount);
             SpendManaByList(FireMana, fireManaAmount);

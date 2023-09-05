@@ -9,7 +9,7 @@ namespace EnumCollection
         StoneGolem,
     }
 
-    internal enum ManaType
+    public enum ManaType
     {
         BasicMana,
         FireMana,
@@ -19,7 +19,7 @@ namespace EnumCollection
 
     //This enum needs to be in alphabetical order!
     //Will be used to reference orbs in OrbManager, which has a list of alphabetically sorted orb prefabs
-    internal enum OrbType
+    public enum OrbType
     {
         BaseManaOrb,        //gives basic Mana
         DarkBombOrb,        //explodes, and makes a gravitational pull towards the hit peggle? -> shot can stay in air longer?
@@ -50,7 +50,7 @@ namespace EnumCollection
         StoneOrb,           //blocks orb position destroyed after mutliple hits
     }
 
-    internal enum PlayerAttackTarget
+    public enum PlayerAttackTarget
     {
         FirstEnemy,
         HighestHealthEnemy,
@@ -59,13 +59,13 @@ namespace EnumCollection
         RandomEnemy,
     }
 
-    internal enum Fade
+    public enum Fade
     {
         In,
         Out,
     }
 
-    internal enum StartDeck
+    public enum StartDeck
     {
         Apprentice,
         Soldier,
@@ -73,14 +73,14 @@ namespace EnumCollection
         Alchemist
     }
 
-    internal enum SphereType
+    public enum SphereType
     {
         BasicSphere,
         CloneSphere,
         PowerSphere,
     }
 
-    internal enum CardRarity
+    public enum CardRarity
     {
         Basic,
         Common,

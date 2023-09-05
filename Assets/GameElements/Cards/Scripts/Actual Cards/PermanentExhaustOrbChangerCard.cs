@@ -12,7 +12,7 @@ namespace Cards
 
             Vector3 playerPosition = Player.Instance.transform.position;
             Vector3 startPosition = new(playerPosition.x + 2, playerPosition.y, playerPosition.z);
-            StartCoroutine(OrbManager.Instance.SwitchOrbs(OrbType, startPosition));
+            OrbManager.Instance.SwitchOrbsWrap(OrbType, startPosition);
             _globalDeckManager.RemoveCardFromGlobalDeck(GlobalCardManager.Instance.AllCards[(int)CardType]);
         }
     }

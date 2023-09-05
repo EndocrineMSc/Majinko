@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Characters.Enemies
 {
-    internal class Zombie : MeleeEnemy
+    public class Shroombie : MeleeEnemy
     {
         [SerializeField] private ParticleSystem _particleSystem;
 
@@ -24,7 +24,7 @@ namespace Characters.Enemies
 
         protected override void OnDeathEffect()
         {
-            StartCoroutine(OrbManager.Instance.SwitchOrbs(OrbType.RottedOrb, transform.position, 2));          
+            OrbManager.Instance.SwitchOrbsWrap(OrbType.RottedOrb, transform.position, 2);          
         }
 
         protected override void PlayHurtSound()

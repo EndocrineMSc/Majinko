@@ -82,7 +82,7 @@ namespace Characters.Enemies
         {
             Player.Instance.TakeDamage(Mathf.RoundToInt(Damage * _dealingDamageModifier));
             OnBoarAttack?.Invoke();
-            StartCoroutine(OrbManager.Instance.SwitchOrbs(OrbType.PineConeOrb, transform.position, 3));
+            OrbManager.Instance.SwitchOrbsWrap(OrbType.PineConeOrb, transform.position, 3);
             _collider.enabled = false;
             //ToDo: Trigger turn right animation
             transform.DOMoveX(_startPosition.x, _tackleDuration).SetEase(Ease.InCubic).OnComplete(TriggerTurnLeftAnimation);

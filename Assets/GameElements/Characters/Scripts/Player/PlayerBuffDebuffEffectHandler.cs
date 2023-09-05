@@ -75,7 +75,7 @@ namespace Characters
         private void WardingRuneEffect()
         {
             if (PlayerConditionTracker.HasWardingRune)
-                StartCoroutine(OrbManager.Instance.SwitchOrbs(OrbType.ManaBlitzOrb, _orbStartPosition));
+                OrbManager.Instance.SwitchOrbsWrap(OrbType.ManaBlitzOrb, _orbStartPosition);
         }
 
 

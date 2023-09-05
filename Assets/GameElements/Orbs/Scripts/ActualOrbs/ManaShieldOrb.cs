@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Orbs
 {
-    internal class ManaShieldOrb : Orb
+    public class ManaShieldOrb : Orb
     {
         #region Fields and Properties
 
@@ -13,7 +13,7 @@ namespace Orbs
 
         [SerializeField] private int _shieldValue;
 
-        internal int ShieldValue
+        public int ShieldValue
         {
             get { return _shieldValue; }
             set { _shieldValue = value; }
@@ -23,7 +23,7 @@ namespace Orbs
 
         #region Functions
 
-        internal override IEnumerator OrbEffect()
+        public override IEnumerator OrbEffect()
         {
             _player.GainShield(_shieldValue);
             yield return new WaitForSeconds(0.2f);

@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 
 namespace Orbs
 {
-    internal class HailStormOrb : Orb
+    public class HailStormOrb : Orb
     {
         #region Fields and Properties
 
@@ -17,7 +17,7 @@ namespace Orbs
 
         #region Functions
 
-        internal override IEnumerator OrbEffect()
+        public override IEnumerator OrbEffect()
         {
             GameObject aoeTargetObject = GameObject.FindGameObjectWithTag(TARGET_PARAM);
             _hailStorm.ShootAttack(aoeTargetObject.transform.position + new Vector3(0, 1, 0));

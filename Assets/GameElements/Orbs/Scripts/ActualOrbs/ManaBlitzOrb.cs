@@ -6,7 +6,7 @@ using Characters;
 
 namespace Orbs
 {
-    internal class ManaBlitzOrb : Orb, IHaveBark
+    public class ManaBlitzOrb : Orb, IHaveBark
     {
         #region Fields and Properties
 
@@ -17,7 +17,7 @@ namespace Orbs
 
         #region Functions
 
-        internal override IEnumerator OrbEffect()
+        public override IEnumerator OrbEffect()
         {
             _manaBlitz.ShootAttack(Player.Instance.transform.position);
             yield return null;

@@ -7,7 +7,7 @@ using EnumCollection;
 
 namespace Orbs
 {
-    internal class PineConeOrb : Orb
+    public class PineConeOrb : Orb
     {
         private EnemyManager _enemyManager;
         private EnemySpawnManager _enemySpawnManager;
@@ -27,7 +27,7 @@ namespace Orbs
             displayOnScroll.DisplayDescription = "<size=120%><b>Pine Cone Orb</b><size=20%>\n\n<size=100%>Upon being hit, this orb spawns a <b>Pinconian</b> onto the battlefield.";
         }
 
-        internal override IEnumerator OrbEffect()
+        public override IEnumerator OrbEffect()
         {
             if (_enemyManager != null)
             {

@@ -11,14 +11,14 @@ using Utility;
 
 namespace Orbs
 {
-    internal class OrbManager : MonoBehaviour
+    public class OrbManager : MonoBehaviour
     {
         #region Fields and Properties
 
-        internal static OrbManager Instance { get; private set; }
+        public static OrbManager Instance { get; private set; }
 
         //Lists
-        internal List<Orb> SceneOrbList { get; set; }
+        public List<Orb> SceneOrbList { get; set; }
         private List<Orb> _allOrbsList;
         private List<ScriptableOrbLayout> _orbLayoutList;
        
@@ -32,9 +32,9 @@ namespace Orbs
         private bool _isCheckingForRefreshOrbs;
         [SerializeField] private OrbLayoutSet _wordOneLayouts;
 
-        internal float GatheredBasicManaAmountTurn { get; private set; } = 0;
-        internal float GatheredFireManaAmountTurn { get; private set; } = 0;
-        internal float GatheredIceManaAmountTurn { get; private set; } = 0;
+        public float GatheredBasicManaAmountTurn { get; private set; } = 0;
+        public float GatheredFireManaAmountTurn { get; private set; } = 0;
+        public float GatheredIceManaAmountTurn { get; private set; } = 0;
         #endregion
 
         #region Functions
@@ -108,13 +108,18 @@ namespace Orbs
             yield return new WaitForSeconds(1); //so that player can see first animations, too
             foreach (Orb orb in GlobalOrbManager.Instance.LevelLoadOrbs)
             {
-                StartCoroutine(SwitchOrbs(orb.OrbType, _levelOrbSpawn.transform.position));
+                SwitchOrbsWrap(orb.OrbType, _levelOrbSpawn.transform.position);
                 yield return new WaitForSeconds(_tweenDuration);
             }
             PhaseManager.Instance.StartCardPhase();
         }
 
-        internal IEnumerator SwitchOrbs(OrbType orbType, Vector3 instantiatePosition, int switchAmount = 1)
+        public void SwitchOrbsWrap(OrbType orbType, Vector3 instantiatePosition, int switchAmount = 1)
+        {
+            StartCoroutine(SwitchOrbs(orbType, instantiatePosition, switchAmount));
+        }
+
+        private IEnumerator SwitchOrbs(OrbType orbType, Vector3 instantiatePosition, int switchAmount = 1)
         {
             List<Orb> baseOrbs = FindOrbs(SceneOrbList, SearchTag.BaseOrbs);          
             List<Orb> activeBaseOrbs = FindOrbs(baseOrbs, SearchTag.IsActive);           
@@ -150,7 +155,7 @@ namespace Orbs
             }
         }
 
-        internal void CheckForRefreshOrbs()
+        public void CheckForRefreshOrbs()
         {
             //bool wrapper to prevent double instantiation of orb due to multiple triggering of function
             //not sure why this is happening, but this is a quick fix
@@ -168,7 +173,7 @@ namespace Orbs
                 if (refreshOrbsInScene < GlobalOrbManager.Instance.AmountOfRefreshOrbs)
                 {
                     int refreshOrbDelta = GlobalOrbManager.Instance.AmountOfRefreshOrbs - refreshOrbsInScene;
-                    StartCoroutine(SwitchOrbs(OrbType.RefreshOrb, transform.position, refreshOrbDelta));
+                    SwitchOrbsWrap(OrbType.RefreshOrb, transform.position, refreshOrbDelta);
                 }
                 _isCheckingForRefreshOrbs = false;
             }           
@@ -249,7 +254,7 @@ namespace Orbs
             }
         }
 
-        internal void ReplaceOrbOfType(OrbType typeToBeReplaced, OrbType typeToReplaceItWith = OrbType.BaseManaOrb)
+        public void ReplaceOrbOfType(OrbType typeToBeReplaced, OrbType typeToReplaceItWith = OrbType.BaseManaOrb)
         {
             Orb orbToBeReplaced = null;            
             foreach (Orb orb in SceneOrbList)

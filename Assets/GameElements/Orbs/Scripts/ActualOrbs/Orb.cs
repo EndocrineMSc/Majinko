@@ -10,7 +10,7 @@ using Spheres;
 namespace Orbs
 {
     [RequireComponent(typeof(ScrollDisplayer)), RequireComponent(typeof(OrbManaPopUpDisplayer))]
-    internal abstract class Orb : MonoBehaviour, IHaveDisplayDescription
+    public abstract class Orb : MonoBehaviour, IHaveDisplayDescription
     {
         #region Fields and Properties
 
@@ -25,11 +25,11 @@ namespace Orbs
         [SerializeField] protected int _manaAmount = 10;
         [SerializeField] protected int _stalwartHits = 0;
 
-        internal ManaType SpawnManaType { get { return _spawnManaType; } private protected set { _spawnManaType = value; } }
-        internal int ManaAmount { get { return _manaAmount; } private protected set { _manaAmount = value; } }
+        public ManaType SpawnManaType { get { return _spawnManaType; } private protected set { _spawnManaType = value; } }
+        public int ManaAmount { get { return _manaAmount; } private protected set { _manaAmount = value; } }
         [SerializeField] protected GameObject _defaultOrb;
-        [SerializeField] internal OrbType OrbType;
-        internal bool OrbIsActive { get; private set; } = true;
+        [SerializeField] public OrbType OrbType;
+        public bool OrbIsActive { get; private set; } = true;
 
         //Tweening
         protected Vector3 _position;
@@ -145,7 +145,7 @@ namespace Orbs
             Destroy(gameObject);
         }
 
-        internal void SetOrbInactive()
+        public void SetOrbInactive()
         {
             _collider.enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
@@ -163,13 +163,13 @@ namespace Orbs
             GetComponent<SpriteRenderer>().enabled = true;
         }
 
-        internal void SetActionOrbInactive()
+        public void SetActionOrbInactive()
         {
             OrbIsActive = false;
             _collider.enabled = false;
         }
 
-        internal abstract IEnumerator OrbEffect();
+        public abstract IEnumerator OrbEffect();
 
         private void PlayOrbImpactSound()
         {

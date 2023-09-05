@@ -33,7 +33,7 @@ namespace Characters.Enemies
         private void ActivateAbility()
         {
             _abilityCountdownCounter = _abilityCountdown;
-            StartCoroutine(_orbManager.SwitchOrbs(OrbType.StoneOrb, transform.position, 3));
+            _orbManager.SwitchOrbsWrap(OrbType.StoneOrb, transform.position, 3);
         }
 
         protected override void PlaySpawnSound()

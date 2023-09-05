@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Orbs
 {
-    internal class ForbiddenOrbO : ForbiddenOrb
+    public class ForbiddenOrbO : ForbiddenOrb
     {
         public override void SetDisplayDescription()
         {
@@ -15,7 +15,7 @@ namespace Orbs
                 "However, you sense that there is more to its power...";
         }
 
-        internal override IEnumerator OrbEffect()
+        public override IEnumerator OrbEffect()
         {
             SpriteRenderer spriteRenderer = _forbiddenO.GetComponent<SpriteRenderer>();
 

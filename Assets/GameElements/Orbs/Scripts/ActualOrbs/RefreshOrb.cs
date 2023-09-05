@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace Orbs
 {
-    internal class RefreshOrb : Orb, IAmPersistent
+    public class RefreshOrb : Orb, IAmPersistent
     {
         private bool _effectIsTriggered;
 
         #region Functions
 
-        internal override IEnumerator OrbEffect()
+        public override IEnumerator OrbEffect()
         {
             yield return new WaitForSeconds(0.1f);
             OrbEvents.RaiseSetOrbsActive();

@@ -17,7 +17,7 @@ namespace Orbs
             _enemyManager = EnemyManager.Instance;
         }
 
-        internal override IEnumerator OrbEffect()
+        public override IEnumerator OrbEffect()
         {
             if (_enemyManager.EnemiesInScene.Count > 0)
             {

@@ -17,7 +17,7 @@ namespace Orbs
 
         #region Functions
 
-        internal override IEnumerator OrbEffect()
+        public override IEnumerator OrbEffect()
         {
             _fireArrow.ShootAttack(Player.Instance.transform.position);
             yield return null;

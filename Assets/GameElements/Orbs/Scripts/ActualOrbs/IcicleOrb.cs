@@ -6,7 +6,7 @@ using Characters;
 
 namespace Orbs
 {
-    internal class IcicleOrb : Orb
+    public class IcicleOrb : Orb
     {
         #region Fields and Properties
 
@@ -16,7 +16,7 @@ namespace Orbs
 
         #region Functions
 
-        internal override IEnumerator OrbEffect()
+        public override IEnumerator OrbEffect()
         {
             _icicle.ShootAttack(Player.Instance.transform.position);
             yield return null;

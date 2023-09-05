@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Orbs
 {
-    internal abstract class ForbiddenOrb : Orb, IAmExodia, IAmPersistent
+    public abstract class ForbiddenOrb : Orb, IAmExodia, IAmPersistent
     {
         protected GameObject _forbiddenE;
         protected GameObject _forbiddenX;
@@ -19,7 +19,7 @@ namespace Orbs
             GetAllExodiaObjects();
         }
 
-        internal override IEnumerator OrbEffect()
+        public override IEnumerator OrbEffect()
         {
             yield return null;
         }

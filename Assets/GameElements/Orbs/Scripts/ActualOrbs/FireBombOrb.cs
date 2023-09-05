@@ -7,7 +7,7 @@ using Characters.Enemies;
 
 namespace Orbs
 {
-    internal class FireBombOrb : Orb, IAmSphere
+    public class FireBombOrb : Orb, IAmSphere
     {
         [SerializeField] private Attack _fireBomb;
         [SerializeField] private GameObject _bombRadiusObject;
@@ -39,7 +39,7 @@ namespace Orbs
                 "Enables the playes to cast <b>Fire Bomb</b>, hitting all enemies for <b>20 damage</b> and applying <b>5 Burning</b>.";
         }
 
-        internal override IEnumerator OrbEffect()
+        public override IEnumerator OrbEffect()
         {
             _fireBomb.ShootAttack(EnemyManager.Instance.EnemyPositions[0, 0]);
             yield return null;

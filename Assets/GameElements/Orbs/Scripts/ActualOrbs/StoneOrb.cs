@@ -5,7 +5,7 @@ using Spheres;
 
 namespace Orbs
 {
-    internal class StoneOrb : Orb
+    public class StoneOrb : Orb
     {
         [SerializeField] private Sprite _crumblingOrb;
         [SerializeField] private ParticleSystem _crumbleSystem;
@@ -23,7 +23,7 @@ namespace Orbs
             displayOnScroll.DisplayDescription = "<size=120%><b>Stone Orb</b><size=20%>\n\n<size=100%>This orb has <b>Stalwart-1</b>. It will endure an additional hit before popping.";
         }
 
-        internal override IEnumerator OrbEffect()
+        public override IEnumerator OrbEffect()
         {
             //not needed
             yield return null;

@@ -5,9 +5,9 @@ using Characters;
 
 namespace Orbs
 {
-    internal class FastHandsOrb : Orb
+    public class FastHandsOrb : Orb
     {
-        internal override IEnumerator OrbEffect()
+        public override IEnumerator OrbEffect()
         {
             PlayerConditionTracker.AddFastHandsStacks();
             yield return null;

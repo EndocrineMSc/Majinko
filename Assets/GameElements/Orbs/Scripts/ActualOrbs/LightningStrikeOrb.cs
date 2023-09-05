@@ -6,7 +6,7 @@ using Characters.Enemies;
 
 namespace Orbs
 {
-    internal class LightningStrikeOrb : Orb
+    public class LightningStrikeOrb : Orb
     {
         #region Fields and Properties
 
@@ -16,7 +16,7 @@ namespace Orbs
 
         #region Functions
 
-        internal override IEnumerator OrbEffect()
+        public override IEnumerator OrbEffect()
         {
             Transform targetEnemy = EnemyManager.Instance.EnemiesInScene[EnemyManager.Instance.EnemiesInScene.Count - 1].transform;
             var targetPosition = new Vector3(targetEnemy.position.x, 8.675f, targetEnemy.position.z);
