@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c8ca4561ba387a41925900d21139b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scriptableEnemy: {fileID: 11400000, guid: d4d69c0c0b23ec5459fd0d26e481a504, type: 2}
+  _enemyObject: {fileID: 11400000, guid: d4d69c0c0b23ec5459fd0d26e481a504, type: 2}
   _attackClock: {fileID: 3040312533587086493}
   _attackClockTransform: {fileID: 1955764364515639895}
 --- !u!114 &1161808695900130219

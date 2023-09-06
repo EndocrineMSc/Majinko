@@ -5,6 +5,7 @@ using Utility.TurnManagement;
 using Utility;
 using DG.Tweening;
 using Characters.UI;
+using Audio;
 
 namespace Characters.Enemies
 {
@@ -15,12 +16,21 @@ namespace Characters.Enemies
     {
         #region Fields and Properties
 
+        [SerializeField] protected ScriptableEnemy _enemyObject;
+
+        public ScriptableEnemy EnemyObject
+        {
+            get { return _enemyObject; }
+            private protected set { _enemyObject = value; }
+        }
+
         //External References
         protected Animator _animator;
         protected PopUpSpawner _popUpSpawner;
         protected Player _player;
         protected PhaseManager _phaseManager;
         protected EnemyManager _enemyManager;
+        protected SpriteRenderer _spriteRenderer;
 
         //Animation
         protected readonly string ATTACK_TRIGGER = "Attack";
@@ -31,15 +41,16 @@ namespace Characters.Enemies
         protected readonly string WALK_TRIGGER = "Walk";
         protected readonly string IDLE_TRIGGER = "Idle";
         protected float _deathDelayForAnimation = 1f;
-        protected Color _baseColor;
+        protected Color _baseColor = Color.white;
 
         //Status Effects
-        public bool IsFrozen { get; private set; }
+        public bool IsFrozen { get; private protected set; }
         public int FrozenForTurns { get; private protected set; } = 0;
-        public int BurningStacks { get; private set; } = 0;
-        public int FreezingStacks { get; private set; } = 0;
+        public int BurningStacks { get; private protected set; } = 0;
+        public int FreezingStacks { get; private protected set; } = 0;
         public int TemperatureSicknessStacks { get; private protected set; } = 0;
         public int EnragedStacks { get; private protected set;} = 0;
+        public int IntangibleStacks { get; private set; } = 0;
 
         protected float _takenDamageModifier = 1f;
         protected float _dealingDamageModifier = 1f;
@@ -47,71 +58,83 @@ namespace Characters.Enemies
         protected float _enragedModifier = 0.05f;
 
         //Stats
-        [SerializeField] ScriptableEnemy _scriptableEnemy;
-        protected int _attackFrequency;
-        public EnemyAttackType AttackType { get; private set; }
-        public int Damage { get; private protected set; }
-        public int MaxHealth { get; private protected set; }
-        public int Health { get; private set; } = 20;
-        public bool IsFlying { get; private set; }
-        public bool IsInAttackPosition { get; private set; }
-        public int TurnsTillNextAttack { get; set; }
-        public bool IsStationary { get; private set; }
+        public int Health { get; private protected set; } = 20;
+        public bool IsInAttackPosition { get; private protected set; }
+        public int TurnsTillNextAttack { get; private protected set; }
+        public int AbilityCooldown { get; private protected set; }
 
         //Other
         protected bool _isDead;
 
         #endregion
 
-        #region Functions
+        #region Methods
 
-        protected virtual void Start()
-        {
-            PlaySpawnSound();
-            TriggerSpawnAnimation();
-            SetDisplayDescription();
-            SetDisplayScale();
-        }
-
-        protected virtual void SetReferences()
-        {
-            _animator = GetComponentInChildren<Animator>();
-            _popUpSpawner = GetComponent<PopUpSpawner>();
-            _enemyManager = EnemyManager.Instance;
-            _baseColor = GetComponentInChildren<SpriteRenderer>().color;
-        }
-
-        protected virtual void SetEnemyStats()
-        {
-            _attackFrequency = _scriptableEnemy.AttackFrequency;
-            AttackType = _scriptableEnemy.AttackType;
-            Damage = _scriptableEnemy.Damage;
-            IsFlying = _scriptableEnemy.IsFlying;
-            MaxHealth = _scriptableEnemy.MaxHealth;
-            Health = MaxHealth;
-            TurnsTillNextAttack = _attackFrequency;
-            IsStationary = _scriptableEnemy.IsStationary;
-        }
-
-        protected abstract void PlaySpawnSound();
-        protected abstract void TriggerSpawnAnimation();
-        public abstract void SetDisplayDescription();
+        #region Initiatlization
 
         protected virtual void OnEnable()
         {
-            //in OnEnable to prevent timing null reference issues
-            SetReferences(); 
-            SetEnemyStats();
-
             LevelPhaseEvents.OnStartEnemyPhase += OnStartEnemyPhase;
             LevelPhaseEvents.OnEndEnemyPhase += OnEndEnemyPhase;
+            EnemyEvents.OnIntangibleTriggered += ApplyIntangible;
         }
 
         protected virtual void OnDisable()
         {
             LevelPhaseEvents.OnStartEnemyPhase -= OnStartEnemyPhase;
             LevelPhaseEvents.OnEndEnemyPhase -= OnEndEnemyPhase;
+            EnemyEvents.OnIntangibleTriggered -= ApplyIntangible;
         }
+
+        protected virtual void Start()
+        {
+            SetReferences();
+            ReadScriptableEnemy();
+            TriggerSpawnAnimation();
+            PlaySpawnSound();
+        }
+
+        protected virtual void SetReferences()
+        {
+            _animator = GetComponent<Animator>();
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+            _popUpSpawner = GetComponent<PopUpSpawner>();
+            _enemyManager = EnemyManager.Instance;
+            _player = Player.Instance;
+        }
+
+        protected void ReadScriptableEnemy()
+        {
+            Health = EnemyObject.MaxHealth;
+            AbilityCooldown = EnemyObject.AbilityCooldownMax;
+            TurnsTillNextAttack = EnemyObject.AttackFrequency;
+            SetDisplayDescription();
+            SetDisplayScale();
+        }
+
+        public void SetDisplayDescription()
+        {
+            if (TryGetComponent<IDisplayOnScroll>(out IDisplayOnScroll displayOnScroll))
+                displayOnScroll.DisplayDescription = EnemyObject.Description;
+        }
+
+        protected void SetDisplayScale()
+        {
+            GetComponent<ScrollDisplayer>().DisplayScale = EnemyObject.DisplayScale;
+        }
+
+        #endregion
+
+        #region Enemy Effects
+
+        protected abstract void StartTurnEffect();
+        protected abstract void AttackEffect();
+        protected abstract void OnDeathEffect();
+        protected abstract void EndTurnEffect();
+
+        #endregion
+
+        #region Enemy Life Cycle
 
         protected void OnStartEnemyPhase()
         {
@@ -131,16 +154,62 @@ namespace Characters.Enemies
                 TakeDamage(BurningStacks, false);
         }
 
+        public void TakeDamage(int damage, bool sourceIsAttack = true)
+        {
+            if (IntangibleStacks <= 0)
+            {
+                if (TemperatureSicknessStacks > 0)
+                    _takenDamageModifier += (TemperatureSicknessStacks * _temperatureSicknessModifier);
+
+                if (sourceIsAttack)
+                {
+                    damage = Mathf.CeilToInt(damage * _takenDamageModifier); //round to the next higher int in players favor
+                    Health -= damage;
+                    TemperatureSicknessStacks = 0;
+                    _takenDamageModifier = 1; //reset to default after using it once
+                }
+                else
+                    Health -= damage;
+
+                if (damage > 0)
+                    _popUpSpawner.SpawnPopUp(damage);
+
+                TriggerHurtAnimation();
+                PlayHurtSound();
+
+                if (Health <= 0)
+                {
+                    HandleDeath();
+                    StartCoroutine(DestroyThisEnemyWithDelay());
+                }
+
+                CheckForFreezingKill();
+            }
+        }
+
+        public virtual void Attack()
+        {
+            TriggerAttackAnimation();
+            AttackEffect();
+            TurnsTillNextAttack = EnemyObject.AttackFrequency;
+
+            if (EnemyObject.AttackType == EnemyAttackType.Melee)
+            {
+                var damage = Mathf.CeilToInt(EnemyObject.Damage * _dealingDamageModifier);
+                _player.TakeDamage(damage);
+            }
+        }
+
         protected virtual void OnEndEnemyPhase()
         {
-            if (AttackType == EnemyAttackType.Ranged)
+            if (EnemyObject.AttackType == EnemyAttackType.Ranged)
             {
                 IsInAttackPosition = true;
             }
             else
             {
-                Vector2 walkerMeleeAttackPosition = _enemyManager.EnemyPositions[0, 0];
-                Vector2 flyerMeleeAttackPosition = _enemyManager.EnemyPositions[1, 0];
+                Vector2 walkerMeleeAttackPosition = EnemyManager.Instance.EnemyPositions[0, 0];
+                Vector2 flyerMeleeAttackPosition = EnemyManager.Instance.EnemyPositions[1, 0];
                 IsInAttackPosition = (Vector2)transform.position == walkerMeleeAttackPosition || (Vector2)transform.position == flyerMeleeAttackPosition;
             }
 
@@ -148,43 +217,16 @@ namespace Characters.Enemies
             {
                 EnragedStacks--;
                 _dealingDamageModifier = 1 + (EnragedStacks * _enragedModifier);
-                Damage = Mathf.CeilToInt(_scriptableEnemy.Damage * _dealingDamageModifier);
             }
+
+            if (EnemyObject.CanBeIntangible)
+                RemoveIntangibleStack();
+
+            if (AbilityCooldown > 0)
+                AbilityCooldown--;
+
+            EndTurnEffect();
         }
-
-        public void TakeDamage(int damage, bool sourceIsAttack = true)
-        {
-            if (TemperatureSicknessStacks > 0)
-                _takenDamageModifier += (TemperatureSicknessStacks * _temperatureSicknessModifier);
-
-            if (sourceIsAttack)
-            {
-                damage = Mathf.CeilToInt(damage * _takenDamageModifier); //round to the next higher int in players favor
-                Health -= damage;
-                TemperatureSicknessStacks = 0;
-                _takenDamageModifier = 1; //reset to default after using it once
-            }
-            else
-                Health -= damage;
-
-            if (damage > 0)
-                _popUpSpawner.SpawnPopUp(damage);
-
-            TriggerHurtAnimation();
-            PlayHurtSound();
-
-            if (Health <= 0)
-            {
-                HandleDeath();
-                StartCoroutine(DestroyThisEnemyWithDelay());
-            }
-
-            CheckForFreezingKill();
-        }
-
-        protected abstract void TriggerHurtAnimation();
-
-        protected abstract void PlayHurtSound();
 
         protected void HandleDeath()
         {
@@ -210,28 +252,18 @@ namespace Characters.Enemies
             Destroy(gameObject);
         }
 
-        protected abstract void TriggerDeathAnimation();
+        #endregion
 
-        protected abstract void PlayDeathSound();
+        #region Accessor Methods
 
-        protected abstract void OnDeathEffect();
-
-        public virtual void Attack()
+        public void ReduceTurnsTillNextAttack(int amount = 1)
         {
-            TriggerAttackAnimation();
-            AdditionalAttackEffects();
-            TurnsTillNextAttack = _attackFrequency;           
+            TurnsTillNextAttack -= amount;
         }
 
-        protected abstract void TriggerAttackAnimation();
+        #endregion
 
-        protected abstract void AdditionalAttackEffects();
-
-
-        protected void SetDisplayScale()
-        {
-            GetComponent<ScrollDisplayer>().DisplayScale = 2;
-        }
+        #region Status Effects
 
         public void ApplyBurning(int burningStacks, bool sourceIsRelic = false)
         {
@@ -295,7 +327,6 @@ namespace Characters.Enemies
         {
             EnragedStacks += enragedStacks;
             _dealingDamageModifier = 1 + (EnragedStacks * _enragedModifier);
-            Damage = Mathf.CeilToInt(_scriptableEnemy.Damage * _dealingDamageModifier);
         }
 
         protected void CheckForFreezingKill()
@@ -317,13 +348,101 @@ namespace Characters.Enemies
                 EnemyEvents.RaiseAppliedFrozen(this);
         }
 
+        public void ApplyIntangible(int intangibleStacks)
+        {
+            if (EnemyObject.CanBeIntangible)
+            {
+                IntangibleStacks += intangibleStacks;
+
+                Color alpha = _spriteRenderer.color;
+                alpha.a = 0.5f;
+                _spriteRenderer.color = alpha;
+            }
+        }
+
+        private void RemoveIntangibleStack()
+        {
+            if (IntangibleStacks > 0)
+                IntangibleStacks--;
+
+            if (IntangibleStacks <= 0)
+            {
+                var spriteRenderer = GetComponent<SpriteRenderer>();
+
+                Color alpha = spriteRenderer.color;
+                alpha.a = 1f;
+                spriteRenderer.color = alpha;
+            }
+        }
+
         protected void OnDestroy()
         {
             transform.DOKill();
         }
 
-        public abstract void StartMovementAnimation();
-        public abstract void StopMovementAnimation();
+        #endregion
+
+        #region Animations
+
+        protected void TriggerSpawnAnimation()
+        {
+            if (_animator != null)
+                _animator.SetTrigger(SPAWN_TRIGGER);
+        }
+
+        protected void TriggerAttackAnimation()
+        {
+            if (_animator != null)
+                _animator.SetTrigger(ATTACK_TRIGGER);
+        }
+
+        protected void TriggerHurtAnimation()
+        {
+            if (_animator != null)
+                _animator.SetTrigger(HURT_TRIGGER);
+        }
+
+        protected void TriggerDeathAnimation()
+        {
+            if (_animator != null)
+                _animator.SetTrigger(DEATH_TRIGGER);
+        }
+
+        public void TriggerWalkAnimation()
+        {
+            if (_animator != null)
+                _animator.SetTrigger(WALK_TRIGGER);
+        }
+
+        public void TriggerIdleAnimation()
+        {
+            if (_animator != null)
+                _animator.SetTrigger(IDLE_TRIGGER);
+        }
+
+        #endregion
+
+        #region Sounds
+
+        protected void PlaySpawnSound()
+        {
+            if (AudioManager.Instance != null)
+                AudioManager.Instance.PlaySoundEffectOnce(EnemyObject.SpawnSound);
+        }
+
+        protected void PlayHurtSound()
+        {
+            if (AudioManager.Instance != null)
+                AudioManager.Instance.PlaySoundEffectOnce(EnemyObject.HurtSound);
+        }
+
+        protected void PlayDeathSound()
+        {
+            if (AudioManager.Instance != null)
+                AudioManager.Instance.PlaySoundEffectOnce(EnemyObject.DeathSound);
+        }
+
+        #endregion
 
         #endregion
     }

@@ -13,7 +13,7 @@ namespace Characters.Enemies
 
         private EnemyManager _enemyManager;
         private Vector3[,] _enemyPositions;
-        private EnemyType[] _enemiesForLevel;
+        private GameObject[] _enemiesForLevel;
 
         private readonly int _enemyBottomRow = 0;
         private readonly int _enemyTopRow = 1;
@@ -72,9 +72,9 @@ namespace Characters.Enemies
             _walkingEnemySpawnPosition = _enemyPositions[_enemyBottomRow, rightMostEnemyPosition];
         }
 
-        private EnemyType[] GetEnemyArrayByWorld()
+        private GameObject[] GetEnemyArrayByWorld()
         {
-            EnemyType[] tempArray = null;
+            GameObject[] tempArray = null;
             Scene currentScene = SceneManager.GetActiveScene();
             ScriptableEnemySet[] tempAllEnemySets = null;
 
@@ -101,18 +101,18 @@ namespace Characters.Enemies
         {
             if (EnemySpawnCounter < AmountOfEnemiesInLevel)
             {
-                EnemyType tempEnemy = _enemiesForLevel[EnemySpawnCounter];
+                var tempEnemy = _enemiesForLevel[EnemySpawnCounter];
                 SpawnEnemy(tempEnemy);
             }
             PhaseManager.Instance.EndEnemyPhase();
         }
 
-        public void SpawnEnemy(EnemyType enemyType)
+        public void SpawnEnemy(GameObject enemyPrefab)
         {
-            Enemy spawnEnemy = _enemyManager.EnemyLibrary[(int)enemyType];
+            Enemy spawnEnemy = enemyPrefab.GetComponent<Enemy>();
             Vector2 spawnPosition;            
                      
-            if (spawnEnemy.IsFlying)
+            if (spawnEnemy.EnemyObject.IsFlying)
                 spawnPosition = _flyingEnemySpawnPosition;
             else
                 spawnPosition = _walkingEnemySpawnPosition;
@@ -126,9 +126,9 @@ namespace Characters.Enemies
             }
         }
 
-        public bool SpawnEnemy(EnemyType enemyType, Vector2 spawnPosition)
+        public bool SpawnEnemy(GameObject enemyPrefab, Vector2 spawnPosition)
         {
-            Enemy spawnEnemy = _enemyManager.EnemyLibrary[(int)enemyType];
+            Enemy spawnEnemy = enemyPrefab.GetComponent<Enemy>();
             bool spawnPossible = !CheckIfSpawnPositionOccupied(spawnPosition);
 
             if (spawnPossible)

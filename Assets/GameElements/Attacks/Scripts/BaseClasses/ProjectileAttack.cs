@@ -26,17 +26,22 @@ namespace Attacks
 
         protected virtual void HandleAttackHit(GameObject target)
         {
-            if ((_attackOrigin == AttackOrigin.Player && target.GetComponent<Enemy>() != null)
-                || _attackOrigin == AttackOrigin.Enemy && target.GetComponent<Player>() != null)
+            Enemy enemy = target.GetComponent<Enemy>();
+            Player player = target.GetComponent<Player>();
+
+            bool playerAttackHitEnemy = _attackOrigin == AttackOrigin.Player && enemy != null;
+            bool enemyAttackHitPlayer = _attackOrigin == AttackOrigin.Enemy && player != null;
+
+            if (enemyAttackHitPlayer)
             {
-                IDamagable damagableTarget = target.GetComponent<IDamagable>();
-                damagableTarget?.TakeDamage(Damage);
-                OnHitPolish(Damage);
-                AdditionalDamageEffects(target);
+                DealDamage(target);
+                Destroy(gameObject);
+            }
 
-                if (_attackOrigin == AttackOrigin.Player)
-                    RaiseAttackFinished();
-
+            if (playerAttackHitEnemy && enemy.IntangibleStacks <= 0)
+            {
+                DealDamage(target);
+                RaiseAttackFinished();
                 Destroy(gameObject);
             }
 
@@ -44,6 +49,16 @@ namespace Attacks
             {
                 RaiseAttackFinished();
                 Destroy(gameObject);
+            }
+        }
+
+        protected virtual void DealDamage(GameObject target)
+        {
+            if (target.TryGetComponent<IDamagable>(out IDamagable damagableTarget))
+            {
+                damagableTarget.TakeDamage(Damage);
+                OnHitPolish(Damage);
+                AdditionalDamageEffects(target);
             }
         }
 

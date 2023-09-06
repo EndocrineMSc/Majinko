@@ -15,7 +15,6 @@ namespace Characters.Enemies
 
         private Enemy _parentEnemy;
         private Canvas _canvas;
-        private ICanBeIntangible _intangibleEnemy;
         private TextMeshProUGUI _healthPoints;
         private Image _heart;
         private Image _burningStatus;
@@ -79,10 +78,7 @@ namespace Characters.Enemies
             _healthPoints.text = _parentEnemy.Health >= 0 ? _parentEnemy.Health.ToString() : "0";
             _lastUpdateFireStacks = _parentEnemy.BurningStacks;
             GetComponent<Canvas>().worldCamera = Camera.main;
-            _enemyCanBeIntangible = _parentEnemy.TryGetComponent<ICanBeIntangible>(out _);
-           
-            if (_enemyCanBeIntangible)
-                _intangibleEnemy = _parentEnemy.GetComponent<ICanBeIntangible>();
+            _enemyCanBeIntangible = _parentEnemy.EnemyObject.CanBeIntangible;        
         }
 
         void Update()
@@ -206,11 +202,11 @@ namespace Characters.Enemies
 
         private void UpdateIntangible()
         {
-            if (_intangibleEnemy.IntangibleStacks > 0)
+            if (_parentEnemy.IntangibleStacks > 0)
             {
                 if (_isIntangible)
                 {
-                    if (_lastUpdateIntangibleStacks != _intangibleEnemy.IntangibleStacks)
+                    if (_lastUpdateIntangibleStacks != _parentEnemy.IntangibleStacks)
                     {
                         UpdateIntangibleStacks();
                     }
@@ -225,7 +221,7 @@ namespace Characters.Enemies
                 }
             }
 
-            if (_intangibleEnemy.IntangibleStacks <= 0 && _isIntangible)
+            if (_parentEnemy.IntangibleStacks <= 0 && _isIntangible)
             {
                 _isIntangible = false;
                 _statusObjects.Remove(_intangibleStatus.gameObject);
@@ -315,8 +311,8 @@ namespace Characters.Enemies
         private void UpdateIntangibleStacks()
         {
             _intangibleStatus.rectTransform.DOPunchScale(_intangibleStatus.rectTransform.localScale * 1.1f, 0.2f, 1, 1);
-            _intangibleStatus.GetComponentInChildren<TextMeshProUGUI>().text = _intangibleEnemy.IntangibleStacks.ToString();
-            _lastUpdateIntangibleStacks = _intangibleEnemy.IntangibleStacks;
+            _intangibleStatus.GetComponentInChildren<TextMeshProUGUI>().text = _parentEnemy.IntangibleStacks.ToString();
+            _lastUpdateIntangibleStacks = _parentEnemy.IntangibleStacks;
         }
 
         private void UpdateTemperatureSicknessStacks()

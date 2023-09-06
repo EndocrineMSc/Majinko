@@ -168,6 +168,7 @@ MonoBehaviour:
   _stalwartHits: 0
   _defaultOrb: {fileID: 2549565476461289553, guid: c837957ee74bdcc44a31943daaafc0a8, type: 3}
   OrbType: 23
+  _pineMousePrefab: {fileID: 1988687641357784032, guid: e60d7c89fe5e35a429f42784614ce029, type: 3}
 --- !u!1001 &4229906554693747041
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1f6d0d51b85b3644b03b28e1ea625d5, type: 3}
+  m_Name: Shroombie
+  m_EditorClassIdentifier: 
+  _description: <size=120%><b>Corrupted Shroombie</b><size=20%>\n\n<size=100%>Normally
+    protectors of the forest, these corrupted sentinels now attack on sight. Will
+    spawn two <b>Rotten Mana Orbs</b> on death.
+  _attackFrequency: 0
+  _damage: 10
+  _maxHealth: 20
+  _displayScale: 2
+  _isRanged: 0
+  _isFlying: 0
+  _isStationary: 0
+  _canBeIntangible: 0
+  _attackType: 0
+  _attackEffectObject: {fileID: 0}
+  _deathEffectObject: {fileID: 11400000, guid: 63c1901fda86873408e32d8d41e83f38, type: 2}
+  _animationController: {fileID: 9100000, guid: a893022d8eefeb5429293fdafa873f4d, type: 2}
+  _spawnSound: 19
+  _deathSound: 20
+  _hurtSound: 20

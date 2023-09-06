@@ -11,6 +11,7 @@ namespace Orbs
     {
         private EnemyManager _enemyManager;
         private EnemySpawnManager _enemySpawnManager;
+        [SerializeField] private GameObject _pineMousePrefab;
 
         protected override void SetReferences()
         {
@@ -41,7 +42,7 @@ namespace Orbs
                     Vector2 testPosition = enemyPositions[0, randomIndex];
 
                     if (_enemySpawnManager != null)
-                        spawnSuccessfull = _enemySpawnManager.SpawnEnemy(EnemyType.PineMouse, testPosition);
+                        spawnSuccessfull = _enemySpawnManager.SpawnEnemy(_pineMousePrefab, testPosition);
 
                     whileCounter++;
 

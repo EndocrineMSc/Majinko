@@ -58,7 +58,7 @@ namespace Characters.Enemies
         {
             foreach (Enemy enemy in _enemyManager.EnemiesInScene)
             {
-                if (enemy.IsFlying)
+                if (enemy.EnemyObject.IsFlying)
                     _flyingEnemiesInScene.Add(enemy);
                 else
                     _walkingEnemiesInScene.Add(enemy);
@@ -89,19 +89,19 @@ namespace Characters.Enemies
         public IEnumerator Move(Enemy enemy)
         {
             int xIndexOfEnemy = GetEnemyPositionIndex(enemy);
-            Vector2 endPosition = enemy.IsFlying ? _enemyManager.EnemyPositions[1, xIndexOfEnemy - 1] : _enemyManager.EnemyPositions[0, xIndexOfEnemy - 1]; 
+            Vector2 endPosition = enemy.EnemyObject.IsFlying ? _enemyManager.EnemyPositions[1, xIndexOfEnemy - 1] : _enemyManager.EnemyPositions[0, xIndexOfEnemy - 1]; 
           
-            enemy.StartMovementAnimation();
+            enemy.TriggerWalkAnimation();
             enemy.transform.DOMoveX(endPosition.x, _enemyWalkDuration).SetEase(Ease.Linear);
             yield return new WaitForSeconds(_enemyWalkDuration);
-            enemy.StopMovementAnimation();
+            enemy.TriggerIdleAnimation();
         }
 
         private int GetEnemyPositionIndex(Enemy enemy)
         {
             Vector2 enemyPosition = enemy.transform.position;
 
-            if (enemy.IsFlying)
+            if (enemy.EnemyObject.IsFlying)
             {
                 for (int i = 0; i < _enemyManager.EnemyPositions.Length; i++)
                 {
@@ -188,7 +188,7 @@ namespace Characters.Enemies
             {
                 return false;
             }
-            else if (enemy.IsStationary)
+            else if (enemy.EnemyObject.IsStationary)
             {
                 return false;
             }
@@ -206,7 +206,7 @@ namespace Characters.Enemies
         {
             float enemyXPosition = enemy.transform.position.x;
 
-            if (enemy.IsFlying)
+            if (enemy.EnemyObject.IsFlying)
             {
                 int enemyIndex = _flyingEnemiesInScene.IndexOf(enemy);
                 float leftEnemyXPosition = _flyingEnemiesInScene[enemyIndex - 1].transform.position.x;

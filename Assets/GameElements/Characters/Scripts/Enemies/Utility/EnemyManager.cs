@@ -11,7 +11,6 @@ namespace Characters.Enemies
         #region Fields and Properties
 
         public static EnemyManager Instance { get; private set; }
-        public Enemy[] EnemyLibrary { get; private set; }
         public List<Enemy> EnemiesInScene { get; set; } = new();
         public Vector3[,] EnemyPositions { get; private set; }
 
@@ -19,8 +18,6 @@ namespace Characters.Enemies
         private readonly int _amountOfXScreenDivisions = 10;
         private readonly int _amountOfCharacterPositionsOnXAxis = 6;
         private readonly int _amountOfEnemyRows = 2;
-
-        [SerializeField] private AllEnemiesCollection _allEnemiesCollection;
 
         #endregion
 
@@ -34,8 +31,6 @@ namespace Characters.Enemies
                 Destroy(gameObject);
 
             //needs to be in Awake for timing issues
-            EnemyLibrary = _allEnemiesCollection.AllEnemies;
-            EnemyLibrary = EnemyLibrary.OrderBy(enemy => enemy.name).ToArray();
             EnemyPositions = new Vector3[_amountOfEnemyRows, _amountOfCharacterPositionsOnXAxis];
             SetEnemyPositions();
         }

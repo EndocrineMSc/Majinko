@@ -51,9 +51,9 @@ namespace Characters.Enemies
 
                     if (enemy != null && enemy.TurnsTillNextAttack > 0)
                     {
-                        enemy.TurnsTillNextAttack--;
+                        enemy.ReduceTurnsTillNextAttack();
                     }
-                    else if (enemy != null && (enemy.AttackType == EnemyAttackType.Ranged || enemy.IsInAttackPosition))
+                    else if (enemy != null && (enemy.EnemyObject.AttackType == EnemyAttackType.Ranged || enemy.IsInAttackPosition))
                     {
                         enemy.Attack();
                         yield return new WaitForSeconds(_attackGapSeconds);

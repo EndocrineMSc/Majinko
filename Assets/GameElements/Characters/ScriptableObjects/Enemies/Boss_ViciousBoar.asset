@@ -12,9 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f6d0d51b85b3644b03b28e1ea625d5, type: 3}
   m_Name: Boss_ViciousBoar
   m_EditorClassIdentifier: 
-  AttackFrequency: 3
-  AttackType: 1
-  Damage: 20
-  MaxHealth: 100
-  IsFlying: 0
-  IsStationary: 1
+  _description: <size=120%><b>Vicious Boar</b><size=20%>\n\n<size=100%>Something
+    seems to have enraged this massive beast. Morovian traders pay a fortune for
+    the magically infused fur of these boars. Will attack after its counter reaches
+    zero.
+  _attackFrequency: 3
+  _damage: 20
+  _maxHealth: 100
+  _displayScale: 1
+  _abilityCooldownMax: 0
+  _isRanged: 0
+  _isFlying: 0
+  _isStationary: 1
+  _canBeIntangible: 0
+  _attackType: 1
+  _spawnSound: 19
+  _deathSound: 20
+  _hurtSound: 20

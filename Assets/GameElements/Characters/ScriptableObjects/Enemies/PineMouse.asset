@@ -12,9 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f6d0d51b85b3644b03b28e1ea625d5, type: 3}
   m_Name: PineMouse
   m_EditorClassIdentifier: 
-  AttackFrequency: 0
-  AttackType: 0
-  Damage: 1
-  MaxHealth: 10
-  IsFlying: 0
-  IsStationary: 0
+  _description: <size=120%><b>Pine Mouse</b><size=20%>\n\n<size=100%>Awakened rudely
+    from their sleep in the trees, these almost harmless creatures try to nibble
+    at your ankles."
+  _attackFrequency: 0
+  _damage: 1
+  _maxHealth: 10
+  _displayScale: 2
+  _abilityCooldownMax: 0
+  _isRanged: 0
+  _isFlying: 0
+  _isStationary: 0
+  _canBeIntangible: 0
+  _attackType: 0
+  _spawnSound: 19
+  _deathSound: 20
+  _hurtSound: 20

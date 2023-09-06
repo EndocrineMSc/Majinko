@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42411fe6627f4a742bcf962964bdc0ce, type: 3}
   m_Name: golem_golem
   m_EditorClassIdentifier: 
-  _enemyArray: 0400000004000000
+  _enemyPrefabs:
+  - {fileID: 1988687641357784032, guid: 505a627ee12eeca478afb13bc41d204e, type: 3}
+  - {fileID: 1988687641357784032, guid: 505a627ee12eeca478afb13bc41d204e, type: 3}

@@ -23,10 +23,7 @@ namespace Orbs
 
         public override IEnumerator OrbEffect()
         {
-            foreach(Enemy enemy in EnemyManager.Instance.EnemiesInScene)
-                if(enemy.TryGetComponent<ICanBeIntangible>(out ICanBeIntangible intangibleEnemy))
-                    intangibleEnemy.SetIntangible();
-
+            EnemyEvents.RaiseIntangibleTriggered();
             yield return null;
         }
 

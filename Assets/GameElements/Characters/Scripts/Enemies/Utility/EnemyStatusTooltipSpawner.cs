@@ -12,9 +12,9 @@ namespace Characters
         private Enemy _enemy;
         [SerializeField] private VerticalLayoutGroup _tooltipGroup;
         [SerializeField] private StatusEffectTooltip _tooltip;
-        
-
+       
         private List<StatusEffectTooltip> _activeTooltips;
+
         #endregion
 
         // Start is called before the first frame update
@@ -50,7 +50,7 @@ namespace Characters
                 _activeTooltips.Add(temperatureSick);
             }
 
-            if (_enemy.TryGetComponent<ICanBeIntangible>(out var intangibleEnemy) && intangibleEnemy.IntangibleStacks > 0) 
+            if (_enemy.IntangibleStacks > 0) 
             {
                 StatusEffectTooltip intangible = InstantiateTooltip(StatusEffects.Intangible);
                 _activeTooltips.Add(intangible);

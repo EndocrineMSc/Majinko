@@ -12,8 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f6d0d51b85b3644b03b28e1ea625d5, type: 3}
   m_Name: StoneGolem
   m_EditorClassIdentifier: 
-  AttackFrequency: 0
-  AttackType: 0
-  Damage: 10
-  MaxHealth: 40
-  IsFlying: 0
+  _description: <size=120%><b>Stone Golem</b><size=20%>\n\n<size=100%>Either awakend
+    rock or petrified adventurers - you hope for the first. Will spawn three <b>Stone
+    Orbs</b> every third turn."
+  _attackFrequency: 0
+  _damage: 10
+  _maxHealth: 40
+  _displayScale: 2
+  _abilityCooldownMax: 2
+  _isRanged: 0
+  _isFlying: 0
+  _isStationary: 0
+  _canBeIntangible: 0
+  _attackType: 0
+  _spawnSound: 19
+  _deathSound: 20
+  _hurtSound: 20

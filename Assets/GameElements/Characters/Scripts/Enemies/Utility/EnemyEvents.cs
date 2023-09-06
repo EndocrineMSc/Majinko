@@ -2,55 +2,61 @@ using System;
 
 namespace Characters.Enemies
 {
-    internal class EnemyEvents
+    public class EnemyEvents
     {
         #region Fields and Properties
         
-        internal static event Action OnEnemyDied;
-        internal static event Action OnEnemyFinishedMoving;
-        internal static event Action OnEnemiesFinishedAttacking;
-        internal static event Action<Enemy> OnAppliedBurning;
-        internal static event Action<Enemy> OnAppliedFreezing;
-        internal static event Action<Enemy> OnAppliedFrozen;
-        internal static event Action<Enemy> OnAppliedTemperatureSickness;
+        public static event Action OnEnemyDied;
+        public static event Action OnEnemyFinishedMoving;
+        public static event Action OnEnemiesFinishedAttacking;
+        public static event Action<int> OnIntangibleTriggered;
+        public static event Action<Enemy> OnAppliedBurning;
+        public static event Action<Enemy> OnAppliedFreezing;
+        public static event Action<Enemy> OnAppliedFrozen;
+        public static event Action<Enemy> OnAppliedTemperatureSickness;
 
         #endregion
 
         #region Functions
-        
-        internal static void RaiseOnEnemyDeath()
+
+        public static void RaiseOnEnemyDeath()
         {
             OnEnemyDied?.Invoke();
         }
 
-        internal static void RaiseOnEnemyFinishedMoving()
+        public static void RaiseOnEnemyFinishedMoving()
         {
             OnEnemyFinishedMoving?.Invoke();
         }
 
-        internal static void RaiseOnEnemiesFinishedAttacking()
+        public static void RaiseOnEnemiesFinishedAttacking()
         {
             OnEnemiesFinishedAttacking?.Invoke();
         }
 
-        internal static void RaiseAppliedBurning(Enemy enemy)
+        public static void RaiseAppliedBurning(Enemy enemy)
         {
             OnAppliedBurning?.Invoke(enemy);
         }
 
-        internal static void RaiseAppliedFreezing(Enemy enemy)
+        public static void RaiseAppliedFreezing(Enemy enemy)
         {
             OnAppliedFreezing?.Invoke(enemy);
         }
 
-        internal static void RaiseAppliedFrozen(Enemy enemy)
+        public static void RaiseAppliedFrozen(Enemy enemy)
         {
             OnAppliedFrozen?.Invoke(enemy);
         }
 
-        internal static void RaiseAppliedTemperatureSickness(Enemy enemy)
+        public static void RaiseAppliedTemperatureSickness(Enemy enemy)
         {
             OnAppliedTemperatureSickness?.Invoke(enemy);
+        }
+
+        public static void RaiseIntangibleTriggered(int amount = 1)
+        {
+            OnIntangibleTriggered?.Invoke(amount);
         }
 
         #endregion

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1f6d0d51b85b3644b03b28e1ea625d5, type: 3}
+  m_Name: LeafMage
+  m_EditorClassIdentifier: 
+  _description: <size=120%><b>Leaf Mage</b><size=20%>\n\n<size=100%>These magical
+    guardians of the forest rustle softly in the wind. While usually peaceful, something
+    seems to have agitated them. Will attack and spawn an <b>Intangible Sphere</b>
+    every other turn. They will become intangible when these orbs are hit.
+  _attackFrequency: 1
+  _damage: 5
+  _maxHealth: 20
+  _displayScale: 2
+  _isRanged: 1
+  _isFlying: 0
+  _isStationary: 0
+  _canBeIntangible: 1
+  _attackType: 1
+  _attackEffectObject: {fileID: 0}
+  _deathEffectObject: {fileID: 0}
+  _animationController: {fileID: 9100000, guid: da1bb368187f0f04b99ce1c033c34af3, type: 2}
+  _spawnSound: 21
+  _deathSound: 22
+  _hurtSound: 22
