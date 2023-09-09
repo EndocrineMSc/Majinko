@@ -11,7 +11,7 @@ namespace Attacks
     {
         public override string Bark { get; } = "Fire Bomb!";
 
-        internal override void ShootAttack(Vector3 instantiatePosition, float damageModifier = 1)
+        public override void ShootAttack(Vector3 instantiatePosition, float damageModifier = 1)
         {
             AreaAttack attack = Instantiate(this, instantiatePosition, Quaternion.identity);
             attack.HandleAOE(damageModifier);

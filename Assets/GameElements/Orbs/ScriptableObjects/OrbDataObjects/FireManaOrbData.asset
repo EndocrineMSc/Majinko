@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47c63c7f58e8a46458b9f15f2a2b11d5, type: 3}
+  m_Name: FireManaOrbData
+  m_EditorClassIdentifier: 
+  _orbName: FireManaOrb
+  _manaToSpawn: 1
+  _amountManaSpawned: 10
+  _stalwartHits: 0
+  _revertsToBasicOrb: 0
+  _orbAttackPrefab: {fileID: 0}
+  _isAddedToActionList: 0
+  _animationController: {fileID: 9100000, guid: 007cb41bf97d11f4f843811686c9c400, type: 2}
+  _isTriggerColliderOrb: 0

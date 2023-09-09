@@ -12,17 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d8682f958061ed4d84819b3f0aaed4d, type: 3}
   m_Name: Forbidden X
   m_EditorClassIdentifier: 
-  CardName: Forbidden X
-  CardDescription: 'Persistent Orb: You sense a dark power in this orb.'
-  BasicManaCost: 1
-  FireManaCost: 0
-  IceManaCost: 0
-  IsExhaustCard: 1
-  IsBuff: 0
-  Type: 12
-  Rarity: 4
-  Element: 0
-  Image: {fileID: 21300000, guid: 04b1699090df4ca459f2557e3340517a, type: 3}
-  Buff: 0
-  OrbType: 13
-  OrbAmount: 1
+  _cardName: Forbidden X
+  _cardDescription: 'Persistent Orb: \nYou sense a dark power in this orb.'
+  _basicManaCost: 1
+  _fireManaCost: 0
+  _iceManaCost: 0
+  _isExhaustCard: 1
+  _isBuff: 0
+  _cardType: 12
+  _cardRarity: 4
+  _cardElement: 0
+  _cardImage: {fileID: 21300000, guid: 04b1699090df4ca459f2557e3340517a, type: 3}
+  _cardBuff: 0
+  _effectValues: {fileID: 0}
+  _modifiedDescription: "Persistent Orb: \nYou sense a dark power in this orb."
+  _orbData: {fileID: 11400000, guid: 98dd5de0c7cf7974182414d023aa53f5, type: 2}
+  _orbAmount: 1

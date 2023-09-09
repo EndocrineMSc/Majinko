@@ -314,18 +314,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6953832653166478014, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: m_text
-      value: 'Sphere splits into three on first orb contact
-
-        Stackable: additional
-        sphere on split'
+      value: "Sphere splits into three \non first orb contact\n\n<b>Stackable:</b>
+        \nAdditional sphere"
       objectReference: {fileID: 0}
     - target: {fileID: 6953832653166478014, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: m_fontSize
-      value: 10
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6953832653166478014, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
+      propertyPath: m_lineSpacing
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 6953832653166478014, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: m_fontSizeBase
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7089003023557787097, guid: 57636e4bb64f6904f9ffb83aed3a648e, type: 3}
       propertyPath: m_IsActive

@@ -201,9 +201,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5631585529099602687, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_text
-      value: 'Orb:
-
-        Gain 10 shield'
+      value: "Orb: \nGain <b>10 Shield</b>"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631585529099602687, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_lineSpacing
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 5676666454438765143, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_SizeDelta.x

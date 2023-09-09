@@ -1,10 +1,5 @@
-using EnumCollection;
-using Audio;
 using Orbs;
-using Utility;
 using UnityEngine;
-using DG.Tweening;
-using System.Collections;
 using Attacks;
 
 namespace Characters.Enemies
@@ -13,6 +8,7 @@ namespace Characters.Enemies
     {
         [SerializeField] private ParticleSystem _particleSystem;
         [SerializeField] private ProjectileAttack _leafMageShot;
+        [SerializeField] private OrbData _intangibleOrbData;
 
         #region Functions
 
@@ -27,7 +23,7 @@ namespace Characters.Enemies
             if (AbilityCooldown <= 0 && OrbManager.Instance != null)
             {
                 AbilityCooldown = EnemyObject.AbilityCooldownMax;
-                OrbManager.Instance.SwitchOrbsWrap(OrbType.IntangibleEnemyOrb, transform.position);
+                OrbManager.Instance.SwitchOrbs(_intangibleOrbData, transform.position);
             }
         }
 

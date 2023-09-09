@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyObject: {fileID: 11400000, guid: 604d8c250a3c9704c90bd31ac2e57691, type: 2}
+  _stoneOrbData: {fileID: 11400000, guid: e3f7ee13123a3c1469818eef0d2f1599, type: 2}
 --- !u!114 &1161808695900130219
 MonoBehaviour:
   m_ObjectHideFlags: 0

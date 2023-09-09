@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2549565476461289555}
   - component: {fileID: 2549565476461289554}
   - component: {fileID: 5099420647275916350}
-  - component: {fileID: 7479998709122375947}
   - component: {fileID: 4872170773538441819}
   - component: {fileID: 8606283219829596650}
+  - component: {fileID: 5842590660964650890}
   m_Layer: 0
   m_Name: BaseManaOrb
   m_TagString: Orb
@@ -126,22 +126,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.07
---- !u!114 &7479998709122375947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2549565476461289553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41016e44d23c36148904c35888f4e051, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spawnManaType: 0
-  _manaAmount: 2
-  _defaultOrb: {fileID: 2549565476461289553}
-  OrbType: 0
 --- !u!114 &4872170773538441819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,6 +151,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _orbPopUpPrefab: {fileID: 5326807715267368304, guid: e2b6d36c4219c2243b948ce91b89f7af, type: 3}
+--- !u!114 &5842590660964650890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549565476461289553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14abd92b533722546bf07b01ad745bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _orbData: {fileID: 11400000, guid: d305115b5ea50e941b0ad6f8bc7a4ef4, type: 2}
 --- !u!1001 &4229906554693747041
 PrefabInstance:
   m_ObjectHideFlags: 0

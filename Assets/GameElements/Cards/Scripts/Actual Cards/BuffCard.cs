@@ -1,11 +1,8 @@
 using Characters;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 namespace Cards
 {
-    internal class BuffCard : Card
+    public class BuffCard : Card
     {
         CardBuff _buff;
 
@@ -36,7 +33,7 @@ namespace Cards
         }
     }
 
-    internal enum CardBuff
+    public enum CardBuff
     {
         None,
         ShieldBeetle,

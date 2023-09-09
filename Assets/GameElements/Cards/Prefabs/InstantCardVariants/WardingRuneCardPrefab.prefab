@@ -109,7 +109,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: b7ce409a5547c514381d839453523c66, type: 3}
     - target: {fileID: 5437267143115510094, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_text
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5538769295108729889, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_IsActive
@@ -152,3 +152,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScriptableCard: {fileID: 11400000, guid: 238b5df2bdc20344c80b3c23a454e939, type: 2}
+  PositionInHand: {x: 0, y: 0}

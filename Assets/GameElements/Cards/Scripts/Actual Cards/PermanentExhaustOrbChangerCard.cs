@@ -4,15 +4,15 @@ using UnityEngine;
 
 namespace Cards
 {
-    internal class PermanentExhaustOrbChangerCard : OrbShifterCard
+    public class PermanentExhaustOrbChangerCard : OrbShifterCard
     { 
         protected override void CardEffect()
         {
-            GlobalOrbManager.Instance.AddLevelLoadOrb(OrbType);
+            GlobalOrbManager.Instance.AddLevelLoadOrb(OrbDataForSwitching);
 
             Vector3 playerPosition = Player.Instance.transform.position;
             Vector3 startPosition = new(playerPosition.x + 2, playerPosition.y, playerPosition.z);
-            OrbManager.Instance.SwitchOrbsWrap(OrbType, startPosition);
+            OrbManager.Instance.SwitchOrbs(OrbDataForSwitching, startPosition);
             _globalDeckManager.RemoveCardFromGlobalDeck(GlobalCardManager.Instance.AllCards[(int)CardType]);
         }
     }

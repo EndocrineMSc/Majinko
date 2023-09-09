@@ -89,7 +89,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4562639032885138839, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4812993297873364277, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Pivot.x
@@ -175,14 +175,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5430120253573637861, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5631585529099602687, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_text
-      value: 'Orb: Deal 10 ice damage
-
-        Apply 5 freezing
-
-        Small chance
-        to apply frozen'
+      value: "Orb, AOE: \n<b>Deals 10 Damage</b> and \ninflicts <b>10 Freezing</b>.
+        \nHas a <b>10%</b> to inflict <b>Frozen</b>"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631585529099602687, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_fontSize
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631585529099602687, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_lineSpacing
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631585529099602687, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631585529099602687, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5993524722849724809, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_IsActive

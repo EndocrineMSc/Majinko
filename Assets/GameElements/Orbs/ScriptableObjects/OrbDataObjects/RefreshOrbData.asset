@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae681a733f7720043a715a3f1cc190ed, type: 3}
+  m_Name: RefreshOrbData
+  m_EditorClassIdentifier: 
+  _orbName: RefreshOrb
+  _manaToSpawn: 0
+  _amountManaSpawned: 0
+  _stalwartHits: 0
+  _revertsToBasicOrb: 1
+  _orbAttackPrefab: {fileID: 0}
+  _isAddedToActionList: 0
+  _animationController: {fileID: 9100000, guid: f0c0b2f8c1eead94db4a2b01ed1d4d4a, type: 2}
+  _isTriggerColliderOrb: 0

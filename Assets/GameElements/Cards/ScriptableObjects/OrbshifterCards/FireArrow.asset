@@ -12,17 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d8682f958061ed4d84819b3f0aaed4d, type: 3}
   m_Name: FireArrow
   m_EditorClassIdentifier: 
-  CardName: Fire Arrow
-  CardDescription: 'Orb: Deals 10 damage and applies 5 burning'
-  BasicManaCost: 0
-  FireManaCost: 1
-  IceManaCost: 0
-  IsExhaustCard: 0
-  IsBuff: 0
-  Type: 4
-  Rarity: 2
-  Element: 1
-  Image: {fileID: 21300000, guid: ec08c13b80b0eae4b99ce3aef02941cb, type: 3}
-  Buff: 0
-  OrbType: 5
-  OrbAmount: 1
+  _cardName: Fire Arrow
+  _cardDescription: 'Orb: \nDeals <b>{Damage} Damage</b> and inflicts <b>{Burning}
+    Burning</b> to the first enemy.'
+  _basicManaCost: 0
+  _fireManaCost: 1
+  _iceManaCost: 0
+  _isExhaustCard: 0
+  _isBuff: 0
+  _cardType: 4
+  _cardRarity: 1
+  _cardElement: 1
+  _cardImage: {fileID: 21300000, guid: ec08c13b80b0eae4b99ce3aef02941cb, type: 3}
+  _cardBuff: 0
+  _effectValues: {fileID: 11400000, guid: 23c5f260021738c47b473f729d94a044, type: 2}
+  _modifiedDescription: "Orb: \nDeals <b>10 Damage</b> and inflicts <b>5 Burning</b>
+    to the first enemy."
+  _orbData: {fileID: 11400000, guid: 1b05b94ed8c162f4ba911a163aae3a27, type: 2}
+  _orbAmount: 1

@@ -3,7 +3,8 @@ guid: cee0e94e5bcc0354399b88003d8d6766
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _manaBlitzData: {fileID: 11400000, guid: d5fd3250845b890459bbfecb9180a443, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

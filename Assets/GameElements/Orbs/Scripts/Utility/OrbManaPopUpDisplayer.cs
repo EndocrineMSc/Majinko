@@ -6,7 +6,7 @@ using Utility.TurnManagement;
 
 namespace Orbs
 {
-    internal class OrbManaPopUpDisplayer : MonoBehaviour
+    public class OrbManaPopUpDisplayer : MonoBehaviour
     {
         #region Fields and Properties
 
@@ -17,28 +17,6 @@ namespace Orbs
         #endregion
 
         #region Functions
-
-        private void Start()
-        {
-            Orb orb = GetComponent<Orb>();
-            _orbManaType = orb.SpawnManaType;
-
-            switch (_orbManaType)
-            {
-                case ManaType.BasicMana:
-                    ColorUtility.TryParseHtmlString("#56689F", out Color basicColor);
-                    _popUpColor = basicColor;
-                    break;
-                case ManaType.FireMana:
-                    ColorUtility.TryParseHtmlString("#BE1C23", out Color fireColor);
-                    _popUpColor = fireColor;
-                    break;
-                case ManaType.IceMana:
-                    ColorUtility.TryParseHtmlString("#258EB6", out Color iceColor);
-                    _popUpColor = iceColor; 
-                    break;
-            }
-        }
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
@@ -62,6 +40,27 @@ namespace Orbs
                         popUp.SetPopUpValue((float)System.Math.Round(OrbManager.Instance.GatheredBasicManaAmountTurn, 1));
                         break;
                 }
+            }
+        }
+
+        public void SetManaType(ManaType type)
+        {
+            _orbManaType = type;
+
+            switch (_orbManaType)
+            {
+                case ManaType.BasicMana:
+                    ColorUtility.TryParseHtmlString("#56689F", out Color basicColor);
+                    _popUpColor = basicColor;
+                    break;
+                case ManaType.FireMana:
+                    ColorUtility.TryParseHtmlString("#BE1C23", out Color fireColor);
+                    _popUpColor = fireColor;
+                    break;
+                case ManaType.IceMana:
+                    ColorUtility.TryParseHtmlString("#258EB6", out Color iceColor);
+                    _popUpColor = iceColor;
+                    break;
             }
         }
 

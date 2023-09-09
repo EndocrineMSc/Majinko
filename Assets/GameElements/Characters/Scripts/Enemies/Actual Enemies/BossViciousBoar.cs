@@ -1,12 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Utility;
 using DG.Tweening;
 using System;
-using Utility.TurnManagement;
 using TMPro;
-using EnumCollection;
 using Orbs;
 
 namespace Characters.Enemies
@@ -21,6 +18,7 @@ namespace Characters.Enemies
         private bool _isOnFire;
         [SerializeField] private TextMeshProUGUI _attackClock;
         [SerializeField] private RectTransform _attackClockTransform;
+        [SerializeField] private OrbData _pineMouseOrbData;
 
         public event Action OnBoarAttack;
 
@@ -78,7 +76,7 @@ namespace Characters.Enemies
         {
             Player.Instance.TakeDamage(Mathf.RoundToInt(EnemyObject.Damage * _dealingDamageModifier));
             OnBoarAttack?.Invoke();
-            OrbManager.Instance.SwitchOrbsWrap(OrbType.PineConeOrb, transform.position, 3);
+            OrbManager.Instance.SwitchOrbs(_pineMouseOrbData, transform.position, 3);
             _collider.enabled = false;
             //ToDo: Trigger turn right animation
             transform.DOMoveX(_startPosition.x, _tackleDuration).SetEase(Ease.InCubic).OnComplete(TriggerTurnLeftAnimation);

@@ -7,7 +7,7 @@ using PeggleWars.Characters.Interfaces;
 
 namespace Attacks
 {
-    internal abstract class ProjectileAttack : Attack
+    public abstract class ProjectileAttack : Attack
     {
         #region Fields and Properties
 
@@ -62,7 +62,7 @@ namespace Attacks
             }
         }
 
-        internal override void ShootAttack(Vector3 instantiatePosition, float damageModifier = 1)
+        public override void ShootAttack(Vector3 instantiatePosition, float damageModifier = 1)
         {
             if (EnemyManager.Instance.EnemiesInScene.Count > 0)
             {

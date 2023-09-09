@@ -89,7 +89,7 @@ namespace EnumCollection
         Legendary,
     }
 
-    internal enum CardElement
+    public enum CardElement
     {
         None,
         Fire,
@@ -97,7 +97,7 @@ namespace EnumCollection
         Lightning,
     }
 
-    internal enum CardEffectType
+    public enum CardEffectType
     {
         Instant,
         Orbshifter,

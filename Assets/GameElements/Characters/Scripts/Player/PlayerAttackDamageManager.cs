@@ -5,16 +5,16 @@ using Characters;
 
 namespace Attacks
 {
-    internal class PlayerAttackDamageManager : MonoBehaviour
+    public class PlayerAttackDamageManager : MonoBehaviour
     {
         #region Fields and Properties
 
-        internal static PlayerAttackDamageManager Instance { get; private set; }
+        public static PlayerAttackDamageManager Instance { get; private set; }
 
         private List<float> _damageModificationsForTurn = new();
         private readonly float _sicknessModifier = 0.894f;
 
-        internal float DamageModifierTurn { get; private set; } = 1;
+        public float DamageModifierTurn { get; private set; } = 1;
 
         #endregion
 
@@ -42,7 +42,7 @@ namespace Attacks
             LevelPhaseEvents.OnStartEnemyPhase -= OnStartEnemyPhase;
         }
 
-        internal float CalculateModifier()
+        public float CalculateModifier()
         {
             float finalDamageModifier = 1;
 
@@ -59,7 +59,7 @@ namespace Attacks
             return finalDamageModifier;
         }
 
-        internal void ModifyPlayerDamage(float modifier)
+        public void ModifyPlayerDamage(float modifier)
         {
             _damageModificationsForTurn.Add(modifier);
         }

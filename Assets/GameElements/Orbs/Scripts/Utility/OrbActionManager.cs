@@ -2,23 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Utility.TurnManagement;
-using Characters;
 using Attacks;
 
 namespace Orbs
 {
-
-    internal class OrbActionManager : MonoBehaviour
+    public class OrbActionManager : MonoBehaviour
     {
         #region Fields and Properties
 
-        internal static OrbActionManager Instance { get; private set; }
-        private List<Orb> _orbActions = new();
+        public static OrbActionManager Instance { get; private set; }
 
-        private Vector2 _actionOrbSpawn;
+        //Orb Pool Instantiation
+        private readonly int _actionOrbPoolSize = 40;
+        private List<Orb> _actionOrbPool = new();
+        [SerializeField] private Orb _basicOrbPrefab;
+        private GameObject _actionOrbSpawnObject;
+        private Vector2 _actionOrbSpawnPosition;
         private float _xOrbOffset;
         private readonly string SPAWNPOINT_PARAM = "ActionOrbSpawn";
-        private bool _attacksFinished;
+
+        //Action Orb Handling
+        private List<Orb> _claimedActionOrbs = new();
+
+        //Pool Edge Case Handling
+        private int _overShootCounter = 0;
 
         #endregion
 
@@ -30,12 +37,6 @@ namespace Orbs
                 Instance = this;
             else
                 Destroy(gameObject);
-        }
-
-        private void Start()
-        {
-            _actionOrbSpawn = SetActionOrbSpawn();
-            _xOrbOffset = GetXOrbOffsSet();           
         }
 
         private void OnEnable()
@@ -50,25 +51,12 @@ namespace Orbs
             AttackEvents.OnAttackFinished -= HandleOrbAction;
         }
 
-        private void HandleOrbAction()
+        private void Start()
         {
-            StartCoroutine(DelayedOrbEffect());
-        }
-
-        private IEnumerator DelayedOrbEffect()
-        {
-            yield return new WaitForSeconds(0.5f);
-            if (_orbActions.Count > 0)
-            {
-                var orb = _orbActions[0];
-                StartCoroutine(orb.OrbEffect());
-                _orbActions.RemoveAt(0);
-            }
-            else
-            {
-                if (!_attacksFinished)
-                    StartCoroutine(StartNextPhaseWithDelay());
-            }
+            _actionOrbSpawnObject = GameObject.FindGameObjectWithTag(SPAWNPOINT_PARAM);
+            _actionOrbSpawnPosition = SetActionOrbSpawn();
+            _xOrbOffset = GetXOrbOffsSet();
+            InstantiateActionListOrbs();
         }
 
         private Vector2 SetActionOrbSpawn()
@@ -80,25 +68,79 @@ namespace Orbs
 
         private float GetXOrbOffsSet()
         {
-            GameObject spawnPoint = GameObject.FindGameObjectWithTag(SPAWNPOINT_PARAM);
-            SpriteRenderer spriteRenderer = spawnPoint.GetComponent<SpriteRenderer>();
+            SpriteRenderer spriteRenderer = _actionOrbSpawnObject.GetComponent<SpriteRenderer>();
             float xOffSet = spriteRenderer.bounds.size.x;
             return xOffSet;
         }
 
-        internal void AddOrbToActionList(Orb orb)
+        private void InstantiateActionListOrbs()
         {
-            Orb tempOrb = Instantiate(orb, new Vector2(_actionOrbSpawn.x + (_xOrbOffset * _orbActions.Count), _actionOrbSpawn.y), Quaternion.identity);
+            for (int i = 0; i < _actionOrbPoolSize; i++)
+            {
+                var xPosition = _actionOrbSpawnPosition.x + (_xOrbOffset * i);
+                Vector2 instantiatePosition = new(xPosition, _actionOrbSpawnPosition.y);
+                InstantiateNewActionOrb(instantiatePosition);
+            }
+        }
+
+        private void InstantiateNewActionOrb(Vector2 instantiatePosition)
+        {
+            var tempOrb = Instantiate(_basicOrbPrefab, instantiatePosition, Quaternion.identity);
+            tempOrb.GetComponent<SpriteRenderer>().enabled = false;
+            tempOrb.transform.SetParent(_actionOrbSpawnObject.transform);
             tempOrb.SetActionOrbInactive();
-            _orbActions.Add(tempOrb);
+            _actionOrbPool.Add(tempOrb);
+        }
+
+        public void AddOrbToActionList(OrbData orbData)
+        {
+            HandleActionPoolOrbAvailability();
+
+            var actionOrb = _actionOrbPool[0];
+            actionOrb.SetOrbData(orbData);
+            actionOrb.GetComponent<SpriteRenderer>().enabled = true;
+
+            _actionOrbPool.RemoveAt(0);
+            _claimedActionOrbs.Add(actionOrb);
+        }
+
+        private void HandleOrbAction()
+        {
+            if (_claimedActionOrbs.Count > 0)
+            {
+                var orb = _claimedActionOrbs[0];
+                orb.Data.OrbEffect();
+                ReturnOrbToPool(orb);
+                _claimedActionOrbs.RemoveAt(0);
+            }
+            else
+            {
+                StartCoroutine(StartNextPhaseWithDelay());
+            }
+        }
+
+        private void ReturnOrbToPool(Orb orb)
+        {
+            _actionOrbPool.Insert(0, orb);
+            orb.SetOrbData(_basicOrbPrefab.Data);
+            orb.GetComponent<SpriteRenderer>().enabled = false;
+        }
+
+        private void HandleActionPoolOrbAvailability()
+        {
+            if (_actionOrbPool.Count == 0)
+            {
+                _overShootCounter++;
+                var xPosition = _actionOrbSpawnPosition.x + (_xOrbOffset * (_actionOrbPoolSize + _overShootCounter));
+                Vector2 instantiatePosition = new(xPosition, _actionOrbSpawnPosition.y);
+                InstantiateNewActionOrb(instantiatePosition);
+            }
         }
 
         private IEnumerator StartNextPhaseWithDelay()
         {
-            _attacksFinished = true;
             yield return new WaitForSeconds(1);
             PhaseManager.Instance.StartEnemyPhase();
-            _attacksFinished = false;
         }
 
         #endregion

@@ -109,7 +109,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5631585529099602687, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_text
-      value: 'Persistent Orb: You sense a dark power in this orb.'
+      value: "Persistent Orb: \nYou sense a dark power in this orb."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631585529099602687, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_lineSpacing
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 6398440697363082782, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_Name
@@ -141,3 +145,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScriptableCard: {fileID: 11400000, guid: 6a9c87f5b669e5544a8d730499d2e854, type: 2}
+  PositionInHand: {x: 0, y: 0}

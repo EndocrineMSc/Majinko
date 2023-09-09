@@ -12,15 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e6e1e0e03f2f23438d023750e819a6e, type: 3}
   m_Name: Divination
   m_EditorClassIdentifier: 
-  CardName: Divination
-  CardDescription: Increases the range and bounces of the shot prediction.
-  BasicManaCost: 0
-  FireManaCost: 0
-  IceManaCost: 0
-  IsExhaustCard: 0
-  IsBuff: 0
-  Type: 2
-  Rarity: 0
-  Element: 0
-  Image: {fileID: 21300000, guid: b3053dd856e8801469a38b07d8d4510a, type: 3}
-  Buff: 0
+  _cardName: Divination
+  _cardDescription: Increases the range and bounces of the shot prediction.
+  _basicManaCost: 0
+  _fireManaCost: 0
+  _iceManaCost: 0
+  _isExhaustCard: 0
+  _isBuff: 0
+  _cardType: 2
+  _cardRarity: 0
+  _cardElement: 0
+  _cardImage: {fileID: 21300000, guid: b3053dd856e8801469a38b07d8d4510a, type: 3}
+  _cardBuff: 0
+  _effectValues: {fileID: 0}
+  _modifiedDescription: Increases the range and bounces of the shot prediction.
