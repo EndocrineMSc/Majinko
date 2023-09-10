@@ -115,7 +115,7 @@ namespace Characters.Enemies
         public void SetDisplayDescription()
         {
             if (TryGetComponent<IDisplayOnScroll>(out IDisplayOnScroll displayOnScroll))
-                displayOnScroll.DisplayDescription = EnemyObject.Description;
+                displayOnScroll.DisplayDescription = EnemyObject.ModifiedDescription;
         }
 
         protected void SetDisplayScale()
@@ -191,13 +191,25 @@ namespace Characters.Enemies
         {
             TriggerAttackAnimation();
             AttackEffect();
-            TurnsTillNextAttack = EnemyObject.AttackFrequency;
+            ResetAttackCooldown();
+            var damage = CalculateAttackDamage();
+            DealDamageToPlayer(damage);
+        }
 
-            if (EnemyObject.AttackType == EnemyAttackType.Melee)
-            {
-                var damage = Mathf.CeilToInt(EnemyObject.Damage * _dealingDamageModifier);
+        protected virtual void ResetAttackCooldown()
+        {
+            TurnsTillNextAttack = EnemyObject.AttackFrequency;
+        }
+
+        protected virtual int CalculateAttackDamage()
+        {
+            return Mathf.CeilToInt(EnemyObject.Damage * _dealingDamageModifier);
+        }
+
+        protected virtual void DealDamageToPlayer(int damage)
+        {
+            if (damage != 0)
                 _player.TakeDamage(damage);
-            }
         }
 
         protected virtual void OnEndEnemyPhase()

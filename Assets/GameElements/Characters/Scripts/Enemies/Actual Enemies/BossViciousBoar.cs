@@ -12,10 +12,13 @@ namespace Characters.Enemies
     {
         private Vector2 _startPosition;
         private Vector2 _targetPosition;
-        private float _tackleDuration = 1f;
+        private readonly float _tackleDuration = 1f;
         private Collider2D _collider;
         private readonly string FIRE_TRIGGER = "Fire";
+        private readonly string TURN_TRIGGER = "Turn";
         private bool _isOnFire;
+        private float _onFireDamageModifier = 1;
+        private readonly int _fireAttackCooldownReduction = 1;
         [SerializeField] private TextMeshProUGUI _attackClock;
         [SerializeField] private RectTransform _attackClockTransform;
         [SerializeField] private OrbData _pineMouseOrbData;
@@ -47,20 +50,30 @@ namespace Characters.Enemies
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.TryGetComponent<Enemy>(out var enemy))
-                enemy.TakeDamage(Mathf.RoundToInt(EnemyObject.Damage * _dealingDamageModifier));
+                enemy.TakeDamage(Mathf.RoundToInt(EnemyObject.Damage * _dealingDamageModifier * _onFireDamageModifier));
         }
 
         private void SetOnFire()
         {
             _isOnFire = true;
             _animator.SetTrigger(FIRE_TRIGGER);
-            /*
-            Damage = Mathf.RoundToInt(EnemyObject.Damage * 1.5f);
-            _attackFrequency--;
-            */
+            _onFireDamageModifier = 1.5f;
         }
-        
-        
+
+        protected override void ResetAttackCooldown()
+        {
+            if (!_isOnFire)
+                TurnsTillNextAttack = EnemyObject.AttackFrequency;
+            else
+                TurnsTillNextAttack = EnemyObject.AttackFrequency - _fireAttackCooldownReduction;
+        }
+
+        protected override int CalculateAttackDamage()
+        {
+            //Will cause Enemy.Attack not to trigger damage to the player, since I want this to happen at boar impact with the player instead
+            return 0; 
+        }
+
         protected override void AttackEffect()
         {
             ChargeLeft();
@@ -74,19 +87,48 @@ namespace Characters.Enemies
 
         private void TurnAndChargeRight()
         {
-            Player.Instance.TakeDamage(Mathf.RoundToInt(EnemyObject.Damage * _dealingDamageModifier));
+            var damage = Mathf.CeilToInt(EnemyObject.Damage * _dealingDamageModifier * _onFireDamageModifier);
+            float amplitude = 1 + damage / 2.5f;
+            float shakeTime = (float)damage / 50;
+
+            if (Player.Instance != null)
+                Player.Instance.TakeDamage(damage);
+            else
+                Debug.Log("Boss Boar couldn't deal damage. It thinks player is null");
+
+            if (ScreenShaker.Instance != null)
+                ScreenShaker.Instance.ShakeCamera(amplitude, shakeTime);
+            else
+                Debug.Log("Couldn't shake screen. Thinks ScreenShaker is null");
+
             OnBoarAttack?.Invoke();
             OrbManager.Instance.SwitchOrbs(_pineMouseOrbData, transform.position, 3);
             _collider.enabled = false;
-            //ToDo: Trigger turn right animation
-            transform.DOMoveX(_startPosition.x, _tackleDuration).SetEase(Ease.InCubic).OnComplete(TriggerTurnLeftAnimation);
+            _animator.SetTrigger(TURN_TRIGGER); //Animation Event Flips Renderer and another event triggers HandleTurnFollowUp
+        }
+
+        public void HandleTurnFollowUp()
+        {
+            if (_spriteRenderer.flipX)
+            {
+                _animator.SetTrigger(WALK_TRIGGER);
+                transform.DOMoveX(_startPosition.x, _tackleDuration).SetEase(Ease.Linear).OnComplete(TriggerTurnLeftAnimation);
+            }
+            else
+            {
+                _animator.SetTrigger(IDLE_TRIGGER);
+            }
+        }
+
+        public void FlipRenderer()
+        {
+            _spriteRenderer.flipX = !_spriteRenderer.flipX;
         }
 
         private void TriggerTurnLeftAnimation()
         {
-            _animator.SetTrigger(IDLE_TRIGGER);
+            _animator.SetTrigger(TURN_TRIGGER); //Animation Event Flips Renderer and another event triggers HandleTurnFollowUp
             _collider.enabled = true;
-            //ToDo: Trigger turn left animation
         }
      
         protected override void OnDeathEffect()
