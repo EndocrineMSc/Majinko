@@ -12,17 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d8682f958061ed4d84819b3f0aaed4d, type: 3}
   m_Name: Ice Mana
   m_EditorClassIdentifier: 
-  CardName: Ice Mana
-  CardDescription: "Persistent Orb: \nGain 1 Ice Mana\nApply 1 Freezing"
-  BasicManaCost: 0
-  FireManaCost: 0
-  IceManaCost: 1
-  IsExhaustCard: 1
-  IsBuff: 0
-  Type: 14
-  Rarity: 1
-  Element: 2
-  Image: {fileID: 21300000, guid: 9d94bae8770851543ae894f2cacd2ace, type: 3}
-  Buff: 0
-  OrbType: 16
-  OrbAmount: 1
+  _cardName: Ice Mana Orb
+  _cardDescription: 'Persistent Orb: \nGain <b>1 Ice Mana</b> \nInflict <b>1 Freezing</b>'
+  _basicManaCost: 1
+  _fireManaCost: 0
+  _iceManaCost: 0
+  _isExhaustCard: 1
+  _isBuff: 0
+  _cardType: 14
+  _cardRarity: 2
+  _cardElement: 2
+  _cardImage: {fileID: 21300000, guid: 9d94bae8770851543ae894f2cacd2ace, type: 3}
+  _cardBuff: 0
+  _effectValues: {fileID: 0}
+  _modifiedDescription: "Persistent Orb: \nGain <b>1 Ice Mana</b> \nInflict <b>1
+    Freezing</b>"
+  _orbData: {fileID: 11400000, guid: 9d00777d3098c1f4bb02923de9241bdd, type: 2}
+  _orbAmount: 1

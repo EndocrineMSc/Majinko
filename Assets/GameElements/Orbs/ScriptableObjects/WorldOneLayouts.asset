@@ -13,6 +13,4 @@ MonoBehaviour:
   m_Name: WorldOneLayouts
   m_EditorClassIdentifier: 
   OrbLayouts:
-  - {fileID: 11400000, guid: 7aafc309a89dbb34c81e8c3a1926fccc, type: 2}
-  - {fileID: 11400000, guid: 6eb14d98215593441ad6f732a0b1b73f, type: 2}
-  - {fileID: 11400000, guid: 1a558a417fbae1f4d9fd0f95f2c8f830, type: 2}
+  - {fileID: 11400000, guid: c1ef9e1f8bb4c6244b4de5c8ee231b3a, type: 2}

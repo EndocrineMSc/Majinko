@@ -6,21 +6,21 @@ using Utility;
 
 namespace Orbs
 {
-    internal class GlobalOrbManager : MonoBehaviour, IResetOnQuit
+    public class GlobalOrbManager : MonoBehaviour, IResetOnQuit
     {
 
         #region Fields and Properties
 
-        internal static GlobalOrbManager Instance { get; private set; }
+        public static GlobalOrbManager Instance { get; private set; }
 
-        internal List<Orb> LevelLoadOrbs { get; private set; }
-        internal List<Orb> AllOrbsList { get; private set; }
-        internal int AmountOfRefreshOrbs { get; private set; } = 0;
+        public List<OrbData> LevelLoadOrbs { get; private set; } = new();
+        public int AmountOfRefreshOrbs { get; private set; } = 0;
 
-        [SerializeField] private AllOrbsCollection _allOrbsCollection;
+        [SerializeField] private OrbData[] _standardLevelLoadOrbData;
 
         private readonly string LEVELLOADORBS_PATH = "LevelLoadOrbs";
         private readonly string REFRESHORBS_PATH = "RefreshOrbs";
+        private readonly string REFRESHORB_NAME = "Refresh";
 
         #endregion
 
@@ -55,9 +55,10 @@ namespace Orbs
             {
                 AmountOfRefreshOrbs = 0;
                 LevelLoadOrbs.Clear();
-                List<Orb> tempList = ES3.Load(LEVELLOADORBS_PATH) as List<Orb>;
-                foreach (Orb orb in tempList)
-                    AddLevelLoadOrb(orb.OrbType);
+
+                List<OrbData> loadedLevelLoadOrbs = ES3.Load(LEVELLOADORBS_PATH) as List<OrbData>;
+                foreach (var orbData in loadedLevelLoadOrbs)
+                    AddLevelLoadOrb(orbData);
             }
         }
 
@@ -69,42 +70,36 @@ namespace Orbs
 
         private void InitializeManager()
         {
-            InitializeLists();
-            AllOrbsList = _allOrbsCollection.AllOrbs.ToList();
-            AllOrbsList = AllOrbsList.OrderBy(x => x.OrbType).ToList();
-
             if (LevelLoadOrbs.Count == 0 && !ES3.KeyExists(LEVELLOADORBS_PATH))
-            {
-                AddLevelLoadOrb(OrbType.IceManaOrb);
-                AddLevelLoadOrb(OrbType.FireManaOrb);
-                AddLevelLoadOrb(OrbType.RefreshOrb);
-            }
+                foreach (var orbData in _standardLevelLoadOrbData)
+                    AddLevelLoadOrb(orbData);
         }
 
-        private void InitializeLists()
-        {
-            AllOrbsList ??= new();
-            LevelLoadOrbs ??= new();
-        }
-
-        internal void AddLevelLoadOrb(OrbType orbType, int amount = 1)
+        public void AddLevelLoadOrb(OrbData orbData, int amount = 1)
         {           
             for (int i = 0; i < amount; i++)
             {
-                LevelLoadOrbs.Add(AllOrbsList[(int)orbType]);
+                LevelLoadOrbs.Add(orbData);
 
-                if (orbType == OrbType.RefreshOrb)
-                {
+                if (orbData.OrbName.Contains(REFRESHORB_NAME))
                     AmountOfRefreshOrbs++;
-                }
             }
         }
 
-        internal void RemoveGlobalOrb(Orb orb)
+        public void RemoveGlobalOrb(OrbData orbData)
         {
-            LevelLoadOrbs.Remove(orb);
+            //remove first corresponding orbData from list
+            foreach (var orb in LevelLoadOrbs)
+            {
+                if (orb.OrbName == orbData.OrbName)
+                {
+                    LevelLoadOrbs.Remove(orb);
+                    break;
+                }
+            }    
 
-            if (orb.OrbType == OrbType.RefreshOrb) 
+            //check for amount first, to avoid negative amounts in edge cases
+            if (orbData.OrbName.Contains(REFRESHORB_NAME) && AmountOfRefreshOrbs > 0) 
                 AmountOfRefreshOrbs--;
         }
 

@@ -3,39 +3,34 @@ using Orbs;
 using DG.Tweening;
 using UnityEngine.UI;
 using System.Collections;
-using System.Collections.Generic;
-using EnumCollection;
 using Utility;
 
 namespace Overworld
 {
-    internal class LeyLinesMapEvent : MonoBehaviour
+    public class LeyLinesMapEvent : MonoBehaviour
     {
-        private OrbType _orbType;
+        [SerializeField] private OrbData[] _persistentOrbs;
+        [SerializeField] private GameObject _basicOrbPrefab;
         [SerializeField] private Button _addOrbButton;
         [SerializeField] private Button _leaveButton;
 
+        private OrbData _chosenOrbData;
+
         private void Start()
         {
-            List<Orb> persistentOrbs = new();
-            foreach (Orb orb in GlobalOrbManager.Instance.AllOrbsList)
-            {
-                if (orb.TryGetComponent<IAmPersistent>(out _) && !orb.OrbType.ToString().Contains("Forbidden"))
-                    persistentOrbs.Add(orb);
-            }
-
-            int randomIndex = UnityEngine.Random.Range(0, persistentOrbs.Count);
-            _orbType = persistentOrbs[randomIndex].OrbType;
+            int randomIndex = UnityEngine.Random.Range(0, _persistentOrbs.Length);
+            _chosenOrbData = _persistentOrbs[randomIndex];
 
             _addOrbButton.onClick.AddListener(AddOrb);
             _leaveButton.onClick.AddListener(LeaveEvent);
         }
 
-        internal void AddOrb()
+        public void AddOrb()
         {
             _addOrbButton.interactable = false;
-            GlobalOrbManager.Instance.AddLevelLoadOrb(_orbType);
-            var orbObject = Instantiate(GlobalOrbManager.Instance.AllOrbsList[(int)_orbType], Camera.main.ScreenToWorldPoint(_addOrbButton.transform.position), Quaternion.identity);
+            GlobalOrbManager.Instance.AddLevelLoadOrb(_chosenOrbData);
+            var orbObject = Instantiate(_basicOrbPrefab, Camera.main.ScreenToWorldPoint(_addOrbButton.transform.position), Quaternion.identity);
+            orbObject.GetComponent<Orb>().SetOrbData(_chosenOrbData);
             orbObject.GetComponent<Collider2D>().enabled = false;
             orbObject.transform.position = new(orbObject.transform.position.x, orbObject.transform.position.y, 0);
             orbObject.transform.localScale *= 3;
@@ -43,7 +38,7 @@ namespace Overworld
             StartCoroutine(LoadNextScene());           
         }
 
-        internal void LeaveEvent()
+        public void LeaveEvent()
         {
             LoadHelper.LoadSceneWithLoadingScreen(SceneName.WorldOne);
         }

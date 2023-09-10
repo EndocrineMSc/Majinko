@@ -12,19 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f080f7a254c9f44383c2dba9d777eb6, type: 3}
   m_Name: CloneSphere
   m_EditorClassIdentifier: 
-  CardName: Clone Sphere
-  CardDescription: 'Sphere splits into three on first orb contact
-
-    Stackable:
-    additional sphere on split'
-  BasicManaCost: 2
-  FireManaCost: 0
-  IceManaCost: 0
-  IsExhaustCard: 0
-  IsBuff: 0
-  Type: 1
-  Rarity: 2
-  Element: 0
-  Image: {fileID: 21300000, guid: 41337de281975324bb5718d3676b4cce, type: 3}
-  Buff: 0
+  _cardName: Clone Sphere
+  _cardDescription: Sphere splits into three \non first orb contact\n\n<b>Stackable:</b>
+    \nAdditional sphere
+  _basicManaCost: 2
+  _fireManaCost: 0
+  _iceManaCost: 0
+  _isExhaustCard: 0
+  _isBuff: 0
+  _cardType: 1
+  _cardRarity: 2
+  _cardElement: 0
+  _cardImage: {fileID: 21300000, guid: 41337de281975324bb5718d3676b4cce, type: 3}
+  _cardBuff: 0
+  _effectValues: {fileID: 0}
+  _modifiedDescription: "Sphere splits into three \non first orb contact\n\n<b>Stackable:</b>
+    \nAdditional sphere"
   SphereType: 1

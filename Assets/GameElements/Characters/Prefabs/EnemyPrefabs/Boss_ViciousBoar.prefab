@@ -103,6 +103,7 @@ MonoBehaviour:
   _enemyObject: {fileID: 11400000, guid: d4d69c0c0b23ec5459fd0d26e481a504, type: 2}
   _attackClock: {fileID: 3040312533587086493}
   _attackClockTransform: {fileID: 1955764364515639895}
+  _pineMouseOrbData: {fileID: 11400000, guid: 95dcd53c930f77f45ae0e7251e0413e0, type: 2}
 --- !u!114 &1161808695900130219
 MonoBehaviour:
   m_ObjectHideFlags: 0

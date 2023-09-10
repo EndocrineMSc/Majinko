@@ -5,11 +5,11 @@ using Utility;
 
 namespace Cards
 {
-    internal class GlobalDeckManager : MonoBehaviour, IResetOnQuit
+    public class GlobalDeckManager : MonoBehaviour, IResetOnQuit
     {
         #region Fields and Properties
 
-        internal static GlobalDeckManager Instance { get; private set; }
+        public static GlobalDeckManager Instance { get; private set; }
 
         private readonly string SAVE_PATH = "GlobalDeck";
 
@@ -19,7 +19,7 @@ namespace Cards
 
         public List<Card> GlobalDeck = new(); //List of all cards in the player deck, will store any modifications (added or removed cards) during a run
 
-        internal StartDeck StartDeck { get; private set; } // enum for choice of startdecks
+        public StartDeck StartDeck { get; private set; } // enum for choice of startdecks
 
         #endregion
 
@@ -60,7 +60,7 @@ namespace Cards
             ES3.Save(SAVE_PATH, GlobalDeck);
         }
 
-        internal void BuildStartDeck(StartDeck startDeck)
+        public void BuildStartDeck(StartDeck startDeck)
         {
             switch(startDeck)
             {
@@ -73,7 +73,7 @@ namespace Cards
             }
         }
 
-        internal void RemoveCardFromGlobalDeck(Card card)
+        public void RemoveCardFromGlobalDeck(Card card)
         {
             GlobalDeck.Remove(card);
         }

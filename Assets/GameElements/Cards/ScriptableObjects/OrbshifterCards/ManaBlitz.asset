@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d8682f958061ed4d84819b3f0aaed4d, type: 3}
   m_Name: ManaBlitz
   m_EditorClassIdentifier: 
-  CardName: Mana Blitz
-  CardDescription: 'Orb:
-
-    Deal 10 damage'
-  BasicManaCost: 1
-  FireManaCost: 0
-  IceManaCost: 0
-  IsExhaustCard: 0
-  IsBuff: 0
-  Type: 17
-  Rarity: 0
-  Element: 0
-  Image: {fileID: 21300000, guid: d3e91bdd5b8999a478ed36193ad9d04f, type: 3}
-  Buff: 0
-  OrbType: 20
-  OrbAmount: 1
+  _cardName: Mana Blitz
+  _cardDescription: 'Orb: \nDeal <b>{Damage} Damage</b> to the first enemy'
+  _basicManaCost: 1
+  _fireManaCost: 0
+  _iceManaCost: 0
+  _isExhaustCard: 0
+  _isBuff: 0
+  _cardType: 17
+  _cardRarity: 0
+  _cardElement: 0
+  _cardImage: {fileID: 21300000, guid: d3e91bdd5b8999a478ed36193ad9d04f, type: 3}
+  _cardBuff: 0
+  _effectValues: {fileID: 11400000, guid: 47541e41be20ad744b67e8d825edc47a, type: 2}
+  _modifiedDescription: "Orb: \nDeal <b>10 Damage</b> to the first enemy"
+  _orbData: {fileID: 11400000, guid: d5fd3250845b890459bbfecb9180a443, type: 2}
+  _orbAmount: 1

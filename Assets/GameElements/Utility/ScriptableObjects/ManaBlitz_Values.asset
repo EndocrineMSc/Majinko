@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24936920a8708ce4e82bf5f6f4852e8f, type: 3}
   m_Name: ManaBlitz_Values
   m_EditorClassIdentifier: 
-  Damage: 10
-  ShieldStacks: 0
-  BurningStacks: 0
-  FreezingStacks: 0
-  PercentToFreeze: 0
+  _damage: 10
+  _shieldStacks: 0
+  _burningStacks: 0
+  _freezingStacks: 0
+  _percentToFreeze: 0

@@ -7666,6 +7666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 675744f3bcc47a249b026cba2166898b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _basicOrbPrefab: {fileID: 5842590660964650890, guid: c837957ee74bdcc44a31943daaafc0a8, type: 3}
 --- !u!1 &6138521203824408944
 GameObject:
   m_ObjectHideFlags: 0
@@ -7710,6 +7711,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4ba7a16bc30fae4c91c119b0d2ea049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BasicMana: []
+  FireMana: []
+  IceMana: []
   _basicManaPrefab: {fileID: 3911397808331039307, guid: dd17e86c997b09b4bb96bc9f5e5292d8, type: 3}
   _fireManaPrefab: {fileID: 3911397808331039307, guid: 6332fb61d8db02643a35f651f55ff389, type: 3}
   _iceManaPrefab: {fileID: 3911397808331039307, guid: b5b564ea0235c694f8c7d3853a796c29, type: 3}

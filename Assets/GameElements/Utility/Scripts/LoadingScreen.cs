@@ -5,8 +5,12 @@ using Orbs;
 
 namespace Utility
 {
-    internal class LoadingScreen : MonoBehaviour
+    public class LoadingScreen : MonoBehaviour
     {
+        [SerializeField] private OrbData[] _allOrbData;
+        [SerializeField] private GameObject _basicOrbPrefab;
+
+
         private void Start()
         {
             InstantiateRandomOrb();
@@ -21,10 +25,11 @@ namespace Utility
 
         private void InstantiateRandomOrb()
         {
-            int randomIndex = UnityEngine.Random.Range(0, GlobalOrbManager.Instance.AllOrbsList.Count);
-            Orb orb = GlobalOrbManager.Instance.AllOrbsList[randomIndex];
-            var orbObject = Instantiate(orb, Vector3.zero, Quaternion.identity);
+            int randomIndex = UnityEngine.Random.Range(0, _allOrbData.Length);
+            var orbData = _allOrbData[randomIndex];
+            var orbObject = Instantiate(_basicOrbPrefab, Vector3.zero, Quaternion.identity);
             orbObject.transform.localScale *= 2;
+            orbObject.GetComponent<Orb>().SetOrbData(orbData);
         }
     }
 }

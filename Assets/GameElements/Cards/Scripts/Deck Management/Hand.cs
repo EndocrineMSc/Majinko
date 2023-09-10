@@ -10,17 +10,17 @@ using Characters;
 
 namespace Cards
 {
-    internal class Hand : MonoBehaviour
+    public class Hand : MonoBehaviour
     {
         #region Fields and Properties
 
-        internal static Hand Instance { get; private set; }
-        internal int DrawAmount { get; set; } = 5;
+        public static Hand Instance { get; private set; }
+        public int DrawAmount { get; set; } = 5;
         private readonly int _maxDrawAmount = 10;
 
         private Transform _cardSpawnTransform;
         private Deck _deck;
-        internal Canvas CardCanvas { get; private set; } //The Card Canvas will be a child of the Hand and contain the UI of instantiated Cards
+        public Canvas CardCanvas { get; private set; } //The Card Canvas will be a child of the Hand and contain the UI of instantiated Cards
 
         //Tweening
         private readonly float _moveDuration = 0.35f;
@@ -75,25 +75,25 @@ namespace Cards
             _deck = Deck.Instance;
         }
 
-        internal void OnLevelVictory()
+        public void OnLevelVictory()
         {
             this.enabled = false;
         }
 
-        internal void OnCardPhaseStart()
+        public void OnCardPhaseStart()
         {
             DrawAmount += PlayerConditionTracker.FastHandStacks;
             PlayerConditionTracker.ResetFastHandsStacks();
             DrawHand(DrawAmount);
         }
 
-        internal void OnCardPhaseEnd()
+        public void OnCardPhaseEnd()
         {
             _deck.DiscardHand();
             DrawAmount = 5;
         }
 
-        internal void DrawHand(int amount)
+        public void DrawHand(int amount)
         {
             for (int i = 0; i < amount; i++)
             {
@@ -106,7 +106,7 @@ namespace Cards
         }
 
         //makes a new set of displayed instantiated cards for each card in the _handCards list
-        internal void DealHand(bool isStartTurnDealing = false)
+        public void DealHand(bool isStartTurnDealing = false)
         {
             foreach (var cardObject in _deck.HandCards)
             {
@@ -116,7 +116,7 @@ namespace Cards
             AlignCardsWrap(isStartTurnDealing);
         }
 
-        internal void AlignCardsWrap(bool isStartTurnDealing = false)
+        public void AlignCardsWrap(bool isStartTurnDealing = false)
         {
             if (_deck.HandCards.Count > 0)
                 StartCoroutine(AlignCards(isStartTurnDealing));       

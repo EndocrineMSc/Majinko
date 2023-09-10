@@ -1,10 +1,8 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using EnumCollection;
 using DG.Tweening;
 using System.Collections;
-using Audio;
 using Utility.TurnManagement;
 using ManaManagement;
 using Utility;
@@ -17,24 +15,32 @@ namespace Orbs
 
         public static OrbManager Instance { get; private set; }
 
-        //Lists
-        public List<Orb> SceneOrbList { get; set; }
-        private List<Orb> _allOrbsList;
-        private List<ScriptableOrbLayout> _orbLayoutList;
+        //Orb Lists
+        public List<Orb> ActiveBasicOrbPool { get; private set; } = new();
+        public List<Orb> InactiveBasicOrbPool { get; private set; } = new();
+        public List<Orb> ActiveNonBasicOrbPool { get; private set;} = new();
+        public List<Orb> InactiveNonBasicOrbs { get; private set; } = new();
+
+        //Standard References
+        [SerializeField] private Orb _basicOrbPrefab;
+        [SerializeField] private OrbData _basicOrbData; //Will be used to reset orbs after being hit and for Initialization
+        [SerializeField] private OrbData _refreshOrbData; //Will be used to re-employ refresh orbs when none are present
+        [SerializeField] private OrbLayoutSet _worldOneLayouts;
        
         //Tweening
+        private Vector2 _levelOrbSpawnPosition; //level orbs will start tween from this position
+        private readonly string LEVEL_ORB_TAG = "LevelOrbSpawn";
         private readonly float _tweenDuration = 0.75f;
         private readonly float _tweenScaleZoom = 12f;
-        private GameObject _levelOrbSpawn;
-        private readonly string LEVEL_ORB_TAG = "LevelOrbSpawn";
 
-        //other
-        private bool _isCheckingForRefreshOrbs;
-        [SerializeField] private OrbLayoutSet _wordOneLayouts;
-
+        //Gathered Mana Visualization
         public float GatheredBasicManaAmountTurn { get; private set; } = 0;
         public float GatheredFireManaAmountTurn { get; private set; } = 0;
         public float GatheredIceManaAmountTurn { get; private set; } = 0;
+
+        //other
+        private bool _isCheckingForRefreshOrbs;
+
         #endregion
 
         #region Functions
@@ -42,13 +48,17 @@ namespace Orbs
         private void OnEnable()
         {
             OrbEvents.SpawnMana += OnManaSpawn;
+            OrbEvents.OnSetOrbsActive += SetAllOrbsActive;
             LevelPhaseEvents.OnStartShootingPhase += OnStartShooting;
         }
 
         private void OnDisable()
         {
             OrbEvents.SpawnMana -= OnManaSpawn;
+            OrbEvents.OnSetOrbsActive -= SetAllOrbsActive;
             LevelPhaseEvents.OnStartShootingPhase -= OnStartShooting;
+
+            ExodiaWinCondtionTracker.ResetExodia();
         }
 
         private void Awake()
@@ -57,102 +67,158 @@ namespace Orbs
                 Instance = this;
             else
                 Destroy(gameObject);
-
-            InitializeLists();
-            _orbLayoutList = _wordOneLayouts.OrbLayouts.ToList();
         }
 
         private void Start()
         {
-            _levelOrbSpawn = GameObject.FindGameObjectWithTag(LEVEL_ORB_TAG);
+            _levelOrbSpawnPosition = GameObject.FindGameObjectWithTag(LEVEL_ORB_TAG).transform.position;
             SetUpOrbArena();          
-            StartCoroutine(InsertLevelLoadOrbs()); //also starts card phase on resolving
-        }
-
-        private void InitializeLists()
-        {
-            SceneOrbList ??= new();
-            _allOrbsList ??= new();
-            _orbLayoutList ??= new();
+            StartCoroutine(SetUpLevelLoadOrbs()); //also starts card phase on resolving
         }
 
         private void SetUpOrbArena()
         {
-            OrbGridPositions orbGrid = new();
-            _allOrbsList = GlobalOrbManager.Instance.AllOrbsList;
-            ScriptableOrbLayout scriptableOrbLayout = GetRandomLevelLayout();
-            bool[,] orbLayout = scriptableOrbLayout.InitializeOrbLayout();
-            for (int x = 0; x < orbLayout.GetLength(0); x++)
+            int randomLayoutIndex = UnityEngine.Random.Range(0, _worldOneLayouts.OrbLayouts.Length);
+            var orbLayout = _worldOneLayouts.OrbLayouts[randomLayoutIndex];
+            var orbPositions = orbLayout.OrbPositions;
+
+            foreach (var orbPosition in orbPositions)
             {
-                for (int y = 0; y < orbLayout.GetLength(1); y++)
-                {
-                    if (orbLayout[x, y])
-                    {
-                        Vector2 instantiatePosition = orbGrid.GridArray[x, y];
-                        Orb orb = Instantiate(_allOrbsList[0], instantiatePosition, Quaternion.identity);
-                        SceneOrbList.Add(orb);
-                    }
-                }
+                var newOrb = Instantiate(_basicOrbPrefab, orbPosition, Quaternion.identity);
+                newOrb.SetOrbData(_basicOrbData);
+                ActiveBasicOrbPool.Add(newOrb);
             }
         }
 
-        private ScriptableOrbLayout GetRandomLevelLayout()
+        private IEnumerator SetUpLevelLoadOrbs()
         {
-            int randomLayoutIndex = UnityEngine.Random.Range(0, _orbLayoutList.Count);
-            ScriptableOrbLayout orbLayout = _orbLayoutList[randomLayoutIndex];
-            return orbLayout;
-        }
-
-        private IEnumerator InsertLevelLoadOrbs()
-        {
-            yield return new WaitForSeconds(1); //so that player can see first animations, too
-            foreach (Orb orb in GlobalOrbManager.Instance.LevelLoadOrbs)
+            foreach (var orbData in GlobalOrbManager.Instance.LevelLoadOrbs)
             {
-                SwitchOrbsWrap(orb.OrbType, _levelOrbSpawn.transform.position);
+                ReplaceActiveBasicOrb(orbData, _levelOrbSpawnPosition);
                 yield return new WaitForSeconds(_tweenDuration);
             }
             PhaseManager.Instance.StartCardPhase();
         }
 
-        public void SwitchOrbsWrap(OrbType orbType, Vector3 instantiatePosition, int switchAmount = 1)
+
+        public void SwitchOrbs(OrbData orbData, Vector3 instantiatePosition, int switchAmount = 1)
         {
-            StartCoroutine(SwitchOrbs(orbType, instantiatePosition, switchAmount));
+            for (int i = 0; i < switchAmount; i++)
+            {
+                bool successfullReplacement = ReplaceActiveBasicOrb(orbData, instantiatePosition);
+
+                if (!successfullReplacement)
+                    successfullReplacement = ReplaceActiveNonBasicOrb(orbData, instantiatePosition);
+
+                if (!successfullReplacement)
+                    successfullReplacement = ReplaceInactiveBasicOrb(orbData, instantiatePosition);
+
+                if (!successfullReplacement)
+                {
+                    Debug.Log("Orb replacement went wrong. Debug! This isn't likely to happen!");
+                    break;
+                }
+            }
         }
 
-        private IEnumerator SwitchOrbs(OrbType orbType, Vector3 instantiatePosition, int switchAmount = 1)
+        private bool ReplaceActiveBasicOrb(OrbData orbData, Vector2 tweenStartPosition)
         {
-            List<Orb> baseOrbs = FindOrbs(SceneOrbList, SearchTag.BaseOrbs);          
-            List<Orb> activeBaseOrbs = FindOrbs(baseOrbs, SearchTag.IsActive);           
-            Orb instantiateOrb = _allOrbsList[(int)orbType];
-
-            //Case 1: enough active base orbs present, so switch some of those
-            if (activeBaseOrbs.Count >= switchAmount)
+            bool replacementSuccessfull = true;
+            
+            if (ActiveBasicOrbPool.Count > 0)
             {
-                yield return ReplaceOrbsInList(activeBaseOrbs, switchAmount, instantiateOrb, instantiatePosition);
-            }
-            //Case 2: enough base orbs are present, but some of them are inactive, so switch the active ones first, then the inactive ones
-            else if (baseOrbs.Count >= switchAmount)
-            {
-                int availableOrbs = activeBaseOrbs.Count;
-                int missingOrbs = switchAmount - activeBaseOrbs.Count;
+                var tweenOrb = InstantiateTweenDouble(orbData, tweenStartPosition);
+                int randomIndex = UnityEngine.Random.Range(0, ActiveBasicOrbPool.Count);
+                var randomOrb = ActiveBasicOrbPool[randomIndex];
 
-                if (availableOrbs != 0)
-                {
-                    yield return ReplaceOrbsInList(activeBaseOrbs, availableOrbs, instantiateOrb, instantiatePosition);
-                    baseOrbs = FindOrbs(SceneOrbList, SearchTag.BaseOrbs);
-                }
-                yield return ReplaceOrbsInList(baseOrbs, missingOrbs, instantiateOrb, instantiatePosition);
+                StartCoroutine(TweenOrb(tweenOrb, randomOrb.transform.position));
+
+                ActiveBasicOrbPool.RemoveAt(randomIndex);
+                ActiveNonBasicOrbPool.Add(randomOrb);
+
+                randomOrb.SetOrbData(orbData);
+                return replacementSuccessfull;
             }
-            //Case 3: there are only non-base orbs left (unlikely) so switch active ones first then inactive ones second
             else
             {
-                List<Orb> activeOrbs = FindOrbs(SceneOrbList, SearchTag.IsActive);
-                List<Orb> inactiveOrbs = FindOrbs(SceneOrbList, SearchTag.IsInactive);
-                int availableOrbs = activeOrbs.Count;
-                yield return ReplaceOrbsInList(activeOrbs, availableOrbs, instantiateOrb, instantiatePosition);
-                int missingOrbs = switchAmount - activeOrbs.Count;
-                yield return ReplaceOrbsInList(inactiveOrbs, missingOrbs, instantiateOrb, instantiatePosition);
+                return !replacementSuccessfull;
             }
+        }
+
+        private bool ReplaceActiveNonBasicOrb(OrbData orbData, Vector2 tweenStartPosition)
+        {
+            bool replacementSuccessfull = true;
+
+            if (ActiveNonBasicOrbPool.Count > 0)
+            {
+                var tweenOrb = InstantiateTweenDouble(orbData, tweenStartPosition);
+                int randomIndex = UnityEngine.Random.Range(0, ActiveNonBasicOrbPool.Count);
+                var randomOrb = ActiveNonBasicOrbPool[randomIndex];
+
+                StartCoroutine(TweenOrb(tweenOrb, randomOrb.transform.position));
+
+                ActiveNonBasicOrbPool.RemoveAt(randomIndex);
+                ActiveNonBasicOrbPool.Add(randomOrb);
+
+                randomOrb.SetOrbData(orbData);
+                return replacementSuccessfull;
+            }
+            else
+            {
+                return !replacementSuccessfull;
+            }
+        }
+
+        private bool ReplaceInactiveBasicOrb(OrbData orbData, Vector2 tweenStartPosition)
+        {
+            bool replacementSuccessfull = true;
+
+            if (InactiveBasicOrbPool.Count > 0)
+            {
+                var tweenOrb = InstantiateTweenDouble(orbData, tweenStartPosition);
+                int randomIndex = UnityEngine.Random.Range(0, InactiveBasicOrbPool.Count);
+                var randomOrb = InactiveBasicOrbPool[randomIndex];
+
+                StartCoroutine(TweenOrb(tweenOrb, randomOrb.transform.position));
+
+                InactiveBasicOrbPool.RemoveAt(randomIndex);
+                ActiveNonBasicOrbPool.Add(randomOrb);
+
+                randomOrb.SetOrbData(orbData);
+                randomOrb.SetOrbActive();
+                return replacementSuccessfull;
+            }
+            else
+            {
+                return !replacementSuccessfull;
+            }
+        }
+
+        private Orb InstantiateTweenDouble(OrbData orbData, Vector2 tweenStartPosition)
+        {
+            var tempOrb = Instantiate(_basicOrbPrefab, tweenStartPosition, Quaternion.identity);
+            tempOrb.SetOrbData(orbData);
+            tempOrb.GetComponent<Collider2D>().enabled = false;
+            return tempOrb;
+        }
+
+        private IEnumerator TweenOrb(Orb orb, Vector3 targetPosition)
+        {
+            Vector3 endScale = orb.transform.localScale;
+            orb.transform.localScale = new Vector3((endScale.x + _tweenScaleZoom), (endScale.y + _tweenScaleZoom), (endScale.z + _tweenScaleZoom));
+            orb.transform.DOLocalMove(targetPosition, _tweenDuration).SetEase(Ease.InExpo);
+            orb.transform.DOScale(endScale, _tweenDuration).SetEase(Ease.InExpo);
+            yield return new WaitForSeconds(_tweenDuration);
+
+            if (orb.transform.childCount > 0)
+                orb.transform.GetComponentInChildren<ParticleSystem>().Play();
+
+            orb.transform.DOPunchScale(endScale * 1.05f, 0.2f, 1, 1);
+            yield return new WaitForSeconds(0.201f);
+            Destroy(orb.gameObject);
+
+            if (ScreenShaker.Instance != null)
+                ScreenShaker.Instance.ShakeCamera(0.5f, 0.05f);
         }
 
         public void CheckForRefreshOrbs()
@@ -163,133 +229,18 @@ namespace Orbs
             {
                 _isCheckingForRefreshOrbs = true;
                 int refreshOrbsInScene = 0;
-                foreach (Orb orb in SceneOrbList)
-                {
-                    if (orb.OrbType == OrbType.RefreshOrb)
-                    {
+
+                foreach (Orb orb in ActiveNonBasicOrbPool)
+                    if (orb.Data.OrbName.Contains("RefreshOrb"))
                         refreshOrbsInScene++;
-                    }
-                }
+
                 if (refreshOrbsInScene < GlobalOrbManager.Instance.AmountOfRefreshOrbs)
                 {
                     int refreshOrbDelta = GlobalOrbManager.Instance.AmountOfRefreshOrbs - refreshOrbsInScene;
-                    SwitchOrbsWrap(OrbType.RefreshOrb, transform.position, refreshOrbDelta);
+                    SwitchOrbs(_refreshOrbData, transform.position, refreshOrbDelta);
                 }
                 _isCheckingForRefreshOrbs = false;
             }           
-        }
-
-        private Orb FindRandomOrbInList(List<Orb> orbs)
-        {
-            if (orbs.Count == 0)
-            {
-                return null;
-            }
-            int randomOrbIndex = UnityEngine.Random.Range(0, orbs.Count);
-            Orb randomOrb = orbs[randomOrbIndex];
-            return randomOrb;
-        }
-
-        private List<Orb> FindOrbs(List<Orb> orbs, SearchTag searchTag)
-        {
-            List<Orb> resultOrbs = new();
-
-            foreach (Orb tempOrb in orbs)
-            {
-                switch (searchTag)
-                {
-                    case SearchTag.BaseOrbs:
-                        if (tempOrb.OrbType == OrbType.BaseManaOrb)
-                        {
-                            resultOrbs.Add(tempOrb);
-                        }
-                        break;
-
-                    case SearchTag.IsActive:
-                        if (tempOrb.OrbIsActive)
-                        {
-                            resultOrbs.Add(tempOrb);
-                        }
-                        break;
-
-                    case SearchTag.IsInactive:
-                        if (!tempOrb.gameObject.activeSelf) 
-                        { 
-                            resultOrbs.Add(tempOrb);
-                        }
-                        break;
-                }
-            }
-            return resultOrbs;
-        }
-        
-        private IEnumerator ReplaceOrbsInList(List<Orb> orbs, int amount, Orb orb, Vector3 startPosition)
-        {
-            AudioManager.Instance.PlaySoundEffectWithoutLimit(SFX._0770_Orb_Spawn_Whoosh);
-            int safetyCounter = 0;
-            for (int i = 0; i < amount; i++)
-            {
-                Orb randomOrb = FindRandomOrbInList(orbs);
-                if (randomOrb != null)
-                {
-                    Vector3 randomOrbPosition = randomOrb.transform.position;
-                    Orb tempOrb = Instantiate(orb, startPosition, Quaternion.identity);
-                    SceneOrbList.Remove(randomOrb);
-                    SceneOrbList.Add(tempOrb);
-                    randomOrb.gameObject.GetComponent<Collider2D>().enabled = false;                   
-                    StartCoroutine(DisableColliderForTween(tempOrb));
-                    StartCoroutine(DestroyOrbWithTweenDelay(randomOrb));
-                    StartCoroutine(TweenOrb(tempOrb, randomOrbPosition));
-                    yield return null;
-                }
-                else
-                {
-                    i--;
-                    safetyCounter++;
-                    if (safetyCounter >= 30)
-                    {
-                        break;
-                    }
-                }
-            }
-        }
-
-        public void ReplaceOrbOfType(OrbType typeToBeReplaced, OrbType typeToReplaceItWith = OrbType.BaseManaOrb)
-        {
-            Orb orbToBeReplaced = null;            
-            foreach (Orb orb in SceneOrbList)
-            {
-                if (orb.OrbType == typeToBeReplaced)
-                {
-                    orbToBeReplaced = orb;
-                    break;
-                }
-            }
-            if (orbToBeReplaced != null)
-            {
-                Vector3 orbPosition = orbToBeReplaced.transform.position;
-                Orb replaceOrb = Instantiate(_allOrbsList[(int)typeToReplaceItWith], orbPosition, Quaternion.identity);
-                SceneOrbList.Remove(orbToBeReplaced);
-                SceneOrbList.Add(replaceOrb);
-                Destroy(orbToBeReplaced.gameObject);
-            }
-        }
-
-        private IEnumerator TweenOrb(Orb orb, Vector3 targetPosition)
-        {
-            Vector3 endScale = orb.transform.localScale;
-            orb.transform.localScale = new Vector3((endScale.x + _tweenScaleZoom), (endScale.y + _tweenScaleZoom), (endScale.z + _tweenScaleZoom));
-            orb.transform.DOLocalMove(targetPosition, _tweenDuration).SetEase(Ease.InExpo);
-            orb.transform.DOScale(endScale, _tweenDuration).SetEase(Ease.InExpo);
-            yield return new WaitForSeconds(_tweenDuration);
-            
-            if (orb.transform.childCount > 0)
-                orb.transform.GetComponentInChildren<ParticleSystem>().Play();
-
-            orb.transform.DOPunchScale(endScale * 1.05f, 0.2f, 1, 1);
-
-            if (ScreenShaker.Instance != null)
-                ScreenShaker.Instance.ShakeCamera(0.5f, 0.05f);
         }
 
         private void OnManaSpawn(ManaType manaType, int amount)
@@ -322,23 +273,84 @@ namespace Orbs
             GatheredFireManaAmountTurn = 0;
             GatheredIceManaAmountTurn = 0;
             ArenaConditionTracker.ResetHitOrbsInTurn();
+        }      
+
+        public void ReturnOrbToDisabledPool(Orb orb)
+        {
+            orb.SetOrbInactive();
+            
+            if (orb.Data.OrbName.Contains("Basic"))
+            {
+                ActiveBasicOrbPool.Remove(orb);
+                InactiveBasicOrbPool.Add(orb);
+            }
+            else if (orb.Data.RevertsToBasicOrb)
+            { 
+                orb.SetOrbData(_basicOrbData);
+                ActiveNonBasicOrbPool.Remove(orb);
+                InactiveBasicOrbPool.Add(orb);
+            }
+            else
+            {
+                ActiveNonBasicOrbPool.Remove(orb);
+                InactiveNonBasicOrbs.Add(orb);
+            }            
+        }
+
+        public void SetAllOrbsActive()
+        {
+            foreach (var orb in InactiveBasicOrbPool)
+            {
+                ActiveBasicOrbPool.Add(orb);
+                orb.SetOrbActive();
+            }
+            InactiveBasicOrbPool.Clear();
+
+            foreach (var orb in InactiveNonBasicOrbs)
+            {
+                InactiveNonBasicOrbs.Add(orb);
+                orb.SetOrbActive();
+            }
+            InactiveNonBasicOrbs.Clear();
+        }
+
+        
+        public void SetRandomOrbInactive()
+        {
+            if (ActiveBasicOrbPool.Count > 0) 
+            {
+                Orb randomOrb;
+                int randomIndex;
+                if (ActiveNonBasicOrbPool.Count > 0)
+                {
+                    int randomList = UnityEngine.Random.Range(0, 2);
+
+                    if (randomList == 0)
+                    {
+                        randomIndex = UnityEngine.Random.Range(0, ActiveBasicOrbPool.Count);
+                        randomOrb = ActiveBasicOrbPool[randomIndex];
+                        ActiveBasicOrbPool.RemoveAt(randomIndex);
+                        InactiveBasicOrbPool.Add(randomOrb);
+                    }
+                    else
+                    {
+                        randomIndex = UnityEngine.Random.Range(0, ActiveNonBasicOrbPool.Count);
+                        randomOrb = ActiveNonBasicOrbPool[randomIndex];
+                        randomOrb.SetOrbInactive();
+                        ActiveNonBasicOrbPool.RemoveAt(randomIndex);
+                        InactiveNonBasicOrbs.Add(randomOrb);
+                    }                 
+                }
+                else
+                {
+                    randomIndex = UnityEngine.Random.Range(0, ActiveBasicOrbPool.Count);
+                    randomOrb = ActiveBasicOrbPool[randomIndex];
+                    ActiveBasicOrbPool.RemoveAt(randomIndex);
+                    InactiveBasicOrbPool.Add(randomOrb);
+                }
+            }       
         }
         
-        private IEnumerator DestroyOrbWithTweenDelay(Orb orb)
-        {
-            yield return new WaitForSeconds(_tweenDuration);
-            if(orb != null )
-                Destroy(orb.gameObject);
-        }
-
-        private IEnumerator DisableColliderForTween(Orb orb)
-        {
-            var collider = orb.gameObject.GetComponent<Collider2D>();
-            collider.enabled = false;
-            yield return new WaitForSeconds(_tweenDuration);
-            collider.enabled = true;
-        }
-
         #endregion
 
         private enum SearchTag

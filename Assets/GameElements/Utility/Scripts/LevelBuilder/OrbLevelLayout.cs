@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,17 +6,24 @@ namespace Orbs
     [CreateAssetMenu(menuName ="Orb Levellayout")]
     public class OrbLevelLayout : ScriptableObject
     {
-        [SerializeField] private Vector2[] _orbPositions;
+        [SerializeField] private List<Vector2> _orbPositions = new();
 
-        public Vector2[] OrbPositions
+        public List<Vector2> OrbPositions
         {
             get { return _orbPositions; }
             private set { _orbPositions = value; }
         }
 
-        public void WriteOrbPositions(Vector2[] positions)
+        public void Init(List<Vector2> orbPositions)
         {
-            OrbPositions = positions;
+            this._orbPositions = orbPositions;
+        }
+
+        public static OrbLevelLayout CreateLayout(List<Vector2> positions)
+        {
+            var layout = ScriptableObject.CreateInstance<OrbLevelLayout>();
+            layout.Init(positions);
+            return layout;
         }
     }
 }

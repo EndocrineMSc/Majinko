@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: c034a74e6eb5ea14dbad77ccd42373d1, type: 2}
     - target: {fileID: 2663367635832773738, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_text
-      value: Buff
+      value: Instant
       objectReference: {fileID: 0}
     - target: {fileID: 4746803301845425543, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_IsActive
@@ -129,7 +129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8696175136549785397, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_text
-      value: Orb-inlayed Gauntlet
+      value: Orb-inlayed Gauntlets
       objectReference: {fileID: 0}
     - target: {fileID: 8696175136549785397, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_fontSize
@@ -160,3 +160,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScriptableCard: {fileID: 11400000, guid: 854bd6df0f27bd84fa654b4545737b4a, type: 2}
+  PositionInHand: {x: 0, y: 0}

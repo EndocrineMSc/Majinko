@@ -8,7 +8,7 @@ using Audio;
 
 namespace Attacks
 {
-    internal abstract class Attack : MonoBehaviour, IHaveBark
+    public abstract class Attack : MonoBehaviour, IHaveBark
     {
         #region Fields and Properties
 
@@ -20,9 +20,15 @@ namespace Attacks
         protected readonly string NOTARGET_BARK = "No enemy!";
         protected readonly string ATTACK_ANIMATION = "Attack";
 
-        internal int Damage { get; private protected set; }
+        public int Damage { get; private protected set; }
 
         public abstract string Bark { get; }
+
+        public EffectValueCollection AttackValues
+        {
+            get { return _attackValues; }
+            private protected set { _attackValues = value; }
+        }
 
         #endregion
 
@@ -41,7 +47,7 @@ namespace Attacks
             _playerAttackManager = PlayerAttackDamageManager.Instance;
         }
 
-        internal abstract void ShootAttack(Vector3 instantiatePosition, float damageModifier = 1);
+        public abstract void ShootAttack(Vector3 instantiatePosition, float damageModifier = 1);
 
         protected virtual void OnHitPolish(float damage)
         {
@@ -68,7 +74,7 @@ namespace Attacks
         #endregion
     }
 
-    internal enum AttackOrigin
+    public enum AttackOrigin
     {
         Player,
         Enemy,

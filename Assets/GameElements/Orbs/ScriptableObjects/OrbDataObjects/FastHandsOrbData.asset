@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4e10fc00c4945e449fc7b897f131777, type: 3}
+  m_Name: FastHandsOrbData
+  m_EditorClassIdentifier: 
+  _orbName: FastHandsOrb
+  _manaToSpawn: 0
+  _amountManaSpawned: 0
+  _stalwartHits: 0
+  _revertsToBasicOrb: 1
+  _orbAttackPrefab: {fileID: 0}
+  _isAddedToActionList: 0
+  _animationController: {fileID: 9100000, guid: bc1f2a99ecf58d448b11f2f6dcbe6d9b, type: 2}
+  _isTriggerColliderOrb: 0

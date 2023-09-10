@@ -2,17 +2,16 @@ using Utility;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using Audio;
 using System.Collections;
 
 namespace Cards
 {
     [RequireComponent(typeof(DisplayDeck))]
-    internal class Deck : MonoBehaviour
+    public class Deck : MonoBehaviour
     {
         #region Fields and Properties
 
-        internal static Deck Instance { get; private set; }
+        public static Deck Instance { get; private set; }
 
         public List<GameObject> LocalDeck = new();
         public List<GameObject> DeckPile = new();
@@ -23,8 +22,8 @@ namespace Cards
         private RectTransform _cardCanvasTransform;
 
         //Tweening
-        internal Vector3 DiscardPosition { get; private set; }
-        internal Vector3 ExhaustPosition { get; private set; }
+        public Vector3 DiscardPosition { get; private set; }
+        public Vector3 ExhaustPosition { get; private set; }
         [SerializeField] private GameObject _discardPileObject;
         [SerializeField] private GameObject _exhaustPileObject;
         private float _tweenDiscardDuration = 0.5f;
@@ -89,7 +88,7 @@ namespace Cards
                 Destroy(cardObject);
         }
 
-        internal void DrawCard()
+        public void DrawCard()
         {
             if (DeckPile.Count == 0 && DiscardPile.Count != 0)
             {
@@ -106,7 +105,7 @@ namespace Cards
             }
         }
 
-        internal void DiscardHand()
+        public void DiscardHand()
         {
             while (HandCards.Count > 0)
             {
@@ -114,21 +113,21 @@ namespace Cards
             }
         }
 
-        internal void DiscardCard(GameObject cardObject)
+        public void DiscardCard(GameObject cardObject)
         {            
             DiscardPile.Add(cardObject);
             HandCards.Remove(cardObject);
             StartCoroutine(DisableCardAfterAnimation(true, cardObject));
         }
 
-        internal void ExhaustCard(GameObject cardObject)
+        public void ExhaustCard(GameObject cardObject)
         {
             ExhaustPile.Add(cardObject);
             HandCards.Remove(cardObject);
             StartCoroutine(DisableCardAfterAnimation(false, cardObject));
         }
 
-        internal IEnumerator StartDiscardPileAnimation()
+        public IEnumerator StartDiscardPileAnimation()
         {
             if (!_discardPileIsTweening)
             {
@@ -140,7 +139,7 @@ namespace Cards
             }
         }
 
-        internal IEnumerator StartExhaustPileAnimation()
+        public IEnumerator StartExhaustPileAnimation()
         {
             if (!_exhaustPileIsTweening)
             {
@@ -153,7 +152,7 @@ namespace Cards
         }
 
         //Shuffles the deck using the Fisher-Yates shuffle algortihm
-        internal void ShuffleDeck()
+        public void ShuffleDeck()
         {
             for (int i = DeckPile.Count - 1; i > 0; i--)
             {

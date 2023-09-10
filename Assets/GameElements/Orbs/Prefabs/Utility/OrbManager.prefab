@@ -44,4 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36e6ede1df339604bb9e57034ba39a3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wordOneLayouts: {fileID: 11400000, guid: a9c79c3c93577b448b48d93ec282dd1c, type: 2}
+  _basicOrbPrefab: {fileID: 5842590660964650890, guid: c837957ee74bdcc44a31943daaafc0a8, type: 3}
+  _basicOrbData: {fileID: 11400000, guid: d305115b5ea50e941b0ad6f8bc7a4ef4, type: 2}
+  _refreshOrbData: {fileID: 11400000, guid: ce0adb5626844cc438a18bbb4ca6ce03, type: 2}
+  _worldOneLayouts: {fileID: 11400000, guid: a9c79c3c93577b448b48d93ec282dd1c, type: 2}

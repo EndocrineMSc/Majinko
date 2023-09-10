@@ -1,7 +1,4 @@
-using EnumCollection;
-using Audio;
 using Orbs;
-using Utility;
 using UnityEngine;
 
 namespace Characters.Enemies
@@ -9,6 +6,7 @@ namespace Characters.Enemies
     public class Shroombie : Enemy
     {
         [SerializeField] private ParticleSystem _particleSystem;
+        [SerializeField] private OrbData _rottenOrbData;
         
         protected override void AttackEffect()
         {
@@ -29,8 +27,7 @@ namespace Characters.Enemies
         protected override void OnDeathEffect()
         {
             if (OrbManager.Instance != null)
-                OrbManager.Instance.SwitchOrbsWrap(OrbType.RottedOrb, transform.position, 2);
+                OrbManager.Instance.SwitchOrbs(_rottenOrbData, transform.position, 2);
         }
-
     }
 }

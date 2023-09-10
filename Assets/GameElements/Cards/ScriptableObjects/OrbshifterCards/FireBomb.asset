@@ -12,20 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d8682f958061ed4d84819b3f0aaed4d, type: 3}
   m_Name: FireBomb
   m_EditorClassIdentifier: 
-  CardName: Fire Bomb
-  CardDescription: 'Orb: Activates nearby orbs
-
-    Deals 20 AOE damage and applies
-    5 burning'
-  BasicManaCost: 0
-  FireManaCost: 2
-  IceManaCost: 0
-  IsExhaustCard: 0
-  IsBuff: 0
-  Type: 5
-  Rarity: 2
-  Element: 1
-  Image: {fileID: 21300000, guid: bb18f505c51305641992b84a19a985e9, type: 3}
-  Buff: 0
-  OrbType: 6
-  OrbAmount: 1
+  _cardName: Fire Bomb
+  _cardDescription: 'Orb, AOE: \nActivates nearby orbs \nDeals <b>{Damage} Damage</b>
+    and inflicts <b>{Burning} Burning</b>.'
+  _basicManaCost: 0
+  _fireManaCost: 2
+  _iceManaCost: 0
+  _isExhaustCard: 0
+  _isBuff: 0
+  _cardType: 5
+  _cardRarity: 2
+  _cardElement: 1
+  _cardImage: {fileID: 21300000, guid: bb18f505c51305641992b84a19a985e9, type: 3}
+  _cardBuff: 0
+  _effectValues: {fileID: 11400000, guid: 16c397faa0696d540a37364baf6f34a2, type: 2}
+  _modifiedDescription: "Orb, AOE: \nActivates nearby orbs \nDeals <b>20 Damage</b>
+    and inflicts <b>5 Burning</b>."
+  _orbData: {fileID: 11400000, guid: cdb896d74bcc88345909fa8dc5864932, type: 2}
+  _orbAmount: 1

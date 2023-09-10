@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d8682f958061ed4d84819b3f0aaed4d, type: 3}
   m_Name: LightningStrike
   m_EditorClassIdentifier: 
-  CardName: Lightning Strike
-  CardDescription: 'Orb:
-
-    Deal 40 lightning damage to  the furthest enemy'
-  BasicManaCost: 0
-  FireManaCost: 1
-  IceManaCost: 1
-  IsExhaustCard: 0
-  IsBuff: 0
-  Type: 16
-  Rarity: 2
-  Element: 3
-  Image: {fileID: 21300000, guid: d156cface5e07f343ac85a9b0c9d5970, type: 3}
-  Buff: 0
-  OrbType: 19
-  OrbAmount: 1
+  _cardName: Lightning Strike
+  _cardDescription: 'Orb: \nDeal <b>{Damage} Damage</b> to the last enemy'
+  _basicManaCost: 0
+  _fireManaCost: 1
+  _iceManaCost: 1
+  _isExhaustCard: 0
+  _isBuff: 0
+  _cardType: 16
+  _cardRarity: 3
+  _cardElement: 3
+  _cardImage: {fileID: 21300000, guid: d156cface5e07f343ac85a9b0c9d5970, type: 3}
+  _cardBuff: 0
+  _effectValues: {fileID: 11400000, guid: bd6b5bf58da541746a95d11e61bdca83, type: 2}
+  _modifiedDescription: "Orb: \nDeal <b>40 Damage</b> to the last enemy"
+  _orbData: {fileID: 11400000, guid: 73a87502007bcd949b8b0608f6718504, type: 2}
+  _orbAmount: 1
