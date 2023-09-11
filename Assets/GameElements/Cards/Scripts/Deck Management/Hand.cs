@@ -19,7 +19,6 @@ namespace Cards
         private readonly int _maxDrawAmount = 10;
 
         private Transform _cardSpawnTransform;
-        private Deck _deck;
         public Canvas CardCanvas { get; private set; } //The Card Canvas will be a child of the Hand and contain the UI of instantiated Cards
 
         //Tweening
@@ -70,11 +69,6 @@ namespace Cards
             UtilityEvents.OnLevelVictory -= OnLevelVictory;
         }
 
-        private void Start()
-        {
-            _deck = Deck.Instance;
-        }
-
         public void OnLevelVictory()
         {
             this.enabled = false;
@@ -89,7 +83,7 @@ namespace Cards
 
         public void OnCardPhaseEnd()
         {
-            _deck.DiscardHand();
+            Deck.Instance.DiscardHand();
             DrawAmount = 5;
         }
 
@@ -97,7 +91,7 @@ namespace Cards
         {
             for (int i = 0; i < amount; i++)
             {
-                _deck.DrawCard();
+                Deck.Instance.DrawCard();
                 if (i > _maxDrawAmount - 1)
                     break;
             }
@@ -108,7 +102,7 @@ namespace Cards
         //makes a new set of displayed instantiated cards for each card in the _handCards list
         public void DealHand(bool isStartTurnDealing = false)
         {
-            foreach (var cardObject in _deck.HandCards)
+            foreach (var cardObject in Deck.Instance.HandCards)
             {
                 cardObject.GetComponent<RectTransform>().localPosition = _cardSpawnTransform.localPosition;
                 cardObject.transform.localScale = new Vector3(_startScale, _startScale, _startScale);
@@ -118,22 +112,22 @@ namespace Cards
 
         public void AlignCardsWrap(bool isStartTurnDealing = false)
         {
-            if (_deck.HandCards.Count > 0)
+            if (Deck.Instance.HandCards.Count > 0)
                 StartCoroutine(AlignCards(isStartTurnDealing));       
         }
 
         private IEnumerator AlignCards(bool isStartTurnDealing = false)
         {
-            var newCardPositions = _deck.HandCards.Count % 2 == 0 ? _evenCardPositions : _oddCardPositions;
-            var index = 5 - Mathf.FloorToInt((float)_deck.HandCards.Count / 2);
+            var newCardPositions = Deck.Instance.HandCards.Count % 2 == 0 ? _evenCardPositions : _oddCardPositions;
+            var index = 5 - Mathf.FloorToInt((float)Deck.Instance.HandCards.Count / 2);
 
-            if (newCardPositions.Count != 0 && _deck.HandCards.Count != 0 && !CardEvents.CardIsZoomed)
+            if (newCardPositions.Count != 0 && Deck.Instance.HandCards.Count != 0 && !CardEvents.CardIsZoomed)
             {
                 SetCardAngles();
 
-                for (int i = 0; i < _deck.HandCards.Count; i++)
+                for (int i = 0; i < Deck.Instance.HandCards.Count; i++)
                 {
-                    var cardObject = _deck.HandCards[i];
+                    var cardObject = Deck.Instance.HandCards[i];
                     var currentCard = cardObject.GetComponent<Card>();
                     cardObject.SetActive(true);
                     currentCard.SetPositionInHand(newCardPositions[index]);
@@ -159,7 +153,7 @@ namespace Cards
 
         private void SetCardAngles()
         {
-            var amountHandCards = _deck.HandCards.Count;
+            var amountHandCards = Deck.Instance.HandCards.Count;
             var cardAngles = amountHandCards % 2 == 0 ? _evenAngles : _oddAngles;
             var index = amountHandCards % 2 == 0 ? 
                 (5 - Mathf.FloorToInt((float)amountHandCards / 2)) 
@@ -167,7 +161,7 @@ namespace Cards
 
             for (int i = 0; i < amountHandCards; i++)
             {
-                var cardObject = _deck.HandCards[i];
+                var cardObject = Deck.Instance.HandCards[i];
                 int zAngleOffset = cardAngles[index];
                 Vector3 newAngle = new(0, 0, zAngleOffset);
                 cardObject.GetComponent<RectTransform>().eulerAngles = newAngle;
