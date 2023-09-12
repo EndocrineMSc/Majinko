@@ -14,8 +14,6 @@ namespace Orbs
         //References
         private AudioManager _audioManager;
         private Collider2D _collider;
-        private Animator _animator;
-        private OrbManaPopUpDisplayer _orbManaPopUpDisplayer;
 
         //Stats
         [SerializeField] private OrbData _orbData;
@@ -50,20 +48,8 @@ namespace Orbs
             ReadOrbData();
         }
 
-        private void OnEnable()
-        {
-            OrbEvents.OnSetOrbsActive += SetOrbActive;
-        }
-
-        private void OnDisable()
-        {
-            OrbEvents.OnSetOrbsActive -= SetOrbActive;
-        }
-
         private void SetReferences()
         {
-            _orbManaPopUpDisplayer = GetComponent<OrbManaPopUpDisplayer>();
-            _animator = GetComponent<Animator>();
             _collider = GetComponent<Collider2D>();
             _audioManager = AudioManager.Instance;
         }
@@ -123,7 +109,8 @@ namespace Orbs
 
         private void OnCollisionVisualPolish()
         {
-            transform.DOScale(_onHitTweenScale, _tweenDuration).SetEase(Ease.OutBack).OnComplete(SetOrbInactive);
+            SetOrbInactive();
+            //transform.DOPunchScale(_onHitTweenScale, _tweenDuration, 1, 1).SetEase(Ease.OutBack).OnComplete(SetOrbInactive);
         }
 
         private void SpawnMana()

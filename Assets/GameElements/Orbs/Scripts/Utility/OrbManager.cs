@@ -16,10 +16,10 @@ namespace Orbs
         public static OrbManager Instance { get; private set; }
 
         //Orb Lists
-        public List<Orb> ActiveBasicOrbPool { get; private set; } = new();
-        public List<Orb> InactiveBasicOrbPool { get; private set; } = new();
-        public List<Orb> ActiveNonBasicOrbPool { get; private set;} = new();
-        public List<Orb> InactiveNonBasicOrbs { get; private set; } = new();
+        public List<Orb> ActiveBasicOrbPool = new();
+        public List<Orb> InactiveBasicOrbPool = new();
+        public List<Orb> ActiveNonBasicOrbPool = new();
+        public List<Orb> InactiveNonBasicOrbs = new();
 
         //Standard References
         [SerializeField] private Orb _basicOrbPrefab;
@@ -231,7 +231,7 @@ namespace Orbs
                 int refreshOrbsInScene = 0;
 
                 foreach (Orb orb in ActiveNonBasicOrbPool)
-                    if (orb.Data.OrbName.Contains("RefreshOrb"))
+                    if (orb.Data.name.Contains("Refresh"))
                         refreshOrbsInScene++;
 
                 if (refreshOrbsInScene < GlobalOrbManager.Instance.AmountOfRefreshOrbs)
@@ -278,8 +278,9 @@ namespace Orbs
         public void ReturnOrbToDisabledPool(Orb orb)
         {
             orb.SetOrbInactive();
-            
-            if (orb.Data.OrbName.Contains("Basic"))
+            Debug.Log(orb.Data.name);
+
+            if (orb.Data.name.Contains("Base"))
             {
                 ActiveBasicOrbPool.Remove(orb);
                 InactiveBasicOrbPool.Add(orb);
@@ -308,7 +309,7 @@ namespace Orbs
 
             foreach (var orb in InactiveNonBasicOrbs)
             {
-                InactiveNonBasicOrbs.Add(orb);
+                ActiveNonBasicOrbPool.Add(orb);
                 orb.SetOrbActive();
             }
             InactiveNonBasicOrbs.Clear();

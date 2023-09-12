@@ -48,6 +48,9 @@ namespace Spheres
             private set { _gravity = value; }
         }
 
+        private readonly float _stuckDestroyTimerMax = 2f;
+        private float _destroyTimer = 0;
+
         #endregion
 
         #region Functions
@@ -111,6 +114,32 @@ namespace Spheres
                 }
                 ShootOnClick();
             }
+
+            HandleStuckSphere();
+        }
+
+        protected void HandleStuckSphere()
+        {
+            var velocityX = Mathf.Abs(_rigidbody.velocity.x);
+            var velocityY = Mathf.Abs(_rigidbody.velocity.y);
+
+            if (!_isNotShotYet && velocityX <= 0.05f && velocityY <= 0.05f)
+            {
+                _destroyTimer += Time.deltaTime;
+                if (_destroyTimer > _stuckDestroyTimerMax)
+                    EndPhaseOnStuckSphere();
+            }
+            else if (!_isNotShotYet && _destroyTimer > 0 && velocityX > 0.05f && velocityY > 0.05f)
+            {
+                _destroyTimer = 0;
+            }
+        }
+
+        protected virtual void EndPhaseOnStuckSphere()
+        {
+            PhaseManager.Instance.StartPlayerAttackPhase();
+            SphereEvents.RaiseSphereDestruction();
+            Destroy(gameObject);
         }
 
         internal virtual void SetShotForce(float shotSpeed)
@@ -158,9 +187,8 @@ namespace Spheres
         protected void DestroyAllIndicators()
         {
             foreach (GameObject indicator in _indicators)
-            {
                 Destroy(indicator);
-            }
+
             _indicators.Clear();
         }
 

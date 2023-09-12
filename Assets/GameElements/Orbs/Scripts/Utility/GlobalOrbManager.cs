@@ -34,9 +34,9 @@ namespace Orbs
                 DontDestroyOnLoad(gameObject);
             }
             else
+            {
                 Destroy(gameObject);
-
-            InitializeManager();
+            }
         }
 
         private void OnEnable()
@@ -60,6 +60,7 @@ namespace Orbs
                 foreach (var orbData in loadedLevelLoadOrbs)
                     AddLevelLoadOrb(orbData);
             }
+            InitializeManager();
         }
 
         private void OnApplicationQuit()
@@ -71,19 +72,18 @@ namespace Orbs
         private void InitializeManager()
         {
             if (LevelLoadOrbs.Count == 0 && !ES3.KeyExists(LEVELLOADORBS_PATH))
+            {
                 foreach (var orbData in _standardLevelLoadOrbData)
                     AddLevelLoadOrb(orbData);
+
+                AmountOfRefreshOrbs++;
+            }
         }
 
         public void AddLevelLoadOrb(OrbData orbData, int amount = 1)
         {           
             for (int i = 0; i < amount; i++)
-            {
                 LevelLoadOrbs.Add(orbData);
-
-                if (orbData.OrbName.Contains(REFRESHORB_NAME))
-                    AmountOfRefreshOrbs++;
-            }
         }
 
         public void RemoveGlobalOrb(OrbData orbData)

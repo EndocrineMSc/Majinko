@@ -115,7 +115,7 @@ namespace Orbs
         {
             _parentOrb = orb;
             SetDescription();
-            orb.SetOrbActive();
+            //orb.SetOrbActive();
         }
 
         public virtual void CollisionEffect()
