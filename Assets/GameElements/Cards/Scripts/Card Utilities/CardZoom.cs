@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
+using System.ComponentModel.Design;
 
 namespace Cards
 {
@@ -16,11 +17,10 @@ namespace Cards
         private Card _card;
         private RectTransform _rectTransform;
         private bool _isZoomed;
-        private readonly float _zoomInDuration = 0.1f;
-        private readonly float _moveDistance = 30000f;
+        private readonly float _zoomInDuration = 0.25f;
+        private readonly float _moveDistance = 150f;
         private Vector2 _onOtherCardZoomPosition = new();
-        private float _moveDelayTimer = 0;
-        private readonly float _moveDelayTimerMax = 0.5f;
+        private bool _isZoomable = true;
 
         #endregion
 
@@ -44,11 +44,12 @@ namespace Cards
             _targetYPosition = Camera.main.ScreenToWorldPoint(new(0, 0, 0)).y;
             _index = transform.GetSiblingIndex();
             _rectTransform = GetComponent<RectTransform>();
+            _targetYPosition += _rectTransform.rect.height / 1.25f;
         }
 
         void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
         {
-            if (!_card.IsBeingDealt && !_isZoomed)
+            if (!_card.IsBeingDealt && !_isZoomed && _isZoomable)
             {
                 //the last sibling will be in front of the other cards
                 _index = transform.GetSiblingIndex();
@@ -69,25 +70,21 @@ namespace Cards
 
         private void Update()
         {
-            if (_moveDelayTimer > 0)
-                _moveDelayTimer--;
-            else
-                _moveDelayTimer = 0;
-
-            if (!CardEvents.CardIsZoomed && !_isZoomed && _moveDelayTimer == 0)
+            if (!CardEvents.CardIsZoomed && !_isZoomed)
                 ReturnToHandPosition();
+
+            CheckForCorrectYZoom();
         }
 
         private void ZoomInCard()
         {
             CardEvents.CardIsZoomed = true;
             _isZoomed = true;
+            SetUnzoomable();
             _initialEulerAngles = transform.eulerAngles;
             transform.localScale = new Vector3(_zoomSize, _zoomSize, _zoomSize);
             transform.eulerAngles = new Vector3(0, 0, 0);
-
-            float zoomOffset = _rectTransform.rect.height / 1.25f;
-            transform.DOMoveY(_targetYPosition + zoomOffset, _zoomInDuration);
+            transform.DOMoveY(_targetYPosition, _zoomInDuration).OnComplete(CheckForCorrectYZoom);
         }
 
         private void ZoomOutCard()
@@ -101,32 +98,49 @@ namespace Cards
 
         private void OnCardZoomIn(Vector3 otherCardPosition)
         {
-            _moveDelayTimer = _moveDelayTimerMax;
             var deltaXTransform = otherCardPosition.x - _card.PositionInHand.x;
-            deltaXTransform = deltaXTransform == 0 ? 0.01f : deltaXTransform;
-            var distanceModifier = (1 / (Mathf.Abs(deltaXTransform) * 2));
-            var finalMoveDistance = distanceModifier * _moveDistance;
+            float zoomOffset = _rectTransform.rect.height / 1.25f;
 
             if (deltaXTransform > 0)
-                _onOtherCardZoomPosition = new(_card.PositionInHand.x - finalMoveDistance, _card.PositionInHand.y);
+                _onOtherCardZoomPosition = new(_card.PositionInHand.x - _moveDistance, _card.PositionInHand.y);
             else if (deltaXTransform < 0)
-                _onOtherCardZoomPosition = new(_card.PositionInHand.x + finalMoveDistance, _card.PositionInHand.y);
+                _onOtherCardZoomPosition = new(_card.PositionInHand.x + _moveDistance, _card.PositionInHand.y);
             else
-                _onOtherCardZoomPosition = _card.PositionInHand;
-
+                _onOtherCardZoomPosition = new(_card.PositionInHand.x, zoomOffset);
+            
             if (!_isZoomed)
-                MoveToOtherCardZoomPosition();
+                _isZoomable = false;
+            
+            MoveToOtherCardZoomPosition();
+        }
+
+        private void CheckForCorrectYZoom()
+        {
+            if (transform.position.y != _targetYPosition && _isZoomed)
+                transform.DOMoveY(_targetYPosition, _zoomInDuration).OnComplete(CheckForCorrectYZoom);
         }
 
         private void MoveToOtherCardZoomPosition()
         {
-            _rectTransform.DOLocalMove(_onOtherCardZoomPosition, 0.5f).SetEase(Ease.OutCubic);
+            if (!_isZoomed)
+                _rectTransform.DOLocalMove(_onOtherCardZoomPosition, 0.5f).SetEase(Ease.OutCubic);
+            else
+                _rectTransform.DOLocalMoveX(_onOtherCardZoomPosition.x, 0.5f).SetEase(Ease.OutCubic);
+        }
+
+        private void SetUnzoomable()
+        {
+            //_isZoomable = false;
+        }
+
+        private void SetZoomable()
+        {
+            _isZoomable = true;
         }
 
         private void ReturnToHandPosition()
         {
-            if (_moveDelayTimer == 0)
-                _rectTransform.DOAnchorPos(_card.PositionInHand, _zoomInDuration);
+            _rectTransform.DOAnchorPos(_card.PositionInHand, _zoomInDuration).OnComplete(SetZoomable);
         }
 
         public void OnDrag(PointerEventData eventData)
