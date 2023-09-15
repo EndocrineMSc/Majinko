@@ -148,3 +148,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScriptableCard: {fileID: 11400000, guid: c034a74e6eb5ea14dbad77ccd42373d1, type: 2}
+  PositionInHand: {x: 0, y: 0}

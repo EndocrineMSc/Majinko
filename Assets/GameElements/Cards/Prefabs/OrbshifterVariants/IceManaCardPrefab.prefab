@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1999973675477444807, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_text
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1999973675477444807, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_fontColor.b
@@ -98,7 +98,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3535557773751755111, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_text
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4746803301845425543, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_IsActive
@@ -210,6 +210,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5437267143115510094, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5538769295108729889, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6398440697363082782, guid: 92b44770394774247acee543b7baee9f, type: 3}
@@ -218,7 +222,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7670523144989857751, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_text
-      value: "Persistent Orb: \nGain 1 Ice Mana\nApply 1 Freezing"
+      value: "Persistent Orb: \nGain <b>1 Ice Mana</b> \nInflict <b>1 Freezing</b>"
       objectReference: {fileID: 0}
     - target: {fileID: 7670523144989857751, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_fontSize
@@ -230,7 +234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8696175136549785397, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_text
-      value: Ice Mana
+      value: Ice Mana Orb
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -4550278420783687888, guid: 92b44770394774247acee543b7baee9f, type: 3}
@@ -253,3 +257,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScriptableCard: {fileID: 11400000, guid: 7300cc828d890124a850160be5567bbd, type: 2}
+  PositionInHand: {x: 0, y: 0}

@@ -55,6 +55,13 @@ namespace Spheres
             }
         }
 
+        protected override void EndPhaseOnStuckSphere()
+        {
+            //just call event instead of ending phase, since there may be more unstuck spheres present
+            SphereEvents.RaiseSphereDestruction();
+            Destroy(gameObject);
+        }
+
         protected override void OnCollisionEnter2D(Collision2D collision)
         {
             base.OnCollisionEnter2D(collision);

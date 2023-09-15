@@ -113,6 +113,16 @@ namespace Characters.Enemies
             private set { _hurtSound = value; }
         }
 
+        public string ModifiedDescription { get; private set; }
+
+        private void OnValidate()
+        {
+            ModifiedDescription = _description;
+
+            ModifiedDescription = ModifiedDescription.Replace("\\n", "\n");
+        }
+
+
         #endregion
     }
 }

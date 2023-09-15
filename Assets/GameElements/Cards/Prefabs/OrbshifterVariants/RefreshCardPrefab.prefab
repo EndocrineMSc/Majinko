@@ -133,11 +133,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7670523144989857751, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_text
-      value: 'Persistent Orb: Refresh arena'
+      value: "Sphere splits into three \non first orb contact\nStackable: additional
+        sphere"
       objectReference: {fileID: 0}
     - target: {fileID: 8696175136549785397, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_text
-      value: Refresh
+      value: Refresh Orb
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -4550278420783687888, guid: 92b44770394774247acee543b7baee9f, type: 3}
@@ -160,3 +161,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScriptableCard: {fileID: 11400000, guid: c848dd55da91e48479facc709c61d639, type: 2}
+  PositionInHand: {x: 0, y: 0}

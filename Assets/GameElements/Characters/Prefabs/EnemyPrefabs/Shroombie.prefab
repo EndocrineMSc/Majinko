@@ -4973,6 +4973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyObject: {fileID: 11400000, guid: 559b41c35f6b08a47a37ca556e8e3c23, type: 2}
   _particleSystem: {fileID: 627788854814423433}
+  _rottenOrbData: {fileID: 11400000, guid: 6ac331bcde68c894890b4f7819cffc9a, type: 2}
 --- !u!114 &1161808695900130219
 MonoBehaviour:
   m_ObjectHideFlags: 0

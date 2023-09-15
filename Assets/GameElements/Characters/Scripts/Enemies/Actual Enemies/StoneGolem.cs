@@ -1,13 +1,12 @@
-using EnumCollection;
-using Audio;
 using Orbs;
-using Utility;
 using UnityEngine;
 
 namespace Characters.Enemies
 {
-    internal class StoneGolem : Enemy
+    public class StoneGolem : Enemy
     {
+        [SerializeField] private OrbData _stoneOrbData;
+
         #region Functions
 
         protected override void StartTurnEffect()
@@ -30,7 +29,7 @@ namespace Characters.Enemies
             if (AbilityCooldown <= 0 && OrbManager.Instance != null)
             {
                 AbilityCooldown = EnemyObject.AbilityCooldownMax;
-                OrbManager.Instance.SwitchOrbsWrap(OrbType.StoneOrb, transform.position, 3);
+                OrbManager.Instance.SwitchOrbs(_stoneOrbData, transform.position, 3);
             }
         }
 

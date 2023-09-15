@@ -44,4 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6162fdfb970cd424d927585e24d30884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _allOrbsCollection: {fileID: 11400000, guid: ccebd809629c76f4eb070fbbfde3bd30, type: 2}
+  _standardLevelLoadOrbData:
+  - {fileID: 11400000, guid: 153f2d23248863f4ab638292cce9ad20, type: 2}
+  - {fileID: 11400000, guid: 9d00777d3098c1f4bb02923de9241bdd, type: 2}
+  - {fileID: 11400000, guid: ce0adb5626844cc438a18bbb4ca6ce03, type: 2}

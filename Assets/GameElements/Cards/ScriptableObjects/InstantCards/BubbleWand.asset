@@ -12,15 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e6e1e0e03f2f23438d023750e819a6e, type: 3}
   m_Name: BubbleWand
   m_EditorClassIdentifier: 
-  CardName: Bubble Wand
-  CardDescription: After hitting 20 orbs, deal 10 damage to the closest enemy.
-  BasicManaCost: 2
-  FireManaCost: 0
-  IceManaCost: 0
-  IsExhaustCard: 1
-  IsBuff: 1
-  Type: 0
-  Rarity: 2
-  Element: 0
-  Image: {fileID: 21300000, guid: 32c3dfb0c4ab00d49b8c0ad2ce3398e0, type: 3}
-  Buff: 2
+  _cardName: Bubble Wand
+  _cardDescription: After hitting 20 orbs, deal 10 damage to the closest enemy.
+  _basicManaCost: 2
+  _fireManaCost: 0
+  _iceManaCost: 0
+  _isExhaustCard: 1
+  _isBuff: 1
+  _cardType: 0
+  _cardRarity: 2
+  _cardElement: 0
+  _cardImage: {fileID: 21300000, guid: 32c3dfb0c4ab00d49b8c0ad2ce3398e0, type: 3}
+  _cardBuff: 2
+  _effectValues: {fileID: 0}
+  _modifiedDescription: After hitting 20 orbs, deal 10 damage to the closest enemy.

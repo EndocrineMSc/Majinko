@@ -12,22 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d8682f958061ed4d84819b3f0aaed4d, type: 3}
   m_Name: Icicle
   m_EditorClassIdentifier: 
-  CardName: Icicle
-  CardDescription: 'Orb: Deal 10 ice damage
-
-    Apply 5 freezing
-
-    Small chance
-    to apply frozen'
-  BasicManaCost: 0
-  FireManaCost: 0
-  IceManaCost: 1
-  IsExhaustCard: 0
-  IsBuff: 0
-  Type: 15
-  Rarity: 2
-  Element: 2
-  Image: {fileID: 21300000, guid: 355abc4849f40db4ebea52aa4591e81e, type: 3}
-  Buff: 0
-  OrbType: 17
-  OrbAmount: 1
+  _cardName: Icicle
+  _cardDescription: 'Orb, AOE: \n<b>Deals {Damage} Damage</b> and \ninflicts <b>{Freezing}
+    Freezing</b>. \nHas a <b>{FrozenPercent}%</b> to inflict <b>Frozen</b>'
+  _basicManaCost: 0
+  _fireManaCost: 0
+  _iceManaCost: 1
+  _isExhaustCard: 0
+  _isBuff: 0
+  _cardType: 15
+  _cardRarity: 1
+  _cardElement: 2
+  _cardImage: {fileID: 21300000, guid: 355abc4849f40db4ebea52aa4591e81e, type: 3}
+  _cardBuff: 0
+  _effectValues: {fileID: 11400000, guid: 63940aa8826e3864a80841c865eb0bc3, type: 2}
+  _modifiedDescription: "Orb, AOE: \n<b>Deals 10 Damage</b> and \ninflicts <b>10
+    Freezing</b>. \nHas a <b>10%</b> to inflict <b>Frozen</b>"
+  _orbData: {fileID: 11400000, guid: 98c5c65a7b35da64c97fe055e93d6660, type: 2}
+  _orbAmount: 1

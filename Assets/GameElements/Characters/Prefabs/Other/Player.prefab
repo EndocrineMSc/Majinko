@@ -381,6 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cee0e94e5bcc0354399b88003d8d6766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _manaBlitzData: {fileID: 11400000, guid: d5fd3250845b890459bbfecb9180a443, type: 2}
 --- !u!1001 &4061456612919798155
 PrefabInstance:
   m_ObjectHideFlags: 0

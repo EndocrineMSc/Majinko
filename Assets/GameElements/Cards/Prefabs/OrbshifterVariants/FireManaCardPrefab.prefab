@@ -172,6 +172,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5538769295108729889, guid: 92b44770394774247acee543b7baee9f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6398440697363082782, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_Name
       value: FireManaCardPrefab
@@ -182,7 +186,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7670523144989857751, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_text
-      value: "Persistent Orb: \nGain 1 Fire Mana\nApply 1 burning"
+      value: "Persistent Orb: \nGain <b>1 Fire Mana</b>\nInflict <b>1 Burning</b>
+        to the first enemy."
       objectReference: {fileID: 0}
     - target: {fileID: 7670523144989857751, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_fontSize
@@ -194,7 +199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8696175136549785397, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_text
-      value: Fire Mana
+      value: Fire Mana Orb
       objectReference: {fileID: 0}
     - target: {fileID: 9135118470376897469, guid: 92b44770394774247acee543b7baee9f, type: 3}
       propertyPath: m_IsActive
@@ -221,3 +226,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScriptableCard: {fileID: 11400000, guid: 78c3c4d41a988624ca4ab4e5a3a23380, type: 2}
+  PositionInHand: {x: 0, y: 0}

@@ -2,16 +2,14 @@ using UnityEngine;
 using Orbs;
 using ManaManagement;
 using EnumCollection;
-using System.Collections;
 using DG.Tweening;
-using UnityEngine.EventSystems;
 
 namespace Cards
 {
     [RequireComponent(typeof(CardDragDrop))]
     [RequireComponent(typeof(CardZoom))]
     [RequireComponent(typeof(CardUIDisplayer))]
-    internal abstract class Card : MonoBehaviour
+    public abstract class Card : MonoBehaviour
     {
         #region Fields and Properties
 
@@ -33,22 +31,22 @@ namespace Cards
         protected float _tweenDiscardDuration = 0.5f;
         protected Vector3 _tweenEndScale = new(0.05f, 0.05f, 0.05f);
         protected RectTransform _rectTransform;
-        internal Vector2 PositionInHand = new();
+        public Vector2 PositionInHand = new();
 
         //Properties
-        internal string CardName { get; private protected set; }
-        internal string CardDescription { get; private protected set; }
-        internal int BasicManaCost { get; private protected set; }
-        internal int FireManaCost { get; private protected set; }
-        internal int IceManaCost { get; private protected set; }
-        internal CardType CardType { get; private protected set; }
-        internal bool IsExhaustCard { get; private protected set; }
-        internal Sprite CardImage { get; private protected set; }
-        internal CardRarity Rarity { get; private protected set; }
-        internal CardElement Element { get; private protected set; }
-        internal CardEffectType EffectType { get; private protected set; }
-        internal bool IsBuff { get; private protected set; }
-        internal bool IsBeingDealt { get; set; } = true;
+        public string CardName { get; private protected set; }
+        public string CardDescription { get; private protected set; }
+        public int BasicManaCost { get; private protected set; }
+        public int FireManaCost { get; private protected set; }
+        public int IceManaCost { get; private protected set; }
+        public CardType CardType { get; private protected set; }
+        public bool IsExhaustCard { get; private protected set; }
+        public Sprite CardImage { get; private protected set; }
+        public CardRarity Rarity { get; private protected set; }
+        public CardElement Element { get; private protected set; }
+        public CardEffectType EffectType { get; private protected set; }
+        public bool IsBuff { get; private protected set; }
+        public bool IsBeingDealt { get; set; } = true;
 
         #endregion
 
@@ -110,7 +108,7 @@ namespace Cards
             }
         }
 
-        internal virtual bool CardEndDragEffect()
+        public virtual bool CardEndDragEffect()
         {
             if (CheckIfEnoughMana())
             {
@@ -150,7 +148,7 @@ namespace Cards
             transform.DOKill();
         }
 
-        internal void SetPositionInHand(Vector2 positionInHand)
+        public void SetPositionInHand(Vector2 positionInHand)
         {
             PositionInHand = positionInHand;
         }

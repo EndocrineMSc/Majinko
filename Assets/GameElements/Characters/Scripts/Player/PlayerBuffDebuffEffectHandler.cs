@@ -1,22 +1,19 @@
 using Characters.Enemies;
 using Orbs;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using EnumCollection;
 
 namespace Characters
 {
-    internal class PlayerBuffDebuffEffectHandler : MonoBehaviour
+    public class PlayerBuffDebuffEffectHandler : MonoBehaviour
     {
         #region Fields and Properties
 
-        internal static PlayerBuffDebuffEffectHandler Instance { get; private set; }
+        public static PlayerBuffDebuffEffectHandler Instance { get; private set; }
 
         private int AmountOrbsHit = 0;
         private Vector3 _orbStartPosition;
 
-
+        [SerializeField] private OrbData _manaBlitzData;
 
         #endregion
 
@@ -74,8 +71,10 @@ namespace Characters
 
         private void WardingRuneEffect()
         {
-            if (PlayerConditionTracker.HasWardingRune)
-                OrbManager.Instance.SwitchOrbsWrap(OrbType.ManaBlitzOrb, _orbStartPosition);
+            if (PlayerConditionTracker.HasWardingRune && OrbManager.Instance != null)
+                OrbManager.Instance.SwitchOrbs(_manaBlitzData, _orbStartPosition);
+            else if (OrbManager.Instance == null)
+                Debug.Log("Couldn't switch in Mana Blitz Orb, Warding Rune Effect thinks OrbManager is null.");
         }
 
 

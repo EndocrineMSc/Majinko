@@ -1,7 +1,4 @@
-using EnumCollection;
-using System.Collections;
 using UnityEngine;
-using ManaManagement;
 using Audio;
 using Utility;  
 using DG.Tweening;
@@ -10,31 +7,28 @@ using Spheres;
 namespace Orbs
 {
     [RequireComponent(typeof(ScrollDisplayer)), RequireComponent(typeof(OrbManaPopUpDisplayer))]
-    public abstract class Orb : MonoBehaviour, IHaveDisplayDescription
+    public class Orb : MonoBehaviour, IHaveDisplayDescription
     {
         #region Fields and Properties
 
         //References
-        protected ManaPool _manaPool;
-        protected OrbManager _orbManager;
-        protected AudioManager _audioManager;
-        protected Collider2D _collider;
+        private AudioManager _audioManager;
+        private Collider2D _collider;
 
         //Stats
-        [SerializeField] protected ManaType _spawnManaType;
-        [SerializeField] protected int _manaAmount = 10;
-        [SerializeField] protected int _stalwartHits = 0;
+        [SerializeField] private OrbData _orbData;
+        public OrbData Data
+        {
+            get { return _orbData; }
+            private protected set {_orbData = value; }
+        }
 
-        public ManaType SpawnManaType { get { return _spawnManaType; } private protected set { _spawnManaType = value; } }
-        public int ManaAmount { get { return _manaAmount; } private protected set { _manaAmount = value; } }
-        [SerializeField] protected GameObject _defaultOrb;
-        [SerializeField] public OrbType OrbType;
         public bool OrbIsActive { get; private set; } = true;
+        public int StalwartStacks { get; private set; } = 0;
 
         //Tweening
-        protected Vector3 _position;
-        protected Vector3 _onHitTweenScale = new(5, 5, 5);
-        protected float _tweenDuration = 0.2f;
+        private Vector3 _onHitTweenScale = new(5, 5, 5);
+        private readonly float _tweenDuration = 0.2f;
 
         #endregion
 
@@ -50,31 +44,31 @@ namespace Orbs
         private void Start()
         {
             SetReferences();
-            SetDisplayDescription();
             SetScrollDisplayScale();
+            ReadOrbData();
         }
 
-        protected void OnEnable()
+        private void SetReferences()
         {
-            OrbEvents.OnSetOrbsActive += OnSetOrbActive;
-        }
-
-        protected void OnDisable()
-        {
-            OrbEvents.OnSetOrbsActive -= OnSetOrbActive;
-        }
-
-        protected virtual void SetReferences()
-        {
-            _manaPool = ManaPool.Instance;
-            _orbManager = OrbManager.Instance;
-            _audioManager = AudioManager.Instance;
             _collider = GetComponent<Collider2D>();
+            _audioManager = AudioManager.Instance;
         }
 
-        public abstract void SetDisplayDescription();
+        private void ReadOrbData()
+        {
+            SetDisplayDescription();
+            StalwartStacks = Data.StalwartHits;
+            GetComponent<Animator>().runtimeAnimatorController = Data.AnimationController;
+            _collider.isTrigger = Data.IsTriggerColliderOrb;
+        }
 
-        protected void SetScrollDisplayScale()
+        public void SetDisplayDescription()
+        {
+            IDisplayOnScroll displayOnScroll = GetComponent<IDisplayOnScroll>();
+            displayOnScroll.DisplayDescription = Data.OrbDescription;
+        }
+
+        private void SetScrollDisplayScale()
         {
             GetComponent<ScrollDisplayer>().DisplayScale = 4;
         }
@@ -83,66 +77,46 @@ namespace Orbs
 
         #region Collision Handling
 
-        protected virtual void OnCollisionEnter2D(Collision2D collision)
-        {           
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
             if (collision.gameObject.TryGetComponent<IAmSphere>(out _))
-            {               
+            {
                 ArenaConditionTracker.OrbWasHit();
                 OrbEvents.RaiseOrbHit();
 
-                if (_stalwartHits <= 0)
+                if (StalwartStacks <= 0)
                 {
                     _collider.enabled = false;
-                    AdditionalEffectsOnCollision();
-                    ReplaceHitOrb();
+                    Data.CollisionEffect();
+
+                    OrbManager.Instance.ReturnOrbToDisabledPool(this);
+
                     PlayOrbOnHitSound();
                     OnCollisionVisualPolish();
                     SpawnMana();
-                    StartCoroutine(DestroyOrbWithDelay());
                 }
                 else
                 {
-                    _stalwartHits--;
+                    StalwartStacks--;
                 }
             }
-            else if (collision.gameObject.TryGetComponent<Orb>(out _))
-            {
-                Debug.Log("Destroyed " + gameObject.name + " due to collision with orb");
-                Destroy(gameObject);
-            }
-        }
-    
-
-        protected abstract void AdditionalEffectsOnCollision();
-
-        protected virtual void ReplaceHitOrb()
-        {
-            Orb orb = Instantiate(_defaultOrb, transform.position, Quaternion.identity).GetComponent<Orb>();
-            orb.SetOrbInactive();
-            _orbManager.SceneOrbList.Remove(this);
-            _orbManager.SceneOrbList.Add(orb);
         }
 
-        protected virtual void PlayOrbOnHitSound()
+        private void PlayOrbOnHitSound()
         {
             PlayOrbImpactSound();
         }
 
-        protected virtual void OnCollisionVisualPolish()
+        private void OnCollisionVisualPolish()
         {
-            transform.DOScale(_onHitTweenScale, _tweenDuration).SetEase(Ease.OutBack);
+            SetOrbInactive();
+            //transform.DOPunchScale(_onHitTweenScale, _tweenDuration, 1, 1).SetEase(Ease.OutBack).OnComplete(SetOrbInactive);
         }
 
-        protected virtual void SpawnMana()
+        private void SpawnMana()
         {
-            if (ManaAmount != 0)
-                OrbEvents.RaiseSpawnMana(SpawnManaType, ManaAmount);
-        }
-
-        protected virtual IEnumerator DestroyOrbWithDelay()
-        {
-            yield return new WaitForSeconds(_tweenDuration * 1.05f);
-            Destroy(gameObject);
+            if (Data.AmountManaSpawned != 0)
+                OrbEvents.RaiseSpawnMana(Data.ManaToSpawn, Data.AmountManaSpawned);
         }
 
         public void SetOrbInactive()
@@ -156,7 +130,7 @@ namespace Orbs
 
         #region Other Functions
 
-        protected void OnSetOrbActive()
+        public void SetOrbActive()
         {
             OrbIsActive = true;
             _collider.enabled = true;
@@ -169,47 +143,57 @@ namespace Orbs
             _collider.enabled = false;
         }
 
-        public abstract IEnumerator OrbEffect();
-
         private void PlayOrbImpactSound()
         {
-            int randomSoundIndex = UnityEngine.Random.Range(0, 9);
-            AudioManager audioManager = AudioManager.Instance;
-            switch (randomSoundIndex)
+            if (_audioManager != null)
             {
-                case 0:
-                    audioManager.PlaySoundEffectWithoutLimit(SFX._0751_Orb_Impact_01);
-                    break;                      
-                case 1:                        
-                    audioManager.PlaySoundEffectWithoutLimit(SFX._0752_Orb_Impact_02);
-                    break;                     
-                case 2:                         
-                    audioManager.PlaySoundEffectWithoutLimit(SFX._0753_Orb_Impact_03);
-                    break;                      
-                case 3:                         
-                    audioManager.PlaySoundEffectWithoutLimit(SFX._0754_Orb_Impact_04);
-                    break;                      
-                case 4:                         
-                    audioManager.PlaySoundEffectWithoutLimit(SFX._0755_Orb_Impact_05);
-                    break;                      
-                case 5:                         
-                    audioManager.PlaySoundEffectWithoutLimit(SFX._0756_Orb_Impact_06);
-                    break;                      
-                case 6:                         
-                    audioManager.PlaySoundEffectWithoutLimit(SFX._0757_Orb_Impact_07);
-                    break;                      
-                case 7:                         
-                    audioManager.PlaySoundEffectWithoutLimit(SFX._0758_Orb_Impact_08);
-                    break;                      
-                case 8:                         
-                    audioManager.PlaySoundEffectWithoutLimit(SFX._0759_Orb_Impact_09);
-                    break;
+                int randomSoundIndex = UnityEngine.Random.Range(0, 9);
+                switch (randomSoundIndex)
+                {
+                    case 0:
+                        _audioManager.PlaySoundEffectWithoutLimit(SFX._0751_Orb_Impact_01);
+                        break;
+                    case 1:
+                        _audioManager.PlaySoundEffectWithoutLimit(SFX._0752_Orb_Impact_02);
+                        break;
+                    case 2:
+                        _audioManager.PlaySoundEffectWithoutLimit(SFX._0753_Orb_Impact_03);
+                        break;
+                    case 3:
+                        _audioManager.PlaySoundEffectWithoutLimit(SFX._0754_Orb_Impact_04);
+                        break;
+                    case 4:
+                        _audioManager.PlaySoundEffectWithoutLimit(SFX._0755_Orb_Impact_05);
+                        break;
+                    case 5:
+                        _audioManager.PlaySoundEffectWithoutLimit(SFX._0756_Orb_Impact_06);
+                        break;
+                    case 6:
+                        _audioManager.PlaySoundEffectWithoutLimit(SFX._0757_Orb_Impact_07);
+                        break;
+                    case 7:
+                        _audioManager.PlaySoundEffectWithoutLimit(SFX._0758_Orb_Impact_08);
+                        break;
+                    case 8:
+                        _audioManager.PlaySoundEffectWithoutLimit(SFX._0759_Orb_Impact_09);
+                        break;
+                }
             }
         }
 
-        protected void OnDestroy()
+        public void SetOrbData(OrbData orbData)
         {
-            transform.DOKill();
+            if (orbData != null)
+            {
+                orbData.InitializeOrbData(this);
+                Data = orbData;
+                ReadOrbData();
+                GetComponent<OrbManaPopUpDisplayer>().SetManaType(Data.ManaToSpawn);
+            }
+            else
+            {
+                Debug.Log("Orb got null reference orbData handed over!");
+            }
         }
 
         #endregion

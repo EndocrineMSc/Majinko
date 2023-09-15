@@ -7,6 +7,6 @@ namespace Orbs
     [CreateAssetMenu(menuName = "Orbs/Orb Layout Set")]
     internal class OrbLayoutSet : ScriptableObject
     {
-        [SerializeField] internal ScriptableOrbLayout[] OrbLayouts;
+        public OrbLevelLayout[] OrbLayouts;
     }
 }

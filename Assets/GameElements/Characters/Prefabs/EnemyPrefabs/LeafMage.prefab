@@ -129,6 +129,7 @@ MonoBehaviour:
   _enemyObject: {fileID: 11400000, guid: 2200bd9b08a9437478746a7caba6d315, type: 2}
   _particleSystem: {fileID: 5798595692989076067}
   _leafMageShot: {fileID: 7622386237211500515, guid: 54d899e6433c32b49a05d418819e3a6d, type: 3}
+  _intangibleOrbData: {fileID: 11400000, guid: a7941a5e687f97f46ab8f59c8ff69a58, type: 2}
 --- !u!212 &2934328531088558246
 SpriteRenderer:
   m_ObjectHideFlags: 0

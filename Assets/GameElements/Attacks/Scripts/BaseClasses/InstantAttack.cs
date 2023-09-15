@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Attacks
 {
-    internal abstract class InstantAttack : Attack
+    public abstract class InstantAttack : Attack
     {
         #region Fields and Properties
 
@@ -22,7 +22,7 @@ namespace Attacks
             StartCoroutine(HandleLifeTime());
         }
 
-        internal override void ShootAttack(Vector3 instantiatePosition, float damageModifier = 1)
+        public override void ShootAttack(Vector3 instantiatePosition, float damageModifier = 1)
         {
             if (EnemyManager.Instance.EnemiesInScene.Count > 0)
             {

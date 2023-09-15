@@ -177,7 +177,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5631585529099602687, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_text
-      value: "Orb, AOE: \nDeal 10 damage\nApply 10 freezing"
+      value: "Orb, AOE: \n<b>Deals 10 Damage</b> and inflicts <b>10 Freezing</b>.
+        Has a <b>30%</b> to inflict <b>Frozen</b>"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631585529099602687, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
+      propertyPath: m_lineSpacing
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 5993524722849724809, guid: e03610c47db0a5a4483f3530ad5a0e20, type: 3}
       propertyPath: m_IsActive

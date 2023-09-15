@@ -12,15 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e6e1e0e03f2f23438d023750e819a6e, type: 3}
   m_Name: ShieldBeetle
   m_EditorClassIdentifier: 
-  CardName: Shield Beetle
-  CardDescription: Shield stays between turns for the rest of combat.
-  BasicManaCost: 4
-  FireManaCost: 0
-  IceManaCost: 0
-  IsExhaustCard: 1
-  IsBuff: 1
-  Type: 22
-  Rarity: 1
-  Element: 0
-  Image: {fileID: 21300000, guid: 7869f751423032049b540b8a845f91e3, type: 3}
-  Buff: 1
+  _cardName: Shield Beetle
+  _cardDescription: Shield stays between turns for the rest of combat.
+  _basicManaCost: 4
+  _fireManaCost: 0
+  _iceManaCost: 0
+  _isExhaustCard: 1
+  _isBuff: 1
+  _cardType: 22
+  _cardRarity: 3
+  _cardElement: 0
+  _cardImage: {fileID: 21300000, guid: 7869f751423032049b540b8a845f91e3, type: 3}
+  _cardBuff: 1
+  _effectValues: {fileID: 0}
+  _modifiedDescription: Shield stays between turns for the rest of combat.
