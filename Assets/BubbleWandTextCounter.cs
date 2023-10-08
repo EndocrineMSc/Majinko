@@ -30,7 +30,7 @@ namespace Characters
              OrbEvents.OnOrbHit -= OrbWasHit;
         }
 
-        private void OrbWasHit()
+        private void OrbWasHit(GameObject orb)
         {
             _remainingHits--;
 

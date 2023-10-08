@@ -118,7 +118,12 @@ namespace Characters.Enemies
         private void OnValidate()
         {
             ModifiedDescription = _description;
+            ModifiedDescription = ModifiedDescription.Replace("\\n", "\n");
+        }
 
+        public void ModifiyDescription()
+        {
+            ModifiedDescription = _description;
             ModifiedDescription = ModifiedDescription.Replace("\\n", "\n");
         }
 

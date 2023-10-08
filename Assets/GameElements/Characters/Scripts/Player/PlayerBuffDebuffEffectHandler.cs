@@ -45,7 +45,7 @@ namespace Characters
             _orbStartPosition = new(playerPosition.x + 2, playerPosition.y, playerPosition.z);
         }
 
-        private void OrbWasHit()
+        private void OrbWasHit(GameObject orb)
         {
             AmountOrbsHit++;
             CheckForBubbleWandDamage();

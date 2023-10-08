@@ -34,7 +34,7 @@ namespace Orbs
             }
 
             var newLayout = OrbLevelLayout.CreateLayout(orbPositions);
-            UnityEditor.AssetDatabase.CreateAsset(newLayout, "Assets/NewLayout.asset");
+            //UnityEditor.AssetDatabase.CreateAsset(newLayout, "Assets/NewLayout.asset");
         }
     }
 }
