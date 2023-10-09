@@ -9,18 +9,26 @@ namespace Cards
     {
         #region Fields and Properties
 
-        private Vector3 _normalScale;
+        //state booleans
+        private bool _isDragged;
+        private bool _isZoomed;
+
+        //movement values
         private readonly float _zoomSize = 1.5f;
+        private readonly float _moveDistance = 100f;
+        private readonly float _xMoveSpeed = 650f;
+        private readonly float _yMoveSpeed = 2000f;
         private float _targetYPosition;
-        private int _index;
-        private Vector3 _initialEulerAngles;
+
+        //references
         private Card _card;
         private RectTransform _rectTransform;
-        private bool _isZoomed;
-        private readonly float _zoomInDuration = 0.25f;
-        private readonly float _moveDistance = 150f;
-        private Vector2 _onOtherCardZoomPosition = new();
-        private bool _isDragged = false;
+        private Vector2 _zoomedCardPosition = new();
+
+        //start states
+        private Vector3 _normalScale;
+        private int _index;
+        private Vector3 _initialEulerAngles;
 
         #endregion
 
@@ -38,13 +46,46 @@ namespace Cards
 
         private void Start()
         {
+            //set references
             _card = GetComponent<Card>();
+            _rectTransform = GetComponent<RectTransform>();
+
+            //set start stats
             _normalScale = new Vector3(0.75f, 0.75f, 0.75f);
             _initialEulerAngles = transform.eulerAngles;
-            _targetYPosition = Camera.main.ScreenToWorldPoint(new(0, 0, 0)).y;
             _index = transform.GetSiblingIndex();
-            _rectTransform = GetComponent<RectTransform>();
-            _targetYPosition += _rectTransform.rect.height / 1.25f;
+
+            //zoom position to be roughly aligned with bottom of the screen
+            _targetYPosition = GetComponentInParent<RectTransform>().rect.yMin - _rectTransform.rect.height / 1.3f;
+        }
+
+        private void Update()
+        {
+            var positionInHand = GetComponent<Card>().PositionInHand;
+
+            //only move as soon as card dealing is finished
+            if (!_card.IsBeingDealt)
+            {
+                //if zoomed in, but not dragged by player, move to zoom position on y axis
+                if (_isZoomed && !_isDragged)
+                    ZoomUpMovement();
+
+                //if not zoomed in and not dragged by player, move to start position on y axis
+                if (!_isZoomed && !_isDragged)
+                    ZoomDownMovement();
+
+                //if another card is zoomed in, move right or left depending on position
+                if (!_isZoomed && CardEvents.CardIsZoomed && _zoomedCardPosition != Vector2.zero
+                    && _zoomedCardPosition != positionInHand)
+                    MoveToOtherCardZoomPosition();
+
+                //if no card is zoomed in move on x axis to start position
+                if (!CardEvents.CardIsZoomed || _isZoomed)
+                    ReturnToXHandPosition();
+
+                if (!_isDragged && _rectTransform.anchoredPosition.y > _targetYPosition)
+                    ZoomDownMovement();
+            }
         }
 
         void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
@@ -54,43 +95,54 @@ namespace Cards
                 //the last sibling will be in front of the other cards
                 _index = transform.GetSiblingIndex();
                 transform.SetAsLastSibling();
-                ZoomInCard();
-                CardEvents.RaiseCardZoomIn(_card.PositionInHand);
+                ZoomInCard();              
             }
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
             if (!_card.IsBeingDealt && _isZoomed)
-            {
                 ZoomOutCard();
-                CardEvents.InvokeCardZoomOut();                           
-            }
-        }
-
-        private void Update()
-        {
-            if (!CardEvents.CardIsZoomed && !_isZoomed && !_isDragged)
-                ReturnToHandPosition();
-
-            if (!_isDragged)
-                CheckForCorrectYZoom();
         }
 
         private void ZoomInCard()
         {
-            CardEvents.CardIsZoomed = true;
+            var positionInHand = GetComponent<Card>().PositionInHand;
+
             _isZoomed = true;
+            _zoomedCardPosition = positionInHand;
+            CardEvents.RaiseCardZoomIn(positionInHand);
             _initialEulerAngles = transform.eulerAngles;
             transform.localScale = new Vector3(_zoomSize, _zoomSize, _zoomSize);
             transform.eulerAngles = new Vector3(0, 0, 0);
-            transform.DOMoveY(_targetYPosition, _zoomInDuration).OnComplete(CheckForCorrectYZoom);
+        }
+
+        private void ZoomUpMovement()
+        {
+            if (_rectTransform.anchoredPosition.y < _targetYPosition)
+                _rectTransform.Translate(_yMoveSpeed * Time.deltaTime * Vector2.up, Space.World);
+        }
+
+        private void ZoomDownMovement()
+        {
+            float speed; //different speeds depending on distance to bottom position
+
+            if (_rectTransform.anchoredPosition.y > _targetYPosition)
+                speed = _yMoveSpeed;
+            else
+                speed = _yMoveSpeed / 4;
+
+            if (_rectTransform.anchoredPosition.y > _card.PositionInHand.y + 2f)
+                _rectTransform.Translate(speed * Time.deltaTime * Vector2.down);
+            else if (_rectTransform.anchoredPosition.y < _card.PositionInHand.y - 2f)
+                _rectTransform.Translate(speed * Time.deltaTime * Vector2.up);
         }
 
         private void ZoomOutCard()
         {
-            CardEvents.CardIsZoomed = false;
             _isZoomed = false;
+            _zoomedCardPosition = Vector2.zero;
+            CardEvents.InvokeCardZoomOut();
             transform.localScale = _normalScale;
             transform.SetSiblingIndex(_index);
             transform.eulerAngles = _initialEulerAngles;           
@@ -98,37 +150,37 @@ namespace Cards
 
         private void OnCardZoomIn(Vector3 otherCardPosition)
         {
-            var deltaXTransform = otherCardPosition.x - _card.PositionInHand.x;
-            float zoomOffset = _rectTransform.rect.height / 1.25f;
-
-            if (deltaXTransform > 0)
-                _onOtherCardZoomPosition = new(_card.PositionInHand.x - _moveDistance, _card.PositionInHand.y);
-            else if (deltaXTransform < 0)
-                _onOtherCardZoomPosition = new(_card.PositionInHand.x + _moveDistance, _card.PositionInHand.y);
-            else
-                _onOtherCardZoomPosition = new(_card.PositionInHand.x, zoomOffset);
-            
-            MoveToOtherCardZoomPosition();
-        }
-
-        private void CheckForCorrectYZoom()
-        {
-            if (transform.position.y != _targetYPosition && _isZoomed && !_isDragged)
-                transform.DOMoveY(_targetYPosition, _zoomInDuration).OnComplete(CheckForCorrectYZoom);
+            _zoomedCardPosition = otherCardPosition;
         }
 
         private void MoveToOtherCardZoomPosition()
         {
-            if (!_isZoomed)
-                _rectTransform.DOLocalMove(_onOtherCardZoomPosition, 0.5f).SetEase(Ease.OutCubic);
-            else
-                _rectTransform.DOLocalMoveX(_onOtherCardZoomPosition.x, 0.5f).SetEase(Ease.OutCubic);
+            var positionInHand = GetComponent<Card>().PositionInHand;
+
+            if (positionInHand.x - _zoomedCardPosition.x > 0
+                && _rectTransform.localPosition.x < positionInHand.x + _moveDistance)
+            {
+                _rectTransform.Translate(_xMoveSpeed * Time.deltaTime * Vector2.right);
+            }
+            else if (positionInHand.x - _zoomedCardPosition.x < 0
+                && _rectTransform.localPosition.x > positionInHand.x - _moveDistance)
+            {
+                _rectTransform.Translate(_xMoveSpeed * Time.deltaTime * Vector2.left);
+            }
         }
 
-        private void ReturnToHandPosition()
+        private void ReturnToXHandPosition()
         {
-            if (!_isDragged)
-                _rectTransform.DOAnchorPos(_card.PositionInHand, _zoomInDuration);
+            var positionInHand = GetComponent<Card>().PositionInHand;
+
+            if (_rectTransform.localPosition.x > (positionInHand.x + 2f))
+            {
+                _rectTransform.Translate(_xMoveSpeed * Time.deltaTime * Vector2.left);
+            }
+            else if (_rectTransform.localPosition.x < (positionInHand.x - 2f))
+            {
+                _rectTransform.Translate(_xMoveSpeed * Time.deltaTime * Vector2.right);
+            }
         }
 
         public void OnBeginDrag(PointerEventData eventData)
@@ -139,7 +191,6 @@ namespace Cards
         public void OnDrop(PointerEventData eventData)
         {
             _isDragged = false;
-            ZoomOutCard();
         }
 
         #endregion
