@@ -113,7 +113,10 @@ namespace Cards
         public void AlignCardsWrap(bool isStartTurnDealing = false)
         {
             if (Deck.Instance.HandCards.Count > 0)
+            {
                 StartCoroutine(AlignCards(isStartTurnDealing));       
+                Debug.Log("Remaining number of cards in hand: " + Deck.Instance.HandCards.Count);
+            }
         }
 
         private IEnumerator AlignCards(bool isStartTurnDealing = false)
@@ -139,7 +142,6 @@ namespace Cards
                         currentCard.IsBeingDealt = true;
                         DisableZoomComponents(currentCard);
                         yield return StartCoroutine(TweenCardSpawn(newCardPositions[index], rectTransform));
-                        currentCard.IsBeingDealt = false;
                         EnableZoomComponents(currentCard);
                     }
                     else
@@ -147,8 +149,12 @@ namespace Cards
                         rectTransform.DOAnchorPos(newCardPositions[index], 0.5f).SetEase(Ease.OutCubic);
                     }
                     index++;
-                }            
+                }
             }
+
+            if (isStartTurnDealing)
+                for (int i = 0; i < Deck.Instance.HandCards.Count; i++)
+                    Deck.Instance.HandCards[i].GetComponent<Card>().IsBeingDealt = false;
         }
 
         private void SetCardAngles()

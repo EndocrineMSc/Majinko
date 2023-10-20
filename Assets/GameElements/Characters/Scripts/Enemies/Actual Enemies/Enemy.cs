@@ -108,13 +108,14 @@ namespace Characters.Enemies
             Health = EnemyObject.MaxHealth;
             AbilityCooldown = EnemyObject.AbilityCooldownMax;
             TurnsTillNextAttack = EnemyObject.AttackFrequency;
+            EnemyObject.ModifiyDescription();
             SetDisplayDescription();
             SetDisplayScale();
         }
 
         public void SetDisplayDescription()
         {
-            if (TryGetComponent<IDisplayOnScroll>(out IDisplayOnScroll displayOnScroll))
+            if (TryGetComponent<ScrollDisplayer>(out ScrollDisplayer displayOnScroll))
                 displayOnScroll.DisplayDescription = EnemyObject.ModifiedDescription;
         }
 

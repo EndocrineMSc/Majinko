@@ -165,6 +165,7 @@ namespace Cards
 
         protected IEnumerator DisableCardAfterAnimation(bool targetIsDiscardPile, GameObject cardObject)
         {
+            CardEvents.RaiseCardDisabled();
             Vector3 targetPosition = (targetIsDiscardPile) ? DiscardPosition : ExhaustPosition;
             
             var rectTransform = cardObject.GetComponent<RectTransform>();
@@ -180,7 +181,6 @@ namespace Cards
 
             yield return new WaitForSeconds(_tweenDiscardDuration / 2);
             cardObject.SetActive(false);
-            CardEvents.RaiseCardDisabled();
         }
 
         #endregion

@@ -278,7 +278,6 @@ namespace Orbs
         public void ReturnOrbToDisabledPool(Orb orb)
         {
             orb.SetOrbInactive();
-            Debug.Log(orb.Data.name);
 
             if (orb.Data.name.Contains("Base"))
             {

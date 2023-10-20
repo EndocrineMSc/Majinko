@@ -111,7 +111,7 @@ namespace Orbs
             }
         }
 
-        public void InitializeOrbData(Orb orb)
+        public virtual void InitializeOrbData(Orb orb)
         {
             _parentOrb = orb;
             SetDescription();

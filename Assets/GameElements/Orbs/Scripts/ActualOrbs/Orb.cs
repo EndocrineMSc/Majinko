@@ -80,25 +80,34 @@ namespace Orbs
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.TryGetComponent<IAmSphere>(out _))
+                HandleOrbCollision();
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.TryGetComponent<IAmSphere>(out _))
+                HandleOrbCollision();
+        }
+
+        private void HandleOrbCollision()
+        {
+            ArenaConditionTracker.OrbWasHit();
+            OrbEvents.RaiseOrbHit(this.gameObject);
+
+            if (StalwartStacks <= 0)
             {
-                ArenaConditionTracker.OrbWasHit();
-                OrbEvents.RaiseOrbHit();
+                _collider.enabled = false;
+                Data.CollisionEffect();
 
-                if (StalwartStacks <= 0)
-                {
-                    _collider.enabled = false;
-                    Data.CollisionEffect();
+                OrbManager.Instance.ReturnOrbToDisabledPool(this);
 
-                    OrbManager.Instance.ReturnOrbToDisabledPool(this);
-
-                    PlayOrbOnHitSound();
-                    OnCollisionVisualPolish();
-                    SpawnMana();
-                }
-                else
-                {
-                    StalwartStacks--;
-                }
+                PlayOrbOnHitSound();
+                OnCollisionVisualPolish();
+                SpawnMana();
+            }
+            else
+            {
+                StalwartStacks--;
             }
         }
 

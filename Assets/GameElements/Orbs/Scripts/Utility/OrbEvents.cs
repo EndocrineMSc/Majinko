@@ -1,5 +1,6 @@
 using EnumCollection;
 using System;
+using UnityEngine;
 
 namespace Orbs
 {
@@ -8,7 +9,7 @@ namespace Orbs
         internal static event Action OnEffectEnd;
         internal static event Action<ManaType, int> SpawnMana;
         internal static event Action OnSetOrbsActive;
-        internal static event Action OnOrbHit;
+        internal static event Action<GameObject> OnOrbHit;
 
         internal static void RaiseEffectEnd()
         {
@@ -25,9 +26,9 @@ namespace Orbs
             OnSetOrbsActive?.Invoke();
         }
 
-        internal static void RaiseOrbHit()
+        internal static void RaiseOrbHit(GameObject orb)
         {
-            OnOrbHit?.Invoke();
+            OnOrbHit?.Invoke(orb);
         }
     }
 }
