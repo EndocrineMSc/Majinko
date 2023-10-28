@@ -68,8 +68,7 @@ namespace Cards
             foreach (var cardObject in  displayedCards)
             {
                 var card = cardObject.GetComponent<Card>();
-                card.GetComponent<CardDragDrop>().enabled = false;
-                card.GetComponent<CardZoom>().enabled = false;
+                card.GetComponent<CardMovement>().enabled = false;
                 cardObject.AddComponent<DeckLibraryCardHighlight>();
             }
         }

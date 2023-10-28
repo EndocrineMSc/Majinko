@@ -2,10 +2,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
 using System.ComponentModel.Design;
+using Audio;
 
 namespace Cards
 {
-    internal class CardZoom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IBeginDragHandler, IDropHandler
+    public class CardMovement : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IBeginDragHandler, IEndDragHandler
     {
         #region Fields and Properties
 
@@ -16,14 +17,18 @@ namespace Cards
         //movement values
         private readonly float _zoomSize = 1.5f;
         private readonly float _moveDistance = 100f;
-        private readonly float _xMoveSpeed = 650f;
-        private readonly float _yMoveSpeed = 2000f;
+        private readonly float _xMoveSpeed = 500f;
+        private readonly float _yMoveSpeed = 1500f;
+        private readonly float _cardEffectBorderY = -150;
         private float _targetYPosition;
 
         //references
+        private Canvas _cardCanvas;
         private Card _card;
         private RectTransform _rectTransform;
         private Vector2 _zoomedCardPosition = new();
+
+        const string CARDCANVAS_OBJECT = "CardCanvas";
 
         //start states
         private Vector3 _normalScale;
@@ -32,7 +37,7 @@ namespace Cards
 
         #endregion
 
-        #region Functions
+        #region Methods
 
         private void OnEnable()
         {
@@ -49,6 +54,10 @@ namespace Cards
             //set references
             _card = GetComponent<Card>();
             _rectTransform = GetComponent<RectTransform>();
+
+            var canvasObject = GameObject.FindGameObjectWithTag(CARDCANVAS_OBJECT);
+            if (canvasObject != null)
+                _cardCanvas = canvasObject.GetComponent<Canvas>();
 
             //set start stats
             _normalScale = new Vector3(0.75f, 0.75f, 0.75f);
@@ -83,8 +92,10 @@ namespace Cards
                 if (!CardEvents.CardIsZoomed || _isZoomed)
                     ReturnToXHandPosition();
 
+                /*
                 if (!_isDragged && _rectTransform.anchoredPosition.y > _targetYPosition)
                     ZoomDownMovement();
+                */
             }
         }
 
@@ -125,16 +136,11 @@ namespace Cards
 
         private void ZoomDownMovement()
         {
-            float speed; //different speeds depending on distance to bottom position
+            var speed = _yMoveSpeed * Mathf.Abs(_rectTransform.anchoredPosition.y - _card.PositionInHand.y) / 100;
 
-            if (_rectTransform.anchoredPosition.y > _targetYPosition)
-                speed = _yMoveSpeed;
-            else
-                speed = _yMoveSpeed / 4;
-
-            if (_rectTransform.anchoredPosition.y > _card.PositionInHand.y + 2f)
+            if (_rectTransform.anchoredPosition.y > (_card.PositionInHand.y + 3f))
                 _rectTransform.Translate(speed * Time.deltaTime * Vector2.down);
-            else if (_rectTransform.anchoredPosition.y < _card.PositionInHand.y - 2f)
+            else if (_rectTransform.anchoredPosition.y < (_card.PositionInHand.y - 3f))
                 _rectTransform.Translate(speed * Time.deltaTime * Vector2.up);
         }
 
@@ -172,27 +178,52 @@ namespace Cards
         private void ReturnToXHandPosition()
         {
             var positionInHand = GetComponent<Card>().PositionInHand;
+            var speed = _xMoveSpeed * Mathf.Abs(_rectTransform.localPosition.x - positionInHand.x) / 100;
 
-            if (_rectTransform.localPosition.x > (positionInHand.x + 2f))
+            if (_rectTransform.localPosition.x > (positionInHand.x + 3f))
             {
-                _rectTransform.Translate(_xMoveSpeed * Time.deltaTime * Vector2.left);
+                _rectTransform.Translate(speed * Time.deltaTime * Vector2.left);
             }
-            else if (_rectTransform.localPosition.x < (positionInHand.x - 2f))
+            else if (_rectTransform.localPosition.x < (positionInHand.x - 3f))
             {
-                _rectTransform.Translate(_xMoveSpeed * Time.deltaTime * Vector2.right);
+                _rectTransform.Translate(speed * Time.deltaTime * Vector2.right);
             }
         }
 
         public void OnBeginDrag(PointerEventData eventData)
         {
             _isDragged = true;
+            AudioManager.Instance.PlaySoundEffectOnce(SFX._0004_CardDrag);
         }
 
-        public void OnDrop(PointerEventData eventData)
+        public void OnDrag(PointerEventData eventData)
         {
-            _isDragged = false;
+            _rectTransform.anchoredPosition += eventData.delta / _cardCanvas.scaleFactor;
         }
 
+        public void OnEndDrag(PointerEventData eventData)
+        {
+            if (_rectTransform.anchoredPosition.y >= _cardEffectBorderY)
+            {
+                if (!_card.CardEndDragEffect())
+                    ReturnCardToHand();
+            }
+            else
+            {
+                ReturnCardToHand();
+            }
+        }
+
+        private void ReturnCardToHand()
+        {
+            AudioManager.Instance.PlaySoundEffectOnce(SFX._0005_CardDragReturn);
+            Hand.Instance.AlignCardsWrap();
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.DrawLine(new(-3000, -150, 0), new Vector3(3000, -150, 0));
+        }
         #endregion
     }
 }

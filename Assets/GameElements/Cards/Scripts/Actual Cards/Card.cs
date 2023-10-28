@@ -6,8 +6,7 @@ using DG.Tweening;
 
 namespace Cards
 {
-    [RequireComponent(typeof(CardDragDrop))]
-    [RequireComponent(typeof(CardZoom))]
+    [RequireComponent(typeof(CardMovement))]
     [RequireComponent(typeof(CardUIDisplayer))]
     public abstract class Card : MonoBehaviour
     {
@@ -117,7 +116,7 @@ namespace Cards
                 _orbManager.CheckForRefreshOrbs(); //Checks if RefreshOrb was overwritten and makes a new one if so
                 HandleDiscard();
                 _hand.AlignCardsWrap();
-                GetComponent<CardZoom>().enabled = false;
+                GetComponent<CardMovement>().enabled = false;
                 return true;
             }
             else
