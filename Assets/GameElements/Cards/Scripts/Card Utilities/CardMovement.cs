@@ -6,7 +6,7 @@ using Audio;
 
 namespace Cards
 {
-    public class CardMovement : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IBeginDragHandler, IEndDragHandler
+    public class CardMovement : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
     {
         #region Fields and Properties
 
@@ -19,7 +19,7 @@ namespace Cards
         private readonly float _moveDistance = 100f;
         private readonly float _xMoveSpeed = 500f;
         private readonly float _yMoveSpeed = 1500f;
-        private readonly float _cardEffectBorderY = -150;
+        private readonly float _cardEffectBorderY = 0;
         private float _targetYPosition;
 
         //references
@@ -75,13 +75,20 @@ namespace Cards
             //only move as soon as card dealing is finished
             if (!_card.IsBeingDealt)
             {
-                //if zoomed in, but not dragged by player, move to zoom position on y axis
-                if (_isZoomed && !_isDragged)
-                    ZoomUpMovement();
+                if (!_isDragged)
+                {
+                    //if zoomed in, but not dragged by player, move to zoom position on y axis
+                    if (_isZoomed)
+                        ZoomUpMovement();
 
-                //if not zoomed in and not dragged by player, move to start position on y axis
-                if (!_isZoomed && !_isDragged)
-                    ZoomDownMovement();
+                    //if not zoomed in and not dragged by player, move to start position on y axis
+                    if (!_isZoomed)
+                        ZoomDownMovement();
+
+                    //if zoomed in but not dragged and way above target y, move to start y -> player has dragged and let go below effect border
+                    if (_rectTransform.anchoredPosition.y > (_targetYPosition + 50))
+                        ZoomDownMovement();
+                }
 
                 //if another card is zoomed in, move right or left depending on position
                 if (!_isZoomed && CardEvents.CardIsZoomed && _zoomedCardPosition != Vector2.zero
@@ -91,11 +98,6 @@ namespace Cards
                 //if no card is zoomed in move on x axis to start position
                 if (!CardEvents.CardIsZoomed || _isZoomed)
                     ReturnToXHandPosition();
-
-                /*
-                if (!_isDragged && _rectTransform.anchoredPosition.y > _targetYPosition)
-                    ZoomDownMovement();
-                */
             }
         }
 
@@ -203,6 +205,7 @@ namespace Cards
 
         public void OnEndDrag(PointerEventData eventData)
         {
+            _isDragged = false;
             if (_rectTransform.anchoredPosition.y >= _cardEffectBorderY)
             {
                 if (!_card.CardEndDragEffect())
@@ -222,7 +225,8 @@ namespace Cards
 
         private void OnDrawGizmos()
         {
-            Gizmos.DrawLine(new(-3000, -150, 0), new Vector3(3000, -150, 0));
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(new(-3000, 0, 0), new Vector3(3000, -0, 0));
         }
         #endregion
     }
