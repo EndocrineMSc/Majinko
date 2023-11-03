@@ -113,10 +113,7 @@ namespace Cards
         public void AlignCardsWrap(bool isStartTurnDealing = false)
         {
             if (Deck.Instance.HandCards.Count > 0)
-            {
                 StartCoroutine(AlignCards(isStartTurnDealing));       
-                Debug.Log("Remaining number of cards in hand: " + Deck.Instance.HandCards.Count);
-            }
         }
 
         private IEnumerator AlignCards(bool isStartTurnDealing = false)
@@ -207,14 +204,12 @@ namespace Cards
 
         private void DisableZoomComponents(Card card)
         {
-            card.GetComponent<CardZoom>().enabled = false;
-            card.GetComponent<CardDragDrop>().enabled = false;
+            card.GetComponent<CardMovement>().enabled = false;
         }
 
         private void EnableZoomComponents(Card card)
         {
-            card.GetComponent<CardZoom>().enabled = true;
-            card.GetComponent<CardDragDrop>().enabled = true;
+            card.GetComponent<CardMovement>().enabled = true;
         }
 
         private List<Vector2> SetEvenCardPositions()

@@ -207,8 +207,7 @@ namespace Utility
             foreach (Card cardObject in cardObjects)
             {
                 cardObject.IsBeingDealt = false;
-                cardObject.GetComponent<CardDragDrop>().enabled = false;
-                cardObject.GetComponent<CardZoom>().enabled = false;
+                cardObject.GetComponent<CardMovement>().enabled = false;
                 cardObject.AddComponent<ShopMouseOverSound>();
             }
         }
