@@ -18,12 +18,14 @@
 
 ## Contributing
 
-<Mention a Contribution Guide if any>
+No Contribution possible
 
 ## Authors and acknowledgment
 
-<Credit where credit is due>
+EndocrineMSc for Code and Art
+CawfeeArt for Art
 
 ## License
 
-<which license does this project have?>
+You can use the code of this project under the MIT License.
+Art and Sound Assets do not fall under this license and may not be used freely.
